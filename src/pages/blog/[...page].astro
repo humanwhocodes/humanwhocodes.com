@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostBlurb from '../../components/PostBlurb.astro';
+import { loadBlogPosts } from "../../lib/util.js";
+import site from "../../data/config.yml";
+
+export async function getStaticPaths({ paginate }) {
+
+    const posts = await loadBlogPosts();
+
+    return paginate(posts, { pageSize: 10 });
+
+};
+
+const { page } = Astro.props;
+console.log(page)
+---
+<Layout
+	title={site.name}
+	description={site.description}
+>	
+	<h2 class="no-margin">Recent Posts</h2>{page.data}
+
+	{page.data.map((post) => (
+		<PostBlurb
+			title={post.frontmatter.title}
+			teaser={post.frontmatter.teaser}
+			date={post.frontmatter.date}
+			url={post.url}
+		/>
+	))}
+
+
+</Layout>

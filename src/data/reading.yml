@@ -1,0 +1,279 @@
+"Accessibility":
+
+  - title: Ghost Boy
+    author:  Martin Pistorius
+    url: https://geni.us/ghost-boy
+    image: ghost-boy.jpg
+
+"Artificial Intelligence":
+
+  - title: The Age of AI
+    author:  Henry A. Kissinger, Eric Schmidt, Daniel Huttenlocher 
+    url: https://geni.us/age-of-ai
+    image: age-of-ai.jpg
+
+"Career":
+
+  - title: Staff Engineer
+    author:  Will Larson
+    url: https://geni.us/staff-engineer
+    image: staff-engineer.jpg
+
+  - title: Workplace Poker
+    author:  Dan Rust
+    url: https://geni.us/workplace-poker
+    image: workplace-poker.jpg
+
+  - title: Never Eat Alone
+    author:  Keith Ferrazzi, Tahl Raz
+    url: https://geni.us/never-eat-alone
+    image: never-eat-alone.jpg
+
+  - title: So Good They Can't Ignore You
+    author:  Cal Newport
+    url: https://geni.us/so-good-they-cant
+    image: so-good-they-cant-ignore-you.jpg
+
+  - title: The Manager's Path
+    author:  Camille Fournier
+    url: https://geni.us/managers-path
+    image: managers-path.jpg
+
+
+"Communication":
+
+  - title: Nonviolent Communication
+    author:  Marshall B. Rosenberg
+    url: https://geni.us/nvc-hwc
+    image: nvc.jpg
+
+  - title: Difficult Conversations
+    author: Douglas Stone, Bruce Patton, Sheila Heen 
+    url: https://geni.us/difficult-conv
+    image: difficult-conversations.jpg
+
+  - title: Influence
+    author: Robert B. Cialdini 
+    url: https://geni.us/influence-hwc
+    image: influence.jpg
+
+  - title: Reclaiming Conversation
+    author: Sherry Turkle
+    url: https://geni.us/reclaiming-convo
+    image: reclaiming-conversation.jpg
+
+  - title: If I Understood You, Would I Have This Look on My Face?
+    author: Alan Alda
+    url: https://geni.us/if-i-understood-you
+    image: if-i-understood-you.jpg
+
+  - title: Pitch Anything
+    author: Oren Klaff
+    url: https://geni.us/pitch-anything-hwc
+    image: pitch-anything.jpg
+
+
+"Decision Making":
+
+  - title: Thinking in Bets
+    author: Annie Duke
+    url: https://geni.us/thinking-in-bets-book
+    image: thinking-in-bets.jpg
+
+  - title: The Road Less Stupid
+    author: Keith J. Cunningham
+    url: https://geni.us/road-less-stupid
+    image: road-less-stupid.jpg
+
+"DevOps":
+
+  - title: Accelerate
+    author:  Nicole Forsgren PhD, Jez Humble, Gene Kim
+    url: https://geni.us/accelerate-hwc
+    image: accelerate.jpg
+
+
+"Entrepreneurship":
+
+  - title: The E-myth Revisited
+    author: Michael E. Gerber
+    url: https://geni.us/emyth-rev-hwc
+    image: emyth-revisited.jpg
+
+  - title: Traction
+    author: Gino Wickman
+    url: https://geni.us/traction-hwc
+    image: traction.jpg
+
+  - title: Zero to One
+    author: Peter Thiel
+    url: https://geni.us/zero-to-one-hwc
+    image: zero-to-one.jpg
+
+"Leadership":
+
+  - title: The 15 Commitments of Conscious Leadership
+    author: Jim Dethmer, Diana Chapman, Kaley Klemp
+    url: https://geni.us/15-commitments-hwcc
+    image: 15-commitments.jpg
+
+  - title: Multipliers
+    author: Liz Wiseman
+    url: https://geni.us/multipliers
+    image: multipliers.jpg
+
+  - title: The First 90 Days
+    author: Michael D. Watkins
+    url: https://geni.us/first-90-day
+    image: first-90-days.jpg
+
+  - title: Who Not How
+    author:  Dan Sullivan
+    url: https://geni.us/who-not-ho
+    image: who-not-how.jpg
+
+  - title: Extreme Ownership
+    author:  Jocko Willink, Leif Babin
+    url: https://geni.us/extreme-ownership-hwc
+    image: extreme-ownership.jpg
+
+  - title: From Start-up to Grown-up
+    author:  Alisa Cohn
+    url: https://geni.us/startup-grownup
+    image: startup-grownup.jpg
+
+"Management":
+
+  - title: The New One-Minute Manager
+    author:  Ken Blanchard, Spencer Johnson
+    url: https://geni.us/1min-manager
+    image: 1min-manager.jpg
+
+"Marketing":
+
+  - title: One Million Followers
+    author: Brendan Kane
+    url: https://geni.us/one-mil-follow
+    image: one-million-followers.jpg
+
+  - title: Trust Me I'm Lying
+    author: Ryan Holiday
+    url: https://geni.us/trust-me
+    image: trust-me.jpg
+
+"Product Design":
+
+  - title: The Design of Everyday Things
+    author: Don Norman
+    url: https://geni.us/everyday-thing
+    image: design-everyday-things.jpg
+
+"Programming":
+
+  - title: "WebAssembly: The Definitive Guide"
+    author: Brian Sletten
+    url: https://geni.us/webassembly
+    image: webassembly.jpg
+
+  - title: "Programming Rust"
+    author: by Jim Blandy, Jason Orendorff, Leonora Tindall
+    url: https://geni.us/prog-rust
+    image: programming-rust.jpg
+
+"Productivity":
+
+  - title: Indistractable
+    author: Nir Eyal
+    url: https://geni.us/indistractable-hwc
+    image: indistractable.jpg
+
+  - title: Deep Work
+    author: Cal Newport
+    url: https://geni.us/deep-work-hwc
+    image: deep-work.jpg
+  
+  - title: The Power of Full Engagement
+    author:  Jim Loehr, Tony Schwartz
+    url: https://geni.us/full-engagement-hwc
+    image: full-engagement.jpg
+  
+  - title: Getting Things Done
+    author:  David Allen, James Fallows
+    url: https://geni.us/gtd-hwc
+    image: gtd.jpg
+  
+  - title: The Happiness Advantage
+    author:  Shawn Achor
+    url: https://geni.us/happiness-advantage-hw
+    image: happiness-advantage.jpg
+
+  - title: A World Without Email
+    author:  Cal Newport
+    url: https://geni.us/world-wo-emai
+    image: world-without-email.jpg
+
+  - title: Rest
+    author:  Alex Soojung-Kim Pang
+    url: https://geni.us/rest-book
+    image: rest-book.jpg
+
+  - title: Shorter
+    author:  Alex Soojung-Kim Pang
+    url: https://geni.us/shorter-boo
+    image: shorter.jpg
+
+"Negotiating":
+
+  - title: Negotiating the Impossible
+    author:  Deepak Malhotra
+    url: https://geni.us/negotating-imp
+    image: negotiating-the-impossible.jpg
+
+  - title: Getting to Yes
+    author:  Roger Fisher, William L. Ury, Bruce Patton
+    url: https://geni.us/getting-to-yes-hwc
+    image: getting-to-yes.jpg
+
+"Security":
+
+  - title: Ghost in the Wires
+    author:  Kevin Mitnick, William L. Simon
+    url: https://geni.us/ghost-in-the-wires
+    image: ghost-in-the-wires.jpg
+
+
+"Software Architecture":
+
+  - title: "Just Enough Software Architecture"
+    author:  George H. Fairbanks
+    url: https://geni.us/just-enough-arch
+    image: just-enough-architecture.jpg
+
+  - title: Building Microservices
+    author:  Sam Newman
+    url: https://geni.us/building-microservice
+    image: building-microservices.jpg
+
+  - title: Monolith to Microservices
+    author:  Sam Newman
+    url: https://geni.us/monolith-to-micros
+    image: monolith-to-microservices.jpg
+
+"Speaking":
+
+  - title: "TED Talks: The Official TED Guide to Public Speaking"
+    author:  Chris Anderson
+    url: https://geni.us/ted-talks-hwc
+    image: ted-talks.jpg
+
+"Technology":
+
+  - title: "Alone Together"
+    author:  Sherry Turkle
+    url: https://geni.us/alone-together
+    image: alone-together.jpg
+
+  - title: "The Shallows"
+    author:  Nicholas Carr
+    url: https://geni.us/the-shallows
+    image: shallows.jpg

@@ -1,0 +1,29 @@
+---
+import path from "node:path";
+import { fileURLToPath } from 'url'
+import Post from "../../../../layouts/Post.astro";
+import { loadBlogPosts } from "../../../../lib/util.js";
+
+export async function getStaticPaths() {
+
+    const posts = await loadBlogPosts(await Astro.glob('../../../_posts/**/*.md'));
+
+    const stuff = posts.map(post => {
+
+        return {
+            params: post.urlParts,
+            props: {
+                post
+            }
+
+        }
+    });
+    return stuff;
+};
+
+const { post } = Astro.props;
+const { Content } = post;
+---
+<Post post={post}>
+    <Content />
+</Post>

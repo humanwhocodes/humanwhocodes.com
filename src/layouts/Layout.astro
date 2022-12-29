@@ -1,0 +1,32 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Sidebar from "../components/Sidebar.astro";
+import "../styles/index.css";
+
+const {
+	title,
+	description,
+	originalUrl
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} originalUrl={originalUrl} />
+	</head>
+
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<Header />
+		<div class="content-background">
+	        <div id="page-grid" class="page-width page-grid center">
+    	        <main id="content" role="main" class="content-width gutters">
+					<slot />
+				</main>
+				<Sidebar />
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>

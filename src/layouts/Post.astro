@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import slugify from "slugify";
+import MailingListForm from "../components/MailingListForm.astro";
+
+const { post } = Astro.props;
+---
+<Layout
+    title={post.frontmatter.title}
+    description={post.frontmatter.teaser}
+    originalUrl={post.frontmatter.original?.url}>
+<article itemtype="http://schema.org/Article">
+    <header>
+        <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.frontmatter.title }</h1>
+        <p itemprop="description" class="no-margin-top">{ post.frontmatter.teaser }</p>
+        <div class="post-meta gutter-top smaller-font dark-dotted-border-top dark-dotted-border-bottom">
+            <p class="no-margin byline">Posted at <time datetime={ post.frontmatter.date.toUTCString() } itemprop="datePublished">{
+                    post.frontmatter.date.toLocaleDateString('en-us', {
+                        year: "numeric",
+                        month:"long",
+                        day: "numeric"
+                    }) }</time> by <span itemprop="author" itemtype="http://schema.org/Person">Nicholas
+                    C. Zakas</span></p>
+            <p class="no-margin-top tags">Tags:
+				{post.frontmatter.tags.map((tag, index) => 
+                	<a href={"/blog/tag/" + slugify(tag.toLowerCase()) + "/"} rel="tag">{ tag }</a>
+                    <span>{ index < post.frontmatter.tags.length - 1 ? ", " : ""}</span>
+				)}
+            </p>
+        </div>
+    </header>
+    <section id="post-body" class="content-font">
+        {post.frontmatter.original &&
+            <aside class="margin-top">
+                <p>This post originally appeared on <a href={post.frontmatter.original.blog.url}>{post.frontmatter.original.blog.title}</a> on
+                    <a href={post.frontmatter.original.url}>{ new Date(post.frontmatter.original.date).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month:"long",
+                        day: "numeric"
+                    })}</a>.</p>
+            </aside>
+        }
+
+		<slot />
+    </section>
+</article>
+<MailingListForm />
+</Layout>

@@ -1,0 +1,15 @@
+---
+import reading from "../data/reading.yml";
+---
+{Object.keys(reading).sort().map(key => <>
+    <h2>{key} ({reading[key].length})</h2>
+    <ul class="hide-bullets grid-columns">
+        {reading[key].sort().map(book =>
+            <li class="center-text">
+                <p><a href={book.url}><img src={"/images/reading/" + book.image } alt={book.title + " Cover"} loading="lazy" height="150"></a><br>
+                <a href={book.url}>{book.title}</a><br>
+                {book.author}</p>
+            </li>            
+        )}
+    </ul>
+</>)}

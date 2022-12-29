@@ -1,0 +1,135 @@
+- title: Understanding JavaScript Promises
+  pubdate: February 2022
+  publisher: Self published
+  url: https://www.lulu.com/en/us/shop/nicholas-c-zakas/understanding-javascript-promises/paperback/product-2yvnqn.html
+  type: book
+  rel: author
+  image: promises.png
+
+- title: Understanding ECMAScript 6
+  pubdate: August 2016
+  publisher: No Starch Press
+  url: https://geni.us/hwc-es6-book
+  type: book
+  rel: author
+  image: understandinges6ns.png
+
+- title: Understanding ECMAScript 6
+  pubdate: January 2016
+  publisher: Self published
+  url: https://leanpub.com/understandinges6
+  type: ebook
+  rel: author
+  image: understandinges6.png
+
+- title: Beautiful JavaScript
+  pubdate: August 2015
+  publisher: O'Reilly Media
+  url: https://amzn.to/2JBiK5n
+  type: book
+  rel: contributor
+  image: beautiful.png
+
+- title: The Principles of Object-Oriented JavaScript
+  pubdate: February 2014
+  publisher: No Starch Press
+  url: https://geni.us/hwc-oopjs-book
+  type: book
+  rel: author
+  image: oopinjsns.png
+
+- title: The Principles of Object-Oriented Programming in JavaScript
+  pubdate: January 2013
+  publisher: Self published
+  url: https://leanpub.com/oopinjavascript
+  type: ebook
+  rel: author
+  image: oopinjs.png
+
+- title: Smashing Book 4
+  pubdate: November 2013
+  publisher: Smashing Magazine GmbH
+  url: https://amzn.to/2SLSGc7
+  type: book
+  rel: contributor
+  image: smashing.png
+
+- title: The Problem with Native JavaScript APIs
+  pubdate: August 2012
+  publisher: O'Reilly Media
+  url: https://amzn.to/2qpqEGd
+  type: ebook
+  rel: author
+  image: problem.png
+
+- title: Web Performance Daybook Volume 2
+  pubdate: June 2012
+  publisher: O'Reilly Media
+  url: https://amzn.to/2Rw822J
+  type: book
+  rel: contributor
+  image: daybook.png
+
+- title: Maintainable JavaScript
+  pubdate: May 2012
+  publisher: O'Reilly Media
+  url: https://geni.us/hwc-mjs-book
+  type: book
+  rel: author
+  image: maintainablejs.png
+
+- title: Professional JavaScript for Web Developers, 3rd Edition
+  pubdate: January 2012
+  publisher: Wrox
+  url: https://amzn.to/2JBDt96
+  type: book
+  rel: author
+  image: pro_js_3e.png
+
+- title: High Performance JavaScript
+  pubdate: April 2010
+  publisher: O'Reilly Media
+  url: https://geni.us/hwc-hpjs-book
+  type: book
+  rel: coauthor
+  image: hpjs.png
+
+- title: Even Faster Websites
+  pubdate: June 2009
+  publisher: O'Reilly Media
+  url: https://amzn.to/2SJeQeI
+  type: book
+  rel: contributor
+  image: even_faster.png
+
+- title: Professional JavaScript for Web Developers, 2nd Edition
+  pubdate: January 2009
+  publisher: Wrox
+  url: https://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
+  type: book
+  rel: author
+  image: pro_js_2e.png
+
+- title: Professional Ajax, 2nd Edition
+  pubdate: March 2007
+  publisher: Wrox
+  url: https://amzn.to/2SJiQfd
+  type: book
+  rel: coauthor
+  image: pro_ajax_2e.png
+
+- title: Professional Ajax
+  pubdate: February 2006
+  publisher: Wrox
+  url: https://amzn.to/2SJ5wI3
+  type: book
+  rel: coauthor
+  image: pro_ajax.png
+  
+- title: Professional JavaScript for Web Developers
+  pubdate: April 2005
+  publisher: Wrox
+  url: https://www.amazon.com/Professional-JavaScript-Developers-Wrox-Guides/dp/0764579088/ref=sr_1_8?tag=nczonline-20
+  type: book
+  rel: author
+  image: pro_js.png

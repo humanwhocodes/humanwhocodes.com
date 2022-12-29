@@ -1,0 +1,28 @@
+---
+const {
+    title,
+    url,
+    date,
+    teaser
+} = Astro.props;
+---
+<div class="post-blurb margin-bottom">
+    <div class="post-head">
+        <h3 class="no-margin-bottom"><a href={url}>{title}</a></h3>
+        <p class="byline"><i>{date.toLocaleDateString('en-us', {
+            year: "numeric",
+            month:"long",
+            day: "numeric"
+        })}</i> - { teaser }</p>
+    </div>
+</div>
+
+<style>
+    .post-blurb {
+        border-bottom: var(--content-item-border);
+    }
+
+    .post-blurb:last-of-type {
+        border-bottom: 0;
+    }
+</style>

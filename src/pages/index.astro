@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostBlurb from '../components/PostBlurb.astro';
+import { loadBlogPosts } from "../lib/util.js";
+import site from "../data/config.yml";
+
+const posts = await loadBlogPosts();
+
+---
+<Layout
+	title={site.name}
+	description={site.description}
+>	
+	<h2 class="no-margin">Recent Posts</h2>
+
+	{posts.map((post) => (
+		<PostBlurb
+			title={post.frontmatter.title}
+			teaser={post.frontmatter.teaser}
+			date={post.frontmatter.date}
+			url={post.url}
+		/>
+	))}
+
+
+</Layout>

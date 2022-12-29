@@ -1,0 +1,36 @@
+---
+import books from "../data/books.yml";
+
+const bookCategories = {
+    books: {
+        title: "Books I've Authored",
+        books: books.filter(book => book.type === "book" && book.rel === "author")
+    },
+    ebooks: {
+        title: "E-books I've Authored",
+        books: books.filter(book => book.type === "ebook" && book.rel === "author")
+    },
+    cobooks: {
+        title: "Books I've Co-authored",
+        books: books.filter(book => book.type === "book" && book.rel === "coauthor")
+    },
+    conbooks: {
+        title: "Books I've Contributed To",
+        books: books.filter(book => book.type === "book" && book.rel === "contributor")
+    }
+};
+
+
+---
+{Object.keys(bookCategories).map(key => <>
+    <h2>{bookCategories[key].title} ({bookCategories[key].books.length})</h2>
+    <ul class="hide-bullets grid-columns">
+        {bookCategories[key].books.map(book =>
+            <li class="center-text">
+                <p><a href={book.url}><img src={"/images/books/" + book.image } alt={book.title + " Cover"} loading="lazy" height="150"></a><br>
+                <a href={book.url}>{book.title}</a><br>
+                {book.publisher} {book.date}</p>
+            </li>            
+        )}
+    </ul>
+</>)}

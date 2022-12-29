@@ -1,0 +1,20 @@
+---
+import { loadBlogPosts } from "../lib/util.js";
+
+const posts = await loadBlogPosts();
+const years = new Set();
+
+posts.forEach(post => {
+    const year = post.urlParts.year;
+    years.add(year);
+});
+---
+<div id="sidebar" class="sidebar-width sidebar-background gutters hide-on-small-screens">
+    <h1 class="hide-offscreen">Additional Information</h1>
+    <h2 class="smaller-font">Archives ({years.size} Years)</h2>
+    <ul>
+        {[...years].map(year => (
+            <li><a href={`/blog/${year}/`}>{ year }</a></li>
+        ))}
+    </ul>
+</div> <!-- sidebar -->

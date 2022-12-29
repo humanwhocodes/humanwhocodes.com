@@ -1,0 +1,58 @@
+---
+import site from "../data/config.yml";
+import Analytics from "./Analytics.astro";
+
+export interface Props {
+	title: string;
+	description: string;
+	originalUrl?: string;
+	image?: string;
+}
+
+const {
+	title,
+	description = site.description,
+	originalUrl,
+	image = '/social.png'
+} = Astro.props;
+
+const pageTitle = title ? `${title} - ${site.name}` : site.name;
+const blogTitle = `${site.name} - Blog`;
+---
+
+<Analytics />
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/png" href="/favicon.png" />
+<meta name="generator" content={Astro.generator} />
+<meta name="ttw" content="cfanq3r">
+
+<!-- Primary Meta Tags -->
+<title>{pageTitle}</title>
+<meta name="title" content={pageTitle} />
+<meta name="description" content={description} />
+
+<!-- Canonical URLs -->
+<link rel="canonical" href={originalUrl ? originalUrl : Astro.url}>
+
+<!-- Feeds -->
+<link rel="alternate" type="application/rss+xml" title={blogTitle} href={new URL(site.feed_source, site.url).href}>
+<link rel="alternate" type="application/json" title={blogTitle} href={new URL(site.json_feed_source, site.url).href}>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:site" content="@hwcmoney">
+<meta property="twitter:creator" content="@slicknet">
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={pageTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />

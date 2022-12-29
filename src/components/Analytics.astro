@@ -1,0 +1,14 @@
+---
+import site from "../data/config.yml";
+
+const analytics_id = site.analytics_id;
+const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${ analytics_id }`;
+---
+<script async src={gtagUrl}></script>
+<script define:vars={{ analytics_id }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', analytics_id);
+</script>
