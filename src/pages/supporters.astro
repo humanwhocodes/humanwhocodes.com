@@ -1,0 +1,56 @@
+---
+import * as page from "../content/sponsors.md";
+import Page from "../layouts/Page.astro";
+import allSponsors from "../data/sponsors.json";
+
+const sponsors = allSponsors.sort((a, b) => b.amount - a.amount);
+
+const Content = page.Content;
+---
+<Page frontmatter={page.frontmatter}>
+    <h1>{page.frontmatter.title}</h1>
+    <Content />
+
+    <ul class="inline-list inline-image-list">
+        {sponsors.map(sponsor => (
+            <li><a href={ sponsor.url ?? "#" }><img src={ sponsor.avatarUrl } alt={ sponsor.name } title={ sponsor.name } loading="lazy" class={ "size" + sponsor.amount }></a></li>
+        ))}
+    </ul>
+
+</Page>
+
+
+<style>
+.size7 {
+    width: 16px;
+    height: 16px;
+}
+.size15 {
+    width: 24px;
+    height: 24px;
+}
+.size27 {
+    width: 32px;
+    height: 32px;
+}
+.size50 {
+    width: 40px;
+    height: 40px;
+}
+.size100 {
+    width: 48px;
+    height: 48px;
+}
+.size200 {
+    width: 64px;
+    height: 64px;
+}
+.size500 {
+    width: 64px;
+    height: 64px;
+}
+.size1000 {
+    width: 64px;
+    height: 64px;
+}
+</style>

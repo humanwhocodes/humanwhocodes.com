@@ -1,14 +1,16 @@
 ---
 import site from "../data/config.yml";
 ---
-<div class="grid-columns">
-    <div class="gutters round-borders content-item-border highlight-background">
-        <h2 class="no-margin-top">Recommended Book</h2>
-        <p><a href="https://geni.us/millionaire-next-door"><img src="/images/reading/millionaire-next-door.jpg" height="200" alt="The Millionaire Next Door"></a></p>
+<div class="grid-columns round-borders content-item-border highlight-background">
+    <div class="gutters">
+        
+        <!-- <h2 class="no-margin-top">Free E-book!</h2> -->
+        <p><a href="https://ebooks.humanwhocodes.com/promises" target="_blank"><img src="/images/books/promises_community.png" alt="Understanding JavaScript Promises E-book Cover" height="250"></a></p>
+        <p>Demystify JavaScript promises with the e-book that explains not just concepts, but also real-world uses of promises.</p>
     </div>
-    <div class="gutters round-borders content-item-border highlight-background">
-        <h2 class="no-margin-top">Join the Mailing List</h2>
-        <p>Never miss an update by joining the mailing list.</p>
+    <div class="gutters">
+        <h2 class="no-margin-top">Download the Free E-book!</h2>
+        <p>The community edition of Understanding JavaScript Promises is a free download that arrives in minutes.</p>
         <form method="post" name="sideemailform" action="https://mailinglist.humanwhocodes.com/api/subscribe">
             <div id="mc_embed_signup_scroll">
                 <div style="margin-bottom: 0.5em">
@@ -18,12 +20,12 @@ import site from "../data/config.yml";
                 </div>
                 <div>
                     <label>Email address:
-                        <input type="email" value="" style="width:100%" name="email" required>
+                        <input type="email" value="" style="width:100%" name="email" required="">
                     </label>
                 </div>
-                <input type="hidden" name="formId" value={site.mailing_list_form_id}>
+                <input type="hidden" name="formId" value="1580135">
                 <div class="center-text gutters">
-                    <input type="submit" value="Subscribe">
+                    <input type="submit" value="Send my E-book">
                 </div>
             </div>
         </form>

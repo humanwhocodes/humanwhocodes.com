@@ -2,7 +2,7 @@
 title: "My (somewhat) complete salary history as a software engineer"
 teaser: Sharing my salary history to help women understand what they should be making.
 date: 2018-10-30 00:00:00
-last_updated: 2018-11-09 08:55
+updated: 2018-11-09 08:55
 hacker_news_link: https://news.ycombinator.com/item?id=18342996
 categories:
 - Career
@@ -12,11 +12,11 @@ tags:
 - Stock Options
 ---
 
-It's 2018 and somehow women are still getting paid less than men, even in supposedly progressive industries like software.[1] Whether that be from companies offering women less than men for the same position, women being less likely to negotiate or less successful in negotiations, or any of the other myriad reasons, the results are still the same: women make less than men for the same job. That's something that shouldn't be happening in today's world and it's up to us (read: men) to step up and make things right. This is my attempt to do just that.
+It's 2018 and somehow women are still getting paid less than men, even in supposedly progressive industries like software.[^1] Whether that be from companies offering women less than men for the same position, women being less likely to negotiate or less successful in negotiations, or any of the other myriad reasons, the results are still the same: women make less than men for the same job. That's something that shouldn't be happening in today's world and it's up to us (read: men) to step up and make things right. This is my attempt to do just that.
 
 ## Why am I doing this?
 
-Longtime followers know that I've been dealing with serious health issues for several years. Two and a half years ago I had to stop working to focus on my health and it will likely be a couple more years before I'm able to even consider working a full-time job again. The people responsible for my last compensation package have long since left that company. That puts me in a unique position where I am not beholden to any past employers, and any future employers are far enough into the future that the information I'm sharing here will be mostly useless by then. Plus, as a white man, I know I'm going to be able to negotiate for my salary without backlash[2] when I do start working again. As such, the information in this post is more valuable to others than it is to me.
+Longtime followers know that I've been dealing with serious health issues for several years. Two and a half years ago I had to stop working to focus on my health and it will likely be a couple more years before I'm able to even consider working a full-time job again. The people responsible for my last compensation package have long since left that company. That puts me in a unique position where I am not beholden to any past employers, and any future employers are far enough into the future that the information I'm sharing here will be mostly useless by then. Plus, as a white man, I know I'm going to be able to negotiate for my salary without backlash[^2] when I do start working again. As such, the information in this post is more valuable to others than it is to me.
 
 <aside class="note">
 I've been annoyed that throughout my career I've been lectured many times to avoid discussing my compensation with colleagues. Usually it's with the warning that, "not everyone is getting what you're getting, and we don't want to hurt feelings." It took me a long time to realize that the "hurt feelings" they're talking about come from an overall lack of transparency into the compensation process, and that simply explaining why people are compensated in certain ways would be a better solution than to hide all of the information from everyone. Yes, there will always be people who think they deserve to be making more but who don't actually deserve it. That seems like a great way to communicate that they aren't doing a good enough job and figure out ways to improve.
@@ -145,5 +145,5 @@ We can all be better if we're willing to share.
 * **09-November-2018** - <cite>Business Insider</cite> has [republished](https://www.businessinsider.com/software-engineer-salary-history-2018-11) this article.
 
 
-1. [By the Numbers: What pay inequality looks like for women in tech](https://www.forbes.com/sites/tanyatarr/2018/04/04/by-the-numbers-what-pay-inequality-looks-like-for-women-in-tech/) (forbes.com)
-2. [Women Know When Negotiating Isn't Worth It](https://www.theatlantic.com/business/archive/2017/01/women-negotiating/512174/) (theatlantic.com)
+[^1]: [By the Numbers: What pay inequality looks like for women in tech](https://www.forbes.com/sites/tanyatarr/2018/04/04/by-the-numbers-what-pay-inequality-looks-like-for-women-in-tech/) (forbes.com)
+[^2]: [Women Know When Negotiating Isn't Worth It](https://www.theatlantic.com/business/archive/2017/01/women-negotiating/512174/) (theatlantic.com)
