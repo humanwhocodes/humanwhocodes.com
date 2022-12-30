@@ -61,7 +61,6 @@ And if not, I'll be honest: tech books don't make a lot of money. It's not like 
 
 I'm excited to embark on this journey. It's the first time I've started a writing project in the open and I'm looking forward to the experience. Hopefully, people will learn just what goes into making a book and how crazy the development process can be. I know it will take a while to reach completion, but I think there's enough interest in ECMAScript 6 is start writing this ebook now and sharing what I have periodically. I hope you'll join me on this journey.
 
-## References
 
   1. [Principles of the Object-Oriented Programming in JavaScript][2] (Leanpub)
   2. [Creative Commons Attribution-NonCommercial-NoDerivs 3.0][3] (Creative Commons)

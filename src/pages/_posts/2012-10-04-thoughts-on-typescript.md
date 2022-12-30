@@ -178,7 +178,6 @@ So is it worth using now? I would say only experimentally and to provide feedbac
 
 TypeScript offers something very different from the other compile-to-JavaScript languages in that it starts with JavaScript and adds additional features on top of it. I'm happy that regular JavaScript can be written in TypeScript and still benefit from some of the type checking provided by the TypeScript compiler. That means writing TypeScript can actually help people learn JavaScript, which makes me happy. There's no doubt that these type annotations can create a better development experience when integrated with editors. Once ECMAScript 6 is finalized, I can see a big use for TypeScript, allowing developers to write ECMAScript 6 code that will still work in browsers that don't support it natively. We are still a long way from that time, but in the meantime, TypeScript is worth keeping an eye on.
 
-## References
 
   1. [TypeScript][1] (typescriptlang.org)
   2. [Dart][2] (dartlang.org)

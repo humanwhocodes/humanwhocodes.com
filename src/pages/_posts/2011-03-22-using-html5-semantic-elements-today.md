@@ -172,7 +172,6 @@ Another interesting thing I noted is that I was using the HTML5 elements as cont
 
 The technique I ultimately decided on and would recommend to others is a modification of Tantek's bulletproof technique. Clearly the name is a bit of a misnomer as there are some side effects in CSS and JavaScript, but in my experiments it really did seem to be the one approach that allowed me to change just the HTML of a page and have everything continue to work. I'm sure the debate will continue both inside of companies and on the Internet in general, and I hope this post helps you make an informed decision.
 
-## References
 
   1. [html5shim][1]
   2. [<cite>HTML5 elements in Internet Explorer without JavaScript</cite>][2], by Elco Klingen<cite><em> </em></cite>

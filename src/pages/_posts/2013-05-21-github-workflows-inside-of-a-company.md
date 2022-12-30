@@ -60,7 +60,6 @@ A lot of people shared a lot of very interesting anecdotes about using GitHub at
 
 I'm interested in doing more research about how Git and GitHub in particular are used inside of companies. I've yet to see any good research done on whether or not squashing and rebasing is important in the long run, and I think that would be great to figure out. Please feel free to share your experiences in the comments.
 
-## References
 
   1. [How do you use GitHub at your company?][1] (GitHub Gist)
   2. [GitHub flow][2] by Scott Chacon (Scott Chacon's Blog)

@@ -97,7 +97,6 @@ The differences between scripts and modules are subtle enough that it's hard for
 
 
 
-## References
 
 1. [The script Element](https://html.spec.whatwg.org/multipage/scripting.html#script) (whatwg.org)
 2. [ES6 Module Detection in Node](https://github.com/nodejs/node/wiki/ES6-Module-Detection-in-Node) (github.com)

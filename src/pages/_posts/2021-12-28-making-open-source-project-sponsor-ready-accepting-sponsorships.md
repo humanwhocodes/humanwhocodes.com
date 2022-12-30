@@ -87,7 +87,6 @@ I hope you've enjoyed this three-part series about making your open source proje
 
 <i>Thanks to [Fred Schott](https://fredkschott.com/) and [Ben Nickolls](https://twitter.com/benjam) for reviewing early drafts of this post.</i>
 
-## References
 
 [^1]: [Making your open source project sponsor-ready, Part 1: Companies and trust](https://humanwhocodes.com/blog/2021/12/making-open-source-project-sponsor-ready-companies-trust/)
 [^2]: [Making your open source project sponsor-ready, Part 2: Project hygiene](https://humanwhocodes.com/blog/2021/12/making-open-source-project-sponsor-ready-project-hygiene/)

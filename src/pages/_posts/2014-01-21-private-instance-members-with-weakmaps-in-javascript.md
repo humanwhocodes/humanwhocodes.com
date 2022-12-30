@@ -107,7 +107,6 @@ The `privateData` in this example is an instance of `WeakMap`. When a new `Perso
 
 I'll finish with how I began: I was wrong about weakmaps. I now understand why people were so excited about them, and if I used them for nothing other than creating truly private (and non-hacky) instance members, then I will feel I got my money's worth with them. I'd like to thank Nick Fitzgerald for his post that inspired me to write this, and for opening my eyes to the possibilities of weakmaps. I can easily foresee a future where I'm using weakmaps as part of my every day toolkit for JavaScript and I anxiously await the day that we can use them cross-browser.
 
-## References
 
   1. [Hiding implementation details with ECMAScript 6 WeakMaps][1] by Nick Fitzgerald (fitzgeraldnick.com)
 

@@ -18,7 +18,7 @@ First, SSH into your host with an account that has `sudo` access.
 Then, you need to open the `config.xml` file in your editor of choice:
 
 ```
-$ sudo vi {% raw %}$JENKINS_HOME{% endraw %}/config.xml
+$ sudo vi $JENKINS_HOME/config.xml
 
 # or
 

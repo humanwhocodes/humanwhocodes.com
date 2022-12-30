@@ -53,7 +53,6 @@ Whether or not `localStorage` is a performance issue on page load is still a que
 
 In the meantime, IndexedDB is definitely *not* a suitable replacement for `localStorage` in almost every case. IndexedDB could be used, as Jonas pointed out, to create a solution similar to the one he proposed. However, it's still a bit of overhead to write that out. My advice: don't worry too much about `localStorage` for now&#8230;but don't go storing 5MB of data in it either, just in case.
 
-## References
 
   1. [There is no simple solution for localStorage][1] by Chris Heilmann
   2. [In defense of localStorage][2] by Me

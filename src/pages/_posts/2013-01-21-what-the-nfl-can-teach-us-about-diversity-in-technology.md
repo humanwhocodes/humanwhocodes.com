@@ -55,7 +55,6 @@ Again, as a white heterosexual male, I've never experienced discrimination. It s
 
 I don't have any easy answers. All I know is that I want things to get better and that I'll take every opportunity I can to help. But the first thing we all have to do is approach the problem of diversity with compassion. People will try a lot of different things in the next few years to improve diversity in technology. Some will work and some will fail. Let's promise to give credit to the people who make an effort even if the effort doesn't result in change, because we will never get anywhere by not trying.
 
-## References
 
   1. [Why Brit Ruby 2013 was cancelled and why this is not ok][1] (GitHub Gist)
   2. [Conferences aren't the problem][2] by Frances Berriman

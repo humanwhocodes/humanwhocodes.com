@@ -101,7 +101,6 @@ What was most surprising to me is that there was basically no truly efficient wa
 
 I'm thankful that I had the ESLint performance test, which runs ESLint on a fairly large JavaScript file, to be able to narrow this issue down. I'm not sure an isolated benchmark would have revealed the extent to which this was a problem for ESLint.
 
-## References
 
 1. [Espree](https://github.com/eslint/espree) (github.com)
 1. [ESLint](https://github.com/eslint/eslint) (github.com)

@@ -100,7 +100,6 @@ The easiest way to securely persist environment variables in your Vercel project
 
 **2020-August-04** - Updated to rename from ZEIT Now to Vercel.
 
-## References
 
 [^1]: [Vercel](https://vercel.com)
 [^2]: [Netlify](https://netlify.com)

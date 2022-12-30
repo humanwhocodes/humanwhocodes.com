@@ -117,7 +117,6 @@ So does JavaScript need classes? No, but JavaScript definitely needs a cleaner w
   </li>
 </ul>
 
-## References
 
 [^1]: [Maximally minimal classes](http://wiki.ecmascript.org/doku.php?id=strawman:maximally_minimal_classes)
 [^2]: [YUI extend()](http://yuilibrary.com/yui/docs/api/classes/YUI.html#method_extend)

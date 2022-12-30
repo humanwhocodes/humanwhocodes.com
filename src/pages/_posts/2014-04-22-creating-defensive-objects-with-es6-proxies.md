@@ -148,7 +148,6 @@ By calling `createDefensiveObject()` inside of a constructor, you can effectivel
 
 JavaScript has come a long way recently, but we still have a ways to go to get the same type of time-saving functionality that type-safe languages boast. ECMAScript 6 proxies provide a great way to start enforcing contracts where necessary. The most useful place is in constructors or ECMAScript 6 classes, but it can also be useful to make other objects defensive as well. The goal of defensive objects is to make errors more obvious, so while they may not be appropriate for all objects, they can definitely help when defining API contracts.
 
-## References
 
   1. [Experimenting with ECMAScript 6 proxies][1] by me (NCZOnline)
 

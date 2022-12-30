@@ -138,7 +138,6 @@ Creating a custom AMI for Elastic Beanstalk is a little bit tricky and takes a l
 
 I created a bash script with all of the steps mentioned in this post as a [gist][1] that you can copy from. Note that the script must be run as sudo.
 
-## References
 
   1. [Elastic Beanstalk][2] (Amazon)
   2. [Play Framework][3] (Play)

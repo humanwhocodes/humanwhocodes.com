@@ -70,7 +70,6 @@ Keep in mind that consensus is best used in situations where the available optio
 
 In situations where group decisions are appropriate, consensus is a great tool to use. It does require a strong leader who can manage the process and keep the level of discourse up (consensus can't be built without someone guiding the conversation), so make sure that someone is appointed to do so before giving it a try.
 
-## References
 
   1. [Consensus decision making][1] (Wikipedia)
 

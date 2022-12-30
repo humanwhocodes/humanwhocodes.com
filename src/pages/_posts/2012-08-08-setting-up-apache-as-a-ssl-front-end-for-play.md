@@ -141,7 +141,6 @@ This post took you through setting up Apache as a SSL front end for a Play appli
 
 All of this work is going in so that we can have our own WellFurnished login and be less reliant on Facebook for handling that process. Stay tuned to WellFurnished for further details.
 
-## References
 
   1. [Play Framework][1]
   2. [mod_proxy][2] (Apache)

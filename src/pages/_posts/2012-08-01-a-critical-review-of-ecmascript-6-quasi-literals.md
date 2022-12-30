@@ -303,7 +303,6 @@ Overall, template strings are an interesting concept that I think have potential
 
 **Update (02-August-2012)** &#8211; Fixed YUI method name based on Ryan's comment. Fixed `escapeHTML()` function encoding issue per Jakub's comment.
 
-## References
 
   1. [Domain-specific language][1] (Wikipedia)
   2. [ECMAScript quasi-literals][2] (ECMAScript Wiki)

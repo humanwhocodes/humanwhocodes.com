@@ -149,7 +149,6 @@ The most important concept to grasp in this post is how jobs work and how they r
 
 Remember: All of this code is available in the [Pledge](https://github.com/humanwhocodes/pledge) on GitHub. I hope you'll download it and try it out to get a better understanding of promises.
 
-## References
 
 [^1]: [Jobs and Host Operations to Enqueue Jobs](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-jobs)
 [^2]: [Microtask queueing](https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#microtask-queuing)

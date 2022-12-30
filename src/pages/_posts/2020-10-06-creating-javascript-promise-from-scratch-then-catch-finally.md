@@ -702,7 +702,6 @@ In the next post in this series, I'll cover creating settled promises with `Prom
 
 All of this code is available in the [Pledge](https://github.com/humanwhocodes/pledge) on GitHub. I hope you'll download it and try it out to get a better understanding of promises.
 
-## References
 
 [^1]: [PromiseCapability Records](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-promisecapability-records)
 [^2]: [NewPromiseCapability( C )](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-newpromisecapability)

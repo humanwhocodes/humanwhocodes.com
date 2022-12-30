@@ -95,7 +95,6 @@ You use an `ArrayBuffer` primarily when dealing with binary files, to have more 
 
 Reading data from a file using a `FileReader` is pretty simple. If you know how to use `XMLHttpRequest`, there's no reason you can't also be reading data from files. In the next part of this series, you'll learn more about using the `FileReader` events and understanding more about possible errors.
 
-## References
 
   1. [ArrayBuffer][2]
   2. [Typed Array Specification][3]

@@ -128,7 +128,6 @@ Since ECMAScript 6 is not yet complete, it's also possible that the implementati
 
   * **05-Jan-2014** &#8211; changed reference to `size()` method to `size` property to reflect the change in spec.
 
-## References
 
   1. [Simple Maps and Sets][1] (ES6 Wiki)
   2. [for&#8230;of][2] (MDN)

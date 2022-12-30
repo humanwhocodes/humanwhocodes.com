@@ -85,7 +85,6 @@ In short, `eval()` doesn't open you up to man-in-the-middle attacks any more tha
 
 I'm not saying you should go run out and start using `eval()` everywhere. In fact, there are very few good use cases for running `eval()` at all. There are definitely concerns with code clarity, debugability, and certainly performance that should not be overlooked. But you shouldn't be afraid to use it when you have a case where `eval()` makes sense. Try not using it first, but don't let anyone scare you into thinking your code is more fragile or less secure when `eval()` is used appropriately.
 
-## References
 
   1. [About JSLint][1] by Douglas Crockford (JSLint)
   2. [Eval is evil, Part One][2] by Eric Lippert (Eric's blog)

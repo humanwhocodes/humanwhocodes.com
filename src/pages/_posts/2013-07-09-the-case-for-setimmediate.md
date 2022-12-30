@@ -92,7 +92,6 @@ I can't draw any conclusions as to why this particular API, which pretty much ju
 
 **Update (09-July-2013):** Updated description of `process.nextTick()` per Isaac's comments below.
 
-## References
 
   1. <a href=""http://www.slideshare.net/nzakas/javascript-timers-power-consumption-and-performance">Timers, Power Consumptions, and Performance</a> by me (Slideshare)
   2. [Efficient Script Yielding][1] (W3C)

@@ -100,7 +100,6 @@ So don't believe people when they tell you that hover doesn't exist on touch dev
 
 **Update (5-July-2012)** &#8211; added possible workarounds that were mentioned on Twitter.
 
-## References
 
   1. [Jacob Smartwood's tweet][2]
   2. [Oscar Godson's tweet][3]

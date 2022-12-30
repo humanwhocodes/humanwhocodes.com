@@ -73,7 +73,6 @@ A future without IE-specific code branches is near, and I for one am happy to we
 
 **Update (02-July-2013):** Revised to mention that `document.all` is not actually removed, rather has been changed to be falsy.
 
-## References
 
   1. [Internet Explorer 11 preview guide for developers][1] (MSDN)
   2. [Navigator Object &#8211; Client Identification][2] (HTML5)

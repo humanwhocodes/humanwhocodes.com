@@ -403,7 +403,6 @@ In the next, and final, part of this series, I'll be covering unhandled promise 
 
 All of this code is available in the [Pledge](https://github.com/humanwhocodes/pledge) on GitHub. I hope you'll download it and try it out to get a better understanding of promises.
 
-## References
 
 [^1]: [Promise.all ( iterable )](https://tc39.es/ecma262/#sec-promise.all)
 [^2]: [PerformPromiseAll ( iteratorRecord, constructor, resultCapability, promiseResolve )](https://tc39.es/ecma262/#sec-performpromiseall)

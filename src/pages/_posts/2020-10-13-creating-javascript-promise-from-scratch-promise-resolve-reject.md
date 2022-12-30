@@ -178,7 +178,6 @@ So far, I've covered the basic ways that promises work, but there's still more t
 
 It takes a significant amount of time to put together posts like these, and I appreciate your consideration in helping me continue to create quality content like this.
 
-## References
 
 [^1]: [Promise.resolve( x )](https://www.ecma-international.org/ecma-262/#sec-promise.resolve)
 [^2]: [PromiseResolve( C, x )](https://www.ecma-international.org/ecma-262/#sec-promise-resolve)

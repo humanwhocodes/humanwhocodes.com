@@ -96,7 +96,6 @@ myExecSync("eslint .");
 This little trick has come in very useful in my projects, especially when I want to write scripts that run inside of Node.js files. Given that executables are installed locally when installing packages from npm, the ability to easily run those executables is a powerful addition to your scripting capabilities. I'm using this to write longer scripts inside of JavaScript files that are triggered from `npm run`, and in doing so, the scripts end up looking more like Makefiles or bash scripts (and that makes me happy).
 
 
-## References
 
 1. [How npm handles the scripts field](https://docs.npmjs.com/misc/scripts) (npmjs.com)
 2. [ESLint](http://eslint.org) (eslint.org)

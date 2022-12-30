@@ -91,7 +91,6 @@ So to Mozilla, and the other browser vendors out there, you're a victim of your 
 
 **Update (8 March 2012):** Fixed typos and added shared worker reference.
 
-## References
 
   1. [There is no simple solution for localStorage][1] by Chris Heilmann
   2. <a title="Permanent Link to localStorage Read Performance" href="http://calendar.perfplanet.com/2011/localstorage-read-performance/" rel="bookmark">localStorage Read Performance</a> by Nicholas C. Zakas

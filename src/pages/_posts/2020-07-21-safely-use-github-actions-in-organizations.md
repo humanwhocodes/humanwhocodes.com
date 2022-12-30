@@ -43,7 +43,7 @@ Workflow logs are displayed on each repository under the "Actions" tab and are v
 ```
 steps:
   - name: Try to output a secret
-    run: echo {% raw %}'SECRET:${{ secrets.GITHUB_TOKEN }}'{% endraw %}
+    run: echo 'SECRET:${{ secrets.GITHUB_TOKEN }}'
 ```
 
 Accessing data off of the `secrets` object automatically masks the value in the log, so you'll end up seeing something like this in the log:
@@ -65,7 +65,7 @@ This file will output the first argument passed to the Node.js process. If you c
 ```
 steps:
   - name: Try to output a secret
-    run: node ./echo.js {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+    run: node ./echo.js ${{ secrets.GITHUB_TOKEN }}
 ```
 
 While the command line itself will be masked in the log, there is no accounting for the output of the command, which will output whatever is passed in.
@@ -183,7 +183,7 @@ steps:
   - name: Run a command
     run: some-command
     env:
-      GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 Here, the `GITHUB_TOKEN` environment variable is set with the `secrets.GITHUB_TOKEN` secret value. The `some-command` utility has access to that environment variable. Assuming that `some-command` is a trusted utility, there is no problem. The problem occurs when you run multiple commands inside of a `run` statement, such as:
@@ -196,7 +196,7 @@ steps:
       some-other-command
       yet-another-command
     env:
-      GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 In this case, the `run` statement is running multiple commands at once. The `env` statement now applies to all of those commands and will be available whether they need access to `GITHUB_TOKEN` or not. If the only utility that needs `GITHUB_TOKEN` is `some-command`, then limit the use of `env` to just that command, such as:
@@ -206,7 +206,7 @@ steps:
   - name: Run a command
     run: some-command
     env:
-      GITHUB_TOKEN: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   - run: |
       some-other-command
       yet-another-command

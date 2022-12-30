@@ -157,7 +157,6 @@ In this code, a function is created inside an IIFE that is running in strict mod
 This small change to ECMAScript 2016, disallowing function body `"use strict"` for functions with non-simple parameter lists, highlights just how difficult evolving such a popular programming language can be. In this case, TC-39 decided to remove ambiguity by introducing a new syntax error that likely would have been part of ECMAScript 6 (2015) had this problem been surfaced earlier. Adding this syntax error was the most obvious path forward because it affects very little existing code (the specification change was made around the same time that JavaScript engines were implementing non-simple parameter lists) and likely wouldn't affect much future code due to ECMAScript modules and classes running in strict mode.
 
 
-## References
 
 1. [Static Semantics: IsSimpleParameterList](http://www.ecma-international.org/ecma-262/7.0/#sec-function-definitions-static-semantics-issimpleparameterlist) (ecma-international.org)
 1. [It's time to start using JavaScript strict mode](https://www.nczonline.net/blog/2012/03/13/its-time-to-start-using-javascript-strict-mode/) (nczonline.net)

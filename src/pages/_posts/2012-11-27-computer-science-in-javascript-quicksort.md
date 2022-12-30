@@ -162,7 +162,6 @@ Quicksort is generally considered to be efficient and fast and so is used by V8 
 
 **Update (30-November-2012):** Fixed recursion error in the code and added a bit more explanation about the algorithm.
 
-## References
 
   1. [Quicksort][3] (Wikipedia)
   2. [V8 Arrays Source Code][4] (Google Code)

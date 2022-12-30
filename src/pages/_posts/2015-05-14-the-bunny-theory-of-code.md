@@ -39,7 +39,6 @@ While it may seem like a lot of work to manage a source code repository in this 
 
 Just like bunnies, if you're prepared for the multiplication, there's not a big problem. It's when multiplication happens without anyone noticing that trouble begins. 
 
-## References
 
   1. [Effective learning through code workshops][1] by me (Box Tech Blog)
 

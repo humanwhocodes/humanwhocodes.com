@@ -82,7 +82,6 @@ Open source isn't going to survive if we keep doing things the same way they've 
 
 <i>Thanks to [Fred Schott](https://fredkschott.com/) and [Ben Nickolls](https://twitter.com/benjam) for reviewing early drafts of this post.</i>
 
-## References
 
 [^1]: [JavaScript Standard Style](https://standardjs.com)
 [^2]: [npm install funding](https://github.com/standard/standard/issues/1381)

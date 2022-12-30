@@ -84,7 +84,6 @@ The `Blob` constructor is currently in the nightly builds of Chrome and will be 
 
 This is the last part of the series on working with files in JavaScript. As I hope you learned, the <cite>File API</cite> is incredibly powerful and opens up entirely new ways of working with files in web applications. You no longer need to stick with plain file upload boxes when users need to upload files, and now that you can read the files in the client, that opens up all sorts of possibilities for client-side manipulation. You could resize an image that's too large before uploading (using `FileReader` and `<canvas>`); you could create a text editor that works purely in the browser; you could split up large files to upload piece by piece. The possibilities aren't quite endless, but are pretty damn close.
 
-## References
 
   1. [Parsing Exif client-side using JavaScript][1] by Flickr Team
   2. [The Basics of Web Workers][2] by Eric Bidelman

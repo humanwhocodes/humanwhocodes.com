@@ -60,7 +60,6 @@ You can use object URLs anywhere the browser would make a GET request, which inc
 
 The ability to create URLs that link directly to local files is a powerful one. Instead of needing to read a local file into JavaScript in order to display it on a page, you can simply create a URL and point the page to it. This process greatly simplifies the use case of including local files in a page. However, the fun of working with files in JavaScript has only just begun. In the next post, you'll learn some interesting ways to work with file data.
 
-## References
 
   1. [File API][1]
 

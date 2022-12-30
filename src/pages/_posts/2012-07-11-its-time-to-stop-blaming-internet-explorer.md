@@ -31,7 +31,6 @@ It's not actually old browsers that are holding back the web, it's old ways of t
 
 **Clarification (2012-July-11):** I think some people have jumped on my statement about Internet Explorer 8 and missed the larger point of the article. I am not saying that Internet Explorer 8 (or 9!) is on par with Chrome or Firefox. All I am saying is that the constant complaining about Internet Explorer has gotten old. Yes, complaining is useful to get people to listen. Microsoft is listening, so continuing to complain doesn't do anything except perpetuate an attitude that I would rather not have in web development. Let's give them a chance to right the ship without retrying them for past transgressions perpetually.
 
-## References
 
   1. [Old Browsers Are Holding Back The Web][1]
   2. [IE6 Countdown][2]

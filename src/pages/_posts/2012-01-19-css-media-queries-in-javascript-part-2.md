@@ -101,7 +101,6 @@ Instead of using CSS transitions to monitor for changes, I use a simple `onresiz
 
 CSS media queries in JavaScript are a bit more complicated than I first expected, but still quite useful. I don't think it's appropriate to polyfill `matchMedia()` giving the strange bugs that are still abound, effectively preventing you from even using the native code the same way across browsers. A facade, on the other hand, insulates you from the bugs and changes that are likely to occur going forward. Now go forth and use CSS media queries to their potential&#8230;in JavaScript.
 
-## References
 
   1. [CSS media queries in JavaScript, Part 1][1] by me
   2. [Rob Flaherty's tweet][2] 

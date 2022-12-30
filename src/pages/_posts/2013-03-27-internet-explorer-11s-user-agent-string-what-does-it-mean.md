@@ -46,7 +46,6 @@ Gecko- and WebKit-based browsers both are considered to have better standards su
 
 Is it wise for Internet Explorer 11 to try to hide its identity? I'm sure in some convoluted way it makes sense based on how web applications are serving up different content based on user-agent strings. I still have hope for a day when user-agent strings reflect the actual browser rather than trying to trick servers into serving the correct content, but for now, this is just a continuation of a long, sad browser user-agent lineage.
 
-## References
 
   1. [IE11 to appear as Firefox to avoid legacy IE CSS][2] (Neowin)
 

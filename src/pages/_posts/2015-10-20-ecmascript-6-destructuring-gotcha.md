@@ -157,7 +157,6 @@ Here, `loc` always ends up as an object regardless of whether `node.loc` exists.
 
 Nested destructuring can be pretty confusing, especially when you mix in default values. In all cases `identifier: {}` in a destructured assignment is a mistake: it has zero effect. It's more likely that you meant to assign a default value to variable. ESLint just added the `new-empty-pattern` rule[2] to check for this problem, so I'd recommend turning that on immediately if you are using destructuring in your code.
 
-## References
 
 1. [Destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-destructuring) by me (leanpub.com)
 1. [Disallow empty destructuring patterns](http://eslint.org/docs/rules/no-empty-pattern)

@@ -483,7 +483,6 @@ All of the code from this series is available in the [Pledge](https://github.com
 
 And thank you to my [sponsors](https://github.com/sponsors/nzakas), whose donations supported parts 5 through 7 of this series. If you enjoyed this series and would like to see more in-depth blog posts, please consider [sponsoring me](https://github.com/sponsors/nzakas). Your support allows independent software developers like me to continue our work.
 
-## References
 
 [^1]: [Unhandled promise rejections](https://html.spec.whatwg.org/multipage/webappapis.html#unhandled-promise-rejections)
 [^2]: [Properties of Promise Instances](https://tc39.es/ecma262/#sec-properties-of-promise-instances)

@@ -144,7 +144,6 @@ We can all be better if we're willing to share.
 * **31-October-2018** - many people are sharing their salary histories on [Hacker News](https://news.ycombinator.com/item?id=18342996).
 * **09-November-2018** - <cite>Business Insider</cite> has [republished](https://www.businessinsider.com/software-engineer-salary-history-2018-11) this article.
 
-## References
 
 1. [By the Numbers: What pay inequality looks like for women in tech](https://www.forbes.com/sites/tanyatarr/2018/04/04/by-the-numbers-what-pay-inequality-looks-like-for-women-in-tech/) (forbes.com)
 2. [Women Know When Negotiating Isn't Worth It](https://www.theatlantic.com/business/archive/2017/01/women-negotiating/512174/) (theatlantic.com)

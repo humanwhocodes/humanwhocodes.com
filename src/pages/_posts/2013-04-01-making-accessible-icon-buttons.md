@@ -166,7 +166,6 @@ In all browsers and screenreaders mentioned in this post, the text &#8220;Email 
 
 I still prefer the old-school `<input type="image">` element for creating clickable icons. However, in the case of using an icon font, that really doesn't work. In that situation, <del>I prefer to use the <code>aria-label</code> attribute to provide additional text for screen readers. Doing so yields the most consistent treatment for buttons across major browsers and screenreaders.</del> I prefer to use some in-line hidden text to ensure the `<button>` element has actual text inside. As a bonus, you don't have to worry too much about how position text off screen might affect other parts of the page.
 
-## References
 
   1. [Font Awesome][1] (GitHub)
   2. [Hiding content for accessibility][2] by Jonathan Snook (snook.ca)

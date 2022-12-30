@@ -91,7 +91,6 @@ And as I always like to remind people: no one would force you to use this featur
 
 I think CSS media queries are one of the best things to happen to the web, and I look forward to using them in new and interesting ways. Adding feature detection for scripting seems like a logic step towards standardizing a fairly common practice. The good news is that Florian Rivoal, one of the editors of the <cite>CSS Media Queries</cite> specification has agreed<sup>[5]</sup> to write it up as a proposal for inclusion in <cite>CSS Level 4 Media Queries</cite>. I hope the proposal is able to move forward quickly.
 
-## References
 
   1. [CSS media queries in JavaScript, Part 1][1] by me
   2. [Proposal: Detecting JavaScript with media queries][2] by me

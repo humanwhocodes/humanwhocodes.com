@@ -141,7 +141,6 @@ I'm admittedly a bit of a JavaScript purist, but I'm willing to accept new synta
 
 It seems like in some cases, TC 39 ends up creating the most complicated solution to a problem or tries to solve a bunch of problems all at once, resulting in Frankenstein features like arrow functions and quasis. I believe that the intent is always good, which is to avoid problems that other languages have seen. However, the result seems to make JavaScript much more complicated and the syntax much more foreign. I don't want JavaScript to be Python or Ruby or anything else other than JavaScript.
 
-## References
 
   1. [Arrow function syntax][1] by Brendan Eich
   2. [Quasi-Literals][2]

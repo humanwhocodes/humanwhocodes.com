@@ -141,7 +141,6 @@ I've found this setup to be very simple and cost-efficient, not to mention a lot
 The most important thing to remember when using this setup is to set the `date` field of each post to some time in the future. When the Cloudwatch event triggers the Lambda function to execute, only those posts with a `date` in the past will be generated. You can play around with the timing of the Cloudwatch event to best suit your frequency of posts, and keep in mind that Netlify automatically builds the site whenever a change is pushed, so you still have just-in-time updates as needed.
 
 
-## References
 
 1. [Netlify](https://www.netlify.com) (netlify.com)
 1. [Jekyll](https://jekyllrb.com/) (jekyllrb.com/)

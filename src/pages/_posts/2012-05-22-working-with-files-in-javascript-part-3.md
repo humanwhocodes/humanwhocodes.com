@@ -125,7 +125,6 @@ You can test for the type of error either during the `error` event or during `lo
 
 The `FileReader` object is a fully-featured object with a lot of functionality and a lot of similarities to `XMLHttpRequest`. By following these last three posts, you should now be able to read data from files using JavaScript and send that data back to the server if necessary. However, the <cite>File API</cite> ecosystem is quite a bit larger than has been already discussed in this series, and in the next part you'll learn about a powerful new features designed to work with files.
 
-## References
 
   1. [Progress Events][2]
   2. [File API][3]

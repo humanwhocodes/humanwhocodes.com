@@ -118,7 +118,6 @@ Note: There's also the possibility that the default value of `preload `could be 
 
 The conversation is still ongoing on the WHAT-WG mailing list. As I've said on the list, I really don't care what the final solution is, whether it be mine or not, so long as it fulfills the three requirements I laid out earlier. I think it's pretty clear that this capability is important for finishing the work started with the introduction of the `async` attribute. Once we have better control over when JavaScript can download and execute, we'll be able to create multiple variations of script loading techniques. It's my hope that we'll soon reach a conclusion on how best to move forward.
 
-## References
 
   1. [Thoughts on script loaders][1], by Nicholas C. Zakas
   2. [Proposal for Delayed Script Execution][2], by Nicholas C. Zakas

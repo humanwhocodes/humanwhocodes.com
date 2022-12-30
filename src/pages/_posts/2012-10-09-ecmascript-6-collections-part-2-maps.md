@@ -159,7 +159,6 @@ As with sets, maps are part of the ECMAScript 6 draft that is not yet complete. 
 
   * **05-Jan-2014** &#8211; changed reference to `size()` method to `size` property to reflect changes in the spec.
 
-## References
 
   1. [Simple Maps and Sets][2] (ES6 Wiki)
   2. [ECMAScript 6 Draft Specification][3] (ECMA)

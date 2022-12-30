@@ -1,5 +1,5 @@
 ---
-title: 'On UA sniffing, browser detection, and Alex's post'
+title: "On UA sniffing, browser detection, and Alex's post"
 author: Nicholas C. Zakas
 permalink: /blog/2011/02/08/on-ua-sniffing-browser-detection-and-alexs-post/
 categories:
@@ -58,7 +58,6 @@ At this point, I'm more in favor of Alex's proposal than I am against it. I do b
 
 I'm sure there's a sweet spot of cached feature data that can be found by focusing primarily on the outliers, especially ones that are using slower JavaScript engines (IE6) or low-powered devices (mobile) that cause slower-running JavaScript. Of course, as with every theory, this approach would have to be tested out in real world scenarios to figure out the exact savings. Personally, I think it's worth investigating.
 
-## References
 
   1. [Cutting the interrogation short][1], by Alex Russell
   2. [JavaScript feature testing][2]

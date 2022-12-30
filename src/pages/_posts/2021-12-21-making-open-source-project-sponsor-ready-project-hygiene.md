@@ -107,7 +107,6 @@ Now that your project is practicing good hygiene, it's time to prepare for the a
 
 <i>Thanks to [Fred Schott](https://fredkschott.com/) and [Ben Nickolls](https://twitter.com/benjam) for reviewing early drafts of this post.</i>
 
-## References
 
 [^1]: [Making your open source project sponsor-ready, Part 1: Companies and trust](https://humanwhocodes.com/blog/2021/12/making-open-source-project-sponsor-ready-companies-trust/)
 [^2]: [Open Source Initiative Approved Licenses](https://opensource.org/licenses/)

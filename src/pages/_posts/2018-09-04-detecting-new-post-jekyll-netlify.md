@@ -23,7 +23,7 @@ Most services that check for new blog posts use RSS feeds to do so. I didn't wan
 
 So I decided to create a small JSON file containing just the information I was interested in. This file lives at `/feeds/firstpost.json` and contains metadata related to just the most recent post on the blog. Here's the Liquid template:
 
-```{% raw %}
+```
 ---
 layout: null
 ---
@@ -34,7 +34,7 @@ layout: null
     "date_published": "{{ post.date | date_to_xmlschema }}",
     "summary": {{ post.content | strip_html | truncatewords: 55 | jsonify }},
     "url": "{{ post.url | absolute_url }}"
-}{% endraw %}
+}
 ```
 
 This file includes just the information I need for any new blog post notification, which might include emails, tweets, Slack messages, etc. I'm using the absolute URL for the blog post as a unique identifier, but you can use anything is sufficiently unique. (You can always add or remove any data you may need if this dataset doesn't fit your purposes.)
@@ -113,7 +113,6 @@ The advantages of using a static site generator (such as Jekyll) sometimes means
 
 While this post focuses on Jekyll and Netlify, the same approach should work for any static site generator and any deployment system that allows you to modify the build command. 
 
-## References
 
 1. [Jekyll](https://jekyllrb.com/) (jekyllrb.com)
 1. [JSON Feed](https://jsonfeed.org) (jsonfeed.org)

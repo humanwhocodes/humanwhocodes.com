@@ -48,7 +48,6 @@ React has, ironically, allowed us to once again think about writing web applicat
 I'm still learning about React, and while the technical details are interesting, the way it has changed the dynamic web interface equation is really impressive to me. I ended up asking myself questions like, "what would you build if there was no cost to client-side rendering?" My mind took off in multiple directions at the same time and I came to realize just how game-changing React is. The most powerful thing any tool can do is fundamentally change the economics of the situation that it works in, and React has done that for client-side development.
 
 
-## References
 
 1. [React + Performance = ?](https://aerotwist.com/blog/react-plus-performance-equals-what/) (aerotwist.com)
 1. [React Router](https://github.com/rackt/react-router) (github.com)

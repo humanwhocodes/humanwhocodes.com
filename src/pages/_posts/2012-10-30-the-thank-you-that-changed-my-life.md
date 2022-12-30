@@ -51,7 +51,6 @@ Today, I have the career that I couldn't even have dreamed of coming out of coll
 
 My life was taken on a completely different path just by being nice to somebody. The truth is, you never know when that one moment of being nice will turn into a life altering moment. Amazing things can happen when you don't push people away with negativity. So, embrace every opportunity to be nice, say please when asking for things, and above all, never forget to say &#8220;thank you&#8221; when someone has helped you.
 
-## References
 
   1. [Be a Jerk: The Worst Business Lesson From the Steve Jobs Biography][1] (The Atlantic)
   2. [Best Books of 2006 -  

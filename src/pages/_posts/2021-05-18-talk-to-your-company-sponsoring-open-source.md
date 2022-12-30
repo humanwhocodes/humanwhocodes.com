@@ -132,7 +132,6 @@ Making sure you have a good story to tell, finding the budget, and the establish
 
 My hope is that we are moving towards a time when companies, especially those large corporations, who benefit from using open source software will also start seeing open source sponsorships as part of their core business activities. It's this software, available for free, that allows small startups to grow into massive multinational companies. It would be nice for more companies to pay it back in some way.
 
-## References
 
 [^1]: [Open Collective](https://opencollective.com)
 [^2]: [GitHub Sponsors](https://github.com/sponsors)

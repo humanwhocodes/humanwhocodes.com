@@ -57,7 +57,6 @@ What I like about this solution is that it doesn't interfere with what the brows
 
 The &#8220;skip to content&#8221; links can be a great aid to accessibility. Once Internet Explorer and Chrome fix their buggy implementations, the fix mentioned in this post won't be necessary. As someone who uses only a keyboard on the web, I would greatly appreciate it if more sites used skips links to help with navigation.
 
-## References
 
   1. [Skip Navigation Links][1] (WebAIM)
   2. [Skip links and other in page links in WebKit browsers][2] (456 Berea Street)

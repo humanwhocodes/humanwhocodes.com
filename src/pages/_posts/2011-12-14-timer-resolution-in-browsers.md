@@ -43,7 +43,6 @@ There has been a silent timer resolution evolution going on as browsers have dev
 
 **Update (15 Dec 2011):** Updated with information about `Date` object.
 
-## References
 
   1. [Accuracy of JavaScript Time][1] by John Resig
   2. [Chrome: Cranking up the clock][2] by Mike Belshe

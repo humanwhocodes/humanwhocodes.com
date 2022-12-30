@@ -223,7 +223,6 @@ And please be sure when you're thanking people for their hard work on a product 
 
 We software engineers are an interesting bunch. There's a definite personality that comes along with us, and we really do want to make the best thing possible. If you stop treating us like short-order cooks and start treating us like part of the creative process, you are likely to get much farther, faster than you would otherwise. The teams on which I've worked have all had varying degrees of friction caused by not understanding the engineers' mindset and what drives them. It's my sincere hope that this article will lead to better communication between engineers and those that they work with. It's really not that hard. We're all just people who want to feel like a part of the solution rather than a worker bee.
 
-## References
 
   1. [How designers and engineers can play nice (and still run with scissors) by Jenna Bilotta][1]
   2. [Working with files in JavaScript, Part 1: The Basics][2]

@@ -121,7 +121,6 @@ There are a lot of factors that have led to the success of ESLint, and by sharin
 
 ESLint is continuing to grow and change, and the team and community are growing and changing as well. I'm very excited to see where ESLint goes next.
 
-## References
 
 [^1]: [ESLint](http://eslint.org) (eslint.org)
 [^2]: [Introducing ESLint](https://www.nczonline.net/blog/2013/07/16/introducing-eslint/) (nczonline.net)

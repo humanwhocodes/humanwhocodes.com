@@ -100,7 +100,6 @@ There's clearly a lot of work that needs to be done to clean up the CSS3 specs. 
 
 I realize that each of these may be a decent amount of work, but if CSS3 is to be taken seriously and continue to evolve, these specifications need to be cleaned up. If web standards are to succeed then they must be well-defined so that interpretation isn't left to the implementers. HTML5 is doing a good job of this elsewhere in the W3C, and I'd really like to see CSS3 follow suit.
 
-## References
 
   1. [CSS3 Specifications][1]
   2. [Public Mailing Lists &#8211; WWW-Style][2]

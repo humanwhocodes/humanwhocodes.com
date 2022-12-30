@@ -66,7 +66,6 @@ The outer `for` loop moves from the front of the array towards the back while th
 
 Insertion sort isn't terribly efficient with an average complexity of O(n<sup>2</sup>). That puts it on par with selection sort and bubble sort in terms of performance. These three sorting algorithms typically begin a discussion about sorting algorithms even though you would never use them in real life. If you need to sort items in JavaScript, you are best off starting with the built-in `Array.prototype.sort()` method before trying other algorithms. V8, the JavaScript engine in Chrome, actually uses insertion sort for sorting items with 10 or fewer items using `Array.prototype.sort()`.
 
-## References
 
   1. [Computer science in JavaScript: Bubble sort][2]
   2. [Computer science in JavaScript: Selection sort][3]

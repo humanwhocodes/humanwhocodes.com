@@ -95,7 +95,6 @@ I would go so far as to say hiding the URL most of the time is the next logical 
 
 Who knows, at some point in the future, we might all look back and laugh at how silly it was to need to know things like email addresses and URLs at all. 
 
-## References
 
   1. [Improving the URL bar][5] by Jake Archibald (jakearchibald.com).
 

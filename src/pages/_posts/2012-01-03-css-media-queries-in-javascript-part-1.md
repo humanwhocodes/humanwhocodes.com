@@ -76,7 +76,6 @@ The `matchMedia()` method is available in Chrome, Safari 5.1+, Firefox 9+, and S
 
 CSS media queries bring a simple feature detection syntax to both CSS and JavaScript. I expect that media queries will become a big part of JavaScript coding in the future, alerting developers as to when significant interface changes occur. There is no reason that the behavior of a web application shouldn't be just as responsive as the layout, and CSS media queries give us that power today. 
 
-## References
 
   1. [A function for detecting if the browser is in a given media mode][1]
   2. [MSDN: innerHTML Property][2]

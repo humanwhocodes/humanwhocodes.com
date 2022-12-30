@@ -72,7 +72,6 @@ This really all comes down to how you choose to learn. Every single person who t
 > 
 > - Buddha
 
-## References
 
   * <span style="line-height: 13px;"><a href="https://speakerdeck.com/anguscroll/the-politics-of-javascript">The Politics of JavaScript</a> by Angus Croll (SpeakerDeck)</span>
   * [Cargo-Culting in JavaScript][1] by James Padolsey (NetTuts)

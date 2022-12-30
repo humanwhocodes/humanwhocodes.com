@@ -184,7 +184,6 @@ The `requestAnimationFrame()` API is now being drafted as a new recommendation b
 
 **Update (04-May-2011)**: Fixed link to enhanced example.
 
-## References
 
   1. [Chrome: Cranking up the clock][6], by Mike Belshe
   2. [requestAnimationFrame implementation][7] (Chrome)

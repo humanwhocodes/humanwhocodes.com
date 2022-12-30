@@ -68,7 +68,6 @@ It is typically frustrating for specialists to interview with companies. What ma
 
 Unfortunately, there are still many companies who will apply the one-size-fits-all approach to hiring engineers and you won't get an interview tailored to your specific skills. Make no mistake, interviewing is hard and growing a company is extremely hard. The best way to change things is from the inside, so give feedback, get involved with your company's hiring practices, and help make the next experience better for someone else.
 
-## References
 
   1. [Interviewing as a Front-end Engineer in San Francisco][1] by Philip Walton (CSS Tricks)
   2. [What makes a good front-end engineer?][2] by me (NCZOnline)

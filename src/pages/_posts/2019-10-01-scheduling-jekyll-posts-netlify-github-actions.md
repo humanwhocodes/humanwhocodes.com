@@ -112,7 +112,6 @@ I switched this website over to use this GitHub Action approach as soon as I got
 
 While I enjoyed experimenting with AWS Cloudwatch and Lambdas for scheduling future posts, I now feel that GitHub Actions is a better solution.
 
-## References
 
 1. [Scheduling Jekyll posts with Netlify and AWS](https://humanwhocodes.com/blog/2018/03/scheduling-jekyll-posts-netlify/)
 1. [About GitHub Actions](https://help.github.com/en/articles/about-github-actions)

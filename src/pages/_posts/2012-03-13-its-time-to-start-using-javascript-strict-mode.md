@@ -182,7 +182,6 @@ I strongly recommend everyone start using strict mode now. There are enough brow
 **Update (14-Mar-2012):** Added note about using strict mode pragma with non-conforming JavaScript engines.  
 **Update (21-Mar-2012):** Fixed typo.
 
-## References
 
   1. [ECMA-262-5 in Detail. Chapter 2. Strict Mode][1] by Dmitry Soshnikov
 

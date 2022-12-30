@@ -38,7 +38,6 @@ While this may look like a security issue, it's really not. The `Referer` is alr
 
 Iframes are always a little bit hairy to deal with, especially when you throw JavaScript into the mix. The good news is that there's usually a way to do something that makes sense and won't put a user at risk, whether that be through `document.referrer` cross-document messaging, or some other means.
 
-## References
 
   1. [Iframes, onload, and document.domain][1] by me (NCZOnline)
 

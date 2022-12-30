@@ -684,7 +684,6 @@ If you are enjoying this series and would like to see it continue, please [spons
 
 It takes a significant amount of time to put together posts like these, and I appreciate your consideration in helping me continue to create quality content like this.
 
-## References
 
 [^1]: [GetIterator ( obj [ , hint [ , method ] ] )](https://tc39.es/ecma262/#sec-getiterator)
 [^2]: [IteratorNext (IteratorNext ( iteratorRecord [ , value ] ))](https://tc39.es/ecma262/#sec-iteratornext)

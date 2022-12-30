@@ -74,7 +74,6 @@ Yet at the same time, the innovation that we're experiencing means that solution
 
 In the meantime, I'll echo a point PPK made in his second article: what we really need is a single source of truth for the ongoing development of the web platform. I had hoped that webplatform.org [4] would fill this role, but it's not even close. What we really need is a home for the status of all web platform features, including standards work, browser implementations, and progress. If we could achieve this as a community, we could help the next generation of web developers tremendously. Instead of going to Edge's status page, Chrome's status page, searching GitHub, etc., we could go to one place and get all the information we need. That is a future worth fighting for.
 
-## References
 
 1. [Stop pushing the web forward](http://www.quirksmode.org/blog/archives/2015/07/stop_pushing_th.html) by Peter-Paul Koch (quirksmode.org)
 1. [Professional JavaScript for Web Developers](http://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691/ref=sr_1_13?tag=nczonline-20) by me (amazon.com)

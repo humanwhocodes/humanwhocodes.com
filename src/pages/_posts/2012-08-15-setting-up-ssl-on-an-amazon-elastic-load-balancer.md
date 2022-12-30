@@ -106,7 +106,6 @@ I disabled `XForwardedSupport` in production only, figuring I would go back and 
 
 The process of setting up SSL on an Amazon elastic load balancer isn't as straightforward as it seems from the simple dialog. I spent several hours scouring the Internet for tips on how to deal with certificates on an ELB. I hope that this post saves you some time when setting up SSL on an ELB.
 
-## References
 
   1. [How certificate chains work][4] (IBM)
   2. [Root certificate][5] (Wikipedia)

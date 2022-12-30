@@ -116,7 +116,6 @@ And all of this works in the most recent version of every browser, including Int
 
 You now know the two methods of accessing `File` information in the browser: through a file upload control and through native drag and drop. There will likely be other ways to access files in the future, but for now, these are the two you need to know. Of course, reading information about files is just part of the problem. The next step is read data from those files, and that's where part 2 will pick up.
 
-## References
 
   1. [File API specification (editor's draft)][1]
   2. [HTML5 Drag and Drop][2]

@@ -48,7 +48,6 @@ Once you've done that and applied the changes, you'll need to open a new command
 
 That means Ant is installed properly and is looking for a `build.xml` file.
 
-## References
 
   1. [Apache Ant homepage][1]
   2. [Java SE Downloads][2]

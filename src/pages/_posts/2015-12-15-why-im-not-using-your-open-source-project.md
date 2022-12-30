@@ -93,7 +93,6 @@ This isn't to dissuade anyone from open sourcing their work - please continue to
 **Update(2015-Dec-15):** Clarified language around GPL and LGPL license. Also added note that "use" means including in your application to further clarify the concerns.
 
 
-## References
 
 1. [ESLint](https://github.com/eslint/eslint) (github.com)
 1. [Copyright is Automatic](http://www.nolo.com/legal-encyclopedia/copyright-automatic.html) (nolo.com)

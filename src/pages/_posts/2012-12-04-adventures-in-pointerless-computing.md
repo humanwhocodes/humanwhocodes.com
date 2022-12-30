@@ -42,8 +42,7 @@ I needed to acquaint myself with switching, minimizing, and maximizing windows o
     
     I'm hopeful that my arms will recover and I'll be able to go back to computing as normal, but in the meantime, I'm embracing this opportunity to learn more about how computers work when you can't use a mouse. This whole experience has been a fantastic reminder that not everybody uses computers in the same way and small changes can make big differences.
     
-    ## References
-    
+        
       * [Chrome Developer Tools Keyboard Shortcuts][1]
 
  [1]: https://developers.google.com/chrome-developer-tools/docs/shortcuts

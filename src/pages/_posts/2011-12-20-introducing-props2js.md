@@ -97,7 +97,6 @@ Props2Js is also smart enough to know that you're assigning to an object propert
 
 Props2Js is available under an MIT License and is hosted at GitHub<sup>[3]</sup>.
 
-## References
 
   1. [Maintainable JavaScript 2011][1] by Nicholas C. Zakas
   2. [.properties][2] by Wikipedia

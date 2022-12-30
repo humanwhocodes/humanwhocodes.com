@@ -57,7 +57,6 @@ It appears we still have a lot to learn about `@font-face` and its use on high-t
 
 **Update (6-Mar-2011)** &#8211; Included iOS version information for web font support.
 
-## References
 
   1. <cite><a href="http://www.slideshare.net/mattseeley/yahoocomtablet">yahoo.com/tablet: Lessons from the Tablet Front Page</a></cite> by Matt Seeley
   2. <cite><a href="http://li228-21.members.linode.com/slide/f2e_summit_adam.html">Case Study:<br /> Wretch New Front Page &#8211; Featuring CSS3 for the future</a></cite> by Adam Wang

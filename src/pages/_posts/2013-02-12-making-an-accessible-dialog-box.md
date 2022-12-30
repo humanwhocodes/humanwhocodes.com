@@ -128,7 +128,6 @@ The `keyCode` value for the Esc key is 27, so you need only look for that during
 
 As I hope is obvious from this post, it really doesn't take a lot of extra code to create a dialog that is easily accessible both by screen readers and those who use only a keyboard. For just a few lines of code you can take your users from being incredibly frustrated to being incredibly happy. There are a lot of web applications out there that use pop-up dialogs but very few get all of these pieces correct. Going halfway leads to more frustration than anything else, so I hope this post has inspired you to make your dialogs as accessible as possible.
 
-## References
 
   1. [WAI-ARIA][1] (W3C)
   2. [Delegating the focus and blur events][2] by Peter-Paul Koch (Quirksmode)

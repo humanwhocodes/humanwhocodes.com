@@ -60,7 +60,6 @@ In my next post, I'll discuss some concrete ways to build the trust of both you 
 
 <i>Thanks to [Fred Schott](https://fredkschott.com/) and [Ben Nickolls](https://twitter.com/benjam) for reviewing early drafts of this post.</i>
 
-## References
 
 [^1]: [Open Collective](https://opencollective.com)
 [^2]: [GitHub Sponsors](https://github.com/sponsors)

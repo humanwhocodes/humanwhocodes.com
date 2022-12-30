@@ -56,7 +56,6 @@ Blink's decision to stop creating new vendor-prefixed functionality is the right
 
 I definitely welcome and look forward to a prefix-free world. We got into such a mess and placed so much cognitive burden on so many people for so long that it may be a crime in certain parts of the universe. Everyone needs the ability to experiment so that the web can continue to develop new functionality, but we all need to be smarter about how we implement and use those features. The Blink approach follows a systems approach that I like: make it difficult for people to do the wrong thing. If other browsers adopt the same approach then we can be assured that the future CSS and JavaScript we write won't be hampered down by numerous duplicate declarations or annoying feature tests. We can all just go back to what we really want to do: make awesome web experiences without forking our code for every browser.
 
-## References
 
   1. [requestAnimationFrame() polyfill][1] (GitHub)
   2. [tl;dr on vendor prefix drama][2] by Chris Coyier (CSS Tricks)

@@ -387,7 +387,6 @@ At this point, you should have a good understanding of how a `Promise` construct
 
 All of this code is available in the [Pledge](https://github.com/humanwhocodes/pledge) on GitHub. I hope you'll download it and try it out to get a better understanding of promises.
 
-## References
 
 [^1]: [Promise Objects](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-promise-objects)
 [^2]: [Properties of Promise instances](https://www.ecma-international.org/ecma-262/11.0/index.html#sec-properties-of-promise-instances)

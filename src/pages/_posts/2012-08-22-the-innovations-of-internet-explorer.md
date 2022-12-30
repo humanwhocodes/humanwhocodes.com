@@ -103,7 +103,6 @@ Yes, Internet Explorer had its flaws, but for most of the history of the Interne
 
   * [Spanish][1]
 
-## References
 
   1. [innerHTML in HTML5][2]
   2. [textContent in DOM Level 3][3]

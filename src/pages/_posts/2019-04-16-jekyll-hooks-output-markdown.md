@@ -26,8 +26,8 @@ I was relatively unfamiliar with the Jekyll plugin system before trying to figur
 
  There are also two plugin types that are used primarily with Liquid:
 
-* **Tags** - create a new tag in the format `{% raw %}{% tagname %}{% endraw %}` for use in your templates.
-* **Filters** - create a new filter that you can use to transform input, such as `{% raw %}{{ data | filter }}{% endraw %}`
+* **Tags** - create a new tag in the format `{% tagname %}` for use in your templates.
+* **Filters** - create a new filter that you can use to transform input, such as `{{ data | filter }}`
 
 There is also a *command* plugin type that allows you to create new commands to use with the `jekyll` command line tool. The `jekyll build` command is implemented using this plugin type.
 
@@ -156,14 +156,14 @@ This file then needs to be placed in the `_plugins` directory of a Jekyll site t
 With this plugin installed, the Markdown content is available through the `rendered_content` property, like this:
 
 ```liquid
-{% raw %}{{ page.rendered_content }}{% endraw %}
+{{ page.rendered_content }}
 ```
 
 The only problem is that outputting `page.rendered_content` into a Markdown page will cause all of that Markdown to be converted into HTML. (Remember, Jekyll internally renders Liquid first and then the result is converted into HTML.) So in order to output the raw Markdown, you'll need to either apply a filter that prevents the Markdown-to-HTML conversion from happening, or use a file type that doesn't convert automatically.
 
 In my case, I'm storing the Markdown content in a JSON structure, so I'm using the `jsonify` filter, like this:
 
-```liquid{% raw %}
+```liquid
 ---
 layout: null
 ---
@@ -178,19 +178,19 @@ layout: null
     "content_html": {{ post.content | jsonify }},
     "tags": {{ post.tags | jsonify }},
     "url": "{{ post.url | absolute_url }}"
-}{% endraw %}
+}
 ```
 
 Another option is to create a `rendered_content.txt` file in the `_includes` directory that just contains this:
 
 ```liquid
-{% raw %}{{ page.rendered_content }}{% endraw %}
+{{ page.rendered_content }}
 ```
 
 Then, you can include that file anywhere you want the unconverted Markdown content, like this:
 
 ```liquid
-{% raw %}{% include "rendered_content.txt" %}{% endraw %}
+{% include "rendered_content.txt" %}
 ```
 
 ## Conclusion
@@ -199,7 +199,6 @@ Jekyll hooks are a useful feature that let you interact with Jekyll while it is 
 
 To date, I've found Jekyll to be extremely versatile and customizable. Being able to get the Liquid-rendered Markdown (even though it took a bit of work) has made my publishing workflow much more flexible, as I'm now more easily able to crosspost my writing on various other sites.
 
-## References
 
 [^1]: [Jekyll](https://jekyllrb.com/)
 [^2]: [Jekyll Plugins](https://jekyllrb.com/docs/plugins/)

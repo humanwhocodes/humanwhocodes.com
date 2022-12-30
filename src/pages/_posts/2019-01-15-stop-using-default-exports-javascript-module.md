@@ -190,7 +190,6 @@ I've had several productivity problems importing default exports in my projects.
 
 As earlier, I remind you that this is my opinion and you may not find my reasoning to be persuasive. This post was not meant to persuade anyone to stop using default exports, but rather, to better explain to those that inquired why I, personally, will stop exporting defaults from the modules I write.
 
-## References
 
 [^1]: [esling-plugin-import `import/named` rule](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md)
 [^2]: [WebStorm: Auto Import in JavaScript](https://www.jetbrains.com/help/webstorm/javascript-specific-guidelines.html#ws_js_auto_import)
