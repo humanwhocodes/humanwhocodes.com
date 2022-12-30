@@ -1,3 +1,9 @@
 [build]
 publish = "dist/"
 command = "npm run build"
+
+[[redirects]]
+from = "/"
+to = "/blog/"
+status = 302
+force = true
