@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import PostBlurb from '../../components/PostBlurb.astro';
 import { loadBlogPosts } from "../../lib/util.js";
 import site from "../../data/config.yml";
+import Pagination from '../../components/Pagination.astro';
 
 export async function getStaticPaths({ paginate }) {
 
@@ -13,13 +14,12 @@ export async function getStaticPaths({ paginate }) {
 };
 
 const { page } = Astro.props;
-console.log(page)
 ---
 <Layout
 	title={site.name}
 	description={site.description}
 >	
-	<h2 class="no-margin">Recent Posts</h2>{page.data}
+	<h2 class="no-margin">Recent Posts</h2>
 
 	{page.data.map((post) => (
 		<PostBlurb
@@ -30,5 +30,6 @@ console.log(page)
 		/>
 	))}
 
+	<Pagination next={page.url.next} prev={page.url.prev} />
 
 </Layout>

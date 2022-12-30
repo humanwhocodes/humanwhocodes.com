@@ -2,7 +2,6 @@
 title: "Creating a new user with an SSH key on Linux"
 author: Nicholas C. Zakas
 teaser: "The various steps to successfully setup a new user with the best security."
-layout: snippet
 categories:
   - Tutorial
 tags:

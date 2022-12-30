@@ -10,7 +10,7 @@ tags:
   - Data URI
   - Images
 ---
-One of the most frequently requested browser features in recent memory is data URI support. There&#8217;s been a fair amount written about data URIs recently: my colleague Stoyan Stefanov has written a [couple][1] of [posts][2] about data URIs, and my former colleague Hedger Wang also penned a [post][3] about how to use data URIs in IE. Surprisingly, there&#8217;s still a lot of misunderstanding and confusion about data URIs, what they are, how they work, and why you&#8217;d ever want to use one.
+One of the most frequently requested browser features in recent memory is data URI support. There's been a fair amount written about data URIs recently: my colleague Stoyan Stefanov has written a [couple][1] of [posts][2] about data URIs, and my former colleague Hedger Wang also penned a [post][3] about how to use data URIs in IE. Surprisingly, there's still a lot of misunderstanding and confusion about data URIs, what they are, how they work, and why you'd ever want to use one.
 
 ## URI, not URL
 
@@ -24,13 +24,13 @@ The data URI format is pretty simple and is spelled out in [RFC 2397][4] (which 
 
     data:[<mime type>][;charset=<charset>][;base64],<encoded data>
 
-In this format, `data:` is the protocol of the URI, indicating that this is a data URI. The second part, the MIME type, indicates the type of data being represented. For PNG images, for example, this would be `image/png`. When not specified, the MIME type defaults to `text/plain`. The character set can, most often, safely be omitted and isn&#8217;t used at all for images. The next section indicates the encoding used. Contrary to popular belief, you do not have to use base 64 encoding. If the content isn&#8217;t base 64 encoded, then the data is encoded using standard URL-encoding (URL-safe ASCII characters represented as themselves, all others represented as a hex encoding in the format `%xx`). The encoded data may contain white space, which is not considered significant.
+In this format, `data:` is the protocol of the URI, indicating that this is a data URI. The second part, the MIME type, indicates the type of data being represented. For PNG images, for example, this would be `image/png`. When not specified, the MIME type defaults to `text/plain`. The character set can, most often, safely be omitted and isn't used at all for images. The next section indicates the encoding used. Contrary to popular belief, you do not have to use base 64 encoding. If the content isn't base 64 encoded, then the data is encoded using standard URL-encoding (URL-safe ASCII characters represented as themselves, all others represented as a hex encoding in the format `%xx`). The encoded data may contain white space, which is not considered significant.
 
 ## Base 64 encoding
 
 [Base 64][5] encoding is a system of encoding whereby data is converted into bits and then grouped numerically into a set of base 64 digits. Base 64 digits include A through Z, both uppercase and lowercase, numbers, and plus (+) and slash (/). The equals sign (=) is used to indicate padding has occurred (please read the Wikipedia article for more information about this). All you really need to understand is that base 64 encoding makes the encoded data much smaller.
 
-Here&#8217;s an example of a GIF image as a base 64-encoded data URI ([source][6]):
+Here's an example of a GIF image as a base 64-encoded data URI ([source][6]):
 
     data:image/gif;base64,R0lGODlhEAAOALMAAOazToeHh0tLS/7LZv/0jvb29t/f3//Ub//ge
     8WSLf/rhf/3kdbW1mxsbP//mf///yH5BAAAAAAALAAAAAAQAA4AAARe8L1Ekyky67QZ1h
@@ -95,7 +95,7 @@ The same image can be represented without base 64-encoding as follows:
 
 The clear winner for size is the base 64-encoded version of the image, which is significantly smaller.
 
-**Note: **Base 64-encoding actually makes images larger. If you&#8217;re using HTTP compression, however, you likely won&#8217;t notice a difference because base 64-encoded data compresses extremely well. If for some reason you can&#8217;t use HTTP compression, you may want to check how many bytes you&#8217;re sending over the wire to determine if the tradeoff is worth it.
+**Note: **Base 64-encoding actually makes images larger. If you're using HTTP compression, however, you likely won't notice a difference because base 64-encoded data compresses extremely well. If for some reason you can't use HTTP compression, you may want to check how many bytes you're sending over the wire to determine if the tradeoff is worth it.
 
 ## Not just for images
 
@@ -105,11 +105,11 @@ Even though most people talk about data URIs as the way to embed images inside o
 
 ## Performance implications
 
-The most interesting part of the data URI story is that it gives you the ability to embed files inside of other files. Most [writeups][6] focus on embedding data URIs in CSS files as a way to improve performance. Indeed, there&#8217;s been a lot of [research][9] indicating that HTTP requests are one of the major performance holes for web sites, and decreasing the number of requests results in better page performance. &#8220;Minimize HTTP requests&#8221; is actually the first rule of the [Yahoo! Exceptional Performance Best Practices][10], and it specifically mentions data URIs:
+The most interesting part of the data URI story is that it gives you the ability to embed files inside of other files. Most [writeups][6] focus on embedding data URIs in CSS files as a way to improve performance. Indeed, there's been a lot of [research][9] indicating that HTTP requests are one of the major performance holes for web sites, and decreasing the number of requests results in better page performance. &#8220;Minimize HTTP requests&#8221; is actually the first rule of the [Yahoo! Exceptional Performance Best Practices][10], and it specifically mentions data URIs:
 
 > Inline images use the data: URI scheme to embed the image data in the actual page. This can increase the size of your HTML document. Combining inline images into your (cached) stylesheets is a way to reduce HTTP requests and avoid increasing the size of your pages. Inline images are not yet supported across all major browsers.
 
-This is good advice for using data URIs: you want to use them where they will be cached most frequently. Regular images downloaded over HTTP are cached according to their headers and/or browser-specific settings so that they needn&#8217;t be re-downloaded all the time. Data URIs are considered to be part of the file that contains them, so they are part of the HTML or CSS file in which it is embedded. This means that the data URI has no standalone cache control policy. Embedding data URIs in your files make the files themselves larger, and if the file changes frequently (such as the homepage of a blog), then the larger file must be downloaded frequently. This slows down your site.
+This is good advice for using data URIs: you want to use them where they will be cached most frequently. Regular images downloaded over HTTP are cached according to their headers and/or browser-specific settings so that they needn't be re-downloaded all the time. Data URIs are considered to be part of the file that contains them, so they are part of the HTML or CSS file in which it is embedded. This means that the data URI has no standalone cache control policy. Embedding data URIs in your files make the files themselves larger, and if the file changes frequently (such as the homepage of a blog), then the larger file must be downloaded frequently. This slows down your site.
 
 The easiest usage is to embed data URIs in external style sheets that are aggressively cached. That way, the empty cache experience is faster (due to fewer overall requests) and the primed cache experience is the same.
 
@@ -123,7 +123,7 @@ Most modern browsers support data URIs:
   * Safari (all versions)
   * Internet Explorer 8+ &#8211; data URIs must be smaller than 32k
 
-Since data URIs are not supported in IE prior to version 8, you need to decide whether or not it&#8217;s worthwhile to serve alternate content to those browsers (read [Stoyan&#8217;s post][2]).
+Since data URIs are not supported in IE prior to version 8, you need to decide whether or not it's worthwhile to serve alternate content to those browsers (read [Stoyan's post][2]).
 
 ## Conclusion
 

@@ -3,7 +3,6 @@ title: "How to setup and deploy a web application on Dokku"
 author: Nicholas C. Zakas
 teaser: "The path to set up a web application on Dokku is straightforward if you know the correct steps."
 updated: 2021-05-07
-layout: snippet
 categories:
   - Programming
 tags:

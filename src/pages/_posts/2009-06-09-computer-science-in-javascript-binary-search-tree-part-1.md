@@ -11,7 +11,7 @@ tags:
   - JavaScript
   - Programming
 ---
-Perhaps one of the most frequently used and discussed data structures in computer science classes is the [binary search tree][1]. This is typically the first data structure introduced that has a non-linear insertion algorithm. A binary search tree is similiar to a doubly linked list in that each node contains some data as well as two pointers to other nodes; they differ in the way that those nodes relate to one another. A binary search tree node&#8217;s pointers are typically called &#8220;left&#8221; and &#8220;right&#8221; to indicate subtrees of values relating to the current value. A simple JavaScript implementation of such a node is as follows:
+Perhaps one of the most frequently used and discussed data structures in computer science classes is the [binary search tree][1]. This is typically the first data structure introduced that has a non-linear insertion algorithm. A binary search tree is similiar to a doubly linked list in that each node contains some data as well as two pointers to other nodes; they differ in the way that those nodes relate to one another. A binary search tree node's pointers are typically called &#8220;left&#8221; and &#8220;right&#8221; to indicate subtrees of values relating to the current value. A simple JavaScript implementation of such a node is as follows:
 
     var node = {
         value: 125,
@@ -19,7 +19,7 @@ Perhaps one of the most frequently used and discussed data structures in compute
         right: null
     };
 
-As can be discerned from the name, a binary search tree is organized into a hierarchical tree structure. The first item becomes the root node and each additional value is added into the tree as an ancestor of that root. The unique part of a binary search tree, however, is that the nodes are ordered based on the value they contain: any values that are part of a node&#8217;s left subtree are always less than the node&#8217;s value and any values in the right subtree are always greater than the node&#8217;s value. In this way, finding a value in a binary search tree becomes quite simple, go left whenever the value you&#8217;re looking for is less than the node you&#8217;re processing or go right if the value is greater. There can be no duplicates in a binary search tree because duplicates would destroy this relationship. The following diagram represents a simple binary search tree.
+As can be discerned from the name, a binary search tree is organized into a hierarchical tree structure. The first item becomes the root node and each additional value is added into the tree as an ancestor of that root. The unique part of a binary search tree, however, is that the nodes are ordered based on the value they contain: any values that are part of a node's left subtree are always less than the node's value and any values in the right subtree are always greater than the node's value. In this way, finding a value in a binary search tree becomes quite simple, go left whenever the value you're looking for is less than the node you're processing or go right if the value is greater. There can be no duplicates in a binary search tree because duplicates would destroy this relationship. The following diagram represents a simple binary search tree.
 
 <p style="text-align: center;">
   <a href="http://en.wikipedia.org/wiki/File:Binary_search_tree.svg"><img src="/images/wp-content/uploads/2009/06/500px-Binary_search_tree.svg_-300x250.png" alt="Binary search tree diagram" width="300" height="250"" /></a>
@@ -60,7 +60,7 @@ To build a binary search tree implementation in JavaScript, the first step is to
     
     };
 
-The basic interface is similar to other data structures, with methods for adding and removing values. I&#8217;ve also added a few convenience methods, `size()`, `toArray()`, and `toString()`, that are useful for JavaScript.
+The basic interface is similar to other data structures, with methods for adding and removing values. I've also added a few convenience methods, `size()`, `toArray()`, and `toString()`, that are useful for JavaScript.
 
 To get a handle on using a binary search tree, the best method to begin with is `contains()`. The `contains()` method accepts a value as an argument and returns `true` if the value is present in the tree or `false` if not. This method follows the basic binary search algorithm to determine whether or not the value is present:
 
@@ -97,9 +97,9 @@ To get a handle on using a binary search tree, the best method to begin with is 
     
     };
 
-The search starts from the root of the tree. Since there may not be a root if no data has been added, this must be checked. Traversing the tree follows the simple algorithm discussed earlier: go left if the value to find is less than the current node, go right if the value is greater. The `current` pointer is overwritten each time through until either the value is found (in which case `found` is set to `true`) or there are no more nodes to search in that direction (in which case the value isn&#8217;t in the tree).
+The search starts from the root of the tree. Since there may not be a root if no data has been added, this must be checked. Traversing the tree follows the simple algorithm discussed earlier: go left if the value to find is less than the current node, go right if the value is greater. The `current` pointer is overwritten each time through until either the value is found (in which case `found` is set to `true`) or there are no more nodes to search in that direction (in which case the value isn't in the tree).
 
-The approach using in `contains()` can also be used to insert a new value into the tree. The primary difference is that you&#8217;ll be looking for the spot in which to place the new value instead of looking for the value in the tree:
+The approach using in `contains()` can also be used to insert a new value into the tree. The primary difference is that you'll be looking for the spot in which to place the new value instead of looking for the value in the tree:
 
     BinarySearchTree.prototype = {
     
@@ -158,9 +158,9 @@ The approach using in `contains()` can also be used to insert a new value into t
     
     };
 
-When adding a value into a binary search tree, the special case is when there is not already a root. In that case, the job is easy as you just set the root to the new value. For all other cases, the basic algorithm is exactly the same as the one used in `contains()`: go left is the new value is less than the current node or right if the value is greater. The primary difference is that when you can&#8217;t go any further, that is the spot for the new value. So, if you need to go left but there is no left node, the new value becomes the left node (same with the right). Since there can be no duplicates, the operation stops if a node with the same value is found.
+When adding a value into a binary search tree, the special case is when there is not already a root. In that case, the job is easy as you just set the root to the new value. For all other cases, the basic algorithm is exactly the same as the one used in `contains()`: go left is the new value is less than the current node or right if the value is greater. The primary difference is that when you can't go any further, that is the spot for the new value. So, if you need to go left but there is no left node, the new value becomes the left node (same with the right). Since there can be no duplicates, the operation stops if a node with the same value is found.
 
-Before moving on to the `size()` method, I&#8217;d like to digress into a discussion of tree traversals. In order to calculate the size of a binary search tree, it&#8217;s necessary to visit each node in the tree. Binary search trees often bring with them the need to execute different types of traversals to retrieve information, and the most commonly used is an in-order traversal. In-order traversals are performed on each node by processing the left subtree, then the node itself, then the right subtree. Since binary search trees are ordered in this way, from left to right, the result is that the nodes are processed in their correct sorted order. For the `size()` method, it doesn&#8217;t actually matter what order the nodes are traversed in, but it does matter for the `toArray()` method. Since both methods need to perform a traversal, I decided to add a `traverse()` method that can be used generically:
+Before moving on to the `size()` method, I'd like to digress into a discussion of tree traversals. In order to calculate the size of a binary search tree, it's necessary to visit each node in the tree. Binary search trees often bring with them the need to execute different types of traversals to retrieve information, and the most commonly used is an in-order traversal. In-order traversals are performed on each node by processing the left subtree, then the node itself, then the right subtree. Since binary search trees are ordered in this way, from left to right, the result is that the nodes are processed in their correct sorted order. For the `size()` method, it doesn't actually matter what order the nodes are traversed in, but it does matter for the `toArray()` method. Since both methods need to perform a traversal, I decided to add a `traverse()` method that can be used generically:
 
     BinarySearchTree.prototype = {
     
@@ -229,7 +229,7 @@ This method accepts a single argument, `process`, which is a function that shoul
     
     };
 
-Both `size()` and `toArray()` call the `traverse()` method and pass in a function to run on each node. In the case of `size()`, the function simply increments the length variable while `toArray()` uses the function to add the node&#8217;s value into an array. The `toString()` method then calls `toArray()` before converting the returned array into a string and returning it.
+Both `size()` and `toArray()` call the `traverse()` method and pass in a function to run on each node. In the case of `size()`, the function simply increments the length variable while `toArray()` uses the function to add the node's value into an array. The `toString()` method then calls `toArray()` before converting the returned array into a string and returning it.
 
 In part 2 of this article, the removal of nodes from a binary search tree will be discussed. Removal is a complex problem with a lot of cases to consider and so warrants its own writeup. In the meantime, you can get the full source code in my [Computer Science in JavaScript GitHub project][2].
 

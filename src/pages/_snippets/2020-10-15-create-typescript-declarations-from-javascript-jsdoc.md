@@ -3,7 +3,6 @@ title: "Create TypeScript declarations from JavaScript and JSDoc"
 author: Nicholas C. Zakas
 teaser: "Even if you don't write your code in TypeScript you can still generate .d.ts files to provide more information to developer tools."
 date: 2020-10-15
-layout: snippet
 categories:
   - Programming
 tags:

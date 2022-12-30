@@ -17,9 +17,9 @@ In most cases, `Blob`s and `File`s can be used in the same places. For example, 
 
 One of the interesting things you can do with `Blob`s (and therefore, also `File`s) is to create a new `Blob` based on a subsection of another one. Since each `Blob` just represents pointers to data rather than the data itself, you can quickly create new `Blob` objects pointing to subparts of others. This is accomplished by using the `slice()` method.
 
-You may be familiar with `slice()` on strings and arrays, and the one for `Blob`s behaves in a similar manner. The method accepts three arguments: the offset of the starting byte, the offset of the ending byte, and an optional MIME type to apply to the `Blob`. If the MIME type isn&#8217;t specified, the new `Blob` has the same MIME type as the original one.
+You may be familiar with `slice()` on strings and arrays, and the one for `Blob`s behaves in a similar manner. The method accepts three arguments: the offset of the starting byte, the offset of the ending byte, and an optional MIME type to apply to the `Blob`. If the MIME type isn't specified, the new `Blob` has the same MIME type as the original one.
 
-Browser support for `slice()` isn&#8217;t yet ubiquitous, with Firefox supporting it via `mozSlice()` and `webkitSlice()` in Chrome (no other browsers support this method currently). Here&#8217;s an example:
+Browser support for `slice()` isn't yet ubiquitous, with Firefox supporting it via `mozSlice()` and `webkitSlice()` in Chrome (no other browsers support this method currently). Here's an example:
 
     function sliceBlob(blob, start, end, type) {
     
@@ -38,9 +38,9 @@ You can then use this function to, for example, split up a large file to upload 
 
 ## Creating Blobs the old way
 
-Very soon after `File` objects started appearing in browsers, developers realized that `Blob` objects were actually quite powerful and so wanted to be able to create them without user interaction. After all, any data can be represented in a `Blob`, it doesn&#8217;t necessarily have to be tied to a file. Browsers quickly responded by creating `BlobBuilder`, a type whose sole purpose is to wrap some data in a `Blob` object. This is a non-standard type and has been implemented in Firefox (as `MozBlobBuilder`), Internet Explorer 10 (as `MSBlobBuilder`), and Chrome (as `WebKitBlobBuilder`).
+Very soon after `File` objects started appearing in browsers, developers realized that `Blob` objects were actually quite powerful and so wanted to be able to create them without user interaction. After all, any data can be represented in a `Blob`, it doesn't necessarily have to be tied to a file. Browsers quickly responded by creating `BlobBuilder`, a type whose sole purpose is to wrap some data in a `Blob` object. This is a non-standard type and has been implemented in Firefox (as `MozBlobBuilder`), Internet Explorer 10 (as `MSBlobBuilder`), and Chrome (as `WebKitBlobBuilder`).
 
-The `BlobBuilder` works by creating a new instance and calling the `append()` method with a string, `ArrayBuffer`, or `Blob`. Once all of the data has been added, you call `getBlob()` and pass in an optional MIME type that should be applied to `Blob`. Here&#8217;s an example:
+The `BlobBuilder` works by creating a new instance and calling the `append()` method with a string, `ArrayBuffer`, or `Blob`. Once all of the data has been added, you call `getBlob()` and pass in an optional MIME type that should be applied to `Blob`. Here's an example:
 
     var builder = new BlobBuilder();
     builder.append("Hello world!");
@@ -71,7 +71,7 @@ You can call `append()` as many times as you like, building up the contents of t
 
 Because developers kept clamoring for a way to create `Blob` objects directly, and browsers coming up with `BlobBuilder`, it was decided to add a `Blob` constructor. This constructor is now part of the specification and will be the way that `Blob` objects are created in the future.
 
-The constructor accepts two arguments. The first is an array of parts to combine into a `Blob`. These would be the same values as passed into the `append()` method of `BlobBuilder` and can be any number of strings, `Blob`s, and `ArrayBuffer`s. The second argument is an object containing properties for the newly-created `Blob`. There are currently two properties defined, `type`, which specifies the MIME type of the `Blob`, and `endings`, which can be either &#8220;transparent&#8221; (default) or &#8220;native&#8221;. Here&#8217;s an example:
+The constructor accepts two arguments. The first is an array of parts to combine into a `Blob`. These would be the same values as passed into the `append()` method of `BlobBuilder` and can be any number of strings, `Blob`s, and `ArrayBuffer`s. The second argument is an object containing properties for the newly-created `Blob`. There are currently two properties defined, `type`, which specifies the MIME type of the `Blob`, and `endings`, which can be either &#8220;transparent&#8221; (default) or &#8220;native&#8221;. Here's an example:
 
     var blob = new Blob(["Hello world!"], { type: "text/plain" });
     
@@ -82,7 +82,7 @@ The `Blob` constructor is currently in the nightly builds of Chrome and will be 
 
 ## Conclusion
 
-This is the last part of the series on working with files in JavaScript. As I hope you learned, the <cite>File API</cite> is incredibly powerful and opens up entirely new ways of working with files in web applications. You no longer need to stick with plain file upload boxes when users need to upload files, and now that you can read the files in the client, that opens up all sorts of possibilities for client-side manipulation. You could resize an image that&#8217;s too large before uploading (using `FileReader` and `<canvas>`); you could create a text editor that works purely in the browser; you could split up large files to upload piece by piece. The possibilities aren&#8217;t quite endless, but are pretty damn close.
+This is the last part of the series on working with files in JavaScript. As I hope you learned, the <cite>File API</cite> is incredibly powerful and opens up entirely new ways of working with files in web applications. You no longer need to stick with plain file upload boxes when users need to upload files, and now that you can read the files in the client, that opens up all sorts of possibilities for client-side manipulation. You could resize an image that's too large before uploading (using `FileReader` and `<canvas>`); you could create a text editor that works purely in the browser; you could split up large files to upload piece by piece. The possibilities aren't quite endless, but are pretty damn close.
 
 ## References
 

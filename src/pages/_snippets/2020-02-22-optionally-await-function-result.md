@@ -3,7 +3,6 @@ title: "How to optionally await a JavaScript function call"
 author: Nicholas C. Zakas
 teaser: "By inspecting the return value first, you can determine whether or not to await."
 date: 2020-02-22
-layout: snippet
 categories:
   - Web Development
 tags:

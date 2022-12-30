@@ -9,7 +9,7 @@ tags:
   - Maintainable
   - Node.js
 ---
-I&#8217;ve spent the last few months digging into Node.js, and as usual, I&#8217;ve been keeping tabs on patterns and problems that I&#8217;ve come across. One problematic pattern that recently came up in a code review was the use of `process.exit()`. I&#8217;ve ended up finding several examples of this, and I&#8217;m prepared to go so far as to say there are very few places where calling `process.exit()` makes sense.
+I've spent the last few months digging into Node.js, and as usual, I've been keeping tabs on patterns and problems that I've come across. One problematic pattern that recently came up in a code review was the use of `process.exit()`. I've ended up finding several examples of this, and I'm prepared to go so far as to say there are very few places where calling `process.exit()` makes sense.
 
 ## What it does
 
@@ -17,7 +17,7 @@ When you call `process.exit()` (and optionally pass in an exit code), you cause 
 
 ## The problem
 
-In and of itself, the ability to exit with a specified exit code isn&#8217;t a horrible thing. Many programming languages offer this capability and it&#8217;s relied upon for all kinds of processing, not the least of which are build tools. The real problem is that `process.exit()` can be called by any part of the application at any time. There is nothing preventing a parser from calling it:
+In and of itself, the ability to exit with a specified exit code isn't a horrible thing. Many programming languages offer this capability and it's relied upon for all kinds of processing, not the least of which are build tools. The real problem is that `process.exit()` can be called by any part of the application at any time. There is nothing preventing a parser from calling it:
 
     exports.parse = function(text) {
     
@@ -30,13 +30,13 @@ In and of itself, the ability to exit with a specified exit code isn&#8217;t a h
     
     };
 
-So if the text can be parsed then it is, but otherwise an error is output to the console and `process.exit(1)` is called. That&#8217;s an awful lot of responsibility for a lowly parser. I&#8217;m sure other parsers are jealous that this one gets to tell the entire consuming application to shut down.
+So if the text can be parsed then it is, but otherwise an error is output to the console and `process.exit(1)` is called. That's an awful lot of responsibility for a lowly parser. I'm sure other parsers are jealous that this one gets to tell the entire consuming application to shut down.
 
-Since any module can call `process.exit()`, that means any function call gone awry could decide to shut down the application. That&#8217;s not a good state to be in. There should be one area of an application that decides when and if to call `process.exit()` and what the exit code should be (that&#8217;s usually the application controller). Utilities and such should never use `process.exit()`, it&#8217;s way out of their realm of responsibility.
+Since any module can call `process.exit()`, that means any function call gone awry could decide to shut down the application. That's not a good state to be in. There should be one area of an application that decides when and if to call `process.exit()` and what the exit code should be (that's usually the application controller). Utilities and such should never use `process.exit()`, it's way out of their realm of responsibility.
 
 ## What to do instead
 
-Anytime you&#8217;re thinking about using `process.exit()`, consider throw an error instead:
+Anytime you're thinking about using `process.exit()`, consider throw an error instead:
 
     exports.parse = function(text) {
     

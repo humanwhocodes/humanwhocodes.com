@@ -9,11 +9,11 @@ tags:
   - JavaScript
   - Media Query
 ---
-In my previous post<sup>[1]</sup>, I introduced using CSS media queries in JavaScript both through a custom implementation and using the CSSOM Views `matchMedia()` method. Media queries are incredibly useful, both in CSS and JavaScript, and so I continued with my research to see how best to take advantage of this capability. As it turns out, the `matchMedia()` method has a few interesting quirks that I didn&#8217;t realize when I wrote the first part of this series.
+In my previous post<sup>[1]</sup>, I introduced using CSS media queries in JavaScript both through a custom implementation and using the CSSOM Views `matchMedia()` method. Media queries are incredibly useful, both in CSS and JavaScript, and so I continued with my research to see how best to take advantage of this capability. As it turns out, the `matchMedia()` method has a few interesting quirks that I didn't realize when I wrote the first part of this series.
 
 ## `matchMedia()` and its quirks
 
-Recall that `matchMedia()` returns a `MediaQueryList` object that allows you to determine whether or not the given media type matches the current state of the browser. This is done using the `matches` property, which returns a boolean. As it turns out, `matches` is a getter, which requeries the state of the browser each time it&#8217;s called:
+Recall that `matchMedia()` returns a `MediaQueryList` object that allows you to determine whether or not the given media type matches the current state of the browser. This is done using the `matches` property, which returns a boolean. As it turns out, `matches` is a getter, which requeries the state of the browser each time it's called:
 
     var mql = window.matchMedia("screen and (max-width:600px)");
     console.log(mql.matches);
@@ -24,13 +24,13 @@ Recall that `matchMedia()` returns a `MediaQueryList` object that allows you to 
 
 This is actually really useful, because it allows you to keep a reference to a `MediaQueryList` object and repeatedly check the state of the query against the page. 
 
-Chrome and Safari have a weird behavior, though. The initial value for `matches` is always correct but doesn&#8217;t get updated by default unless the page has a media block defined with the same query and at least one rule (hat tip: Rob Flaherty<sup>[2]</sup>. For instance, in order for a `MediaQueryList` representing &#8220;screen and (max-width:600px)&#8221; to update appropriately (including firing events), you must have something like this in your CSS:
+Chrome and Safari have a weird behavior, though. The initial value for `matches` is always correct but doesn't get updated by default unless the page has a media block defined with the same query and at least one rule (hat tip: Rob Flaherty<sup>[2]</sup>. For instance, in order for a `MediaQueryList` representing &#8220;screen and (max-width:600px)&#8221; to update appropriately (including firing events), you must have something like this in your CSS:
 
     @media screen and (max-width:600px) {
         .foo { }
     }
 
-There needs to be at least one rule in the media block, but it doesn&#8217;t matter if that rule is empty. As long as this exists on the page then the `MediaQueryList` will be updated appropriately and any listeners added via `addListener()` will fire when appropriate. Without this media block on the page, the `MediaQueryList` acts like a snapshot of the page state at its creation time.<sup>[3]</sup>
+There needs to be at least one rule in the media block, but it doesn't matter if that rule is empty. As long as this exists on the page then the `MediaQueryList` will be updated appropriately and any listeners added via `addListener()` will fire when appropriate. Without this media block on the page, the `MediaQueryList` acts like a snapshot of the page state at its creation time.<sup>[3]</sup>
 
 You can fix this by adding a new rule using JavaScript:
 
@@ -41,7 +41,7 @@ You can fix this by adding a new rule using JavaScript:
 
 Of course, you would need to do that for every media query being accessed using `matchMedia()`, which is a bit of a pain.
 
-There is also a strange quirk in Firefox&#8217;s implementation. In theory, you should be able to assign a handler for when the query state changes and not keep a reference to the `MediaQueryList` object, such as:
+There is also a strange quirk in Firefox's implementation. In theory, you should be able to assign a handler for when the query state changes and not keep a reference to the `MediaQueryList` object, such as:
 
     //doesn't quite work in Firefox
     window.matchMedia("screen and (max-width:600px)").addListener(function(mql) {
@@ -79,7 +79,7 @@ Using code like this, you can monitor when a web application moves into and out 
 
 ## To polyfill or not?
 
-When I first looked at `matchMedia()`, I did so with the intent of creating a polyfill. Paul Irish<sup>[5]</sup> implemented a polyfill using a technique similar to the one I described in my last post (and gave me credit for it, thanks Paul!). Paul Hayes then forked<sup>[6]</sup> his work to create a polyfill with rudimentary listener support based on a very ingenuous use of CSS transitions to detect changes. However, as it relies on CSS transitions, the listener support is limited to browsers with CSS transition support. That, coupled with the fact that calling `matches` doesn&#8217;t requery the browser state, and the bugs in both Firefox and WebKit, led me to believe that building a polyfill wasn&#8217;t the right approach. After all, how can you polyfill appropriately when there are such obvious bugs in the real implementations that need fixing?
+When I first looked at `matchMedia()`, I did so with the intent of creating a polyfill. Paul Irish<sup>[5]</sup> implemented a polyfill using a technique similar to the one I described in my last post (and gave me credit for it, thanks Paul!). Paul Hayes then forked<sup>[6]</sup> his work to create a polyfill with rudimentary listener support based on a very ingenuous use of CSS transitions to detect changes. However, as it relies on CSS transitions, the listener support is limited to browsers with CSS transition support. That, coupled with the fact that calling `matches` doesn't requery the browser state, and the bugs in both Firefox and WebKit, led me to believe that building a polyfill wasn't the right approach. After all, how can you polyfill appropriately when there are such obvious bugs in the real implementations that need fixing?
 
 My approach was to create a facade to wrap this behavior in an API where I could smooth out the issues. Of course, I chose to implement the API as a YUI Gallery module<sup>[7]</sup> called `gallery-media`. The API is very simple and consists of two methods. The first is `Y.Media.matches()`, which takes a media query string and returns true if the media matches and false if not. No need to keep track of any objects, just get the info:
 
@@ -99,12 +99,12 @@ Instead of using CSS transitions to monitor for changes, I use a simple `onresiz
 
 ## Conclusion
 
-CSS media queries in JavaScript are a bit more complicated than I first expected, but still quite useful. I don&#8217;t think it&#8217;s appropriate to polyfill `matchMedia()` giving the strange bugs that are still abound, effectively preventing you from even using the native code the same way across browsers. A facade, on the other hand, insulates you from the bugs and changes that are likely to occur going forward. Now go forth and use CSS media queries to their potential&#8230;in JavaScript.
+CSS media queries in JavaScript are a bit more complicated than I first expected, but still quite useful. I don't think it's appropriate to polyfill `matchMedia()` giving the strange bugs that are still abound, effectively preventing you from even using the native code the same way across browsers. A facade, on the other hand, insulates you from the bugs and changes that are likely to occur going forward. Now go forth and use CSS media queries to their potential&#8230;in JavaScript.
 
 ## References
 
   1. [CSS media queries in JavaScript, Part 1][1] by me
-  2. [Rob Flaherty&#8217;s tweet][2] 
+  2. [Rob Flaherty's tweet][2] 
   3. [matchMedia() MediaQueryList not updating][3]
   4. [matchMedia() listeners lost][4]
   5. [matchMedia polyfill][5] by Paul Irish

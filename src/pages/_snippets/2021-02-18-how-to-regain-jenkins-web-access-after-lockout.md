@@ -2,7 +2,6 @@
 title: "How to regain Jenkins web access after being locked out"
 author: Nicholas C. Zakas
 teaser: "Jenkins authentication doesn't always perfectly, here's how to get back in when you've been locked out."
-layout: snippet
 date: 2021-02-18
 categories:
   - Programming

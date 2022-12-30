@@ -1,5 +1,5 @@
 ---
-title: 'Internet Explorer 11: &#8220;Don&#8217;t call me IE&#8221;'
+title: 'Internet Explorer 11: &#8220;Don't call me IE&#8221;'
 author: Nicholas C. Zakas
 permalink: /blog/2013/07/02/internet-explorer-11-dont-call-me-ie/
 categories:
@@ -24,9 +24,9 @@ Compare this to the Internet Explorer 10 user-agent string (on Windows 7):
 
     Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
 
-The most glaring difference is the removal of the &#8220;MSIE&#8221; token, which has been part of the Internet Explorer user-agent from the beginning. Also noticeable is the addition of &#8220;like Gecko&#8221; at the end. This suggests that Internet Explorer would prefer to be identified as a Gecko-type browser if it&#8217;s not identified as itself. Safari was the first browser to add &#8220;like Gecko&#8221; so that anyone sniffing for &#8220;Gecko&#8221; in the user-agent string would allow the browser through.
+The most glaring difference is the removal of the &#8220;MSIE&#8221; token, which has been part of the Internet Explorer user-agent from the beginning. Also noticeable is the addition of &#8220;like Gecko&#8221; at the end. This suggests that Internet Explorer would prefer to be identified as a Gecko-type browser if it's not identified as itself. Safari was the first browser to add &#8220;like Gecko&#8221; so that anyone sniffing for &#8220;Gecko&#8221; in the user-agent string would allow the browser through.
 
-Any sniffing code that looks for &#8220;MSIE&#8221; now will not work with the new user-agent string. You can still search for &#8220;Trident&#8221; to identify that it&#8217;s Internet Explorer (the &#8220;Trident&#8221; token was introduced with Internet Explorer 9). The true Internet Explorer version now comes via the &#8220;rv&#8221; token.
+Any sniffing code that looks for &#8220;MSIE&#8221; now will not work with the new user-agent string. You can still search for &#8220;Trident&#8221; to identify that it's Internet Explorer (the &#8220;Trident&#8221; token was introduced with Internet Explorer 9). The true Internet Explorer version now comes via the &#8220;rv&#8221; token.
 
 Additionally, there are changes to the `navigator` object that also obscure which browser is being used:
 
@@ -51,17 +51,17 @@ Another holdover is the `attachEvent()` method for adding event handlers. This m
         }
     }
 
-Of course, it&#8217;s recommended that you always test for the standards-based version first, in which case the removal of `attachEvent()` would yield no different behavior. However, the Internet is littered with bad feature detection logic and removing `attachEvent()` ensures that any code written in the above manner will use the standard version instead of the IE-specific one.
+Of course, it's recommended that you always test for the standards-based version first, in which case the removal of `attachEvent()` would yield no different behavior. However, the Internet is littered with bad feature detection logic and removing `attachEvent()` ensures that any code written in the above manner will use the standard version instead of the IE-specific one.
 
 Some of the other features that have been removed:
 
-  * `window.execScript()` &#8211; IE&#8217;s own version of `eval()`
-  * `window.doScroll()` &#8211; IE&#8217;s way of scrolling the window
-  * `script.onreadystatechange` &#8211; IE&#8217;s way of telling of listening for when a script was loaded
-  * `script.readyState` &#8211; IE&#8217;s way to test the load state of a script 
-  * `document.selection` &#8211; IE&#8217;s way of getting currently selected text
-  * `document.createStyleSheet` &#8211; IE&#8217;s way to create a style sheet
-  * `style.styleSheet` &#8211; IE&#8217;s way to reference a style sheet from a style object
+  * `window.execScript()` &#8211; IE's own version of `eval()`
+  * `window.doScroll()` &#8211; IE's way of scrolling the window
+  * `script.onreadystatechange` &#8211; IE's way of telling of listening for when a script was loaded
+  * `script.readyState` &#8211; IE's way to test the load state of a script 
+  * `document.selection` &#8211; IE's way of getting currently selected text
+  * `document.createStyleSheet` &#8211; IE's way to create a style sheet
+  * `style.styleSheet` &#8211; IE's way to reference a style sheet from a style object
 
 All of these have standards-based equivalents that should be used instead of the old Internet Explorer way of doing things. As with removing the other features, removing these means that cross-browser code that does feature detection for standards-based features should continue working without change.
 

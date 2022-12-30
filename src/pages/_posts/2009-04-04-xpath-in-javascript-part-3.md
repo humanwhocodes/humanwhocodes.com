@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - XPath
 ---
-In my previous [two][1] [posts][2], I talked about the DOM Level 3 XPath JavaScript implementation available in Firefox, Safari, Chrome, and Opera. Internet Explorer as of version 8 still hasn&#8217;t implemented this feature set, but it does have some support for XPath. Unlike the other browsers, Internet Explorer&#8217;s XPath functionality is available on XML documents and can&#8217;t be used on the `document` object.
+In my previous [two][1] [posts][2], I talked about the DOM Level 3 XPath JavaScript implementation available in Firefox, Safari, Chrome, and Opera. Internet Explorer as of version 8 still hasn't implemented this feature set, but it does have some support for XPath. Unlike the other browsers, Internet Explorer's XPath functionality is available on XML documents and can't be used on the `document` object.
 
 ## Creating XML documents
 
@@ -40,7 +40,7 @@ Once you have an XML DOM document instance, you can fill it with XML using eithe
     var xmldoc = createDocument();
     xmldoc.loadXML("");
 
-The second way to create an XML document is to request the XML via `XMLHttpRequest` and access the `responseXML` property. This property contains a DOM document whenever the server&#8217;s response has a content type of `text/xml`. The DOM document is created for you using the most recent (and appropriate) MSXML version.
+The second way to create an XML document is to request the XML via `XMLHttpRequest` and access the `responseXML` property. This property contains a DOM document whenever the server's response has a content type of `text/xml`. The DOM document is created for you using the most recent (and appropriate) MSXML version.
 
     var xhr = new XMLHttpRequest(),
         xmldoc;
@@ -53,7 +53,7 @@ The second way to create an XML document is to request the XML via `XMLHttpReque
     };
     xhr.send(null);
 
-This is the most-often used approach to loading XML into a JavaScript object, largely because it&#8217;s supported across all browsers.
+This is the most-often used approach to loading XML into a JavaScript object, largely because it's supported across all browsers.
 
 The third way to create an XML document in Internet Explorer is to use the `<xml>` tag. This proprietary extension allows you to embed XML right inside of an HTML page; Microsoft calls these [XML data islands][4]. Using the `<xml>` tag requires that you either set its `src` attribute to an XML file or include the XML data inline. Examples:
 
@@ -84,7 +84,7 @@ As with the `XMLHttpRequest` object, this approach will automatically create the
 
 ## XPath support
 
-All XML DOM document objects in Internet Explorer have built-in support for XPath via two methods: `selectSingleNode()` and `selectNodes()`. Each method accepts an XPath expression as an argument and returns the first matching node and a `NodeSet` of all matching nodes, respectively. If there are no matching nodes, `selectSingleNode()` returns `null` while `selectNodes()` returns an empty `NodeList` object. Every element in the document has these two methods, making it easy to execute an XPath query in the correct context. Before using these methods, though, it&#8217;s recommended to set the selection language of the XML DOM document to be XPath. This is necessary to avoid some of the nuanced differences between Microsoft&#8217;s first XPath implementation (which came before the specification was final) and the W3C recommendation:
+All XML DOM document objects in Internet Explorer have built-in support for XPath via two methods: `selectSingleNode()` and `selectNodes()`. Each method accepts an XPath expression as an argument and returns the first matching node and a `NodeSet` of all matching nodes, respectively. If there are no matching nodes, `selectSingleNode()` returns `null` while `selectNodes()` returns an empty `NodeList` object. Every element in the document has these two methods, making it easy to execute an XPath query in the correct context. Before using these methods, though, it's recommended to set the selection language of the XML DOM document to be XPath. This is necessary to avoid some of the nuanced differences between Microsoft's first XPath implementation (which came before the specification was final) and the W3C recommendation:
 
     xmldoc.setProperty("SelectionLanguage", "XPath");
 
@@ -94,17 +94,17 @@ XPath will work without setting this property, but there are small differences t
     var secondBook = xmldoc.documentElement.selectSingleNode("//book[2]");
     var secondAuthor = secondBook.selectSingleNode("author[2]");
 
-Note that unlike the W3C&#8217;s XPath interfaces, Internet Explorer will only ever return a single node or a `NodeSet`; there are no other possible return types, so you can&#8217;t run queries that return non-node values such as those using `count()`.
+Note that unlike the W3C's XPath interfaces, Internet Explorer will only ever return a single node or a `NodeSet`; there are no other possible return types, so you can't run queries that return non-node values such as those using `count()`.
 
 ## Namespace support
 
-By default, Internet Explorer&#8217;s XPath engine doesn&#8217;t work with namespaces (the same as the DOM Level 3 XPath implementation). Namespace information must be specified ahead of time as a property on the XML DOM document object itself. Consider the following XML code:
+By default, Internet Explorer's XPath engine doesn't work with namespaces (the same as the DOM Level 3 XPath implementation). Namespace information must be specified ahead of time as a property on the XML DOM document object itself. Consider the following XML code:
 
     <books xmlns:wrox="http://www.wrox.com/" xmlns="http://www.amazon.com/">
         <wrox:book>Professional JavaScript</book>
     </books>
 
-In order to use XPath queries on this document, you&#8217;d first need to define namespace information for the `wrox` and default namespaces. You can do so via the `setProperty()` method, passing in `"SelectionNamespaces"` and a space-separated string of namespace declarations. Example:
+In order to use XPath queries on this document, you'd first need to define namespace information for the `wrox` and default namespaces. You can do so via the `setProperty()` method, passing in `"SelectionNamespaces"` and a space-separated string of namespace declarations. Example:
 
     xmldoc.setProperty("SelectionNamespaces", 
         "xmlns:wrox='http://www.wrox.com/' xmlns='http://www.amazon.com/'");
@@ -114,7 +114,7 @@ Note that the namespace declarations are in the same format as they appear in th
 
 ## Conclusion
 
-Internet Explorer does have XPath support, but it comes with several caveats. First is that XPath queries only work on XML documents, not on HTML documents and therefore can&#8217;t be used on `document` to help find elements on the page. Second, the XPath implementation is very basic and allows only basic return types (nodes and `NodeSet` objects). Still, if you&#8217;re dealing with XML data, XPath remains a fast and convenient way to find specific elements without walking the DOM manually.
+Internet Explorer does have XPath support, but it comes with several caveats. First is that XPath queries only work on XML documents, not on HTML documents and therefore can't be used on `document` to help find elements on the page. Second, the XPath implementation is very basic and allows only basic return types (nodes and `NodeSet` objects). Still, if you're dealing with XML data, XPath remains a fast and convenient way to find specific elements without walking the DOM manually.
 
  [1]: {{site.url}}/blog/2009/03/17/xpath-in-javascript-part-1/
  [2]: {{site.url}}/blog/2009/03/24/xpath-in-javascript-part-2/

@@ -9,7 +9,7 @@ tags:
   - Professional Ajax
   - Writing
 ---
-A lot of people have been asking me lately about the upcoming book, <a title="Professional Ajax" rel="external" href="http://www.amazon.com/exec/obidos/tg/detail/-/0471777781">Professional <acronym title="Asynchronous JavaScript + XML">Ajax</acronym></a>, and what it will cover. Well, here&#8217;s a brief outline of the chapters:
+A lot of people have been asking me lately about the upcoming book, <a title="Professional Ajax" rel="external" href="http://www.amazon.com/exec/obidos/tg/detail/-/0471777781">Professional <acronym title="Asynchronous JavaScript + XML">Ajax</acronym></a>, and what it will cover. Well, here's a brief outline of the chapters:
 
   1. **What is <acronym title="Asynchronous JavaScript + XML">Ajax</acronym>?** &#8211; Background of <acronym title="Asynchronous JavaScript + XML">Ajax</acronym>and its rise to prominence.
   2. **<acronym title="Asynchronous JavaScript + XML">Ajax</acronym> Basics** &#8211; How to use XMLHttp, hidden frames, and more.

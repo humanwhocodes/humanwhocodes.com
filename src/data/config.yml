@@ -1,48 +1,10 @@
 url: https://humanwhocodes.com
 name: Human Who Codes
 description: The Official Web Site of Nicholas C. Zakas
-markdown: kramdown
-permalink: /blog/:year/:month/:title/
 future: false
-paginate: 10
-paginate_path: /blog/page/:num/
 feed_source: /feeds/blog.xml
 json_feed_source: /feeds/blog.json
 snippets_feed_source: /feeds/snippets.xml
 snippets_json_feed_source: /feeds/snippets.json
 all_feed_source: /feeds/all.xml
 all_json_feed_source: /feeds/all.json
-newsletter_feed: http://feeds.nczonline.net/newsletter/
-include:
-  - _redirects
-plugins:
-    - jekyll-sitemap
-    - jekyll-redirect-from
-    - jekyll-archives
-    - jekyll-email-protect
-
-kramdown:
-  input: GFM
-  auto_ids: true
-  hard_wrap: false
-  syntax_highlighter: rouge
-  parse_block_html: true
-
-collections:
-  snippets:
-    permalink: /snippets/:year/:month/:title/
-    output: true
-
-jekyll-archives:
-  enabled:
-    - year
-    - month
-    - tags
-  layouts:
-    year: year-archive
-    month: month-archive
-    tag: tag-archive
-  permalinks:
-    year: '/blog/:year/'
-    month: '/blog/:year/:month/'
-    tag: '/blog/tag/:name/'

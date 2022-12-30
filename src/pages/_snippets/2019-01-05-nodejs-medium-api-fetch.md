@@ -3,7 +3,6 @@ title: "Posting to Medium using Node.js and fetch()"
 author: Nicholas C. Zakas
 teaser: "A workaround for the unsupported Node.js Medium SDK."
 date: 2019-01-05
-layout: snippet
 categories:
   - Node.js
 tags:

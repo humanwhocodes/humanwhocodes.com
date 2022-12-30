@@ -32,7 +32,7 @@ Inside of the `mixin()` function, a `for` loop iterates over all own properties 
     
     object.sayName();       // outputs "Nicholas"
 
-In this example, `object` receives both the property `name` and the method `sayName()`. This was fine in ECMAScript 3 but doesn&#8217;t cover all the bases in ECMAScript 5.
+In this example, `object` receives both the property `name` and the method `sayName()`. This was fine in ECMAScript 3 but doesn't cover all the bases in ECMAScript 5.
 
 The problem I ran into was with this pattern:
 
@@ -56,9 +56,9 @@ The problem I ran into was with this pattern:
     
     console.log(object.name);       // undefined
 
-This example looks a little bit contrived, but is an accurate depiction of the problem. The properties to be mixed in include an ECMAScript 5 accessor property with only a getter. That getter references a local variable called `name` that isn&#8217;t initialized to a variable and so receives the value of `undefined`. Later on, `name` is assigned a value so that the accessor can return a valid value. Unfortunately, `object.name` (the mixed-in property) always returns `undefined`. What&#8217;s going on here?
+This example looks a little bit contrived, but is an accurate depiction of the problem. The properties to be mixed in include an ECMAScript 5 accessor property with only a getter. That getter references a local variable called `name` that isn't initialized to a variable and so receives the value of `undefined`. Later on, `name` is assigned a value so that the accessor can return a valid value. Unfortunately, `object.name` (the mixed-in property) always returns `undefined`. What's going on here?
 
-Look closer at the `mixin()` function. The loop is not, in fact, reassign properties from one object to another. It&#8217;s actually creating a data property with a given name and assigning it the returned by accessing that property on the supplier. For this example, `mixin()` effectively does this:
+Look closer at the `mixin()` function. The loop is not, in fact, reassign properties from one object to another. It's actually creating a data property with a given name and assigning it the returned by accessing that property on the supplier. For this example, `mixin()` effectively does this:
 
     receiver.name = supplier.name;
 
@@ -75,7 +75,7 @@ To fix this problem, you need to use property descriptors to properly mix proper
 
 In this new version of the function, `Object.keys()` is used to retrieve an array of all enumerable properties on `supplier`. Then, the `forEach()` method is used to iterate over those properties. The call to `Object.getOwnPropertyDescriptor()` retrieves the descriptor for each property of `supplier`. Since the descriptor contains all of the relevant information about the property, including getters and setters, that descriptor can be passed directly into `Object.defineProperty()` to create the same property on `receiver`. Using this new version of `mixin()`, the problematic pattern from earlier in this post works as you would expect. The getter is correctly being transferred to `receiver` from `supplier`.
 
-Of course, if you still need to support older browsers then you&#8217;ll need a function that falls back to the ECMAScript 3 way:
+Of course, if you still need to support older browsers then you'll need a function that falls back to the ECMAScript 3 way:
 
     function mixin(receiver, supplier) {
         if (Object.keys) {
@@ -91,6 +91,6 @@ Of course, if you still need to support older browsers then you&#8217;ll need a 
         }
     }
 
-If you&#8217;re using a `mixin()` function, be sure to double check that it works with ECMAScript 5, and specifically with getters and setters. Otherwise, you could find yourself running into errors like I did.
+If you're using a `mixin()` function, be sure to double check that it works with ECMAScript 5, and specifically with getters and setters. Otherwise, you could find yourself running into errors like I did.
 
 **Update (12-December-2012)**: Fixed coding error.

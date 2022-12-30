@@ -13,21 +13,21 @@ Timer resolution refers to how frequently a clock is updated. For most of their 
 
 ## A brief history
 
-Windows machines have a timer resolution of 10-15.6ms by default (most at 15.6ms), which meant that browsers using the system timer were stuck to this resolution. Of course, 10-15.6ms is a lifetime when you have a CPU running as fast as today&#8217;s processors do. It probably doesn&#8217;t surprise you that Internet Explorer through version 8 exclusively used system timers and so led to John Resig writing about how timer resolution affects benchmarks<sup>[1]</sup>. On OS X, browser timers were much more accurate than on Windows.
+Windows machines have a timer resolution of 10-15.6ms by default (most at 15.6ms), which meant that browsers using the system timer were stuck to this resolution. Of course, 10-15.6ms is a lifetime when you have a CPU running as fast as today's processors do. It probably doesn't surprise you that Internet Explorer through version 8 exclusively used system timers and so led to John Resig writing about how timer resolution affects benchmarks<sup>[1]</sup>. On OS X, browser timers were much more accurate than on Windows.
 
 Until recently, the other browsers on Window also used the system timer and so were all stuck at 15.6ms timer resolution. This was true for Firefox, Safari, and Opera. Chrome may have been the first Windows browser to switch to a higher-resolution timer<sup>[2]</sup>, and their experiments led to some interesting results.
 
 The original idea was for Chrome to have sub-millisecond timers, but this was abandoned in favor of a one millisecond timer resolution. They decided to use the Windows multimedia timer API, which allows you to specify a timer with a resolution as small a one millisecond and use that instead of the system timer. This is the same timer used by plugins such as Flash and Quicktime.
 
-Chrome 1.0 beta had a one millisecond timer resolution. That seemed okay, but then the team started having bug reports. It turns out that timers cause the CPU to spin, and when the CPU is spinning, more power is being consumed because it can&#8217;t go into sleep (low power) mode.<sup>[3]</sup> That caused Chrome to push its timer resolution to 4ms.
+Chrome 1.0 beta had a one millisecond timer resolution. That seemed okay, but then the team started having bug reports. It turns out that timers cause the CPU to spin, and when the CPU is spinning, more power is being consumed because it can't go into sleep (low power) mode.<sup>[3]</sup> That caused Chrome to push its timer resolution to 4ms.
 
 The 4ms delay was codified in HTML5 as part of the Timer section<sup>[4]</sup>, where it states that the minimum resolution for `setTimeout()` should be 4ms. The minimum resolution for `setInterval()` is specified as 10ms.
 
 ## Timer resolution today
 
-Internet Explorer 9, Firefox 5, Safari 5.1, and Opera 11 all feature a 4ms timer resolution, following Chrome&#8217;s lead. Prior to that, Firefox 4 and earlier and Safari 5 and earlier had a timer resolution of 10ms (apparently, this was hardcoded in WebKit). Mobile Safari on iOS 5 also has a 4ms timer resolution. Silk on the Kindle Fire has a 10ms timer resolution, potentially indicating it was built off an older version of WebKit. However, just because today&#8217;s browsers have a timer resolution of 4ms, it doesn&#8217;t mean that&#8217;s the resolution you&#8217;ll be getting.
+Internet Explorer 9, Firefox 5, Safari 5.1, and Opera 11 all feature a 4ms timer resolution, following Chrome's lead. Prior to that, Firefox 4 and earlier and Safari 5 and earlier had a timer resolution of 10ms (apparently, this was hardcoded in WebKit). Mobile Safari on iOS 5 also has a 4ms timer resolution. Silk on the Kindle Fire has a 10ms timer resolution, potentially indicating it was built off an older version of WebKit. However, just because today's browsers have a timer resolution of 4ms, it doesn't mean that's the resolution you'll be getting.
 
-Most browsers also do some sort of timer throttling based on different conditions. The intent is to save battery at opportune times &#8211; times when, theoretically, you either won&#8217;t notice the difference or would gladly trade for improved battery life on a laptop or mobile device. Here are some circumstances where timer resolution changes:
+Most browsers also do some sort of timer throttling based on different conditions. The intent is to save battery at opportune times &#8211; times when, theoretically, you either won't notice the difference or would gladly trade for improved battery life on a laptop or mobile device. Here are some circumstances where timer resolution changes:
 
   * Chrome and Internet Explorer 9+ switch back to the system timer when a laptop is running on battery power. When plugged in, the browser switches back to the 4ms timer resolution.
   * Firefox 5+, Chrome 11+, and Internet Explorer 10+ change timer resolution in inactive tabs to 1000 milliseconds.<sup>[5]</sup>
@@ -39,7 +39,7 @@ Browsers will likely continue to make adjustments to timer resolution as it pert
 
 ## Conclusion
 
-There has been a silent timer resolution evolution going on as browsers have developed over the past few years. Timer resolution isn&#8217;t one of those topics that gets discussed frequently, but if you&#8217;re using `setTimeout()` and `setInterval()`, it pays to have a deeper understanding of the functionality. We&#8217;re getting closer to the point of having per-millisecond control of the browser. When someone figures out how to manage timers without CPU interrupts, we&#8217;re likely to see timer resolution drop again. Until then, keep 4ms in mind, but remember that you still won&#8217;t always get that.
+There has been a silent timer resolution evolution going on as browsers have developed over the past few years. Timer resolution isn't one of those topics that gets discussed frequently, but if you're using `setTimeout()` and `setInterval()`, it pays to have a deeper understanding of the functionality. We're getting closer to the point of having per-millisecond control of the browser. When someone figures out how to manage timers without CPU interrupts, we're likely to see timer resolution drop again. Until then, keep 4ms in mind, but remember that you still won't always get that.
 
 **Update (15 Dec 2011):** Updated with information about `Date` object.
 

@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PostBlurb from '../../components/PostBlurb.astro';
+import { loadSnippets } from "../../lib/util.js";
+
+export async function getStaticPaths({ paginate }) {
+
+    const posts = await loadSnippets();
+
+    const postYears = new Map();
+    posts.forEach(post => {
+        const year = post.urlParts.year;
+
+        if (!postYears.get(year)) {
+            postYears.set(year, []);
+        }
+
+        postYears.get(year).push(post);
+    });
+
+
+    return [...postYears.entries()].map(([year, posts]) => ({
+        params: { year },
+        props: { posts }
+    }));
+
+};
+
+const { posts } = Astro.props;
+const { year } = Astro.params;
+
+---
+<Layout
+	title={`Posts in ${year}`}
+>	
+	<h2 class="no-margin">Posts in {year}</h2>
+
+	{posts.map((post) => (
+		<PostBlurb
+			title={post.frontmatter.title}
+			teaser={post.frontmatter.teaser}
+			date={post.frontmatter.date}
+			url={post.url}
+		/>
+	))}
+
+
+</Layout>

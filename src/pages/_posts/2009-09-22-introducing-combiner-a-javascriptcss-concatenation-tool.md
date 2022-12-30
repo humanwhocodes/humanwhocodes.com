@@ -15,7 +15,7 @@ I love JavaScript and try to bring good coding practices to it as part of my job
 
 ## The problem
 
-Most build systems I&#8217;ve seen require you to indicate your dependencies in a separate file. This has bothered me for quite some time. Why should dependency information exist outside of the files that need it? Why introduce another file into the system whose sole job is to manage dependencies? What I wanted was the equivalent of `#include` in C or `import` in Java, something that would allow me to specify dependencies in my source file and then combine all source files together in the correct order based on their dependencies. So early last year, I started working on Combiner.
+Most build systems I've seen require you to indicate your dependencies in a separate file. This has bothered me for quite some time. Why should dependency information exist outside of the files that need it? Why introduce another file into the system whose sole job is to manage dependencies? What I wanted was the equivalent of `#include` in C or `import` in Java, something that would allow me to specify dependencies in my source file and then combine all source files together in the correct order based on their dependencies. So early last year, I started working on Combiner.
 
 ## What Combiner does
 
@@ -57,11 +57,11 @@ The second way to use Combiner is to give it a pattern. You can, for instance, i
 
     java -jar combiner-0.0.1.jar -o output.js *.js
 
-When all JavaScript (or CSS) files are included, Combiner reads through all files specified to find dependency information. Even if one or more files have no dependency information, meaning they don&#8217;t require any of the other files and none of the other files require them, these files still end up in the resulting output.js. If this isn&#8217;t what you want, you can tell Combiner to eliminate files without dependency information by including the `-e` flag:
+When all JavaScript (or CSS) files are included, Combiner reads through all files specified to find dependency information. Even if one or more files have no dependency information, meaning they don't require any of the other files and none of the other files require them, these files still end up in the resulting output.js. If this isn't what you want, you can tell Combiner to eliminate files without dependency information by including the `-e` flag:
 
     java -jar combiner-0.0.1.jar -e -o output.js *.js
 
-If you&#8217;re interested in seeing what Combiner has found and what it&#8217;s doing, add the `-v` or `--verbose` flag:
+If you're interested in seeing what Combiner has found and what it's doing, add the `-v` or `--verbose` flag:
 
     java -jar combiner-0.0.1.jar -v -o output.js *.js
 
@@ -134,11 +134,11 @@ I tried to identify all of the areas where an error could occur in the process a
   * Verify that all dependency files exist.
   * Verify that circular references do not exist between files.
 
-It&#8217;s my hope that any errors occurring in the process are indicating in an obvious and non-confusing manner. I know I&#8217;ve spent endless hours trying to decipher the output of some tools when errors occurred, and I hope Combiner saves everyone from this pain.
+It's my hope that any errors occurring in the process are indicating in an obvious and non-confusing manner. I know I've spent endless hours trying to decipher the output of some tools when errors occurred, and I hope Combiner saves everyone from this pain.
 
-## What Combiner isn&#8217;t
+## What Combiner isn't
 
-Combiner isn&#8217;t a front-end build system. There are plenty of good build systems already out there, and I don&#8217;t want to add to that list. Combiner&#8217;s job is simply to combine JavaScript and CSS files in a way that frees you from worrying about source file ordering. You can use this as part of your build process just like you&#8217;d use YUI Compressor as part of the build process.
+Combiner isn't a front-end build system. There are plenty of good build systems already out there, and I don't want to add to that list. Combiner's job is simply to combine JavaScript and CSS files in a way that frees you from worrying about source file ordering. You can use this as part of your build process just like you'd use YUI Compressor as part of the build process.
 
 Combiner is neither a copycat of [Sprockets][3] nor an alternative to it. Sprockets is a far more complete build system for front-end development that includes JavaScript dependency management as well as packaging of other assets such as CSS and images. Combiner is strictly for JavaScript and CSS dependency management and can be plugged into any build system.
 
@@ -148,7 +148,7 @@ I originally wrote Combiner for a talk I was scheduled to give at the Rich Web E
 
 ## Download
 
-Combiner is written in Java and is distributed as a jar file, which can be downloaded here: [combiner-0.0.1.jar][4]. Combiner is freeware currently. If there&#8217;s enough interest, I&#8217;ll clean up the code and open source it, so definitely feel free to contact me with feedback.
+Combiner is written in Java and is distributed as a jar file, which can be downloaded here: [combiner-0.0.1.jar][4]. Combiner is freeware currently. If there's enough interest, I'll clean up the code and open source it, so definitely feel free to contact me with feedback.
 
 **Update (18 Oct 2009):** Combiner released under BSD license. Source available at [GitHub][5].
 

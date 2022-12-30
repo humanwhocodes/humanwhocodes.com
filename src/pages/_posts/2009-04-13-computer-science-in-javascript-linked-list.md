@@ -12,13 +12,13 @@ tags:
   - Data Structures
   - Programming
 ---
-When I started writing the first edition of [<cite>Professional JavaScript</cite>][1], my working title was <cite>JavaScript for Web Applications</cite> and it featured a lot of content that didn&#8217;t make the final cut. I actually have several chapters worth of content just sitting around on my computer. Several of these chapters discuss implementing common computer science patterns and algorithms in JavaScript. At the time, I thought this would make a good addition to the book, but ultimately ended up holding them back as they didn&#8217;t fit the final vision for the book. Instead of letting that content sit on my computer, I&#8217;ve decided to start sharing on this blog.
+When I started writing the first edition of [<cite>Professional JavaScript</cite>][1], my working title was <cite>JavaScript for Web Applications</cite> and it featured a lot of content that didn't make the final cut. I actually have several chapters worth of content just sitting around on my computer. Several of these chapters discuss implementing common computer science patterns and algorithms in JavaScript. At the time, I thought this would make a good addition to the book, but ultimately ended up holding them back as they didn't fit the final vision for the book. Instead of letting that content sit on my computer, I've decided to start sharing on this blog.
 
-One of the first data structures you learn in computer science is the linked list. As a quick refresher, here&#8217;s the Wikipedia description of a [linked list][2]:
+One of the first data structures you learn in computer science is the linked list. As a quick refresher, here's the Wikipedia description of a [linked list][2]:
 
 > It consists of a sequence of nodes, each containing arbitrary data fields and one or two references (&#8220;links&#8221;) pointing to the next and/or previous nodes. The principal benefit of a linked list over a conventional array is that the order of the linked items may be different from the order that the data items are stored in memory or on disk, allowing the list of items to be traversed in a different order. A linked list is a self-referential datatype because it contains a pointer or link to another datum of the same type. Linked lists permit insertion and removal of nodes at any point in the list in constant time, but do not allow random access.
 
-Linked lists are often used in computer science programs to help introduce the concept of pointers. The list itself is just a pointer to the head node, which in turn points to the next node, and so on. Each node consists of two fields: a `data` field containing the value for that location in the list and a `next` field containing a pointer to the next node in the list (or an empty pointer if it&#8217;s the last item).
+Linked lists are often used in computer science programs to help introduce the concept of pointers. The list itself is just a pointer to the head node, which in turn points to the next node, and so on. Each node consists of two fields: a `data` field containing the value for that location in the list and a `next` field containing a pointer to the next node in the list (or an empty pointer if it's the last item).
 
 <p style="text-align: center;">
   <a href="http://en.wikipedia.org/wiki/File:Singly-linked-list.svg"><img src="/images/wp-content/uploads/2009/04/408px-Singly-linked-list.svg_.png" alt="Linked List Diagram"  width="408" height="41" /></a>
@@ -31,7 +31,7 @@ To begin a JavaScript implementation, start with creating a single node. This ca
         next: null
     };
 
-When you want to create a list, create a new node and assign it to this node&#8217;s `next` property:
+When you want to create a list, create a new node and assign it to this node's `next` property:
 
     //attach to first node to create list
     firstNode.next = {
@@ -39,7 +39,7 @@ When you want to create a list, create a new node and assign it to this node&#82
         next: null
     };
 
-Once you have a list, you can traverse by following the `next` property on each node to get to a specific point in the list. Of course, doing all of this by hand is annoying and error prone, so it&#8217;s better to create a custom type. Here&#8217;s the start:
+Once you have a list, you can traverse by following the `next` property on each node to get to a specific point in the list. Of course, doing all of this by hand is annoying and error prone, so it's better to create a custom type. Here's the start:
 
     function LinkedList() {
         this._length = 0;
@@ -84,7 +84,7 @@ Adding an item into a linked list requires walking the structure to find the cor
         //more methods here
     };
 
-The most complicated part of this method is traversing an already-existing list to find the correct spot to insert the new node. Traditional algorithms use two pointers, a `current` that points to the item being inspected and a `previous` that points to the node before `current`. When `current` is `null`, that means `previous` is pointing to the last item in the list. I&#8217;ve recreated this algorithm in JavaScript though there are several other (arguably better) alternatives for tradition&#8217;s sake.
+The most complicated part of this method is traversing an already-existing list to find the correct spot to insert the new node. Traditional algorithms use two pointers, a `current` that points to the item being inspected and a `previous` that points to the node before `current`. When `current` is `null`, that means `previous` is pointing to the last item in the list. I've recreated this algorithm in JavaScript though there are several other (arguably better) alternatives for tradition's sake.
 
 Retrieving a value from the list involves the same type of traversal:
 
@@ -113,7 +113,7 @@ Retrieving a value from the list involves the same type of traversal:
 
 The `item()` method checks to ensure that the index being specified is within a valid range before traversing the list. The `while` loop is used to figure out the correct place to stop in the list to find the data being requested.
 
-Removing a node from a linked list is a little bit tricky. You need to find the node to remove then set the previous node&#8217;s `next` property to appropriate next node. This &#8220;skipping over&#8221; of the appropriate node results in it&#8217;s removal from the list.
+Removing a node from a linked list is a little bit tricky. You need to find the node to remove then set the previous node's `next` property to appropriate next node. This &#8220;skipping over&#8221; of the appropriate node results in it's removal from the list.
 
 <p style="text-align: center;">
   <a href="http://en.wikipedia.org/wiki/File:Singly_linked_list_delete_after.png"><img src="/images/wp-content/uploads/2009/04/Singly_linked_list_delete_after.png" alt="Linked list removal diagram" width="263" height="130" class="alignnone size-full wp-image-2948" /></a>
@@ -178,7 +178,7 @@ Once complete, you can use the linked list implementation like this:
     
     alert(list.item(1));   //"yellow"
 
-This basic implementation of a linked list can be rounded out with a `size()` method to return the length of the list and a `toArray()` method to convert into a regular array. The full source code is available on GitHub at my [Computer Science in JavaScript][3] project. I&#8217;ll be updating the project with each blog post and hopefully build up a nice collection of implementations for reference. Just to be clear, I&#8217;m not advocating using this in production code; the native `Array` object serves all of our needs quite well. This is purely an academic exercise and should be treated as such.
+This basic implementation of a linked list can be rounded out with a `size()` method to return the length of the list and a `toArray()` method to convert into a regular array. The full source code is available on GitHub at my [Computer Science in JavaScript][3] project. I'll be updating the project with each blog post and hopefully build up a nice collection of implementations for reference. Just to be clear, I'm not advocating using this in production code; the native `Array` object serves all of our needs quite well. This is purely an academic exercise and should be treated as such.
 
  [1]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
  [2]: http://en.wikipedia.org/wiki/Linked_list

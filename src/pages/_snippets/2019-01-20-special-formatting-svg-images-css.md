@@ -3,7 +3,6 @@ title: "Special formatting for SVG images with CSS"
 author: Nicholas C. Zakas
 teaser: "Beautifully displaying SVG images that don't have a background color or padding."
 date: 2019-01-20
-layout: snippet
 categories:
   - Web Development
 tags:

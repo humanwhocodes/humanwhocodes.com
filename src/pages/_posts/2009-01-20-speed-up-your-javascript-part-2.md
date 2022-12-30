@@ -11,9 +11,9 @@ tags:
   - Performance
   - Recursion
 ---
-Last week, I covered the first reason why JavaScript can take too long to execute: [too much happening in a loop][1]. There&#8217;s a similar problem with functions in that sometimes they&#8217;re just doing too much. Usually this means there&#8217;s too many loops (as opposed to too much happening in a loop), too much recursion, or simply too many different operations being performed.
+Last week, I covered the first reason why JavaScript can take too long to execute: [too much happening in a loop][1]. There's a similar problem with functions in that sometimes they're just doing too much. Usually this means there's too many loops (as opposed to too much happening in a loop), too much recursion, or simply too many different operations being performed.
 
-Too many loops are often caused by having loops inside of loops, locking up the JavaScript engine until all iterations are complete. The most glaring example of this is the bubble sort algorithm. Though there&#8217;s no need to use this in JavaScript due to the native `sort()` method, it&#8217;s good to understand how it can be problematic so that you can identify similar patterns. A typical implementation of a bubble sort in JavaScript looks like this:
+Too many loops are often caused by having loops inside of loops, locking up the JavaScript engine until all iterations are complete. The most glaring example of this is the bubble sort algorithm. Though there's no need to use this in JavaScript due to the native `sort()` method, it's good to understand how it can be problematic so that you can identify similar patterns. A typical implementation of a bubble sort in JavaScript looks like this:
 
     function bubbleSort(items){
         for (var i=items.length-1; i >= 0; i--){
@@ -27,10 +27,10 @@ Too many loops are often caused by having loops inside of loops, locking up the 
         }
     }
 
-Thinking back to your computer science days, you&#8217;ll probably remember that bubble sort is one of the least efficient sorting algorithms. The problem is for every *n* items in the array, there must be *n<sup>2</sup> * loop iterations. This processing can take forever if there&#8217;s a large amount of array items. The comparison and swap operation done during the inner loop is actually quite simple, it&#8217;s just the number of times that it&#8217;s repeated in sequence that causes the problem. This can cause the browser to grind to a halt and, potentially, result in the long-running script dialog.
+Thinking back to your computer science days, you'll probably remember that bubble sort is one of the least efficient sorting algorithms. The problem is for every *n* items in the array, there must be *n<sup>2</sup> * loop iterations. This processing can take forever if there's a large amount of array items. The comparison and swap operation done during the inner loop is actually quite simple, it's just the number of times that it's repeated in sequence that causes the problem. This can cause the browser to grind to a halt and, potentially, result in the long-running script dialog.
 
 A couple years ago, fellow Yahoo Julien Lecomte wrote a post entitled,  
-[Running CPU Intensive JavaScript Computations in a Web Browser][2], in which he described how to break up large JavaScript operations into several parts. One of his clearest examples was refactoring a bubble sort into multiple steps, each of which executes a single trip through the array. I&#8217;ve augmented his code somewhat, but the approach remains the same:
+[Running CPU Intensive JavaScript Computations in a Web Browser][2], in which he described how to break up large JavaScript operations into several parts. One of his clearest examples was refactoring a bubble sort into multiple steps, each of which executes a single trip through the array. I've augmented his code somewhat, but the approach remains the same:
 
     function bubbleSort(array, onComplete){
     
@@ -89,9 +89,9 @@ He then applies this to the Fibonacci sequence generator:
         });
     
 
-Calling `fibonacci(40)` using this code results in only 40 calls to the function, a vast improvement over the original. The overall lesson from memoization is that you should never calculate the same result twice; if there&#8217;s a value you&#8217;ll need more than once, store it for later use rather than running the code to generate it again.
+Calling `fibonacci(40)` using this code results in only 40 calls to the function, a vast improvement over the original. The overall lesson from memoization is that you should never calculate the same result twice; if there's a value you'll need more than once, store it for later use rather than running the code to generate it again.
 
-The final thing that causes functions to execute slowly is, as mentioned previously, that it&#8217;s just doing too much. Usually it&#8217;s because of a pattern such as this:
+The final thing that causes functions to execute slowly is, as mentioned previously, that it's just doing too much. Usually it's because of a pattern such as this:
 
     function doAlot(){
         doSomething();
@@ -99,7 +99,7 @@ The final thing that causes functions to execute slowly is, as mentioned previou
         doOneMoreThing();
     }
 
-Here, there&#8217;s three clearly distinct pieces of code that are being executed. The important thing to notice is that none of the functions rely on the other functions to complete their task; they are essentially independent of one another and just need to happen in sequence at a given point in time. In situations like this, you can use a variant of the `chunk()` method to execute a series of functions in a row without holding up the browser:
+Here, there's three clearly distinct pieces of code that are being executed. The important thing to notice is that none of the functions rely on the other functions to complete their task; they are essentially independent of one another and just need to happen in sequence at a given point in time. In situations like this, you can use a variant of the `chunk()` method to execute a series of functions in a row without holding up the browser:
 
     
     function schedule(functions, context){
@@ -118,9 +118,9 @@ The `schedule` function accepts two arguments, an array of functions to execute 
 
     schedule([doSomething, doSomethingElse, doOneMoreThing], window);
 
-I&#8217;m expecting that JavaScript libraries will soon start including more processing functions such as this. YUI has already added the [Queue][5] object in version 3.0 that helps to manage the running of several functions in a row using a timer.
+I'm expecting that JavaScript libraries will soon start including more processing functions such as this. YUI has already added the [Queue][5] object in version 3.0 that helps to manage the running of several functions in a row using a timer.
 
-Regardless of the tools available to help split up complex processes, it&#8217;s still vital for developers to be able to understand and identify bottlenecks that will benefit from using this approach. Whether there be too many loops, too much recursion, or just plain too much going on, you now know how to deal with each. Remember, the techniques and functions presented here are just a starting point and not a golden bullet, you should (and will likely have to) modify the code presented so that it works for your specific usage.
+Regardless of the tools available to help split up complex processes, it's still vital for developers to be able to understand and identify bottlenecks that will benefit from using this approach. Whether there be too many loops, too much recursion, or just plain too much going on, you now know how to deal with each. Remember, the techniques and functions presented here are just a starting point and not a golden bullet, you should (and will likely have to) modify the code presented so that it works for your specific usage.
 
 **Update (1/20):** Fixed copy/paste error in `schedule()` function.
 

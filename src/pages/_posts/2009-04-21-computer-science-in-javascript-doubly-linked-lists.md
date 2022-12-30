@@ -12,7 +12,7 @@ tags:
   - Linked List
   - Programming
 ---
-In my [last post][1], I discussed creating a linked list in JavaScript. This basic data structure is frequently used in computer science programs to teach the concept of pointers. The next step is to investigate the doubly-linked list. A doubly-linked list is similar to a single linked list except that it has bidirectional links between nodes. Instead of just having a `next` pointer on each node, there&#8217;s also a `previous` pointer and instead of just tracking the head of the list, you also track the tail (the last node).
+In my [last post][1], I discussed creating a linked list in JavaScript. This basic data structure is frequently used in computer science programs to teach the concept of pointers. The next step is to investigate the doubly-linked list. A doubly-linked list is similar to a single linked list except that it has bidirectional links between nodes. Instead of just having a `next` pointer on each node, there's also a `previous` pointer and instead of just tracking the head of the list, you also track the tail (the last node).
 
 <p style="text-align: center;">
   <a href="http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg"><img src="/images/wp-content/uploads/2009/04/500px-Doubly-linked-list.svg_.png" alt="Doubly linked list diagram" width="500" height="34" /></a>
@@ -38,7 +38,7 @@ The `next` and `prev` pointers must be filled in on each node. Adding another no
 
 Now each node has a reference to the other, allowing you to traverse the list by following either `next` or `prev`.
 
-As with the singly-linked list, there&#8217;s a lot of pointer manipulation that is best encapsulated in a custom type. A basic doubly-linked list type is as follows:
+As with the singly-linked list, there's a lot of pointer manipulation that is best encapsulated in a custom type. A basic doubly-linked list type is as follows:
 
     function DoublyLinkedList() {
         this._length = 0;
@@ -46,7 +46,7 @@ As with the singly-linked list, there&#8217;s a lot of pointer manipulation that
         this._tail = null;
     }
 
-You&#8217;ll note that two of the properties are exactly the same as the `LinkedList` implementation: `_length` and `_head`. The only addition is the `_tail` property to keep track of the last node in the list.
+You'll note that two of the properties are exactly the same as the `LinkedList` implementation: `_length` and `_head`. The only addition is the `_tail` property to keep track of the last node in the list.
 
 Adding to a doubly-linked list is very similar to adding to a singly-linked list. The major difference is tracking the `_tail` and using that to add the new node instead of traversing the entire structure to find the correct place to insert the next node:
 
@@ -81,7 +81,7 @@ Adding to a doubly-linked list is very similar to adding to a singly-linked list
         //more methods here
     };
 
-When there&#8217;s nothing in the list, adding an item means setting both `_head` and `_tail` equal to the same node. In all other cases, you simply use `_tail` to add the new node.
+When there's nothing in the list, adding an item means setting both `_head` and `_tail` equal to the same node. In all other cases, you simply use `_tail` to add the new node.
 
 Removing an item from a doubly-linked list is also somewhat different than removing from a singly-linked list. There are two special cases: when the node to remove is the first and when the node to remove is the last. For other cases, the algorithm is very similar to that of a singly-linked list, traversing the list to find the correct item to remove and then adjusting pointers:
 

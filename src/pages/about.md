@@ -30,7 +30,7 @@ I have been vocal with standards bodies about what he believes. I'm listed in th
 
 I am listed in the acknowledgments section of [CSS Media Queries Level 4][26] for the inclusion of my [proposal][27] for a way to detect if a browser has JavaScript enabled using media queries.
 
-I was also invited to participate in a roundtable discussion hosted at Google around the ECMAScript Internationization effort. He was invited based on feedback provided to individual group members, and argued (unsuccessfully) for a more sane API design. I still hope that my feedback and recommendations didn&#8217;t fall on deaf ears.
+I was also invited to participate in a roundtable discussion hosted at Google around the ECMAScript Internationization effort. He was invited based on feedback provided to individual group members, and argued (unsuccessfully) for a more sane API design. I still hope that my feedback and recommendations didn't fall on deaf ears.
 
 I'm also listed in the acknowledgments section of the Selectors API, but have no idea why.
 
@@ -45,13 +45,13 @@ I'm also listed in the acknowledgments section of the Selectors API, but have no
 
 ## What Others Say
 
-&#8220;&#8230;there are a lot of people who are really awesome JavaScript developers but few, in my opinion, who have the experience in a large-scale environment. Nicholas has that, as the principal front-end engineer for Yahoo! and that&#8217;s knowledge worth nabbing. And if you&#8217;ve watched his presentations, you know he can teach.&#8221; &#8211; [Rey Bango][28]
+&#8220;&#8230;there are a lot of people who are really awesome JavaScript developers but few, in my opinion, who have the experience in a large-scale environment. Nicholas has that, as the principal front-end engineer for Yahoo! and that's knowledge worth nabbing. And if you've watched his presentations, you know he can teach.&#8221; &#8211; [Rey Bango][28]
 
 &#8220;[I imagined] that I was at university and that Douglas Crockford was the insanely popular genius professor that showed up late for lectures, and then either spoke too fast or else mumbled a lot, and then locked himself in his office refusing to answer the door during office hours while he worked on his Next Big Thing that would make everyone oooh and aaah and validate his brilliance. Meanwhile, in that same imaginary university, Nicholas Zakas was the graduate student that served as the TA to that class&#8211;and he happened to be equally brilliant and super-accessible and willing to take the time out to explain it all in a way that was thorough and comprehensible.&#8221; &#8211; [Rob Friesel Jr.][29]
 
 ## Employment
 
-I generally don&#8217;t respond to correspondence from recruiters, especially if they&#8217;re also asking me if I know anyone else to fill a particular role. If your company is interested in me, I expect to hear from someone other than a recruiter: the hiring manager, the director of engineering, the CTO, or the CEO. Even then, please be sure you know who I am and what I do before contacting me. There&#8217;s a lot of information on this site, use it wisely!
+I generally don't respond to correspondence from recruiters, especially if they're also asking me if I know anyone else to fill a particular role. If your company is interested in me, I expect to hear from someone other than a recruiter: the hiring manager, the director of engineering, the CTO, or the CEO. Even then, please be sure you know who I am and what I do before contacting me. There's a lot of information on this site, use it wisely!
 
 ## More information
 

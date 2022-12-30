@@ -27,7 +27,7 @@ One of my principles of Maintainable JavaScript<sup>[1]</sup> is to separate you
         }
     }
 
-There are three pieces of configuration data in this code. The first is the string, &#8220;Invalid value&#8221;, which is displayed to the user. As a UI string, there&#8217;s a high chance that it will change frequently. The second is the URL &#8220;/errors/invalid.php&#8221;. URLs tend to change as development progresses due to architectural decisions. The third is the CSS class name &#8220;selected&#8221;. This class name is used three times, meaning that a class name change requires changes in three different places, increasing the likelihood that one will be missed.
+There are three pieces of configuration data in this code. The first is the string, &#8220;Invalid value&#8221;, which is displayed to the user. As a UI string, there's a high chance that it will change frequently. The second is the URL &#8220;/errors/invalid.php&#8221;. URLs tend to change as development progresses due to architectural decisions. The third is the CSS class name &#8220;selected&#8221;. This class name is used three times, meaning that a class name change requires changes in three different places, increasing the likelihood that one will be missed.
 
 Configuration data is best extracted from the core application logic, such as:
 
@@ -57,9 +57,9 @@ This example stores all of the configuration data in the `config` object. Each p
 
 Externalizing the configuration data means that anyone can go in and make a change without fear of introducing an error in the application logic. It also means that the entire `config` object can be moved into its own file, so edits are made far away from the code that uses the data.
 
-Having an external object managing your configuration data is a good start, but I&#8217;m not a fan of storing configuration data directly in JavaScript code. Because such data changes frequently, I prefer to keep it in a simpler file format &#8211; one that&#8217;s free from worries about missing a semicolon or comma. And that&#8217;s when I turned to the Java properties file<sup>[2]</sup>.
+Having an external object managing your configuration data is a good start, but I'm not a fan of storing configuration data directly in JavaScript code. Because such data changes frequently, I prefer to keep it in a simpler file format &#8211; one that's free from worries about missing a semicolon or comma. And that's when I turned to the Java properties file<sup>[2]</sup>.
 
-Java properties files are incredibly simple. One name-value pair per line and comments begin with a `#`. It&#8217;s really hard to mess up this format. Here&#8217;s what the previous example&#8217;s configuration data looks like in a Java properties file:
+Java properties files are incredibly simple. One name-value pair per line and comments begin with a `#`. It's really hard to mess up this format. Here's what the previous example's configuration data looks like in a Java properties file:
 
     # UI Strings
     MSG_INVALID_VALUE = Invalid value
@@ -72,7 +72,7 @@ Java properties files are incredibly simple. One name-value pair per line and co
 
 Even though I had my configuration data in a Java properties file, I had no easy way of making this data available to JavaScript.
 
-This is why I created Props2Js<sup>[3]</sup>, a simple tool that does just one thing: reads a Java properties file and outputs it in a format that JavaScript can use. Actually, it&#8217;s capable of outputting the data into three formats that JavaScript can use: JSON, JSONP, and regular JavaScript.
+This is why I created Props2Js<sup>[3]</sup>, a simple tool that does just one thing: reads a Java properties file and outputs it in a format that JavaScript can use. Actually, it's capable of outputting the data into three formats that JavaScript can use: JSON, JSONP, and regular JavaScript.
 
     java -jar props2js-0.1.0.jar --to jsonp --name myfunc --output result.js source.properties
 
@@ -83,17 +83,17 @@ Props2Js outputs the properties file mentioned above into JSON format:
     {"MSG_INVALID_VALUE":"Invalid value","URL_INVALID":"/errors/invalid.php",
     "CSS_SELECTED":"selected"}
 
-Here&#8217;s the JSONP output:
+Here's the JSONP output:
 
     myfunc({"MSG_INVALID_VALUE":"Invalid value","URL_INVALID":"/errors/invalid.php",
     "CSS_SELECTED":"selected"});
 
-And here&#8217;s the plain JavaScript option with `--name config`:
+And here's the plain JavaScript option with `--name config`:
 
     var config={"MSG_INVALID_VALUE":"Invalid value","URL_INVALID":"/errors/invalid.php",
     "CSS_SELECTED":"selected"};
 
-Props2Js is also smart enough to know that you&#8217;re assigning to an object property if you include a dot in in the `--name` option. In that case, it omits the `var`.
+Props2Js is also smart enough to know that you're assigning to an object property if you include a dot in in the `--name` option. In that case, it omits the `var`.
 
 Props2Js is available under an MIT License and is hosted at GitHub<sup>[3]</sup>.
 

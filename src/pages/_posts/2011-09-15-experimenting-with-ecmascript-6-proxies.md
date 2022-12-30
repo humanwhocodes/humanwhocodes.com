@@ -162,11 +162,11 @@ The `InternalHTMLWriter` type is defined inside of a function so it cannot be ac
     
     console.log(w);
 
-Ugly method names aside, the prototype works as you&#8217;d expect. What I really like about this type of pattern is that the methods can be easily updated to support new HTML tags by modifying the `tags` array.
+Ugly method names aside, the prototype works as you'd expect. What I really like about this type of pattern is that the methods can be easily updated to support new HTML tags by modifying the `tags` array.
 
-The more I thought about proxies and the `get` trap, the more ideas I came up with. Developers have long tried to figure out ways to inherit from `Array` to create their own array-like structures, but we&#8217;ve also been unable to get there due to a number of issues. With proxies, implementing array-like data structures are trivial. 
+The more I thought about proxies and the `get` trap, the more ideas I came up with. Developers have long tried to figure out ways to inherit from `Array` to create their own array-like structures, but we've also been unable to get there due to a number of issues. With proxies, implementing array-like data structures are trivial. 
 
-I decided that I&#8217;d like to make a stack implementation in JavaScript that uses an array underneath it all. I wanted the stack to be old-school, just `push()`, `pop()`, and `length` members (no numeric index support). Basically, I would just need to filter the members being accessed in the `get` trap. Here&#8217;s the result:
+I decided that I'd like to make a stack implementation in JavaScript that uses an array underneath it all. I wanted the stack to be old-school, just `push()`, `pop()`, and `length` members (no numeric index support). Basically, I would just need to filter the members being accessed in the `get` trap. Here's the result:
 
     var Stack = (function(){
     
@@ -200,11 +200,11 @@ I decided that I&#8217;d like to make a stack implementation in JavaScript that 
     console.log(mystack[0]);        //undefined
     console.log(mystack.pop());     //"goodbye"
 
-Here, I&#8217;m using a private `stack` array for each instance of my stack. Each instance also has a single proxy that is returned and used as the interface. So every method I want to allow ends up being executed on the array rather than the proxy object itself.
+Here, I'm using a private `stack` array for each instance of my stack. Each instance also has a single proxy that is returned and used as the interface. So every method I want to allow ends up being executed on the array rather than the proxy object itself.
 
-This pattern of object member filtering allowed me to easily enable the members I wanted while disabling the ones I didn&#8217;t. The one tricky part was ensuring the methods were bound to the correct `this` value. In my first try, I simply returned the method from the array, but ended up with multiple errors because `this` was the proxy object instead of the array. I added the use of the ECMAScript 5 `bind()` method to ensure the `this` value remained correct for the methods and everything worked fine.
+This pattern of object member filtering allowed me to easily enable the members I wanted while disabling the ones I didn't. The one tricky part was ensuring the methods were bound to the correct `this` value. In my first try, I simply returned the method from the array, but ended up with multiple errors because `this` was the proxy object instead of the array. I added the use of the ECMAScript 5 `bind()` method to ensure the `this` value remained correct for the methods and everything worked fine.
 
-A few caveats as you start playing with proxies. First, it&#8217;s only currently supported in Firefox 6+. Second, the specification is still in flux and the syntax, order of arguments, etc. may change in the future. Third, the patterns I&#8217;ve explained here are not and should not be considered best practices for using proxies. These are just some experiments I hacked together to explore the possibilities. Proxies aren&#8217;t ready for production use but are a lot of fun for experimentation.
+A few caveats as you start playing with proxies. First, it's only currently supported in Firefox 6+. Second, the specification is still in flux and the syntax, order of arguments, etc. may change in the future. Third, the patterns I've explained here are not and should not be considered best practices for using proxies. These are just some experiments I hacked together to explore the possibilities. Proxies aren't ready for production use but are a lot of fun for experimentation.
 
 **Update (2011-Sept-18)**: Fixed escaping issue in code.
 

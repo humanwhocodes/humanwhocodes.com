@@ -10,11 +10,11 @@ tags:
   - JavaScript
   - Set
 ---
-For most of JavaScript&#8217;s history, there has been only one type of collection represented by the `Array` type. Arrays are used in JavaScript just like arrays and other languages but pull double and triple duty mimicking queues and stacks as well. Since arrays only use numeric indices, developers had to use objects whenever a non-numeric index was necessary. ECMAScript 6 introduces several new types of collections to allow better and more efficient storing of order data.
+For most of JavaScript's history, there has been only one type of collection represented by the `Array` type. Arrays are used in JavaScript just like arrays and other languages but pull double and triple duty mimicking queues and stacks as well. Since arrays only use numeric indices, developers had to use objects whenever a non-numeric index was necessary. ECMAScript 6 introduces several new types of collections to allow better and more efficient storing of order data.
 
 ## Sets
 
-Sets are nothing new if you come from languages such as Java, Ruby, or Python but have been missing from JavaScript. A set is in an ordered list of values that cannot contain duplicates. You typically don&#8217;t access items in the set like you would items in an array, instead it&#8217;s much more common to check the set to see if a value is present.
+Sets are nothing new if you come from languages such as Java, Ruby, or Python but have been missing from JavaScript. A set is in an ordered list of values that cannot contain duplicates. You typically don't access items in the set like you would items in an array, instead it's much more common to check the set to see if a value is present.
 
 ECMAScript 6 introduces the `Set` type<sup>[1]</sup> as a set implementation for JavaScript. You can add values to a set by using the `add()` method and see how many items are in the set using `size`:
 
@@ -112,7 +112,7 @@ Using an object for this purpose means always assigning a truthy value to a prop
 
 Since it only matters if the property was used before and not how many times it was used (there is no extra metadata associated), it actually makes more sense to use a set. 
 
-Another downside of using object properties for this type of operation is that property names are always converted to strings. So you can&#8217;t have an object with the property name of `5`, you can only have one with the property name of `"5"`. That also means you can&#8217;t easily keep track of objects in the same manner because the objects get converted to strings when assigned as a property name. Sets, on the other hand, can contain any type of data without fear of conversion into another type.
+Another downside of using object properties for this type of operation is that property names are always converted to strings. So you can't have an object with the property name of `5`, you can only have one with the property name of `"5"`. That also means you can't easily keep track of objects in the same manner because the objects get converted to strings when assigned as a property name. Sets, on the other hand, can contain any type of data without fear of conversion into another type.
 
 ## Browser Support
 
@@ -120,9 +120,9 @@ Both Firefox and Chrome have implemented `Set`, however, in Chrome you need to m
 
 ## Summary
 
-ECMAScript 6 sets are a welcome addition to the language. They allow you to easily create a collection of unique values without worrying about type coercion. You can add and remove items very easily from a set even though there is no direct access to items in the set. It&#8217;s still possible, if necessary, to iterate over items in the set by using the ECMAScript 6 `for-of` statement.
+ECMAScript 6 sets are a welcome addition to the language. They allow you to easily create a collection of unique values without worrying about type coercion. You can add and remove items very easily from a set even though there is no direct access to items in the set. It's still possible, if necessary, to iterate over items in the set by using the ECMAScript 6 `for-of` statement.
 
-Since ECMAScript 6 is not yet complete, it&#8217;s also possible that the implementation and specification might change before other browsers start to include `Set`. At this point in time, it is still considered experimental API and shouldn&#8217;t be used in production code. This post, and other posts about ECMAScript 6, are only intended to be a preview of functionality that is to come.
+Since ECMAScript 6 is not yet complete, it's also possible that the implementation and specification might change before other browsers start to include `Set`. At this point in time, it is still considered experimental API and shouldn't be used in production code. This post, and other posts about ECMAScript 6, are only intended to be a preview of functionality that is to come.
 
 ## Updates
 

@@ -9,7 +9,7 @@ tags:
   - Windows
   - YUI Compressor
 ---
-Just thought I&#8217;d share a quick tip. I&#8217;m one of the few developers I know who uses Windows almost exclusively (sorry, no Mac here). Lately, I&#8217;ve been wanting to see how my JavaScript files would be compressed using Julien&#8217;s <a title="YUI Compressor" rel="external" href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a>. Previously, I was keeping a command window open and typing the command in directly. I figured there must be a simpler way to do this, and I was right.
+Just thought I'd share a quick tip. I'm one of the few developers I know who uses Windows almost exclusively (sorry, no Mac here). Lately, I've been wanting to see how my JavaScript files would be compressed using Julien's <a title="YUI Compressor" rel="external" href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a>. Previously, I was keeping a command window open and typing the command in directly. I figured there must be a simpler way to do this, and I was right.
 
 The first step is download the YUI Compressor and put it somewhere handy. I put it directly in the `c:` directory for easy access. Then, I created a simple batch file called `compress.bat` and also placed it in `c:` for each access. The content of the batch file are as follows:
 
@@ -34,4 +34,4 @@ To take this one step further, you can add a &#8220;Compress&#8221; context menu
 
 Once that is done, you can right-click on any file ending with a .js extension and see a context menu item called &#8220;Compress&#8221;. When clicked, the command runs the YUI Compressor and the output is placed in the same directory.
 
-I&#8217;ve found this to be a very handy way to use the YUI Compressor. I hope it&#8217;s equally as useful for you.
+I've found this to be a very handy way to use the YUI Compressor. I hope it's equally as useful for you.

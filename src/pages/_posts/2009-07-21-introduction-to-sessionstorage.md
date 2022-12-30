@@ -19,13 +19,13 @@ Making things more interesting, `sessionStorage` is unique to a particular windo
 
 Data stored to `sessionStorage` is saved in key-value pairs where both the key and the value are strings. Non-string values are automatically converted into strings before being stored.
 
-The data in `sessionStorage` is deleted once the window or tab is closed, or if the user requests that the browser do so. This behavior, combined with tying the data to a particular window or tab, ensures that data doesn&#8217;t get accidentally exposed or stored indefinitely.
+The data in `sessionStorage` is deleted once the window or tab is closed, or if the user requests that the browser do so. This behavior, combined with tying the data to a particular window or tab, ensures that data doesn't get accidentally exposed or stored indefinitely.
 
 ## Usage
 
 The `sessionStorage` object has five methods:
 
-  * `getItem(key)` &#8211; retrieves the value for the given key or null if the key doesn&#8217;t exist.
+  * `getItem(key)` &#8211; retrieves the value for the given key or null if the key doesn't exist.
   * `setItem(key, value)` &#8211; sets the value for the given key.
   * `removeItem(key)` &#8211; removes the key completely.
   * `key(position)` &#8211; returns the key for the value in the given numeric position.
@@ -61,7 +61,7 @@ Additionally, proper implementations allow you to read, write, and remove values
 
 This syntax is logically supported as this is the way objects are typically accessed in JavaScript.
 
-When writing to `sessionStorage`, an error may be thrown to indicate that the write failed. The write may failed for any number of reasons but the most common being that the maximum data size has been hit. If you are saving large amounts of data to `sessionStorage`, it&#8217;s best to wrap any writes with a `try-catch` to handle this error.
+When writing to `sessionStorage`, an error may be thrown to indicate that the write failed. The write may failed for any number of reasons but the most common being that the maximum data size has been hit. If you are saving large amounts of data to `sessionStorage`, it's best to wrap any writes with a `try-catch` to handle this error.
 
 ## The storage event
 
@@ -80,23 +80,23 @@ The specification is unclear as to whether this event should be fired for `sessi
 Even though `sessionStorage` is reasonably well-supported in browsers, including Firefox 3, Safari 4, and Internet Explorer 8, there are some differences in implementations to be aware of:
 
   * Firefox 3 returns an object when reading a value from `sessionStorage`. The object has a property named `value` that contains the actual string value that was stored. Firefox 3.5 correctly returns a string when retrieving values.
-  * Firefox 3 doesn&#8217;t implement the `clear()` method; Firefox 3.5 does.
-  * Internet Explorer 8 doesn&#8217;t allow you to remove a key by using the `delete` operator.
+  * Firefox 3 doesn't implement the `clear()` method; Firefox 3.5 does.
+  * Internet Explorer 8 doesn't allow you to remove a key by using the `delete` operator.
   * Firefox 3.5 is the only browser that maintains `sessionStorage` data when the browser crashes and makes it available when the browser is restarted after a crash.
   * Internet Explorer 8 saves data to s asynchronously while the others do so synchronously. To force IE to write immediately, call the proprietary `begin()` method, then make your changes, then call the proprietary `commit()` method.
-  * Firefox&#8217;s and Safari&#8217;s storage limit is 5MB per domain, Internet Explorer&#8217;s limit is 10 MB per domain.
+  * Firefox's and Safari's storage limit is 5MB per domain, Internet Explorer's limit is 10 MB per domain.
   * Internet Explorer 8 only supports the `url` property of the `event` object.
   * Firefox 3 and 3.5 throw errors when you try to access `sessionStorage` if cookies are disabled on the browser ([bug][5]).
 
 ## Security issues
 
-The reason I really like sessionStorage is that it keeps security in mind. By limiting data access to a single window or tab, tying that data to the protocol, domain, and port, and then deleting the data when the window or tab is closed, the implementation really makes sure that data can&#8217;t be accessed in harmful ways. Still, there&#8217;s one more security issue to worry about. To understand the issue, consider the following scenario.
+The reason I really like sessionStorage is that it keeps security in mind. By limiting data access to a single window or tab, tying that data to the protocol, domain, and port, and then deleting the data when the window or tab is closed, the implementation really makes sure that data can't be accessed in harmful ways. Still, there's one more security issue to worry about. To understand the issue, consider the following scenario.
 
-You log into a web site to view your mail and the mail application saves information about those emails in `sessionStorage`. Then, you switch tabs to another window where you log out of the account from which your email is being read. This is very possible when using single sign-on IDs such as a Yahoo! ID (but please note this is just an example, Yahoo! doesn&#8217;t actually do this). You then switch back to the email tab and your data is still present in `sessionStorage` even though you&#8217;ve logged out. Clicking on various email messages retrieves data from `sessionStorage` and displays it. You&#8217;re now looking at personal information while logged out.
+You log into a web site to view your mail and the mail application saves information about those emails in `sessionStorage`. Then, you switch tabs to another window where you log out of the account from which your email is being read. This is very possible when using single sign-on IDs such as a Yahoo! ID (but please note this is just an example, Yahoo! doesn't actually do this). You then switch back to the email tab and your data is still present in `sessionStorage` even though you've logged out. Clicking on various email messages retrieves data from `sessionStorage` and displays it. You're now looking at personal information while logged out.
 
 And even more dangerous situation occurs when you leave that computer without closing the browser and another user sits down in your place. With normal secure Ajax communication, your credentials are checked with each request and so this situation is avoided. If the data is in `sessionStorage`, there is no credential verification because there is no server request, which opens up this security issue.
 
-If you are using `sessionStorage` for storage of personalized data, you need to verify the user&#8217;s identity whenever the data is accessed for reading or writing. How do you do this? Most sign-in flows work by adding a specific cookie for the domain you&#8217;re accessing so that you don&#8217;t have to log in at each page. My recommendation is to take a snapshot of the cookie when the data is saved into `sessionStorage` and store that in `sessionStorage` along with the actual data. Then, every time you read to or write from `sessionStorage`, verify that the current value of the cookie is the same as the stored on. If there&#8217;s any difference, delete all of the values from `sessionStorage`. Since all windows and tabs shared the same cookies, cookies are dynamically updated and available through JavaScript immediately. Example using [YUI 3][6]:
+If you are using `sessionStorage` for storage of personalized data, you need to verify the user's identity whenever the data is accessed for reading or writing. How do you do this? Most sign-in flows work by adding a specific cookie for the domain you're accessing so that you don't have to log in at each page. My recommendation is to take a snapshot of the cookie when the data is saved into `sessionStorage` and store that in `sessionStorage` along with the actual data. Then, every time you read to or write from `sessionStorage`, verify that the current value of the cookie is the same as the stored on. If there's any difference, delete all of the values from `sessionStorage`. Since all windows and tabs shared the same cookies, cookies are dynamically updated and available through JavaScript immediately. Example using [YUI 3][6]:
 
     function validateUser(){
         var currentCookie = Y.Cookie.get("login");
@@ -120,7 +120,7 @@ With this code, you would use `saveData()` and `getData()` instead of accessing 
 
 ## Conclusion
 
-The `sessionStorage` object is a really useful way to keep data on the client in a relatively secure way. Though there are some outstanding security issues as mentioned in the previous section, those are relatively easy to mitigate in comparison to the built-in protection that this system affords you. Especially in today&#8217;s Web 2.0/Ajax world where browsers are often left open for inordinate amounts of time, caching data on the client using `sessionStorage` can dramatically improve the user&#8217;s experience in browsers that support it.
+The `sessionStorage` object is a really useful way to keep data on the client in a relatively secure way. Though there are some outstanding security issues as mentioned in the previous section, those are relatively easy to mitigate in comparison to the built-in protection that this system affords you. Especially in today's Web 2.0/Ajax world where browsers are often left open for inordinate amounts of time, caching data on the client using `sessionStorage` can dramatically improve the user's experience in browsers that support it.
 
  [1]: {{site.url}}/blog/2009/05/05/http-cookies-explained/
  [2]: http://dev.w3.org/html5/webstorage/

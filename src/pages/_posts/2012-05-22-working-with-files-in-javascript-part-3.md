@@ -14,7 +14,7 @@ The `FileReader` object is used to read data from files that are made accessible
 
 ## Progress events
 
-Progress events are becoming so common that they&#8217;re actually written up in a separate specification<sup>[1]</sup>. These events are designed to generically indicate the progress of data transfers. Such transfers occur when requesting data from the server, but also when requesting data from disk, which is what `FileReader` does. 
+Progress events are becoming so common that they're actually written up in a separate specification<sup>[1]</sup>. These events are designed to generically indicate the progress of data transfers. Such transfers occur when requesting data from the server, but also when requesting data from disk, which is what `FileReader` does. 
 
 There are six progress events:
 
@@ -67,14 +67,14 @@ This is similar to the approach that Gmail uses for its drag and drop file uploa
 
 ## Dealing with errors
 
-Even though you&#8217;re reading a local file, it&#8217;s still possible for the read to fail. The <cite>File API specification</cite><sup>[2]</sup> defines four types of errors:
+Even though you're reading a local file, it's still possible for the read to fail. The <cite>File API specification</cite><sup>[2]</sup> defines four types of errors:
 
-  * `NotFoundError` &#8211; the file can&#8217;t be found.
-  * `SecurityError` &#8211; something about the file or the read is dangerous. The browser has some leeway as to when this occurs, but generally if the file is dangerous to load into the browser or the browser has been performing too many reads, you&#8217;ll see this error.
-  * `NotReadableError` &#8211; the file exists but can&#8217;t be read, most likely due to a permissions problem.
+  * `NotFoundError` &#8211; the file can't be found.
+  * `SecurityError` &#8211; something about the file or the read is dangerous. The browser has some leeway as to when this occurs, but generally if the file is dangerous to load into the browser or the browser has been performing too many reads, you'll see this error.
+  * `NotReadableError` &#8211; the file exists but can't be read, most likely due to a permissions problem.
   * `EncodingError` &#8211; primarily when trying to read as a data URI and the length of the resulting data URI is beyond the maximum length supported by the browser.
 
-When an error occurs during a file read, the `FileReader` object&#8217;s `error` property is assigned to be an instance of one of the above mentioned errors. At least, that&#8217;s how the spec is written. In reality, browsers implement this as a `FileError` object that has a `code` property indicating the type of error that has occurred. Each error type is represented by a numeric constant value:
+When an error occurs during a file read, the `FileReader` object's `error` property is assigned to be an instance of one of the above mentioned errors. At least, that's how the spec is written. In reality, browsers implement this as a `FileError` object that has a `code` property indicating the type of error that has occurred. Each error type is represented by a numeric constant value:
 
   * `FileError.NOT_FOUND_ERR` for file not found errors.
   * `FileError.SECURITY_ERR` for security errors.
@@ -123,7 +123,7 @@ You can test for the type of error either during the `error` event or during `lo
 
 ## Up next
 
-The `FileReader` object is a fully-featured object with a lot of functionality and a lot of similarities to `XMLHttpRequest`. By following these last three posts, you should now be able to read data from files using JavaScript and send that data back to the server if necessary. However, the <cite>File API</cite> ecosystem is quite a bit larger than has been already discussed in this series, and in the next part you&#8217;ll learn about a powerful new features designed to work with files.
+The `FileReader` object is a fully-featured object with a lot of functionality and a lot of similarities to `XMLHttpRequest`. By following these last three posts, you should now be able to read data from files using JavaScript and send that data back to the server if necessary. However, the <cite>File API</cite> ecosystem is quite a bit larger than has been already discussed in this series, and in the next part you'll learn about a powerful new features designed to work with files.
 
 ## References
 

@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - Media Query
 ---
-I&#8217;ve been doing a lot of thinking about CSS media queries lately. I&#8217;m a big fan of media queries, as I think they bring a sense of sanity to feature detection. That&#8217;s a big reason why I was investigating CSS media queries in JavaScript<sup>[1]</sup> and will continue to do so. I think we&#8217;re only scraping the surface of what can be done with media queries on the web. As part of my pondering over the holiday break, I scribbled down a few notes of ways I&#8217;d like to use media queries. I just proposed the first one to the CSS working group.
+I've been doing a lot of thinking about CSS media queries lately. I'm a big fan of media queries, as I think they bring a sense of sanity to feature detection. That's a big reason why I was investigating CSS media queries in JavaScript<sup>[1]</sup> and will continue to do so. I think we're only scraping the surface of what can be done with media queries on the web. As part of my pondering over the holiday break, I scribbled down a few notes of ways I'd like to use media queries. I just proposed the first one to the CSS working group.
 
 ## The Proposal
 
@@ -27,7 +27,7 @@ So, just like you currently use `device-width`, `orientation`, and so on to dete
 
 ## Rationale
 
-In the realm of progressive enhancement, you don&#8217;t want to show page elements that can&#8217;t be used. This may be as simple as an arrow next to link indicating a dropdown menu is available. If JavaScript is disabled, you want the link to act like a regular link and not confuse people by having an arrow that means nothing. So you want to apply the style that shows the arrow only if JavaScript is enabled.
+In the realm of progressive enhancement, you don't want to show page elements that can't be used. This may be as simple as an arrow next to link indicating a dropdown menu is available. If JavaScript is disabled, you want the link to act like a regular link and not confuse people by having an arrow that means nothing. So you want to apply the style that shows the arrow only if JavaScript is enabled.
 
 The most common approach to this problem is to add a class to the `<html>` element via JavaScript. So somewhere on the page, you put:
 
@@ -45,21 +45,21 @@ This adds the class `js-enabled` via JavaScript. Of course, this only gets execu
         background: url(image.png) no-repeat;
     }
 
-It&#8217;s a bit of a hack, but this basic technique is in use by large sites such Twitter and the Yahoo! homepage, as well as being done automatically by Modernizr and YUI. 
+It's a bit of a hack, but this basic technique is in use by large sites such Twitter and the Yahoo! homepage, as well as being done automatically by Modernizr and YUI. 
 
 While this technique works, it has two downsides. First, you need to include that little JavaScript snippet (or a supporting library) to ensure the class ends up being added. Second, it alters the specificity of your rules, which can adversely affects the cascade. 
 
 ## Clarifications
 
-I&#8217;m a big believer that common patterns should be codified and standardized so that the development community can move on to more interesting challenges<sup>[3]</sup>. As such, it seems that the community has spoken that we want to define different styles when JavaScript is enabled, and CSS media queries seem like the right approach.
+I'm a big believer that common patterns should be codified and standardized so that the development community can move on to more interesting challenges<sup>[3]</sup>. As such, it seems that the community has spoken that we want to define different styles when JavaScript is enabled, and CSS media queries seem like the right approach.
 
 The <cite>CSS Media Queries specification</cite><sup>[4]</sup> states:
 
-> A media query consists of a media type and zero or more expressions that check for the conditions of particular media features. Among the media features that can be used in media queries are &#8216;width&#8217;, &#8216;height&#8217;, and &#8216;color&#8217;. By using media queries, presentations can be tailored to a specific range of output devices without changing the content itself.
+> A media query consists of a media type and zero or more expressions that check for the conditions of particular media features. Among the media features that can be used in media queries are &#8216;width', &#8216;height', and &#8216;color'. By using media queries, presentations can be tailored to a specific range of output devices without changing the content itself.
 
-The term *media feature* is key. When I was first debating myself over whether scripting support is appropriate for a CSS media query, I went and read the specification. Script support is just as much a media feature as color depth and orientation. It&#8217;s a capability of that particular device at the time your page is loaded. Given that, I felt comfortable proposing the inclusion of `script` as another media feature to test. 
+The term *media feature* is key. When I was first debating myself over whether scripting support is appropriate for a CSS media query, I went and read the specification. Script support is just as much a media feature as color depth and orientation. It's a capability of that particular device at the time your page is loaded. Given that, I felt comfortable proposing the inclusion of `script` as another media feature to test. 
 
-To be clear, my proposal&#8217;s goal is to easily indicate whether or not scripting is enabled in a browser. Think of it as a relative of the `<noscript>` element. So instead of doing something like this:
+To be clear, my proposal's goal is to easily indicate whether or not scripting is enabled in a browser. Think of it as a relative of the `<noscript>` element. So instead of doing something like this:
 
     <noscript>
     <style>
@@ -81,11 +81,11 @@ Of course, by omitting `not`, you could also apply changes when scripting is ena
 
 Some non-goals of this proposal are:
 
-  * **Replacing JavaScript feature detection.** You will still be checking, in JavaScript, if certain features are available. In short: I&#8217;m not looking to propose implementing media query features for all possible JavaScript APIs. If you want that, you should use Modernizr.
+  * **Replacing JavaScript feature detection.** You will still be checking, in JavaScript, if certain features are available. In short: I'm not looking to propose implementing media query features for all possible JavaScript APIs. If you want that, you should use Modernizr.
   * **Enabling JavaScript in CSS.** I have no desire to have JavaScript in CSS in any way, shape, or form.
-  * **Be JavaScript-centric in detection.** Actually, the intent is to indicate if *scripting* is enabled, not just JavaScript. It would probably be easy to extend the syntax, such as `(script:"text/javascript")`, but I&#8217;m not sure that&#8217;s necessary at this point.
+  * **Be JavaScript-centric in detection.** Actually, the intent is to indicate if *scripting* is enabled, not just JavaScript. It would probably be easy to extend the syntax, such as `(script:"text/javascript")`, but I'm not sure that's necessary at this point.
 
-And as I always like to remind people: no one would force you to use this feature if it&#8217;s implemented. If you don&#8217;t like it, you can always leave it to those who do.
+And as I always like to remind people: no one would force you to use this feature if it's implemented. If you don't like it, you can always leave it to those who do.
 
 ## Conclusion
 

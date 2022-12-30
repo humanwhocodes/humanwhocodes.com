@@ -9,7 +9,7 @@ tags:
   - Scope
   - Variables
 ---
-JavaScript developers have long bemoaned the fact that there&#8217;s no such thing as block-level variables. Block-level variables are variables that exist only within the context of a block statement (such as `if`) and then are destroyed immediately after the statement is finished executing. You can write code that *looks* like it should create block-level variables, such as:
+JavaScript developers have long bemoaned the fact that there's no such thing as block-level variables. Block-level variables are variables that exist only within the context of a block statement (such as `if`) and then are destroyed immediately after the statement is finished executing. You can write code that *looks* like it should create block-level variables, such as:
 
     for (var i=0; i < 10; i++){
         //body
@@ -45,4 +45,4 @@ The whole idea of block-level variables is to define them for limited use and th
 
 This code creates an object literal with two properties, `foo` and `bar` and passes that into the `with` statement. Doing so creates two variables inside of the statement, `foo` and `bar`, which correspond to the properties on the object literal. These variables are destroyed when the `with` block is finished executing. Since the object literal itself is never stored in a variable, it is destroyed once the `with` block finishes executing as well, so there is no longer any way to access any of this information.
 
-I&#8217;m not sure that this is practical for use repeatedly, as adding another scope also incurs a performance hit for variable lookup, but it&#8217;s an interesting use of an underappreciated part of the language.
+I'm not sure that this is practical for use repeatedly, as adding another scope also incurs a performance hit for variable lookup, but it's an interesting use of an underappreciated part of the language.

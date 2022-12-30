@@ -11,7 +11,7 @@ tags:
   - Performance
   - Recursion
 ---
-Recursion is the enemy of fast-running scripts. Too much recursion can cause the browser to grind to a halt or quit unexpectedly, and so must be addressed a serious performance problem in JavaScript. In [part 2][1] of this series, I wrote briefly about handling too much recursion in a function through memoization. Memoization is a technique for caching previously calculated values so that they need not be recalculated; when a recursive function is doing such a calculation, memoization is incredibly useful. The memoizer I presented was Crockford&#8217;s, and is useful primarily for recursive functions that return integers. All recursive functions, of course, don&#8217;t return integers. A more generic `memoizer()` function can be created to deal with any type of recursive function:
+Recursion is the enemy of fast-running scripts. Too much recursion can cause the browser to grind to a halt or quit unexpectedly, and so must be addressed a serious performance problem in JavaScript. In [part 2][1] of this series, I wrote briefly about handling too much recursion in a function through memoization. Memoization is a technique for caching previously calculated values so that they need not be recalculated; when a recursive function is doing such a calculation, memoization is incredibly useful. The memoizer I presented was Crockford's, and is useful primarily for recursive functions that return integers. All recursive functions, of course, don't return integers. A more generic `memoizer()` function can be created to deal with any type of recursive function:
 
     function memoizer(fundamental, cache){
         cache = cache || {}
@@ -25,7 +25,7 @@ Recursion is the enemy of fast-running scripts. Too much recursion can cause the
     }
     
 
-This version of the function is a bit different than Crockford&#8217;s. First, the order of arguments has been reversed with the original function as the first argument and an optional `cache` object as the second argument. Not all recursive functions are seeded with initial information, so making that argument optional makes sense. Inside, I&#8217;ve changed the caching data type from an array to an object, which makes this version applicable to recursive functions that return non-integer results. Inside the `shell` function, I&#8217;m using the `hasOwnProperty()` method to see if the argument already has a `cache` entry. This is safer than testing if the type of value isn&#8217;t `undefined` since `undefined` is a valid return value. Example usage with the previous Fibonacci example:
+This version of the function is a bit different than Crockford's. First, the order of arguments has been reversed with the original function as the first argument and an optional `cache` object as the second argument. Not all recursive functions are seeded with initial information, so making that argument optional makes sense. Inside, I've changed the caching data type from an array to an object, which makes this version applicable to recursive functions that return non-integer results. Inside the `shell` function, I'm using the `hasOwnProperty()` method to see if the argument already has a `cache` entry. This is safer than testing if the type of value isn't `undefined` since `undefined` is a valid return value. Example usage with the previous Fibonacci example:
 
     var fibonacci =
         memoizer(function (recur, n) {
@@ -33,7 +33,7 @@ This version of the function is a bit different than Crockford&#8217;s. First, t
         }, {"0":0, "1":1});
     
 
-Once again, a call to `fibonacci(40)` results in only 40 calls of the original function instead of 331,160,280. Memoization works great for recursive algorithms with a strictly defined result set. There are, however, other recursive algorithms that don&#8217;t lend themselves to optimization through memoization.
+Once again, a call to `fibonacci(40)` results in only 40 calls of the original function instead of 331,160,280. Memoization works great for recursive algorithms with a strictly defined result set. There are, however, other recursive algorithms that don't lend themselves to optimization through memoization.
 
 One of my professors in college insisted that anything written using recursion could also be written using iteration if necessary. Indeed, recursion and iteration are often considered remedies for one another when one is seen as a problem. The techniques for converting a recursive algorithm into an iterative algorithm are the same regardless of the programming language; the importance in JavaScript is greater, though, because the resources of the execution environment are so restrictive. Consider a typical recursive algorithm such as a merge sort. In JavaScript, it may be written like this:
 
@@ -65,7 +65,7 @@ One of my professors in college insisted that anything written using recursion c
         return merge(mergeSort(left), mergeSort(right));
     }
 
-Calling the `mergeSort()` function on an array returns an array of the items sorted in correct order. Note that for each call to `mergeSort()` there are two recursive calls. This algorithm won&#8217;t benefit from memoization because each result is only calculated once and, therefore, caching the results doesn&#8217;t help. If you were to call `mergeSort()` on an array with 100 items, there would be 199 calls total; a 1,000 item array would result in 1,999 calls. The solution in this case is to convert the recursive algorithm into an iterative one, which means introducing some loops (algorithm credit: [List Processing: Sort Again, Naturally][2]):
+Calling the `mergeSort()` function on an array returns an array of the items sorted in correct order. Note that for each call to `mergeSort()` there are two recursive calls. This algorithm won't benefit from memoization because each result is only calculated once and, therefore, caching the results doesn't help. If you were to call `mergeSort()` on an array with 100 items, there would be 199 calls total; a 1,000 item array would result in 1,999 calls. The solution in this case is to convert the recursive algorithm into an iterative one, which means introducing some loops (algorithm credit: [List Processing: Sort Again, Naturally][2]):
 
     //iterative merge sort algorithm
     function mergeSort(items){

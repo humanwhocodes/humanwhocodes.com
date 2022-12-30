@@ -9,7 +9,7 @@ tags:
   - Scope
   - Variables
 ---
-I almost fell victim to this over the weekend, so thought I&#8217;d share a common JavaScript gotcha. What does the following line do?
+I almost fell victim to this over the weekend, so thought I'd share a common JavaScript gotcha. What does the following line do?
 
 <code class="block"> </code>
 
@@ -21,4 +21,4 @@ Most people will respond, &#8220;define a variable called `start` and a variable
 
 <pre>var start = null, stop = null;</pre>
 
-Now, the `var` operator applies to both `start` and `stop`, creating two local variables (the comma indicates another variable being defined). It&#8217;s little things like this that make me love JavaScript.
+Now, the `var` operator applies to both `start` and `stop`, creating two local variables (the comma indicates another variable being defined). It's little things like this that make me love JavaScript.

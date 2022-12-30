@@ -20,6 +20,6 @@ So this past week we learned that <a title="Internet Explorer 8 and Acid2: A Mil
   * <a title="CSS 2.1 - The content property" rel="external" href="http://www.w3.org/TR/CSS21/generate.html#content">The <code>content</code> property</a>
   * <a title="CSS 2.1 - The CSS Table Model" rel="external" href="http://www.w3.org/TR/CSS21/tables.html#table-display">The CSS table model</a>
 
-In addition to testing these specific features, the Acid2 test also intentionally includes syntax errors designed to point out parser errors in browsers. The rules with syntax errors should be ignored, and if they aren&#8217;t, the test won&#8217;t display correctly. With IE8 passing the Acid2 test, it means that not only have the previously mentioned features been implemented correctly, but also that the bugs in IE&#8217;s CSS parser have been fixed. This is huge news.
+In addition to testing these specific features, the Acid2 test also intentionally includes syntax errors designed to point out parser errors in browsers. The rules with syntax errors should be ignored, and if they aren't, the test won't display correctly. With IE8 passing the Acid2 test, it means that not only have the previously mentioned features been implemented correctly, but also that the bugs in IE's CSS parser have been fixed. This is huge news.
 
-It&#8217;s worth noting that IE8 passes in the Acid2 test in standards mode, meaning that all of the web sites in the world that run in quirks mode will be unaffected.
+It's worth noting that IE8 passes in the Acid2 test in standards mode, meaning that all of the web sites in the world that run in quirks mode will be unaffected.

@@ -8,7 +8,7 @@ tags:
   - JavaScript
   - Quiz
 ---
-Recently, there have been a couple of JavaScript quizzes floating around. There was one by [Dmitry Baranovskiy][1] (for which I [explained][2] the answers) and one by [Kangax][3]. But there are so many strange pieces of JavaScript that I thought I&#8217;d put together a quiz of my own. I&#8217;ve decided that each part will be a single code example followed by one or more questions. Once again, I don&#8217;t think such quizzes are useful for job interviews, but they are fun to test the depths of your knowledge. Without further adieu, here it is (answers to follow by end of week).
+Recently, there have been a couple of JavaScript quizzes floating around. There was one by [Dmitry Baranovskiy][1] (for which I [explained][2] the answers) and one by [Kangax][3]. But there are so many strange pieces of JavaScript that I thought I'd put together a quiz of my own. I've decided that each part will be a single code example followed by one or more questions. Once again, I don't think such quizzes are useful for job interviews, but they are fun to test the depths of your knowledge. Without further adieu, here it is (answers to follow by end of week).
 
 ## Example #1
 
@@ -82,7 +82,7 @@ Questions:
   * What is the value `result`?
   * What is the value displayed in the alert?
 
-## That&#8217;s it!
+## That's it!
 
 Whereas the other quizzes might have made your eyes cross trying to trace scope changes and the like, I wanted this one to be as dead simple as possible. The point? JavaScript is complex enough when written simply. Try to answer the questions without running the code. Answers with complete explanations will follow soon.
 

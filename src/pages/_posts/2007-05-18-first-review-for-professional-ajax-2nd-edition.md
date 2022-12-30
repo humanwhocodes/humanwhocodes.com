@@ -14,6 +14,6 @@ Stephen Chapman, the <a title="JavaScript Guide" rel="external" href="http://jav
 
 > A book for the programmer with a good knowledge of Javascript, XML, and at least one server side language wanting to combine these skills to produce client/server web applications. Provided that you have a sufficient understanding of programming to follow the examples, this book will introduce you to the real future of client/server interaction on the web as well as providing you with some of the tools that will make implementing this type of interaction much easier. A must have book for anyone wanting to use Ajax.
 
-Hopefully, this is the first of many good reviews. Speaking of which, if you&#8217;re someone with a high-traffic, tech-related web site (or someone who contributes to one such as <a title="Slashdot" rel="external" href="http://www.slashdot.org">Slashdot</a>), drop me a line if you&#8217;d like to review the book. Reviews on [Amazon][1] are also appreciated.
+Hopefully, this is the first of many good reviews. Speaking of which, if you're someone with a high-traffic, tech-related web site (or someone who contributes to one such as <a title="Slashdot" rel="external" href="http://www.slashdot.org">Slashdot</a>), drop me a line if you'd like to review the book. Reviews on [Amazon][1] are also appreciated.
 
  [1]: http://www.amazon.com

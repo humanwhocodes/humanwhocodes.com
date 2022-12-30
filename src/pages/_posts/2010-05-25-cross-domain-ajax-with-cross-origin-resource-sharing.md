@@ -23,11 +23,11 @@ For a simple request, one that uses either GET or POST with no custom headers an
 
     Origin: {{site.url}}
 
-If the server decides that the request should be allowed, it sends a `Access-Control-Allow-Origin` header echoing back the same origin that was sent or &#8220;*&#8221; if it&#8217;s a public resource. For example:
+If the server decides that the request should be allowed, it sends a `Access-Control-Allow-Origin` header echoing back the same origin that was sent or &#8220;*&#8221; if it's a public resource. For example:
 
     Access-Control-Allow-Origin: {{site.url}}
 
-If this header is missing, or the origins don&#8217;t match, then the browser disallows the request. If all is well, then the browser processes the request. Note that neither the requests nor responses include cookie information.
+If this header is missing, or the origins don't match, then the browser disallows the request. If all is well, then the browser processes the request. Note that neither the requests nor responses include cookie information.
 
 All of the previously mentioned browsers support these simple requests. Firefox 3.5+, Safari 4+, and Chrome all support usage through the `XMLHttpRequest` object. When attempting to open a resource on a different origin, this behavior automatically gets triggered without any extra code. For example:
 
@@ -38,7 +38,7 @@ All of the previously mentioned browsers support these simple requests. Firefox 
     };
     xhr.send(null);
 
-To do the same in Internet Explorer 8, you&#8217;ll need to use the [`XDomainRequest` object][3] in the same manner:
+To do the same in Internet Explorer 8, you'll need to use the [`XDomainRequest` object][3] in the same manner:
 
     var xdr = new XDomainRequest();
     xdr.open("get", "{{site.url}}/some_resource/");
@@ -72,7 +72,7 @@ The Mozilla team suggests in their [post about CORS][4] that you should check fo
 
 The `XMLHttpRequest` object in Firefox, Safari, and Chrome has similar enough interfaces to the IE `XDomainRequest` object that this pattern works fairly well. The common interface properties/methods are:
 
-  * `abort()` &#8211; use to stop a request that&#8217;s already in progress.
+  * `abort()` &#8211; use to stop a request that's already in progress.
   * `onerror` &#8211; use instead of `onreadystatechange` to detect errors.
   * `onload` &#8211; use instead of `onreadystatechange` to detect successes.
   * `responseText` &#8211; use to get contents of response.
@@ -106,7 +106,7 @@ Example:
     Access-Control-Allow-Headers: NCZ
     Access-Control-Max-Age: 1728000
 
-Once a preflight request has been made, the result is cached for the period of time specified in the response; you&#8217;ll only incur the cost of an extra HTTP request the first time a request of this type is made.
+Once a preflight request has been made, the result is cached for the period of time specified in the response; you'll only incur the cost of an extra HTTP request the first time a request of this type is made.
 
 Firefox 3.5+, Safari 4+, and Chrome all support preflighted requests; Internet Explorer 8 does not.
 
@@ -116,13 +116,13 @@ By default, cross-origin requests do not provide credentials (cookies, HTTP auth
 
     Access-Control-Allow-Credentials: true
 
-If a credentialed request is sent and this header is not sent as part of the response, then the browser doesn&#8217;t pass the response to JavaScript (`responseText` is an empty string, `status` is 0, and `onerror()` is invoked). Note that the server can also send this HTTP header as part of the preflight response to indicate that the origin is allowed to send credentialed requests.
+If a credentialed request is sent and this header is not sent as part of the response, then the browser doesn't pass the response to JavaScript (`responseText` is an empty string, `status` is 0, and `onerror()` is invoked). Note that the server can also send this HTTP header as part of the preflight response to indicate that the origin is allowed to send credentialed requests.
 
-Internet Explorer 8 doesn&#8217;t support the `withCredentials` property; Firefox 3.5, Safari 4, and Chrome all support it.
+Internet Explorer 8 doesn't support the `withCredentials` property; Firefox 3.5, Safari 4, and Chrome all support it.
 
 ## Conclusion
 
-There is a lot of solid support for cross-domain Ajax in modern web browsers, yet most developers are still unaware of this powerful capability. Usage requires just a little bit of extra JavaScript work and a little extra server-side work to ensure that the correct headers are being sent. IE8&#8242;s implementation lags a bit behind the others in terms of allowing advanced requests and credentialed requests, but hopefully support for CORS will continue to improve. If you&#8217;d like to learn more, I highly suggest checking out Arun Ranganathan&#8217;s [examples page][5].
+There is a lot of solid support for cross-domain Ajax in modern web browsers, yet most developers are still unaware of this powerful capability. Usage requires just a little bit of extra JavaScript work and a little extra server-side work to ensure that the correct headers are being sent. IE8&#8242;s implementation lags a bit behind the others in terms of allowing advanced requests and credentialed requests, but hopefully support for CORS will continue to improve. If you'd like to learn more, I highly suggest checking out Arun Ranganathan's [examples page][5].
 
 **Update (25 May 2010):** Fixed typo in example code.
 

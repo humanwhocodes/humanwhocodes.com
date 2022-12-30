@@ -27,7 +27,7 @@ To be more specific, the `__count__` property always reflects the number of obje
 
 In this example, an object `person` is created with a single property, `name` and so the initial value of `__count__` is 1. When the `hair` property is added, `__count__` is automatically updated to 2. Likewise, deleting the `name` property results in `__count__` being reset to 1. All of this happens automatically as the object is manipulated.
 
-The important thing to note about `__count__` is that it deals only with instance members and so doesn&#8217;t take into account properties and methods inherited via the prototype chain. In non-Mozilla JavaScript engines, you&#8217;d need to write a loop and use `hasOwnProperty()` to build up such a count:
+The important thing to note about `__count__` is that it deals only with instance members and so doesn't take into account properties and methods inherited via the prototype chain. In non-Mozilla JavaScript engines, you'd need to write a loop and use `hasOwnProperty()` to build up such a count:
 
     //all browsers
     function getPropertyCount(object){
@@ -43,7 +43,7 @@ The important thing to note about `__count__` is that it deals only with instanc
 
 Clearly, using `__count__` is far more efficient than creating a loop to calculate the number of instance members.
 
-So the question remains, why would it be useful to know the number of instance members on an object? It&#8217;s very useful when you want to know whether an object has only inherited members before proceeding:
+So the question remains, why would it be useful to know the number of instance members on an object? It's very useful when you want to know whether an object has only inherited members before proceeding:
 
     if(getPropertyCount(object) > 0){
         //do something
@@ -51,4 +51,4 @@ So the question remains, why would it be useful to know the number of instance m
 
 This type of construct is helpful in identifying objects that have instance members versus those that are made up solely of inherited members. JSON serialization, for example, relies heavily on the existence of instance members.
 
-The `__count__` property doesn&#8217;t really do much in the world of JavaScript, but it does provide more feedback as to what is going on behind-the-scenes. This extension hasn&#8217;t been picked up by non-Mozilla browsers, so it&#8217;s use isn&#8217;t recommended for cross-browser development.
+The `__count__` property doesn't really do much in the world of JavaScript, but it does provide more feedback as to what is going on behind-the-scenes. This extension hasn't been picked up by non-Mozilla browsers, so it's use isn't recommended for cross-browser development.

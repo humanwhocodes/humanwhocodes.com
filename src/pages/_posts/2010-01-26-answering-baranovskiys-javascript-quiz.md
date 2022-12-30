@@ -1,5 +1,5 @@
 ---
-title: 'Answering Baranovskiy&#8217;s JavaScript quiz'
+title: 'Answering Baranovskiy's JavaScript quiz'
 author: Nicholas C. Zakas
 permalink: /blog/2010/01/26/answering-baranovskiys-javascript-quiz/
 categories:
@@ -8,7 +8,7 @@ tags:
   - Hoisting
   - JavaScript
 ---
-Last week, I [tweeted][1] about a JavaScript quiz I came across on Dmitry Baranovskiyâ€™s blog entitled, [So you think you know JavaScript?][2] As with other quizzes of this type, there is only one question to answer for five different pieces of example code: what is the result? The example code tests some of the quirkier attributes of JavaScript engine behavior. I&#8217;ve seen similar quizzes in the past, sometimes by people saying that they use it as a test during job interviews. I think doing so is both disrespectful to the candidate as well as generally useless. You don&#8217;t encounter this type of quirk every day, so making that the minimum to get a job is about as useful as asking flight attendant candidate to explain jet propulsion.
+Last week, I [tweeted][1] about a JavaScript quiz I came across on Dmitry Baranovskiyâ€™s blog entitled, [So you think you know JavaScript?][2] As with other quizzes of this type, there is only one question to answer for five different pieces of example code: what is the result? The example code tests some of the quirkier attributes of JavaScript engine behavior. I've seen similar quizzes in the past, sometimes by people saying that they use it as a test during job interviews. I think doing so is both disrespectful to the candidate as well as generally useless. You don't encounter this type of quirk every day, so making that the minimum to get a job is about as useful as asking flight attendant candidate to explain jet propulsion.
 
 Still, I liked some of the example code in this post because it can be used to explain some interesting things about JavaScript as a language. The following is an in-depth explanation of what is happening in each of those examples.
 
@@ -19,7 +19,7 @@ Still, I liked some of the example code in this post because it can be used to e
     }
     alert(a);
 
-This strange looking piece of code seems to say, &#8220;if window doesn&#8217;t have a property &#8216;a&#8217;, define a variable &#8216;a&#8217; and assign it the value of 1.&#8221; You would then expect the alert to display the number 1. In reality, the alert displays &#8220;undefined&#8221;. To understand why this happens, you need to know three things about JavaScript.
+This strange looking piece of code seems to say, &#8220;if window doesn't have a property &#8216;a', define a variable &#8216;a' and assign it the value of 1.&#8221; You would then expect the alert to display the number 1. In reality, the alert displays &#8220;undefined&#8221;. To understand why this happens, you need to know three things about JavaScript.
 
 First, all global variables are properties of `window`. Writing `var a = 1` is functionally equivalent to writing `window.a = 1`. You can check to see if a global variable is declared, therefore, by using the following:
 
@@ -47,7 +47,7 @@ You can separate out the declaration and the initialization like this:
     var a;    //declaration
     a = 1;    //initialization
 
-When the JavaScript engines comes across a combination of declaration and initialization, it does this split automatically so that the declaration can be hoisted. Why isn&#8217;t the initialization hoisted? Because that could affect the value of the variable during code execution and lead to unexpected results.
+When the JavaScript engines comes across a combination of declaration and initialization, it does this split automatically so that the declaration can be hoisted. Why isn't the initialization hoisted? Because that could affect the value of the variable during code execution and lead to unexpected results.
 
 So, knowing these three aspects of JavaScript, re-examine the original code. The code actually gets executed as if it were the following:
 
@@ -57,7 +57,7 @@ So, knowing these three aspects of JavaScript, re-examine the original code. The
     }
     alert(a);
 
-Looking at this code should make the solution obvious. The variable `a` is declared first, and then the `if` statement says, &#8220;if `a` isn&#8217;t declared, then initialize `a` to have a value of 1.&#8221; Of course, this condition can never be true and so the variable a remains with its default value, `undefined`.
+Looking at this code should make the solution obvious. The variable `a` is declared first, and then the `if` statement says, &#8220;if `a` isn't declared, then initialize `a` to have a value of 1.&#8221; Of course, this condition can never be true and so the variable a remains with its default value, `undefined`.
 
 ## Example #2
 
@@ -102,7 +102,7 @@ The variable `value` ends up as a function even though the variable declaration 
 
 Now the variable `value` is set to 1. The variable initialization overrides the function declaration.
 
-Back to the example code, the function is actually a function expression despite the name. Named function expressions are not considered function declarations and therefore don&#8217;t get overridden by variable declarations. However, you&#8217;ll note that the variable containing the function expression is `b` while the function expression&#8217;s name is `a`. Browsers handle that a differently. Internet Explorer treats it as a function declaration, so it gets overridden by the variable initialization, meaning that the call to `a(--x)` causes an error. All other browsers allow the call to `a(--x)` inside of the function while a is still a number outside of the function. Basically, calling `b(2)` in Internet Explorer throws a JavaScript error but returns `undefined` in others.
+Back to the example code, the function is actually a function expression despite the name. Named function expressions are not considered function declarations and therefore don't get overridden by variable declarations. However, you'll note that the variable containing the function expression is `b` while the function expression's name is `a`. Browsers handle that a differently. Internet Explorer treats it as a function declaration, so it gets overridden by the variable initialization, meaning that the call to `a(--x)` causes an error. All other browsers allow the call to `a(--x)` inside of the function while a is still a number outside of the function. Basically, calling `b(2)` in Internet Explorer throws a JavaScript error but returns `undefined` in others.
 
 All of that being said, a more correct and easier to understand version of the code would be:
 
@@ -123,7 +123,7 @@ Looking at this code, it should be clear that `a` will always be 1.
     alert(a);
     
 
-If you were able to understand the previous example, then this one should be pretty simple. The only thing you need to understand is that function declarations trump variable declarations unless there&#8217;s an initialization. There&#8217;s no initialization here, so the alert displays the source code of the function.
+If you were able to understand the previous example, then this one should be pretty simple. The only thing you need to understand is that function declarations trump variable declarations unless there's an initialization. There's no initialization here, so the alert displays the source code of the function.
 
 ## Example #4
 
@@ -133,7 +133,7 @@ If you were able to understand the previous example, then this one should be pre
     }
     b(1, 2, 3);
 
-This code is a bit easier to understand as the only real question you must answer is whether the alert displays 3 or 10. The answer is 10 in all browsers. There&#8217;s only one concept you need to know to figure out this code. ECMA-262, 3rd Edition, section 10.1.8 says about an `arguments` object:
+This code is a bit easier to understand as the only real question you must answer is whether the alert displays 3 or 10. The answer is 10 in all browsers. There's only one concept you need to know to figure out this code. ECMA-262, 3rd Edition, section 10.1.8 says about an `arguments` object:
 
 > For each non-negative integer, `arg`, less than the value of the `length` property, a property is created with name `ToString(arg)` and property attributes `{ DontEnum }`. The initial value of this property is the value of the corresponding actual parameter supplied by the caller. The first actual parameter value corresponds to `arg` = 0, the second to `arg` = 1, and so on. In the case when `arg` is less than the number of formal parameters for the `Function` object, this property shares its value with the corresponding property of the activation object. *This means that changing this property changes the corresponding property of the activation object and vice versa.*
 
@@ -158,7 +158,7 @@ First, you must understand how the value of the `this` object is determined. Whe
     }
     object.method(); 
 
-In this code, `this` ends up pointing to `object` when `object.method()` is called. In the global scope, `this` is equivalent to `window` (in browsers, in non-browser environments it&#8217;s the `global` object equivalent), so `this` is also equal to `window` inside of a function that isn&#8217;t an object property. Example:
+In this code, `this` ends up pointing to `object` when `object.method()` is called. In the global scope, `this` is equivalent to `window` (in browsers, in non-browser environments it's the `global` object equivalent), so `this` is also equal to `window` inside of a function that isn't an object property. Example:
 
     function method() {
         alert(this === window);    //true
@@ -192,7 +192,7 @@ This code makes it obvious that the alert will be displaying the string equivale
 
 ## Conclusion
 
-Dmitry put together an interesting quiz from which you can actually learn some of the strange quirks of JavaScript. I hope that this writeup has helped everyone understand the details necessary to figure out what each piece of code is doing, and more importantly, why it&#8217;s doing so. Again, I caution against using these sort of quizzes for job interviews as I don&#8217;t think they serve any practical use in that realm (if you&#8217;d like to know my take on interviewing front-end engineers, see my [previous post][3]).
+Dmitry put together an interesting quiz from which you can actually learn some of the strange quirks of JavaScript. I hope that this writeup has helped everyone understand the details necessary to figure out what each piece of code is doing, and more importantly, why it's doing so. Again, I caution against using these sort of quizzes for job interviews as I don't think they serve any practical use in that realm (if you'd like to know my take on interviewing front-end engineers, see my [previous post][3]).
 
  [1]: http://twitter.com/slicknet/status/8057003813
  [2]: http://dmitry.baranovskiy.com/post/91403200

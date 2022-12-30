@@ -18,7 +18,7 @@ Other changes for this release:
   * **New Rule:** The `fallback-colors` rule was suggested by Dustin Cass and warns when a CSS3 color is used without a CSS2 fallback ([rule documentation][6])
   * **New Rule:** The `duplicate-background-images` was created by Hans-Peter Buniat and warns when a background image is used more than once (([rule documentation][7])
 
-Thanks once again to the CSS Lint community for continuing to [file bugs][8] and make feature requests. We&#8217;re rapidly approaching and very stable v1.0.0 release due to your participation and feedback. Keep it coming!
+Thanks once again to the CSS Lint community for continuing to [file bugs][8] and make feature requests. We're rapidly approaching and very stable v1.0.0 release due to your participation and feedback. Keep it coming!
 
  [1]: http://csslint.net
  [2]: http://npmjs.org

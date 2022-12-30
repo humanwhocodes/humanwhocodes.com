@@ -3,7 +3,6 @@ title: "Flattening a JavaScript array with a generator"
 author: Nicholas C. Zakas
 teaser: "Generators make traversing multidimensional arrays easy."
 date: 2019-02-09
-layout: snippet
 categories:
   - JavaScript
 tags:

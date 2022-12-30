@@ -9,7 +9,7 @@ tags:
   - Computer Science
   - JavaScript
 ---
-Credit cards on the web sites have become just about as ubiquitous as sign-in forms. One of my favorite moments in computer science was learning the algorithm for determining a valid credit card number. The process doesn&#8217;t involve making a call to a server or checking accompanying information, just a basic algorithm that uses a check digit to determine if the credit card number is in the correct format.
+Credit cards on the web sites have become just about as ubiquitous as sign-in forms. One of my favorite moments in computer science was learning the algorithm for determining a valid credit card number. The process doesn't involve making a call to a server or checking accompanying information, just a basic algorithm that uses a check digit to determine if the credit card number is in the correct format.
 
 ## Identifier format
 
@@ -25,7 +25,7 @@ Identifiers of this format can be between 13 and 19 digits long and used for any
 
 Hans Peter Luhn, a scientist at IBM, developed [Luhn algorithm][2] to protect against unintentional mistakes in numeric identifiers (it is not a secure algorithm). This algorithm is the basis for magnetic strip identification cards, such as credit cards, as defined in [ISO/IEC 7812][1].
 
-Luhn algorithm itself is quite simple and straightforward. Starting at the last digit in the identifier (the check digit), double every other digit&#8217;s value. If any of the doubled digits are greater than nine, then the number is divided by 10 and the remainder is added to one. This value is added together with the appropriate values for every other digit to get a sum. If this sum can be equally divisible by 10, then the number is valid. The check digit serves the purpose of ensuring that the identifier will by equally divisible by 10. This can be written in JavaScript as follows:
+Luhn algorithm itself is quite simple and straightforward. Starting at the last digit in the identifier (the check digit), double every other digit's value. If any of the doubled digits are greater than nine, then the number is divided by 10 and the remainder is added to one. This value is added together with the appropriate values for every other digit to get a sum. If this sum can be equally divisible by 10, then the number is valid. The check digit serves the purpose of ensuring that the identifier will by equally divisible by 10. This can be written in JavaScript as follows:
 
     //Luhn algorithm identifier verification
     //MIT Licensed
@@ -78,11 +78,11 @@ This method accepts a string `identifier` as its argument and returns a Boolean 
         alert("Valid!");
     }
 
-Yes, I did test this on my own credit card numbers as a test. No you can&#8217;t have those sample files. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> 
+Yes, I did test this on my own credit card numbers as a test. No you can't have those sample files. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> 
 
 ## Validation not verification
 
-Keep in mind that Luhn algorithm is a validating algorithm, not a verifying one. Just because an identifier is in a valid format doesn&#8217;t mean that it&#8217;s a real identifier that&#8217;s currently in use. Luhn algorithm is best used to find unintentional errors in identifiers rather than providing any level of security. As with other parts of my computer science in JavaScript series, I&#8217;m not condoning its usage in real web applications for any reason, just introducing it as an interesting computer science topic that can be implemented in JavaScript.
+Keep in mind that Luhn algorithm is a validating algorithm, not a verifying one. Just because an identifier is in a valid format doesn't mean that it's a real identifier that's currently in use. Luhn algorithm is best used to find unintentional errors in identifiers rather than providing any level of security. As with other parts of my computer science in JavaScript series, I'm not condoning its usage in real web applications for any reason, just introducing it as an interesting computer science topic that can be implemented in JavaScript.
 
 This code, along with others from this series, is available on my [GitHub Computer Science in JavaScript project][3].
 

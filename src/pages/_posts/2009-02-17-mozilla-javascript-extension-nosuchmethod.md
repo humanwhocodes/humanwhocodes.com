@@ -8,7 +8,7 @@ tags:
   - JavaScript
   - Mozilla
 ---
-Mozilla&#8217;s JavaScript engines have always been a bit different than those from other companies. SpiderMonkey and its Java port, Rhino, had long contained extra features designed to make JavaScript more robust. One such feature is the `__noSuchMethod__()` method that is available on native objects. In most JavaScript engines, calling a method that doesn&#8217;t exist simply results in an error; in Mozilla engines, this is only the default behavior. You can override that behavior by defining a `__noSuchMethod__()` method on the object. This method executes whenever an undefined method is called on the object.
+Mozilla's JavaScript engines have always been a bit different than those from other companies. SpiderMonkey and its Java port, Rhino, had long contained extra features designed to make JavaScript more robust. One such feature is the `__noSuchMethod__()` method that is available on native objects. In most JavaScript engines, calling a method that doesn't exist simply results in an error; in Mozilla engines, this is only the default behavior. You can override that behavior by defining a `__noSuchMethod__()` method on the object. This method executes whenever an undefined method is called on the object.
 
 When called, the `__noSuchMethod__()` method receives two arguments: the name of the method that was called and an array of arguments that were passed to that method. Note that the array of arguments is an instance of `Array` (not an `arguments` object) and is always passed even if there are no arguments. A simple example:
 
@@ -28,9 +28,9 @@ When called, the `__noSuchMethod__()` method receives two arguments: the name of
     //"Method called 'phone' executed with arguments [Mike]"
     person.phone("Mike");   
 
-This code defines a variable `person` with a `__noSuchMethod__()` method defined. When the methods `sayName()` and `phone()` are called on the object, the `__noSuchMethod__()` method is called instead, preventing an error and allowing other handling. In this case, I&#8217;m just displaying the name of the method and the arguments that were passed in.
+This code defines a variable `person` with a `__noSuchMethod__()` method defined. When the methods `sayName()` and `phone()` are called on the object, the `__noSuchMethod__()` method is called instead, preventing an error and allowing other handling. In this case, I'm just displaying the name of the method and the arguments that were passed in.
 
-Of course, normal programming practices don&#8217;t involve methods that you&#8217;re unaware of until runtime; that would just be plain confusing. This isn&#8217;t something you&#8217;d even want to do on a regular basis. It does, however, open up some interesting possibilities for dynamic utilities. Consider creating an object that helps to output valid XHTML:
+Of course, normal programming practices don't involve methods that you're unaware of until runtime; that would just be plain confusing. This isn't something you'd even want to do on a regular basis. It does, however, open up some interesting possibilities for dynamic utilities. Consider creating an object that helps to output valid XHTML:
 
     function HTMLWriter(){
         this._work = [];
@@ -101,7 +101,7 @@ This code does the job using three methods: `startTag()`, `endTag()`, and `text(
         .body().text("Hell world!").xbody()
     .xhtml().toString();
 
-Since all tags behave more or less the same, you&#8217;d be forced to create what amounts to duplicate methods on the `HTMLWriter` object, which is incredibly wasteful. This is where the true power of `__noSuchMethod__()` comes in. Look at how simple the code becomes for such an implementation:
+Since all tags behave more or less the same, you'd be forced to create what amounts to duplicate methods on the `HTMLWriter` object, which is incredibly wasteful. This is where the true power of `__noSuchMethod__()` comes in. Look at how simple the code becomes for such an implementation:
 
 <pre>function HTMLWriter(){
     this._work = [];
@@ -187,9 +187,9 @@ HTMLWriter.prototype = {
 
 };</pre>
 
-The majority of the work in this implementation is done in `__noSuchMethod__()`. It contains an array of all valid XHTML tags that is used to lookup the method that was called. Since closing the tag requires an &#8216;x&#8217; at the front of the method, a check is done to see if this is the first character. If so, then the `closeTag` flag is set and the &#8216;x&#8217; is stripped off of the tag name before proceeding. Next, the Mozilla array extension `indexOf()` is used to determine if the tag name matches the known list. If the tag name is invalid, an error is thrown; otherwise, normal processing occurs. The number of supported tags is completely dynamic, and new &#8220;methods&#8221; can be added or removed simply by modifying the list of tags.
+The majority of the work in this implementation is done in `__noSuchMethod__()`. It contains an array of all valid XHTML tags that is used to lookup the method that was called. Since closing the tag requires an &#8216;x' at the front of the method, a check is done to see if this is the first character. If so, then the `closeTag` flag is set and the &#8216;x' is stripped off of the tag name before proceeding. Next, the Mozilla array extension `indexOf()` is used to determine if the tag name matches the known list. If the tag name is invalid, an error is thrown; otherwise, normal processing occurs. The number of supported tags is completely dynamic, and new &#8220;methods&#8221; can be added or removed simply by modifying the list of tags.
 
-Clearly, this isn&#8217;t something that can be used on a regular basis as it&#8217;s not cross-browser It does, however, open the door for some interest possibilities if you&#8217;re running JavaScript through a Mozilla engine either in Firefox or elsewhere. The `__noSuchMethod__()` method is a powerful ally in the development of dynamic JavaScript interfaces.
+Clearly, this isn't something that can be used on a regular basis as it's not cross-browser It does, however, open the door for some interest possibilities if you're running JavaScript through a Mozilla engine either in Firefox or elsewhere. The `__noSuchMethod__()` method is a powerful ally in the development of dynamic JavaScript interfaces.
 
 ## Translations
 

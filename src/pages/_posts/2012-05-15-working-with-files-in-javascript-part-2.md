@@ -22,7 +22,7 @@ There are several formats that a `FileReader` can create to represent the file d
   * `readAsArrayBuffer()` &#8211; returns the file contents as an `ArrayBuffer` (good for binary data such as images)
   * `readAsDataURL()` &#8211; returns the file contents as a data URL
 
-Each of these methods initiates a file read similar to the XHR object&#8217;s `send()` method initiating an HTTP request. As such, you must listen for the `load` event before starting to read. The result of the read is always represented by `event.target.result`. For example:
+Each of these methods initiates a file read similar to the XHR object's `send()` method initiating an HTTP request. As such, you must listen for the `load` event before starting to read. The result of the read is always represented by `event.target.result`. For example:
 
     var reader = new FileReader();
     reader.onload = function(event) {
@@ -37,7 +37,7 @@ Each of these methods initiates a file read similar to the XHR object&#8217;s `s
     reader.readAsText(file);
     
 
-This example simply reads the contents of a file and outputs it in plain text to the console. The `onload` handler is called when the file is successfully read whereas the `onerror` handler is called if the file wasn&#8217;t read for some reason. The `FileReader` instance is available inside of the event handler via `event.target` and it&#8217;s recommended to use that instead of referencing the `reader` variable directly. The `result` property contains the file contents on success and `error` contains error information about the failed operation. 
+This example simply reads the contents of a file and outputs it in plain text to the console. The `onload` handler is called when the file is successfully read whereas the `onerror` handler is called if the file wasn't read for some reason. The `FileReader` instance is available inside of the event handler via `event.target` and it's recommended to use that instead of referencing the `reader` variable directly. The `result` property contains the file contents on success and `error` contains error information about the failed operation. 
 
 ### Reading data URIs
 
@@ -89,11 +89,11 @@ Data URIs are generally used for this purpose, but can be used on any type of th
 
 The `ArrayBuffer` type<sup>[1]</sup> was first introduced as part of WebGL. An `ArrayBuffer` represents a finite number of bytes that may be used to store numbers of any size. The way data is read from an `ArrayBuffer` is by using a specific view, such as `Int8Array`, which treats the underlying bytes as a collection of 8-bit signed integers or `Float32Array`, which treats the underlying bytes as a collection of 32-bit floating point numbers. These are called typed arrays<sup>[2]</sup>, which force you to work with a specific numeric type rather than containing any type of data (as with traditional arrays).
 
-You use an `ArrayBuffer` primarily when dealing with binary files, to have more fine-grained control over the data. It&#8217;s beyond the scope of this post to explain all the ins and outs of `ArrayBuffer`, just realize that you can read a file into an `ArrayBuffer` pretty easily if you need it. You can pass an `ArrayBuffer` directly into an XHR object&#8217;s `send()` method to send the raw data to the server (you&#8217;ll have to read this data from the request on the server to reconstruct the file), so long as your browser fully supports <cite>XMLHttpRequest Level 2</cite><sup>[3]</sup> (most recent browsers, including Internet Explorer 10 and Opera 12).
+You use an `ArrayBuffer` primarily when dealing with binary files, to have more fine-grained control over the data. It's beyond the scope of this post to explain all the ins and outs of `ArrayBuffer`, just realize that you can read a file into an `ArrayBuffer` pretty easily if you need it. You can pass an `ArrayBuffer` directly into an XHR object's `send()` method to send the raw data to the server (you'll have to read this data from the request on the server to reconstruct the file), so long as your browser fully supports <cite>XMLHttpRequest Level 2</cite><sup>[3]</sup> (most recent browsers, including Internet Explorer 10 and Opera 12).
 
 ## Up next
 
-Reading data from a file using a `FileReader` is pretty simple. If you know how to use `XMLHttpRequest`, there&#8217;s no reason you can&#8217;t also be reading data from files. In the next part of this series, you&#8217;ll learn more about using the `FileReader` events and understanding more about possible errors.
+Reading data from a file using a `FileReader` is pretty simple. If you know how to use `XMLHttpRequest`, there's no reason you can't also be reading data from files. In the next part of this series, you'll learn more about using the `FileReader` events and understanding more about possible errors.
 
 ## References
 

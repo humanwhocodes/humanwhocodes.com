@@ -36,6 +36,6 @@ I was talking with some co-workers yesterday during a break when the topic of ch
  25. VB.NET (2005, self-taught)
  26. C# (2005, self-taught)
 
-I&#8217;m sure I&#8217;m missing a few steps the list, but I think this just about covers it. It&#8217;s certainly a long way from Basic on the Apple IIe to C#. Clearly, this would not be the ideal path for someone who wants to learn programming from scratch.
+I'm sure I'm missing a few steps the list, but I think this just about covers it. It's certainly a long way from Basic on the Apple IIe to C#. Clearly, this would not be the ideal path for someone who wants to learn programming from scratch.
 
 How did you learn programming?

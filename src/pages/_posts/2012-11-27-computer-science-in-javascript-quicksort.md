@@ -39,21 +39,21 @@ There are two basic operations in the algorithm, swapping items in place and par
     Move the left pointer to the right by one and the right pointer to the left by one.
   </li>
   <li>
-    If the left pointer and right pointer don&#8217;t meet, go to step 1.
+    If the left pointer and right pointer don't meet, go to step 1.
   </li>
 </ol>
 
-As with many algorithms, it&#8217;s easier to understand partitioning by looking at an example. Suppose you have the following array:
+As with many algorithms, it's easier to understand partitioning by looking at an example. Suppose you have the following array:
 
     var items = [4, 2, 6, 5, 3, 9];
 
-There are many approaches to calculating the pivot value. Some algorithms select the first item as a pivot. That&#8217;s not the best selection because it gives worst-case performance on already sorted arrays. It&#8217;s better to select a pivot in the middle of the array, so consider 5 to be the pivot value (length of array divided by 2). Next, start the left pointer at position 0 in the right pointer at position 5 (last item in the array). Since 4 is less than 5, move the left pointer to position 1. Since 2 is less than 5, move the left pointer to position 2. Now 6 is not less than 5, so the left pointer stops moving and the right pointer value is compared to the pivot. Since 9 is greater than 5, the right pointer is moved to position 4. The value 3 is not greater than 5, so the right pointer stops. Since the left pointer is at position 2 and the right pointer is at position 4, the two haven&#8217;t met and the values 6 and 3 should be swapped.
+There are many approaches to calculating the pivot value. Some algorithms select the first item as a pivot. That's not the best selection because it gives worst-case performance on already sorted arrays. It's better to select a pivot in the middle of the array, so consider 5 to be the pivot value (length of array divided by 2). Next, start the left pointer at position 0 in the right pointer at position 5 (last item in the array). Since 4 is less than 5, move the left pointer to position 1. Since 2 is less than 5, move the left pointer to position 2. Now 6 is not less than 5, so the left pointer stops moving and the right pointer value is compared to the pivot. Since 9 is greater than 5, the right pointer is moved to position 4. The value 3 is not greater than 5, so the right pointer stops. Since the left pointer is at position 2 and the right pointer is at position 4, the two haven't met and the values 6 and 3 should be swapped.
 
-Next, the left pointer is increased by one in the right pointer is decreased by one. This results in both pointers at the pivot value (5). That signals that the operation is complete. Now all items in the array to the left of the pivot are less than the pivot and all items to the right of the pivot are greater than the pivot. Keep in mind that this doesn&#8217;t mean the array is sorted right now, only that there are two sections of the array: the section where all values are less than the pivot and the section were all values are greater than the pivot. See the figure below.
+Next, the left pointer is increased by one in the right pointer is decreased by one. This results in both pointers at the pivot value (5). That signals that the operation is complete. Now all items in the array to the left of the pivot are less than the pivot and all items to the right of the pivot are greater than the pivot. Keep in mind that this doesn't mean the array is sorted right now, only that there are two sections of the array: the section where all values are less than the pivot and the section were all values are greater than the pivot. See the figure below.
 
 [<img src="/images/wp-content/uploads/2012/11/quicksort_partition1.png" alt="Quicksort step-by-step" title="" width="600" height="944" class="alignnone size-full wp-image-3270" />][1]
 
-The implementation of a partition function relies on there being a `swap()` function, so here&#8217;s the code for that:
+The implementation of a partition function relies on there being a `swap()` function, so here's the code for that:
 
     function swap(items, firstIndex, secondIndex){
         var temp = items[firstIndex];
@@ -90,7 +90,7 @@ The partition function itself is pretty straightforward and follows the algorith
         return i;
     }
 
-This function accepts three arguments: `items`, which is the array of values to sort, `left`, which is the index to start the left pointer at, and `right`, which is the index to start the right pointer at. The pivot value is determined by adding together the `left` and `right` values and then dividing by 2. Since this value could potentially be a floating-point number, it&#8217;s necessary to perform some rounding. In this case, I chose to use the floor function, but you could just as well use the ceiling function or round function with some slightly different logic. The `i` variable is the left pointer and the `j` variable is the right pointer.
+This function accepts three arguments: `items`, which is the array of values to sort, `left`, which is the index to start the left pointer at, and `right`, which is the index to start the right pointer at. The pivot value is determined by adding together the `left` and `right` values and then dividing by 2. Since this value could potentially be a floating-point number, it's necessary to perform some rounding. In this case, I chose to use the floor function, but you could just as well use the ceiling function or round function with some slightly different logic. The `i` variable is the left pointer and the `j` variable is the right pointer.
 
 The entire algorithm is just a loop of loops. The outer loop determines when all of the items in the array range have been processed. The two inner loops control movement of the left and right pointers. When both of the inner loops complete, then the pointers are compared to determine if the swap is necessary. After the swap, both pointers are shifted so that the outer loop continues in the right spot. The function returns the value of the left pointer because this is used to determine where to start partitioning the next time. Keep in mind that the partitioning is happening in place, without creating any additional arrays.
 
@@ -125,7 +125,7 @@ After this pass, the array becomes `[3, 2, 4, 5, 6, 9]` and the index returned i
     // first call
     var result = quickSort(items, 0, items.length - 1);
 
-The `quicksort()` function accepts three arguments, the array to sort, the index where the left pointer should start, and the index where the right pointer should start. To optimize for performance, the array isn&#8217;t sorted if it has zero or one items. If there are two or more items in the array then it is partitioned. If `left` is less than the returned `index` minus 1 then there are still items on the left to be sorted and `quickSort()` is called recursively on those items. Likewise, if `index` is less than the `right` pointer then there are still items on the right to sort. Once all this is done, the array is returned as the result.
+The `quicksort()` function accepts three arguments, the array to sort, the index where the left pointer should start, and the index where the right pointer should start. To optimize for performance, the array isn't sorted if it has zero or one items. If there are two or more items in the array then it is partitioned. If `left` is less than the returned `index` minus 1 then there are still items on the left to be sorted and `quickSort()` is called recursively on those items. Likewise, if `index` is less than the `right` pointer then there are still items on the right to sort. Once all this is done, the array is returned as the result.
 
 To make this function a little bit more user-friendly, you can automatically fill in the default values for `left` and `right` if not supplied, such as:
 

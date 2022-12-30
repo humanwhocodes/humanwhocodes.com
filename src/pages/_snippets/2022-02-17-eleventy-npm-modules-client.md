@@ -3,7 +3,6 @@ title: "How to add npm packages for client-side use in Eleventy"
 author: Nicholas C. Zakas
 teaser: "It's not immediately obvious how to use npm packages in an Eleventy website front end. Here's how to do it."
 date: 2022-02-17
-layout: snippet
 categories:
   - Web Development
 tags:

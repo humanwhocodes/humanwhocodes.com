@@ -12,7 +12,7 @@ tags:
 ---
 Web developers have been interested in whether or not a user is idle since the Ajax explosion hit. With the introduction of more dynamic, highly interactive web interfaces came the desire to know if the user was actually doing anything at any point in time. Thus, the quest for determining if the user is idle began.
 
-This problem has been solved, though I would argue inelegantly, in a lot of web applications: [Facebook][1], [WordPress][2], and [Gmail][3] all try to figure out when the user has stopped interacting with the page in order to perform some action. The usual JavaScript solution for this involves monitoring the `mousemove` event and, if there has been no mouse movement in a specific period of time, indicate that the user is idle. There is one major flaw in this approach and that is reliance on mouse events to indicate if the user is active or idle. This is problematic because there are, of course, two primary input devices (keyboard and mouse) attached to a computer so you&#8217;re losing 50% of the picture. If a user is typing a long email or blog post, does that mean they are idle simply because they haven&#8217;t moved the mouse? Of course not. What about those users who aren&#8217;t capable of using a mouse due to a disability, are they always idle? Once again, the answer is no.
+This problem has been solved, though I would argue inelegantly, in a lot of web applications: [Facebook][1], [WordPress][2], and [Gmail][3] all try to figure out when the user has stopped interacting with the page in order to perform some action. The usual JavaScript solution for this involves monitoring the `mousemove` event and, if there has been no mouse movement in a specific period of time, indicate that the user is idle. There is one major flaw in this approach and that is reliance on mouse events to indicate if the user is active or idle. This is problematic because there are, of course, two primary input devices (keyboard and mouse) attached to a computer so you're losing 50% of the picture. If a user is typing a long email or blog post, does that mean they are idle simply because they haven't moved the mouse? Of course not. What about those users who aren't capable of using a mouse due to a disability, are they always idle? Once again, the answer is no.
 
 With this background in mind, I set out to create an idle timer in JavaScript that is fitting of the complex web applications that might want to use it. I built this implementation on top of [YUI 3][4] because it has, in a short period of time, become my favorite JavaScript library. The features I wanted to implement were:
 
@@ -49,7 +49,7 @@ This line adds basic event methods, such as `fire()`, `subscribe()`, and `unsubs
 
 Next, I created a couple of flags: `idle`, which indicates if the user is idle, and `enabled`, which is indicates if the timer is running. These are used internally to manage the state of the timer and are returned in `isIdle()` and `isRunning()`, respectively. I also created `tId`, which is a place to store the timer ID when using `setTimeout()` and `timeout`, which indicates the default amount of time to wait before declaring the user idle (set to 30,000ms initially, this can be overidden by passing a value into `start()`).
 
-To manage the user&#8217;s idle state, you need to attach an event handler for both `mousemove` and `keydown`. Since both of these methods bubble, I can attach the handler at the document level to manage the entire page (of course, this presupposes that no one stops bubbling before it reaches the document level). The event handler should be the same for both events so there&#8217;s no duplication of code and the handler will have to manage the timeout process. I ended up creating two functions for this purpose:
+To manage the user's idle state, you need to attach an event handler for both `mousemove` and `keydown`. Since both of these methods bubble, I can attach the handler at the document level to manage the entire page (of course, this presupposes that no one stops bubbling before it reaches the document level). The event handler should be the same for both events so there's no duplication of code and the handler will have to manage the timeout process. I ended up creating two functions for this purpose:
 
     //event handler
     function handleUserEvent(){
@@ -80,9 +80,9 @@ To manage the user&#8217;s idle state, you need to attach an event handler for b
         Y.IdleTimer.fire(idle ? "idle" : "active");
     }
 
-The first function `handleUserEvent()` is assigned to be the event handler for `mousemove` and `keydown`. It doesn&#8217;t actually use the `event` object for anything, so I didn&#8217;t bother defining it as an argument. Whenever the user does something, the last timer should be cleared and then an appropriate action should be taken. If the timer is stopped, then nothing happens; if it&#8217;s running, then the action is determined based on the user&#8217;s current `idle` state. If the user is idle, then `toggleIdleState()` state is called immediately to indicate that the user is not active. Then, a timer is used to delay calling `toggleIdleState()` because the next toggle would be back to idle.
+The first function `handleUserEvent()` is assigned to be the event handler for `mousemove` and `keydown`. It doesn't actually use the `event` object for anything, so I didn't bother defining it as an argument. Whenever the user does something, the last timer should be cleared and then an appropriate action should be taken. If the timer is stopped, then nothing happens; if it's running, then the action is determined based on the user's current `idle` state. If the user is idle, then `toggleIdleState()` state is called immediately to indicate that the user is not active. Then, a timer is used to delay calling `toggleIdleState()` because the next toggle would be back to idle.
 
-The `toggleIdleState()` function simply toggles the `idle` flag and then fires an appropriate event. If the user is idle after the toggle, then &#8220;idle&#8221; is fired, otherwise &#8220;active&#8221; is fired. These events end up being fired exactly when the user&#8217;s idle state has changed and only once until the state changes again.
+The `toggleIdleState()` function simply toggles the `idle` flag and then fires an appropriate event. If the user is idle after the toggle, then &#8220;idle&#8221; is fired, otherwise &#8220;active&#8221; is fired. These events end up being fired exactly when the user's idle state has changed and only once until the state changes again.
 
 To finish up the implementation, I just filled out the existing interface skeleton to make use of these functions:
 
@@ -149,9 +149,9 @@ Basic usage of the idle timer is as follows:
     Y.IdleTimer.start();
     
 
-Because of the power of YUI 3, this implementation of an idle timer is very small in size and pretty straightforward to use. You can get the full [source code][6] up on GitHub, and there&#8217;s an [example][7] to play with as well.
+Because of the power of YUI 3, this implementation of an idle timer is very small in size and pretty straightforward to use. You can get the full [source code][6] up on GitHub, and there's an [example][7] to play with as well.
 
-**Update (6-June-09):** Updated logic per Paul&#8217;s feedback.
+**Update (6-June-09):** Updated logic per Paul's feedback.
 
 **Update (21-June-09):**YUI 2 and generic versions of the idle timer are now available at my [GitHub project][6].
 

@@ -8,7 +8,7 @@ tags:
   - JavaScript
   - Objects
 ---
-After reviewing the comments from everyone on the <a title="The absorb() function" rel="internal" href="{{site.url}}/archive/2006/11/388">previous post</a>, I&#8217;ve come up with the next generation of the `absorb()` function: the `absorb()` method. It occurred to me that this function really was begging to be a method of `Object`. So, without further adieu:
+After reviewing the comments from everyone on the <a title="The absorb() function" rel="internal" href="{{site.url}}/archive/2006/11/388">previous post</a>, I've come up with the next generation of the `absorb()` function: the `absorb()` method. It occurred to me that this function really was begging to be a method of `Object`. So, without further adieu:
 
 <pre>Object.absorb = function (destination /*:Object*/, source /*:Object*/, overwrite /*:Boolean*/) /*:Object*/ {
     for (var key in source) {
@@ -24,7 +24,7 @@ Object.prototype.absorb = function (source /*:Object*/, overwrite /*:Boolean*/) 
     return Object.absorb(this, source, overwrite);
 }</pre>
 
-Yes, there are two versions. The first is a generic that I&#8217;ve placed as a method of `Object` in order to avoid polluting the global scope. This can be used just like the `absorb()` function I originally wrote about, such as:
+Yes, there are two versions. The first is a generic that I've placed as a method of `Object` in order to avoid polluting the global scope. This can be used just like the `absorb()` function I originally wrote about, such as:
 
 <pre>Object.absorb(Array.prototype, {
     forEach: function () { ... }
@@ -50,4 +50,4 @@ Of course, if you want to ignore the native or already existing methods, just pa
     forEach: function () { ... }
 }, true);</pre>
 
-And that&#8217;s about it. Thanks to everyone who contributed comments on the last post. I feel like this function has evolved into a much more useful and usable form.
+And that's about it. Thanks to everyone who contributed comments on the last post. I feel like this function has evolved into a much more useful and usable form.

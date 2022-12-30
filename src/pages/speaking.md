@@ -44,7 +44,7 @@ The following is a list of talks I've given over the years. This list is not com
 **Maintainable JavaScript**
 [Fluent][17], San Francisco, CA, May 2012 ([Slides][11])
 
-**Progressive Enhancement 2.O: Because the Web Isn&#8217;t Print**
+**Progressive Enhancement 2.O: Because the Web Isn't Print**
 [Bayjax Meetup][18], Sunnyvale, CA, March 2012 ([Slides][19], [Video][20])
 
 ## 2011
@@ -68,7 +68,7 @@ TripAdvisor, Boston, MA, November 2011  ([Slides][21])
 **High Performance JavaScript**
 [San Francisco Web Performance Group][27], San Francisco, CA, June 23, 2011  ([Slides][21])
 
-**Progressive Enhancement 2.0: Because the Web isn&#8217;t Print**
+**Progressive Enhancement 2.0: Because the Web isn't Print**
 [SF Tech Talks][28], San Francisco, CA, June 21, 2011 ([Slides][19])
 
 **Mobile Web Speed Bumps**
@@ -78,7 +78,7 @@ TripAdvisor, Boston, MA, November 2011  ([Slides][21])
 Zynga, San Francisco, CA, May 6, 2011 ([Slides][21])
 (Company event, not open to the public.)
 
-**Progressive Enhancement 2.0: Because the Web isn&#8217;t Print**
+**Progressive Enhancement 2.0: Because the Web isn't Print**
 Netflix, Los Gatos, CA, May 2, 2011 ([Slides][19])
 (Company event, not open to the public.)
 
@@ -86,7 +86,7 @@ Netflix, Los Gatos, CA, May 2, 2011 ([Slides][19])
 Amazon, Seattle, WA, May 2011 ([Slides][31])
 (Company event, not open to the public.)
 
-**Progressive Enhancement 2.0: Because the Web isn&#8217;t Print**
+**Progressive Enhancement 2.0: Because the Web isn't Print**
 [jQuery Conference SF Bay Area][32], Mountain View, CA, April 2011 ([Slides][33]) - #1 highest rated talk at the conference
 
 ## 2010
@@ -155,7 +155,7 @@ Yahoo! Front End Engineering Summit, March 2007 ([Slides][67], [Video][68])
 
 **Accessibility on the Yahoo! Homepage**
 
-Accessibility isn&#8217;t hard, and contrary to popular belief, doesn&#8217;t take a lot of extra effort. Learn how the Yahoo! homepage team built accessibility into the product development cycle with the goal of providing the best possible user experience to everyone. Using a combination of progressive enhancement, ARIA, and a little ingenuity, even the most complex and dynamic features on the new Yahoo! homepage&#8217;s are available to everyone in interesting and fun ways.
+Accessibility isn't hard, and contrary to popular belief, doesn't take a lot of extra effort. Learn how the Yahoo! homepage team built accessibility into the product development cycle with the goal of providing the best possible user experience to everyone. Using a combination of progressive enhancement, ARIA, and a little ingenuity, even the most complex and dynamic features on the new Yahoo! homepage's are available to everyone in interesting and fun ways.
 
 **Scalable JavaScript Application Architecture**
 
@@ -167,34 +167,34 @@ This talk isn’t specific to any JavaScript library, rather, it gives you new w
 
 **High Performance JavaScript**
 
-For much of its existence, JavaScript has been slow. No one complained until developers created complex web applications with thousands of lines of JavaScript code. Although newer JavaScript engines have improved the situation, there&#8217;s still a lot to understand about what makes JavaScript slow and what you can do to speed up your code.
+For much of its existence, JavaScript has been slow. No one complained until developers created complex web applications with thousands of lines of JavaScript code. Although newer JavaScript engines have improved the situation, there's still a lot to understand about what makes JavaScript slow and what you can do to speed up your code.
 
 **Responsive Interfaces &#8211; High Performance JavaScript**
 
 Part of an ensemble night of co-authors for the book High Performance JavaScript
 
   * Stoyan Stefanov on DOM Scripting &#8211; building responsive UIs by understanding the price of DOM access, updates, reflows and repaints
-  * Nicholas Zakas on Responsive Interfaces &#8211; When written incorrectly, JavaScript can slow down an entire page&#8217;s user interface. Learn how JavaScript is tied to a web page&#8217;s UI, the limits that browsers place on JavaScript execution, and how to ensure a fast and responsive UI.
-  * Ross Harmes on Ajax &#8211; A quick introduction to Multipart XHR, it&#8217;s strengths and it&#8217;s (possibly fatal) weaknesses.
-  * Julien Lecomte &#8211; Emphasis on JavaScript build systems and it&#8217;s importance
-  * Matt Sweeney &#8211; I&#8217;ll be introducing the Tools chapter, which walks through a suite of tools to help developers identify various types of bottlenecks in their system.
+  * Nicholas Zakas on Responsive Interfaces &#8211; When written incorrectly, JavaScript can slow down an entire page's user interface. Learn how JavaScript is tied to a web page's UI, the limits that browsers place on JavaScript execution, and how to ensure a fast and responsive UI.
+  * Ross Harmes on Ajax &#8211; A quick introduction to Multipart XHR, it's strengths and it's (possibly fatal) weaknesses.
+  * Julien Lecomte &#8211; Emphasis on JavaScript build systems and it's importance
+  * Matt Sweeney &#8211; I'll be introducing the Tools chapter, which walks through a suite of tools to help developers identify various types of bottlenecks in their system.
 
 **Performance on the Yahoo! Homepage**
 
 The new Yahoo! homepage, released in 2009, had a high bar to meet in terms of performance. The classic version of the page, a mostly static one, set lofty expectations for the newer version. Even though the new page has more options for customization and personalization, as well as being far more interactive, the performance goals remained the same. The team planned for performance from the beginning, laying groundwork that would allow us to avoid common performance pitfalls.
 
-The team scoured Yahoo!&#8217;s Exception Performance guidelines and went beyond them, coming up with several twists that introduced incremental performance improvements. Every byte was counted, everything measured, to ensure we could meet the previous version&#8217;s metrics.
+The team scoured Yahoo!'s Exception Performance guidelines and went beyond them, coming up with several twists that introduced incremental performance improvements. Every byte was counted, everything measured, to ensure we could meet the previous version's metrics.
 
-In this talk, I&#8217;ll go over the tactics that we took and the performance differences we made. Some of the topics include:
+In this talk, I'll go over the tactics that we took and the performance differences we made. Some of the topics include:
 
   * How we decreased the average time to open up an application from 7 seconds to less than 2.
   * How lazy loading of resources sped up the user experience.
   * How we progressively trimmed kilobytes of data from the initial payload.
   * How we changed our page flushing strategy to alter perceived performance.
 
-**Progressive Enhancement 2.0: Because the Web isn&#8217;t Print**
+**Progressive Enhancement 2.0: Because the Web isn't Print**
 
-In the beginning, progressive enhancement was simple: HTML layered with CSS layered with JavaScript. That worked fine when there were two browsers, but in today&#8217;s world of multiple devices and multiple browsers, it&#8217;s time for a progressive enhancement reboot. At the core is the understanding that the web is not print &#8211; the same rules don&#8217;t apply. As developers and consumers we&#8217;ve been fooled into thinking about print paradigms for too long. In this talk, you&#8217;ll learn just how different the web is and how the evolution of progressive enhancement can lead to better user experiences as well as happier developers and users.
+In the beginning, progressive enhancement was simple: HTML layered with CSS layered with JavaScript. That worked fine when there were two browsers, but in today's world of multiple devices and multiple browsers, it's time for a progressive enhancement reboot. At the core is the understanding that the web is not print &#8211; the same rules don't apply. As developers and consumers we've been fooled into thinking about print paradigms for too long. In this talk, you'll learn just how different the web is and how the evolution of progressive enhancement can lead to better user experiences as well as happier developers and users.
 
 **Writing Efficient JavaScript**
 

@@ -10,11 +10,11 @@ tags:
   - Professional JavaScript
   - Writing
 ---
-Good news! [Professional JavaScript, 2nd Edition][1] is now available for pre-order from Amazon. This is my fourth book release in the past five years, and boy am I tired. I&#8217;m very excited about this book as it represents my revisiting of the book that started it all for me. The first edition of <cite>Professional JavaScript</cite> was both a labor of love and my introduction into the world of technical books. I&#8217;ve learned a lot since then, both technically and in terms of my writing, so this book represents all the additional knowledge I&#8217;ve acquired in the past five years.
+Good news! [Professional JavaScript, 2nd Edition][1] is now available for pre-order from Amazon. This is my fourth book release in the past five years, and boy am I tired. I'm very excited about this book as it represents my revisiting of the book that started it all for me. The first edition of <cite>Professional JavaScript</cite> was both a labor of love and my introduction into the world of technical books. I've learned a lot since then, both technically and in terms of my writing, so this book represents all the additional knowledge I've acquired in the past five years.
 
 So why would you want to buy this version if you already bought the first? Quite simply, because a lot has changed since the first book came out. You should buy this book if you want to learn:
 
-  * All the latest techniques for object-oriented programming in JavaScript, including Crockford&#8217;s design patterns.
+  * All the latest techniques for object-oriented programming in JavaScript, including Crockford's design patterns.
   * What happens behind-the-scenes in the JavaScript engine in terms of how objects are related to their prototypes, memory usage, and garbage collection.
   * ECMAScript 4 and its successor, ECMAScript 3.1.
   * The quirks in the JavaScript implementations of various browsers, including Google Chrome, Safari 3.1, Firefox 3, and Internet Explorer 8.

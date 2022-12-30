@@ -12,6 +12,6 @@ This morning, I was flipping through my trusty <a title="Boston Globe" rel="exte
 
 The kicker was a sentence that sort of took me by surprise:
 
-> Ironically, Microsoft invented Ajax in the late &#8217;90s and has used it for years for an online version of its Outlook e-mail program.
+> Ironically, Microsoft invented Ajax in the late '90s and has used it for years for an online version of its Outlook e-mail program.
 
-Now, I usually have problems with technical articles written by major newspapers since they tend to oversimplify a lot of issues, as it seems to be the case here. Who has ever said that Microsoft invented Ajax? They may have spearheaded the technologies that led to the evolution of Ajax, but I don&#8217;t think that&#8217;s a true statement. Also, nowhere in the article did it mention where the term Ajax originated from, making it almost sound like Microsoft came up with the term itself. Let&#8217;s give credit where credit is due people!
+Now, I usually have problems with technical articles written by major newspapers since they tend to oversimplify a lot of issues, as it seems to be the case here. Who has ever said that Microsoft invented Ajax? They may have spearheaded the technologies that led to the evolution of Ajax, but I don't think that's a true statement. Also, nowhere in the article did it mention where the term Ajax originated from, making it almost sound like Microsoft came up with the term itself. Let's give credit where credit is due people!

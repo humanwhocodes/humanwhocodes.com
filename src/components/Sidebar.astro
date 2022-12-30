@@ -1,7 +1,12 @@
 ---
-import { loadBlogPosts } from "../lib/util.js";
+import { loadBlogPosts, loadSnippets } from "../lib/util.js";
+import allBooks from "../data/books.yml";
+import allSponsors from "../data/sponsors.json";
 
 const posts = await loadBlogPosts();
+const snippets = (await loadSnippets()).slice(0, 10);
+const books = allBooks.filter(book => book.type === "book" && book.rel === "author");
+const sponsors = allSponsors.filter(sponsor => sponsor.amount >= 500);
 const years = new Set();
 
 posts.forEach(post => {
@@ -11,6 +16,29 @@ posts.forEach(post => {
 ---
 <div id="sidebar" class="sidebar-width sidebar-background gutters hide-on-small-screens">
     <h1 class="hide-offscreen">Additional Information</h1>
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIEK3Y&amp;placement=humanwhocodescom" id="_carbonads_js"></script>
+    {sponsors.length && (
+        <h2 class="smaller-font">Top Sponsors</h2>
+        <ul class="inline-list inline-image-list">
+            {sponsors.map(sponsor => (
+                <li><a href={sponsor.url}><img src={sponsor.avatarUrl} alt={sponsor.name} width="100"></a></li>
+            ))}
+        </ul>
+
+    )}
+    
+    <h2 class="smaller-font">My sponsors</h2>
+    <ul class="inline-list inline-image-list">
+        {books.slice(0,4).map(book => (
+            <li><a href={book.url}><img src={`/images/books/${book.image}`} alt={book.title} width="100"></a></li>
+        ))}
+    </ul>
+    <h2 class="smaller-font">Recent Snippets</h2>
+    <ul>
+        {snippets.map(snippet => (
+            <li><a href={snippet.url}>{ snippet.frontmatter.title }</a></li>
+        ))}
+    </ul>
     <h2 class="smaller-font">Archives ({years.size} Years)</h2>
     <ul>
         {[...years].map(year => (

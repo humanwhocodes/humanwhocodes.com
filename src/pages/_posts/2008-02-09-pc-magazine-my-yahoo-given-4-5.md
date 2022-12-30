@@ -14,8 +14,8 @@ In what will hopefully be the first of many positive reviews this year, <a title
 
 > All of this suggests that My Yahoo! has mostly caught up with and in some cases even surpassed the newcomers, as far as module choice and presentation go.
 
-Additionally, it looks like all of the performance work we&#8217;ve done in the past few months has paid off, as the review specifically mentions the speed with which the page loads:
+Additionally, it looks like all of the performance work we've done in the past few months has paid off, as the review specifically mentions the speed with which the page loads:
 
 > In general, My Yahoo! loads faster than its Web 2.0 competitors Netvibes and Pageflakes&#8230;
 
-I&#8217;ve said this before, but if you haven&#8217;t tried the new My Yahoo! yet, now is probably a good time. Our team has been working very hard to make this the best personalized start page on the Internet. It looks like PC Magazine noticed, what do you think?
+I've said this before, but if you haven't tried the new My Yahoo! yet, now is probably a good time. Our team has been working very hard to make this the best personalized start page on the Internet. It looks like PC Magazine noticed, what do you think?

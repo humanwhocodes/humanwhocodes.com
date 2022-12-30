@@ -9,4 +9,4 @@ tags:
   - XML
   - zXml
 ---
-I&#8217;ve justed posted a small update to the zXml library in <a title="Downloads" rel="internal" href="/downloads/">Downloads</a>. It turns out that there was a small bug in the XPath code that caused issues when using namespaces. Thanks to co-author <a title="Joe asks 'Is it me or what?'" rel="external" href="http://joef.typepad.com/">Joe Fawcett</a> for letting me know about it (yes, you&#8217;re now listed as a contributor in the README). <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" />
+I've justed posted a small update to the zXml library in <a title="Downloads" rel="internal" href="/downloads/">Downloads</a>. It turns out that there was a small bug in the XPath code that caused issues when using namespaces. Thanks to co-author <a title="Joe asks 'Is it me or what?'" rel="external" href="http://joef.typepad.com/">Joe Fawcett</a> for letting me know about it (yes, you're now listed as a contributor in the README). <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" />

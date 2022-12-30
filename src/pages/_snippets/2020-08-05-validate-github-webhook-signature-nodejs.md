@@ -3,7 +3,6 @@ title: "How to validate the signature of a GitHub webhook using Node.js"
 author: Nicholas C. Zakas
 teaser: "It's important to secure your GitHub webhooks using signatures. This is how to do it in Node.js."
 date: 2020-08-05
-layout: snippet
 categories:
   - Web Development
 tags:

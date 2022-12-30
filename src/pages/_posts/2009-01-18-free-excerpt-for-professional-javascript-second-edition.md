@@ -8,7 +8,7 @@ tags:
   - Books
   - JavaScript
 ---
-Just wanted to post a quick note that [Eric Miraglia][1] has posted a [sample excerpt][2] from [<cite>Professional JavaScript, 2nd Edition</cite>][3] over at the [YUIBlog][4]. The excerpt comes from a chapter called <cite>Advanced Techniques</cite>, in which I explain, well, advanced JavaScript techniques including function currying, advanced timers, and more techniques that every professional front end engineer should know. Some of Eric&#8217;s kind words:
+Just wanted to post a quick note that [Eric Miraglia][1] has posted a [sample excerpt][2] from [<cite>Professional JavaScript, 2nd Edition</cite>][3] over at the [YUIBlog][4]. The excerpt comes from a chapter called <cite>Advanced Techniques</cite>, in which I explain, well, advanced JavaScript techniques including function currying, advanced timers, and more techniques that every professional front end engineer should know. Some of Eric's kind words:
 
 <p style="padding-left: 30px;">
   Personally, Iâ€™ve found this to be a particularly useful book for engineers coming into frontend engineering or professionalizing their practice. Weâ€™ve used the first edition for three years in internal classes taught at Yahoo, and the second edition is even better than the first.
@@ -16,7 +16,7 @@ Just wanted to post a quick note that [Eric Miraglia][1] has posted a [sample ex
 
 Eric also wrote a [great foreword][5] for the book. Thanks to Eric for posting the excerpt and to my editor, [Jim Minatel][6], for okaying and providing the excerpt.
 
-P.S. There&#8217;s also a [Facebook page][7] for the book. If you like it, sign up to be a fan!
+P.S. There's also a [Facebook page][7] for the book. If you like it, sign up to be a fan!
 
  [1]: http://www.ericmiraglia.com
  [2]: http://yuiblog.com/blog/2009/01/16/projs2/

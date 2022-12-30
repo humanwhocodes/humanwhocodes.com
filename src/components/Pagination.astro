@@ -1,0 +1,20 @@
+---
+const {
+    next,
+    prev,
+} = Astro.props;
+---
+<div class="pagination">
+    <div class="older-entries">{next && <a href={next}>« Older Entries</a>}</div>
+    <div class="newer-entries">{prev && <a href={prev}>Newer Entries »</a>}</div>
+</div>
+
+<style>
+	.pagination {
+		display: flex;
+	}
+
+	.pagination > .older-entries {
+		flex: 1;
+	}
+</style>

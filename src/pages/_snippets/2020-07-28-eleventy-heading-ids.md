@@ -3,7 +3,6 @@ title: "How to generate ID attributes in headings using Eleventy"
 author: Nicholas C. Zakas
 teaser: "Eleventy doesn't generate heading IDs by default, here's how to do it."
 date: 2020-07-28
-layout: snippet
 categories:
   - Web Development
 tags:

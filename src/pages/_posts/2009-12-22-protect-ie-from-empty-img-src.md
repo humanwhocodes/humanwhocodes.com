@@ -9,11 +9,11 @@ tags:
   - Internet Explorer
   - Web Development
 ---
-In a [previous post][1], I discussed the problem with setting an HTML image&#8217;s `src` attribute to an empty string. In Internet Explorer, Safari, and Chrome, this results in a second request being made to the server (Firefox 3.5 patched this behavior and Opera doesn&#8217;t exhibit the behavior). My post also showed a couple of ways to detect this issue on the server side at the time a request is received. I noted that it&#8217;s very difficult to detect these requests from Internet Explorer because it doesn&#8217;t send different `Accept` headers for image requests than it does for HTML requests. After a bit more investigation, I&#8217;ve found a way to prevent this behavior in Internet Explorer through version 8.
+In a [previous post][1], I discussed the problem with setting an HTML image's `src` attribute to an empty string. In Internet Explorer, Safari, and Chrome, this results in a second request being made to the server (Firefox 3.5 patched this behavior and Opera doesn't exhibit the behavior). My post also showed a couple of ways to detect this issue on the server side at the time a request is received. I noted that it's very difficult to detect these requests from Internet Explorer because it doesn't send different `Accept` headers for image requests than it does for HTML requests. After a bit more investigation, I've found a way to prevent this behavior in Internet Explorer through version 8.
 
 ## The <base> tag
 
-I&#8217;m still not entirely sure why this is true, but if you specify a base URL in the page using the [`<base>` tag][2]. For those unaware, the `<base>` tag is used to alter how URLs are resolved and linked to within a page. The href attribute is used to indicate the base URL from which relative URLs on the page should be resolved. This affects not just the `<a>` tag, but also any tags that accept a URL as an attribute value. Consider the following:
+I'm still not entirely sure why this is true, but if you specify a base URL in the page using the [`<base>` tag][2]. For those unaware, the `<base>` tag is used to alter how URLs are resolved and linked to within a page. The href attribute is used to indicate the base URL from which relative URLs on the page should be resolved. This affects not just the `<a>` tag, but also any tags that accept a URL as an attribute value. Consider the following:
 
     <img src="smile.gif">
 
@@ -28,24 +28,24 @@ To resolve smile.gif for this tag, the browser looks at the path of the containi
     </body>
     </html>
 
-If this page has a path of `{{site.url}}/blog/`, then the image&#8217;s URL is resolved to `{{site.url}}/stories/smile.gif`. That&#8217;s because the base URL is reset to `{{site.url}}/stories/` by the `<base>` tag, so all URLs on the page are now resolved relative to that address. This is a convenient way to avoid duplicating the same URL information for every link on the page.
+If this page has a path of `{{site.url}}/blog/`, then the image's URL is resolved to `{{site.url}}/stories/smile.gif`. That's because the base URL is reset to `{{site.url}}/stories/` by the `<base>` tag, so all URLs on the page are now resolved relative to that address. This is a convenient way to avoid duplicating the same URL information for every link on the page.
 
 ## The approach
 
-For some reason that I still don&#8217;t understand, the act of setting a base URL on a page causes Internet Explorer to ignore any `<img src="">` that appears on the page, including `<input type="image" src="">`. As long as a <base> tag appears on the page with an href specified, IE will no longer make a request to the server when one of these tags is present. You can try this yourself by viewing HTTP traffic while loading the following two pages (I recommend [Fiddler][3]):
+For some reason that I still don't understand, the act of setting a base URL on a page causes Internet Explorer to ignore any `<img src="">` that appears on the page, including `<input type="image" src="">`. As long as a <base> tag appears on the page with an href specified, IE will no longer make a request to the server when one of these tags is present. You can try this yourself by viewing HTTP traffic while loading the following two pages (I recommend [Fiddler][3]):
 
   * [No base URL][4]
   * [Base URL][5]
 
-If you have the possibility of an empty string image URL on your page, it would serve you well to set the base URL for the page. Since you probably don&#8217;t want to actually change how the URL is resolved, just set the base URL to the current path for the page. In PHP, you can use this code:
+If you have the possibility of an empty string image URL on your page, it would serve you well to set the base URL for the page. Since you probably don't want to actually change how the URL is resolved, just set the base URL to the current path for the page. In PHP, you can use this code:
 
     echo "<base href=\"{$_SERVER['REQUEST_URI'];}\">";
 
-That way, you&#8217;re including the base URL to avoid the extra image request without changing how all URLs on the page are resolved.
+That way, you're including the base URL to avoid the extra image request without changing how all URLs on the page are resolved.
 
 ## Conclusion
 
-Specifying a base URL on a page isÂ a quick and easy solution to prevent an extra request due to an empty image source URL in Internet Explorer. It&#8217;s important to note that this has *no effect* on the other browsers with this behavior. For those, you&#8217;ll still have to use the server-side detection logic shared in the [previous post][1] to detect such a request and abort before server resources are used. At least for Internet Explorer, the solution is simple and can save your server.
+Specifying a base URL on a page isÂ a quick and easy solution to prevent an extra request due to an empty image source URL in Internet Explorer. It's important to note that this has *no effect* on the other browsers with this behavior. For those, you'll still have to use the server-side detection logic shared in the [previous post][1] to detect such a request and abort before server resources are used. At least for Internet Explorer, the solution is simple and can save your server.
 
 ## Credits
 

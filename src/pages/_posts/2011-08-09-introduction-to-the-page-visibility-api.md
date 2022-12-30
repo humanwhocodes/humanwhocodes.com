@@ -36,7 +36,7 @@ To check to see if the page is hidden, the following can be used:
 
 Note that this code will indicate that the page is not hidden in unsupporting browsers, which is the intentional behavior of the API for backwards compatibility.
 
-To be notified when the page changes from visible to hidden or hidden to visible, you can listen for the visibilitychange event. In Internet Explorer, this event is called `msvisibilitychange` and in Chrome it&#8217;s called `webkitvisibilitychange`. In order to work in both browsers, you need to assign the same event handler to each event, as in this example:
+To be notified when the page changes from visible to hidden or hidden to visible, you can listen for the visibilitychange event. In Internet Explorer, this event is called `msvisibilitychange` and in Chrome it's called `webkitvisibilitychange`. In order to work in both browsers, you need to assign the same event handler to each event, as in this example:
 
     function handleVisibilityChange(){
         var output = document.getElementById("output"),
@@ -56,7 +56,7 @@ To be notified when the page changes from visible to hidden or hidden to visible
     document.addEventListener("msvisibilitychange", handleVisibilityChange, false);
     document.addEventListener("webkitvisibilitychange", handleVisibilityChange, false);
 
-This code works well in both Internet Explorer and Chrome. Further, this part of the API is relatively stable so it&#8217;s safe to use the code in real web applications.
+This code works well in both Internet Explorer and Chrome. Further, this part of the API is relatively stable so it's safe to use the code in real web applications.
 
 ## Differences
 
@@ -75,11 +75,11 @@ In Chrome, `document.webkitVisibilityState` is one of three possible string valu
 
 Chrome does not feature constants for each state, though the final implementation will likely contain them.
 
-Due to these differences, it&#8217;s recommended not to rely on the vendor-prefixed version of `document.visibilityState` and instead stick to using `document.hidden`.
+Due to these differences, it's recommended not to rely on the vendor-prefixed version of `document.visibilityState` and instead stick to using `document.hidden`.
 
 ## Uses
 
-The intended use of the Page Visibility API is to signal that to the page that the user isn&#8217;t interacting with the page. You can use that information to, for example, stop polling for updates from the server or stop animations (though if you&#8217;re using `requestAnimationFrame()`, that will happen automatically). 
+The intended use of the Page Visibility API is to signal that to the page that the user isn't interacting with the page. You can use that information to, for example, stop polling for updates from the server or stop animations (though if you're using `requestAnimationFrame()`, that will happen automatically). 
 
 After a little thought, I realized that the Page Visibility API is much more about the user than it is about the page, and so I added support to my [YUI 3 Idle Timer][2] component. The component now fires the `idle` event when the page becomes hidden and the `active` event when the page once again becomes visible. 
 

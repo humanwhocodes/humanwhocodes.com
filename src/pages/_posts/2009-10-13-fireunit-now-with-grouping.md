@@ -10,13 +10,13 @@ tags:
   - Unit Testing
   - YUI Test
 ---
-When I first got wind of John Resig&#8217;s [FireUnit][1] extension for Firefox, I was very excited. JavaScript unit testing, and front-end testing in general, is an area of particular interest to me. It&#8217;s so interesting that a couple of years ago I wrote [YUI Test][2] as a way to enable front-end testing in the browser. This past month, [YUI Test for YUI 3.x][3] was also released, updated with mock objects.
+When I first got wind of John Resig's [FireUnit][1] extension for Firefox, I was very excited. JavaScript unit testing, and front-end testing in general, is an area of particular interest to me. It's so interesting that a couple of years ago I wrote [YUI Test][2] as a way to enable front-end testing in the browser. This past month, [YUI Test for YUI 3.x][3] was also released, updated with mock objects.
 
-One of the things I never got around to with YUI Test was to create a useful console for outputting the results (both version use the built-in YUI Logger to display the results). The TestRunner object itself is event-driven, so it&#8217;s fairly easy to create a different way of displaying test results. I thought FireUnit looked like a great way to display test results in a logical, out-of-the-page way.
+One of the things I never got around to with YUI Test was to create a useful console for outputting the results (both version use the built-in YUI Logger to display the results). The TestRunner object itself is event-driven, so it's fairly easy to create a different way of displaying test results. I thought FireUnit looked like a great way to display test results in a logical, out-of-the-page way.
 
 ## Basic usage
 
-FireUnit is interesting in that it&#8217;s both a console for displaying test results as well as a mini unit testing framework (John wrote a post on [basic FireUnit usage][4], so I&#8217;m not going to go too deep into it here). The extension embeds as part of Firebug, creating a new &#8220;Test&#8221; tab and exposing the `fireunit` object. This object is similar to `console` but interacts only with the Test panel.
+FireUnit is interesting in that it's both a console for displaying test results as well as a mini unit testing framework (John wrote a post on [basic FireUnit usage][4], so I'm not going to go too deep into it here). The extension embeds as part of Firebug, creating a new &#8220;Test&#8221; tab and exposing the `fireunit` object. This object is similar to `console` but interacts only with the Test panel.
 
 The main method is `fireunit.ok()`, which accepts two arguments: a Boolean value and a string. The Boolean indicates if the test passed while the string provides a message to display. You can use this method either to run a simple test or to simply output a test result:
 
@@ -70,9 +70,9 @@ In order to attach to FireUnit, you just have to call `YAHOO.tool.FireUnit.attac
 
 ## Grouping
 
-I liked what I saw from FireUnit at this point, but I thought it was missing a major feature: grouping. Since most unit testing frameworks group tests into either test cases or test suites, or both, the ability to group the results of tests as noticeably missing. I asked John if he was planning on implementing such a feature and he said that if I&#8217;d like to implement it, he&#8217;d merge the changes in.
+I liked what I saw from FireUnit at this point, but I thought it was missing a major feature: grouping. Since most unit testing frameworks group tests into either test cases or test suites, or both, the ability to group the results of tests as noticeably missing. I asked John if he was planning on implementing such a feature and he said that if I'd like to implement it, he'd merge the changes in.
 
-My initial thoughts about the API were to keep it simple and generic so that everyone could benefit, not just YUI Test. Since different unit testing frameworks use different grouping terminology, I looked to Firebug for inspiration. I ultimately decided to mimic the `console.group()` and `console.groupEnd()` and created `fireunit.group()` and `fireunit.groupEnd()`. The usage is almost exactly the same: `fireunit.group()` accepts a string that is the name of the group and begins a new section in the console while `fireunit.groupEnd()` doesn&#8217;t have any arguments and simply closes out the section in the console. You can have as many nested groups as you&#8217;d like, which makes it easy to work with YUI Test test suites and test cases. Example usage:
+My initial thoughts about the API were to keep it simple and generic so that everyone could benefit, not just YUI Test. Since different unit testing frameworks use different grouping terminology, I looked to Firebug for inspiration. I ultimately decided to mimic the `console.group()` and `console.groupEnd()` and created `fireunit.group()` and `fireunit.groupEnd()`. The usage is almost exactly the same: `fireunit.group()` accepts a string that is the name of the group and begins a new section in the console while `fireunit.groupEnd()` doesn't have any arguments and simply closes out the section in the console. You can have as many nested groups as you'd like, which makes it easy to work with YUI Test test suites and test cases. Example usage:
 
     fireunit.ok(true, "Passing test result");
     fireunit.ok(false, "Failing test result.");
@@ -120,7 +120,7 @@ Another thing I liked about FireUnit was the Compare tab that appeared whenever 
 
     fireunit.ok(false, "This test failed.", 1, "1");
 
-This will cause the Compare tab to be displayed and will show that the number 1 is not equal to the string &#8220;1&#8243;. The main difference between this and `fireunit.compare()` is that the comparison has no bearing on the result of the test; it&#8217;s purely informational. To make things a little bit easier, I also added the type of each result (via the `typeof` operator).
+This will cause the Compare tab to be displayed and will show that the number 1 is not equal to the string &#8220;1&#8243;. The main difference between this and `fireunit.compare()` is that the comparison has no bearing on the result of the test; it's purely informational. To make things a little bit easier, I also added the type of each result (via the `typeof` operator).
 
 <p style="text-align: center;">
   <img class="alignnone" title="FireUnit" src="http://i764.photobucket.com/albums/xx289/nzakas/blog/fireunit2.png" alt="" width="595" height="316" />
@@ -128,7 +128,7 @@ This will cause the Compare tab to be displayed and will show that the number 1 
 
 ## Working with YUI Test
 
-With this addition to FireUnit, I&#8217;ve updated the FireUnit extension for YUI Test to make use of these grouping functionality. Since YUI Test is completely event-driven, adding this functionality was as easy as assigning more event handlers:
+With this addition to FireUnit, I've updated the FireUnit extension for YUI Test to make use of these grouping functionality. Since YUI Test is completely event-driven, adding this functionality was as easy as assigning more event handlers:
 
     //Copyright 2008-2009 Nicholas C. Zakas. All rights reserved.
     //BSD license
@@ -190,11 +190,11 @@ With this addition to FireUnit, I&#8217;ve updated the FireUnit extension for YU
     
     }();
 
-By hooking into the events that are fired when testcases and testsuites begin and end, I&#8217;m able to call the `fireunit.group()` and `fireunit.groupEnd()` methods at the correct time and with the correct data to create the appropriate console output.
+By hooking into the events that are fired when testcases and testsuites begin and end, I'm able to call the `fireunit.group()` and `fireunit.groupEnd()` methods at the correct time and with the correct data to create the appropriate console output.
 
 ## Get the source
 
-FireUnit is open source and can be forked from [John&#8217;s GitHub repository][6]. I&#8217;ve also released my [FireUnit for YUI Test][7] extension as open source on GitHub. There are both YUI 2.x and YUI 3.x versions available. Note that the YUI 3.x version requires you to pass in the `TestRunner` object to the `attach()` and `detach()` methods (because there can be multiple instances on a page).
+FireUnit is open source and can be forked from [John's GitHub repository][6]. I've also released my [FireUnit for YUI Test][7] extension as open source on GitHub. There are both YUI 2.x and YUI 3.x versions available. Note that the YUI 3.x version requires you to pass in the `TestRunner` object to the `attach()` and `detach()` methods (because there can be multiple instances on a page).
 
  [1]: http://www.fireunit.org
  [2]: http://developer.yahoo.com/yui/yuitest/

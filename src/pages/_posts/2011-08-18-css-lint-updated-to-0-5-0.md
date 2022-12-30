@@ -8,10 +8,10 @@ tags:
   - CSS
   - CSSLint
 ---
-After a slight delay to figure out some UI changes, the 0.5.0 release of CSS Lint has now made it to [csslint.net][1]. As with previous releases, this release saw a mixture of bug fixes and new features. The biggest change you&#8217;ll notice on the web site is that rules are now categorized based on how they help your code. We received a lot of feedback that you weren&#8217;t sure why some rules were there. We hope that categorizing the rules will help clear up some of that confusion (there&#8217;s more documentation coming, we promise!). There were also a lot of changes under the hood, here are the highlights:
+After a slight delay to figure out some UI changes, the 0.5.0 release of CSS Lint has now made it to [csslint.net][1]. As with previous releases, this release saw a mixture of bug fixes and new features. The biggest change you'll notice on the web site is that rules are now categorized based on how they help your code. We received a lot of feedback that you weren't sure why some rules were there. We hope that categorizing the rules will help clear up some of that confusion (there's more documentation coming, we promise!). There were also a lot of changes under the hood, here are the highlights:
 
-  * cssguru [pointed out][2] that the `!important` rule didn&#8217;t tell you how the target usage count. That has been addressed.
-  * Eric [created][3] a one-line-per-file output format that matches JSHint&#8217;s output format.
+  * cssguru [pointed out][2] that the `!important` rule didn't tell you how the target usage count. That has been addressed.
+  * Eric [created][3] a one-line-per-file output format that matches JSHint's output format.
   * Senthil [discovered a problem][4] with the Rhino CSS Lint CLI where directories were not being read. The CLI has now been fixed and directories can be recursively read once again.
   * The CSS parser now correctly supports CSS keyframe syntax and [CSS escaping][5].
   * cssguru [also argued][6] that having too many important declarations should not be an error. After some discussion, we agreed, and this is now a warning.
@@ -20,7 +20,7 @@ After a slight delay to figure out some UI changes, the 0.5.0 release of CSS Lin
   * I [added a rule][9] that checks for known CSS properties and warns if the property is unknown. Vendor-prefixed properties are considered exceptions to this rule.
   * Nicole [added a rule][10] that warns when a large negative `text-indent` is used without first setting the `direction` to `ltr`.
 
-Of course, there are other miscellaneous fixes and tweaks that have gone into this release. If you&#8217;re using CSS Lint for Node.js, you can update by typing:
+Of course, there are other miscellaneous fixes and tweaks that have gone into this release. If you're using CSS Lint for Node.js, you can update by typing:
 
     npm update csslint
 

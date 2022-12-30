@@ -1,0 +1,50 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import PostBlurb from '../../../components/PostBlurb.astro';
+import { loadSnippets } from "../../../lib/util.js";
+import slugify from "slugify";
+
+export async function getStaticPaths() {
+    
+    const posts = await loadSnippets();
+    const postTags = new Map();
+    posts.forEach(post => {
+
+        if (post.frontmatter.tags) {
+            for (const tag of post.frontmatter.tags) {
+        
+                if (!postTags.get(tag)) {
+                    postTags.set(tag, []);
+                }
+        
+                postTags.get(tag).push(post);
+
+            }
+        }
+    });
+
+    return [...postTags.entries()].map(([tag, posts]) => ({
+        params: { tag: slugify(tag.toLowerCase()) },
+        props: { posts, tag }
+    }));
+
+};
+
+const { posts, tag } = Astro.props;
+---
+<Layout
+	title={`Posts tagged with "${tag}"`}
+>	
+	<h2 class="no-margin">Posts tagged with "{tag}"</h2>
+
+	{posts.map((post) => (
+		<PostBlurb
+			title={post.frontmatter.title}
+			teaser={post.frontmatter.teaser}
+			date={post.frontmatter.date}
+			url={post.url}
+		/>
+	))}
+
+
+</Layout>

@@ -15,11 +15,11 @@ All three encodings, base16, base32, and base64 were defined so that data could 
 
 ## How does it work?
 
-Base64 encoding works directly on the underlying binary representation of data. You don&#8217;t really base64 encode strings, you base64 encode the bytes representing the characters that make up strings. Each character in the string is represented by a single 8-bit byte; each character in a base64-encoded string is made up of just 6 bits. Base64 encoding is really nothing more than performing this conversion.
+Base64 encoding works directly on the underlying binary representation of data. You don't really base64 encode strings, you base64 encode the bytes representing the characters that make up strings. Each character in the string is represented by a single 8-bit byte; each character in a base64-encoded string is made up of just 6 bits. Base64 encoding is really nothing more than performing this conversion.
 
 There are 65 possible characters in the base64 alphabet: the letters A through Z, a through z, the numbers 0 through 9, the plus sign (+) and the slash (/). The 65th character is the equals sign (=) and that is used to indicate padding (discussed later). The 6-bit number 0 therefore is represented by the letter A in a base64-encoded string, the 6-bit number 1 is represented by B, and so on.
 
-In order to base64 encode data, you need at least 24 bits (the smallest number that&#8217;s equally divisible by 6 and 8), so any three-character ASCII sequence can cleanly be encoded in base64. Consider the string &#8220;hat&#8221;. The letter &#8220;h&#8221; is represented by 104 or 01101000 in binary, &#8220;a&#8221; is 97 or 01100001, and &#8220;t&#8221; is 116 or 01110100. If you put together, you end up with:
+In order to base64 encode data, you need at least 24 bits (the smallest number that's equally divisible by 6 and 8), so any three-character ASCII sequence can cleanly be encoded in base64. Consider the string &#8220;hat&#8221;. The letter &#8220;h&#8221; is represented by 104 or 01101000 in binary, &#8220;a&#8221; is 97 or 01100001, and &#8220;t&#8221; is 116 or 01110100. If you put together, you end up with:
 
     01101000-01100001-01110100
 
@@ -31,11 +31,11 @@ After that, convert each 6 bits into a number.
 
     26-6-5-52
 
-Then, replace each number with it&#8217;s character from the base64 alphabet.
+Then, replace each number with it's character from the base64 alphabet.
 
     a-G-F-0
 
-And so the base64 encoded form of &#8220;hat&#8221; is &#8220;aGF0&#8243;. This works out well because there were exactly 24 bits, or three ASCII characters, to encode. Since not all strings have lengths evenly divisible by three, base64 encoding requires some padding when there aren&#8217;t enough bytes for encoding.
+And so the base64 encoded form of &#8220;hat&#8221; is &#8220;aGF0&#8243;. This works out well because there were exactly 24 bits, or three ASCII characters, to encode. Since not all strings have lengths evenly divisible by three, base64 encoding requires some padding when there aren't enough bytes for encoding.
 
 Note that because every three bytes of a string end up represented as four bytes, the resulting base64-encoded string is always around 33% larger than the original. For data URIs, this is generally okay because base64 encoding also makes gzipping much more efficient, so you actually end up transferring roughly the [same number of bytes][5] over the wire.
 
@@ -47,7 +47,7 @@ Encoding proceeds, converting each 24 bits, until there are no longer 24 bits to
   2. There are 8 extra bits. In this case, right-pad with zeros out to 12 bits.
   3. There are 16 extra bits. In this case, right-pad with zeros out to 18 bits.
 
-Note that for the second and third conditions, the right padding only fills out to the closest number of bits that are evenly divisible by six. Each 6-bit segment is converted into a character and then two or one equals signed are appended to the end, respectively. Each equals sign indicates that two extra bits of padding were added. These characters don&#8217;t literally represent anything in the original ASCII string; they are simply indicators that padding was necessary so that the decoder knows how to deal with the base64 encoded string.
+Note that for the second and third conditions, the right padding only fills out to the closest number of bits that are evenly divisible by six. Each 6-bit segment is converted into a character and then two or one equals signed are appended to the end, respectively. Each equals sign indicates that two extra bits of padding were added. These characters don't literally represent anything in the original ASCII string; they are simply indicators that padding was necessary so that the decoder knows how to deal with the base64 encoded string.
 
 For example, consider the word hatch. The letter &#8220;h&#8221; is represented by 104 or 01101000 in binary, &#8220;a&#8221; is 97 or 01100001, &#8220;t&#8221; is 116 or 01110100, &#8220;c&#8221; is 99 or 01100011, and &#8220;h&#8221; is 104 or 01101000. The resulting binary representation is:
 
@@ -65,11 +65,11 @@ Then the 6-bit groups are converted into characters:
 
     (a-G-F-0)(Y-2-g)
 
-So the resulting string is &#8220;aGF0Y2g&#8221;. But this isn&#8217;t the final base64 encoded string. Since there were two bits of padding adding, a single equals sign must be appended to the end, making the result &#8220;aGF0Y2g=&#8221;.
+So the resulting string is &#8220;aGF0Y2g&#8221;. But this isn't the final base64 encoded string. Since there were two bits of padding adding, a single equals sign must be appended to the end, making the result &#8220;aGF0Y2g=&#8221;.
 
 ## Encoding in JavaScript
 
-Base64 encoding in many languages deal directly with bytes and byte arrays. Since JavaScript doesn&#8217;t have native data types for either, the bitwise operators become very important to this process. Bitwise operators act directly on the underlying bit representation of numbers. Even though JavaScript numbers are technically stored in 64-bits, integer values are treated as if they&#8217;re 32 bits whenever bitwise operators are involved. The most complex part of the problem is converting three 8-bit numbers into four 6-bit numbers, and this is where the bitwise operators come in.
+Base64 encoding in many languages deal directly with bytes and byte arrays. Since JavaScript doesn't have native data types for either, the bitwise operators become very important to this process. Bitwise operators act directly on the underlying bit representation of numbers. Even though JavaScript numbers are technically stored in 64-bits, integer values are treated as if they're 32 bits whenever bitwise operators are involved. The most complex part of the problem is converting three 8-bit numbers into four 6-bit numbers, and this is where the bitwise operators come in.
 
 ### Bitwise operations
 
@@ -81,11 +81,11 @@ The 6-bit equivalent is:
 
     AAAAAA-AABBBB-BBBBCC-CCCCCC
 
-Note how the 6-bit first number is made up of the most significant 6 bits of the 8-bit number. Essentially, you want to cut off the last two bits and treat them like they never existed. This is precisely what the right shift (>>) operator does. Take the number 240 or 11110000 in binary. If you right-shift this number two places, you end up with 00111100 in binary (60). All of the bits have shifted to the right by two spots, and when there&#8217;s not enough room, the remaining bits &#8220;fall off&#8221; the end and are eliminated. All of the bits to the left are filled in with zeros. Thus, to get the first 6-bit number from the group of 8-bit number, you can do the following:
+Note how the 6-bit first number is made up of the most significant 6 bits of the 8-bit number. Essentially, you want to cut off the last two bits and treat them like they never existed. This is precisely what the right shift (>>) operator does. Take the number 240 or 11110000 in binary. If you right-shift this number two places, you end up with 00111100 in binary (60). All of the bits have shifted to the right by two spots, and when there's not enough room, the remaining bits &#8220;fall off&#8221; the end and are eliminated. All of the bits to the left are filled in with zeros. Thus, to get the first 6-bit number from the group of 8-bit number, you can do the following:
 
     var first6bitNum = first8bitNum >> 2;    //right shift by two bits
 
-The second 6-bit number is a bit tricky, as it&#8217;s made up of a combination of the first 8-bit number and the second 8-bit number. The easy part is getting the four most significant bits from the second 8-bit number, because once again, it&#8217;s a right shift. Right shifting the second 8-bit number by four will get all of those bits in the correct place. To get the first two bits, there are a couple of operations to perform on the first 8-bit number.
+The second 6-bit number is a bit tricky, as it's made up of a combination of the first 8-bit number and the second 8-bit number. The easy part is getting the four most significant bits from the second 8-bit number, because once again, it's a right shift. Right shifting the second 8-bit number by four will get all of those bits in the correct place. To get the first two bits, there are a couple of operations to perform on the first 8-bit number.
 
 The only parts you want from the first 8-bit digit are the least significant to bits, everything else needs to become zero. The way to do that is to use a bitwise AND operation against the number 3 (binary 00000011). A bitwise AND creates a number bit-by-bit from two operands. If the corresponding bits in each number have the same value, then the resulting number has that value in the same bit. For example:
 
@@ -98,7 +98,7 @@ Note that the resulting number (1) has the exact same values in the two least si
 
     var second6bitNum = (first8bitNum & 3) << 4 | (second8bitNum >> 4); 
 
-For the third 6-bit number, the process is almost exactly the same. This number is made up of the bits of the second and third 8-bit number, so there&#8217;s another process of bitwise AND and shifting that takes place. This time, you need the four least significant bits of the second 8-bit number and the two most significant bits of the third 8-bit number. Once again, the least significant bits of the 6-bit number are easiest, as you just right shift the third 8-bit number by six bits. To get the four most significant bits of the 6-bit number, perform a bitwise AND with 15 (binary 00001111, hex 0F), which zeros out the most significant four bits, then left shift the result over by two spots to allow room for two more bits:
+For the third 6-bit number, the process is almost exactly the same. This number is made up of the bits of the second and third 8-bit number, so there's another process of bitwise AND and shifting that takes place. This time, you need the four least significant bits of the second 8-bit number and the two most significant bits of the third 8-bit number. Once again, the least significant bits of the 6-bit number are easiest, as you just right shift the third 8-bit number by six bits. To get the four most significant bits of the 6-bit number, perform a bitwise AND with 15 (binary 00001111, hex 0F), which zeros out the most significant four bits, then left shift the result over by two spots to allow room for two more bits:
 
     var third6bitNum = (second8bitNum & 0x0f) << 2 | (third8bitNum >> 6); 
 
@@ -127,9 +127,9 @@ Before even attempting to base64 encode a string, you should check to see if the
         //more code here
     }
 
-This check uses a simple regular expression that checks for any characters not in the range 0-255. If even one of these characters is in the string, then there&#8217;s a non-ASCII character that can&#8217;t be encoded and an error is thrown.
+This check uses a simple regular expression that checks for any characters not in the range 0-255. If even one of these characters is in the string, then there's a non-ASCII character that can't be encoded and an error is thrown.
 
-The next section&#8217;s primary job is to convert each three eight-bit sequence into four six-bit sequences using bitwise operators. Since each character in the string represents a single eight-bit byte, you can proceed character-by-character through the string:
+The next section's primary job is to convert each three eight-bit sequence into four six-bit sequences using bitwise operators. Since each character in the string represents a single eight-bit byte, you can proceed character-by-character through the string:
 
     function base64Encode(text){
     
@@ -171,11 +171,11 @@ The next section&#8217;s primary job is to convert each three eight-bit sequence
         return result.join("");
     }
 
-Since each byte of a three-byte sequence is treated slightly differently, the `byteNum` variable tracks which byte of the three-byte sequence is being processed. When `byteNum` is 0, it&#8217;s the first byte of the second, 1 indicates the second, and 2 indicates the third. This is easily calculated using the modulus operator.
+Since each byte of a three-byte sequence is treated slightly differently, the `byteNum` variable tracks which byte of the three-byte sequence is being processed. When `byteNum` is 0, it's the first byte of the second, 1 indicates the second, and 2 indicates the third. This is easily calculated using the modulus operator.
 
 This algorithm uses two variables to track progress through the string, `cur` to track the current character and `prev` to track the previous character. This is necessary because the second and third bytes need information about the previous byte to properly base64-encode. A `switch` statement is used to determine how to interpret the byte and then the bitwise operators are applied. Once the base64 value is calculated, it is used as a lookup into the `digits` variable. The `digits` variable is a list of all base64 digits in the order in which they are used. As such, you can use `digits` as a lookup table for base64 digits via `charAt()`. The results are built up using an array, `result`, which will be joined later.
 
-The last step to accomplish is padding for strings that don&#8217;t have the correct number of bytes.
+The last step to accomplish is padding for strings that don't have the correct number of bytes.
 
     function base64Encode(text){
     
@@ -257,7 +257,7 @@ To convert each of these values into an ASCII character, use the `String.fromCha
 
     var firstChar = String.fromCharCode(first8bitNum); 
 
-You may be wondering what happens in the case of bit padding, since that hasn&#8217;t been covered in this section. The interesting thing about base64 decoding is that you can completely ignore the padding and still end up with the correct value. So if you base64 decode &#8220;aGF0Y2g&#8221;, you get the same result as when you based64 decode &#8220;aGF0Y2g=&#8221;. The reason lies in how the digits are determined.
+You may be wondering what happens in the case of bit padding, since that hasn't been covered in this section. The interesting thing about base64 decoding is that you can completely ignore the padding and still end up with the correct value. So if you base64 decode &#8220;aGF0Y2g&#8221;, you get the same result as when you based64 decode &#8220;aGF0Y2g=&#8221;. The reason lies in how the digits are determined.
 
 Recall that the word &#8220;hatch&#8221; is represented in base64 binary as the following:
 
@@ -272,11 +272,11 @@ Now, compare the resulting 8-bit sequences when each of these are converted:
     (01101000-01100001-01110100)(01100011-01101000-00)
     (01101000-01100001-01110100)(01100011-01101000)
 
-Note that the original, with padding, has two extra zero bits to the right. This would make up the last two bits of a third digit, but there aren&#8217;t enough bits to completely created a third ASCII character. Whenever the last sequence has four or fewer bits of 0, you can just ignore it.
+Note that the original, with padding, has two extra zero bits to the right. This would make up the last two bits of a third digit, but there aren't enough bits to completely created a third ASCII character. Whenever the last sequence has four or fewer bits of 0, you can just ignore it.
 
 ### The base64Decode() function
 
-As with encoding, the first step should always be to validate the input. There are a couple of things to keep in mind here. First, white space is not significant in base64-encoded data, so it should be ignored. Second, the length of the string should be a multiple of 4, and if it&#8217;s not, this is not a valid base64-encoded string. Keeping this in mind, you can come up with a reasonable data validation approach:
+As with encoding, the first step should always be to validate the input. There are a couple of things to keep in mind here. First, white space is not significant in base64-encoded data, so it should be ignored. Second, the length of the string should be a multiple of 4, and if it's not, this is not a valid base64-encoded string. Keeping this in mind, you can come up with a reasonable data validation approach:
 
     function base64Decode(text){
     
@@ -289,9 +289,9 @@ As with encoding, the first step should always be to validate the input. There a
         //more code here
     }
 
-Since white space is not significant, the first step is to remove it before doing any further validation. The regular expression checks that there are no invalid characters in the text and then the length is validated. If all of these conditions pass, then it&#8217;s time to move into the decoding portion of the function.
+Since white space is not significant, the first step is to remove it before doing any further validation. The regular expression checks that there are no invalid characters in the text and then the length is validated. If all of these conditions pass, then it's time to move into the decoding portion of the function.
 
-As mentioned previously, padding doesn&#8217;t really matter in decoding, so an equals signs are stripped to avoid confusion. Then, a similar process to base64-encoding is taken: go character-by-character and keep track of the previous character because it&#8217;s needed for calculations.
+As mentioned previously, padding doesn't really matter in decoding, so an equals signs are stripped to avoid confusion. Then, a similar process to base64-encoding is taken: go character-by-character and keep track of the previous character because it's needed for calculations.
 
     function base64Decode(text){
     
@@ -338,7 +338,7 @@ As mentioned previously, padding doesn&#8217;t really matter in decoding, so an 
         return result.join("");
     }
 
-Once again, a `digits` variable is used to help the conversion. In this case, the `indexOf()` method is used to locate the base64 digit and return its position. This is then used to perform the decoding. The `digitNum` variable keeps track of which 6-bit digit you&#8217;re evaluating in a group of four. Note that the first digit, digit number 0, must be ignored initially because there&#8217;s not enough information to do any decoding. When digit number 1 is encountered, you can then look back at digit 0 to retrieve the necessary information. All that&#8217;s left is to apply the proper bitwise operations to each digit and store the result, ultimately returning the joined string.
+Once again, a `digits` variable is used to help the conversion. In this case, the `indexOf()` method is used to locate the base64 digit and return its position. This is then used to perform the decoding. The `digitNum` variable keeps track of which 6-bit digit you're evaluating in a group of four. Note that the first digit, digit number 0, must be ignored initially because there's not enough information to do any decoding. When digit number 1 is encountered, you can then look back at digit 0 to retrieve the necessary information. All that's left is to apply the proper bitwise operations to each digit and store the result, ultimately returning the joined string.
 
 If there was any padding in the input text, then the loop will stop at either digit 1 or 2, leaving the padded zeros without evaluation. There is no need to create a special case to address padding.
 
@@ -349,15 +349,15 @@ Several browsers actually have base64 encoding and decoding built-in by default.
   * `btoa(text)` &#8211; base64 encodes text.
   * `atob(text)` &#8211; base64 decodes text.
 
-Internet Explorer and Opera don&#8217;t natively support these methods, so you&#8217;ll still need another implementation such as the one in this post to perform base64 encoding in those browsers.
+Internet Explorer and Opera don't natively support these methods, so you'll still need another implementation such as the one in this post to perform base64 encoding in those browsers.
 
 ## Conclusion
 
-Base64 encoding was originally designed to safely transfer 8-bit data through 7-bit systems. It has now gained more popularity for use in data URIs in browsers. Even though there are some browsers that natively support base64 encoding and decoding, not all of them do, so it&#8217;s necessary to have some code to work everywhere.
+Base64 encoding was originally designed to safely transfer 8-bit data through 7-bit systems. It has now gained more popularity for use in data URIs in browsers. Even though there are some browsers that natively support base64 encoding and decoding, not all of them do, so it's necessary to have some code to work everywhere.
 
-One thing I cannot say enough is that base64 encoding is *not* an encryption algorithm. Don&#8217;t make the mistake of thinking the encoded data is secure when, in fact, it&#8217;s just converted into another form that is easily decoded.
+One thing I cannot say enough is that base64 encoding is *not* an encryption algorithm. Don't make the mistake of thinking the encoded data is secure when, in fact, it's just converted into another form that is easily decoded.
 
-You can download the source code from my GitHub project, [Computer Science in JavaScript][6]. If you&#8217;d like to use it in your [YUI 3][7] code, check out the [Base64 utility][8] on YUI Gallery.
+You can download the source code from my GitHub project, [Computer Science in JavaScript][6]. If you'd like to use it in your [YUI 3][7] code, check out the [Base64 utility][8] on YUI Gallery.
 
  [1]: {{site.url}}/blog/2009/10/27/data-uris-explained/
  [2]: {{site.url}}/blog/2009/11/03/automatic-data-uri-embedding-in-css-files/

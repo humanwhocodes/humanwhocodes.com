@@ -10,7 +10,7 @@ tags:
   - JavaScript
   - Sorting
 ---
-Sorting algorithms are one of the cornerstones of computer science education. The purpose isn&#8217;t to teach you a dozens different ways to sort data when you&#8217;ll never need to implement them by hand in your professional life. Instead, they are used as a tool to teach algorithm theory, to show you that there are multiple ways to solve a single problem. And so I begin doing the same with JavaScript and bubble sort.
+Sorting algorithms are one of the cornerstones of computer science education. The purpose isn't to teach you a dozens different ways to sort data when you'll never need to implement them by hand in your professional life. Instead, they are used as a tool to teach algorithm theory, to show you that there are multiple ways to solve a single problem. And so I begin doing the same with JavaScript and bubble sort.
 
 Bubble sort is usually the first sorting algorithm taught because it is one of the least efficient and yet easiest to conceptually understand. The basic idea is to compare items, two at a time, and make sure that they are in the correct order before moving on to other items. At the end of each pass, a value &#8220;bubbles&#8221; into the correct position, ultimately leaving only the other items to sort. The basic algorithm is as follows:
 
@@ -73,7 +73,7 @@ An alternative form of bubble sort can be accomplished by going through the arra
 
 Both versions are available on my GitHub project, [Computer Science in JavaScript][2].
 
-Once again, bubble sort isn&#8217;t something you&#8217;re likely to use during the course of your professional career. It is simply a tool to gain a greater understanding of algorithms and a foundation on which to build further knowledge. The built-in `Array.prototype.sort()` method should be used in almost all cases, as it performs the job quickly efficiently.
+Once again, bubble sort isn't something you're likely to use during the course of your professional career. It is simply a tool to gain a greater understanding of algorithms and a foundation on which to build further knowledge. The built-in `Array.prototype.sort()` method should be used in almost all cases, as it performs the job quickly efficiently.
 
  [1]: http://www.youtube.com/watch?v=ddWtW1ceHDQ&NR=1
  [2]: http://github.com/nzakas/computer-science-in-javascript/

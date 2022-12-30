@@ -3,7 +3,6 @@ title: "Reading streams with promises in Node.js"
 author: Nicholas C. Zakas
 teaser: "The fs.promises API doesn't provide a way to read streams in Node.js. Here's how to do it."
 date: 2019-05-13
-layout: snippet
 categories:
   - Web Development
 tags:

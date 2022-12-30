@@ -9,4 +9,4 @@ tags:
   - Kokoro Photography
   - Web Sites
 ---
-I have just completed (for the time being) the design for my friend Amanda&#8217;s Web site. She&#8217;s a terrific photographer who has opened up her own studio called <a title="Kokoro Photography" rel="external" href="http://www.kokorophotography.com">Kokoro Photography</a>. If you&#8217;re in the Denver, Colorado area (or are willing to fly her out to wherever you are), you won&#8217;t be disappointed.
+I have just completed (for the time being) the design for my friend Amanda's Web site. She's a terrific photographer who has opened up her own studio called <a title="Kokoro Photography" rel="external" href="http://www.kokorophotography.com">Kokoro Photography</a>. If you're in the Denver, Colorado area (or are willing to fly her out to wherever you are), you won't be disappointed.

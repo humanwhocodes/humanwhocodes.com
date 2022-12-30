@@ -13,7 +13,7 @@ tags:
 ---
 In my last post, I talked about setting up Apache as an SSL front end to Play, with the goal of having SSL to the end-user while using normal HTTP internally. That approach works well when you have just one server. When you have multiple servers behind a load balancer, the approach is a little bit different. 
 
-We&#8217;re using Amazon web services for WellFurnished and so are using an elastic load balancer (ELB) to handle traffic. It&#8217;s possible to have SSL terminated at the ELB and HTTP the rest of the way, creating a similar set up as with Apache. You basically upload your SSL certificates to the ELB and open up port 443 and you&#8217;re in business. In theory, it&#8217;s a very simple set up, but I found that in reality there were a few hiccups.
+We're using Amazon web services for WellFurnished and so are using an elastic load balancer (ELB) to handle traffic. It's possible to have SSL terminated at the ELB and HTTP the rest of the way, creating a similar set up as with Apache. You basically upload your SSL certificates to the ELB and open up port 443 and you're in business. In theory, it's a very simple set up, but I found that in reality there were a few hiccups.
 
 ## Setting up SSL
 
@@ -48,7 +48,7 @@ The other three fields are a little bit trickier. Depending on the source of you
 
 The actual names of the files may vary depending on the type of SSL certificate you purchase and the certificate authority. The first file is the file that is unique to your domain while the other two are used to form a certificate chain<sup>[1]</sup> for your domain. You will always have a file with the word &#8220;root&#8221; in it, which is the root certificate<sup>[2]</sup> for your domain while the other is an intermediate certificate.
 
-All Amazon Web services work with PEM files for certificates and you&#8217;ll note none of the files we received were in that format. So before using the files, they have to be translated into a format that Amazon will understand.
+All Amazon Web services work with PEM files for certificates and you'll note none of the files we received were in that format. So before using the files, they have to be translated into a format that Amazon will understand.
 
 ### Private key
 
@@ -56,7 +56,7 @@ The private key is something that you generated along with your certificate requ
 
     openssl rsa -in host.key -text
 
-The result of this command is a lot of text, the final piece of which is what Amazon is looking for. You&#8217;ll see something that looks like this:
+The result of this command is a lot of text, the final piece of which is what Amazon is looking for. You'll see something that looks like this:
 
     -----BEGIN RSA PRIVATE KEY-----
     (tons of text)
@@ -70,7 +70,7 @@ The public certificate is the domain-specific file that you receive, in our case
 
     openssl x509 -inform PEM -in www_example_com.crt
 
-The output you&#8217;ll see look something like this:
+The output you'll see look something like this:
 
     -----BEGIN CERTIFICATE-----
     (tons of text)
@@ -80,7 +80,7 @@ Copy this entire text block, including the begin and end delimiters, and paste i
 
 ### Certificate chain
 
-Don&#8217;t be fooled by the AWS dialog, the certificate chain isn&#8217;t really optional when your ELB is talking directly to a browser. The certificate chain is the part that verifies that fully verifies which certificate authority issued the certificate and therefore whether or not the browser can trust that the domain certificate is valid. Different browsers handle things in different ways, but if you are missing the certificate chain and Firefox, you get a pretty scary warning page:
+Don't be fooled by the AWS dialog, the certificate chain isn't really optional when your ELB is talking directly to a browser. The certificate chain is the part that verifies that fully verifies which certificate authority issued the certificate and therefore whether or not the browser can trust that the domain certificate is valid. Different browsers handle things in different ways, but if you are missing the certificate chain and Firefox, you get a pretty scary warning page:
 
 [<img src="/images/wp-content/uploads/2012/08/ffssl-300x175.png" alt="Firefox SSL warning page" title="" width="300" height="175" />][3]
 
@@ -100,11 +100,11 @@ The AWS dialog will give you an error message if any of the fields contains an i
 
 When setting this up in production, I noticed an interesting wrinkle with our Play server. I had it set up with `XForwardedSupport=127.0.0.1` to enable the use of `X-Forwarded-*` headers with Apache<sup>[4]</sup> in our integration environment. When I put this into production, I started getting all kinds of errors. The problem is that the `X-Forwarded-For` header is set by the ELB to be the ELB IP address rather than the Apache IP address (Apache is still used on the front end servers to front Play). The result was that Play was not allowing requests through.
 
-I disabled `XForwardedSupport` in production only, figuring I would go back and solve that problem later. As it turned out, I actually didn&#8217;t need to do anything else. My first test and production works correctly and `request.secure` was already returning the correct value. Upon looking at the source code, it appears that `XForwardedSupport` only affects the values of `request.host` and `request.remoteAddress`.
+I disabled `XForwardedSupport` in production only, figuring I would go back and solve that problem later. As it turned out, I actually didn't need to do anything else. My first test and production works correctly and `request.secure` was already returning the correct value. Upon looking at the source code, it appears that `XForwardedSupport` only affects the values of `request.host` and `request.remoteAddress`.
 
 ## Conclusion
 
-The process of setting up SSL on an Amazon elastic load balancer isn&#8217;t as straightforward as it seems from the simple dialog. I spent several hours scouring the Internet for tips on how to deal with certificates on an ELB. I hope that this post saves you some time when setting up SSL on an ELB.
+The process of setting up SSL on an Amazon elastic load balancer isn't as straightforward as it seems from the simple dialog. I spent several hours scouring the Internet for tips on how to deal with certificates on an ELB. I hope that this post saves you some time when setting up SSL on an ELB.
 
 ## References
 

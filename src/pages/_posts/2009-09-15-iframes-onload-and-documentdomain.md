@@ -13,19 +13,19 @@ In this new Web 2.0, mashup world that the Internet has become, a lot of focus h
 
 ## Iframes and ownership
 
-The iframe element itself, `<iframe>`, is owned by the containing page, and so you may work on it as an element (getting/setting attributes, manipulating its style, moving it around in the DOM, etc.). The `window` object representing the iframe content is the property of the page that was loaded into the iframe. In order for the containing page to access the iframe&#8217;s window object in any meaningful way, the domain of the containing page and the iframe page need to be the same ([details][2]).
+The iframe element itself, `<iframe>`, is owned by the containing page, and so you may work on it as an element (getting/setting attributes, manipulating its style, moving it around in the DOM, etc.). The `window` object representing the iframe content is the property of the page that was loaded into the iframe. In order for the containing page to access the iframe's window object in any meaningful way, the domain of the containing page and the iframe page need to be the same ([details][2]).
 
-When the domains match, the containing page can access the `window` object for the iframe. The iframe element object has a property called `contentDocument` that contains the iframe&#8217;s `document` object, so you can use the `parentWindow` property to retrieve the `window` object. This is the standard way to retrieve the iframe&#8217;s `window` object and is supported by most browsers. Internet Explorer prior to version 8 didn&#8217;t support this property and so you had to use the proprietary `contentWindow` property. Example:
+When the domains match, the containing page can access the `window` object for the iframe. The iframe element object has a property called `contentDocument` that contains the iframe's `document` object, so you can use the `parentWindow` property to retrieve the `window` object. This is the standard way to retrieve the iframe's `window` object and is supported by most browsers. Internet Explorer prior to version 8 didn't support this property and so you had to use the proprietary `contentWindow` property. Example:
 
     function getIframeWindow(iframeElement){
         return iframeElement.contentWindow || iframeElement.contentDocument.parentWindow;
     }
 
-Additionally, the containing page&#8217;s window object can be retrieved from the iframe using the `window.parent` property. The iframe page can also retrieve a reference to the iframe element in which it resides by using the `window.frameElement` property. This crosses the ownership boundary since the iframe is owned by the containing page but is directly accessible off the iframe&#8217;s `window` object.
+Additionally, the containing page's window object can be retrieved from the iframe using the `window.parent` property. The iframe page can also retrieve a reference to the iframe element in which it resides by using the `window.frameElement` property. This crosses the ownership boundary since the iframe is owned by the containing page but is directly accessible off the iframe's `window` object.
 
-## Using the iframe element&#8217;s onload
+## Using the iframe element's onload
 
-Trying to determine when an iframe is loaded is an [interesting task][3] due the ownership issues surrounding iframes. Browsers that aren&#8217;t Internet Explorer do something very useful: they expose a `load` event for the *iframe element* so that it&#8217;s possible for you to be aware when an iframe has loaded, regardless of the content. Since the iframe element is owned by the containing page, you never need to worry about cross-domain restrictions. An iframe loading local content can be monitored just as well as an iframe loading foreign content ([experiment][4]). Example code:
+Trying to determine when an iframe is loaded is an [interesting task][3] due the ownership issues surrounding iframes. Browsers that aren't Internet Explorer do something very useful: they expose a `load` event for the *iframe element* so that it's possible for you to be aware when an iframe has loaded, regardless of the content. Since the iframe element is owned by the containing page, you never need to worry about cross-domain restrictions. An iframe loading local content can be monitored just as well as an iframe loading foreign content ([experiment][4]). Example code:
 
     var iframe = document.createElement("iframe");
     iframe.src = "simpleinner.htm";
@@ -34,11 +34,11 @@ Trying to determine when an iframe is loaded is an [interesting task][3] due the
     };
     document.body.appendChild(iframe);
 
-This works in all browsers except Internet Explorer (even version 8!). <del>I had hoped that perhaps using the <code>attachEvent()</code> method would work, but alas, Internet Explorer just doesn&#8217;t support the <code>load</code> event on an iframe element.</del> Pretty disappointing.
+This works in all browsers except Internet Explorer (even version 8!). <del>I had hoped that perhaps using the <code>attachEvent()</code> method would work, but alas, Internet Explorer just doesn't support the <code>load</code> event on an iframe element.</del> Pretty disappointing.
 
-## Using the iframe window&#8217;s onload
+## Using the iframe window's onload
 
-It seemed that Internet Explorer was going to foil my day&#8230;again. Then, I remembered that I&#8217;m not worried about foreign content in an iframe. In my specific case, I was dealing with content from the same domain. Since the cross-domain restriction didn&#8217;t apply, I could access the iframe&#8217;s `window` object directly and assign an `onload` event handler. Example:
+It seemed that Internet Explorer was going to foil my day&#8230;again. Then, I remembered that I'm not worried about foreign content in an iframe. In my specific case, I was dealing with content from the same domain. Since the cross-domain restriction didn't apply, I could access the iframe's `window` object directly and assign an `onload` event handler. Example:
 
     var iframe = document.createElement("iframe"),
         iframeWindow;
@@ -49,7 +49,7 @@ It seemed that Internet Explorer was going to foil my day&#8230;again. Then, I r
         alert("Local iframe is now loaded.");
     };
 
-The interesting part of this approach is that you have to assign the event handler *after* the iframe element has been added to the page. Prior to that, the iframe&#8217;s `window` object doesn&#8217;t exist and so you can&#8217;t assign the event handler. This approach works in Internet Explorer and Firefox for same-domain pages only. Other browsers haven&#8217;t yet created the `window` object and so throw an error ([experiment][5]).
+The interesting part of this approach is that you have to assign the event handler *after* the iframe element has been added to the page. Prior to that, the iframe's `window` object doesn't exist and so you can't assign the event handler. This approach works in Internet Explorer and Firefox for same-domain pages only. Other browsers haven't yet created the `window` object and so throw an error ([experiment][5]).
 
 ## Enter document.domain
 
@@ -59,11 +59,11 @@ I had resigned myself to using one method of detecting an iframe loading for Int
 
 This equalizes the domain difference and allows everything to work as if both pages were from the same domain. Or so I thought.
 
-The problem with this approach is that prior to the iframe being loaded, it&#8217;s still considered to be owned by the domain as specific in its `src` attribute. A relative path automatically prepends the domain on which the containing page was loaded from (`www.nczonline.net`) versus the one assigned to `document.domain`. That means a comparison of `wnczonline.net` to `www.nczonline.net` fails the same-domain check and causes a JavaScript error when you try to access the iframe&#8217;s `window `object ([experiment][6]). The iframe page won&#8217;t have its associated domain changed until it&#8217;s loaded and the JavaScript command to change the domain has been executed. Once the iframe page has been loaded, however, everything works fine. But how do you know once the iframe page has been loaded?
+The problem with this approach is that prior to the iframe being loaded, it's still considered to be owned by the domain as specific in its `src` attribute. A relative path automatically prepends the domain on which the containing page was loaded from (`www.nczonline.net`) versus the one assigned to `document.domain`. That means a comparison of `wnczonline.net` to `www.nczonline.net` fails the same-domain check and causes a JavaScript error when you try to access the iframe's `window `object ([experiment][6]). The iframe page won't have its associated domain changed until it's loaded and the JavaScript command to change the domain has been executed. Once the iframe page has been loaded, however, everything works fine. But how do you know once the iframe page has been loaded?
 
 ## Reversing the process
 
-Having still not come across a cross-browser solution to determining when an iframe has loaded, I decided to reverse my thinking. Instead of the containing page asking when the iframe is loaded, what if the iframe told the containing page that it was loaded? If the iframe page listened for its own `load` event and then told the containing page when that occurred, that should solve the problem. I wanted this to be as simple as assigning an event handler, so I came up with the following idea: I&#8217;d assign a method onto the iframe element. Then, the iframe page will call that method when it has loaded. The method has to be assigned to the element rather than the iframe&#8217;s `window` object because the latter doesn&#8217;t exist in all browsers at an early enough moment in time. The result looked like this:
+Having still not come across a cross-browser solution to determining when an iframe has loaded, I decided to reverse my thinking. Instead of the containing page asking when the iframe is loaded, what if the iframe told the containing page that it was loaded? If the iframe page listened for its own `load` event and then told the containing page when that occurred, that should solve the problem. I wanted this to be as simple as assigning an event handler, so I came up with the following idea: I'd assign a method onto the iframe element. Then, the iframe page will call that method when it has loaded. The method has to be assigned to the element rather than the iframe's `window` object because the latter doesn't exist in all browsers at an early enough moment in time. The result looked like this:
 
     var iframe = document.createElement("iframe");
     iframe.src = "simpleinner.htm";
@@ -80,11 +80,11 @@ This code assigned a method called `_myMethod()` onto the iframe element. The pa
 
 Since this code is executed after the assignment to `document.domain`, there are no security restrictions to worry about. This works great for any resources that share the same root hostname ([experiment][7]). It works across all browsers, which is exactly what I was looking for,Â  but the problem of detecting when a foreign resource was loaded in an iframe was still annoying me.
 
-## Using the iframe&#8217;s onreadystatechange
+## Using the iframe's onreadystatechange
 
-I decided to look into Internet Explorer&#8217;s iframe implementation a little bit more. It was clear that assigning something to the `onload` property didn&#8217;t produce the desired effect, but I figured there must be something else similar. I tried to attach the event handler using `attachEvent()`, which also didn&#8217;t work. Okay, clearly there was no support for the load event on the iframe. What about something else?
+I decided to look into Internet Explorer's iframe implementation a little bit more. It was clear that assigning something to the `onload` property didn't produce the desired effect, but I figured there must be something else similar. I tried to attach the event handler using `attachEvent()`, which also didn't work. Okay, clearly there was no support for the load event on the iframe. What about something else?
 
-That&#8217;s when I recalled IE&#8217;s bizarre `readystatechange` event that it has on documents. This is, of course, completely different than the `readystatechange` event fired on `XMLHttpRequest` objects. I wondered if the iframe element might support this event as well, and as it turns out, [it does][8]. The iframe element supports the `readyState` property, which is changed to &#8220;interactive&#8221; and then &#8220;complete&#8221; when the contents of the iframe have been loaded. And because this is on the iframe element and not on the iframe `window` object, there is no concern about cross-domain restrictions ([experiment][9]). The final code I ended up with is along these lines:
+That's when I recalled IE's bizarre `readystatechange` event that it has on documents. This is, of course, completely different than the `readystatechange` event fired on `XMLHttpRequest` objects. I wondered if the iframe element might support this event as well, and as it turns out, [it does][8]. The iframe element supports the `readyState` property, which is changed to &#8220;interactive&#8221; and then &#8220;complete&#8221; when the contents of the iframe have been loaded. And because this is on the iframe element and not on the iframe `window` object, there is no concern about cross-domain restrictions ([experiment][9]). The final code I ended up with is along these lines:
 
     var iframe = document.createElement("iframe");
     iframe.src = "simpleinner.htm";
@@ -103,11 +103,11 @@ That&#8217;s when I recalled IE&#8217;s bizarre `readystatechange` event that it
     
     document.body.appendChild(iframe);
 
-The check to determine if the browser is IE or not is a bit messy. I would have preferred to check for the existence of `iframe.readyState`, however, this throws an error when you try to access the property prior to adding the iframe into the document. I considered using the existence of `document.readyState` to determine whether to use `readystatechange`, however, most other browsers now support this property, so that&#8217;s not a good enough determinant. With YUI, I&#8217;d just use `Y.UA.ie` to determine this (you can use whichever method suits you best).
+The check to determine if the browser is IE or not is a bit messy. I would have preferred to check for the existence of `iframe.readyState`, however, this throws an error when you try to access the property prior to adding the iframe into the document. I considered using the existence of `document.readyState` to determine whether to use `readystatechange`, however, most other browsers now support this property, so that's not a good enough determinant. With YUI, I'd just use `Y.UA.ie` to determine this (you can use whichever method suits you best).
 
-## IE&#8217;s hidden onload support
+## IE's hidden onload support
 
-Shortly after posting this blog, [Christopher][10] commented that using `attachEvent`() on the iframe element works in IE. I could have sworn I tried this before but, due to his prompting, I whipped up another [experiment][11]. As it turns out, he&#8217;s completely correct. I had to dig through the MSDN documentation to eventually find a roundabout reference, but sure enough, [it&#8217;s there][12]. This led to a final code snippet of:
+Shortly after posting this blog, [Christopher][10] commented that using `attachEvent`() on the iframe element works in IE. I could have sworn I tried this before but, due to his prompting, I whipped up another [experiment][11]. As it turns out, he's completely correct. I had to dig through the MSDN documentation to eventually find a roundabout reference, but sure enough, [it's there][12]. This led to a final code snippet of:
 
     var iframe = document.createElement("iframe");
     iframe.src = "simpleinner.htm";
@@ -128,9 +128,9 @@ This code also works in all browsers and avoids any potential issues surrounding
 
 ## Wrap-up
 
-After quite a bit of investigation, it appears that it is possible to determine when an iframe has loaded across all browsers regardless of the iframe page&#8217;s origin. This makes monitoring and error handling of iframed content a lot easier to manage. [I&#8217;m thankful][13] that all browser vendors saw the benefit of adding these events to the iframe element itself rather than relying on the iframe `window` object or expecting that we usually don&#8217;t care whether an iframe has been loaded or not.
+After quite a bit of investigation, it appears that it is possible to determine when an iframe has loaded across all browsers regardless of the iframe page's origin. This makes monitoring and error handling of iframed content a lot easier to manage. [I'm thankful][13] that all browser vendors saw the benefit of adding these events to the iframe element itself rather than relying on the iframe `window` object or expecting that we usually don't care whether an iframe has been loaded or not.
 
-**Update (15 Sep 2009): **Added section about `attachEvent()` based on Christopher&#8217;s comment.
+**Update (15 Sep 2009): **Added section about `attachEvent()` based on Christopher's comment.
 
  [1]: http://www.w3.org/TR/2009/WD-html5-20090212/comms.html#crossDocumentMessages
  [2]: http://msdn.microsoft.com/en-us/library/ms533028(VS.85).aspx

@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - Proxies
 ---
-In my [last post][1], I explained how to use ECMAScript 6 proxies to throw an error when a non-existent property is read (rather than returning `undefined`). I came to realize that proxies allow a transparent way to augment objects with validation capabilities in an almost limitless fashion. After some experimentation, I discovered that it&#8217;s possible to add type safety to JavaScript objects with just a few lines of code.
+In my [last post][1], I explained how to use ECMAScript 6 proxies to throw an error when a non-existent property is read (rather than returning `undefined`). I came to realize that proxies allow a transparent way to augment objects with validation capabilities in an almost limitless fashion. After some experimentation, I discovered that it's possible to add type safety to JavaScript objects with just a few lines of code.
 
 The idea behind type safety is that each variable or property can only contain a particular type of value. In type-safe languages, the type is defined along with the declaration. In JavaScript, of course, there is no way to make such a declaration natively. However, many times properties are initialized with a value that indicates the type of data it should contain. For example:
 
@@ -18,9 +18,9 @@ The idea behind type safety is that each variable or property can only contain a
         age: 16
     };
 
-In this code, it&#8217;s easy to see that `name` should hold a string and `age` should hold a number. You wouldn&#8217;t expect these properties to hold other types of data for as long as the object is used. Using proxies, it&#8217;s possible to use this information to ensure that new values assigned to these properties are of the same type.
+In this code, it's easy to see that `name` should hold a string and `age` should hold a number. You wouldn't expect these properties to hold other types of data for as long as the object is used. Using proxies, it's possible to use this information to ensure that new values assigned to these properties are of the same type.
 
-Since assignment is the operation to worry about (that is, assigning a new value to a property), you need to use the proxy `set` trap. The `set` trap gets called whenever a property value is set and receives four arguments: the target of the operation, the property name, the new value, and the receiver object. The target and the receiver are always the same (as best I can tell). In order to protect properties from having incorrect values, simply evaluate the current value against the new value and throw an error if they don&#8217;t match:
+Since assignment is the operation to worry about (that is, assigning a new value to a property), you need to use the proxy `set` trap. The `set` trap gets called whenever a property value is set and receives four arguments: the target of the operation, the property name, the new value, and the receiver object. The target and the receiver are always the same (as best I can tell). In order to protect properties from having incorrect values, simply evaluate the current value against the new value and throw an error if they don't match:
 
     function createTypeSafeObject(object) {
     
@@ -38,7 +38,7 @@ Since assignment is the operation to worry about (that is, assigning a new value
         });
     }
 
-The `createTypeSafeObject()` method accepts an object and creates a proxy for it with a `set` trap. The trap uses `typeof` to get the type of the existing property and the value that was passed in. If the property already exists on the object and the types don&#8217;t match, then an error is thrown. If the property either doesn&#8217;t exist already or the types match, then the assignment happens as usual. This has the effect of allowing objects to receive new properties without error. For example:
+The `createTypeSafeObject()` method accepts an object and creates a proxy for it with a `set` trap. The trap uses `typeof` to get the type of the existing property and the value that was passed in. If the property already exists on the object and the types don't match, then an error is thrown. If the property either doesn't exist already or the types match, then the assignment happens as usual. This has the effect of allowing objects to receive new properties without error. For example:
 
     var person = {
         name: "Nicholas"
@@ -51,7 +51,7 @@ The `createTypeSafeObject()` method accepts an object and creates a proxy for it
     typeSafePerson.age = "red";          // throws an error, different types
     
 
-In this code, the `name` property is changed without error because it&#8217;s changed to another string. The `age` property is added as a number, and when the value is set to a string, an error is thrown. As long as the property is initialized to the proper type the first time, all subsequent changes will be correct. That means you need to initialize invalid values correctly. The quirk of `typeof null` returning &#8220;object&#8221; actually works well in this case, as a `null` property allows assignment of an object value later.
+In this code, the `name` property is changed without error because it's changed to another string. The `age` property is added as a number, and when the value is set to a string, an error is thrown. As long as the property is initialized to the proper type the first time, all subsequent changes will be correct. That means you need to initialize invalid values correctly. The quirk of `typeof null` returning &#8220;object&#8221; actually works well in this case, as a `null` property allows assignment of an object value later.
 
 As with defensive objects, you can also apply this method to constructors:
 

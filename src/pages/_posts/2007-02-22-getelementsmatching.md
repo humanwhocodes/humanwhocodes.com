@@ -8,7 +8,7 @@ tags:
   - DOM
   - JavaScript
 ---
-In response to a <a title="What's the deal with CSS query engines?" rel="external" href="{{site.url}}/archive/2007/2/421#comments">previous post</a>, I was challenged to come up with a way to determine that elements had certain similarities without using CSS queries. Since this may benefit others, I decided to spin off the long comment thread into another post. I&#8217;ve called my solution `getElementsMatching()`:
+In response to a <a title="What's the deal with CSS query engines?" rel="external" href="{{site.url}}/archive/2007/2/421#comments">previous post</a>, I was challenged to come up with a way to determine that elements had certain similarities without using CSS queries. Since this may benefit others, I decided to spin off the long comment thread into another post. I've called my solution `getElementsMatching()`:
 
 <code class="block"> </code>
 

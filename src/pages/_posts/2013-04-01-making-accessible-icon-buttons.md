@@ -28,11 +28,11 @@ As tends to happen on Twitter, we fruitlessly exchanged 140 character messages t
 
 ## Simple icon buttons
 
-In the beginning, there `<input type="image">`. Many seem to have forgotten this part of HTML. Early on, web developers wanted to use images as submit buttons rather than the plain submit button and `<input type="image">` allowed you to create an image that actually works like a button. Further, this type of image actually announces itself as a button in screen readers. Anytime you want the user to click on something and *not* navigate to another page, you&#8217;re looking for a button, and `<input type="image">` gives you a nice compact way of doing that while supporting the same attributes as `<img>`. For example:
+In the beginning, there `<input type="image">`. Many seem to have forgotten this part of HTML. Early on, web developers wanted to use images as submit buttons rather than the plain submit button and `<input type="image">` allowed you to create an image that actually works like a button. Further, this type of image actually announces itself as a button in screen readers. Anytime you want the user to click on something and *not* navigate to another page, you're looking for a button, and `<input type="image">` gives you a nice compact way of doing that while supporting the same attributes as `<img>`. For example:
 
     <input type="image" src="email.png" width="14" height="14" alt="Email">
 
-In this case, the major screen readers (JAWS, NVDA, VoiceOver) announce &#8220;Email button&#8221; in all major browsers, reading the `alt` text and identifying the image as a button. Part of the reason this pattern isn&#8217;t used much anymore is due to the ubiquity of CSS sprites. However, it&#8217;s still my favorite pattern, and with a little adjusting, works fine with sprites:
+In this case, the major screen readers (JAWS, NVDA, VoiceOver) announce &#8220;Email button&#8221; in all major browsers, reading the `alt` text and identifying the image as a button. Part of the reason this pattern isn't used much anymore is due to the ubiquity of CSS sprites. However, it's still my favorite pattern, and with a little adjusting, works fine with sprites:
 
     <style>
         .email-btn {
@@ -69,7 +69,7 @@ This button produces some very different results in different browsers and diffe
   * **Firefox 19 (Mac OS X/VoiceOver):** &#8220;Email button&#8221;
   * **Mobile Safari (iOS 6/VoiceOver):** &#8220;Button&#8221;
 
-So basically, using a `<button>` element introduces a barrier for most screen reader/browser combinations to figure out what the button is doing. It doesn&#8217;t matter if the `<img>` is used more traditionally or with a sprite, you don&#8217;t get much information in most places.
+So basically, using a `<button>` element introduces a barrier for most screen reader/browser combinations to figure out what the button is doing. It doesn't matter if the `<img>` is used more traditionally or with a sprite, you don't get much information in most places.
 
 You can give screen readers a hint by using the `aria-label` attribute on the `<button>` element. Doing so means providing a plain-text label for the button as a whole:
 
@@ -100,7 +100,7 @@ The question is, how do you add descriptive text to this? One way would be to ad
 
     <button aria-label="Email"><span class="icon-envelope"></span></button>
 
-Since that always works for `<button>` elements, that&#8217;s the fastest and easiest way forward. The result in various screen readers:
+Since that always works for `<button>` elements, that's the fastest and easiest way forward. The result in various screen readers:
 
   * **Chrome 25 (Win7/NVDA):** &#8220;Email button&#8221;
   * **Internet Explorer 9 (Win7/NVDA):** &#8220;Email button&#8221;
@@ -117,13 +117,13 @@ I prefer this over the second (and often overused option) of hiding text off scr
 
     <button><span class="icon-envelope"></span><span class="hide-offscreen">Email</span></button>
 
-The idea here is to position text far off in some direction such that it&#8217;s not visible to sighted users but is still read out for screen reader users. I&#8217;m not a huge fan of hiding text off screen, primarily because it feels very hacky&#8230;a bit like a sleight of hand trick. Additionally, each of the major ways of hiding text off screen comes with some sort of caveat. Using a big negative `text-indent` doesn&#8217;t work well with RTL languages, using a `height` of 0 means VoiceOver won&#8217;t announce the contents, and so on. Jonathan Snook put together a fantastic post<sup>[2]</sup> outlining the different approaches and the caveats to each.
+The idea here is to position text far off in some direction such that it's not visible to sighted users but is still read out for screen reader users. I'm not a huge fan of hiding text off screen, primarily because it feels very hacky&#8230;a bit like a sleight of hand trick. Additionally, each of the major ways of hiding text off screen comes with some sort of caveat. Using a big negative `text-indent` doesn't work well with RTL languages, using a `height` of 0 means VoiceOver won't announce the contents, and so on. Jonathan Snook put together a fantastic post<sup>[2]</sup> outlining the different approaches and the caveats to each.
 
 The screen readers all end up announcing the same message as when using `aria-label`.
 
-Do I use hiding text off screen periodically? Yes, but only as a measure of last resort when I&#8217;ve exhausted all other possibilities. I would encourage you to do the same.
+Do I use hiding text off screen periodically? Yes, but only as a measure of last resort when I've exhausted all other possibilities. I would encourage you to do the same.
 
-One final note: don&#8217;t use `title` as your button label. Example:
+One final note: don't use `title` as your button label. Example:
 
     <button title="Email"><span class="icon-envelope"></span></button>
 
@@ -140,11 +140,11 @@ While it would be ideal if screen readers were able to use this value, the resul
   * **Firefox 19 (Mac OS X/VoiceOver):** &#8220;Email button&#8221;
   * **Mobile Safari (iOS 6/VoiceOver):** &#8220;Email button&#8221;
 
-Even though the `title` attribute is helpful for sighted users as a hint, it doesn&#8217;t provide any real consistent benefit as far as screenreaders go.
+Even though the `title` attribute is helpful for sighted users as a hint, it doesn't provide any real consistent benefit as far as screenreaders go.
 
 ## Update (07-April-2013)
 
-As several commenters mentioned, my recommendation results in an empty `<button>` element. I wasn&#8217;t too concerned about that at first, but as I thought about it more and more, the purist in me got a little bit upset. Yes, in an ideal world, you should be able to remove all JavaScript and CSS and the page still make sense. In this case, you&#8217;d be left with a button that has no descriptive text whatsoever. That turned my stomach and I went back to the drawing board to try and find a way to have text inside of the `<button>` element without hiding it offscreen. After some tinkering, here&#8217;s what I came up with:
+As several commenters mentioned, my recommendation results in an empty `<button>` element. I wasn't too concerned about that at first, but as I thought about it more and more, the purist in me got a little bit upset. Yes, in an ideal world, you should be able to remove all JavaScript and CSS and the page still make sense. In this case, you'd be left with a button that has no descriptive text whatsoever. That turned my stomach and I went back to the drawing board to try and find a way to have text inside of the `<button>` element without hiding it offscreen. After some tinkering, here's what I came up with:
 
     <style>
     .btn-label {
@@ -160,11 +160,11 @@ As several commenters mentioned, my recommendation results in an empty `<button>
 
 The idea is to have the descriptive text inside of the `<button>` element while placing the Font Awesome class on the `<button>` itself. This allows you to modify the inner `<span>` element separately from the `<button>`. The `<span>` is set to be practically invisible by using a `font-size` of 0, a `height` of one pixel (to make VoiceOver happy). The rest is used to ensure the `<span>` never grows any larger.
 
-In all browsers and screenreaders mentioned in this post, the text &#8220;Email button&#8221; is announced using this pattern. The solution is something that makes the purist side of me very comfortable. You aren&#8217;t tempting fate by moving text offscreen yet the `<button>` element still has text inside of it. You don&#8217;t have to use ARIA to provide additional context for screen readers in this case.
+In all browsers and screenreaders mentioned in this post, the text &#8220;Email button&#8221; is announced using this pattern. The solution is something that makes the purist side of me very comfortable. You aren't tempting fate by moving text offscreen yet the `<button>` element still has text inside of it. You don't have to use ARIA to provide additional context for screen readers in this case.
 
 ## Conclusion
 
-I still prefer the old-school `<input type="image">` element for creating clickable icons. However, in the case of using an icon font, that really doesn&#8217;t work. In that situation, <del>I prefer to use the <code>aria-label</code> attribute to provide additional text for screen readers. Doing so yields the most consistent treatment for buttons across major browsers and screenreaders.</del> I prefer to use some in-line hidden text to ensure the `<button>` element has actual text inside. As a bonus, you don&#8217;t have to worry too much about how position text off screen might affect other parts of the page.
+I still prefer the old-school `<input type="image">` element for creating clickable icons. However, in the case of using an icon font, that really doesn't work. In that situation, <del>I prefer to use the <code>aria-label</code> attribute to provide additional text for screen readers. Doing so yields the most consistent treatment for buttons across major browsers and screenreaders.</del> I prefer to use some in-line hidden text to ensure the `<button>` element has actual text inside. As a bonus, you don't have to worry too much about how position text off screen might affect other parts of the page.
 
 ## References
 

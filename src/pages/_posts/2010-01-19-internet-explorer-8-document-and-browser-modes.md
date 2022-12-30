@@ -13,11 +13,11 @@ tags:
   - Quirks Mode
   - Standards Mode
 ---
-When Microsoft began planning for Internet Explorer 8, they were struck with an interesting problem. They were willing to admit that Internet Explorer had implementation bugs both in rendering and scripting. After admitting that, though, they had the problem that is commonly referred to as &#8220;don&#8217;t break the Internet.&#8221; Microsoft had no way of knowing how many sites were reliant upon the implementation bugs to function correctly. Their ultimate solution to the problem was interesting: Internet Explorer 8 could run in a variety of different modes. The sheer number of possible modes is a bit daunting but basically comes down to two types: document mode and browser mode.
+When Microsoft began planning for Internet Explorer 8, they were struck with an interesting problem. They were willing to admit that Internet Explorer had implementation bugs both in rendering and scripting. After admitting that, though, they had the problem that is commonly referred to as &#8220;don't break the Internet.&#8221; Microsoft had no way of knowing how many sites were reliant upon the implementation bugs to function correctly. Their ultimate solution to the problem was interesting: Internet Explorer 8 could run in a variety of different modes. The sheer number of possible modes is a bit daunting but basically comes down to two types: document mode and browser mode.
 
 ## Document mode
 
-A page&#8217;s document mode determines to which features it has access. This means that there&#8217;s a specific level of CSS support, a specific number of features available for scripting through JavaScript, and a specific way that doctypes are treated. There are three different document modes:
+A page's document mode determines to which features it has access. This means that there's a specific level of CSS support, a specific number of features available for scripting through JavaScript, and a specific way that doctypes are treated. There are three different document modes:
 
   * **Internet Explorer 5** &#8211; renders the page in IE7 quirks mode (also known as IE5 mode). New features in IE8 are not available.
   * **Internet Explorer 7** &#8211; renders the page in IE7 standards mode. New features in IE8 are not available.
@@ -31,7 +31,7 @@ You can force a particular document mode by using the `X-UA-Compatible` HTTP hea
 
     <meta http-equiv="X-UA-Compatible" content="IE=<em>IEVersion</em>">
 
-There are several different possible values for the IE version in this field and they don&#8217;t necessary map to the three document modes:
+There are several different possible values for the IE version in this field and they don't necessary map to the three document modes:
 
   * **Edge** &#8211; always put the document into the most recent document mode available. Doctype is ignored. For Internet Explorer 8, this forces the document mode to IE8 standards all the time. Be careful when using this because when Internet Explorer 9 comes out, this will force the page into IE9 standards **mode.**
   * **EmulateIE8** &#8211; if a doctype is present, set the document mode to IE8 standards and otherwise set the document mode to IE5.
@@ -80,17 +80,17 @@ The user-agent string change is to ensure that any code reliant on user-agent sn
 
 ### Internet Explorer 7 mode
 
-Internet Explorer 7 mode is the most curious of all browser modes as it appears to be an option in [IE Developer Tools][2] only. The documentation states that this is used to test your site in an actual Internet Explorer 7 instance rather than Internet Explorer 8 running in compatibility mode. Internet Explorer 7 determines the document mode as if `X-UA-Compatible` is set to EmulateIE7. Additionally, this mode completely disregards `X-UA-Compatible` and so there is no way to manually change the document mode (Internet Explorer 7 didn&#8217;t honor `X-UA-Compatible` either). This means that unlike the other browser modes, Internet Explorer 7 mode can never have a document mode of IE8 standards. Further, the user-agent string is changes so that the Trident version is no longer available. Here it is on my box:
+Internet Explorer 7 mode is the most curious of all browser modes as it appears to be an option in [IE Developer Tools][2] only. The documentation states that this is used to test your site in an actual Internet Explorer 7 instance rather than Internet Explorer 8 running in compatibility mode. Internet Explorer 7 determines the document mode as if `X-UA-Compatible` is set to EmulateIE7. Additionally, this mode completely disregards `X-UA-Compatible` and so there is no way to manually change the document mode (Internet Explorer 7 didn't honor `X-UA-Compatible` either). This means that unlike the other browser modes, Internet Explorer 7 mode can never have a document mode of IE8 standards. Further, the user-agent string is changes so that the Trident version is no longer available. Here it is on my box:
 
     Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)
 
-There doesn&#8217;t appear to be any other way that and end user can trigger Internet Explorer 7 mode. As such, it appears that this is just a convenience tool for developers that frees us from needing toÂ  and so it appears to be a tool used primary for developers
+There doesn't appear to be any other way that and end user can trigger Internet Explorer 7 mode. As such, it appears that this is just a convenience tool for developers that frees us from needing toÂ  and so it appears to be a tool used primary for developers
 
 ## Summary
 
 Internet Explorer 8 has some powerful, and confusing, features as it relates to its rendering and execution engine. Document modes are used to determine which features are available to the page, and that includes which CSS features and which JavaScript features are enabled and available. You can tell the browser how you would like the document mode to be determined by specifying a value of `X-UA-Compatible`.
 
-Browser modes change how the document mode is determined when `X-UA-Compatible` is not specified. They also change the user-agent string so that user-agent sniffers won&#8217;t be broken. In the wild, you will only see Internet Explorer 8 mode and Internet Explorer 8 compatibility mode; Internet Explorer 7 mode appears to be just for developer usage.
+Browser modes change how the document mode is determined when `X-UA-Compatible` is not specified. They also change the user-agent string so that user-agent sniffers won't be broken. In the wild, you will only see Internet Explorer 8 mode and Internet Explorer 8 compatibility mode; Internet Explorer 7 mode appears to be just for developer usage.
 
  [1]: http://www.microsoft.com/uk/windows/internet-explorer/features/enhanced-navigation.aspx
  [2]: http://msdn.microsoft.com/en-us/library/dd565626%28VS.85%29.aspx#browserModeMenu

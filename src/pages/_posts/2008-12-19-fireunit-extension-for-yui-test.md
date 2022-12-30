@@ -16,7 +16,7 @@ When I wrote YUI Test, I made sure that the `TestRunner` object was completely e
 
     YAHOO.tool.FireUnit.attach();
 
-That&#8217;s it! All the results will be output to the Test tab in Firebug. There are some limitations to FireUnit, such as its inability to group tests and a lack of anything but basic result formatting (so some of the failure messages YUI Test generates don&#8217;t look all that pretty). Still, it&#8217;s a step in the right direction and I&#8217;m sure John will be continuing to develop it. Feel free to download [FireUnit for YUI Test][5] and give it a whirl (BSD license).
+That's it! All the results will be output to the Test tab in Firebug. There are some limitations to FireUnit, such as its inability to group tests and a lack of anything but basic result formatting (so some of the failure messages YUI Test generates don't look all that pretty). Still, it's a step in the right direction and I'm sure John will be continuing to develop it. Feel free to download [FireUnit for YUI Test][5] and give it a whirl (BSD license).
 
  [1]: http://developer.yahoo.com/yui/yuitest/
  [2]: http://ejohn.org/blog/fireunit/

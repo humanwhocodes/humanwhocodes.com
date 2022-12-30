@@ -10,14 +10,16 @@ export async function getStaticPaths() {
     const postTags = new Map();
     posts.forEach(post => {
 
-        for (const tag of post.frontmatter.tags) {
-    
-            if (!postTags.get(tag)) {
-                postTags.set(tag, []);
-            }
-    
-            postTags.get(tag).push(post);
+        if (post.frontmatter.tags) {
+            for (const tag of post.frontmatter.tags) {
+        
+                if (!postTags.get(tag)) {
+                    postTags.set(tag, []);
+                }
+        
+                postTags.get(tag).push(post);
 
+            }
         }
     });
 

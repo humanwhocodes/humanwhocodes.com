@@ -9,7 +9,7 @@ tags:
   - Errors
   - JavaScript
 ---
-One of the areas I feel lacks enough discussion is error handling in JavaScript. While a lot of thought typically goes into error handling in server software, complete with error logs and monitoring systems, there&#8217;s very little emphasis on the same for JavaScript. I&#8217;ve tried to raise awareness of this with my Ajax Experience talk, [Enterprise JavaScript Error Handling][1], where I discussed error handling approaches as well as common error sources.
+One of the areas I feel lacks enough discussion is error handling in JavaScript. While a lot of thought typically goes into error handling in server software, complete with error logs and monitoring systems, there's very little emphasis on the same for JavaScript. I've tried to raise awareness of this with my Ajax Experience talk, [Enterprise JavaScript Error Handling][1], where I discussed error handling approaches as well as common error sources.
 
 One of my suggestions in the talk was to provide a debug mode for your application. The idea is that production mode hides JavaScript errors from the user and handles them appropriately while debug mode allows errors to bubble up to the browser level and be reported as usual. The latter is important, of course, for debugging purposes. When the error is popped up in the browser, you have the option to debug with all of the surrounding context information. The pattern I suggested in my talk looks like this:
 
@@ -25,9 +25,9 @@ One of my suggestions in the talk was to provide a debug mode for your applicati
         }
     }
 
-The idea here is that the error is caught and, depending on the mode, does something appropriate. As often happens in development, I&#8217;ve now discovered that this isn&#8217;t the best approach and actually introduces a painful consequence.
+The idea here is that the error is caught and, depending on the mode, does something appropriate. As often happens in development, I've now discovered that this isn't the best approach and actually introduces a painful consequence.
 
-If an error occurs in `process()`, that error is trapped and thrown from `doSomething()`, which disrupts the call stack. The error is now too far away from the actual event to be useful for debugging. All of the context information that could lead to a solution is lost once execution exits `process()`. Imagine having your debugger set to break on all errors: using this code, the break would occur on the line containing `throw ex` when you really want it to break inside of `process()` because that&#8217;s where the actual problem is.
+If an error occurs in `process()`, that error is trapped and thrown from `doSomething()`, which disrupts the call stack. The error is now too far away from the actual event to be useful for debugging. All of the context information that could lead to a solution is lost once execution exits `process()`. Imagine having your debugger set to break on all errors: using this code, the break would occur on the line containing `throw ex` when you really want it to break inside of `process()` because that's where the actual problem is.
 
 I now consider this an error handling anti-pattern, a pattern that prevents useful debugging rather than enabling it. The pattern I now recommend is to completely remove the `try-catch` statement when in debug mode. This allows for normal code execution and will result in the correct call stack placement when an error occurs. There are a couple of ways to accomplish this pattern, the first is a rather ugly-looking conditional statement:
 
@@ -82,7 +82,7 @@ This is my preferred approach because it eliminates checking `debugMode` each ti
         }
     }
 
-This code iterates over an object&#8217;s properties and replaces each function with another function containing the appropriate error handling mechanism. You can use the function like this:
+This code iterates over an object's properties and replaces each function with another function containing the appropriate error handling mechanism. You can use the function like this:
 
     var system = {
         fail: function(){

@@ -16,7 +16,7 @@ Earlier this week, I posted [my JavaScript quiz][1], containing some basic code 
         num2 = 10,
         result = num1+++num2;
 
-The key to understanding this example is to understand operator precedence. Clearly, +++ isn&#8217;t a valid operator, so the JavaScript engine breaks it up into a postfix increment operator and the plus sign. This code is completely valid and parses without problem, but really could be written like this:
+The key to understanding this example is to understand operator precedence. Clearly, +++ isn't a valid operator, so the JavaScript engine breaks it up into a postfix increment operator and the plus sign. This code is completely valid and parses without problem, but really could be written like this:
 
     var num1 = 5,
         num2 = 10,
@@ -54,7 +54,7 @@ The key to this example is understanding JavaScript scope. The alert inside of t
 The code is pretty self-explanatory, just two string variables being defined.
 
   * **What is the value of `num1 < num2`?** When both operands are strings, comparison operators perform string comparisons by comparing characters in the same position. The string &#8220;10&#8243; comes before the string &#8220;9&#8243; because the character &#8220;1&#8243; comes before the character &#8220;9&#8243; in ASCII. Since there are no more characters to compare after that point, this comparison is the one that remains. Thus, the value of `num1 < num2` is `true`.
-  * **What is the value of `+num1 < num2`?** The plus operator here converts `num1` into a number, so now you&#8217;re comparing a number to a string. When this happens, the string operator gets converted into a number and then the comparison commences. So ultimately this is equivalent to 10 < 9, which very obviously is `false`.
+  * **What is the value of `+num1 < num2`?** The plus operator here converts `num1` into a number, so now you're comparing a number to a string. When this happens, the string operator gets converted into a number and then the comparison commences. So ultimately this is equivalent to 10 < 9, which very obviously is `false`.
   * **What is the value of `num1 + num2`?** Both operands are strings, which means a string concatenation happens. The result is `"109"`.
   * **What is the value of `+num1 + num2`?** As you saw earlier, the plus operator converts a string to number, so `num1` becomes the number 10. However, when the plus operator is used with a number and a string, the number gets converted to a string and then string concatenation is performed. So the result of this is the same as if you did `num1 + num2` as the value is `"109"`.
 
@@ -83,14 +83,14 @@ Just a simple string variable, nothing fancy here.
     
     alert(o);
 
-This is perhaps the most difficult of the code examples because you need to understand how `valueOf()` and `toString()` work. All objects have these two methods as they are defined on `Object.prototype` and inherited through the prototype chain (nitpickers will note that it&#8217;s possible to have objects that don&#8217;t inherit from `Object`, but I&#8217;m trying to keep this simple). These two methods get called behind-the-scenes all the time. The `valueOf()` method is called whenever comparisons are done and `toString()` is called whenever automatic conversion into a string is necessary. By overriding these methods, you can control the values they return in various circumstances.
+This is perhaps the most difficult of the code examples because you need to understand how `valueOf()` and `toString()` work. All objects have these two methods as they are defined on `Object.prototype` and inherited through the prototype chain (nitpickers will note that it's possible to have objects that don't inherit from `Object`, but I'm trying to keep this simple). These two methods get called behind-the-scenes all the time. The `valueOf()` method is called whenever comparisons are done and `toString()` is called whenever automatic conversion into a string is necessary. By overriding these methods, you can control the values they return in various circumstances.
 
   * **What is the value `result`?** The `valueOf()` method gets called behind-the-scenes here, so really the comparison is 10 < &#8220;9&#8243;. As you learned earlier, a comparison between a number and a string causes the string to be converted into a number, so the comparison ends up being 10 < 9, which is `false`.
   * **What is the value displayed in the alert?** Values passed into `alert()` are converted to strings, which means that `toString()` gets called. The alert, therefore, displays `"8"`.
 
-## That&#8217;s it!
+## That's it!
 
-I hope you&#8217;ve enjoyed this little JavaScript quiz and hopefully learned a thing or two.
+I hope you've enjoyed this little JavaScript quiz and hopefully learned a thing or two.
 
 **Update (18-Feb-2010):** Fixed typo in answer #1.
 

@@ -16,7 +16,7 @@ I received an e-mail last night from a gentleman named John Strickler, who is a 
 > 
 > I wish all technical books had as much real content and as little filler. Most technical books have 100 pages of actual content and 500 pages of reformatted documentation.
 > 
-> I don&#8217;t want your head to swell, but usually there aren&#8217;t any published books that I can teach from, but yours had several key ingredients:
+> I don't want your head to swell, but usually there aren't any published books that I can teach from, but yours had several key ingredients:
 > 
 > 1. Logical order of presentation. I could teach from your chapters in order  
 > 2.Example code, and plenty of it.  
@@ -24,4 +24,4 @@ I received an e-mail last night from a gentleman named John Strickler, who is a 
 > 4. Good tie-in to the OO component. I bet 90% of JavaScript users never create objects, and so are missing a very powerful tool.  
 > 5. Excellent presentation of the DOM, and the cross-browser issues, without bogging down in excruciating details (but \*sufficient\* detail, nonetheless).
 
-All I can say is that I am completely humbled, and pleased, by John&#8217;s comments. He was able to articulate exactly what I was trying to accomplish with this book. Not only does it stroke my ego a bit, but it also proves to me and my publisher that my view on what a JavaScript book should be was dead-on. I hope others have the same experience when reading it.
+All I can say is that I am completely humbled, and pleased, by John's comments. He was able to articulate exactly what I was trying to accomplish with this book. Not only does it stroke my ego a bit, but it also proves to me and my publisher that my view on what a JavaScript book should be was dead-on. I hope others have the same experience when reading it.

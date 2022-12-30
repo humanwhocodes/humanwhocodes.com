@@ -3,7 +3,6 @@ title: "How to read environment variables in Deno using JavaScript"
 author: Nicholas C. Zakas
 teaser: "Deno's API for accessing environment variables is different than Node.js's API."
 date: 2020-10-09
-layout: snippet
 categories:
   - Programming
 tags:

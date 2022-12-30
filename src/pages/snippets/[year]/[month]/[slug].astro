@@ -1,0 +1,27 @@
+---
+import Post from "../../../../layouts/Post.astro";
+import { loadSnippets } from "../../../../lib/util.js";
+
+export async function getStaticPaths() {
+
+    const posts = await loadSnippets();
+
+    const stuff = posts.map(post => {
+
+        return {
+            params: post.urlParts,
+            props: {
+                post
+            }
+
+        }
+    });
+    return stuff;
+};
+
+const { post } = Astro.props;
+const { Content } = post;
+---
+<Post post={post}>
+    <Content />
+</Post>

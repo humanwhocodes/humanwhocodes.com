@@ -1,5 +1,5 @@
 ---
-title: 'It&#8217;s time to start using JavaScript strict mode'
+title: 'It's time to start using JavaScript strict mode'
 author: Nicholas C. Zakas
 permalink: /blog/2012/03/13/its-time-to-start-using-javascript-strict-mode/
 categories:
@@ -8,17 +8,17 @@ tags:
   - JavaScript
   - Strict Mode
 ---
-ECMAScript 5 introduced strict mode to JavaScript. The intent is to allow developers to opt-in to a &#8220;better&#8221; version of JavaScript, where some of the most common and egregious errors are handled differently. For a while, I was skeptical, especially with only one browser (Firefox) initially supporting strict mode. Fast forward to today, every major browser supports strict mode in their latest version, including Internet Explorer 10 and Opera 12. It&#8217;s time to start using strict mode.
+ECMAScript 5 introduced strict mode to JavaScript. The intent is to allow developers to opt-in to a &#8220;better&#8221; version of JavaScript, where some of the most common and egregious errors are handled differently. For a while, I was skeptical, especially with only one browser (Firefox) initially supporting strict mode. Fast forward to today, every major browser supports strict mode in their latest version, including Internet Explorer 10 and Opera 12. It's time to start using strict mode.
 
 ## What does it do?
 
-Strict mode makes a lot of changes to how JavaScript runs, and I group these into two categories: obvious and subtle. The subtle changes aim to fix subtle problems, and I&#8217;m not going to delve into those here; if you&#8217;re interested in those details, please see Dmitry Soshnikov&#8217;s excellent, <cite>ECMA-262-5 in Detail. Chapter 2. Strict Mode</cite><sup>[1]</sup>. I&#8217;m far more interested in talking about the obvious changes: the ones you should know about before using strict mode, and the ones that will most likely help you the most.
+Strict mode makes a lot of changes to how JavaScript runs, and I group these into two categories: obvious and subtle. The subtle changes aim to fix subtle problems, and I'm not going to delve into those here; if you're interested in those details, please see Dmitry Soshnikov's excellent, <cite>ECMA-262-5 in Detail. Chapter 2. Strict Mode</cite><sup>[1]</sup>. I'm far more interested in talking about the obvious changes: the ones you should know about before using strict mode, and the ones that will most likely help you the most.
 
-Before getting into specific features, keep in mind that one of the goals of strict mode is to allow for faster debugging of issues. The best way to help developers debug is to throw errors when certain patterns occur, rather than silently failing or behaving strangely (which JavaScript does today outside of strict mode). Strict mode code throws far more errors, and that&#8217;s a good thing, because it quickly calls to attention things that should be fixed immediately.
+Before getting into specific features, keep in mind that one of the goals of strict mode is to allow for faster debugging of issues. The best way to help developers debug is to throw errors when certain patterns occur, rather than silently failing or behaving strangely (which JavaScript does today outside of strict mode). Strict mode code throws far more errors, and that's a good thing, because it quickly calls to attention things that should be fixed immediately.
 
 ### Eliminates with
 
-To begin, strict mode eliminates the `with` statement. It is now considered invalid JavaScript syntax and will throw a syntax error when it appears in strict mode code. So first step to using strict mode: make sure you&#8217;re not using `with`.
+To begin, strict mode eliminates the `with` statement. It is now considered invalid JavaScript syntax and will throw a syntax error when it appears in strict mode code. So first step to using strict mode: make sure you're not using `with`.
 
     // Causes a syntax error in strict mode
     with (location) {
@@ -63,11 +63,11 @@ Basically, the `this`-value must be assigned a value or else it remains `undefin
     var me = Person("Nicholas");
     
 
-In this code, `this` is `undefined` when the `Person` constructor is called without `new`. Since you can&#8217;t assign a property to `undefined`, this code throws an error. In non-strict mode, `this` would be coerced to the global and so `name` would be assigned as a global variable.
+In this code, `this` is `undefined` when the `Person` constructor is called without `new`. Since you can't assign a property to `undefined`, this code throws an error. In non-strict mode, `this` would be coerced to the global and so `name` would be assigned as a global variable.
 
 ### No duplicates
 
-It can be quite easy to duplicate properties in objects or named arguments in functions if you&#8217;ve been doing a lot of coding. Strict mode throws an error when it comes across either pattern:
+It can be quite easy to duplicate properties in objects or named arguments in functions if you've been doing a lot of coding. Strict mode throws an error when it comes across either pattern:
 
     // Error in strict mode - duplicate arguments
     function doSomething(value1, value2, value1) {
@@ -85,7 +85,7 @@ These are both syntax errors and so the error is thrown before the code is execu
 
 ### Safer eval()
 
-Even though `eval()` wasn&#8217;t removed, it has undergone some changes in strict mode. The biggest change is that variables and functions declared inside of an `eval()` statement are no longer created in the containing scope. For example:
+Even though `eval()` wasn't removed, it has undergone some changes in strict mode. The biggest change is that variables and functions declared inside of an `eval()` statement are no longer created in the containing scope. For example:
 
     (function() {
     
@@ -112,7 +112,7 @@ Any variables or functions created inside of `eval()` stay inside of `eval()`. Y
 
 ### Errors for immutables
 
-ECMAScript 5 also introduced the ability to modify property attributes, such as setting a property as read only or freezing an entire object&#8217;s structure. In non-strict mode, attempting to modify an immutable property fails silently. You&#8217;ve probably run into this issue with some native APIs. Strict mode ensures that an error is thrown whenever you try to modify an object or object property in a way that isn&#8217;t allowed.
+ECMAScript 5 also introduced the ability to modify property attributes, such as setting a property as read only or freezing an entire object's structure. In non-strict mode, attempting to modify an immutable property fails silently. You've probably run into this issue with some native APIs. Strict mode ensures that an error is thrown whenever you try to modify an object or object property in a way that isn't allowed.
 
     var person = {};
     Object.defineProperty(person, "name", {
@@ -126,7 +126,7 @@ ECMAScript 5 also introduced the ability to modify property attributes, such as 
 
 In this example, the `name` property is set to read only. In non-strict mode, assigning to `name` fails silently; in strict mode, an error is thrown.
 
-**Note:** I very strongly encourage you to use strict mode if you&#8217;re using any of the ECMAScript attribute capabilities. If you&#8217;re changing the mutability of objects, you&#8217;ll run into a lot of errors that will fail silently in non-strict mode.
+**Note:** I very strongly encourage you to use strict mode if you're using any of the ECMAScript attribute capabilities. If you're changing the mutability of objects, you'll run into a lot of errors that will fail silently in non-strict mode.
 
 ## How do you use it?
 
@@ -134,7 +134,7 @@ Strict mode is very easily enabled in modern browsers using the following pragma
 
     "use strict";
 
-Even though this looks like a string that isn&#8217;t assigned to a variable, it actually instructs conforming JavaScript engines to switch into strict mode (browsers that don&#8217;t support strict mode simply read this as an unassigned string and continue to work as usual). You can use it either globally or within a function. That being said, *you should never use it globally*. Using the pragma globally means that any code within the same file also runs in strict mode.
+Even though this looks like a string that isn't assigned to a variable, it actually instructs conforming JavaScript engines to switch into strict mode (browsers that don't support strict mode simply read this as an unassigned string and continue to work as usual). You can use it either globally or within a function. That being said, *you should never use it globally*. Using the pragma globally means that any code within the same file also runs in strict mode.
 
     // Don't do this
     "use strict";
@@ -149,7 +149,7 @@ Even though this looks like a string that isn&#8217;t assigned to a variable, it
 
 This may not seem like a big deal, however, it can cause big problems in our world of aggressive script concatenation. All it takes is one script to include the pragma globally for every script its concatenated with to be switch into strict mode (potentially revealing errors you never would have anticipated).
 
-For that reason, it&#8217;s best to only use strict mode inside of functions, such as:
+For that reason, it's best to only use strict mode inside of functions, such as:
 
     function doSomething() {
         "use strict";
@@ -177,7 +177,7 @@ If you want strict mode to apply to more than one function, use an immediately-i
 
 ## Conclusion
 
-I strongly recommend everyone start using strict mode now. There are enough browsers supporting it that strict mode will legitimately help save you from errors you didn&#8217;t even know where in your code. Make sure you don&#8217;t include the pragma globally, but use IIFEs as frequently as you like to apply strict mode to as much code as possible. Initially, there will be errors you&#8217;ve never encountered before &#8211; this is normal. Make sure you do a fair amount of testing after switching to strict mode to make sure you&#8217;ve caught everything. Definitely don&#8217;t just throw `"use strict"` in your code and assume there are no errors. The bottom line is that it&#8217;s time to start using this incredibly useful language feature to write better code.
+I strongly recommend everyone start using strict mode now. There are enough browsers supporting it that strict mode will legitimately help save you from errors you didn't even know where in your code. Make sure you don't include the pragma globally, but use IIFEs as frequently as you like to apply strict mode to as much code as possible. Initially, there will be errors you've never encountered before &#8211; this is normal. Make sure you do a fair amount of testing after switching to strict mode to make sure you've caught everything. Definitely don't just throw `"use strict"` in your code and assume there are no errors. The bottom line is that it's time to start using this incredibly useful language feature to write better code.
 
 **Update (14-Mar-2012):** Added note about using strict mode pragma with non-conforming JavaScript engines.  
 **Update (21-Mar-2012):** Fixed typo.

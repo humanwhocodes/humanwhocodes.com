@@ -22,7 +22,7 @@ The selection sort algorithm, also with O(n<sup>2</sup>) complexity, augments th
 
 This process is repeated by moving to the second item, then the third, etc. until the entire array has been sorted. To better illustrate the algorithm, consider an array `["b", "a", "d", "c", "e"]`.
 
-If this array were to be sorted into ascending order, the first step would be to set the minimum as index 0. Next, compare &#8220;b&#8221; to &#8220;a&#8221;. Since &#8220;a&#8221; comes before &#8220;b&#8221;, the minimum is set to index 1. The letter &#8220;a&#8221; is then compared to each item in the array, but since it is the smallest value, the minimum index remains at 1. Once this pass has been made, the minimum index of 1 is compared to the starting index of 0, and since they&#8217;re different, the values in these two positions are swapped, giving a result of `["a", "b", "d", "c", "e"]`.
+If this array were to be sorted into ascending order, the first step would be to set the minimum as index 0. Next, compare &#8220;b&#8221; to &#8220;a&#8221;. Since &#8220;a&#8221; comes before &#8220;b&#8221;, the minimum is set to index 1. The letter &#8220;a&#8221; is then compared to each item in the array, but since it is the smallest value, the minimum index remains at 1. Once this pass has been made, the minimum index of 1 is compared to the starting index of 0, and since they're different, the values in these two positions are swapped, giving a result of `["a", "b", "d", "c", "e"]`.
 
 Next, the algorithm starts at the second position, &#8220;b&#8221;, and the minimum index is set to 1. The value is compared to each of the others and no change is made because &#8220;b&#8221; is already in the correct position. Since the starting index and the minimum index are both 1, no swap is made. The third pass starts at &#8220;d&#8221; and compares against &#8220;c&#8221;, changing the minimum to 3. At the end of the pass, 2 and 3 are swapped, resulting in `["a", "b", "c", "d", "e"]`. The last two passes result in no swaps because everything is in the correct location. To make it clearer,Â  check out [this video][2] for an example using playing cards.
 
@@ -66,7 +66,7 @@ The outer loop controls the starting point for each pass, beginning at the first
 
 You can download the source code from my GitHub project, [Computer Science in JavaScript][3].
 
-As with bubble sort, selection sort isn&#8217;t something you&#8217;re likely to use in a real-world environment. This post is just a discussion of the algorithm for instructional purposes only. There is rarely a time when the built-in `Array.prototype.sort()` method isn&#8217;t suitable, so always use that first.
+As with bubble sort, selection sort isn't something you're likely to use in a real-world environment. This post is just a discussion of the algorithm for instructional purposes only. There is rarely a time when the built-in `Array.prototype.sort()` method isn't suitable, so always use that first.
 
  [1]: {{site.url}}/blog/2009/05/26/computer-science-in-javascript-bubble-sort/
  [2]: http://www.youtube.com/watch?v=TW3_7cD9L1A

@@ -13,7 +13,7 @@ tags:
 ---
 In my [previous post][1], I walked through the creation of a simple binary search tree in JavaScript. That post discussed adding nodes into the tree and traversing the tree to location and extra information. The one major piece missing to the discussion was removing of nodes from a binary search tree. Removing nodes from a binary search tree can be complex because the tree must remain balanced, with all values on the left being less than all the values on the right.
 
-When removing a node, you&#8217;ll need to determine if it&#8217;s the root node. Root nodes are handled similarly to others with the obvious exception that the root node will need to be set to a different value at the end. To make things easy, this will be considered a special case in the JavaScript code.
+When removing a node, you'll need to determine if it's the root node. Root nodes are handled similarly to others with the obvious exception that the root node will need to be set to a different value at the end. To make things easy, this will be considered a special case in the JavaScript code.
 
 The first step to removing a node is to determine whether or not the node actually exists:
 
@@ -60,7 +60,7 @@ The first step to removing a node is to determine whether or not the node actual
     
     };
 
-The first part of the `remove()` method is to locate the node to remove using a binary search, going left if the value is less than the current node or right if it&#8217;s greater. As this traversal occurs, the `parent` node is also tracked because you&#8217;ll ultimately need to remove the node from its parent. When `found` is equal to `true`, the value of `current` is the node to remove.
+The first part of the `remove()` method is to locate the node to remove using a binary search, going left if the value is less than the current node or right if it's greater. As this traversal occurs, the `parent` node is also tracked because you'll ultimately need to remove the node from its parent. When `found` is equal to `true`, the value of `current` is the node to remove.
 
 There are three conditions to worry about when removing a node:
 
@@ -70,7 +70,7 @@ There are three conditions to worry about when removing a node:
 
 Removing anything but a leaf node from a binary search tree means that values must be moved around to properly order the tree. The first two are relatively simple to implement, a leaf node is simply removed and a node with one child is removed and replaced with its child. The last case is a bit complex, so that will be visited later.
 
-Before knowing how to remove the node, you&#8217;ll need to know how many children exist on the node. Once that is known, you must determine if the node is the root, leaving a fairly straightforward decision tree:
+Before knowing how to remove the node, you'll need to know how many children exist on the node. Once that is known, you must determine if the node is the root, leaving a fairly straightforward decision tree:
 
     BinarySearchTree.prototype = {
     
@@ -172,7 +172,7 @@ Before knowing how to remove the node, you&#8217;ll need to know how many childr
     
     };
 
-When dealing with the root, it&#8217;s a simple process of overwriting it. For non-root nodes, the appropriate pointer on the `parent` must be set based on the value of the node to remove: if the removed value was less than the parent, then the `left` pointer must be reset either to `null` (for nodes with no children) or removed node&#8217;s `left` pointer; if the removed value was greater than the parent, then the `right` pointer must be reset either to `null` or the removed node&#8217;s `right` pointer.
+When dealing with the root, it's a simple process of overwriting it. For non-root nodes, the appropriate pointer on the `parent` must be set based on the value of the node to remove: if the removed value was less than the parent, then the `left` pointer must be reset either to `null` (for nodes with no children) or removed node's `left` pointer; if the removed value was greater than the parent, then the `right` pointer must be reset either to `null` or the removed node's `right` pointer.
 
 Removing a node with two children, as mentioned previously, is the most complex operation. Consider the following representation of a binary search tree.
 
@@ -297,7 +297,7 @@ Either of these two options is appropriate. To find the in-order predecessor, th
     
     };
 
-The code for both the root and non-root removal of nodes with two children are almost the same. This implementation always looks for the in-order predecessor by looking to the left subtree and finding the right-most descendant node. The traversal is done using the `replacement` and `replacementParent` variables in a `while` loop. The node in `replacement` ends up being the node to replace `current`, so it&#8217;s removed from its current location by setting its parent&#8217;s `right` pointer to the replacement&#8217;s `left` pointer. In the case of the root node, `replacementParent` will be `null` when the replacement is an immediate child of the root node, so the `replacement`&#8216;s `right` pointer is just set to the root&#8217;s `right` pointer. The last step is to assign the replacement node into the correct location. For the root node, the replacement is set to be the new root; for non-root nodes, the replacement is assigned to the appropriate location on the original `parent`.
+The code for both the root and non-root removal of nodes with two children are almost the same. This implementation always looks for the in-order predecessor by looking to the left subtree and finding the right-most descendant node. The traversal is done using the `replacement` and `replacementParent` variables in a `while` loop. The node in `replacement` ends up being the node to replace `current`, so it's removed from its current location by setting its parent's `right` pointer to the replacement's `left` pointer. In the case of the root node, `replacementParent` will be `null` when the replacement is an immediate child of the root node, so the `replacement`&#8216;s `right` pointer is just set to the root's `right` pointer. The last step is to assign the replacement node into the correct location. For the root node, the replacement is set to be the new root; for non-root nodes, the replacement is assigned to the appropriate location on the original `parent`.
 
 A note about this implementation: always replacing nodes with the in-order predecessor can lead to an unbalanced tree, wherein most of the values are on one side of the tree. An unbalanced tree means less efficient searches and so are cause for concern in real-world scenarios. There are binary search tree implementations that determine whether to use the in-order predecessor or the in-order successor to keep the tree properly balanced (typically called self-balancing binary search trees).
 

@@ -3,7 +3,6 @@ title: "Setting up Visual Studio Code intellisense for Jest globals"
 author: Nicholas C. Zakas
 teaser: "VS Code can't automatically find Jest globals for intellisense, but you can change that."
 date: 2019-05-28
-layout: snippet
 categories:
   - Web Development
 tags:

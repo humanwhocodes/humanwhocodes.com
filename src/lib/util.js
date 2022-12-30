@@ -11,6 +11,31 @@
 import path from "path";
 
 //-----------------------------------------------------------------------------
+// Helpers
+//-----------------------------------------------------------------------------
+
+function formatJekyllPosts(posts, type) {
+    return posts.map(post => {
+
+        const filename = path.basename(post.file, ".md");
+        const urlParts = {
+            year: filename.slice(0, 4),
+            month: filename.slice(5, 7),
+            slug: filename.slice(11)
+        };
+
+        const newPost = Object.create(post, {
+            url: { value: `/${type}/${urlParts.year}/${urlParts.month}/${urlParts.slug}/` }
+        });
+
+        newPost.urlParts = urlParts;
+        newPost.frontmatter.date = new Date(filename.slice(0, 10));
+        newPost.frontmatter.pubDate = newPost.frontmatter.date;
+        return newPost;
+    }).reverse();
+}
+
+//-----------------------------------------------------------------------------
 // Exports
 //-----------------------------------------------------------------------------
 
@@ -22,23 +47,16 @@ export async function loadBlogPosts() {
         return meta;
     }));
 
-    return posts.map(post => {
+    return formatJekyllPosts(posts, "blog");
+}
 
-        const filename = path.basename(post.file, ".md");
-        const urlParts = {
-            year: filename.slice(0, 4),
-            month: filename.slice(5, 7),
-            slug: filename.slice(11)
-        };
+export async function loadSnippets() {
 
-        const newPost = Object.create(post, {
-            url: { value: `/blog/${urlParts.year}/${urlParts.month}/${urlParts.slug}/` }
-        });
+    const postFiles = await import.meta.glob("../pages/_snippets/**/*.md");
+    const posts = await Promise.all(Object.values(postFiles).map(async (getInfo) => {
+        const meta = await getInfo();
+        return meta;
+    }));
 
-        newPost.urlParts = urlParts;
-        newPost.frontmatter.date = new Date(filename.slice(0, 10));
-        newPost.frontmatter.pubDate = newPost.frontmatter.date;
-        return newPost;
-    }).reverse();
-
+    return formatJekyllPosts(posts, "snippets");
 }
