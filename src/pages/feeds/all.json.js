@@ -1,19 +1,19 @@
 import site from "../../data/config.yml";
 import xmlEscape from "xml-escape";
-import { loadBlogPosts } from "../../lib/util";
+import { loadAllContent } from "../../lib/util";
 import { stripHtml } from "string-strip-html";
 
 
 export async function get() {
 	
-	const posts = (await loadBlogPosts()).slice(0, 10);
+	const posts = (await loadAllContent()).slice(0, 10);
 	
 	return {
 		body: JSON.stringify({
             version: "https://jsonfeed.org/version/1",
             title: xmlEscape(site.name),
             home_page_url: site.url,
-            feed_url: new URL(site.json_feed_source, site.url).href,
+            feed_url: new URL(site.all_json_feed_source, site.url).href,
             description: site.description,
             expired: false,
             author: {

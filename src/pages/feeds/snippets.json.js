@@ -1,19 +1,18 @@
 import site from "../../data/config.yml";
 import xmlEscape from "xml-escape";
-import { loadBlogPosts } from "../../lib/util";
+import { loadSnippets } from "../../lib/util";
 import { stripHtml } from "string-strip-html";
-
 
 export async function get() {
 	
-	const posts = (await loadBlogPosts()).slice(0, 10);
-	
+	const posts = (await loadSnippets()).slice(0, 10);
+
 	return {
 		body: JSON.stringify({
             version: "https://jsonfeed.org/version/1",
             title: xmlEscape(site.name),
             home_page_url: site.url,
-            feed_url: new URL(site.json_feed_source, site.url).href,
+            feed_url: new URL(site.snippets_json_feed_source, site.url).href,
             description: site.description,
             expired: false,
             author: {
@@ -32,7 +31,7 @@ export async function get() {
                 tags: frontmatter.tags,
                 date_published: frontmatter.date.toISOString(),
                 date_updated: frontmatter.updated ? frontmatter.updated.toISOString() : frontmatter.date.toISOString()
-             }))
+            }))
         })
 	};
 }

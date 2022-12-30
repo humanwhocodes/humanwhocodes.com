@@ -18,6 +18,8 @@ const {
 
 const pageTitle = title ? `${title} - ${site.name}` : site.name;
 const blogTitle = `${site.name} - Blog`;
+const snippetsTitle = `${site.name} - Snippets`;
+const allTitle = `${site.name} - All`;
 ---
 
 <Analytics />
@@ -40,6 +42,10 @@ const blogTitle = `${site.name} - Blog`;
 <!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" title={blogTitle} href={new URL(site.feed_source, site.url).href}>
 <link rel="alternate" type="application/json" title={blogTitle} href={new URL(site.json_feed_source, site.url).href}>
+<link rel="alternate" type="application/rss+xml" title={snippetsTitle} href={new URL(site.snippets_feed_source, site.url).href}>
+<link rel="alternate" type="application/json" title={snippetsTitle} href={new URL(site.snippets_json_feed_source, site.url).href}>
+<link rel="alternate" type="application/rss+xml" title={allTitle} href={new URL(site.all_feed_source, site.url).href}>
+<link rel="alternate" type="application/json" title={allTitle} href={new URL(site.all_json_feed_source, site.url).href}>
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -49,7 +55,7 @@ const blogTitle = `${site.name} - Blog`;
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
-<meta property="twitter:site" content="@hwcmoney">
+<meta property="twitter:site" content="@humanwhocodes">
 <meta property="twitter:creator" content="@slicknet">
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />

@@ -16,7 +16,6 @@ import path from "path";
 
 function formatJekyllPosts(posts, type) {
     return posts.map(post => {
-
         const filename = path.basename(post.file, ".md");
         const urlParts = {
             year: filename.slice(0, 4),
@@ -31,6 +30,10 @@ function formatJekyllPosts(posts, type) {
         newPost.urlParts = urlParts;
         newPost.frontmatter.date = new Date(filename.slice(0, 10));
         newPost.frontmatter.pubDate = newPost.frontmatter.date;
+
+        if (newPost.frontmatter.updated) {
+            newPost.frontmatter.updated = new Date(newPost.frontmatter.updated);
+        }
         return newPost;
     }).reverse();
 }
@@ -59,4 +62,14 @@ export async function loadSnippets() {
     }));
 
     return formatJekyllPosts(posts, "snippets");
+}
+
+export async function loadAllContent() {
+
+    const all = await Promise.all([
+        loadBlogPosts(),
+        loadSnippets()
+    ]);
+
+    return all.flat().sort((a, b) => b.frontmatter.date - a.frontmatter.date);
 }
