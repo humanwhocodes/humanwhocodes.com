@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Quicksort'
+title: "Computer science in JavaScript: Quicksort"
 author: Nicholas C. Zakas
 permalink: /blog/2012/11/27/computer-science-in-javascript-quicksort/
 categories:

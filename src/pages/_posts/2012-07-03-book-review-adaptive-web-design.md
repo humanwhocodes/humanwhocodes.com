@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Adaptive Web Design'
+title: "Book review: Adaptive Web Design"
 author: Nicholas C. Zakas
 permalink: /blog/2012/07/03/book-review-adaptive-web-design/
 categories:

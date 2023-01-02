@@ -1,5 +1,5 @@
 ---
-title: 'Ajax Experience: The aftermath'
+title: "Ajax Experience: The aftermath"
 author: Nicholas C. Zakas
 permalink: /blog/2008/10/05/ajax-experience-the-aftermath/
 categories:

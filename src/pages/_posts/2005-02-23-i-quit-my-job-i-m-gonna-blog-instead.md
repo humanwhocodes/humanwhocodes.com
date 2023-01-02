@@ -1,5 +1,5 @@
 ---
-title: 'I Quit My Job, I'm Gonna Blog Instead'
+title: "I Quit My Job, I'm Gonna Blog Instead"
 author: Nicholas C. Zakas
 permalink: /blog/2005/02/23/i-quit-my-job-i-m-gonna-blog-instead/
 categories:

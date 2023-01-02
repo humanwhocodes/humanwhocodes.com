@@ -1,5 +1,5 @@
 ---
-title: 'It's time to start using JavaScript strict mode'
+title: "It's time to start using JavaScript strict mode"
 author: Nicholas C. Zakas
 permalink: /blog/2012/03/13/its-time-to-start-using-javascript-strict-mode/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Wanted: Browser debug mode'
+title: "Wanted: Browser debug mode"
 author: Nicholas C. Zakas
 permalink: /blog/2008/04/22/wanted-browser-debug-mode/
 categories:

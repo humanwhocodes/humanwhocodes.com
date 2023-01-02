@@ -1,5 +1,5 @@
 ---
-title: 'Why weren't you at the Ajax Experience?'
+title: "Why weren't you at the Ajax Experience?"
 author: Nicholas C. Zakas
 permalink: /blog/2007/10/28/why-weren-t-you-at-the-ajax-experience/
 categories:

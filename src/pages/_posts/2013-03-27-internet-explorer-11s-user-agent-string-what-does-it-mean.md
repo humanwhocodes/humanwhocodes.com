@@ -1,5 +1,5 @@
 ---
-title: 'Internet Explorer 11&#8242;s user-agent string: What does it mean?'
+title: "Internet Explorer 11&#8242;s user-agent string: What does it mean?"
 author: Nicholas C. Zakas
 permalink: /blog/2013/03/27/internet-explorer-11s-user-agent-string-what-does-it-mean/
 categories:

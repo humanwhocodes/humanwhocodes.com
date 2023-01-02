@@ -1,5 +1,5 @@
 ---
-title: 'Yahoo!'s best-kept secret'
+title: "Yahoo!'s best-kept secret"
 author: Nicholas C. Zakas
 permalink: /blog/2007/07/04/yahoo-s-best-kept-secret/
 categories:

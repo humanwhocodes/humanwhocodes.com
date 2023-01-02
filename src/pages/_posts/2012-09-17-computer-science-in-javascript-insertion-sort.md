@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Insertion sort'
+title: "Computer science in JavaScript: Insertion sort"
 author: Nicholas C. Zakas
 permalink: /blog/2012/09/17/computer-science-in-javascript-insertion-sort/
 categories:

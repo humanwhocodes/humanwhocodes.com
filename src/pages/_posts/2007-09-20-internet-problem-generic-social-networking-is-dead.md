@@ -1,5 +1,5 @@
 ---
-title: 'Internet Problem: Generic social networking is dead'
+title: "Internet Problem: Generic social networking is dead"
 author: Nicholas C. Zakas
 permalink: /blog/2007/09/20/internet-problem-generic-social-networking-is-dead/
 categories:

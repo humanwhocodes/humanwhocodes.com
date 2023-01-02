@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Nonviolent Communication'
+title: "Book review: Nonviolent Communication"
 author: Nicholas C. Zakas
 permalink: /blog/2009/04/29/book-review-nonviolent-communication/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'What's a software engineer, anyway?'
+title: "What's a software engineer, anyway?"
 author: Nicholas C. Zakas
 permalink: /blog/2012/06/28/whats-a-software-engineer-anyway/
 categories:

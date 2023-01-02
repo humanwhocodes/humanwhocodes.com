@@ -1,5 +1,5 @@
 ---
-title: 'Fixing &#8220;Skip to content&#8221; links'
+title: "Fixing &#8220;Skip to content&#8221; links"
 author: Nicholas C. Zakas
 permalink: /blog/2013/01/15/fixing-skip-to-content-links/
 categories:

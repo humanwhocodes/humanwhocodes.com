@@ -1,5 +1,5 @@
 ---
-title: 'Firefox 1.0 &#8211; Finally!'
+title: "Firefox 1.0 &#8211; Finally!"
 author: Nicholas C. Zakas
 permalink: /blog/2004/11/09/firefox-1-0-finally/
 categories:

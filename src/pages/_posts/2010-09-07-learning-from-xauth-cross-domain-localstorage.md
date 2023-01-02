@@ -1,5 +1,5 @@
 ---
-title: 'Learning from XAuth: Cross-domain localStorage'
+title: "Learning from XAuth: Cross-domain localStorage"
 author: Nicholas C. Zakas
 permalink: /blog/2010/09/07/learning-from-xauth-cross-domain-localstorage/
 categories:

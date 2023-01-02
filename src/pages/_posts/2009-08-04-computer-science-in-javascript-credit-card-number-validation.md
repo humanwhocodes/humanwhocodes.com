@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Credit card number validation'
+title: "Computer science in JavaScript: Credit card number validation"
 author: Nicholas C. Zakas
 permalink: /blog/2009/08/04/computer-science-in-javascript-credit-card-number-validation/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Proposal: Scripting detection using CSS media queries'
+title: "Proposal: Scripting detection using CSS media queries"
 author: Nicholas C. Zakas
 permalink: /blog/2012/01/04/proposal-scripting-detection-using-css-media-queries/
 categories:

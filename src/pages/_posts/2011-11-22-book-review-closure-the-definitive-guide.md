@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Closure: the Definitive Guide'
+title: "Book review: Closure: the Definitive Guide"
 author: Nicholas C. Zakas
 permalink: /blog/2011/11/22/book-review-closure-the-definitive-guide/
 categories:

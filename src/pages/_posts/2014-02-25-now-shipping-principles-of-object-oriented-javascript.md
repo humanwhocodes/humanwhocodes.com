@@ -1,5 +1,5 @@
 ---
-title: 'Now shipping: Principles of Object-Oriented JavaScript'
+title: "Now shipping: Principles of Object-Oriented JavaScript"
 author: Nicholas C. Zakas
 permalink: /blog/2014/02/25/now-shipping-principles-of-object-oriented-javascript/
 categories:

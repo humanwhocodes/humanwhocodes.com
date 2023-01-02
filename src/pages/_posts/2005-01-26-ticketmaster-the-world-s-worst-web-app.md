@@ -1,5 +1,5 @@
 ---
-title: 'Ticketmaster.com: The World's Worst Web App'
+title: "Ticketmaster.com: The World's Worst Web App"
 author: Nicholas C. Zakas
 permalink: /blog/2005/01/26/ticketmaster-the-world-s-worst-web-app/
 categories:

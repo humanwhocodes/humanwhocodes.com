@@ -1,5 +1,5 @@
 ---
-title: 'Does Safari's clipboardData actually work?'
+title: "Does Safari's clipboardData actually work?"
 author: Nicholas C. Zakas
 permalink: /blog/2008/03/03/does-safari-s-clipboarddata-actually-work/
 categories:

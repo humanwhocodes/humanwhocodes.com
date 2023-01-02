@@ -1,5 +1,5 @@
 ---
-title: 'Now available: Principles of Object-Oriented Programming in JavaScript (beta)'
+title: "Now available: Principles of Object-Oriented Programming in JavaScript (beta)"
 author: Nicholas C. Zakas
 permalink: /blog/2012/12/18/now-available-principles-of-object-oriented-programming-in-javascript-beta/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Circular Doubly-linked lists'
+title: "Computer science in JavaScript: Circular Doubly-linked lists"
 author: Nicholas C. Zakas
 teaser: "Expanding on a doubly linked list by adding circular traversal."
 date: 2019-03-05

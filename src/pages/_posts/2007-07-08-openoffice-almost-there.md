@@ -1,5 +1,5 @@
 ---
-title: 'OpenOffice: Almost there'
+title: "OpenOffice: Almost there"
 author: Nicholas C. Zakas
 permalink: /blog/2007/07/08/openoffice-almost-there/
 categories:

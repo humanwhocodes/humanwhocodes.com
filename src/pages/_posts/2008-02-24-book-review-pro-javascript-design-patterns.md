@@ -1,5 +1,5 @@
 ---
-title: 'Book Review: Pro JavaScript Design Patterns'
+title: "Book Review: Pro JavaScript Design Patterns"
 author: Nicholas C. Zakas
 permalink: /blog/2008/02/24/book-review-pro-javascript-design-patterns/
 categories:

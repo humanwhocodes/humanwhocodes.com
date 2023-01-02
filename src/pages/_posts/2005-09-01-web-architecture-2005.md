@@ -1,5 +1,5 @@
 ---
-title: 'Web Architecture: 2005'
+title: "Web Architecture: 2005"
 author: Nicholas C. Zakas
 permalink: /blog/2005/09/01/web-architecture-2005/
 categories:

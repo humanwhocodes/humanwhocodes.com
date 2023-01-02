@@ -1,5 +1,5 @@
 ---
-title: 'Don't forget navigator.platform'
+title: "Don't forget navigator.platform"
 author: Nicholas C. Zakas
 permalink: /blog/2007/12/17/don-t-forget-navigator-platform/
 categories:

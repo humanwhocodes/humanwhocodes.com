@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Learning Ext JS'
+title: "Book review: Learning Ext JS"
 author: Nicholas C. Zakas
 permalink: /blog/2009/02/22/book-review-learning-ext-js/
 categories:

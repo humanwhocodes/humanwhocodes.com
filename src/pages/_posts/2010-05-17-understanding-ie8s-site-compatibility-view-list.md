@@ -1,5 +1,5 @@
 ---
-title: 'Understanding IE8&#8242;s site compatibility view list'
+title: "Understanding IE8&#8242;s site compatibility view list"
 author: Nicholas C. Zakas
 permalink: /blog/2010/05/17/understanding-ie8s-site-compatibility-view-list/
 categories:

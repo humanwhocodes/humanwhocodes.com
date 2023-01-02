@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Selection sort'
+title: "Computer science in JavaScript: Selection sort"
 author: Nicholas C. Zakas
 permalink: /blog/2009/09/08/computer-science-in-javascript-selection-sort/
 categories:

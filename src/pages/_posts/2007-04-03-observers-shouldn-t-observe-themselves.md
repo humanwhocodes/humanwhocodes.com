@@ -1,5 +1,5 @@
 ---
-title: 'Observers shouldn't observe themselves'
+title: "Observers shouldn't observe themselves"
 author: Nicholas C. Zakas
 permalink: /blog/2007/04/03/observers-shouldn-t-observe-themselves/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'My JavaScript quiz &#8211; answers'
+title: "My JavaScript quiz &#8211; answers"
 author: Nicholas C. Zakas
 permalink: /blog/2010/02/18/my-javascript-quiz-answers/
 categories:

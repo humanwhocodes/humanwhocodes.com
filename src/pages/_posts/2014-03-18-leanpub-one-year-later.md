@@ -1,5 +1,5 @@
 ---
-title: 'Leanpub: One year later'
+title: "Leanpub: One year later"
 author: Nicholas C. Zakas
 permalink: /blog/2014/03/18/leanpub-one-year-later/
 categories:

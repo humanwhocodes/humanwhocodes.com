@@ -1,5 +1,5 @@
 ---
-title: 'Being right doesn't matter'
+title: "Being right doesn't matter"
 author: Nicholas C. Zakas
 permalink: /blog/2012/12/31/being-right-doesnt-matter/
 categories:

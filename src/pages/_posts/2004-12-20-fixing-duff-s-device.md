@@ -1,5 +1,5 @@
 ---
-title: 'Fixing Duff's Device'
+title: Fixing Duff's Device
 author: Nicholas C. Zakas
 permalink: /blog/2004/12/20/fixing-duff-s-device/
 categories:

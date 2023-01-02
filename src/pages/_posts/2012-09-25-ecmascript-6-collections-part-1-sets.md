@@ -1,5 +1,5 @@
 ---
-title: 'ECMAScript 6 collections, Part 1: Sets'
+title: "ECMAScript 6 collections, Part 1: Sets"
 author: Nicholas C. Zakas
 permalink: /blog/2012/09/25/ecmascript-6-collections-part-1-sets/
 categories:

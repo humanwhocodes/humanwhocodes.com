@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Learning jQuery 1.3'
+title: "Book review: Learning jQuery 1.3"
 author: Nicholas C. Zakas
 permalink: /blog/2009/05/31/book-review-learning-jquery-13/
 categories:

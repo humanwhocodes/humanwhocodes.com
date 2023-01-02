@@ -1,5 +1,5 @@
 ---
-title: 'Book review: jQuery UI 1.6'
+title: "Book review: jQuery UI 1.6"
 author: Nicholas C. Zakas
 permalink: /blog/2009/10/25/book-review-jquery-ui-16/
 categories:

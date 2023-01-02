@@ -1,5 +1,5 @@
 ---
-title: 'Brendan Eich's Latest'
+title: "Brendan Eich's Latest"
 author: Nicholas C. Zakas
 permalink: /blog/2005/06/14/brendan-eich-s-latest/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Gmail: Faster, better'
+title: "Gmail: Faster, better"
 author: Nicholas C. Zakas
 permalink: /blog/2007/11/04/gmail-faster-better/
 categories:

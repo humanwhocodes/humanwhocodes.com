@@ -1,5 +1,5 @@
 ---
-title: 'What's Nicholas doing now?'
+title: "What's Nicholas doing now?"
 author: Nicholas C. Zakas
 permalink: /blog/2007/02/20/what-s-nicholas-doing-now/
 categories:

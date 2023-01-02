@@ -1,5 +1,5 @@
 ---
-title: 'Internet Explorer 11: &#8220;Don't call me IE&#8221;'
+title: "Internet Explorer 11: &#8220;Don't call me IE&#8221;"
 author: Nicholas C. Zakas
 permalink: /blog/2013/07/02/internet-explorer-11-dont-call-me-ie/
 categories:

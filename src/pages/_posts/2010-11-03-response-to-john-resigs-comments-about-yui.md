@@ -1,5 +1,5 @@
 ---
-title: 'Response to John Resig's comments about YUI'
+title: "Response to John Resig's comments about YUI"
 author: Nicholas C. Zakas
 permalink: /blog/2010/11/03/response-to-john-resigs-comments-about-yui/
 categories:

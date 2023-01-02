@@ -1,5 +1,5 @@
 ---
-title: 'PC Magazine: My Yahoo given 4/5'
+title: "PC Magazine: My Yahoo given 4/5"
 author: Nicholas C. Zakas
 permalink: /blog/2008/02/09/pc-magazine-my-yahoo-given-4-5/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'IE8 passes Acid2: What does it mean?'
+title: "IE8 passes Acid2: What does it mean?"
 author: Nicholas C. Zakas
 permalink: /blog/2007/12/23/ie8-passes-acid-test-what-does-it-mean/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Working with files in JavaScript, Part 2: FileReader'
+title: "Working with files in JavaScript, Part 2: FileReader"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/15/working-with-files-in-javascript-part-2/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Working with files in JavaScript, Part 3: Progress events and errors'
+title: "Working with files in JavaScript, Part 3: Progress events and errors"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/22/working-with-files-in-javascript-part-3/
 categories:

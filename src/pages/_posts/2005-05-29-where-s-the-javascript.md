@@ -1,5 +1,5 @@
 ---
-title: 'Where's the JavaScript?'
+title: "Where's the JavaScript?"
 author: Nicholas C. Zakas
 permalink: /blog/2005/05/29/where-s-the-javascript/
 categories:

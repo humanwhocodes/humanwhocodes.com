@@ -1,5 +1,5 @@
 ---
-title: 'Eureka Suite &#8211; The Next Generation'
+title: "Eureka Suite &#8211; The Next Generation"
 author: Nicholas C. Zakas
 permalink: /blog/2006/05/31/eureka-suite-the-next-generation/
 categories:

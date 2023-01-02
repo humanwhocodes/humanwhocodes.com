@@ -1,5 +1,5 @@
 ---
-title: 'What's the deal with CSS query engines?'
+title: "What's the deal with CSS query engines?"
 author: Nicholas C. Zakas
 permalink: /blog/2007/02/12/what-s-the-deal-with-css-query-engines/
 categories:

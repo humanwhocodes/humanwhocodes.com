@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Eloquent JavaScript'
+title: "Book review: Eloquent JavaScript"
 author: Nicholas C. Zakas
 permalink: /blog/2011/06/19/book-review-eloquent-javascript/
 categories:

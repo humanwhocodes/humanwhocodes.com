@@ -1,5 +1,5 @@
 ---
-title: 'The best career advice I've received'
+title: "The best career advice I've received"
 author: Nicholas C. Zakas
 permalink: /blog/2013/10/15/the-best-career-advice-ive-received/
 categories:

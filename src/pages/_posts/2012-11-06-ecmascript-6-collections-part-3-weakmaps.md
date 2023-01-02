@@ -1,5 +1,5 @@
 ---
-title: 'ECMAScript 6 collections, Part 3: WeakMaps'
+title: "ECMAScript 6 collections, Part 3: WeakMaps"
 author: Nicholas C. Zakas
 permalink: /blog/2012/11/06/ecmascript-6-collections-part-3-weakmaps/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Ajax Experience: Day 2'
+title: "Ajax Experience: Day 2"
 author: Nicholas C. Zakas
 permalink: /blog/2008/09/30/ajax-experience-day-2/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'Mozilla JavaScript extension: __noSuchMethod__'
+title: "Mozilla JavaScript extension: __noSuchMethod__"
 author: Nicholas C. Zakas
 permalink: /blog/2009/02/17/mozilla-javascript-extension-nosuchmethod/
 categories:

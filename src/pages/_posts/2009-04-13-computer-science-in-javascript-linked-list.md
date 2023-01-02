@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Linked list'
+title: "Computer science in JavaScript: Linked list"
 author: Nicholas C. Zakas
 permalink: /blog/2009/04/13/computer-science-in-javascript-linked-list/
 updated_post: /blog/2019/01/computer-science-in-javascript-linked-list/

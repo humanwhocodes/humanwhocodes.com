@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Learning Dojo'
+title: "Book review: Learning Dojo"
 author: Nicholas C. Zakas
 permalink: /blog/2009/02/15/book-review-learning-dojo/
 categories:

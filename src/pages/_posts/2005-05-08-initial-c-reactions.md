@@ -1,5 +1,5 @@
 ---
-title: 'Initial C# Reactions'
+title: "Initial C# Reactions"
 author: Nicholas C. Zakas
 permalink: /blog/2005/05/08/initial-c-reactions/
 categories:

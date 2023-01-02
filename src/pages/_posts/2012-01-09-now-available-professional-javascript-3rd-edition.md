@@ -1,5 +1,5 @@
 ---
-title: 'Now available: Professional JavaScript, 3rd Edition'
+title: "Now available: Professional JavaScript, 3rd Edition"
 author: Nicholas C. Zakas
 permalink: /blog/2012/01/09/now-available-professional-javascript-3rd-edition/
 categories:

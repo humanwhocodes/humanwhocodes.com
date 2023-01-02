@@ -1,5 +1,5 @@
 ---
-title: 'Professional Ajax &#8211; Amazon's #8 best tech book of 2006!'
+title: "Professional Ajax &#8211; Amazon's #8 best tech book of 2006!"
 author: Nicholas C. Zakas
 permalink: /blog/2006/11/27/professional-ajax-amazon-s-8-best-tech-book-of-2006/
 categories:

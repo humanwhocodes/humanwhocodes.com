@@ -1,5 +1,5 @@
 ---
-title: 'Working with files in JavaScript, Part 5: Blobs'
+title: "Working with files in JavaScript, Part 5: Blobs"
 author: Nicholas C. Zakas
 permalink: /blog/2012/06/05/working-with-files-in-javascript-part-5-blobs/
 categories:

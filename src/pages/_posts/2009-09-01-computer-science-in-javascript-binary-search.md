@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Binary search'
+title: "Computer science in JavaScript: Binary search"
 author: Nicholas C. Zakas
 permalink: /blog/2009/09/01/computer-science-in-javascript-binary-search/
 categories:

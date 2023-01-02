@@ -1,5 +1,5 @@
 ---
-title: 'Microsoft Doesn't Innovate'
+title: "Microsoft Doesn't Innovate"
 author: Nicholas C. Zakas
 permalink: /blog/2005/11/03/microsoft-doesn-t-innovate/
 categories:

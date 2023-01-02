@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Binary search tree, Part 2'
+title: "Computer science in JavaScript: Binary search tree, Part 2"
 author: Nicholas C. Zakas
 permalink: /blog/2009/06/16/computer-science-in-javascript-binary-search-tree-part-2/
 categories:

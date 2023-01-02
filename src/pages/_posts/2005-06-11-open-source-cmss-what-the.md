@@ -1,5 +1,5 @@
 ---
-title: 'Open Source CMSs &#8211; What the?'
+title: "Open Source CMSs &#8211; What the?"
 author: Nicholas C. Zakas
 permalink: /blog/2005/06/11/open-source-cmss-what-the/
 categories:

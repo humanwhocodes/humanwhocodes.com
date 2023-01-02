@@ -1,5 +1,5 @@
 ---
-title: 'Empty-string URLs in HTML &#8211; A followup'
+title: "Empty-string URLs in HTML &#8211; A followup"
 author: Nicholas C. Zakas
 permalink: /blog/2010/03/16/empty-string-urls-in-html-a-followup/
 categories:

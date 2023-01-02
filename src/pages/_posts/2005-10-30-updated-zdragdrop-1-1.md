@@ -1,5 +1,5 @@
 ---
-title: 'Updated: zDragDrop 1.1'
+title: "Updated: zDragDrop 1.1"
 author: Nicholas C. Zakas
 permalink: /blog/2005/10/30/updated-zdragdrop-1-1/
 categories:

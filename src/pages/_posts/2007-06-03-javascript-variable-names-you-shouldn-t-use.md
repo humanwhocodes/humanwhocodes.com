@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript variable names you shouldn't use'
+title: "JavaScript variable names you shouldn't use"
 author: Nicholas C. Zakas
 permalink: /blog/2007/06/03/javascript-variable-names-you-shouldn-t-use/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'IE's innerHTML problem'
+title: "IE's innerHTML problem"
 author: Nicholas C. Zakas
 permalink: /blog/2006/11/08/ie-s-innerhtml-problem/
 categories:

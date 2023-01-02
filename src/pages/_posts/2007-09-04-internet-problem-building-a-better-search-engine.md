@@ -1,5 +1,5 @@
 ---
-title: 'Internet Problem: Building a better search engine'
+title: "Internet Problem: Building a better search engine"
 author: Nicholas C. Zakas
 permalink: /blog/2007/09/04/internet-problem-building-a-better-search-engine/
 categories:

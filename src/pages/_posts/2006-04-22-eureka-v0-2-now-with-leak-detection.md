@@ -1,5 +1,5 @@
 ---
-title: 'Eureka v0.2 &#8211; Now With Leak Detection!'
+title: "Eureka v0.2 &#8211; Now With Leak Detection!"
 author: Nicholas C. Zakas
 permalink: /blog/2006/04/22/eureka-v0-2-now-with-leak-detection/
 categories:

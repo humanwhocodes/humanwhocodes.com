@@ -1,5 +1,5 @@
 ---
-title: 'Web definitions: DOM, Ajax, and more'
+title: "Web definitions: DOM, Ajax, and more"
 author: Nicholas C. Zakas
 permalink: /blog/2009/09/29/web-definitions-dom-ajax-and-more/
 categories:

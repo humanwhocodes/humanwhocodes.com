@@ -1,5 +1,5 @@
 ---
-title: 'Opacity in IE6: alpha or PNG?'
+title: "Opacity in IE6: alpha or PNG?"
 author: Nicholas C. Zakas
 permalink: /blog/2007/01/03/opacity-in-ie6-alpha-or-png/
 categories:

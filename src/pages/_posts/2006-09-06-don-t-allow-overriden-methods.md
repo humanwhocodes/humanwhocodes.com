@@ -1,5 +1,5 @@
 ---
-title: 'Don't allow overriden methods'
+title: "Don't allow overriden methods"
 author: Nicholas C. Zakas
 permalink: /blog/2006/09/06/don-t-allow-overriden-methods/
 categories:

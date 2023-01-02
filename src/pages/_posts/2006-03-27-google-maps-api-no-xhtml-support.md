@@ -1,5 +1,5 @@
 ---
-title: 'Google Maps API &#8211; No XHTML Support'
+title: "Google Maps API &#8211; No XHTML Support"
 author: Nicholas C. Zakas
 permalink: /blog/2006/03/27/google-maps-api-no-xhtml-support/
 categories:

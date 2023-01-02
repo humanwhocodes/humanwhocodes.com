@@ -1,5 +1,5 @@
 ---
-title: 'Book review: Think Like a Programmer'
+title: "Book review: Think Like a Programmer"
 author: Nicholas C. Zakas
 permalink: /blog/2012/10/19/book-review-think-like-a-programmer/
 categories:

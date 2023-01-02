@@ -1,5 +1,5 @@
 ---
-title: 'Maintainable Node.js JavaScript: Avoid process.exit()'
+title: "Maintainable Node.js JavaScript: Avoid process.exit()"
 author: Nicholas C. Zakas
 permalink: /blog/2014/02/04/maintainable-node-js-javascript-avoid-process-exit/
 categories:

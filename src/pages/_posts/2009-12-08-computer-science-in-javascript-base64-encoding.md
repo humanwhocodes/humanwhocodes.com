@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Base64 encoding'
+title: "Computer science in JavaScript: Base64 encoding"
 author: Nicholas C. Zakas
 permalink: /blog/2009/12/08/computer-science-in-javascript-base64-encoding/
 categories:

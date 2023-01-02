@@ -1,5 +1,5 @@
 ---
-title: 'Why I don't like the Google Web Toolkit'
+title: "Why I don't like the Google Web Toolkit"
 author: Nicholas C. Zakas
 permalink: /blog/2007/09/07/why-i-don-t-like-the-google-web-toolkit/
 categories:

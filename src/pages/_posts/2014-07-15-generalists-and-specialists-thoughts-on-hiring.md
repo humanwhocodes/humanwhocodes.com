@@ -1,5 +1,5 @@
 ---
-title: 'Generalists and specialists: thoughts on hiring'
+title: "Generalists and specialists: thoughts on hiring"
 author: Nicholas C. Zakas
 permalink: /blog/2014/07/15/generalists-and-specialists-thoughts-on-hiring/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'The way JavaScript is handled: A call to action'
+title: "The way JavaScript is handled: A call to action"
 author: Nicholas C. Zakas
 permalink: /blog/2007/10/20/the-way-javascript-is-handled-a-call-to-action/
 categories:

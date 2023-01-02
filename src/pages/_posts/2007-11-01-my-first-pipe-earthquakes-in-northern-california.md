@@ -1,5 +1,5 @@
 ---
-title: 'My first pipe: Earthquakes in Northern California'
+title: "My first pipe: Earthquakes in Northern California"
 author: Nicholas C. Zakas
 permalink: /blog/2007/11/01/my-first-pipe-earthquakes-in-northern-california/
 categories:

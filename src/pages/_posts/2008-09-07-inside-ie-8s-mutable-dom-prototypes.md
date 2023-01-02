@@ -1,5 +1,5 @@
 ---
-title: 'Inside IE 8&#8242;s mutable DOM prototypes'
+title: "Inside IE 8&#8242;s mutable DOM prototypes"
 author: Nicholas C. Zakas
 permalink: /blog/2008/09/07/inside-ie-8s-mutable-dom-prototypes/
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 'YUI 2.5.0: YUI Test reaches GA and more'
+title: "YUI 2.5.0: YUI Test reaches GA and more"
 author: Nicholas C. Zakas
 permalink: /blog/2008/02/20/yui-2-5-0-yui-test-reaches-ga-and-more/
 categories:

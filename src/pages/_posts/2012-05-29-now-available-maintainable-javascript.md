@@ -1,5 +1,5 @@
 ---
-title: 'Now available: Maintainable JavaScript'
+title: "Now available: Maintainable JavaScript"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/29/now-available-maintainable-javascript/
 categories:

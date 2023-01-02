@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript's Future: Cajun'
+title: "JavaScript's Future: Cajun"
 author: Nicholas C. Zakas
 permalink: /blog/2005/05/31/javascript-s-future-cajun/
 categories:

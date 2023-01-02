@@ -1,5 +1,5 @@
 ---
-title: 'Book review: The Tangled Web'
+title: "Book review: The Tangled Web"
 author: Nicholas C. Zakas
 permalink: /blog/2012/01/17/book-review-the-tangled-web/
 categories:

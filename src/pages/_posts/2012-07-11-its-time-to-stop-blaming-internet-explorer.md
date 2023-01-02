@@ -1,5 +1,5 @@
 ---
-title: 'It's time to stop blaming Internet Explorer'
+title: "It's time to stop blaming Internet Explorer"
 author: Nicholas C. Zakas
 permalink: /blog/2012/07/11/its-time-to-stop-blaming-internet-explorer/
 categories:

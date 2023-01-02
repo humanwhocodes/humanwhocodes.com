@@ -1,5 +1,5 @@
 ---
-title: 'Facebook: The transparent society'
+title: "Facebook: The transparent society"
 author: Nicholas C. Zakas
 permalink: /blog/2008/10/27/facebook-the-transparent-society/
 categories:

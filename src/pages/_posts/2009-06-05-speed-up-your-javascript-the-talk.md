@@ -1,5 +1,5 @@
 ---
-title: 'Speed up your JavaScript: The talk'
+title: "Speed up your JavaScript: The talk"
 author: Nicholas C. Zakas
 permalink: /blog/2009/06/05/speed-up-your-javascript-the-talk/
 categories:

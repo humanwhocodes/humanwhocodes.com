@@ -1,5 +1,5 @@
 ---
-title: 'Web Developer Extensions for Firefox&#8230;and what's this?'
+title: "Web Developer Extensions for Firefox&#8230;and what's this?"
 author: Nicholas C. Zakas
 permalink: /blog/2005/09/06/web-developer-extensions-for-firefox-and-what-s-this/
 categories:

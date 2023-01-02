@@ -1,5 +1,5 @@
 ---
-title: 'Book review: HTML &#038; CSS'
+title: "Book review: HTML &#038; CSS"
 author: Nicholas C. Zakas
 permalink: /blog/2011/12/16/book-review-html-css/
 categories:

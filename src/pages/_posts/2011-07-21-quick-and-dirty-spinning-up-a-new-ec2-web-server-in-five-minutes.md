@@ -1,5 +1,5 @@
 ---
-title: 'Quick and dirty: Spinning up a new EC2 web server in five minutes'
+title: "Quick and dirty: Spinning up a new EC2 web server in five minutes"
 author: Nicholas C. Zakas
 permalink: /blog/2011/07/21/quick-and-dirty-spinning-up-a-new-ec2-web-server-in-five-minutes/
 categories:

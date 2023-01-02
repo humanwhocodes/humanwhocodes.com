@@ -1,5 +1,5 @@
 ---
-title: 'Tabbed Browsing &#8211; Security Risk'
+title: "Tabbed Browsing &#8211; Security Risk"
 author: Nicholas C. Zakas
 permalink: /blog/2004/10/20/tabbed-browser-security-risk/
 categories:

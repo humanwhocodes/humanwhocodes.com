@@ -1,5 +1,5 @@
 ---
-title: 'Mozilla JavaScript Extension: __count__'
+title: "Mozilla JavaScript Extension: __count__"
 author: Nicholas C. Zakas
 permalink: /blog/2009/02/24/mozilla-javascript-extension-count/
 categories:

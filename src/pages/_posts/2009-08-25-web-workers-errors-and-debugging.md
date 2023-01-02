@@ -1,5 +1,5 @@
 ---
-title: 'Web workers: errors and debugging'
+title: "Web workers: errors and debugging"
 author: Nicholas C. Zakas
 permalink: /blog/2009/08/25/web-workers-errors-and-debugging/
 categories:

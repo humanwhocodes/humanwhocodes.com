@@ -1,5 +1,5 @@
 ---
-title: 'Mozilla's new Array methods'
+title: "Mozilla's new Array methods"
 author: Nicholas C. Zakas
 permalink: /blog/2005/06/22/mozilla-s-new-array-methods/
 categories:

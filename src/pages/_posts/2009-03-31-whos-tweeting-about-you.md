@@ -1,5 +1,5 @@
 ---
-title: 'Who's tweeting about you?'
+title: "Who's tweeting about you?"
 author: Nicholas C. Zakas
 permalink: /blog/2009/03/31/whos-tweeting-about-you/
 categories:

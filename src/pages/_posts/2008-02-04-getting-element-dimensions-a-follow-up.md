@@ -1,5 +1,5 @@
 ---
-title: 'Getting element dimensions: A follow up'
+title: "Getting element dimensions: A follow up"
 author: Nicholas C. Zakas
 permalink: /blog/2008/02/04/getting-element-dimensions-a-follow-up/
 categories:

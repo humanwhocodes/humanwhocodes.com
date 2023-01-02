@@ -1,5 +1,5 @@
 ---
-title: 'Maintainable JavaScript: Don't modify objects you don't own'
+title: "Maintainable JavaScript: Don't modify objects you don't own"
 author: Nicholas C. Zakas
 permalink: /blog/2010/03/02/maintainable-javascript-dont-modify-objects-you-down-own/
 categories:

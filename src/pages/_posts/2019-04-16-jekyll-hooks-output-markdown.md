@@ -1,5 +1,5 @@
 ---
-title: 'Outputting Markdown from Jekyll using hooks'
+title: "Outputting Markdown from Jekyll using hooks"
 author: Nicholas C. Zakas
 teaser: "Jekyll hooks provide enough flexibility to modify posts before output."
 date: 2019-04-16

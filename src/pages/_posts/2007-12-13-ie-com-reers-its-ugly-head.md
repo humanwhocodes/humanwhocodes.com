@@ -1,5 +1,5 @@
 ---
-title: 'IE: COM reers its ugly head'
+title: "IE: COM reers its ugly head"
 author: Nicholas C. Zakas
 permalink: /blog/2007/12/13/ie-com-reers-its-ugly-head/
 categories:

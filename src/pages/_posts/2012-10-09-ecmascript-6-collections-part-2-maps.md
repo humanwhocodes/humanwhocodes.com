@@ -1,5 +1,5 @@
 ---
-title: 'ECMAScript 6 collections, Part 2: Maps'
+title: "ECMAScript 6 collections, Part 2: Maps"
 author: Nicholas C. Zakas
 permalink: /blog/2012/10/09/ecmascript-6-collections-part-2-maps/
 categories:

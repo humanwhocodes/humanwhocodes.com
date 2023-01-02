@@ -1,5 +1,5 @@
 ---
-title: 'Safari doesn't properly display one-bit favicons'
+title: "Safari doesn't properly display one-bit favicons"
 author: Nicholas C. Zakas
 permalink: /blog/2009/07/23/safari-doesnt-properly-display-one-bit-favicons/
 categories:

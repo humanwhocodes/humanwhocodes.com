@@ -1,5 +1,5 @@
 ---
-title: 'eval() isn't evil, just misunderstood'
+title: "eval() isn't evil, just misunderstood"
 author: Nicholas C. Zakas
 permalink: /blog/2013/06/25/eval-isnt-evil-just-misunderstood/
 categories:

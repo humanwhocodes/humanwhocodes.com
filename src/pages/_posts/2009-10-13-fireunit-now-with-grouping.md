@@ -1,5 +1,5 @@
 ---
-title: 'FireUnit: Now with grouping'
+title: "FireUnit: Now with grouping"
 author: Nicholas C. Zakas
 permalink: /blog/2009/10/13/fireunit-now-with-grouping/
 categories:

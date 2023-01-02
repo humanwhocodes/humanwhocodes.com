@@ -1,5 +1,5 @@
 ---
-title: 'Why you're afraid of public speaking'
+title: "Why you're afraid of public speaking"
 author: Nicholas C. Zakas
 permalink: /blog/2015/06/23/why-youre-afraid-of-public-speaking/
 categories:

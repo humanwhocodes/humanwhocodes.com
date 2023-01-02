@@ -1,5 +1,5 @@
 ---
-title: 'Internet Problem: The dating site dilemma'
+title: "Internet Problem: The dating site dilemma"
 author: Nicholas C. Zakas
 permalink: /blog/2007/08/21/internet-problem-the-dating-site-dilemma/
 categories:

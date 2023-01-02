@@ -1,5 +1,5 @@
 ---
-title: 'Now Available: Professional Ajax'
+title: "Now Available: Professional Ajax"
 author: Nicholas C. Zakas
 permalink: /blog/2006/01/27/now-available-professional-ajax/
 categories:

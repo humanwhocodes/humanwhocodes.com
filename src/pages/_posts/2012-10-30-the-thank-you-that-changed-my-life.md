@@ -1,5 +1,5 @@
 ---
-title: 'The &#8220;thank you&#8221; that changed my life'
+title: "The &#8220;thank you&#8221; that changed my life"
 author: Nicholas C. Zakas
 permalink: /blog/2012/10/30/the-thank-you-that-changed-my-life/
 categories:

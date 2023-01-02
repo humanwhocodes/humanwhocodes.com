@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript sleuthing: Buggy native JSON'
+title: "JavaScript sleuthing: Buggy native JSON"
 author: Nicholas C. Zakas
 permalink: /blog/2009/10/20/javascript-sleuthing-buggy-native-json/
 categories:

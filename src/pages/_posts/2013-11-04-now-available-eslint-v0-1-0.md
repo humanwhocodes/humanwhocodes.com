@@ -1,5 +1,5 @@
 ---
-title: 'Now available: ESLint v0.1.0'
+title: "Now available: ESLint v0.1.0"
 author: Nicholas C. Zakas
 permalink: /blog/2013/11/04/now-available-eslint-v0-1-0/
 categories:

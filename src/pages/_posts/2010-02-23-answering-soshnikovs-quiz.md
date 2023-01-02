@@ -1,5 +1,5 @@
 ---
-title: 'Answering Soshnikov's quiz'
+title: "Answering Soshnikov's quiz"
 author: Nicholas C. Zakas
 permalink: /blog/2010/02/23/answering-soshnikovs-quiz/
 categories:

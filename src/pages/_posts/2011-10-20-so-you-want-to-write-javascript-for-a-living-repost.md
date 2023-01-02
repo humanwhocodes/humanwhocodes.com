@@ -1,5 +1,5 @@
 ---
-title: 'So you want to write JavaScript for a living? [repost]'
+title: "So you want to write JavaScript for a living? [repost]"
 author: Nicholas C. Zakas
 permalink: /blog/2011/10/20/so-you-want-to-write-javascript-for-a-living-repost/
 categories:

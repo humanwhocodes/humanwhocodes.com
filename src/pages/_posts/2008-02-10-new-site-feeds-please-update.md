@@ -1,5 +1,5 @@
 ---
-title: 'New site feeds &#8211; please update!'
+title: "New site feeds &#8211; please update!"
 author: Nicholas C. Zakas
 permalink: /blog/2008/02/10/new-site-feeds-please-update/
 categories:

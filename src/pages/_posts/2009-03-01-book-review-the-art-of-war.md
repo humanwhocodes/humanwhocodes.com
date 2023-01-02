@@ -1,5 +1,5 @@
 ---
-title: 'Book review: The Art of War'
+title: "Book review: The Art of War"
 author: Nicholas C. Zakas
 permalink: /blog/2009/03/01/book-review-the-art-of-war/
 categories:

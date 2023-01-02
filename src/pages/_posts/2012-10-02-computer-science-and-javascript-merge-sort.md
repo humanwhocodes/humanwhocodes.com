@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Merge sort'
+title: "Computer science in JavaScript: Merge sort"
 author: Nicholas C. Zakas
 permalink: /blog/2012/10/02/computer-science-and-javascript-merge-sort/
 categories:

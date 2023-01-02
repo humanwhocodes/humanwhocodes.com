@@ -1,5 +1,5 @@
 ---
-title: 'Wanted: Dynamic execution contexts in JavaScript'
+title: "Wanted: Dynamic execution contexts in JavaScript"
 author: Nicholas C. Zakas
 permalink: /blog/2010/10/26/wanted-dynamic-execution-contexts-in-javascript/
 categories:

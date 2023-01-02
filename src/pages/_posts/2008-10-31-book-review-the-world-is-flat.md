@@ -1,5 +1,5 @@
 ---
-title: 'Book review: The World is Flat'
+title: "Book review: The World is Flat"
 author: Nicholas C. Zakas
 permalink: /blog/2008/10/31/book-review-the-world-is-flat/
 categories:

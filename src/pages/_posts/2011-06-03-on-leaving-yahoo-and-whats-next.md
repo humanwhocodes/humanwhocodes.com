@@ -1,5 +1,5 @@
 ---
-title: 'On leaving Yahoo! and what's next'
+title: "On leaving Yahoo! and what's next"
 author: Nicholas C. Zakas
 permalink: /blog/2011/06/03/on-leaving-yahoo-and-whats-next/
 categories:

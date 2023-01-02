@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Bubble sort'
+title: "Computer science in JavaScript: Bubble sort"
 author: Nicholas C. Zakas
 permalink: /blog/2009/05/26/computer-science-in-javascript-bubble-sort/
 categories:

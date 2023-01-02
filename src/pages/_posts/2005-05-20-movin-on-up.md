@@ -1,5 +1,5 @@
 ---
-title: 'Movin' On Up'
+title: "Movin' On Up"
 author: Nicholas C. Zakas
 permalink: /blog/2005/05/20/movin-on-up/
 categories:

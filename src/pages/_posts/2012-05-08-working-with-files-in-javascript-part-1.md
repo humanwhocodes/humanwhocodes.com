@@ -1,5 +1,5 @@
 ---
-title: 'Working with files in JavaScript, Part 1: The Basics'
+title: "Working with files in JavaScript, Part 1: The Basics"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/08/working-with-files-in-javascript-part-1/
 categories:

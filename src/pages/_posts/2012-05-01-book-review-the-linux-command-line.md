@@ -1,5 +1,5 @@
 ---
-title: 'Book review: The Linux Command Line'
+title: "Book review: The Linux Command Line"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/01/book-review-the-linux-command-line/
 categories:

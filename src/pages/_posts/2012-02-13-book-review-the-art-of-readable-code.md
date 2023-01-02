@@ -1,5 +1,5 @@
 ---
-title: 'Book review: The Art of Readable Code'
+title: "Book review: The Art of Readable Code"
 author: Nicholas C. Zakas
 permalink: /blog/2012/02/13/book-review-the-art-of-readable-code/
 categories:

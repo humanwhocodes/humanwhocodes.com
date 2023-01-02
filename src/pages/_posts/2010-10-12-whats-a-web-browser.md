@@ -1,5 +1,5 @@
 ---
-title: 'What's a web browser?'
+title: "What's a web browser?"
 author: Nicholas C. Zakas
 permalink: /blog/2010/10/12/whats-a-web-browser/
 categories:

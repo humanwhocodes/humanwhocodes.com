@@ -1,5 +1,5 @@
 ---
-title: 'Now That's Security!'
+title: "Now That's Security!"
 author: Nicholas C. Zakas
 permalink: /blog/2006/02/17/now-that-s-security/
 categories:

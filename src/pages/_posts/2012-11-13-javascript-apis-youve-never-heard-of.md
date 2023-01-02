@@ -1,5 +1,5 @@
 ---
-title: 'JavaScript APIs you've never heard of (and some you have)'
+title: "JavaScript APIs you've never heard of (and some you have)"
 author: Nicholas C. Zakas
 permalink: /blog/2012/11/13/javascript-apis-youve-never-heard-of/
 categories:

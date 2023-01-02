@@ -1,5 +1,5 @@
 ---
-title: 'Getting the URL of an iframe's parent'
+title: "Getting the URL of an iframe's parent"
 author: Nicholas C. Zakas
 permalink: /blog/2013/04/16/getting-the-url-of-an-iframes-parent/
 categories:

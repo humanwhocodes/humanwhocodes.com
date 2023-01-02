@@ -1,5 +1,5 @@
 ---
-title: 'What I'd like to see in HTML 5'
+title: "What I'd like to see in HTML 5"
 author: Nicholas C. Zakas
 permalink: /blog/2007/12/06/what-i-d-like-to-see-in-html-5/
 categories:

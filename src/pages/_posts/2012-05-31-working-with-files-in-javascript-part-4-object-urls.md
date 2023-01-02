@@ -1,5 +1,5 @@
 ---
-title: 'Working with files in JavaScript, Part 4: Object URLs'
+title: "Working with files in JavaScript, Part 4: Object URLs"
 author: Nicholas C. Zakas
 permalink: /blog/2012/05/31/working-with-files-in-javascript-part-4-object-urls/
 categories:

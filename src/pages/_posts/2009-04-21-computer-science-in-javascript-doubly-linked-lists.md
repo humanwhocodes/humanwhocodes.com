@@ -1,5 +1,5 @@
 ---
-title: 'Computer science in JavaScript: Doubly-linked lists'
+title: "Computer science in JavaScript: Doubly-linked lists"
 author: Nicholas C. Zakas
 permalink: /blog/2009/04/21/computer-science-in-javascript-doubly-linked-lists/
 updated_post: /blog/2019/02/computer-science-in-javascript-doubly-linked-lists/

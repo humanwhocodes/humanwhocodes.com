@@ -1,5 +1,5 @@
 ---
-title: 'Empty string URLs &#8211; browser update'
+title: "Empty string URLs &#8211; browser update"
 author: Nicholas C. Zakas
 permalink: /blog/2010/07/13/empty-string-urls-browser-update/
 categories:

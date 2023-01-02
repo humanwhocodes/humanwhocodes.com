@@ -1,5 +1,5 @@
 ---
-title: 'Answering Baranovskiy's JavaScript quiz'
+title: "Answering Baranovskiy's JavaScript quiz"
 author: Nicholas C. Zakas
 permalink: /blog/2010/01/26/answering-baranovskiys-javascript-quiz/
 categories:

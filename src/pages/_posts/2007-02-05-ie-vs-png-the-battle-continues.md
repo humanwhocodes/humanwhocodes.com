@@ -1,5 +1,5 @@
 ---
-title: 'IE vs. PNG: The battle continues'
+title: "IE vs. PNG: The battle continues"
 author: Nicholas C. Zakas
 permalink: /blog/2007/02/05/ie-vs-png-the-battle-continues/
 categories:

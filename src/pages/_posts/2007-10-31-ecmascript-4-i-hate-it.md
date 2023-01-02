@@ -1,5 +1,5 @@
 ---
-title: 'ECMAScript 4: I hate it'
+title: "ECMAScript 4: I hate it"
 author: Nicholas C. Zakas
 permalink: /blog/2007/10/31/ecmascript-4-i-hate-it/
 categories:
