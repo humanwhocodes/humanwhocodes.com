@@ -23,11 +23,30 @@ function formatJekyllPosts(posts, type) {
             slug: filename.slice(11)
         };
 
+        let url;
+        let urlPath;
+
+        if (post.frontmatter.permalink) {
+
+            url = post.frontmatter.permalink;
+            
+            // format: [ '', 'blog', '2009', '05', '05', 'http-cookies-explained', '' ]
+            const pathParts = post.frontmatter.permalink.split("/");
+            pathParts.shift();  // remove first empty space
+            pathParts.shift();  // remove "blog"
+            pathParts.pop();    // remove last empty space
+            urlPath = pathParts.join("/");
+        } else {
+            url = `/${type}/${urlParts.year}/${urlParts.month}/${urlParts.slug}/`;
+            urlPath = `${urlParts.year}/${urlParts.month}/${urlParts.slug}`;
+        }
+
         const newPost = Object.create(post, {
-            url: { value: `/${type}/${urlParts.year}/${urlParts.month}/${urlParts.slug}/` }
+            url: { value: url }
         });
 
         newPost.urlParts = urlParts;
+        newPost.urlPath = urlPath;
         newPost.frontmatter.date = new Date(filename.slice(0, 10));
         newPost.frontmatter.pubDate = newPost.frontmatter.date;
 
