@@ -1,0 +1,14 @@
+---
+import slugify from "slugify";
+
+const {
+    tags,
+    baseUrl
+} = Astro.props;
+---
+<p class="no-margin-top tags">Tags:
+    {tags.map((tag, index) => 
+        <a href={`/${baseUrl}/tag/${slugify(tag.toLowerCase())}`} rel="tag">{ tag }</a>
+        <span>{ index < tags.length - 1 ? ", " : ""}</span>
+    )}
+</p>

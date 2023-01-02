@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import slugify from "slugify";
 import MailingListForm from "../components/MailingListForm.astro";
+import PostTags from "../components/PostTags.astro";
 
 const { post } = Astro.props;
+const baseUrl = post.url.split("/")[1];
 ---
 <Layout
     title={post.frontmatter.title}
@@ -21,12 +22,7 @@ const { post } = Astro.props;
                         day: "numeric"
                     }) }</time> by <span itemprop="author" itemtype="http://schema.org/Person">Nicholas
                     C. Zakas</span></p>
-            <p class="no-margin-top tags">Tags:
-				{post.frontmatter.tags.map((tag, index) => 
-                	<a href={"/blog/tag/" + slugify(tag.toLowerCase()) + "/"} rel="tag">{ tag }</a>
-                    <span>{ index < post.frontmatter.tags.length - 1 ? ", " : ""}</span>
-				)}
-            </p>
+            <PostTags tags={post.frontmatter.tags} baseUrl={baseUrl}/>
         </div>
     </header>
     <section id="post-body" class="content-font">
