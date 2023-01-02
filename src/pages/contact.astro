@@ -1,0 +1,137 @@
+---
+import * as page from "../content/contact.md";
+import Page from "../layouts/Page.astro";
+
+const Content = page.Content;
+---
+<Page frontmatter={page.frontmatter}>
+    <h1>{page.frontmatter.title}</h1>
+    <Content />
+    <form method="post" name="contact" action="thanks/" netlify>
+        <div class="vflex">
+            <label>
+                <span>Your Name:</span>
+                <input type="text" name="name" value="" required>
+            </label>
+            <label>
+                <span>Your Email:</span>
+                <input type="email" name="email" value="" required>
+            </label>
+            <label>
+                <span>Subject:</span>
+                <select name="subject" id="subject">
+                    <option disabled selected>Select a subject</option>
+                    <optgroup label="Blog">
+                        <option data-tag="submission">I have a question about a blog post you wrote</option>
+                        <option data-tag="blog-guest">I'd like to write a blog post on your site</option>
+                        <option data-tag="blog-ads">I'd like to advertise on your site</option>
+                    </optgroup>
+                    <optgroup label="Books">
+                        <option data-tag="book-question">I have a question about a book you wrote</option>
+                        <option data-tag="book-write">I'd like you to write a book for me</option>
+                        <option data-tag="submission">I'd like you to review a book for me</option>
+                    </optgroup>
+                    <optgroup label="Health">
+                        <option data-tag="health">I'd like to know how you're feeling</option>
+                    </optgroup>
+                    <optgroup label="Hire Me">
+                        <option data-tag="hire-employee">I'd like to hire you as a full-time employee</option>
+                        <option data-tag="hire-employee">I'd like to hire you as a part-time employee</option>
+                        <option data-tag="submission">I'd like to hire to write an article</option>
+                        <option data-tag="submission">I'd like to hire you as a consultant</option>
+                        <option data-tag="submission">I'd like to hire you as a coach</option>
+                    </optgroup>
+                    <optgroup label="Media Requests">
+                        <option data-tag="submission">I'd like to interview for a story I'm writing </option>
+                        <option data-tag="submission">I'd like interview you on my podcast</option>
+                        <option data-tag="speaking-request">I'd like you to speak at my conference/meetup/etc.</option>
+                    </optgroup>
+                    <optgroup label="Open Source">
+                        <option data-tag="oss-eslint">I have an ESLint-related question or request</option>
+                        <option data-tag="submission">I have a question about a different open source project</option>
+                        <option data-tag="submission">I have a question related to open source</option>
+                    </optgroup>
+                </select>
+            </label>
+        </div>
+        <div id="bodies">
+            <div hidden id="body-blog-guest">
+                <p>I'm sorry, I don't have guest blog posts on this site.</p>
+            </div>
+            <div hidden id="body-blog-ads">
+                <p>Advertising is available exclusively through <a href="https://carbonads.net">Carbon Ads</a>. I am not interested
+                    in having other ads on this site.</p>
+            </div>
+            <div hidden id="body-book-write">
+                <p>Thanks for thinking of me. At this time, I'm not able to take on any book writing projects.
+            </div>
+            <div hidden id="body-oss-eslint">
+                <p>For questions about ESLint, please visit the <a href="https://eslint.org/chat">chat</a> or send a message to the
+                    <a href="https://groups.google.com/group/eslint">mailing list</a>.
+                </p>
+            </div>
+            <div hidden id="body-book-question">
+                <p>For questions about my books, please send a message to the <a
+                        href="http://groups.google.com/group/zakasbooks">mailing list</a>.</p>
+            </div>
+            <div hidden id="body-hire-employee">
+                <p>Thanks for thinking of me. At this time, I'm focusing on being an entrepreneur and am not interested in part-time
+                    or full-time opportunities with companies.</p>
+            </div>
+            <div hidden id="body-speaking-request">
+                <p>Thanks for thinking of me. At this time, I'm not booking any speaking engagements.</p>
+            </div>
+            <div hidden id="body-health">
+                <p>Thanks for your concern. There hasn't been any significant changes in my health recently. I'm still fighting to
+                    get back to a normal life and I'm trying to focus less on the symptoms I'm experiencing and more on creating the
+                    life that I want going forward.</p>
+            </div>
+
+            <div hidden id="body-submission">
+                <label>
+                    <span>Your Message:</span>
+                    <textarea name="message"></textarea>
+                </label>
+                <div class="center-text"><input type="submit" name="message-submit" value="Submit"></div>
+            </div>
+        </div>
+    </form>
+</Page>
+
+<style>
+.vflex {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+label > span {
+    width: 120px;
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 400px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+textarea {
+    height: 200px;
+}
+</style>
+<script>
+function showBody(selectbox) {
+    const tag = selectbox.options[selectbox.selectedIndex].dataset.tag;
+    const bodies = document.getElementById("bodies").children;
+    for (const body of bodies) {
+        body.hidden = (body.id !== "body-" + tag);
+    }
+}
+
+const subjectBox = document.getElementById("subject");
+subjectBox.onchange = () => showBody(subjectBox); 
+</script>
