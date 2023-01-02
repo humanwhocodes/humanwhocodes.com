@@ -1,0 +1,42 @@
+---
+import * as page from "../content/donate.md";
+import Page from "../layouts/Page.astro";
+import githubLogo from "../images/logos/github.png";
+import paypalLogo from "../images/logos/paypal.png";
+import amazonLogo from "../images/logos/amazon.png";
+
+const Content = page.Content;
+---
+<Page frontmatter={page.frontmatter}>
+    <h1>{page.frontmatter.title}</h1>
+    <Content />
+        
+    <div class="catalog-grid">
+        <div class="center-text">
+            <a href="https://github.com/users/nzakas/sponsorship" class="content-item-border catalog-image"><img src={githubLogo} width="120" alt="GitHub Logo"></a>
+        </div>
+        <div>
+            <p class="no-margin-top"><b>Become a sponsor.</b> You can sponsor my work with a monthly donation through GitHub. Doing so means I'll be able to spend more time working on open source and creating content for the web development community.</p>
+            <p><a href="https://github.com/users/nzakas/sponsorship" class="link-btn cta-btn">Become a Sponsor</a></p>
+        </div>
+        <div class="center-text">
+            <a href="https://www.paypal.com/donate/?token=QV5gLG9Q5szfku7XrfOVQLxk25R5wYQgS5Li_q0si6WRF_XYkhpV6DM0pTIkyQtXDW00tW&amp;country.x=US&amp;locale.x=US" class="content-item-border catalog-image"><img src={paypalLogo} width="120" alt="PayPal"></a>
+        </div>
+        <div>
+            <p class="no-margin-top"><b>Make a one-time or monthly donation.</b> If you don't feel comfortable using Patreon but would like to make a one-time or monthly donation, you can do so through PayPal. I can't offer rewards through this payment method, however, your donation is still greatly appreciated.</p>
+
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="M6M4MN2VJSQ7Y">
+            <button type="submit" class="link-btn cta-btn">Make a Donation</button>
+            </form>
+        </div>
+        <div class="center-text">
+            <a href="https://www.amazon.com/hz/wishlist/ls/3PP6X6QHTT02K?ref_=wl_share" class="content-item-border catalog-image"><img src={amazonLogo} width="120" alt="Amazon Logo"></a>
+        </div>
+        <div>
+            <p class="no-margin-top"><b>Send a gift.</b> If donations don't feel like the best way to support my work, consider sending me a gift from my wish list. I regularly update it with things I'd appreciate (please include a note so I know who sent it).</p>
+            <p><a href="https://www.amazon.com/hz/wishlist/ls/3PP6X6QHTT02K?ref_=wl_share" class="link-btn cta-btn">Send a Gift</a></p>
+        </div>
+    </div>
+</Page>
