@@ -2,6 +2,7 @@ url: https://humanwhocodes.com
 name: Human Who Codes
 description: The Official Web Site of Nicholas C. Zakas
 author: Nicholas C. Zakas
+analytics_id: G-DF11Y9MFRM
 future: false
 feed_source: /feeds/blog.xml
 json_feed_source: /feeds/blog.json
