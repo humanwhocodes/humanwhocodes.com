@@ -21,4 +21,4 @@ To make things a bit more interesting, I've decided to make a scavenger hunt for
   * <a title="Nicholas Eddy" rel="external" href="http://www.therichwebexperience.com/conference/speaker/nick_eddy.html">Nicholas Eddy</a> &#8211; the only other Nicholas speaking at the conference. Props for using your full first name!
   * <a title="Sean Kane" rel="external" href="http://www.therichwebexperience.com/conference/speaker/sean_kane.html">Sean Kane</a> &#8211; I don't use Netflix, but I think its interface is pretty slick.
 
-So that's it. Hopefully I'm on someone's scavenger hunt list, too. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />
+So that's it. Hopefully I'm on someone's scavenger hunt list, too. <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />

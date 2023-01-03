@@ -147,5 +147,5 @@ The most important part of removing items from a doubly-linked list is to ensure
 
 With the exception of these two methods, the rest of the methods are identical to that of the `LinkedList` implementation from my previous post. This includes `item()`, `size()`, and `toArray()`. You can download the full source code from my [Computer Science in JavaScript][2] project on GitHub.
 
- [1]: {{site.url}}/blog/2009/04/13/computer-science-in-javascript-linked-list/
+ [1]: https://humanwhocodes.com/blog/2009/04/13/computer-science-in-javascript-linked-list/
  [2]: http://github.com/nzakas/computer-science-in-javascript/

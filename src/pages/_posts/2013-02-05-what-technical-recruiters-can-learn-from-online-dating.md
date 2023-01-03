@@ -85,7 +85,7 @@ This is a little bit better. The first sentence at least indicates that this rec
 
 > Nicholas &#8211; 
 > 
-> Just stumbled on your profile and will first say &#8230; this message is indeed intended to recruit YOU! <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> I tend to be direct &#8230; 
+> Just stumbled on your profile and will first say &#8230; this message is indeed intended to recruit YOU! <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> I tend to be direct &#8230; 
 > 
 > I work with Tier-1 VCs and early stage startups and I'm working with a company in SF that needs a Lead guy like you. They are a great story &#8230; almost profitable and only round of funding. They are going into a major growth phase and need top talent. 
 > 

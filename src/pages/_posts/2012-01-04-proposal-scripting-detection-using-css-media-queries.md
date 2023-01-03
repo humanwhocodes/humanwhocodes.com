@@ -98,8 +98,8 @@ I think CSS media queries are one of the best things to happen to the web, and I
   4. [CSS Level 3 Media Queries][4]
   5. [Re: Proposal: Detecting JavaScript with media queries][5] by Florian Rivoal
 
- [1]: {{site.url}}/blog/2012/01/03/css-media-queries-in-javascript-part-1/
+ [1]: https://humanwhocodes.com/blog/2012/01/03/css-media-queries-in-javascript-part-1/
  [2]: http://lists.w3.org/Archives/Public/www-style/2012Jan/0034.html
- [3]: {{site.url}}/blog/2011/10/03/when-web-standards-fail-us/
+ [3]: https://humanwhocodes.com/blog/2011/10/03/when-web-standards-fail-us/
  [4]: http://www.w3.org/TR/css3-mediaqueries/
  [5]: http://lists.w3.org/Archives/Public/www-style/2012Jan/0046.html

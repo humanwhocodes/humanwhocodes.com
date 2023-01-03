@@ -22,14 +22,14 @@ You can then pass this directly into `eval()` to create the array:
 
 You can also represent objects in object literal notation:
 
-<pre>{ name: "Nicholas C. Zakas", homepage: "{{site.url}}/"}</pre>
+<pre>{ name: "Nicholas C. Zakas", homepage: "https://humanwhocodes.com/"}</pre>
 
 What I just discovered is that you can't pass this directly into `eval()` like this:
 
-<pre>var oPerson = eval("{ name: "Nicholas C. Zakas", homepage: "{{site.url}}/"}")</pre>
+<pre>var oPerson = eval("{ name: "Nicholas C. Zakas", homepage: "https://humanwhocodes.com/"}")</pre>
 
 Try this yourself, you'll get an error in any browser. The problem is that the `eval()` function is treating the curly braces as indicative of a code block instead of an object literal. At first, this really annoyed me, but I discovered that it's actually pretty logical. The object literal notation takes affect only when the interpreter sees an *assignment*, otherwise it considers the curly braces to be a code block. The solution is to include the assignment in the text itself to force the interpreter to realize that it's an object literal:
 
-<pre>eval("var oPerson = { name: "Nicholas C. Zakas", homepage: "{{site.url}}/"}")</pre>
+<pre>eval("var oPerson = { name: "Nicholas C. Zakas", homepage: "https://humanwhocodes.com/"}")</pre>
 
 This works perfectly well in all browsers.

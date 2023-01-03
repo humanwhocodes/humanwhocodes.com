@@ -21,7 +21,7 @@ To start, you should double-check that the page is actually in an iframe, which 
 
 When a page is running inside of an iframe, the `parent` object is different than the `window` object. You can still access `parent` from within an iframe even though you can't access anything useful on it. This code will never cause an error even when crossing origins.
 
-Once you know you're in an iframe, you can take advantage of a little-known fact: the HTTP `Referer` header for a page inside of an iframe is always set to the containing page's URL. That means a page embedded in an iframe on `{{site.url}}` will have a `Referer` header equal to that URL. Knowing this fact, you need only use the oft-forgotten `document.referrer` property. As the name suggestions, this property contains the value of the `Referer` header for the given document. So you can get the URL of the iframe's parent page like this:
+Once you know you're in an iframe, you can take advantage of a little-known fact: the HTTP `Referer` header for a page inside of an iframe is always set to the containing page's URL. That means a page embedded in an iframe on `https://humanwhocodes.com` will have a `Referer` header equal to that URL. Knowing this fact, you need only use the oft-forgotten `document.referrer` property. As the name suggestions, this property contains the value of the `Referer` header for the given document. So you can get the URL of the iframe's parent page like this:
 
     function getParentUrl() {
         var isInIframe = (parent !== window),
@@ -41,4 +41,4 @@ Iframes are always a little bit hairy to deal with, especially when you throw Ja
 
   1. [Iframes, onload, and document.domain][1] by me (NCZOnline)
 
- [1]: {{site.url}}/blog/2009/09/15/iframes-onload-and-documentdomain/
+ [1]: https://humanwhocodes.com/blog/2009/09/15/iframes-onload-and-documentdomain/

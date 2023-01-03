@@ -25,10 +25,10 @@ In March, [High Performance JavaScript][1] will officially hit the shelves (it's
 Of course, there's also five chapters written by me, making this a ten-chapter intensive look at JavaScript performance in the browser. I tried to make sure we covered all angles of the JavaScript lifecycle, from getting the code onto the page, executing the code, and deploying into production. I'm very, very excited about this book and the positive impact it can have on JavaScript developers. Don't be fooled by faster JavaScript engines, JavaScript performance is going to continue to be important to understand for years to come. I hope you enjoy the book!
 
  [1]: http://www.amazon.com/gp/product/059680279X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=059680279X
- [2]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/
- [3]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
- [4]: {{site.url}}/blog/2009/01/27/speed-up-your-javascript-part-3/
- [5]: {{site.url}}/blog/2009/02/03/speed-up-your-javascript-part-4/
+ [2]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/
+ [3]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [4]: https://humanwhocodes.com/blog/2009/01/27/speed-up-your-javascript-part-3/
+ [5]: https://humanwhocodes.com/blog/2009/02/03/speed-up-your-javascript-part-4/
  [6]: http://www.slideshare.net/nzakas/java-script-variable-performance-presentation
  [7]: http://www.slideshare.net/nzakas/speed-up-your-javascript
  [8]: http://www.youtube.com/watch?v=mHtdZgou0qU

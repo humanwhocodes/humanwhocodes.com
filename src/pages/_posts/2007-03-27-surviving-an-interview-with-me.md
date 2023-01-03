@@ -20,4 +20,4 @@ I've been meaning to post this for a while, but it's only now that I've finally 
 
 Really, I do hope that anyone interviewing with me in the future will read this. I *want* you to do well when I interview you, I really, really do. Just avoid these common pitfalls and be yourself. Who knows, maybe we'll end up working together sometime soon.
 
-**P.S.** The <a title="My Yahoo!" rel="external" href="http://my.yahoo.com">My Yahoo!</a> team is hiring. If you're a talented software engineer with a passion for innovation and for <a title="Yahoo!" rel="external" href="http://www.yahoo.com">Yahoo!</a> in general, <a title="Contact me" rel="internal" href="{{site.url}}/contact/">contact me</a> and let's talk.
+**P.S.** The <a title="My Yahoo!" rel="external" href="http://my.yahoo.com">My Yahoo!</a> team is hiring. If you're a talented software engineer with a passion for innovation and for <a title="Yahoo!" rel="external" href="http://www.yahoo.com">Yahoo!</a> in general, <a title="Contact me" rel="internal" href="https://humanwhocodes.com/contact/">contact me</a> and let's talk.

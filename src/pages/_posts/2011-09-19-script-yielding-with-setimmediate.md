@@ -61,7 +61,7 @@ Currently, only Internet Explorer 10 supports `setImmediate()`, and it does so t
 
 I'm very optimistic about the `setImmediate()` function and its value to web developers. Using timers for script yielding is a hack, for sure, and having an official way to yield scripts is a huge win for performance. I hope that other browsers quickly pick up on the implementation so we can start using this soon.
 
- [1]: {{site.url}}/blog/2009/08/11/timed-array-processing-in-javascript/
+ [1]: https://humanwhocodes.com/blog/2009/08/11/timed-array-processing-in-javascript/
  [2]: http://www.belshe.com/2010/06/04/chrome-cranking-up-the-clock/
  [3]: http://msdn.microsoft.com/en-us/windows/hardware/gg463266
  [4]: https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html

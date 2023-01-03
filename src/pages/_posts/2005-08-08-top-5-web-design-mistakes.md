@@ -16,4 +16,4 @@ Been a while since I blogged about design, but after visiting some sites that ha
   4. **Poor choice of colors.** I'm not sure what drives some people's color choices. I'm not talking about the overall site color palette, I'm talking about the color of text and it's background. In general, it's always best to stick to a color that close to black for the background with white text, or a color close to white for the background with black text. Please, give me eyes a break!
   5. **Too many fonts, sizes, colors, etc.** Seriously, every line of text doesn't need to be a different color. You need to make sure that your links stand out from regular text, and the best way to do that is to keep your content text as basic as possible. The more bold, italic, big, small, etc., text you have, the harder it is to find your links!
 
-That's all of my rant for now. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />
+That's all of my rant for now. <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />

@@ -155,5 +155,5 @@ Combiner is written in Java and is distributed as a jar file, which can be downl
  [1]: http://www.julienlecomte.net/blog/2007/09/16/
  [2]: http://developer.yahoo.com/yui/compressor/
  [3]: http://getsprockets.org/
- [4]: {{site.url}}/downloads/combiner-0.0.1.jar
+ [4]: https://humanwhocodes.com/downloads/combiner-0.0.1.jar
  [5]: http://github.com/nzakas/combiner

@@ -8,7 +8,7 @@ tags:
   - CSS
   - inline-block
 ---
-Once again I find myself banging my head against the wall thanks to Firefox's lack of support for `inline-block` elements. At least Internet Explorer let's you set the display of an element to `inline-block` if it's an `inline` element by default (such as `span`, but won't work on `div`). Opera and Safari both supports `inline-block`, so why is it that Firefox doesn't? (Rhetorical, see my original post, <a title="Pain with inline-block" rel="internal" href="{{site.url}}/archive/2006/10/382">Pain with inline-block</a>)
+Once again I find myself banging my head against the wall thanks to Firefox's lack of support for `inline-block` elements. At least Internet Explorer let's you set the display of an element to `inline-block` if it's an `inline` element by default (such as `span`, but won't work on `div`). Opera and Safari both supports `inline-block`, so why is it that Firefox doesn't? (Rhetorical, see my original post, <a title="Pain with inline-block" rel="internal" href="https://humanwhocodes.com/archive/2006/10/382">Pain with inline-block</a>)
 
 In various situations I've used different Firefox extensions to work around this issue, but none of these work 100% of the time. The different things I've tried are:
 

@@ -83,9 +83,9 @@ I generally don't respond to correspondence from recruiters, especially if they'
  [22]: http://www.therichwebexperience.com/
  [23]: http://conferences.oreilly.com/velocity
  [24]: http://html5.org/tools/web-apps-tracker?from=4833&to=4834
- [25]: {{site.url}}/blog/2009/11/30/empty-image-src-can-destroy-your-site/
+ [25]: https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/
  [26]: http://dev.w3.org/csswg/css4-mediaqueries/
- [27]: {{site.url}}/blog/2012/01/04/proposal-scripting-detection-using-css-media-queries/
+ [27]: https://humanwhocodes.com/blog/2012/01/04/proposal-scripting-detection-using-css-media-queries/
  [28]: http://blog.reybango.com/2010/08/12/choose-3-developers-youd-spend-a-day-with/
  [29]: http://blog.founddrama.net/2010/02/my-new-javascript-vade-mecum/
  [31]: http://www.linkedin.com/in/nzakas/

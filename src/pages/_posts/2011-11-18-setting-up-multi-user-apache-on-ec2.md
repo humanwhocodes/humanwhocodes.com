@@ -101,5 +101,5 @@ Once the user is created using this script, they can ssh into the server and use
 
 Setting up a multi-user Apache environment is incredibly useful in situations where each user needs a separate web space. Common situations are professional and academic classes as well as professional organizations where developers need to be able to share things easily. A multi-user Apache environment behind a firewall is a nice alternative for file sharing as well.
 
- [1]: {{site.url}}/blog/2011/07/21/quick-and-dirty-spinning-up-a-new-ec2-web-server-in-five-minutes/
+ [1]: https://humanwhocodes.com/blog/2011/07/21/quick-and-dirty-spinning-up-a-new-ec2-web-server-in-five-minutes/
  [2]: http://www.cyberciti.biz/tips/howto-write-shell-script-to-add-user.html

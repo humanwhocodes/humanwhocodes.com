@@ -107,7 +107,7 @@ I can't draw any conclusions as to why this particular API, which pretty much ju
 
  [1]: https://dvcs.w3.org/hg/webperf/raw-file/tip/specs/setImmediate/Overview.html
  [2]: https://developer.mozilla.org/en-US/docs/Web/API/window.setImmediate
- [3]: {{site.url}}/blog/2009/08/11/timed-array-processing-in-javascript/
+ [3]: https://humanwhocodes.com/blog/2009/08/11/timed-array-processing-in-javascript/
  [4]: http://ie.microsoft.com/testdrive/Performance/setImmediateSorting/Default.html
  [5]: http://howtonode.org/understanding-process-next-tick
  [6]: http://nodejs.org/api/process.html#process_process_nexttick_callback

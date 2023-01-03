@@ -15,4 +15,4 @@ Right now I'm working on one chapter in particular that has completely taken on 
 
 There's an old saying about novelists, that they don't write their characters, their characters write through the author. Sometimes that's how I feel writing about programming, sometimes, it's the topic that writes through me.
 
-Any yes, I'm being purposely vague about the topic. Wouldn't want the competition to get wind and try to beat me to the punch, now would I? <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" />
+Any yes, I'm being purposely vague about the topic. Wouldn't want the competition to get wind and try to beat me to the punch, now would I? <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" />

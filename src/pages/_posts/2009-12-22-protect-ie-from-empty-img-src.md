@@ -17,7 +17,7 @@ I'm still not entirely sure why this is true, but if you specify a base URL in t
 
     <img src="smile.gif">
 
-To resolve smile.gif for this tag, the browser looks at the path of the containing page and then append smile.gif. So if the page is `{{site.url}}/blog/`, then the image is resolved to `{{site.url}}/blog/smile.gif`. This is how normal URL resolution works. Adding a `<base>` tag alters the default URL resolution. Example:
+To resolve smile.gif for this tag, the browser looks at the path of the containing page and then append smile.gif. So if the page is `https://humanwhocodes.com/blog/`, then the image is resolved to `https://humanwhocodes.com/blog/smile.gif`. This is how normal URL resolution works. Adding a `<base>` tag alters the default URL resolution. Example:
 
     <html>
     <head>
@@ -28,7 +28,7 @@ To resolve smile.gif for this tag, the browser looks at the path of the containi
     </body>
     </html>
 
-If this page has a path of `{{site.url}}/blog/`, then the image's URL is resolved to `{{site.url}}/stories/smile.gif`. That's because the base URL is reset to `{{site.url}}/stories/` by the `<base>` tag, so all URLs on the page are now resolved relative to that address. This is a convenient way to avoid duplicating the same URL information for every link on the page.
+If this page has a path of `https://humanwhocodes.com/blog/`, then the image's URL is resolved to `https://humanwhocodes.com/stories/smile.gif`. That's because the base URL is reset to `https://humanwhocodes.com/stories/` by the `<base>` tag, so all URLs on the page are now resolved relative to that address. This is a convenient way to avoid duplicating the same URL information for every link on the page.
 
 ## The approach
 
@@ -51,10 +51,10 @@ Specifying a base URL on a page isÂ a quick and easy solution to prevent an ex
 
 Although I started running tests with this as part of an investigation based on a [WHAT-WG mailing list discussion][6], Ben Alman hinted at this solution in a [tweet to me][7] that I apparently missed. Had I been paying attention, this would have been a much faster followup!
 
- [1]: {{site.url}}/blog/2009/11/30/empty-image-src-can-destroy-your-site/
+ [1]: https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/
  [2]: http://www.w3schools.com/TAGS/tag_base.asp
  [3]: http://www.fiddlertool.com/
- [4]: {{site.url}}/experiments/html/BadURL.php?tag=img
- [5]: {{site.url}}/experiments/html/BadURL.php?tag=img&base=1
+ [4]: https://humanwhocodes.com/experiments/html/BadURL.php?tag=img
+ [5]: https://humanwhocodes.com/experiments/html/BadURL.php?tag=img&base=1
  [6]: http://lists.whatwg.org/pipermail/whatwg-whatwg.org/2009-December/024368.html
  [7]: http://twitter.com/cowboy/status/6312339175

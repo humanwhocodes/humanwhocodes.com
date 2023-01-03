@@ -188,10 +188,10 @@ The `requestAnimationFrame()` API is now being drafted as a new recommendation b
   1. [Chrome: Cranking up the clock][6], by Mike Belshe
   2. [requestAnimationFrame implementation][7] (Chrome)
 
- [1]: {{site.url}}/experiments/animation/newsticker.htm
- [2]: {{site.url}}/experiments/animation/progressbar.htm
- [3]: {{site.url}}/experiments/animation/newsticker-and-progressbar.htm
- [4]: {{site.url}}/experiments/animation/newsticker-and-progressbar-2.htm
- [5]: {{site.url}}/experiments/animation/newsticker-and-progressbar-3.htm
+ [1]: https://humanwhocodes.com/experiments/animation/newsticker.htm
+ [2]: https://humanwhocodes.com/experiments/animation/progressbar.htm
+ [3]: https://humanwhocodes.com/experiments/animation/newsticker-and-progressbar.htm
+ [4]: https://humanwhocodes.com/experiments/animation/newsticker-and-progressbar-2.htm
+ [5]: https://humanwhocodes.com/experiments/animation/newsticker-and-progressbar-3.htm
  [6]: http://www.belshe.com/2010/06/04/chrome-cranking-up-the-clock/
  [7]: http://dev.chromium.org/developers/design-documents/requestanimationframe-implementation

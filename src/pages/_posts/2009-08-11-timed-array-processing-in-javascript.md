@@ -63,7 +63,7 @@ I set up a test to compare these two methods as they processed an array with 500
 
 Even though the original `chunk()` method was useful for processing small arrays, it has a performance impact when dealing with large arrays due to the extraordinary amount of time it takes to completely process the array. The new `timedChunk()` method is better suited for processing large arrays in the smallest amount of time without affecting the user experience.
 
- [1]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/
- [2]: {{site.url}}/blog/2009/01/05/what-determines-that-a-script-is-long-running/
+ [1]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/
+ [2]: https://humanwhocodes.com/blog/2009/01/05/what-determines-that-a-script-is-long-running/
  [3]: http://www.useit.com/papers/responsetime.html
- [4]: {{site.url}}/experiments/javascript/performance/array-processing/
+ [4]: https://humanwhocodes.com/experiments/javascript/performance/array-processing/

@@ -72,7 +72,7 @@ As I stated earlier, this is an area that I'm currently researching heavily, bot
  [4]: http://yuiblog.com/blog/2009/01/05/effective-tests/
  [5]: http://video.yahoo.com/watch/3737228/10267335
  [6]: http://www.slideshare.net/nzakas/test-driven-development-with-yui-test-presentation
- [7]: {{site.url}}/blog/2009/09/29/web-definitions-dom-ajax-and-more/
+ [7]: https://humanwhocodes.com/blog/2009/09/29/web-definitions-dom-ajax-and-more/
  [8]: http://wiki.ecmascript.org/lib/exe/fetch.php?id=resources%3Aresources&cache=cache&media=resources:jscriptdeviationsfromes3.pdf
  [9]: http://en.wikipedia.org/wiki/Unit_testing
  [10]: http://developer.yahoo.com/yui

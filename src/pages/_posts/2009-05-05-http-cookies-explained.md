@@ -187,7 +187,7 @@ There's a lot to know and understand about cookies in order to use them effectiv
  [8]: http://my.yahoo.com/
  [9]: http://finance.yahoo.com/
  [10]: http://www.google.com
- [11]: {{site.url}}/blog/2008/05/17/browser-cookie-restrictions/
+ [11]: https://humanwhocodes.com/blog/2008/05/17/browser-cookie-restrictions/
  [12]: http://blogs.msdn.com/ie/archive/2007/08/29/update-to-internet-explorer-s-cookie-jar.aspx
  [13]: http://developer.yahoo.com/yui/cookie/
  [14]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X

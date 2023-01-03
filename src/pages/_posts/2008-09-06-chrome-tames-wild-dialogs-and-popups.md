@@ -16,7 +16,7 @@ I decided to dig into <a rel="external" href="http://www.google.com/chrome/">Goo
 First, Chrome has this interesting feature where it monitors the number of dialogs that have been displayed to the user. If two dialogs are displayed during the execution of a single thread, the second and each subsequent dialog have an additional checkbox on them allowing the user to disallow additional dialogs from being displayed (see below).
 
 <p style="text-align: center;">
-  <a href="/images/wp-content/uploads/2008/09/google_chrome_dialog.gif"><img class="size-medium wp-image-1742 alignnone" title="Google Chrome alert dialog with option to hide" src="{{site.url}}/blog/wp-content/uploads/2008/09/google_chrome_dialog-300x118.gif" border="0" alt="" width="300" height="118" /></a>
+  <a href="/images/wp-content/uploads/2008/09/google_chrome_dialog.gif"><img class="size-medium wp-image-1742 alignnone" title="Google Chrome alert dialog with option to hide" src="https://humanwhocodes.com/blog/wp-content/uploads/2008/09/google_chrome_dialog-300x118.gif" border="0" alt="" width="300" height="118" /></a>
 </p>
 
 Once this checkbox is selected and the dialog is dismissed, no further dialogs (again, alert, confirm, or prompt) can be displayed by script until the page is reloaded. You can avoid this by showing only one dialog per execution. For instance, a user action that causes two alerts in a row to be displayed will also display this checkbox; two user actions that each cause an alert will circumvent this behavior. I think this is a helpful feature to prevent &#8220;alert hell&#8221; that forces you to kill the browser process, though I wish there was some way to determine if the dialog was actually displayed in script.

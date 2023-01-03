@@ -204,7 +204,7 @@ The history of the user-agent string is marked by browsers trying to convince us
 
 Chrome, for example, claims that any site that works with Safari 3 will also work with Chrome, so there is no reason to try to detect Chrome. It's worth nothing that this claim has already shot themselves in the foot, and so Chrome now spoofs [Safari for Hotmail][5]. Chrome isn't the only one that does this sort of thing, there's a lot that goes on behind the scenes of browsers for compatibility reasons. And so the battle rages on.
 
- [1]: {{site.url}}/blog/2009/12/29/feature-detection-is-not-browser-detection/
+ [1]: https://humanwhocodes.com/blog/2009/12/29/feature-detection-is-not-browser-detection/
  [2]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
  [3]: http://blogs.msdn.com/ie/archive/2009/01/09/the-internet-explorer-8-user-agent-string-updated-edition.aspx
  [4]: https://developer.mozilla.org/User_Agent_Strings_Reference

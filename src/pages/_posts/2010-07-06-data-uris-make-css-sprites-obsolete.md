@@ -89,7 +89,7 @@ CSS sprites were a solution to the problem of multiple HTTP requests to download
  [1]: http://en.oreilly.com/velocity2010/public/schedule/detail/15545
  [2]: http://css-sprit.es/
  [3]: http://www.alistapart.com/articles/sprites/
- [4]: {{site.url}}/blog/2009/10/27/data-uris-explained/
+ [4]: https://humanwhocodes.com/blog/2009/10/27/data-uris-explained/
  [5]: http://github.com/nzakas/cssembed
- [6]: {{site.url}}/blog/2009/11/03/automatic-data-uri-embedding-in-css-files/
+ [6]: https://humanwhocodes.com/blog/2009/11/03/automatic-data-uri-embedding-in-css-files/
  [7]: http://en.wikipedia.org/wiki/MHTML

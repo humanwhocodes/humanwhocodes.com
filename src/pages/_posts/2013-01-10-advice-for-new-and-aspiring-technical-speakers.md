@@ -118,7 +118,7 @@ The whole rehearsal process might seem like a lot of extra work, but it's vital 
 
 If you're a new or aspiring technical speaker and all this information seems overwhelming, don't worry. Every new endeavor seems overwhelming at first but that doesn't mean you shouldn't do it. I know a lot of really great engineers that I'm sure would give really great talks if they could just get over that initial hump of self-doubt. If you're even thinking about potentially giving a talk someday, then you already have what it takes to become a really great speaker. Don't let fear stop you from doing something that you want to do, and seek out the advice of others who have done it before to help you along the way. The advice I offered in this post is advice that I give in to many aspiring speakers over the years, but it is by no means a complete list of everything you will eventually need to know as a speaker. Other speakers will probably give slightly different advice. Listen to what everyone has to say and figure out what works best for you. Above all, go out and speak. It is, in my opinion, one of the most important things that you can do for your career.
 
- [1]: {{site.url}}/blog/2012/11/20/the-front-end-summit-new-speaker-program/
+ [1]: https://humanwhocodes.com/blog/2012/11/20/the-front-end-summit-new-speaker-program/
  [2]: http://stubbornella.org
  [3]: http://looksgoodworkswell.blogspot.com/
  [4]: http://jakearchibald.com/

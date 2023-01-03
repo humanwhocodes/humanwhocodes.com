@@ -99,6 +99,6 @@ There are a lot more details on the [full proposal][2], but I wanted to give som
 
 If you're a contributor to an open source browser, I'm also looking for someone that's interested in prototyping this API for use in WebKit and/or Gecko. Feel free to [contact me][3] if you're interested or have other feedback that you don't want to post publicly.
 
- [1]: {{site.url}}/blog/2009/07/21/introduction-to-sessionstorage/
- [2]: {{site.url}}/blog/securestore-proposal/
- [3]: {{site.url}}/contact/
+ [1]: https://humanwhocodes.com/blog/2009/07/21/introduction-to-sessionstorage/
+ [2]: https://humanwhocodes.com/blog/securestore-proposal/
+ [3]: https://humanwhocodes.com/contact/

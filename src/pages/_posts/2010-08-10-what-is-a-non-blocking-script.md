@@ -64,5 +64,5 @@ There are basically two ways to achieve non-blocking (aka asynchronous) JavaScri
  [1]: http://www.stevesouders.com/
  [2]: http://www.stevesouders.com/blog/2010/02/07/browser-script-loading-roundup/
  [3]: http://www.stevesouders.com/blog/2009/04/27/loading-scripts-without-blocking/
- [4]: {{site.url}}/blog/2009/06/23/loading-javascript-without-blocking/
+ [4]: https://humanwhocodes.com/blog/2009/06/23/loading-javascript-without-blocking/
  [5]: http://googlecode.blogspot.com/2009/12/google-analytics-launches-asynchronous.html

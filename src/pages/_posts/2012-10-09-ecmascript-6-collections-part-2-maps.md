@@ -163,6 +163,6 @@ As with sets, maps are part of the ECMAScript 6 draft that is not yet complete. 
   1. [Simple Maps and Sets][2] (ES6 Wiki)
   2. [ECMAScript 6 Draft Specification][3] (ECMA)
 
- [1]: {{site.url}}/blog/2012/09/25/ecmascript-6-collections-part-1-sets/
+ [1]: https://humanwhocodes.com/blog/2012/09/25/ecmascript-6-collections-part-1-sets/
  [2]: http://wiki.ecmascript.org/doku.php?id=harmony:simple_maps_and_sets
  [3]: http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts

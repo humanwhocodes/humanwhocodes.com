@@ -122,7 +122,7 @@ With this code, you would use `saveData()` and `getData()` instead of accessing 
 
 The `sessionStorage` object is a really useful way to keep data on the client in a relatively secure way. Though there are some outstanding security issues as mentioned in the previous section, those are relatively easy to mitigate in comparison to the built-in protection that this system affords you. Especially in today's Web 2.0/Ajax world where browsers are often left open for inordinate amounts of time, caching data on the client using `sessionStorage` can dramatically improve the user's experience in browsers that support it.
 
- [1]: {{site.url}}/blog/2009/05/05/http-cookies-explained/
+ [1]: https://humanwhocodes.com/blog/2009/05/05/http-cookies-explained/
  [2]: http://dev.w3.org/html5/webstorage/
  [3]: http://dev.w3.org/html5/webdatabase/
  [4]: http://mail.yahoo.com/

@@ -110,7 +110,7 @@ CSS media queries in JavaScript are a bit more complicated than I first expected
   6. [matchMedia polyfill][6] by Paul Hayes
   7. [YUI 3 Gallery Media module][7] by me
 
- [1]: {{site.url}}/blog/2012/01/03/css-media-queries-in-javascript-part-1/
+ [1]: https://humanwhocodes.com/blog/2012/01/03/css-media-queries-in-javascript-part-1/
  [2]: https://twitter.com/#!/robflaherty/status/156581804046946304
  [3]: https://bugs.webkit.org/show_bug.cgi?id=75903
  [4]: https://bugzilla.mozilla.org/show_bug.cgi?id=716751

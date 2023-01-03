@@ -9,7 +9,7 @@ tags:
   - JSON
   - JSONLib
 ---
-A little while ago, I was complaining about the proposed JSON extensions to JavaScript 2.0 (<a title="Keep JSON out of JavaScript" rel="internal" href="{{site.url}}/archive/2007/9/484">Keep JSON out of JavaScript</a>). At that time, <a title="DHTML Kitchen" rel="external" href="http://www.dhtmlkitchen">Garrett</a> challenged me to come up with a better way of doing it. He was right, it's pointless to complain about something without suggesting a solution. Since that time, I've been formulating a new way of dealing with JSON in JavaScript, and I'm proud to share that with you now.
+A little while ago, I was complaining about the proposed JSON extensions to JavaScript 2.0 (<a title="Keep JSON out of JavaScript" rel="internal" href="https://humanwhocodes.com/archive/2007/9/484">Keep JSON out of JavaScript</a>). At that time, <a title="DHTML Kitchen" rel="external" href="http://www.dhtmlkitchen">Garrett</a> challenged me to come up with a better way of doing it. He was right, it's pointless to complain about something without suggesting a solution. Since that time, I've been formulating a new way of dealing with JSON in JavaScript, and I'm proud to share that with you now.
 
 I've patterned this after my favorite extension to JavaScript, <a title="ECMA-357" rel="external" href="http://www.ecma-international.org/publications/standards/Ecma-357.htm">ECMAScript for XML</a>. Without writing up a complete specification (which I am in the process of doing), here's the basics:
 
@@ -20,7 +20,7 @@ I've patterned this after my favorite extension to JavaScript, <a title="ECMA-35
   * The `typeof` operator should return &#8220;json&#8221; when used on a value of type `JSON` or `JSONList`.
   * JSON strings are parsed via `JSON.parse()`, throwing syntax errors if they are found.
 
-This description, while interesting, is less riveting than having code to play with. So, I've implemented as much as I could in a library called <a title="JSONLib" rel="internal" href="{{site.url}}/downloads/JSONLib0.1.zip">JSONLib</a>. I'm going to call this version 0.1 alpha &#8211; this is an experimental implementation that is not intended for use in production environments. If there's enough interest, I'll update it, make it more bullet-proof, and create a compressed version for distribution. Right now, though, it's just a proof of concept.
+This description, while interesting, is less riveting than having code to play with. So, I've implemented as much as I could in a library called <a title="JSONLib" rel="internal" href="https://humanwhocodes.com/downloads/JSONLib0.1.zip">JSONLib</a>. I'm going to call this version 0.1 alpha &#8211; this is an experimental implementation that is not intended for use in production environments. If there's enough interest, I'll update it, make it more bullet-proof, and create a compressed version for distribution. Right now, though, it's just a proof of concept.
 
 Since you cannot override `[[Put]]` or `[[Get]]` from JavaScript, I've had to include `put()` and `get()` methods on both `JSON` and `JSONList`. It's a little bit annoying, but ultimately works. Here's a few example use cases:
 

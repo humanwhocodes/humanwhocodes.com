@@ -9,11 +9,11 @@ tags:
   - localStorage
   - Performance
 ---
-Earlier this week, Chris Heilmann wrote a blog post entitled, <cite>There is no simple solution for localStorage</cite><sup>[1]</sup> in which he decried `localStorage` as slow and encouraged everyone to stop using it. Surprisingly, in a post about performance, there was no mention of what &#8220;slow&#8221; or &#8220;terrible performance&#8221; actually meant. Performance can't be discussed in a vacuum, which is part of what made my reaction to his post one of confusion more than anything else.
+Earlier this week, Chris Heilmann wrote a blog post entitled, <cite>There is no simple solution for localStorage</cite>[^1] in which he decried `localStorage` as slow and encouraged everyone to stop using it. Surprisingly, in a post about performance, there was no mention of what &#8220;slow&#8221; or &#8220;terrible performance&#8221; actually meant. Performance can't be discussed in a vacuum, which is part of what made my reaction to his post one of confusion more than anything else.
 
 ## What is slow?
 
-So does `localStorage` have a performance problem? Quite simply, I don't know. Is storing and retrieving data from `localStorage` slower than that of a regular, in-memory object? Yes. I wrote a post about this for 2011 Performance advent calendar<sup>[2]</sup>. In fact, it's quite a bit slower when reading data out. My conclusion was that you should try to limit reads by storing multiple pieces of data in the same key. But as with most performance metrics, this really only matters when you're performing the same operation multiple times in a row. If you're only ever reading one value or writing one value, you'll likely never run into a performance issue regardless of the data size or what's going on with your system.
+So does `localStorage` have a performance problem? Quite simply, I don't know. Is storing and retrieving data from `localStorage` slower than that of a regular, in-memory object? Yes. I wrote a post about this for 2011 Performance advent calendar[^2]. In fact, it's quite a bit slower when reading data out. My conclusion was that you should try to limit reads by storing multiple pieces of data in the same key. But as with most performance metrics, this really only matters when you're performing the same operation multiple times in a row. If you're only ever reading one value or writing one value, you'll likely never run into a performance issue regardless of the data size or what's going on with your system.
 
 So `localStorage` is slower than using an in-memory object. Cars are slower than airplanes. What does that tell us? Not a whole lot.
 
@@ -40,7 +40,7 @@ Only after all of that completes can the browser continue on to execute other st
 
 The closest comparable API for JavaScript is the cookie API (though calling `document.cookie` an API is incredibly generous). Cookies are also name-value pairs, albeit with some additional metadata, which uses files as storage and must be synchronized across browser windows and tabs. I was surprised that Chris didn't compare `localStorage` to cookies since the API was clearly meant to move us from storing client-only data in cookies to storing it in `localStorage`. It's no accident that the `localStorage` API looks a lot like various cookie APIs.
 
-When I created a benchmark<sup>[3]</sup> to test `localStorage` against cookies for reading and writing, the results were quite interesting. Internet Explorer, Chrome, and Safari (including iOS), reading cookies was slower than reading from  `localStorage` and writing to cookies was much slower than writing to `localStorage`. Firefox and Opera exhibit the same performance characteristics on writes as the others (with cookies being slower), but reading from a cookie is faster. So in many cases across browsers, `localStorage` is actually a *performance improvement* over using cookies with JavaScript.
+When I created a benchmark[^3] to test `localStorage` against cookies for reading and writing, the results were quite interesting. Internet Explorer, Chrome, and Safari (including iOS), reading cookies was slower than reading from  `localStorage` and writing to cookies was much slower than writing to `localStorage`. Firefox and Opera exhibit the same performance characteristics on writes as the others (with cookies being slower), but reading from a cookie is faster. So in many cases across browsers, `localStorage` is actually a *performance improvement* over using cookies with JavaScript.
 
 ## APIs
 
@@ -77,11 +77,11 @@ In the near future, I believe that client-side architectures that perform I/O sh
         alert(event.data.value); 
     };
 
-All of the reading and writing would be done off of the UI thread, so blocking really doesn't matter. I know I'm not alone in thinking this is the way of the future as the IndexedDB spec has a whole section on synchronous APIs available in workers<sup>[5]</sup>. Having synchronous APIs for IndexedDB makes it less horrible to deal with, but you need to use them in a worker. This hasn't been implemented by all browsers yet, but should be coming soon. Add to that the concept of shared workers, web workers that are shared amongst all tabs with pages from the same origin, and you have a great recipe for resolving a lot of I/O issues.
+All of the reading and writing would be done off of the UI thread, so blocking really doesn't matter. I know I'm not alone in thinking this is the way of the future as the IndexedDB spec has a whole section on synchronous APIs available in workers[^5]. Having synchronous APIs for IndexedDB makes it less horrible to deal with, but you need to use them in a worker. This hasn't been implemented by all browsers yet, but should be coming soon. Add to that the concept of shared workers, web workers that are shared amongst all tabs with pages from the same origin, and you have a great recipe for resolving a lot of I/O issues.
 
 Workers currently have access to `XMLHttpRequest`, Web Sockets, File Readers, and the such&#8230;and yet no access to `localStorage`. Why? This is really the solution to the problem: don't throw away a great API because in some cases it will cause issues. Instead, make it available in workers so that we have an option for moving the reading/writing off of the UI thread.
 
-Note: It's possible that the cross-domain `localStorage` approach I wrote about previously<sup>[6]</sup> might provide some non-blocking benefits. The cross-frame postMessage() API is asynchronous, but I've not figured out a good way to test if the containing page freezes if an iframe from the same domain accesses `localStorage` .
+Note: It's possible that the cross-domain `localStorage` approach I wrote about previously[^6] might provide some non-blocking benefits. The cross-frame postMessage() API is asynchronous, but I've not figured out a good way to test if the containing page freezes if an iframe from the same domain accesses `localStorage` .
 
 ## Conclusion
 
@@ -91,16 +91,9 @@ So to Mozilla, and the other browser vendors out there, you're a victim of your 
 
 **Update (8 March 2012):** Fixed typos and added shared worker reference.
 
-
-  1. [There is no simple solution for localStorage][1] by Chris Heilmann
-  2. <a title="Permanent Link to localStorage Read Performance" href="http://calendar.perfplanet.com/2011/localstorage-read-performance/" rel="bookmark">localStorage Read Performance</a> by Nicholas C. Zakas
-  3. [localStorage vs. cookies][2] by Nicholas C. Zakas
-  4. [Introduction to Web Storage][3] by MSDN
-  5. [Indexed Database &#8211; Synchronous APIs][4]
-  6. [Learning from XAuth: Cross-Domain localStorage][5] by Nicholas C. Zakas
-
- [1]: http://hacks.mozilla.org/2012/03/there-is-no-simple-solution-for-local-storage/
- [2]: http://jsperf.com/localstorage-vs-objects/19
- [3]: http://msdn.microsoft.com/en-us/library/cc197062(v=vs.85).aspx
- [4]: http://www.w3.org/TR/IndexedDB/#sync-database
- [5]: {{site.url}}/blog/2010/09/07/learning-from-xauth-cross-domain-localstorage/
+[^1]: [There is no simple solution for localStorage](http://hacks.mozilla.org/2012/03/there-is-no-simple-solution-for-local-storage/) by Chris Heilmann
+[^2]: [localStorage Read Performance](http://calendar.perfplanet.com/2011/localstorage-read-performance/) by Nicholas C. Zakas
+[^3]: [localStorage vs. cookies](http://jsperf.com/localstorage-vs-objects/19) by Nicholas C. Zakas
+[^4]: [Introduction to Web Storage](http://msdn.microsoft.com/en-us/library/cc197062(v=vs.85).aspx) by MSDN
+[^5]: [Indexed Database &#8211; Synchronous APIs](http://www.w3.org/TR/IndexedDB/#sync-database)
+[^6]: [Learning from XAuth: Cross-Domain localStorage](https://humanwhocodes.com/blog/2010/09/07/learning-from-xauth-cross-domain-localstorage/) by Nicholas C. Zakas

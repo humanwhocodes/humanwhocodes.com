@@ -24,4 +24,4 @@ With all of the changes, there are also some things that won't change. I'll stil
 Hopefully five years from now I'll look back and see this as another good decision in my life. And if not, at least it will be an interesting experience.
 
  [1]: http://www.nicholaszakas.com/2006/06/08/i-m-a-yahoo/
- [2]: {{site.url}}/contact
+ [2]: https://humanwhocodes.com/contact

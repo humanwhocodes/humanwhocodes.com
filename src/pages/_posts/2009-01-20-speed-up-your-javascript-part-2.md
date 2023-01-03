@@ -129,10 +129,10 @@ Regardless of the tools available to help split up complex processes, it's still
   * [Chinese (Simplified)][6][  
     ][7]
 
- [1]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/ "Speed up your JavaScript, Part 1"
+ [1]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/ "Speed up your JavaScript, Part 1"
  [2]: http://www.julienlecomte.net/blog/2007/10/28/
  [3]: http://yuiblog.com/blog/2008/12/23/video-crockford-performance/ "JavaScript Performance"
  [4]: http://en.wikipedia.org/wiki/Memoization
  [5]: http://developer.yahoo.com/yui/3/queue/
  [6]: http://cuimingda.com/2009/01/speed-up-your-javascript-part-2.html
- [7]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [7]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/

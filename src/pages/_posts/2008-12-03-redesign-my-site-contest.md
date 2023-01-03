@@ -39,5 +39,5 @@ You'll get an email from me letting you know that I've received the design submi
 So that's it. Redesign my site for 2009. Make me proud!
 
  [1]: http://developer.yahoo.com/yui
- [2]: {{site.url}}/writing/
- [3]: {{site.url}}/downloads/
+ [2]: https://humanwhocodes.com/writing/
+ [3]: https://humanwhocodes.com/downloads/

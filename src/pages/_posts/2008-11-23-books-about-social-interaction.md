@@ -16,7 +16,7 @@ Reader Sammy Rashidchi [commented][1] on a previous post about wanting recommend
 
 That's just a taste of the books that are good starting points for better understanding human interaction. There's so many more books on my reading list that I haven't yet gotten to but look promising, as well.Â  I'll be sure to post reviews of them as I finish.
 
- [1]: {{site.url}}/blog/2008/10/28/why-software-engineers-fail/#comment-1862
+ [1]: https://humanwhocodes.com/blog/2008/10/28/why-software-engineers-fail/#comment-1862
  [2]: http://www.amazon.com/gp/product/0312270178?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0312270178
  [3]: http://www.amazon.com/gp/product/0142001198?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0142001198
  [4]: http://www.amazon.com/gp/product/007141858X?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=007141858X

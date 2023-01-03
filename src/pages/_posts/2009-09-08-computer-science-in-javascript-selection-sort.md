@@ -68,6 +68,6 @@ You can download the source code from my GitHub project, [Computer Science in Ja
 
 As with bubble sort, selection sort isn't something you're likely to use in a real-world environment. This post is just a discussion of the algorithm for instructional purposes only. There is rarely a time when the built-in `Array.prototype.sort()` method isn't suitable, so always use that first.
 
- [1]: {{site.url}}/blog/2009/05/26/computer-science-in-javascript-bubble-sort/
+ [1]: https://humanwhocodes.com/blog/2009/05/26/computer-science-in-javascript-bubble-sort/
  [2]: http://www.youtube.com/watch?v=TW3_7cD9L1A
  [3]: http://github.com/nzakas/computer-science-in-javascript/

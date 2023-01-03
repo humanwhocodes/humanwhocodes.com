@@ -165,4 +165,4 @@ Because of the power of YUI 3, this implementation of an idle timer is very smal
  [6]: http://github.com/nzakas/jstools/
  [7]: http://nczonline.net/experiments/javascript/idle-timer/idle-timer.htm
  [8]: http://yuilibrary.com/gallery/show/idletimer
- [9]: {{site.url}}/blog/2009/10/28/yui-3-idletimer-now-available-on-yui-gallery/
+ [9]: https://humanwhocodes.com/blog/2009/10/28/yui-3-idletimer-now-available-on-yui-gallery/

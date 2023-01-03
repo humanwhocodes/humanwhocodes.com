@@ -25,4 +25,4 @@ I'm hoping to keep this whirlwind tour going and continue to spread the word of 
  [1]: http://developer.yahoo.com/yui/yuitest/
  [2]: http://www.slideshare.net/nzakas/test-driven-development-with-yui-test-presentation
  [3]: http://video.yahoo.com/watch/3737228/10267335
- [4]: {{site.url}}/contact/
+ [4]: https://humanwhocodes.com/contact/

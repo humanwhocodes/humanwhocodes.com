@@ -67,5 +67,5 @@ And as I always tell people who are new to interviewing, there's really only one
 
 **Update (19-Jan-2012)** &#8211; fixed box model description.
 
- [1]: {{site.url}}/blog/2007/03/27/surviving-an-interview-with-me/
- [2]: {{site.url}}/blog/2007/08/15/what-makes-a-good-front-end-engineer/
+ [1]: https://humanwhocodes.com/blog/2007/03/27/surviving-an-interview-with-me/
+ [2]: https://humanwhocodes.com/blog/2007/08/15/what-makes-a-good-front-end-engineer/

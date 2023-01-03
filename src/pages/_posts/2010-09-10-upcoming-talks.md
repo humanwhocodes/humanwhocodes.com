@@ -31,7 +31,7 @@ I usually only go where I'm invited because I'm usually too busy to seek out spe
 
 After YUIConf, I plan on taking some time off from speaking through the end of the year, so please be sure to say hi if you see me out and about. And I hope to see a lot of you at these various events soon.
 
-**Update (10-Sep-2010): **Thanks to Jenny and Craig for pointing out this is the second year that YUIConf is open to the public. Last year I was recovering from surgery so wasn't too involved. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />
+**Update (10-Sep-2010): **Thanks to Jenny and Craig for pointing out this is the second year that YUIConf is open to the public. Last year I was recovering from surgery so wasn't too involved. <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" />
 
  [1]: http://www.yahoo.com
  [2]: http://usa10.webdirections.org/

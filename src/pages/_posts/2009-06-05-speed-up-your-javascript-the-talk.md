@@ -36,16 +36,16 @@ You may not use everything in this talk, and that's fine. I do hope you'll keep 
 
  [1]: http://www.stevesouders.com
  [2]: http://google-code-updates.blogspot.com/2009/05/web-e-x-ponents.html
- [3]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/
- [4]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
- [5]: {{site.url}}/blog/2009/01/27/speed-up-your-javascript-part-3/
- [6]: {{site.url}}/blog/2009/02/03/speed-up-your-javascript-part-4/
+ [3]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/
+ [4]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [5]: https://humanwhocodes.com/blog/2009/01/27/speed-up-your-javascript-part-3/
+ [6]: https://humanwhocodes.com/blog/2009/02/03/speed-up-your-javascript-part-4/
  [7]: http://www.slideshare.net/nzakas/speed-up-your-javascript
  [8]: http://developer.yahoo.com/yui/profiler/
  [9]: http://my.yahoo.com/
  [10]: http://code.google.com/p/google-caja/
  [11]: http://www.ecma-international.org/publications/files/drafts/tc39-2009-025.pdf
- [12]: {{site.url}}/experiments/javascript/performance/identifier-depth/
- [13]: {{site.url}}/experiments/javascript/performance/data-access/
+ [12]: https://humanwhocodes.com/experiments/javascript/performance/identifier-depth/
+ [13]: https://humanwhocodes.com/experiments/javascript/performance/data-access/
  [14]: http://blogs.sun.com/greimer/resource/loop-test.html
  [15]: http://blogs.sun.com/greimer/

@@ -135,13 +135,13 @@ After quite a bit of investigation, it appears that it is possible to determine 
  [1]: http://www.w3.org/TR/2009/WD-html5-20090212/comms.html#crossDocumentMessages
  [2]: http://msdn.microsoft.com/en-us/library/ms533028(VS.85).aspx
  [3]: http://twitter.com/slicknet/status/3900535188
- [4]: {{site.url}}/experiments/javascript/iframes/onload1.htm
- [5]: {{site.url}}/experiments/javascript/iframes/onload2.htm
- [6]: {{site.url}}/experiments/javascript/iframes/onload3.htm
- [7]: {{site.url}}/experiments/javascript/iframes/onload4.htm
+ [4]: https://humanwhocodes.com/experiments/javascript/iframes/onload1.htm
+ [5]: https://humanwhocodes.com/experiments/javascript/iframes/onload2.htm
+ [6]: https://humanwhocodes.com/experiments/javascript/iframes/onload3.htm
+ [7]: https://humanwhocodes.com/experiments/javascript/iframes/onload4.htm
  [8]: http://msdn.microsoft.com/en-us/library/ms536957(VS.85).aspx
- [9]: {{site.url}}/experiments/javascript/iframes/onload5.htm
+ [9]: https://humanwhocodes.com/experiments/javascript/iframes/onload5.htm
  [10]: http://www.twitter.com/ChristopherBlum
- [11]: {{site.url}}/experiments/javascript/iframes/onload6.htm
+ [11]: https://humanwhocodes.com/experiments/javascript/iframes/onload6.htm
  [12]: http://msdn.microsoft.com/en-us/library/cc197055(VS.85).aspx
  [13]: http://twitter.com/slicknet/status/3901078817

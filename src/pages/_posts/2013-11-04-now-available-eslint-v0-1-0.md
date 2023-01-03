@@ -62,7 +62,7 @@ ESLint requires Node.js 0.8 or higher.
 
 At this point, what we really need is feedback from you. You can send in general feedback to the [mailing list][3] or [file an issue][4] if there's a problem or you'd like to request a feature. Your input will help us make ESLint even better going forward.
 
- [1]: {{site.url}}/blog/2013/07/16/introducing-eslint/
+ [1]: https://humanwhocodes.com/blog/2013/07/16/introducing-eslint/
  [2]: https://github.com/nzakas/eslint/tree/master/docs
  [3]: http://groups.google.com/group/eslint
  [4]: https://github.com/nzakas/eslint/issues

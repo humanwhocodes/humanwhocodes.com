@@ -22,6 +22,6 @@ P.S. There's also a [Facebook page][7] for the book. If you like it, sign up to 
  [2]: http://yuiblog.com/blog/2009/01/16/projs2/
  [3]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
  [4]: http://www.yuiblog.com
- [5]: {{site.url}}/blog/2008/12/31/now-available-professional-javascript-second-edition/
+ [5]: https://humanwhocodes.com/blog/2008/12/31/now-available-professional-javascript-second-edition/
  [6]: http://wroxblog.typepad.com/
  [7]: http://www.facebook.com/pages/Professional-JavaScript-for-Web-Developers/56036204632?ref=share

@@ -16,8 +16,8 @@ Safari and Opera support `inline-block`; Internet Explorer supports `inline-bloc
 
 As it turns out, Firefox supported an alternative called `-moz-inline-block` at one time, but it <a title="Bugzilla: -moz-inline-block broken in Deer Park Alpha 2?" rel="external" href="https://bugzilla.mozilla.org/show_bug.cgi?id=301072">stopped working</a> in Firefox 1.5. I found some <a title="QuirksMode: The display declaration" rel="external" href="http://www.quirksmode.org/css/display.html">some references</a> suggesting to use `-moz-inline-box` instead, however, that form of display doesn't have proper text wrapping and doesn't support `text-align`. So, after bending the ear of Matt Sweeney (one of the <a title="Yahoo! User Interface Library" rel="external" href="http://developer.yahoo.com/yui/">YUI</a> developers), I was finally able to come up with a solution. The <acronym title="Hyper Text Markup Language">HTML</acronym> code looks like this:
 
-<pre>&lt;a href="{{site.url}}/" class="button"&gt;&lt;strong&gt;Submit&lt;/strong&gt;&lt;/a&gt;
-&lt;a href="{{site.url}}/" class="button"&gt;&lt;strong&gt;Cancel&lt;/strong&gt;&lt;/a&gt;</pre>
+<pre>&lt;a href="https://humanwhocodes.com/" class="button"&gt;&lt;strong&gt;Submit&lt;/strong&gt;&lt;/a&gt;
+&lt;a href="https://humanwhocodes.com/" class="button"&gt;&lt;strong&gt;Cancel&lt;/strong&gt;&lt;/a&gt;</pre>
 
 The <acronym title="Cascading Style Sheets">CSS</acronym> code is:
 

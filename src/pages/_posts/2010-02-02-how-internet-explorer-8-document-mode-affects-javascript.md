@@ -104,7 +104,7 @@ Two other changes that likely don't affect you but are worth noting:
 
 IE8 document mode offers a whole host of improvements over Internet Explorer 7 not just in CSS but also in JavaScript. If you're looking to write the most standards-compliant code possible, make sure your page is being run on Internet Explorer 8 in IE8 document mode (see my previous post for details). Bringing JScript into line with other JavaScript engines is an incredibly important step. It's too bad that these details were pretty much overlooked in the Internet Explorer 8 announcements.
 
- [1]: {{site.url}}/blog/2010/01/19/internet-explorer-8-document-and-browser-modes/
+ [1]: https://humanwhocodes.com/blog/2010/01/19/internet-explorer-8-document-and-browser-modes/
  [2]: http://wiki.ecmascript.org/lib/exe/fetch.php?id=resources%3Aresources&cache=cache&media=resources:jscriptdeviationsfromes3.pdf
  [3]: http://blogs.msdn.com/jscript/archive/2009/04/17/versioning-language-features-in-jscript.aspx
  [4]: http://www.ecma-international.org/publications/standards/Ecma-262.htm

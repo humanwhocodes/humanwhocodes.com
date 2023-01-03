@@ -21,18 +21,18 @@ A couple of years ago, web developers were banging their head against the first 
 
 For a simple request, one that uses either GET or POST with no custom headers and whose body is `text/plain`, the request is sent with an extra header called `Origin`. The `Origin` header contains the origin (protocol, domain name, and port) of the requesting page so that the server can easily determine whether or not it should serve a response. An example `Origin` header might look like this:
 
-    Origin: {{site.url}}
+    Origin: https://humanwhocodes.com
 
 If the server decides that the request should be allowed, it sends a `Access-Control-Allow-Origin` header echoing back the same origin that was sent or &#8220;*&#8221; if it's a public resource. For example:
 
-    Access-Control-Allow-Origin: {{site.url}}
+    Access-Control-Allow-Origin: https://humanwhocodes.com
 
 If this header is missing, or the origins don't match, then the browser disallows the request. If all is well, then the browser processes the request. Note that neither the requests nor responses include cookie information.
 
 All of the previously mentioned browsers support these simple requests. Firefox 3.5+, Safari 4+, and Chrome all support usage through the `XMLHttpRequest` object. When attempting to open a resource on a different origin, this behavior automatically gets triggered without any extra code. For example:
 
     var xhr = new XMLHttpRequest();
-    xhr.open("get", "{{site.url}}/some_resource/", true);
+    xhr.open("get", "https://humanwhocodes.com/some_resource/", true);
     xhr.onload = function(){  //instead of onreadystatechange
         //do something
     };
@@ -41,7 +41,7 @@ All of the previously mentioned browsers support these simple requests. Firefox 
 To do the same in Internet Explorer 8, you'll need to use the [`XDomainRequest` object][3] in the same manner:
 
     var xdr = new XDomainRequest();
-    xdr.open("get", "{{site.url}}/some_resource/");
+    xdr.open("get", "https://humanwhocodes.com/some_resource/");
     xdr.onload = function(){
         //do something
     };
@@ -62,7 +62,7 @@ The Mozilla team suggests in their [post about CORS][4] that you should check fo
         return xhr;
     }
     
-    var request = createCORSRequest("get", "{{site.url}}/");
+    var request = createCORSRequest("get", "https://humanwhocodes.com/");
     if (request){
         request.onload = function(){
             //do something with request.responseText
@@ -88,7 +88,7 @@ CORS allows the use of custom headers, methods other than GET or POST, and diffe
 
 Example assuming a POST request with a custom header called `NCZ`:
 
-    Origin: {{site.url}}
+    Origin: https://humanwhocodes.com
     Access-Control-Request-Method: POST
     Access-Control-Request-Headers: NCZ
 
@@ -101,7 +101,7 @@ During this request, the server can determine whether or not it will allow reque
 
 Example:
 
-    Access-Control-Allow-Origin: {{site.url}}
+    Access-Control-Allow-Origin: https://humanwhocodes.com
     Access-Control-Allow-Methods: POST, GET
     Access-Control-Allow-Headers: NCZ
     Access-Control-Max-Age: 1728000

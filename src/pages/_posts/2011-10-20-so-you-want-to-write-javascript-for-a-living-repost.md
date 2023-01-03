@@ -34,19 +34,19 @@ At some point you will be asked specifics about the language that cover topics b
 
 > If your candidate doesn’t understand getElementById, getElementsByTagName, appendChild and removeChild, you have a problem
 
-<a href="{{site.url}}/" target="_blank">Nicholas Zakas</a>, author of Professional JavaScript for Web Developers, said virtually the same thing:
+<a href="https://humanwhocodes.com/" target="_blank">Nicholas Zakas</a>, author of Professional JavaScript for Web Developers, said virtually the same thing:
 
 > &#8230;you need to know how to create an element on the fly, get a reference to any element on the page, insert, remove, replace, etc. nodes in the page. These methods should be memorized!
 
 This presumes you know a bit about how the document object model is put together. It's safe to say that before going into an interview you should be able to look at a given page and mentally traverse it's structure. At the very least you need a basic understanding of how element nodes relate to one another on the page. This might be a great launching point into a discussion about how semantically correct markup can make your life easier once you start adding behaviors to a page.
 
-Another must know topic is working with events and event handers across browsers as <a href="{{site.url}}/" target="_blank">Nicholas</a> notes:
+Another must know topic is working with events and event handers across browsers as <a href="https://humanwhocodes.com/" target="_blank">Nicholas</a> notes:
 
 > No modern web application can survive without event handlers. Knowledge of the differences across browsers and issues surrounding event handling are a must.
 
 I think that if you are working in a web shop that is not dabbling in asynchronous programming (aka Ajax) or building high traffic web applications you might be able to get away with a solid knowledge of the above as well as a strong understanding of xhtml and css. As <a href="http://blog.dept-z.com/" target="_blank">Tom</a> mentioned &#8220;there’s a lot of halfway decent coding one can still do with JavaScript without having guru-level or even intermediate levels of understanding&#8221;
 
-Assuming you want to work at a job that is building web apps there are a few more must knows to add to our list. Again here is a quote from <a href="{{site.url}}/" target="_blank">Nicholas</a> about Ajax:
+Assuming you want to work at a job that is building web apps there are a few more must knows to add to our list. Again here is a quote from <a href="https://humanwhocodes.com/" target="_blank">Nicholas</a> about Ajax:
 
 > You need to know not just what the acronym stands for, but practically speaking, what the technique is and why it's important. A working knowledge of multiple ways to implement Ajax communication is always a plus, since using XMLHttpRequest is not always an option.
 
@@ -82,7 +82,7 @@ I ask them to demonstrate how they access it's properties, add a method or other
 
 All in all, given the modern usage of javascript in web-apps today it is an excellent idea to grasp the fundamentals of OOP in javascript.
 
-Another question you should be prepared to talk about are any experiences with libraries like Dojo, Prototype or effects libraries like <a href="http://script.aculo.us/" target="_blank">Script.aculo.us</a>. There are so many libraries out there now someone is bound to at least ask you about your preference. Although as <a href="{{site.url}}/" target="_blank">Nicholas</a> points out they should not serve as too much of a crutch
+Another question you should be prepared to talk about are any experiences with libraries like Dojo, Prototype or effects libraries like <a href="http://script.aculo.us/" target="_blank">Script.aculo.us</a>. There are so many libraries out there now someone is bound to at least ask you about your preference. Although as <a href="https://humanwhocodes.com/" target="_blank">Nicholas</a> points out they should not serve as too much of a crutch
 
 > It's really important for you to be able to write your own code without relying on JavaScript libraries like Dojo, Prototype, etc. Libraries like these are helpful in some cases, but when it comes to enterprise-level web applications, you will run into situations that the libraries didn't anticipate and you'll need to know how to maneuver around with them. A sure fire way to say &#8220;no hire&#8221; is by answering a question with, &#8220;well, if I could use Prototype|Dojo|etc., then I could do it this way&#8230;but otherwise, I don't know how.&#8221;
 

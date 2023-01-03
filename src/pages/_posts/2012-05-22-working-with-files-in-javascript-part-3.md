@@ -129,6 +129,6 @@ The `FileReader` object is a fully-featured object with a lot of functionality a
   1. [Progress Events][2]
   2. [File API][3]
 
- [1]: {{site.url}}/blog/2012/05/15/working-with-files-in-javascript-part-2/
+ [1]: https://humanwhocodes.com/blog/2012/05/15/working-with-files-in-javascript-part-2/
  [2]: http://www.w3.org/TR/progress-events/
  [3]: http://www.w3.org/TR/FileAPI/

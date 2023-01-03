@@ -78,7 +78,7 @@ This method accepts a string `identifier` as its argument and returns a Boolean 
         alert("Valid!");
     }
 
-Yes, I did test this on my own credit card numbers as a test. No you can't have those sample files. <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> 
+Yes, I did test this on my own credit card numbers as a test. No you can't have those sample files. <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /> 
 
 ## Validation not verification
 

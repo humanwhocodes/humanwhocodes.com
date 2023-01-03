@@ -67,7 +67,7 @@ If left untrapped, these errors bubble up as any other error would (in Firefox, 
 
 Now, just because it's possible to trap this error in almost all browsers doesn't mean that you should. No code should end up in production with even the possibility of a stack overflow error present. Such instances indicate poor code design and should be re-evaluated and/or re-designed to avoid this error. Consider this post as an aid in debugging this issue, not as a license to trap and disguise it.
 
- [1]: {{site.url}}/blog/2009/01/05/what-determines-that-a-script-is-long-running/
- [2]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/
- [3]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
- [4]: {{site.url}}/blog/2009/01/27/speed-up-your-javascript-part-3/
+ [1]: https://humanwhocodes.com/blog/2009/01/05/what-determines-that-a-script-is-long-running/
+ [2]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/
+ [3]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [4]: https://humanwhocodes.com/blog/2009/01/27/speed-up-your-javascript-part-3/

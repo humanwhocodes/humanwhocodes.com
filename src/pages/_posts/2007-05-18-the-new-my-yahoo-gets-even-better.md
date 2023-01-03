@@ -17,4 +17,4 @@ We've gotten some good press with this latest release:
   * <a title="My Yahoo gets inline editing, Netflix module" rel="external" href="http://mashable.com/2007/05/16/myyahoo/">My Yahoo gets inline editing, Netflix module</a> (Mashable)
   * <a title="My Yahoo now almost as good as NetVibes" rel="external" href="http://www.webware.com/8301-1_109-9720300-2.html?tag=blog">My Yahoo now almost as good as Netvibes</a> (Webware)
 
-It's really an exciting time to be a <a title="My Yahoo!" rel="external" href="http://my.yahoo.com">My Yahoo!</a> user, and only more good things are to come (and no, I still can't tell you what those things are, so please don't ask <img src="{{site.url}}/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" /> ).
+It's really an exciting time to be a <a title="My Yahoo!" rel="external" href="http://my.yahoo.com">My Yahoo!</a> user, and only more good things are to come (and no, I still can't tell you what those things are, so please don't ask <img src="https://humanwhocodes.com/blog/wp-includes/images/smilies/icon_wink.gif" alt=";-)" class="wp-smiley" /> ).

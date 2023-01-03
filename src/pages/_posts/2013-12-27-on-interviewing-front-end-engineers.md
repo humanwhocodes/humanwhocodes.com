@@ -78,6 +78,6 @@ Unfortunately, there are still many companies who will apply the one-size-fits-a
   * [Chinese][4]
 
  [1]: http://css-tricks.com/interviewing-front-end-engineer-san-francisco/
- [2]: {{site.url}}/blog/2007/08/15/what-makes-a-good-front-end-engineer/
- [3]: {{site.url}}/blog/2010/01/05/interviewing-the-front-end-engineer/
+ [2]: https://humanwhocodes.com/blog/2007/08/15/what-makes-a-good-front-end-engineer/
+ [3]: https://humanwhocodes.com/blog/2010/01/05/interviewing-the-front-end-engineer/
  [4]: http://www.zfanw.com/blog/on-interviewing-front-end-engineers.html

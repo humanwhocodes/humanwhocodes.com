@@ -151,4 +151,4 @@ JavaScript has come a long way recently, but we still have a ways to go to get t
 
   1. [Experimenting with ECMAScript 6 proxies][1] by me (NCZOnline)
 
- [1]: {{site.url}}/blog/2011/09/15/experimenting-with-ecmascript-6-proxies/
+ [1]: https://humanwhocodes.com/blog/2011/09/15/experimenting-with-ecmascript-6-proxies/

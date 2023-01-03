@@ -9,9 +9,9 @@ tags:
   - localStorage
   - Performance
 ---
-Now a few weeks removed from a large amount of hand-ringing around the performance of `localStorage` in browsers, I've learned some more about why there was such a concern at Mozilla (which prompted Chris to write his blog post<sup>[1]</sup>). The post was met with skepticism because it lacked two key components: numbers and a comparison. The assertion was that `localStorage` is slow, but there was no data to back it up.
+Now a few weeks removed from a large amount of hand-ringing around the performance of `localStorage` in browsers, I've learned some more about why there was such a concern at Mozilla (which prompted Chris to write his blog post[^1]). The post was met with skepticism because it lacked two key components: numbers and a comparison. The assertion was that `localStorage` is slow, but there was no data to back it up.
 
-Wanting to get to the bottom of it, I<sup>[2]</sup> and John Allsopp<sup>[3]</sup> wrote blog posts trying to provide numbers around `localStorage`. John's post focused on quantifying the amount of time it takes to perform a single read and a single write, which gave us good initial numbers for these operations. My post focused on comparing `localStorage` reads and writes to cookie reads and writes from JavaScript. My theory was that cookies are the closest appromixation of `localStorage` due to the fact that its contents are stored on disk and are shared by all tabs pointing to the same origin. Both John and I concluded by saying that `localStorage` doesn't have an appreciably bad affect on performance either as an aggregate rating or in comparison to cookies. 
+Wanting to get to the bottom of it, I[^2] and John Allsopp[^3] wrote blog posts trying to provide numbers around `localStorage`. John's post focused on quantifying the amount of time it takes to perform a single read and a single write, which gave us good initial numbers for these operations. My post focused on comparing `localStorage` reads and writes to cookie reads and writes from JavaScript. My theory was that cookies are the closest appromixation of `localStorage` due to the fact that its contents are stored on disk and are shared by all tabs pointing to the same origin. Both John and I concluded by saying that `localStorage` doesn't have an appreciably bad affect on performance either as an aggregate rating or in comparison to cookies. 
 
 ## More details
 
@@ -45,7 +45,7 @@ This led Jonas to suggesting several alternatives APIs on Chris' original post. 
         storage.baz++;
     });
 
-Ignoring the name, the `getBetterLocalStorage()` function signals the browser that it's time to read everything into memory, so the `storage` object can be used as any other object. Once the callback function is finished executing, the changes would be written back to disk. Though I'm not ready to throw out `localStorage` completely, I do like the direction of this API. In fact, it closely follows a proposal I made for improving `localStorage` with expiration dates and encryption.<sup>[4]</sup>
+Ignoring the name, the `getBetterLocalStorage()` function signals the browser that it's time to read everything into memory, so the `storage` object can be used as any other object. Once the callback function is finished executing, the changes would be written back to disk. Though I'm not ready to throw out `localStorage` completely, I do like the direction of this API. In fact, it closely follows a proposal I made for improving `localStorage` with expiration dates and encryption.[^4]
 
 ## Conclusion
 
@@ -53,13 +53,12 @@ Whether or not `localStorage` is a performance issue on page load is still a que
 
 In the meantime, IndexedDB is definitely *not* a suitable replacement for `localStorage` in almost every case. IndexedDB could be used, as Jonas pointed out, to create a solution similar to the one he proposed. However, it's still a bit of overhead to write that out. My advice: don't worry too much about `localStorage` for now&#8230;but don't go storing 5MB of data in it either, just in case.
 
-
-  1. [There is no simple solution for localStorage][1] by Chris Heilmann
-  2. [In defense of localStorage][2] by Me
-  3. [localStorage, perhaps not so harmful][3] by John Allsopp
-  4. [Towards more secure client-side data storage][4] by Me
+[^1]: [There is no simple solution for localStorage][1] by Chris Heilmann
+[^2]: [In defense of localStorage][2] by Me
+[^3]: [localStorage, perhaps not so harmful][3] by John Allsopp
+[^4]: [Towards more secure client-side data storage][4] by Me
 
  [1]: http://hacks.mozilla.org/2012/03/there-is-no-simple-solution-for-local-storage/
- [2]: {{site.url}}/blog/2012/03/07/in-defense-of-localstorage/
+ [2]: https://humanwhocodes.com/blog/2012/03/07/in-defense-of-localstorage/
  [3]: http://www.webdirections.org/blog/localstorage-perhaps-not-so-harmful/
- [4]: {{site.url}}/blog/2010/04/13/towards-more-secure-client-side-data-storage/
+ [4]: https://humanwhocodes.com/blog/2010/04/13/towards-more-secure-client-side-data-storage/

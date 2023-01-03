@@ -116,7 +116,7 @@ Note that the namespace declarations are in the same format as they appear in th
 
 Internet Explorer does have XPath support, but it comes with several caveats. First is that XPath queries only work on XML documents, not on HTML documents and therefore can't be used on `document` to help find elements on the page. Second, the XPath implementation is very basic and allows only basic return types (nodes and `NodeSet` objects). Still, if you're dealing with XML data, XPath remains a fast and convenient way to find specific elements without walking the DOM manually.
 
- [1]: {{site.url}}/blog/2009/03/17/xpath-in-javascript-part-1/
- [2]: {{site.url}}/blog/2009/03/24/xpath-in-javascript-part-2/
+ [1]: https://humanwhocodes.com/blog/2009/03/17/xpath-in-javascript-part-1/
+ [2]: https://humanwhocodes.com/blog/2009/03/24/xpath-in-javascript-part-2/
  [3]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
  [4]: http://msdn.microsoft.com/en-us/library/ms766512(VS.85).aspx

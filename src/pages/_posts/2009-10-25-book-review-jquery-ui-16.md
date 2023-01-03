@@ -29,8 +29,8 @@ As with [<cite>Learning jQuery</cite>][3], [<cite>jQuery UI 1.6</cite>][1] is a 
 Note: If you're a tech book author or publisher and you'd like me to review a book, please [contact me][6]. If you provide me with a copy of the book, I'll be happy to review it.
 
  [1]: http://www.amazon.com/gp/product/1847195121?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847195121
- [2]: {{site.url}}/blog/2009/05/31/book-review-learning-jquery-13/
+ [2]: https://humanwhocodes.com/blog/2009/05/31/book-review-learning-jquery-13/
  [3]: http://www.amazon.com/gp/product/1847196705?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1847196705
  [4]: http://www.jquery.com
  [5]: http://jqueryui.com/
- [6]: {{site.url}}/contact/
+ [6]: https://humanwhocodes.com/contact/

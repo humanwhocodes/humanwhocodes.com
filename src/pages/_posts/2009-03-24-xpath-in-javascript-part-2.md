@@ -17,7 +17,7 @@ Every namespace URI is mapped to a specific prefix defined in the XML document w
     function resolver(prefix){
         switch(prefix){
             case "wrox": return "http://www.wrox.com/";
-            case "ncz": return "{{site.url}}/";
+            case "ncz": return "https://humanwhocodes.com/";
             default: return "http://www.yahoo.com/";
         }
     }
@@ -52,4 +52,4 @@ If you don't provide a namespace resolver when an XPath query is run against a d
 
 Once again, this information is valid for Firefox, Safari, Chrome, and Opera; Internet Explorer does not natively support DOM Level 3 XPath. It does remain an option in other browsers, though, for super fast DOM querying.
 
- [1]: {{site.url}}/blog/2009/03/17/xpath-in-javascript-part-1/
+ [1]: https://humanwhocodes.com/blog/2009/03/17/xpath-in-javascript-part-1/

@@ -118,4 +118,4 @@ The process of setting up SSL on an Amazon elastic load balancer isn't as straig
  [4]: http://publib.boulder.ibm.com/infocenter/wmqv6/v6r0/index.jsp?topic=%2Fcom.ibm.mq.csqzas.doc%2Fsy10600_.htm
  [5]: http://en.wikipedia.org/wiki/Root_certificate
  [6]: http://www.openssl.org/
- [7]: {{site.url}}/blog/2012/08/08/setting-up-apache-as-a-ssl-front-end-for-play/
+ [7]: https://humanwhocodes.com/blog/2012/08/08/setting-up-apache-as-a-ssl-front-end-for-play/

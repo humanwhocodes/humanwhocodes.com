@@ -108,11 +108,11 @@ This wraps up the &#8220;Speed up your JavaScript&#8221; series. I hope you've l
   * [Chinese (Simplified)][8][  
     ][8]
 
- [1]: {{site.url}}/blog/2009/01/13/speed-up-your-javascript-part-1/
- [2]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
- [3]: {{site.url}}/blog/2009/01/27/speed-up-your-javascript-part-3/
+ [1]: https://humanwhocodes.com/blog/2009/01/13/speed-up-your-javascript-part-1/
+ [2]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [3]: https://humanwhocodes.com/blog/2009/01/27/speed-up-your-javascript-part-3/
  [4]: http://dev.opera.com/articles/view/efficient-javascript/?page=3#reflow
- [5]: {{site.url}}/blog/2009/01/05/what-determines-that-a-script-is-long-running/
+ [5]: https://humanwhocodes.com/blog/2009/01/05/what-determines-that-a-script-is-long-running/
  [6]: http://video.yahoo.com/watch/568351/2820297
- [7]: {{site.url}}/contact/
+ [7]: https://humanwhocodes.com/contact/
  [8]: http://cuimingda.com/2009/02/speed-up-your-javascript-part-4.html

@@ -22,4 +22,4 @@ That's it! All the results will be output to the Test tab in Firebug. There are 
  [2]: http://ejohn.org/blog/fireunit/
  [3]: http://www.fireunit.org
  [4]: http://developer.yahoo.com/yui/yuitest/#running-tests
- [5]: {{site.url}}/downloads/yuitest-fireunit.zip
+ [5]: https://humanwhocodes.com/downloads/yuitest-fireunit.zip

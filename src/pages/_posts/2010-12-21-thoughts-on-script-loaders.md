@@ -103,7 +103,7 @@ I know this is a heated topic lately, so I'll ask everyone to please try and kee
  [4]: http://www.stevesouders.com/blog/2010/12/15/controljs-part-2/
  [5]: http://www.stevesouders.com/blog/2010/12/15/controljs-part-3/
  [6]: http://labjs.com
- [7]: {{site.url}}/blog/2009/12/29/feature-detection-is-not-browser-detection/
+ [7]: https://humanwhocodes.com/blog/2009/12/29/feature-detection-is-not-browser-detection/
  [8]: https://twitter.com/getify/status/26109887817
  [9]: http://blog.getify.com/2010/10/ff4-script-loaders-and-order-preservation/comment-page-1/#comment-748
  [10]: http://blog.getify.com/2010/10/ff4-script-loaders-and-order-preservation/

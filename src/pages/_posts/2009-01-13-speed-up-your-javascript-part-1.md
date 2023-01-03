@@ -78,6 +78,6 @@ The `chunk()` method presented here is just a starting point for how to deal wit
   * [Chinese (Simplified)][3][  
     ][3]
 
- [1]: {{site.url}}/blog/2009/01/05/what-determines-that-a-script-is-long-running/ "What determines that a script is long running?"
+ [1]: https://humanwhocodes.com/blog/2009/01/05/what-determines-that-a-script-is-long-running/ "What determines that a script is long running?"
  [2]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
  [3]: http://cuimingda.com/2009/01/speed-up-your-javascript-part-1.html

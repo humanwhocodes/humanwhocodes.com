@@ -87,5 +87,5 @@ Questions:
 Whereas the other quizzes might have made your eyes cross trying to trace scope changes and the like, I wanted this one to be as dead simple as possible. The point? JavaScript is complex enough when written simply. Try to answer the questions without running the code. Answers with complete explanations will follow soon.
 
  [1]: http://dmitry.baranovskiy.com/post/91403200
- [2]: {{site.url}}/blog/2010/01/26/answering-baranovskiys-javascript-quiz/
+ [2]: https://humanwhocodes.com/blog/2010/01/26/answering-baranovskiys-javascript-quiz/
  [3]: http://perfectionkills.com/javascript-quiz/

@@ -31,5 +31,5 @@ Several of the static methods can't be implemented using current technology, so 
 You can download the source of my static object library along with some examples of usage [here][2]. The library isn't recommended for production usage but may be useful if you want to play with the functionality to see what's coming down the road. If you'd like to learn more about the static object methods, please refer to this document: [Proposed ECMAScript 3.1 Static Object Functions: Use Cases and Rationale][3].
 
  [1]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
- [2]: {{site.url}}/downloads/es31object.zip
+ [2]: https://humanwhocodes.com/downloads/es31object.zip
  [3]: http://wiki.ecmascript.org/lib/exe/fetch.php?id=es3.1%3Aes3.1_proposal_working_draft&cache=cache&media=es3.1:rationale_for_es3_1_static_object_methodsaug26.pdf

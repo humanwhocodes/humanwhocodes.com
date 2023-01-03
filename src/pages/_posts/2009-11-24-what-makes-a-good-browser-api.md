@@ -84,8 +84,8 @@ You can, of course, use the `XMLHttpRequest` object can also be used for more co
 
 It's my assertion that native browser APIs should be mid-level, so that the common use case is easy to execute but there are enough extensions to allow for the less-common use cases. When APIs are too low-level, they take too long to propagate and become useful to the development community; when APIs are too high-level, people either take to them or ignore them because they're being forced in a particular direction. It seems like the newer APIs are leaning more towards low-level designs that will require other people to create useful abstractions before developers can actually use them. I'd like to put a stop to that. Make the common use case easy so people can start using the APIs right away and allow for extension. Mid-level APIs represent the best of both worlds.
 
- [1]: {{site.url}}/blog/2009/05/05/http-cookies-explained/
- [2]: {{site.url}}/blog/2009/05/12/cookies-and-security/
+ [1]: https://humanwhocodes.com/blog/2009/05/05/http-cookies-explained/
+ [2]: https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/
  [3]: http://elab.eserver.org/hfl0098.html
  [4]: http://developer.yahoo.com/yui/2/cookie
  [5]: http://developer.yahoo.com/yui/3/cookie

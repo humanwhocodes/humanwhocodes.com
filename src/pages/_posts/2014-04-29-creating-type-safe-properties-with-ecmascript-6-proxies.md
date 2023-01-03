@@ -72,4 +72,4 @@ Since proxies are transparent, the returned object has all of the same observabl
 
 By allowing you to get in the middle of assignment operations, proxies enable you to intercept the value and validate it appropriately. The examples in this post use the simple type returned by `typeof` to determine the correct type for a property, but you could just as easily add custom validation. The important takeaway is how proxies enable you to build guarantees into your objects without affecting normal functionality. The ability to intercept values and throw errors when they are incorrect can greatly reduce errors based one assigning the wrong type of data to a property.
 
- [1]: {{site.url}}/blog/2014/04/22/creating-defensive-objects-with-es6-proxies/
+ [1]: https://humanwhocodes.com/blog/2014/04/22/creating-defensive-objects-with-es6-proxies/

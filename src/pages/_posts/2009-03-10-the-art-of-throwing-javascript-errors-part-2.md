@@ -83,4 +83,4 @@ The only caveat to this approach is that Internet Explorer prior to version 8 wo
 
 If you're always catching any errors you throw, then IE's slight stupidity shouldn't matter all that much. The benefits from such an approach are huge in a system with proper error handling. This approach gives you much more flexibility and information for determining the correct course of action for a given error.
 
- [1]: {{site.url}}/blog/2009/03/03/the-art-of-throwing-javascript-errors/
+ [1]: https://humanwhocodes.com/blog/2009/03/03/the-art-of-throwing-javascript-errors/

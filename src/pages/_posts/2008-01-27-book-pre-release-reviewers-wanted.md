@@ -15,4 +15,4 @@ What this means is that I'm looking for around 5 people who *already know JavaSc
 
 I'm really excited about this book, I think it's already 300% better than the first edition. The topics being covered are quite advanced, including in-depth looks at closures, prototypes, and memory management as well as covering all three DOM levels, HTML 5, and JavaScript 2.0.
 
-If you're interested in being a reviewer, please <a rel="internal" href="{{site.url}}/contact">contact me</a> and let me know why you think you would be a good reviewer. Even though I can't offer to pay anyone for being a reviewer, I can promise a free copy of the book when it comes out as well as a &#8220;thank you&#8221; in the book. Happy reading!
+If you're interested in being a reviewer, please <a rel="internal" href="https://humanwhocodes.com/contact">contact me</a> and let me know why you think you would be a good reviewer. Even though I can't offer to pay anyone for being a reviewer, I can promise a free copy of the book when it comes out as well as a &#8220;thank you&#8221; in the book. Happy reading!

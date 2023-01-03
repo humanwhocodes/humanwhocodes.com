@@ -14,7 +14,7 @@ tags:
   - JavaScript
   - Opera
 ---
-In my <a title="Getting element dimensions" rel="internal" href="{{site.url}}/archive/2008/2/550">previous post</a> I discussed the tragedy of the `getBoundingClientRect()` method and its different implementations. Reader Jose Jeria pointed out that Opera 9.5 has implemented the method as well and has used the Firefox method of originating at (0,0). Distraught over the need to use browser detection for a cross-browser solution, I started playing around a bit and came up with a solution that works in Internet Explorer 7, Firefox 3, and Opera 9.5.
+In my <a title="Getting element dimensions" rel="internal" href="https://humanwhocodes.com/archive/2008/2/550">previous post</a> I discussed the tragedy of the `getBoundingClientRect()` method and its different implementations. Reader Jose Jeria pointed out that Opera 9.5 has implemented the method as well and has used the Firefox method of originating at (0,0). Distraught over the need to use browser detection for a cross-browser solution, I started playing around a bit and came up with a solution that works in Internet Explorer 7, Firefox 3, and Opera 9.5.
 
 The solution hinges on the fact that IE7 reports the position of `document.documentElement` at (2,2), whereas the other browsers report it at the expected (0,0). In that case, you can check these coordinates and figure out what to do. For example:
 

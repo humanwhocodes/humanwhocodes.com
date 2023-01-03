@@ -38,8 +38,8 @@ We're not completely out of the woods yet, but with changes to HTML5 and all bro
 
 **Update (14-Aug-2010):** Fixed typo.
 
- [1]: {{site.url}}/blog/2009/11/30/empty-image-src-can-destroy-your-site/
- [2]: {{site.url}}/blog/2010/03/16/empty-string-urls-in-html-a-followup/
+ [1]: https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/
+ [2]: https://humanwhocodes.com/blog/2010/03/16/empty-string-urls-in-html-a-followup/
  [3]: https://bugzilla.mozilla.org/show_bug.cgi?id=531327
  [4]: https://bugs.webkit.org/show_bug.cgi?id=30303
  [5]: http://code.google.com/p/chromium/issues/detail?id=38144

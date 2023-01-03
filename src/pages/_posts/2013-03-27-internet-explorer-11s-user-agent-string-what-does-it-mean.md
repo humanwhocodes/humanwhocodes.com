@@ -49,5 +49,5 @@ Is it wise for Internet Explorer 11 to try to hide its identity? I'm sure in som
 
   1. [IE11 to appear as Firefox to avoid legacy IE CSS][2] (Neowin)
 
- [1]: {{site.url}}/blog/2010/01/12/history-of-the-user-agent-string/
+ [1]: https://humanwhocodes.com/blog/2010/01/12/history-of-the-user-agent-string/
  [2]: http://www.neowin.net/news/ie11-to-appear-as-firefox-to-avoid-legacy-ie-css

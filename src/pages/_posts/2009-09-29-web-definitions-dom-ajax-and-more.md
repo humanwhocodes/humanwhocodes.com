@@ -53,8 +53,8 @@ Perhaps the most misunderstood term in web development is Ajax.Â  In the [orig
 
 The `XMLHttpRequest` object, often called the XHR object, is the most popular mechanism for achieving Ajax communication. It is just one transport mechanism for Ajax, however, and is not equivalent. Ajax is the technique, XHR is the tool.
 
- [1]: {{site.url}}/blog/2008/05/04/the-communication-hierarchy/
- [2]: {{site.url}}/blog/2008/11/23/books-about-social-interaction/
+ [1]: https://humanwhocodes.com/blog/2008/05/04/the-communication-hierarchy/
+ [2]: https://humanwhocodes.com/blog/2008/11/23/books-about-social-interaction/
  [3]: http://www.ecma-international.org/publications/standards/ECMA-262.HTM
  [4]: http://www.w3.org/TR/REC-DOM-Level-1/
  [5]: http://www.w3.org/TR/DOM-Level-2-Core/

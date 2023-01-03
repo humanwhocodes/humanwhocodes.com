@@ -98,7 +98,7 @@ The bottom line: always be on the look out for recursion in your JavaScript. Mem
   * [Chinese (Simplified)][4][  
     ][4]
 
- [1]: {{site.url}}/blog/2009/01/20/speed-up-your-javascript-part-2/
+ [1]: https://humanwhocodes.com/blog/2009/01/20/speed-up-your-javascript-part-2/
  [2]: http://penguin.ewu.edu/~trolfe/NaturalMerge/NatMerge.html
- [3]: {{site.url}}/blog/2009/01/05/what-determines-that-a-script-is-long-running/ "What determines that a script is long running?"
+ [3]: https://humanwhocodes.com/blog/2009/01/05/what-determines-that-a-script-is-long-running/ "What determines that a script is long running?"
  [4]: http://cuimingda.com/2009/02/speed-up-your-javascript-part-3.html

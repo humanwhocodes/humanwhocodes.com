@@ -58,7 +58,7 @@ The [IdleTimer on YUI Gallery][5] page has all of the information you need to ge
  [1]: http://blog.davglass.com/
  [2]: http://www.yuilibrary.com/gallery
  [3]: http://yuilibrary.com/yuiconf2009/
- [4]: {{site.url}}/blog/2009/06/02/detecting-if-the-user-is-idle-with-javascript-and-yui-3/
+ [4]: https://humanwhocodes.com/blog/2009/06/02/detecting-if-the-user-is-idle-with-javascript-and-yui-3/
  [5]: http://yuilibrary.com/gallery/show/idletimer
  [6]: http://www.github.com/yui/yui3-gallery/
  [7]: http://www.github.com/nzakas/jstools/\

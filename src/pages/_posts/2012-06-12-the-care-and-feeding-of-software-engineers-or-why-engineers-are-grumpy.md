@@ -234,7 +234,7 @@ We software engineers are an interesting bunch. There's a definite personality t
   * [Chinese][5]
 
  [1]: https://library.gv.com/how-designers-and-engineers-can-play-nice-and-still-run-with-scissors-8df20e65c2c1
- [2]: {{site.url}}/blog/2012/05/08/working-with-files-in-javascript-part-1/
+ [2]: https://humanwhocodes.com/blog/2012/05/08/working-with-files-in-javascript-part-1/
  [3]: http://habrahabr.ru/post/146169/
  [4]: http://blog.mandraxe.info/ingenieurs-grincheux.html
  [5]: http://www.cnblogs.com/huntbao/archive/2012/06/30/why-engineers-are-grumpy.html

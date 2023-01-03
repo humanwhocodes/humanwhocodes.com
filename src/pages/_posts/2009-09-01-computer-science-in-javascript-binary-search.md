@@ -73,6 +73,6 @@ Doing a binary search on a sorted array is, on average, more efficient than a li
 
 The complete source code for this is available via my GitHub project, [Computer Science in JavaScript][3].
 
- [1]: {{site.url}}/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
- [2]: {{site.url}}/blog/2009/06/16/computer-science-in-javascript-binary-search-tree-part-2/
+ [1]: https://humanwhocodes.com/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
+ [2]: https://humanwhocodes.com/blog/2009/06/16/computer-science-in-javascript-binary-search-tree-part-2/
  [3]: http://github.com/nzakas/computer-science-in-javascript

@@ -81,7 +81,7 @@ CSRF attacks can be particularly tricky to track down once initiated, so prevent
 
 With all of the security issues surrounding cookies, is it safe to use them? The answer is yes so long as you take the proper precautions to protect your users and systems from XSS and CSRF attacks. Input validation alone decreases the number of attacks that can be executed on your site, and it's a very low-cost addition that pays off in big ways. There are a lot of big companies that rely on cookies for identifying their users and do so in a safe way. The most important thing you can do when using cookies is to stay informed about security issues and the latest techniques for preventing attacks.
 
- [1]: {{site.url}}/blog/2009/05/05/http-cookies-explained/
+ [1]: https://humanwhocodes.com/blog/2009/05/05/http-cookies-explained/
  [2]: http://en.wikipedia.org/wiki/Packet_sniffing
  [3]: http://en.wikipedia.org/wiki/Session_hijacking
  [4]: http://developer.yahoo.com/yui/3/cssbase/

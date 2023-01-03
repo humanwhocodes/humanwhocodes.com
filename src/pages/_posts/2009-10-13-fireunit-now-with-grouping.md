@@ -200,6 +200,6 @@ FireUnit is open source and can be forked from [John's GitHub repository][6]. I'
  [2]: http://developer.yahoo.com/yui/yuitest/
  [3]: http://developer.yahoo.com/yui/3/test/
  [4]: http://ejohn.org/blog/fireunit/
- [5]: {{site.url}}/blog/2008/12/19/fireunit-extension-for-yui-test/
+ [5]: https://humanwhocodes.com/blog/2008/12/19/fireunit-extension-for-yui-test/
  [6]: http://github.com/jeresig/fireunit
  [7]: http://github.com/nzakas/jstools/tree/master/yuitest-fireunit/

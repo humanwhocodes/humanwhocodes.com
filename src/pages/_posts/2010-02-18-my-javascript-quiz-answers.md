@@ -94,4 +94,4 @@ I hope you've enjoyed this little JavaScript quiz and hopefully learned a thing 
 
 **Update (18-Feb-2010):** Fixed typo in answer #1.
 
- [1]: {{site.url}}/blog/2010/02/16/my-javascript-quiz/
+ [1]: https://humanwhocodes.com/blog/2010/02/16/my-javascript-quiz/

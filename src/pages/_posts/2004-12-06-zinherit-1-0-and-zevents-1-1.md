@@ -13,4 +13,4 @@ Following up on my promise to provide more useful JavaScript on this site, I'd l
 
 I also updated zEvents to allow for usage by ECMAScript Edition 1 implementations (the previous one assumed ECMAScript Edition 3).
 
-Both libraries, licensed under the <acronym title="Lesser General Public License">LGPL</acronym>, are currently available in <a rel="internal" href="{{site.url}}/downloads/">Downloads</a>.
+Both libraries, licensed under the <acronym title="Lesser General Public License">LGPL</acronym>, are currently available in <a rel="internal" href="https://humanwhocodes.com/downloads/">Downloads</a>.

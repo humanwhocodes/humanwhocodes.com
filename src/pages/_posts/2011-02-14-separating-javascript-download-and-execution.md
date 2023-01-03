@@ -126,7 +126,7 @@ The conversation is still ongoing on the WHAT-WG mailing list. As I've said on t
   5. [Gmail for Mobile HTML5 Series: Reducing Startup Latency][5], by Bikin Chiu
   6. [Proposal for Delayed Script Execution v2.1][6], by Nicholas C. Zakas
 
- [1]: {{site.url}}/blog/2010/12/21/thoughts-on-script-loaders/
+ [1]: https://humanwhocodes.com/blog/2010/12/21/thoughts-on-script-loaders/
  [2]: https://docs.google.com/document/d/1s8_iRr1TcwcDtShgfuGThapwZtVXItymw5zc16D0Pz8/edit?hl=en&authkey=CNbDlo8J
  [3]: http://lists.whatwg.org/htdig.cgi/whatwg-whatwg.org/2011-February/030161.html
  [4]: http://www.phpied.com/preload-cssjavascript-without-execution/

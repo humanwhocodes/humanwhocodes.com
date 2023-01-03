@@ -359,8 +359,8 @@ One thing I cannot say enough is that base64 encoding is *not* an encryption alg
 
 You can download the source code from my GitHub project, [Computer Science in JavaScript][6]. If you'd like to use it in your [YUI 3][7] code, check out the [Base64 utility][8] on YUI Gallery.
 
- [1]: {{site.url}}/blog/2009/10/27/data-uris-explained/
- [2]: {{site.url}}/blog/2009/11/03/automatic-data-uri-embedding-in-css-files/
+ [1]: https://humanwhocodes.com/blog/2009/10/27/data-uris-explained/
+ [2]: https://humanwhocodes.com/blog/2009/11/03/automatic-data-uri-embedding-in-css-files/
  [3]: http://en.wikipedia.org/wiki/Base64
  [4]: http://tools.ietf.org/html/rfc3548
  [5]: http://www.ravelrumba.com/blog/convert-css-images-to-data-uris-automatically-with-cssembed/

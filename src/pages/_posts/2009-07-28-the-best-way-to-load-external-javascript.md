@@ -85,7 +85,7 @@ Though there's been a lot of research on ways to load JavaScript without blockin
 
 **Update (1-Aug-2009):** Added section on script placement to clarify why I do it in `<body>` instead of `<head>`.
 
- [1]: {{site.url}}/blog/2009/06/23/loading-javascript-without-blocking/
+ [1]: https://humanwhocodes.com/blog/2009/06/23/loading-javascript-without-blocking/
  [2]: http://stevesouders.com/hpws/js-blocking.php
  [3]: http://www.stevesouders.com/blog/2009/04/27/loading-scripts-without-blocking/
  [4]: http://getsprockets.org/

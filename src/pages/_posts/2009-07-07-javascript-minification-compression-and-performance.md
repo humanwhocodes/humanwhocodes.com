@@ -147,6 +147,6 @@ As with everything I present, I'd never be so bold as to say you should follow t
  [11]: http://www.yuiblog.com/blog/2008/02/06/iphone-cacheability/
  [12]: http://wonko.com/
  [13]: http://www.yuiblog.com/blog/2008/08/28/ysearch-for-iphone/
- [14]: {{site.url}}/blog/2009/02/10/javascript-variable-performance/
- [15]: {{site.url}}/experiments/javascript/performance/data-access/
+ [14]: https://humanwhocodes.com/blog/2009/02/10/javascript-variable-performance/
+ [15]: https://humanwhocodes.com/experiments/javascript/performance/data-access/
  [16]: http://www.slideshare.net/nzakas/maintainable-javascript-1071179/

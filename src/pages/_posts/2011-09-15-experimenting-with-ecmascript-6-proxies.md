@@ -208,4 +208,4 @@ A few caveats as you start playing with proxies. First, it's only currently supp
 
 **Update (2011-Sept-18)**: Fixed escaping issue in code.
 
- [1]: {{site.url}}/blog/2009/02/17/mozilla-javascript-extension-nosuchmethod/
+ [1]: https://humanwhocodes.com/blog/2009/02/17/mozilla-javascript-extension-nosuchmethod/

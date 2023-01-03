@@ -84,7 +84,7 @@ Things sometimes seem to move slowly on the Internet, but ultimately I believe t
   * Ian Hickson for making the adjustments in HTML5 so that this issue can be put to rest.
   * Stoyan Stefanov and the YSlow team for adding empty-string URL detection to YSlow.
 
- [1]: {{site.url}}/blog/2009/11/30/empty-image-src-can-destroy-your-site/
+ [1]: https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/
  [2]: http://tools.ietf.org/html/rfc3986
  [3]: http://lists.whatwg.org/pipermail/whatwg-whatwg.org/2009-December/024357.html
  [4]: http://html5.org/tools/web-apps-tracker?from=4833&to=4834

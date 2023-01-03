@@ -244,7 +244,7 @@ I really liked this quiz because of its high level of difficulty. Hopefully now 
  [1]: http://javascript.ru/person/Dmitry-A.-Soshnikov "Ð˜Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ñ Ð¾ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ðµ."
  [2]: http://dmitrysoshnikov.com/ecmascript/the-quiz/
  [3]: http://javascript.ru/blog/Dmitry-A.-Soshnikov/The-quiz#comment-3456
- [4]: {{site.url}}/blog/2010/01/26/answering-baranovskiys-javascript-quiz/
+ [4]: https://humanwhocodes.com/blog/2010/01/26/answering-baranovskiys-javascript-quiz/
  [5]: http://www.jslint.com
  [6]: http://www.ecma-international.org/publications/standards/Ecma-262.HTM
  [7]: http://www.ecma-international.org/publications/standards/Ecma-357.htm

@@ -91,7 +91,7 @@ Data URIs are definitely exciting as a means of improving web site performance.Ã
 
 **Update (27-June-2010): **Updated links to DataURI source on GitHub (now part of CSSEmbed repository).
 
- [1]: {{site.url}}/blog/2009/10/27/data-uris-explained/
+ [1]: https://humanwhocodes.com/blog/2009/10/27/data-uris-explained/
  [2]: http://github.com/nzakas/cssembed
  [3]: http://github.com/nzakas/cssembed/downloads/
  [4]: http://wiki.github.com/nzakas/cssembed

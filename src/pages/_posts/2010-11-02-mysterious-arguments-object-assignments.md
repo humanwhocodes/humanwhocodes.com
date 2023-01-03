@@ -66,4 +66,4 @@ The last line of this example outputs 20 in all browsers. Since I'm now passing 
 Specifications are difficult to understand and even more difficult to implement. This was just a subtle reminder that there are dark corners of JavaScript where dragons lie. It's fun to poke the dragons from time to time and learn exactly what they'll do. Sometimes they'll burn you, but you'll learn either way.
 
  [1]: https://bugzilla.mozilla.org/show_bug.cgi?id=608543
- [2]: {{site.url}}/blog/2010/01/26/answering-baranovskiys-javascript-quiz/
+ [2]: https://humanwhocodes.com/blog/2010/01/26/answering-baranovskiys-javascript-quiz/

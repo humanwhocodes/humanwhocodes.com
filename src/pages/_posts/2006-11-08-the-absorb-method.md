@@ -8,7 +8,7 @@ tags:
   - JavaScript
   - Objects
 ---
-After reviewing the comments from everyone on the <a title="The absorb() function" rel="internal" href="{{site.url}}/archive/2006/11/388">previous post</a>, I've come up with the next generation of the `absorb()` function: the `absorb()` method. It occurred to me that this function really was begging to be a method of `Object`. So, without further adieu:
+After reviewing the comments from everyone on the <a title="The absorb() function" rel="internal" href="https://humanwhocodes.com/archive/2006/11/388">previous post</a>, I've come up with the next generation of the `absorb()` function: the `absorb()` method. It occurred to me that this function really was begging to be a method of `Object`. So, without further adieu:
 
 <pre>Object.absorb = function (destination /*:Object*/, source /*:Object*/, overwrite /*:Boolean*/) /*:Object*/ {
     for (var key in source) {

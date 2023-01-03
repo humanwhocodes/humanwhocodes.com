@@ -196,4 +196,4 @@ Dmitry put together an interesting quiz from which you can actually learn some o
 
  [1]: http://twitter.com/slicknet/status/8057003813
  [2]: http://dmitry.baranovskiy.com/post/91403200
- [3]: {{site.url}}/blog/2010/01/05/interviewing-the-front-end-engineer/
+ [3]: https://humanwhocodes.com/blog/2010/01/05/interviewing-the-front-end-engineer/

@@ -100,7 +100,7 @@ Reading data from a file using a `FileReader` is pretty simple. If you know how 
   2. [Typed Array Specification][3]
   3. [XMLHttpRequest Level 2][4]
 
- [1]: {{site.url}}/blog/2012/05/08/working-with-files-in-javascript-part-1/
+ [1]: https://humanwhocodes.com/blog/2012/05/08/working-with-files-in-javascript-part-1/
  [2]: https://developer.mozilla.org/en/JavaScript_typed_arrays/ArrayBuffer
  [3]: http://www.khronos.org/registry/typedarray/specs/latest/
  [4]: http://www.w3.org/TR/XMLHttpRequest/

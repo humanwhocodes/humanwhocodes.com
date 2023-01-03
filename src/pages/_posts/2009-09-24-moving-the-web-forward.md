@@ -81,10 +81,10 @@ Push the Web forward by being open to all of the possibilities and afraid of non
  [12]: http://www.mozilla.com/en-US/about/whatismozilla.html
  [13]: http://dbaron.org/
  [14]: http://en.wikipedia.org/wiki/Brendan_Eich
- [15]: {{site.url}}/blog/2009/07/21/introduction-to-sessionstorage/
+ [15]: https://humanwhocodes.com/blog/2009/07/21/introduction-to-sessionstorage/
  [16]: http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html
  [17]: http://www.w3.org/TR/2009/WD-webstorage-20090910/
  [18]: http://www.w3.org/TR/workers/
- [19]: {{site.url}}/blog/2009/08/18/experimenting-with-web-workers/
+ [19]: https://humanwhocodes.com/blog/2009/08/18/experimenting-with-web-workers/
  [20]: http://www.w3.org/TR/2009/WD-webdatabase-20090910/
  [21]: http://www.whatwg.org/specs/web-apps/current-work/#the-canvas-element

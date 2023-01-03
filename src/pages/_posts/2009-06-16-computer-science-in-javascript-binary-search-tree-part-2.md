@@ -303,7 +303,7 @@ A note about this implementation: always replacing nodes with the in-order prede
 
 The full source code for this binary search tree implementation is available at my [Computer Science in JavaScript GitHub project][2]. For an alternate implementation, you can also check out [Isaac Schlueter][3]&#8216;s [GitHub fork][4].
 
- [1]: {{site.url}}/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
+ [1]: https://humanwhocodes.com/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/
  [2]: http://github.com/nzakas/computer-science-in-javascript/
  [3]: http://www.foohack.com/
  [4]: http://github.com/isaacs/computer-science-in-javascript/

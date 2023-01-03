@@ -10,7 +10,7 @@ tags:
 ---
 For years, I've heard that local variables in JavaScript are faster than global variables when used inside of functions. Logically, this always made sense to me: the longer the scope chain the longer it would take to look up the chain and find a particular variable. If the variable was local, however, the search would be very short. I accepted this to be true and preached it like everyone else. However, now I'm not so sure.
 
-I wrote up a very quick <a title="Which is faster? Local or global?" rel="internal" href="{{site.url}}/experiments/javascript/local_vs_global.htm">experiment</a> to see if this were the case. I tested on Safari 3 (Windows), Opera 9.02, Internet Explorer 7, and Firefox 2.0.0.6. The results are interesting and I'm still trying to understand them:
+I wrote up a very quick <a title="Which is faster? Local or global?" rel="internal" href="https://humanwhocodes.com/experiments/javascript/local_vs_global.htm">experiment</a> to see if this were the case. I tested on Safari 3 (Windows), Opera 9.02, Internet Explorer 7, and Firefox 2.0.0.6. The results are interesting and I'm still trying to understand them:
 
   * In Safari 3 (Windows), using local variables typically takes longer than using globals. However, there is a decent amount of time when the two are exactly equal.
   * In Opera 9.02, using globals routinely show up as slower than locals. There are, though, some instances when the two are equal and, every so often, an instance when globals are faster than locals (though this is clearly the least likely to occur).
