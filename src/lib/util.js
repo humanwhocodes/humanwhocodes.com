@@ -9,6 +9,8 @@
 //-----------------------------------------------------------------------------
 
 import path from "path";
+import site from "../data/config.yml";
+import commentThreads from "../data/comments.json";
 
 //-----------------------------------------------------------------------------
 // Helpers
@@ -53,6 +55,11 @@ function formatJekyllPosts(posts, type) {
         if (newPost.frontmatter.updated) {
             newPost.frontmatter.updated = new Date(newPost.frontmatter.updated);
         }
+
+        // check for comments
+        const commentThread = commentThreads[new URL(url, site.url).href]
+        newPost.comments = commentThread ? commentThread.comments : null;
+
         return newPost;
     }).reverse();
 }

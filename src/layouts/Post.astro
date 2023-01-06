@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import MailingListForm from "../components/MailingListForm.astro";
 import PostTags from "../components/PostTags.astro";
+import Comments from "../components/Comments.astro";
 
 const { post } = Astro.props;
 const baseUrl = post.url.split("/")[1];
@@ -38,6 +39,7 @@ const baseUrl = post.url.split("/")[1];
         }
 
 		<slot />
+        <Comments comments={post.comments}/>
     </section>
 </article>
 <MailingListForm />

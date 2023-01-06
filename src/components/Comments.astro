@@ -1,0 +1,38 @@
+---
+const {
+    comments
+} = Astro.props;
+---
+{comments && (
+    <h2>Comments</h2>
+    <ol class="block-list">
+        {comments.map(comment => (
+            <li class="comment content-border-top">
+                <div class="author smaller-font margin-top">
+                    <div>
+                        <a href={comment.author.url} target="_blank" rel="nofollow noopener"><img src={comment.author.avatar.permalink} alt={comment.author.name} loading="lazy" width="60"></a>
+                    </div>
+                    <div><a href={comment.author.url} target="_blank" rel="nofollow noopener">{comment.author.name}</a></div>
+                    <div>
+                        <time datetime={ new Date(comment.createdAt).toUTCString() }>{
+                        new Date(comment.createdAt).toLocaleDateString('en-us', {
+                            year: "numeric",
+                            month:"long",
+                            day: "numeric"
+                        }) }</time>    
+                    </div>
+                </div>
+                <div class="message first-child-no-margin-top margin-top" set:html={comment.message}></div>
+            </li>
+        ))}
+    </ol>  
+)}
+
+<style>
+
+.comment {
+    display: flex;
+    gap: 1em;
+}
+
+</style>

@@ -337,6 +337,11 @@ tbody tr:nth-child(odd) {
     margin-bottom: var(--gutter);
 }
 
+/* comments special */
+.first-child-no-margin-top > :first-child {
+    margin-top: 0;
+}
+
 /* Apply standard padding to block */
 .gutters {
     padding: var(--gutter);
@@ -511,9 +516,14 @@ tbody tr:nth-child(odd) {
     border-bottom: 1px dotted var(--dark-gray);
 }
 
-/* Add borders to top */
+/* Add borders to bottom */
 .content-border-bottom {
     border-bottom: var(--content-item-border);
+}
+
+/* Add borders to top */
+.content-border-top {
+    border-top: var(--content-item-border);
 }
 
 /* Generic content item border */
