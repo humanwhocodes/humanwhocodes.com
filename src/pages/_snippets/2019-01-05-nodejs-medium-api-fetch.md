@@ -37,7 +37,7 @@ const response = await fetch(MEDIUM_POST_URL, {
         publishStatus: "draft", // or "public" to immediately publish
 
         // optional: the canonical URL if posted elsewhere first
-        canonicalUrl: "http://example.com/blog/1"
+        canonicalUrl: "https://example.com/blog/1"
     })
 });
 

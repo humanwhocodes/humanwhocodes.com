@@ -11,7 +11,7 @@ tags:
   - Automation
 ---
 
-[Jenkins](http://jenkins.io) is a fantastic continuous integration tool that I've used on a variety of projects. One of its problems, however, is that sometimes authentication can get messed up (frequently via an authentication plugin) and you can end up locked out of the web interface. As long as you have access the Jenkins host, though, it's easy to regain access.
+[Jenkins](https://jenkins.io) is a fantastic continuous integration tool that I've used on a variety of projects. One of its problems, however, is that sometimes authentication can get messed up (frequently via an authentication plugin) and you can end up locked out of the web interface. As long as you have access the Jenkins host, though, it's easy to regain access.
 
 First, SSH into your host with an account that has `sudo` access.
 

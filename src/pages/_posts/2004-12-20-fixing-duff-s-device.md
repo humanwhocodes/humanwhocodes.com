@@ -10,7 +10,7 @@ tags:
   - JavaScript
   - Programming
 ---
-While researching for my book, I came across <a title="Duff's Device" rel="external" href="http://home.earthlink.net/~kendrasg/info/js_opt/jsOptMain.html#duffsdevice">Jeff Greenburg's JavaScript port</a> of <a title="Tom Duff on Duff's Device" rel="external" href="http://www.lysator.liu.se/c/duffs-device.html">Duff's Device</a>, a generic way to unroll loops for optimization. Jeff's original algorithm looks like this:
+While researching for my book, I came across <a title="Duff's Device" rel="external" href="https://home.earthlink.net/~kendrasg/info/js_opt/jsOptMain.html#duffsdevice">Jeff Greenburg's JavaScript port</a> of <a title="Tom Duff on Duff's Device" rel="external" href="https://www.lysator.liu.se/c/duffs-device.html">Duff's Device</a>, a generic way to unroll loops for optimization. Jeff's original algorithm looks like this:
 
 <pre>var iLoopCount = iIterations / 8; 
 var iTestValue = iIterations % 8; 

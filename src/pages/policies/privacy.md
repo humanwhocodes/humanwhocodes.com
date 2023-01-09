@@ -61,7 +61,7 @@ We do not share information with or sell information to third parties for their 
 
 ### 6. Cookies and Other Technologies
 
-We collect information about users over time on the Platform by using several common types of cookies and other tracking technologies including web beacons, pixels, and flash cookies.  We also have third parties that collect information in this way on our behalf and for their own purposes.  Cookies are small files that download when you access certain websites.  For more information about cookies visit: http://www.allaboutcookies.org/.  Web beacons, pixels, and other tracking technologies operate independent of cookies.  
+We collect information about users over time on the Platform by using several common types of cookies and other tracking technologies including web beacons, pixels, and flash cookies.  We also have third parties that collect information in this way on our behalf and for their own purposes.  Cookies are small files that download when you access certain websites.  For more information about cookies visit: https://www.allaboutcookies.org/.  Web beacons, pixels, and other tracking technologies operate independent of cookies.  
 
 To assist us with analyzing our website traffic through cookies and similar technologies, we use analytics services such as Google Analytics.  For more information on Google Analytics' processing of your information, please see ["How Google uses data when you use our partners' Platforms or apps."][gac]  You can opt out of Google Analytics by installing [Google's opt-out browser add-on][gaoptout].
 
