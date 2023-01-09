@@ -48,9 +48,9 @@ Another thing that I like about Leanpub is the ability to let the customer say w
 
 Since I'm publishing this on my own, I've set up a [mailing list][6] to gather feedback. You can actually use the mailing list for feedback on any of my books, but this is the only way to submit feedback for the ebook. You can also let me know if you like how this project turned out or any suggestions for making it better. I'm really looking forward to hearing your feedback. If this works out, I may do more ebooks in the future.
 
- [1]: nczonline.net/consulting/principles-of-object-oriented-programming-in-javascript/
- [2]: http://katemats.com
- [3]: http://leanpub.com/oopinjavascript
- [4]: http://leanpub.com
- [5]: http://codylindley.com/
- [6]: http://groups.google.com/group/zakasbooks/
+ [1]: https://humanwhocodes.com/consulting/principles-of-object-oriented-programming-in-javascript/
+ [2]: https://katemats.com
+ [3]: https://leanpub.com/oopinjavascript
+ [4]: https://leanpub.com
+ [5]: https://codylindley.com/
+ [6]: https://groups.google.com/group/zakasbooks/

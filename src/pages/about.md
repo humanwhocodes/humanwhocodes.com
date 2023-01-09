@@ -14,7 +14,7 @@ I started working on web applications in 2000 and instantly fell in love. Since 
 
 While I've worked at many companies, many know me from my nearly five years at Yahoo, where I was the front-end tech lead for the Yahoo homepage. At that time, the Yahoo homepage was the third-most visited web page in the world, and a lot of my approach to web development arose from my experience during that time. At one point I was responsible for keeping 22 developers in four countries productive and aligned while we pushed out a total rewrite of a very high-traffic page. During that time, I also worked on My Yahoo and contributed to the Yahoo User Interface (YUI) library, a now-defunct JavaScript library that was quite popular during its reign.
 
-Later, I joined Box to help the company scale its aging front-end architecture. Developers were having a lot of trouble writing maintainable code and were scared to touch old code for fear of breaking something unrelated. As part of the cleanup effort, I led a team that created [T3](http://t3js.org), a small JavaScript application framework aimed to enforce better coding structures and loose coupling in the code base. We saw great improvements when we introduced T3 into the codebase and ended up with better quality code that was more easily testable and less fragile.
+Later, I joined Box to help the company scale its aging front-end architecture. Developers were having a lot of trouble writing maintainable code and were scared to touch old code for fear of breaking something unrelated. As part of the cleanup effort, I led a team that created [T3](https://t3js.org), a small JavaScript application framework aimed to enforce better coding structures and loose coupling in the code base. We saw great improvements when we introduced T3 into the codebase and ended up with better quality code that was more easily testable and less fragile.
 
 ### Writing
 
@@ -59,34 +59,34 @@ I generally don't respond to correspondence from recruiters, especially if they'
   * LinkedIn: [Resume][31]
   * GitHub: [Projects][32]
 
- [1]: http://www.twitter.com/slicknet
- [2]: http://www.yahoo.com/
- [3]: http://www.yuilibrary.com/
- [4]: http://developer.yahoo.com/yui/cookie/
- [5]: http://developer.yahoo.com/yui/profiler/
- [6]: http://developer.yahoo.com/yui/yuitest/
- [7]: http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680?tag=nczonline-20
- [8]: http://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
- [9]: http://www.amazon.com/gp/product/059680279X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=059680279X
- [10]: http://www.amazon.com/gp/product/0470109491?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0470109491
- [11]: http://www.amazon.com/gp/product/0596522304?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0596522304
- [12]: http://alistapart.com
- [13]: http://www.webreference.com/
- [14]: http://www.sitepoint.com/
- [15]: http://www.yuiblog.com/
- [16]: http://www.linkedin.com/
- [17]: http://www.google.com/
- [18]: http://www.netflix.com
- [19]: http://www.nasa.gov/
- [20]: http://paypal.com
- [21]: http://www.ajaxexperience.com/
- [22]: http://www.therichwebexperience.com/
- [23]: http://conferences.oreilly.com/velocity
- [24]: http://html5.org/tools/web-apps-tracker?from=4833&to=4834
+ [1]: https://www.twitter.com/slicknet
+ [2]: https://www.yahoo.com/
+ [3]: https://www.yuilibrary.com/
+ [4]: https://developer.yahoo.com/yui/cookie/
+ [5]: https://developer.yahoo.com/yui/profiler/
+ [6]: https://developer.yahoo.com/yui/yuitest/
+ [7]: https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680?tag=nczonline-20
+ [8]: https://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
+ [9]: https://www.amazon.com/gp/product/059680279X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=059680279X
+ [10]: https://www.amazon.com/gp/product/0470109491?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0470109491
+ [11]: https://www.amazon.com/gp/product/0596522304?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0596522304
+ [12]: https://alistapart.com
+ [13]: https://www.webreference.com/
+ [14]: https://www.sitepoint.com/
+ [15]: https://www.yuiblog.com/
+ [16]: https://www.linkedin.com/
+ [17]: https://www.google.com/
+ [18]: https://www.netflix.com
+ [19]: https://www.nasa.gov/
+ [20]: https://paypal.com
+ [21]: https://www.ajaxexperience.com/
+ [22]: https://www.therichwebexperience.com/
+ [23]: https://conferences.oreilly.com/velocity
+ [24]: https://html5.org/tools/web-apps-tracker?from=4833&to=4834
  [25]: https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/
- [26]: http://dev.w3.org/csswg/css4-mediaqueries/
+ [26]: https://dev.w3.org/csswg/css4-mediaqueries/
  [27]: https://humanwhocodes.com/blog/2012/01/04/proposal-scripting-detection-using-css-media-queries/
- [28]: http://blog.reybango.com/2010/08/12/choose-3-developers-youd-spend-a-day-with/
- [29]: http://blog.founddrama.net/2010/02/my-new-javascript-vade-mecum/
- [31]: http://www.linkedin.com/in/nzakas/
- [32]: http://www.github.com/nzakas/
+ [28]: https://blog.reybango.com/2010/08/12/choose-3-developers-youd-spend-a-day-with/
+ [29]: https://blog.founddrama.net/2010/02/my-new-javascript-vade-mecum/
+ [31]: https://www.linkedin.com/in/nzakas/
+ [32]: https://www.github.com/nzakas/
