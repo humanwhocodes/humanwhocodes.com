@@ -7,7 +7,7 @@ const Content = page.Content;
 <Page frontmatter={page.frontmatter}>
     <h1>{page.frontmatter.title}</h1>
     <Content />
-    <form method="post" name="contact" action="thanks/" netlify>
+    <form method="post" name="contact" action="thanks/" data-netlify="true" data-netlify-recaptcha="true">
         <div class="vflex">
             <label>
                 <span>Your Name:</span>
@@ -92,6 +92,7 @@ const Content = page.Content;
                     <span>Your Message:</span>
                     <textarea name="message"></textarea>
                 </label>
+                <div data-netlify-recaptcha="true"></div>
                 <div class="center-text"><input type="submit" name="message-submit" value="Submit"></div>
             </div>
         </div>
