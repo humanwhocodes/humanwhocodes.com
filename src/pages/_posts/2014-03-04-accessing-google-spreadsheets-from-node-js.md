@@ -25,7 +25,7 @@ All projects have a set of APIs enabled by default, but the Drive API isn't one 
 
 On the left side, click **APIs & auth** and then **APIs**. On the right side, scroll down until you find the Drive API and click the button to enable it.
 
-[<img src="/images/wp-content/uploads/2014/02/gapi-enable.png" alt="" width="600"  class="alignleft size-full wp-image-3568" />][2]
+[<img src="/images/posts/2014/02/gapi-enable.png" alt="" width="600"  class="alignleft size-full wp-image-3568" />][2]
 
 ## Step 3: Create a service account
 
@@ -35,7 +35,7 @@ On the left menu, click **APIs & auth** and then **Credentials**. You'll see you
 
 Click **Create New Client ID**, which will pop up a dialog. Select **Service Account** and click **Create Client ID**. 
 
-[<img src="/images/wp-content/uploads/2014/02/gapi-service-create.png" alt="" width="599" height="316" class="alignleft size-full wp-image-3570" />][3]
+[<img src="/images/posts/2014/02/gapi-service-create.png" alt="" width="599" height="316" class="alignleft size-full wp-image-3570" />][3]
 
 You'll then see your new information on the page.
 
@@ -59,7 +59,7 @@ When you created the service account, an email address was created along with it
 
 To do so, open the spreadsheet and click the **Share** button. In the dialog, enter your service account email address and uncheck **Notify people via email**. You'll be asked to confirm that it's okay not to send an email, and of course it is, since that's just the service account.
 
-[<img src="/images/wp-content/uploads/2014/02/gapi-share.png" alt="" width="535" height="210" class="alignleft size-full wp-image-3571" />][4]
+[<img src="/images/posts/2014/02/gapi-share.png" alt="" width="535" height="210" class="alignleft size-full wp-image-3571" />][4]
 
 You can decide whether you want the service account to have full access to modify the spreadsheet or just view it. As always, it's best to start with the lowest permission level needed.
 
@@ -151,7 +151,7 @@ With that, you should be able to get an app up and running easily with access to
 **Update (6-March-2014):** Added section on securing your PEM key.
 
  [1]: https://console.developers.google.com/project
- [2]: /images/wp-content/uploads/2014/02/gapi-enable.png
- [3]: /images/wp-content/uploads/2014/02/gapi-service-create.png
- [4]: /images/wp-content/uploads/2014/02/gapi-share.png
+ [2]: /images/posts/2014/02/gapi-enable.png
+ [3]: /images/posts/2014/02/gapi-service-create.png
+ [4]: /images/posts/2014/02/gapi-share.png
  [5]: https://github.com/jpillora/node-edit-google-spreadsheet

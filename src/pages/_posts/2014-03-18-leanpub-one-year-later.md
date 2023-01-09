@@ -43,7 +43,7 @@ My big experiment with letting people choose what they'd like to pay for the ebo
 
 On the whole, both considering an eliminating coupon purchases, the average price paid was at least $1.75 higher than the minimum price. So it appears that people are willing to pay more than the minimum, on average, for the ebook. The maximum price paid was $78.62, which is astounding, but there were other purchases at $30 and $50 as well. In fact, a whole lot of people opted to pay more than $19.99; some by just a few cents, by a few dollars.
 
-[<img src="/images/wp-content/uploads/2014/03/whopaidwhat.png" alt="" width="600" height="521" class="alignleft size-full wp-image-3580" />][4]
+[<img src="/images/posts/2014/03/whopaidwhat.png" alt="" width="600" height="521" class="alignleft size-full wp-image-3580" />][4]
 
 Out of 888 purchases, 74 chose to pay more than the asking price while 243 chose to pay the asking price. While the majority did pay the lowest possible price (both including and excluding coupons), there were enough who chose to pay more that it's hard to overlook. There was even one reader who returned the ebook just so he could buy it for more. 
 
@@ -60,4 +60,4 @@ That's not so there isn't value in working with traditional publishers. It was o
  [1]: https://leanpub.com/oopinjavascript
  [2]: www.amazon.com/Principles-Object-Oriented-JavaScript-Nicholas-Zakas/dp/1593275404/?tag=nczonline-20
  [3]: http://leanpub.com
- [4]: /images/wp-content/uploads/2014/03/whopaidwhat.png
+ [4]: /images/posts/2014/03/whopaidwhat.png

@@ -11,7 +11,7 @@ tags:
 ---
 Last week, there was a fair bit of furor when Jake Archibald wrote an article<sup>[1]</sup> describing an experimental feature in Chrome that hides all but the domain name of the URL you're on. The idea is very similar to what already happens in the iOS 7 version of Safari: once navigation is underway, the URL is hidden and only the domain name is visible in the location bar. If you want to get to the full URL, then you either click or set focus back to the location bar (in Chrome, you click the domain name).
 
-[<img src="/images/wp-content/uploads/2014/05/canary-vs.e85e4594447f.png" alt="" width="600" class="alignleft size-full wp-image-3626" />][1]
+[<img src="/images/posts/2014/05/canary-vs.e85e4594447f.png" alt="" width="600" class="alignleft size-full wp-image-3626" />][1]
 
 I'll admit, the first time I encountered this behavior in iOS 7, I was a bit surprised. I quickly came to not only understand it, but also appreciate it. I'm able to tell at a glance what site I'm on and I can easily get to the URL if I want it. In the meantime, it's a nice, clean interface that doesn't disrupt my usage pattern.
 
@@ -43,7 +43,7 @@ These days, browsers have more or less done away with protocols altogether. Ther
 
 Most browsers now use colors and lock icons to indicate the level of security employed by the domain. For example, Internet Explorer 11 uses green and a lock icon to for extended verification certificates. So what will people notice? The protocol or the visuals?
 
-[<img src="/images/wp-content/uploads/2014/05/ie_locationbar.png" alt="" width="520" height="88" class="alignleft size-full wp-image-3629" />][2]
+[<img src="/images/posts/2014/05/ie_locationbar.png" alt="" width="520" height="88" class="alignleft size-full wp-image-3629" />][2]
 
 ## Goodbye email addresses
 
@@ -51,7 +51,7 @@ Email addresses are fairly simple, and you'd be hard-pressed to come up with a s
 
 Because email addresses represent routing information, and when I'm writing an email I'm not thinking about routing information, I'm thinking about the person to whom I'm writing. Email clients know this and so they will automatically look up email addresses based on the name you enter.
 
-[<img src="/images/wp-content/uploads/2014/05/gmail_to.png" alt="" width="551" height="219" class="alignleft size-full wp-image-3631" />][3]
+[<img src="/images/posts/2014/05/gmail_to.png" alt="" width="551" height="219" class="alignleft size-full wp-image-3631" />][3]
 
 Gmail, for instance, shows every email address matching a given name. When you're done typing the name, only the name remains in the To field (unless you have multiple email addresses for the same name, then it shows the email address as well). 
 
@@ -69,7 +69,7 @@ Of course, cell phones changed all that. If you grew up in one state and moved t
 
 These days, I know four phone numbers by heart: my parents' number, my home phone, my cell phone, and my mom's cell phone. Dad's cell phone loses out, and my brother? Not a clue. And I'm okay with that because I know that I don't actually need that information in my brain. In fact, most smartphones today don't show you the phone number being called unless there's no name associated with it.
 
-[<img src="/images/wp-content/uploads/2014/05/iphone_calls.png" alt="" width="600" height="614" class="alignleft size-full wp-image-3632" />][4]
+[<img src="/images/posts/2014/05/iphone_calls.png" alt="" width="600" height="614" class="alignleft size-full wp-image-3632" />][4]
 
 And yet, people rarely freak out when they can't see the phone number of the person they're talking to. Why? Because this routing information isn't necessary to the experience.
 
@@ -98,8 +98,8 @@ Who knows, at some point in the future, we might all look back and laugh at how 
 
   1. [Improving the URL bar][5] by Jake Archibald (jakearchibald.com).
 
- [1]: /images/wp-content/uploads/2014/05/canary-vs.e85e4594447f.png
- [2]: /images/wp-content/uploads/2014/05/ie_locationbar.png
- [3]: /images/wp-content/uploads/2014/05/gmail_to.png
+ [1]: /images/posts/2014/05/canary-vs.e85e4594447f.png
+ [2]: /images/posts/2014/05/ie_locationbar.png
+ [3]: /images/posts/2014/05/gmail_to.png
  [4]: http://miketheindian.com/2013/06/11/ios7-some-screens-that-apple-didnt-show-you/
  [5]: http://jakearchibald.com/2014/improving-the-url-bar/

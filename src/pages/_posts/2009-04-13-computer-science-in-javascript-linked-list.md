@@ -21,7 +21,7 @@ One of the first data structures you learn in computer science is the linked lis
 Linked lists are often used in computer science programs to help introduce the concept of pointers. The list itself is just a pointer to the head node, which in turn points to the next node, and so on. Each node consists of two fields: a `data` field containing the value for that location in the list and a `next` field containing a pointer to the next node in the list (or an empty pointer if it's the last item).
 
 <p style="text-align: center;">
-  <a href="http://en.wikipedia.org/wiki/File:Singly-linked-list.svg"><img src="/images/wp-content/uploads/2009/04/408px-Singly-linked-list.svg_.png" alt="Linked List Diagram"  width="408" height="41" /></a>
+  <a href="http://en.wikipedia.org/wiki/File:Singly-linked-list.svg"><img src="/images/posts/2009/04/408px-Singly-linked-list.svg_.png" alt="Linked List Diagram"  width="408" height="41" /></a>
 </p>
 
 To begin a JavaScript implementation, start with creating a single node. This can be done most easily by using an object literal:
@@ -116,7 +116,7 @@ The `item()` method checks to ensure that the index being specified is within a 
 Removing a node from a linked list is a little bit tricky. You need to find the node to remove then set the previous node's `next` property to appropriate next node. This &#8220;skipping over&#8221; of the appropriate node results in it's removal from the list.
 
 <p style="text-align: center;">
-  <a href="http://en.wikipedia.org/wiki/File:Singly_linked_list_delete_after.png"><img src="/images/wp-content/uploads/2009/04/Singly_linked_list_delete_after.png" alt="Linked list removal diagram" width="263" height="130" class="alignnone size-full wp-image-2948" /></a>
+  <a href="http://en.wikipedia.org/wiki/File:Singly_linked_list_delete_after.png"><img src="/images/posts/2009/04/Singly_linked_list_delete_after.png" alt="Linked list removal diagram" width="263" height="130" class="alignnone size-full wp-image-2948" /></a>
 </p>
 
 The typical implementation of linked list node removal is to have two pointers, a `current` pointer that indicates the node being inspected and a `previous` pointer that points to the node just prior to `current`. When `current` is the node to remove, then `previous.next` must be set to `current.next` to execute the removal. The code:

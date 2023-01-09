@@ -17,7 +17,7 @@ Over the past few days, I've seen several people tweet that they didn't see mess
 
 To get a list of just people who've mentioned you (but not replied to you), you want to run the search for your Twitter username and return only the items that don't begin with your username. You could do this yourself, or you can use the inexplicably awesome [Yahoo! Pipes][4] service to filter the feed. It took all of five minutes to set up the pipe and subscribe to it in my feed reader.
 
-[<img class="size-medium wp-image-2030" src="/images/wp-content/uploads/2009/03/mypipe-300x229.png" alt="Yahoo! Pipe diagram" width="300" height="229" align="right" />][5] The first step was to create a new pipe and name it. Next, I added an Fetch Feed source to the pipe and supplied the Twitter Search feed URL for my username ([@slicknet][6]). A feed for your username is in the format `http://search.twitter.com/search.atom?q=%40your_username`, so mine is `http://search.twitter.com/search.atom?q=%40slicknet`.
+[<img class="size-medium wp-image-2030" src="/images/posts/2009/03/mypipe-300x229.png" alt="Yahoo! Pipe diagram" width="300" height="229" align="right" />][5] The first step was to create a new pipe and name it. Next, I added an Fetch Feed source to the pipe and supplied the Twitter Search feed URL for my username ([@slicknet][6]). A feed for your username is in the format `http://search.twitter.com/search.atom?q=%40your_username`, so mine is `http://search.twitter.com/search.atom?q=%40slicknet`.
 
 Next, I added a Filter operator to the pipe and directed the output from the Fetch Feed source to the Filter. Filters are used to block or permit items through to the result based on one or more conditions. The easiest approach in this case was to block all items where my username was mentioned first. To figure out the best way to achieve this, I had to look at the format of the Twitter feed.
 
@@ -58,5 +58,5 @@ This is, of course, a very simple example of the cool things you can do with Yah
  [2]: http://search.twitter.com
  [3]: http://http://twitter.com/mikeleeorg/status/1403314359
  [4]: http://pipes.yahoo.com/
- [5]: /images/wp-content/uploads/2009/03/mypipe.png
+ [5]: /images/posts/2009/03/mypipe.png
  [6]: http://www.twitter.com/slicknet/

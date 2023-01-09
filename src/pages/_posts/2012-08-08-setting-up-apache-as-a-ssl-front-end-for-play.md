@@ -20,7 +20,7 @@ Before getting into SSL, it's helpful to understand the overall setup and why it
 I chose to use Apache because I'm familiar with it but you could easily use nginx instead. Apache is installed on the same box as the Play server and acts as the gatekeeper to the box. Traffic coming in from a browser goes to Apache first and Apache talks to the Play server on behalf of the browser. When the Play server responds, it responds to Apache, which in turn responds to the browser. 
 
 <p style="text-align: center">
-  <a href="/images/wp-content/uploads/2012/08/architecture.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2012/08/architecture.png" alt="" width="600" height="201" /></a>
+  <a href="/images/posts/2012/08/architecture.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2012/08/architecture.png" alt="" width="600" height="201" /></a>
 </p>
 
 This basic architecture works by using Apache as both a forward proxy, which accesses the Play server on behalf of the Internet, and a reverse proxy, which accesses the Internet on behalf of the Play server. Setting this up in Apache is fairly trivial, first make sure that `mod_proxy`<sup>[2]</sup> is enabled for Apache:

@@ -30,7 +30,7 @@ Insertion sort is a little bit difficult to explain in words. It's a bit easier 
 To start, the 5 is placed into the sorted section. The 2 then becomes the value to place. Since 5 is greater than 2, the 5 shifts over to the right one spot, overwriting the 2. This frees up a new spot at the beginning of the sorted section into which the 2 can be placed. See the figure below for a visualization of this process (boxes in yellow are part of the sorted section, boxes in white are unsorted).
 
 <div style="text-align:center">
-  <a href="/images/wp-content/uploads/2012/09/insertionsort.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2012/09/insertionsort.png" alt="Insertion sort of an array" width="600" height="485" /></a>
+  <a href="/images/posts/2012/09/insertionsort.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2012/09/insertionsort.png" alt="Insertion sort of an array" width="600" height="485" /></a>
 </div>
 
 The process then continues with 6. Each subsequent value in the unsorted section goes through the same process until the entire array is in the correct order. This process can be represented fairly succinctly in JavaScript as follows:

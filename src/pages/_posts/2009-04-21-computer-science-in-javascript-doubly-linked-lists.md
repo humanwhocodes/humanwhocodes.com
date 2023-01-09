@@ -15,7 +15,7 @@ tags:
 In my [last post][1], I discussed creating a linked list in JavaScript. This basic data structure is frequently used in computer science programs to teach the concept of pointers. The next step is to investigate the doubly-linked list. A doubly-linked list is similar to a single linked list except that it has bidirectional links between nodes. Instead of just having a `next` pointer on each node, there's also a `previous` pointer and instead of just tracking the head of the list, you also track the tail (the last node).
 
 <p style="text-align: center;">
-  <a href="http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg"><img src="/images/wp-content/uploads/2009/04/500px-Doubly-linked-list.svg_.png" alt="Doubly linked list diagram" width="500" height="34" /></a>
+  <a href="http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg"><img src="/images/posts/2009/04/500px-Doubly-linked-list.svg_.png" alt="Doubly linked list diagram" width="500" height="34" /></a>
 </p>
 
 The extra set of pointers between nodes allows for easier manipulation and traversal but adds complexity because there are more pointers to manage. A single node in a doubly-linked list can be implemented as follows:

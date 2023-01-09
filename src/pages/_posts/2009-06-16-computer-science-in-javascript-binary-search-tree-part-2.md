@@ -177,7 +177,7 @@ When dealing with the root, it's a simple process of overwriting it. For non-roo
 Removing a node with two children, as mentioned previously, is the most complex operation. Consider the following representation of a binary search tree.
 
 <p style="text-align: center;">
-  <a href="http://en.wikipedia.org/wiki/File:Binary_search_tree.svg"><img src="/images/wp-content/uploads/2009/06/500px-Binary_search_tree.svg_-300x250.png" alt="Binary search tree diagram" width="300" height="250" /></a>
+  <a href="http://en.wikipedia.org/wiki/File:Binary_search_tree.svg"><img src="/images/posts/2009/06/500px-Binary_search_tree.svg_-300x250.png" alt="Binary search tree diagram" width="300" height="250" /></a>
 </p>
 
 With a root of 8 and a left child of 3, what would happen if the 3 was removed? There are two possibilities: 1 (3&#8242;s left child, called the in-order predecessor) could take the place of 3 or 4 (the left-most child of the right subtree, called the in-order successor) can take the place of 3.

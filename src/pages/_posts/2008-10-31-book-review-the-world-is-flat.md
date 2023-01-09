@@ -7,7 +7,7 @@ categories:
 tags:
   - Book Reviews
 ---
-[<img title="The World is Flat" src="/images/wp-content/uploads/2008/10/world_is_flat.png" border="0" alt="" width="158" height="242" align="right" />][1] I got [<cite>The World is Flat</cite>][1] as a present last Christmas. I had heard about it from my mom and a couple other people who mentioned I might enjoy it. I settled down into reading <cite>The World is Flat</cite> and had a couple reactions. The first was how much the metaphor annoyed me; the second was how the content of the book is really interesting.
+[<img title="The World is Flat" src="/images/posts/2008/10/world_is_flat.png" border="0" alt="" width="158" height="242" align="right" />][1] I got [<cite>The World is Flat</cite>][1] as a present last Christmas. I had heard about it from my mom and a couple other people who mentioned I might enjoy it. I settled down into reading <cite>The World is Flat</cite> and had a couple reactions. The first was how much the metaphor annoyed me; the second was how the content of the book is really interesting.
 
 This book is basically about how the Internet has changed the world. Friedman talks through the major goings-on in technology that led to the outsourcing craze. Even though I lived through the dot-com bust, I didn't fully appreciate just how important it was in opening up the doorway to India and China. It's this movement that Friedman calls the &#8220;flattening&#8221; of the world&#8230;a metaphor he absolutely beats to death throughout the entire book (truth be told, after the first chapter I didn't know how much longer I could stand it).
 

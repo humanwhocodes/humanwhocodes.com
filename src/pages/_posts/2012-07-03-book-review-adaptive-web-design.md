@@ -8,7 +8,7 @@ tags:
   - Books
   - Progressive Enhancement
 ---
-[<img src="/images/wp-content/uploads/2012/07/adaptive.png" width="230" height="355" alt="Adaptive Web Design" align="right" />][1]I've known Aaron Gustafson for about five years. We met at a conference initially and stayed in touch throughout the years despite living on opposite coasts and rarely seeing each other in person. We have a lot in common, such as the belief in front-end engineering as an important discipline and the value of progressive enhancement. It's the latter that Aaron focuses on in his book, <cite>Adaptive Web Design</cite>. 
+[<img src="/images/posts/2012/07/adaptive.png" width="230" height="355" alt="Adaptive Web Design" align="right" />][1]I've known Aaron Gustafson for about five years. We met at a conference initially and stayed in touch throughout the years despite living on opposite coasts and rarely seeing each other in person. We have a lot in common, such as the belief in front-end engineering as an important discipline and the value of progressive enhancement. It's the latter that Aaron focuses on in his book, <cite>Adaptive Web Design</cite>. 
 
 The book is an easy read at 144 pages and is the gentlest of introductions to the core concepts of progressive enhancement. Aaron takes you carefully from the basics of HTML and semantic markup all the way through applying JavaScript and ARIA. It truly is amazing how much information he managed to cram into a small book without making me feel overwhelmed at the end.
 

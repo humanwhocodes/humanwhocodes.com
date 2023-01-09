@@ -19,7 +19,7 @@ We're using Amazon web services for WellFurnished and so are using an elastic lo
 
 The Amazon web services console lets you go right to an ELB (in the EC2 section under &#8220;Load Balancers&#8221;). When you click on an ELB, you get its properties in the bottom pane. Click on the Listeners tab and you see all the ports that are enabled currently. The last row is reserve so that you can add new ports. If you change the first drop-down to HTTPS, then the entire row changes so you can enter the appropriate information.
 
-[<img src="/images/wp-content/uploads/2012/08/elb-300x57.png" alt="Amazon web services ELB listeners" title="" width="300" height="57" />][1]
+[<img src="/images/posts/2012/08/elb-300x57.png" alt="Amazon web services ELB listeners" title="" width="300" height="57" />][1]
 
 In this dialog, the load balancer protocol and port are set to HTTPS and 443, respectively. The instance protocol and port are still set at HTTP and 80, meaning that the ELB will talk HTTP to all of its instances.
 
@@ -29,7 +29,7 @@ Of course, HTTPS is useless without a valid certificate so that web browsers can
 
 When you click on the Select link to specify an SSL certificate you get the following dialog:
 
-[<img src="/images/wp-content/uploads/2012/08/awssl-300x200.png" alt="Amazon Web Services Dialog" title="" width="300" height="200" />][2]
+[<img src="/images/posts/2012/08/awssl-300x200.png" alt="Amazon Web Services Dialog" title="" width="300" height="200" />][2]
 
 The dialog asks you to enter four pieces of information:
 
@@ -82,7 +82,7 @@ Copy this entire text block, including the begin and end delimiters, and paste i
 
 Don't be fooled by the AWS dialog, the certificate chain isn't really optional when your ELB is talking directly to a browser. The certificate chain is the part that verifies that fully verifies which certificate authority issued the certificate and therefore whether or not the browser can trust that the domain certificate is valid. Different browsers handle things in different ways, but if you are missing the certificate chain and Firefox, you get a pretty scary warning page:
 
-[<img src="/images/wp-content/uploads/2012/08/ffssl-300x175.png" alt="Firefox SSL warning page" title="" width="300" height="175" />][3]
+[<img src="/images/posts/2012/08/ffssl-300x175.png" alt="Firefox SSL warning page" title="" width="300" height="175" />][3]
 
 So if your ELB is going to be talking to browsers directly, you definitely need to provide the certificate chain.
 
@@ -112,9 +112,9 @@ The process of setting up SSL on an Amazon elastic load balancer isn't as straig
   3. [OpenSSL: The Open Source Toolkis for SSL/TLS][6] (OpenSSL)
   4. [Setting up Apache as a SSL front-end for Play][7]
 
- [1]: /images/wp-content/uploads/2012/08/elb.png
- [2]: /images/wp-content/uploads/2012/08/awssl.png
- [3]: /images/wp-content/uploads/2012/08/ffssl.png
+ [1]: /images/posts/2012/08/elb.png
+ [2]: /images/posts/2012/08/awssl.png
+ [3]: /images/posts/2012/08/ffssl.png
  [4]: http://publib.boulder.ibm.com/infocenter/wmqv6/v6r0/index.jsp?topic=%2Fcom.ibm.mq.csqzas.doc%2Fsy10600_.htm
  [5]: http://en.wikipedia.org/wiki/Root_certificate
  [6]: http://www.openssl.org/

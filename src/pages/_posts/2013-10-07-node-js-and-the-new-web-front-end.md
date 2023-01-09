@@ -18,7 +18,7 @@ JavaScript was the technology that really started to change the perception of we
 
 Even after the Ajax boom, the front-end engineer was seen as primarily working with technologies inside of a browser window. HTML, CSS, and JavaScript were the main priorities and we would only touch the back-end (web server) in order to ensure it was properly outputting the front-end. In a sense, there were two UI layers: the one in the browser itself and the one on the server that generated the payload for the browser. We had very little control over the back-end UI layer and were often beholden to back-end engineers' opinions on how frameworks should be put together &#8211; a world view that rarely took into consideration the needs of the front-end.
 
-[<img src="/images/wp-content/uploads/2013/10/nodejs1.png" alt="" width="600" height="503" class="alignleft size-full wp-image-3492" align="center" />][1]
+[<img src="/images/posts/2013/10/nodejs1.png" alt="" width="600" height="503" class="alignleft size-full wp-image-3492" align="center" />][1]
 
 In this web application architecture, the UI layer on the browser was the sole domain of front-end engineers. The back-end UI layer was where front-end and back-end engineers met, and then the rest of the server architecture was where the guts of the application lived. That's where you'd find data processing, caching, authentication, and all other pieces of functionality that were critical to the application. In a sense, the back-end UI layer (often in the form of templates) was a thin layer inside of the application server that only served a front-end as incidental to the business logic it was performing.
 
@@ -32,7 +32,7 @@ I was never a fan of PHP, but had to use it for my job at Yahoo. I bemoaned the 
 
 To me, Node.js was never about replacing everything on the server with JavaScript. The fact that you can do such a thing is amazing and empowering, but that doesn't make it the right choice in every situation. No, to me, I had a very different use in mind: liberating the back-end UI layer from the rest of the back-end.
 
-[<img src="/images/wp-content/uploads/2013/10/nodejs2.png" alt="" width="600" height="614" class="alignleft size-full wp-image-3494" />][2]
+[<img src="/images/posts/2013/10/nodejs2.png" alt="" width="600" height="614" class="alignleft size-full wp-image-3494" />][2]
 
 With a lot of companies moving towards service-oriented architectures and RESTful interfaces, it now becomes feasible to split the back-end UI layer out into its own server. If all of an application's key business logic is encapsulated in REST calls, then all you really need is the ability to make REST calls to build that application. Do back-end engineers care about how users travel from page to page? Do they care whether or not navigation is done using Ajax or with full page refreshes? Do they care whether you're using jQuery or YUI? Generally, not at all. What they do care about is that data is stored, retrieved, and manipulated in a safe, consistent way. 
 
@@ -52,5 +52,5 @@ I love Node.js, I love the possibilities that it opens up. I definitely don't be
 
 Using Node.js for the back-end UI layer also frees up the back-end engineers from worrying about a whole host of problems in which they have no concerns or vested interest. We can get to a web application development panacea: where front-end and back-end only speak to each other in data, allowing rapid iteration of both without affecting the other so long as the RESTful interfaces remain intact. Jump on in, the water's fine.
 
- [1]: /images/wp-content/uploads/2013/10/nodejs1.png
- [2]: /images/wp-content/uploads/2013/10/nodejs2.png
+ [1]: /images/posts/2013/10/nodejs1.png
+ [2]: /images/posts/2013/10/nodejs2.png

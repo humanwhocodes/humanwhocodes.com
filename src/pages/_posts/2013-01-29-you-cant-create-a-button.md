@@ -39,7 +39,7 @@ The enter key fires the `click` event when used on links and buttons by default.
 
 This horrible pattern is found most frequently in Google products. Perhaps the most ironic usage is in Gmail. When you press the ? key, a dialog pops up showing you available keyboard shortcuts and allowing you to enable more advanced shortcuts. 
 
-[<img src="/images/wp-content/uploads/2013/01/gmail-300x153.png" alt="Gmail keyboard shortcuts dialog" width="300" height="153" class="alignnone size-medium wp-image-3344" />][1]
+[<img src="/images/posts/2013/01/gmail-300x153.png" alt="Gmail keyboard shortcuts dialog" width="300" height="153" class="alignnone size-medium wp-image-3344" />][1]
 
 It looks like the word &#8220;Enable&#8221; is a link, so you press tab a few times to give it focus and press enter. Nothing happens. Why? Because the link is actually neither a linkage nor a button, it's a `<span>`. Here's the actual code:
 
@@ -51,4 +51,4 @@ Gmail isn't the only Google site that uses this pattern. It can be found through
 
 If you expect the user to interact with something, then you need to use either a link or button. These have the correct behaviors both in terms of getting focus and activating when the enter key is pressed. Links should be used whenever the action is a navigation (changes the URL) and buttons should be used for all other actions. You can easily styled these to create the visual effect that you want, but nothing can replace the accessibility of the native links and buttons.
 
- [1]: /images/wp-content/uploads/2013/01/gmail.png
+ [1]: /images/posts/2013/01/gmail.png

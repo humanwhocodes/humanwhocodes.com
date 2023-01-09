@@ -9,7 +9,7 @@ tags:
   - JavaScript
   - Writing
 ---
-[<img src="/images/wp-content/uploads/2014/02/OOJS_frontcover_web.png" alt="" width="300" height="396" class="alignleft size-full wp-image-3558" align="right" />][1]I'm very proud to announce that <cite>Principles of Object-Oriented JavaScript</cite> is now shipping! For frequent readers, this book is the print version of my self-published ebook, [The Principles of Object-Oriented Programming in JavaScript][2], which I published at the beginning of 2013.
+[<img src="/images/posts/2014/02/OOJS_frontcover_web.png" alt="" width="300" height="396" class="alignleft size-full wp-image-3558" align="right" />][1]I'm very proud to announce that <cite>Principles of Object-Oriented JavaScript</cite> is now shipping! For frequent readers, this book is the print version of my self-published ebook, [The Principles of Object-Oriented Programming in JavaScript][2], which I published at the beginning of 2013.
 
 ## Birth of an ebook
 

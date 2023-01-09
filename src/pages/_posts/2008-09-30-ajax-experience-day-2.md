@@ -18,4 +18,4 @@ The talk, Test-Driven Development with YUI Test, was reasonably well attended an
 After a brief conversation with Doug Crockford, Nicole Sullivan, Bill Scott, and Steve Souders, I headed back to my room to crash. All this traveling and excitement has really worn me out. Tonight will likely be low-key, dinner in the hotel and then probably a bit of time in the lounge before turning in. Can't believe it's almost over!
 
  [1]: http://smushit.com/
- [2]: /images/wp-content/uploads/2008/09/tae-test-driven-development-with-yui-test.zip
+ [2]: /images/posts/2008/09/tae-test-driven-development-with-yui-test.zip

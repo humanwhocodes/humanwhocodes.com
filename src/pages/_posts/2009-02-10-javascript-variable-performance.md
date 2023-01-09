@@ -25,14 +25,14 @@ Given this description of identifier resolution, it makes sense that local varia
 My first tests involved writing a simple value to variables (literally, the value 1). The results were interesting.
 
 <p style="text-align: center;">
-  <a href="/images/wp-content/uploads/2009/02/variable_write_performance2.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2009/02/variable_write_performance2.png" alt="JavaScript Variable Write Performance Graph" width="574" height="389" /></a>
+  <a href="/images/posts/2009/02/variable_write_performance2.png"><img src="https://humanwhocodes.com/blog/wp-content/uploads/2009/02/variable_write_performance2.png" alt="JavaScript Variable Write Performance Graph" width="574" height="389" /></a>
 </p>
 
 From the results, it's clear that there is a performance penalty associated with deep searches for identifier resolution. Each increase in identifier depth shows an increase in execution. Internet Explorer, not surprisingly, is the worst of the class (although IE 8 does show some improvement). The notable exceptions in this case are Google Chrome and the latest nightly WebKit as their variable access times remain roughly constant even as identifier depth increases. This can be attributed to their next-generation JavaScript engines, V8 and SquirrelFish respectively. These engines perform optimizations to run code faster, and clearly, these optimizations make variable access much faster than others. Opera performed admirably, being faster than IE, Firefox, and current Safari versions but slower than the V8 and Squirrelfish-powered browsers. Firefox 3.1 Beta 2 was somewhat surprising as local variable writes were very fast but performance degraded significantly once the variable was out of the local scope. It's worth noting that I was using the default settings and therefore didn't have tracing turned on.
 
 Those results were for variable writes, and I wondered if the performance for variable reads would be any different. Variable reads turned out to be somewhat faster than writes even though the same trends emerged.
 
-[<img src="/images/wp-content/uploads/2009/02/variable_read_performance2.png" alt="JavaScript Variable Read Performance Graph" width="574" height="389" />][2]
+[<img src="/images/posts/2009/02/variable_read_performance2.png" alt="JavaScript Variable Read Performance Graph" width="574" height="389" />][2]
 
 Once again, Internet Explorer and Firefox are the slowest, with Opera showing respectable performance. And once again, Chrome and the latest WebKit nightly show flat performance based on identifier depth. Also notable is the same strange jump in Firefox 3.1 Beta 2&#8242;s variable access times once you're no longer dealing with local variables.
 
@@ -51,7 +51,7 @@ If you'd like a bit more discussion around this topic, I gave a short talk at la
   * [Chinese (Simplified)][6]
 
  [1]: http://www.ecma-international.org/publications/standards/Ecma-262.htm
- [2]: /images/wp-content/uploads/2009/02/variable_read_performance2.png
+ [2]: /images/posts/2009/02/variable_read_performance2.png
  [3]: http://javascript.meetup.com/9/
  [4]: http://www.slideshare.net/nzakas/java-script-variable-performance-presentation
  [5]: http://www.youtube.com/watch?v=MHBbK9dt0Kg

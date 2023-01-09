@@ -51,7 +51,7 @@ There are many approaches to calculating the pivot value. Some algorithms select
 
 Next, the left pointer is increased by one in the right pointer is decreased by one. This results in both pointers at the pivot value (5). That signals that the operation is complete. Now all items in the array to the left of the pivot are less than the pivot and all items to the right of the pivot are greater than the pivot. Keep in mind that this doesn't mean the array is sorted right now, only that there are two sections of the array: the section where all values are less than the pivot and the section were all values are greater than the pivot. See the figure below.
 
-[<img src="/images/wp-content/uploads/2012/11/quicksort_partition1.png" alt="Quicksort step-by-step" title="" width="600" height="944" class="alignnone size-full wp-image-3270" />][1]
+[<img src="/images/posts/2012/11/quicksort_partition1.png" alt="Quicksort step-by-step" title="" width="600" height="944" class="alignnone size-full wp-image-3270" />][1]
 
 The implementation of a partition function relies on there being a `swap()` function, so here's the code for that:
 
@@ -96,7 +96,7 @@ The entire algorithm is just a loop of loops. The outer loop determines when all
 
 The quicksort algorithm basically works by partitioning the entire array, and then recursively partitioning the left and right parts of the array until the entire array is sorted. The left and right parts of the array are determined by the index returns after each partition operation. That index effectively becomes the boundary between the left and right parts of the array. In the previous example, the array becomes `[4, 2, 3, 5, 6, 9]` after one partition and the index returned is 4 (the last spot of the left pointer). After that, the left side of the overall array (items 0 through 3) is partitioned, as in the following figure.
 
-[<img src="/images/wp-content/uploads/2012/11/quicksort_21.png" alt="Quicksort step-by-step" title="" width="600" height="701" class="alignnone size-full wp-image-3273" />][2]
+[<img src="/images/posts/2012/11/quicksort_21.png" alt="Quicksort step-by-step" title="" width="600" height="701" class="alignnone size-full wp-image-3273" />][2]
 
 After this pass, the array becomes `[3, 2, 4, 5, 6, 9]` and the index returned is 1. The heart rhythm continues like this until all of the left side of the array is sorted. Then the same processes followed on the right side of the array. The basic logarithm for quicksort then becomes very simple:
 
@@ -166,7 +166,7 @@ Quicksort is generally considered to be efficient and fast and so is used by V8 
   1. [Quicksort][3] (Wikipedia)
   2. [V8 Arrays Source Code][4] (Google Code)
 
- [1]: /images/wp-content/uploads/2012/11/quicksort_partition1.png
- [2]: /images/wp-content/uploads/2012/11/quicksort_21.png
+ [1]: /images/posts/2012/11/quicksort_partition1.png
+ [2]: /images/posts/2012/11/quicksort_21.png
  [3]: http://en.wikipedia.org/wiki/Quicksort
  [4]: http://code.google.com/p/v8/source/browse/trunk/src/array.js#751

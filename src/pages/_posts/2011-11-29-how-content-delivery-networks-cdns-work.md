@@ -21,7 +21,7 @@ Physics determines how fast one computer can contact another over physical conne
 
 When the browser makes a DNS request for a domain name that is handled by a CDN, there is a slightly different process than with small, one-IP sites. The server handling DNS requests for the domain name looks at the incoming request to determine the best set of servers to handle it. At it's simplest, the DNS server does a geographic lookup based on the DNS resolver's IP address and then returns an IP address for an *edge server* that is physically closest to that area. So if I'm making a request and the DNS resolver I'm routed to is Virginia, I'll be given an IP address for a server on the East coast; if I make the same request through a DNS resolver in California, I'll be given an IP address for a server on the West coast. You may not end up with a DNS resolver in the same geographic location from where you're making the request.
 
-<img src="/images/wp-content/uploads/2011/11/cdn1.png" alt="United States CDNs often have edge servers located on the Pacific and Atlantic coasts" width="600" height="309" align="center" />
+<img src="/images/posts/2011/11/cdn1.png" alt="United States CDNs often have edge servers located on the Pacific and Atlantic coasts" width="600" height="309" align="center" />
 
 That's the first step of the process: getting the request to the closest server possible. Keep in mind that companies may optimize their CDNs in other ways as well, for instance, redirecting to a server that is cheaper to run or one that is sitting idle while another is almost at capacity. In any case, the CDN smartly returns the best possible IP address to handle the request.
 
@@ -31,7 +31,7 @@ Edge servers are *proxy caches* that work in a manner similar to the browser cac
 
 If, on the other hand, the content is not in the cache or the cache entry has expired, then the edge server makes a request to the *origin server* to retrieve the information. The origin server is the source of truth for content and is capable of serving all of the content that is available on the CDN. When the edge server receives the response from the origin server, it stores the content in cache based on the HTTP headers of the response. 
 
-<img src="/images/wp-content/uploads/2011/11/cdn2.png" alt="When a request comes into an edge server it either contacts the origin server for the content or serves it from cache" width="600" height="397" align="center" />
+<img src="/images/posts/2011/11/cdn2.png" alt="When a request comes into an edge server it either contacts the origin server for the content or serves it from cache" width="600" height="397" align="center" />
 
 Yahoo! created and open sourced the [Apache Traffic Server][1], which is what Yahoo! uses in its CDN for managing this traffic. Reading through the Traffic Server documentation is highly recommended if you'd like to learn more about how cache proxies work.
 

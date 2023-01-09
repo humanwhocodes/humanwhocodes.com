@@ -188,7 +188,7 @@ The complexity of the `get()` method ranges from O(1) when removing the first no
 
 Removing data from a linked list is a little bit tricky because you need to ensure that all `next` pointers remain valid after a node is removed. For instance, if you want to remove the second node in a three-node list, you'll need to ensure that the first node's `next` property now points to the third node instead of the second. Skipping over the second node in this way effectively removes it from the list.
 
-[![Linked list removal diagram]({{ site.url }}/images/wp-content/uploads/2009/04/Singly_linked_list_delete_after.png)](http://en.wikipedia.org/wiki/File:Singly_linked_list_delete_after.png)
+[![Linked list removal diagram]({{ site.url }}/images/posts/2009/04/Singly_linked_list_delete_after.png)](http://en.wikipedia.org/wiki/File:Singly_linked_list_delete_after.png)
 
 The remove operation is actually two operations:
 

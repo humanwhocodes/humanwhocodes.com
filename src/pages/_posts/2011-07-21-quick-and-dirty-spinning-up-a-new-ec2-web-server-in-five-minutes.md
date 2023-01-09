@@ -17,7 +17,7 @@ One of the things I've become more adept at in my new life is dealing with the d
 Go to the AWS console and click on the EC2 tab. On the lower-left is an option called Security Groups, click on that to bring up your current security groups. There is usually a default security group that allows SSH and nothing else.
 
 <div style="text-align: center;">
-  <img src="/images/wp-content/uploads/2011/07/securitygroup.png" alt="Create Security Group button" width="460" height="110" />
+  <img src="/images/posts/2011/07/securitygroup.png" alt="Create Security Group button" width="460" height="110" />
 </div>
 
 Click the &#8220;Create Security Group&#8221; button and give the group a name and description. When it shows up in the list, click the name and you'll see two tabs towards the bottom of the screen. Click on the Inbound tab, which is where you create the security rules. You want to enable SSH and HTTP only at this point (you may choose to add more later).
@@ -29,7 +29,7 @@ Click the &#8220;Create Security Group&#8221; button and give the group a name a
 Now this security group is ready for your new web server.
 
 <div style="text-align: center;">
-  <img src="/images/wp-content/uploads/2011/07/securitygroupinfo.png" alt="Setting up security group ports" width="500" height="221" />
+  <img src="/images/posts/2011/07/securitygroupinfo.png" alt="Setting up security group ports" width="500" height="221" />
 </div>
 
 <span style="font-size: 20px; font-weight: bold;">Create keypairs (1st time only)</span>
@@ -37,7 +37,7 @@ Now this security group is ready for your new web server.
 On the same EC2 tab, there's an option on the lower-left called &#8220;Keypairs&#8221;. Keypairs are used to secure your EC2 instance so that only you can access them. If you don't have an existing keypair to use, you can create a new one by clicking the &#8220;Create Keypair&#8221; button. This will prompt you for a name and then immediately start a file download of a file with .pem as its extension. Keep this file safe because you'll need it to access your EC2 instance.
 
 <div style="text-align: center;">
-  <img src="/images/wp-content/uploads/2011/07/keypair.png" alt="Create keypair button" width="460" height="110" />
+  <img src="/images/posts/2011/07/keypair.png" alt="Create keypair button" width="460" height="110" />
 </div>
 
 Keep in mind that you will never be able to retrieve this .pem file if you lose it. You'll need to delete the keypair and create a new one.
@@ -47,7 +47,7 @@ Keep in mind that you will never be able to retrieve this .pem file if you lose 
 Click the Instances option on the right side of the EC2 tab. Click the Launch Instance button after which you'll be asked to select which AMI to use. I always just use the first one, Basic Amazon Linux 32-bit AMI, though you may choose another if your needs are different.
 
 <div style="text-align: center;">
-  <img src="/images/wp-content/uploads/2011/07/instance.png" alt="Create new EC2 instance button" width="460" height="110" />
+  <img src="/images/posts/2011/07/instance.png" alt="Create new EC2 instance button" width="460" height="110" />
 </div>
 
 If you don't have any special needs for this box, you can keep all of the defaults on the two Instance Details screens. The one you may want to change is the type of VM (Micro, Small, Large), depending on your memory and computing needs. When it comes to the screen for adding tags, just fill in the name with something that makes sense (i.e. &#8220;Test Server&#8221;) so you can identify this instance in the AWS console.
