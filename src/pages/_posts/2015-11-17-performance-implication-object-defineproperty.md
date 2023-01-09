@@ -20,7 +20,7 @@ I noticed the problem the first time I ran ESLint's performance test, which show
 
 To do that, I used ESLint's profiling command (`npm run profile`) to run ESLint through Chrome's profiler. When I did that, something immediately jumped out at me.
 
-![Initial Profiler Results](https://www.nczonline.net/images/posts/profiler1.png)
+![Initial Profiler Results](https://nczonline.net/images/posts/profiler1.png)
 
 As you can see, the function `esprimaFinishNode()` was taking up over 33% of the run time. This function augments the generated AST nodes from Acorn so that they look more like Esprima AST nodes. It took me only a minute to realize that the only out-of-place operation in that function involved `Object.defineProperty()`.
 

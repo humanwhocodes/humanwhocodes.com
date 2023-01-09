@@ -265,4 +265,4 @@ It's entirely possible that `Object.assign()` should actually be something else,
 
 I'm very excited to see where ECMAScript 7 is headed and hope that some of these ideas are worthwhile enough to pursue. Even if they aren't, ECMAScript 6 is such a superior upgrade from ECMAScript 5 that I'm sure ECMAScript 7 will be a really great set of changes as well.
 
- [1]: www.nczonline.net/blog/2014/04/22/creating-defensive-objects-with-es6-proxies/
+ [1]: https://nczonline.net/blog/2014/04/22/creating-defensive-objects-with-es6-proxies/

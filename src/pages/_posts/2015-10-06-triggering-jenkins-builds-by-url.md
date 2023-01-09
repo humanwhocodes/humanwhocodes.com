@@ -95,6 +95,6 @@ Once you send the request, log in to Jenkins and verify that the job is running.
 I now have a job triggered remotely whenever Mailchimp sends an email. The script downloads the newsletter RSS feed, filters out blog posts, and generates an HTML archive page on my site. The most time-consuming part of the process was going setting up Jenkins to build via URL, as the resources I found online all had pieces of information missing. I hope that this post helps others make progress faster.
 
 
-1. [From Wordpress to Jekyll: My new blog setup](https://www.nczonline.net/blog/2015/08/wordpress-jekyll-my-new-blog-setup/) by me (nczonline.net)
+1. [From Wordpress to Jekyll: My new blog setup](https://nczonline.net/blog/2015/08/wordpress-jekyll-my-new-blog-setup/) by me (nczonline.net)
 1. [Jenkins](https://jenkins-ci.org/) (jenkins-ci.org)
 1. [Random Key Generator](http://randomkeygen.com/) (randomkeygen.com)
