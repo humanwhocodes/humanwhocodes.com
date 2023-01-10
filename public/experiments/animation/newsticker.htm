@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body><pre id="progress" style="width:200px;background:silver"></pre>
+    <script>
+(function(){
+    var msg = "NFL Draft is live tonight from Radio City Music Hall in New York City!"
+        len = 25,
+        pos = 0,
+        padding = msg.replace(/./g, " ").substr(0,len)
+        finalMsg = padding + msg;
+        
+    function updateText(){
+        var curMsg = finalMsg.substr(pos++, len);
+        document.getElementById("progress").innerHTML = curMsg;
+        if (pos == finalMsg.length){
+            pos = 0;
+        }
+        setTimeout(updateText, 100);
+    }
+    
+    setTimeout(updateText, 100);
+    
+})();
+    </script>
+</body>
+</html>

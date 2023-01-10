@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Window Position Example</title>
+    </head>
+    <body>
+    
+        <iframe src="about:blank" name="blah" style="margin-top: 100px"></iframe>
+        <script type="text/javascript">
+            var leftPos = (typeof window.screenLeft == "number") ? 
+                              window.screenLeft : window.screenX;
+            var topPos = (typeof window.screenTop == "number") ? 
+                              window.screenTop : window.screenY;
+
+            alert("Left: " + leftPos);
+            alert("Top: " + topPos);
+            
+            alert(frames.blah.screenTop);
+        </script>
+    </body>
+</html>

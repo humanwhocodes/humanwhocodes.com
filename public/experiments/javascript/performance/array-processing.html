@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>JavaScript Array Processing Test</title>
+</head>
+<body>
+<h1>JavaScript Array Processing Test</h1>
+<p>This tests an array processing approach that processes one item per timer versus multiple items per timer. For multiple items per timer, the items are only processed so long as the current execution time is less than 50 milliseconds. The array being tested has 500 items.</p>
+<p>Back to <a href="{{site.url}}/">my site</a>.
+<p><button id="start-btn" onclick="startProcessing()">Start</button>
+<button id="reset-btn" onclick="resetTest()">Reset</button></p>
+<h2>chunk() Function</h2>
+<div style="width: 500px; border: 1px solid black">
+    <div id="orig-progress" style="height: 16px; background: navy; color: white; width: 0;"></div>
+</div>
+<h2>timedChunk() Function</h2>
+<div style="width: 500px; border: 1px solid black">
+    <div id="new-progress" style="height: 16px; background: navy; color: white; width: 0;"></div>
+</div>
+
+<script>
+
+function chunk(array, process, context, callback){
+    var items = array.concat();   //clone the array
+    setTimeout(function(){
+        var item = items.shift();
+        process.call(context, item);
+
+        if (items.length > 0){
+            setTimeout(arguments.callee, 25);
+        }else {
+            callback(array);
+        }
+    }, 25);
+}
+
+function timedChunk(items, process, context, callback){
+    var todo = items.concat();   //create a clone of the original
+
+    setTimeout(function(){
+
+        var start = +new Date();
+
+        do {
+             process.call(context, todo.shift());
+        } while (todo.length > 0 && (+new Date() - start < 50));
+
+        if (todo.length > 0){
+            setTimeout(arguments.callee, 25);
+        } else {
+            callback(items);
+        }
+    }, 25);    
+}
+
+var items = new Array(500);
+for (var i=0; i < 500; i++){
+    items[i] = i;
+}
+
+function processOrig(){
+    var progress = document.getElementById("orig-progress");
+    progress.style.width = (progress.offsetWidth + 1) + "px";
+}
+
+function processNew(){
+    var progress = document.getElementById("new-progress");
+    progress.style.width = (progress.offsetWidth + 1) + "px";
+}
+
+function startProcessing(button){
+    var startButton = document.getElementById("start-btn"),
+        resetButton = document.getElementById("reset-btn");
+        
+    startButton.disabled = true;
+    resetButton.disabled = true;
+    
+    var origStart = +new Date();
+    chunk(items, processOrig, null, function(){
+        document.getElementById("orig-progress").innerHTML = (new Date() - origStart);
+        resetButton.disabled = false;
+    });
+    
+    var newStart = +new Date();
+    timedChunk(items, processNew, null, function(){
+        document.getElementById("new-progress").innerHTML = (new Date() - newStart);
+    });
+}
+
+function resetTest(){
+    var newprogress = document.getElementById("new-progress");
+    newprogress.style.width = "0px";
+    newprogress.innerHTML = "";
+    
+    var origprogress = document.getElementById("orig-progress");
+    origprogress.style.width = "0px";
+    origprogress.innerHTML = "";   
+
+    document.getElementById("start-btn").disabled = false; 
+}
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iOS :hover Issue</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+    .hover1 span {
+        font-size: 0;
+    }
+
+    .hover1:hover span {
+        font-size: inherit;
+    }
+    
+    .hover2 span {
+        
+    }
+
+    .hover2:hover span {
+        color: red;
+    }    
+    
+    .hover3 span {
+        visibility: hidden;
+    }
+
+    .hover3:hover span {
+        visibility: visible;
+    }
+    
+    .hover4 span {
+        display: none;
+    }
+
+    .hover4:hover span {
+        display:inline;
+    }    
+    
+    </style>
+</head>
+<body>
+<h1>iOS :hover Issue</h1>
+<p>Safari on iOS has an issue with <code>:hover</code>. If you apply <code>:hover</code> to a non-link that contains a link and also shows or hides and other element then you must twice to navigate. The first applies the changes for <code>:hover</code> while the second Actually does the navigation.</p>
+<h2>These Work</h2>
+<p>These work because there is only a color change.</p>
+<p class="hover1"><a href="{{site.url}}/blog/2012/07/05/ios-has-a-hover-problem/">Read the full article</a><br>
+<span>Font-size Peekaboo!</span></p>
+<p class="hover2"><a href="{{site.url}}/blog/2012/07/05/ios-has-a-hover-problem/">Read the full article</a><br>
+<span>Color Peekaboo!</span></p>
+<h2>These Don't Work</h2>
+<p>These don't work because an element is being hidden or displayed.</p>
+<p class="hover3"><a href="{{site.url}}/blog/2012/07/05/ios-has-a-hover-problem/">Read the full article</a><br>
+<span>Visilibity Peekaboo!</span></p>
+<p class="hover4"><a href="{{site.url}}/blog/2012/07/05/ios-has-a-hover-problem/">Read the full article</a><br>
+<span>Display Peekaboo!</span></p>
+</body>
+</html>

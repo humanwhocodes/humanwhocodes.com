@@ -1,0 +1,176 @@
+<html>
+<head>
+    <title>JavaScript Prototype Depth Test</title>
+</head>
+<body>  
+    <h1>JavaScript Prototype Depth Test</h1>
+    <p>The purpose of this page is to determine the performance issues related to prototype chain
+    member depth in JavaScript. In all browsers, instance members are accessed faster than prototype
+    members, but how prototype chain depth affects member retrieval varies.</p>
+    <p>The tests on this page access each member a set number of times. That is repeated 100 times and the 
+    average time is reported. The prototype chain is augmented by creating a series of constructors
+    that each inherit from the previous. The tests may take several minutes to fully execute 
+    but should not crash the browser.</p>
+    <p>Back to <a href="/">my site</a>.</p>
+    
+    <p>Accesses properties
+    <select id="var-accesses">
+        <option value="50000">50,000</option>
+        <option value="100000">100,000</option>
+        <option value="200000">200,000</option>
+        <option value="300000">300,000</option>
+        <option value="400000">400,000</option>
+        <option value="500000">500,000</option>
+    </select> times<br />
+    <input type="button" id="run-tests" value="Run Tests" /></p>
+    <div id="progress" style="font-style: italic"></div>
+    <div id="results"><h2>Results</h2></div>
+    <script>
+
+
+function Type(){
+    this.name = "Nicholas";
+}
+
+function Type2(){
+}
+Type2.prototype = new Type();
+
+function Type3(){
+}
+Type3.prototype = new Type2();
+
+function Type4(){
+}
+Type4.prototype = new Type3();
+
+
+var global=1,           //global variable to access
+    runs = 100000,      //number of times to run the tests
+    curTest = null,     //the currently executing test
+    results = [],       //results of each run
+    
+    
+//-----------------------------------------------------------------------------
+// Tests
+//-----------------------------------------------------------------------------
+    tests = [
+        {
+            name: "Empty loop time",
+            test: function(){
+                var i=0, start,stop,local;
+                start = new Date();
+                for (; i < runs; i++){
+                    local = 1;
+                }
+                stop = new Date();
+                return stop-start;
+            }
+        },
+        {
+            name: "Instance Property",
+            test: function(){
+                var i=0, start,stop,
+                    instance = new Type();
+                start = new Date();
+                for (; i < runs; i++){
+                    local = instance.name;
+                }
+                stop = new Date();
+                return stop-start;
+            }
+        },
+        {
+            name: "Prototype Property",
+            test: function(){
+                var i=0, start,stop,
+                    instance = new Type2();
+                start = new Date();
+                for (; i < runs; i++){
+                    local = instance.name;
+                }
+                stop = new Date();
+                return stop-start;
+            }
+        },
+        {
+            name: "Prototype + 1 Property",
+            test: function(){
+                var i=0, start,stop,
+                    instance = new Type3();
+                start = new Date();
+                for (; i < runs; i++){
+                    local = instance.name;
+                }
+                stop = new Date();
+                return stop-start;
+            }
+        },
+        {
+            name: "Prototype + 2 Property",
+            test: function(){
+                var i=0, start,stop,
+                    instance = new Type4();
+                start = new Date();
+                for (; i < runs; i++){
+                    local = instance.name;
+                }
+                stop = new Date();
+                return stop-start;
+            }
+        }                             
+
+    ];
+
+//-----------------------------------------------------------------------------
+// Test Execution
+//-----------------------------------------------------------------------------
+
+window.onload = function(){
+
+    document.getElementById("run-tests").onclick = function(){
+        var totalTestCount = tests.length,
+            curTestNum =1,
+            progressElement = document.getElementById("progress"),
+            accessSelector = document.getElementById("var-accesses");
+            
+        //get number of accesses
+        runs = Number(accessSelector.options[accessSelector.selectedIndex].value);
+        
+        setTimeout(function(){
+            
+            curTest = tests.shift();
+            if (curTest){
+                results.push(curTest.test());
+                
+                progressElement.innerHTML = "Running tests (" + (curTestNum++) + "/" + totalTestCount + ")";
+                        
+                var outer = arguments.callee;
+                setTimeout(function(){
+                
+                    results.push(curTest.test());
+                    if (results.length < 100){
+                        setTimeout(arguments.callee, 50);  //run again
+                    } else {
+                        var sum = 0;
+                        for (var i=0; i < results.length; i++){
+                            sum += results[i];
+                        }
+                        
+                        document.getElementById("results").innerHTML += curTest.name + ": " + (sum/results.length) + "ms<br />";
+                        results = [];
+                        setTimeout(outer, 50);            
+                    }
+                }, 50);
+        
+            } else {
+                progressElement.innerHTML = "All tests complete (" + totalTestCount + "/" + totalTestCount + ")";
+            }
+        }, 0);
+    };
+};
+
+    </script>
+    
+</body>
+</html>

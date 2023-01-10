@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Iframe onload Example 4</title>
+</head>
+<body>
+    <h1>Iframe onload Example 4</h1>
+    <p>This example dynamically creates an iframe and assigns its <code>src</code> to a local resource. Both this page and the iframe page have their <code>document.domain</code> properties set to "nczonline.net". The iframe page notifies the containing page when it's completely loaded. This only works for local resources but does work in all browsers. </p>
+    <p><button onclick="loadLocalIframe()">Load local iframe</button></p>
+    <script type="text/javascript">
+        document.domain = "nczonline.net";
+        function loadLocalIframe(){
+            var iframe = document.createElement("iframe");
+            iframe.src = "complexinner.htm";
+            iframe._myMethod = function(){
+                alert("Local iframe is now loaded.");
+            };
+            document.body.appendChild(iframe);
+        }
+    
+    </script>
+    <p>Back to the <a href="{{site.url}}/blog/2009/09/15/iframes-onload-and-documentdomain">blog post</a></p>
+
+</body>
+</html>
+

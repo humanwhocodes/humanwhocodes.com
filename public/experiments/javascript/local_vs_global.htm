@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Which is faster? Local or global?</title>
+</head>
+<body>
+<script type="text/javascript">
+          
+        var color = "blue";
+        
+        function returnColorFromGlobal(){
+            return color;
+        }
+        
+        function returnColorFromLocal(){
+            var color = "blue";
+            return color;
+        }
+                
+        var result, i=0;
+        var start = null, stop = null;
+        
+        start = new Date();
+        for (i=0; i < 100000; i++){
+            result = returnColorFromGlobal();
+        }
+        stop = new Date();
+        
+        document.write("Using global: ");
+        document.write(stop - start);
+        document.write("ms<br>");
+
+        start = new Date();
+        for (i=0; i < 100000; i++){
+            result = returnColorFromLocal();
+        }
+        stop = new Date();
+        document.write("Using local: ");
+        document.write(stop - start);
+        document.write("ms<br>");
+        
+      
+    </script>  
+</body>
+</html>

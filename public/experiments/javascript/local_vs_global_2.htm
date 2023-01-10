@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Which is faster? Local or global? Part 2</title>
+</head>
+<body>
+<script type="text/javascript">
+          
+        var num = 0;
+        var start, stop;
+        
+        function workWithGlobal(){
+            start = new Date();
+            for (var i=0; i < 100000; i++){
+                num += i;
+            }
+            stop = new Date();
+        }
+        
+        function workWithLocal(){
+            var num = 0;
+            start = new Date();
+            for (var i=0; i < 100000; i++){
+                num += i;
+            }
+            stop = new Date();
+        }
+        
+        workWithGlobal();
+        
+        document.write("Using global: ");
+        document.write(stop - start);
+        document.write("ms<br>");
+
+        workWithLocal();
+        
+        document.write("Using local: ");
+        document.write(stop - start);
+        document.write("ms<br>");
+        
+      
+    </script>  
+</body>
+</html>

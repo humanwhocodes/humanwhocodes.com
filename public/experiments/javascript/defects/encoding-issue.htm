@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>IE Encoding Issue</title>
+    
+</head>
+<body>
+    <p>I'm passing the follow HTML string to <code>innerHTML</code>:</p>
+    <pre><code>&lt;div&gt;&lt;h2&gt;Greetings!\u0000&lt;/h2&gt;&lt;p&gt;We'd like to welcome you...&lt;/p&gt;&lt;/div&gt;</code></pre>
+
+    <p>You should see this output when you click the button. In IE, you'll note that the paragraph is missing.</p>
+    <button onclick="doIt()">Create Markup</button>
+    <div id="output">
+    </div>
+<script>
+function doIt(){
+    var div = document.getElementById("output");
+    div.innerHTML = "<div><h2>Greetings!\u0000</h2><p>We'd like to welcome you...</p></div>";
+    alert(div.innerHTML);
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Button Examples</title>
+    <style>
+        .like-btn {
+            display: block;
+            width: 14px;
+            height: 14px;
+            background: url(activities.png) 0 -85px no-repeat;
+        }
+
+        button {
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            background: transparent;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+<body>
+
+    <p>Old-style button:</p>
+    <input type="image" src="like.png" width="14" height="14" alt="Like">
+
+    <p>With &lt;button&gt;</p>
+    <button><img src="like.png" width="14" height="14" alt="Like"></button>
+
+    <p>New-style button (sprite)</p>
+    <input type="image" src="pixel.gif" class="like-btn" alt="Like">
+
+    <p>New-style button (sprite) using &lt;button&gt;</p>
+    <button><img src="pixel.gif" class="like-btn" alt="Like"></button>
+
+    <p>New-style button (sprite) using &lt;button&gt; with aria-label</p>
+    <button aria-label="Like"><img src="pixel.gif" class="like-btn" alt="Like"></button>
+
+
+
+</body>
+</html>

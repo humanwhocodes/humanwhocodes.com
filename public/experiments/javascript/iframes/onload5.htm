@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>IFrame onload Example 5</title>
+</head>
+<body>
+    <h1>Iframe onload Example 5</h1>
+    <p>This example dynamically creates an iframe and assigns a function to its <code>onload</code> event handler for non-IE browsers and assigned an event handler to <code>onreadystatechange</code> for IE..
+    Non-IE browsers will display an alert when the frame is completely loaded. The local iframe loads a file with 
+    the same domain as the containing page while the foreign iframe loads <a href="http://search.yahoo.com">search.yahoo.com</a>.</p>
+    <p><button onclick="loadLocalIframe()">Load local iframe</button><button onclick="loadForeignIframe()">Load foreign iframe</button></p>
+    <script type="text/javascript">
+    
+        function loadLocalIframe(){
+            var iframe = document.createElement("iframe");
+            iframe.src = "simpleinner.htm";
+
+            if (navigator.userAgent.indexOf("MSIE") > -1 && !window.opera){
+                iframe.onreadystatechange = function(){
+                    if (iframe.readyState == "complete"){
+                        alert("Local iframe is now loaded.");
+                    }
+                };            
+            } else {
+                iframe.onload = function(){
+                    alert("Local iframe is now loaded.");
+                };            
+            }
+
+
+            document.body.appendChild(iframe);
+        }
+
+        function loadForeignIframe(){
+            var iframe = document.createElement("iframe");
+            iframe.src = "http://search.yahoo.com/";
+            if (navigator.userAgent.indexOf("MSIE") > -1 && !window.opera){
+                iframe.onreadystatechange = function(){
+                    if (iframe.readyState == "complete"){
+                        alert("Foreign iframe is now loaded.");
+                    }
+                };            
+            } else {
+                iframe.onload = function(){
+                    alert("Foreign iframe is now loaded.");
+                };            
+            }
+            document.body.appendChild(iframe);
+        }
+    
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>IFrame onload Example (Outer)</title>
+</head>
+<body>
+    <h1>Iframe onload Example</h1>
+    <p>This example dynamically creates an iframe and assigns a function to its <code>window</code> object's <code>onload</code> event handler.
+    This typically works in only Internet Explorer and Firefox so long as the iframe just loads a local resource. The problem is that I've changed <code>document.domain</code> to be "nczonline.net", which makes the page a member of <code>nczonline.net</code> while the iframe is a member of <code>www.nczonline.net</code>. This difference causes a security issue and the assignment to <code>onload</code> fails.</p>
+    <p><button onclick="loadLocalIframe()">Load local iframe</button><button onclick="loadForeignIframe()">Load foreign iframe</button></p>
+    <script type="text/javascript">
+        document.domain = "nczonline.net";
+        function loadLocalIframe(){
+            var iframe = document.createElement("iframe"),
+                iframeWindow;
+            iframe.src = "simpleinner.htm";
+            document.body.appendChild(iframe);
+            iframeWindow = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            iframeWindow.onload = function(){
+                alert("Local iframe is now loaded.");
+            };
+        }
+
+        function loadForeignIframe(){
+            var iframe = document.createElement("iframe");
+            iframe.src = "http://search.yahoo.com/";
+            document.body.appendChild(iframe);
+            iframeWindow = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            iframeWindow.onload = function(){
+                alert("Foreign iframe is now loaded.");
+            };
+        }
+    
+    </script>
+    <p>Back to the <a href="{{site.url}}/blog/2009/09/15/iframes-onload-and-documentdomain">blog post</a></p>
+
+</body>
+</html>
+

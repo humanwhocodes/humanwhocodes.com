@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>IFrame onload Example (Outer)</title>
+</head>
+<body>
+    <h1>Iframe onload Example</h1>
+    <p>This example dynamically creates an iframe and assigns a function to its <code>window</code> object's <code>onload</code> event handler.
+    This works in all browsers so long as the iframe just loads a local resource. There's a JavaScript error when you attempt this for foreign resources.</p>
+    <p><button onclick="loadLocalIframe()">Load local iframe</button><button onclick="loadForeignIframe()">Load foreign iframe</button></p>
+    <script type="text/javascript">
+    
+        function loadLocalIframe(){
+            var iframe = document.createElement("iframe"),
+                iframeWindow;
+            iframe.src = "simpleinner.htm";
+            document.body.appendChild(iframe);
+            iframeWindow = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            iframeWindow.onload = function(){
+                alert("Local iframe is now loaded.");
+            };
+        }
+
+        function loadForeignIframe(){
+            var iframe = document.createElement("iframe");
+            iframe.src = "http://search.yahoo.com/";
+            document.body.appendChild(iframe);
+            iframeWindow = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            iframeWindow.onload = function(){
+                alert("Foreign iframe is now loaded.");
+            };
+        }
+    
+    </script>
+    <p>Back to the <a href="{{site.url}}/blog/2009/09/15/iframes-onload-and-documentdomain">blog post</a></p>
+
+</body>
+</html>
+

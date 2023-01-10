@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Skip Links</title>
+
+</head>
+<body>
+
+    <a href="#content">Skip to content</a>
+    <a href="#">Do you get here?</a>
+    <div id="content">
+        <a href="#">Or here?</a>
+        <a href="#">Or even here?</a>
+    </div>
+
+    <script>
+        // window.addEventListener("hashchange", function(event) {
+
+        //     var element = document.getElementById(location.hash.substring(1));
+
+        //     if (element) {
+        //         element.tabIndex = -1;
+        //         element.focus();
+        //     }
+
+        // }, false);
+
+        // document.body.addEventListener("click", function(event) {
+        //     var target = event.target,
+        //         contentNode;
+
+        //     if (target.className == "skip-to-content") {
+        //         location.hash = target.getAttribute("href");
+        //         contentNode = document.getElementById(target.getAttribute("href").substring(1));
+        //         contentNode.tabIndex = -1;
+        //         contentNode.focus();
+
+        //         event.preventDefault();
+        //     }
+        // }, false);
+    </script>
+
+</body>
+</html>

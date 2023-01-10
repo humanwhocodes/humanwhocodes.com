@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Execution Context Example 1</title>
+    
+</head>
+<body>
+    <script>
+        var props = [];
+        for (var prop in window) {
+            props.push(prop);
+        }
+        props.sort();
+        for (var i=0; i < props.length; i++){
+            document.write(props[i] + ": " + window[props[i]] + "<br>");
+        }
+    </script>
+</body>
+</html>

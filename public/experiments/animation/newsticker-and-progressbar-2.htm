@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<pre id="status" style="width:200px;background:silver"></pre>
+
+<div style="width: 500px; border: 1px solid black"><div id="progress" style="width:0%;height:20px;background:blue"></div></div>
+    <script>
+(function(){
+
+    var msg = "NFL Draft is live tonight from Radio City Music Hall in New York City!"
+        len = 25,
+        pos = 0,
+        padding = msg.replace(/./g, " ").substr(0,len)
+        finalMsg = padding + msg;
+        
+    function updateText(){
+        var curMsg = finalMsg.substr(pos++, len);
+        document.getElementById("status").innerHTML = curMsg;
+        if (pos == finalMsg.length){
+            pos = 0;
+        }
+    }
+        
+    function updateProgress(){
+        var div = document.getElementById("progress");
+        if (div.style.width != "100%"){
+            div.style.width = (parseInt(div.style.width, 10) + 5) + "%";
+        }
+    }
+
+        
+    function updateAnimations(){
+        updateText();
+        updateProgress();
+    }
+    
+    setInterval(updateAnimations, 17);
+    
+})();
+
+    </script>
+</body>
+</html>

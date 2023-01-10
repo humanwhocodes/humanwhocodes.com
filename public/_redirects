@@ -1,0 +1,22 @@
+# Redirect domain aliases to primary domain
+http://nczonline.net/* http://humanwhocodes.com/:splat 301!
+https://nczonline.net/* https://humanwhocodes.com/:splat 301!
+http://www.nczonline.net/* http://humanwhocodes.com/:splat 301!
+https://www.nczonline.net/* https://humanwhocodes.com/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+http://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
+https://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
+
+# Homepage
+/               /blog/  302!
+
+# Scheduling
+/schedule/*     https://humanwhocodes.as.me/:splat 302!
+
+# Newsletter
+/newsletter/*     https://mailinglist.humanwhocodes.com 302!
+
+# Feeds
+http://feeds.nczonline.net/blog https://humanwhocodes.com/feeds/blog.xml 301!
+https://feeds.nczonline.net/blog https://humanwhocodes.com/feeds/blog.xml 301!

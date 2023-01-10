@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+    <title>iPhone in CSS</title>
+    <style type="text/css">
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
+    
+    .corners {
+        -moz-border-radius: 45px;
+        -webkit-border-radius: 45px;
+        border-radius: 45px;    
+    }
+    
+    #iPhone {
+        height: 560px;
+        width: 295px;
+        background: #000;
+        margin: 1% auto;
+        padding: 2px;
+        overflow: hidden;
+       
+        -moz-box-shadow: 0 0 5px #000;
+        -webkit-box-shadow: 0 0 5px #000;
+        box-shadow: 0 0 5px #000;
+    }
+    
+    #iPhone > .inner {       
+
+        background: silver;
+        -moz-box-shadow: inset 0 0 14px #000;
+        -webkit-box-shadow: inset 0 0 14px #000;
+        box-shadow: inset 0 0 14px #000;
+
+
+        height: 532px;
+        padding: 14px;
+    }
+    
+    #iPhone .more-inner {
+        
+        background: #000;
+        height: 532px;
+        
+        -moz-box-shadow: 0 0 5px #000;
+        -webkit-box-shadow: 0 0 5px #000;
+        box-shadow: 0 0 5px #000;        
+        position: relative;
+    }
+
+    #iPhone .screen {
+        height: 375px;
+        background: #333;
+        position: absolute;
+        top: 75px;
+        width: 100%;
+        
+        color: #E8E8E8;
+        font-family: Arial, Sans-serif;
+        font-size: 10px;
+
+    }
+    
+    #iPhone .screen .hd {
+        text-align: center;
+    }    
+
+    #iPhone .footer {
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+    }
+    
+    #iPhone .footer a {
+        height: 50px;
+        width: 50px;
+        display: block;
+        background-color: #000;
+        background-image: -moz-radial-gradient(25px 0, circle farthest-corner, #000 0%, #000 55%, silver 100%);      
+        background-image: -webkit-gradient(radial, 25 0, 0, 25 0, 55, from(#000), to(silver), color-stop(55%, #000));
+        
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        position: relative;
+        margin: 10px auto 0;
+    }    
+    
+    #iPhone .footer a .inner {
+        height: 18px;
+        width: 18px;
+        background: #000;
+        border: 1px solid silver;
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+    }      
+    
+    #iPhone .footer a .inner .text {    
+        font-size: 0;
+        line-height: 0;   
+        position: absolute;
+        top: -1000px;
+    }
+    
+    #iPhone .screen .apps {
+        padding: 0 17px;
+    }
+    
+    #iPhone .screen .bd .apps {
+        padding: 17px;
+    }
+    
+    #iPhone .screen .apps .icon {
+        display: block;
+        width: 44px;
+        height: 44px;
+        background: green;
+        
+        
+        background-image: -moz-radial-gradient(22px -5px, circle farthest-side, rgba(255,255,255,1.0), rgba(255,255,255,0.0));      
+        background-image: -webkit-gradient(radial, 22 -5, 0, 22 -5, 40, from(rgba(255,255,255,1.0)), to(rgba(255,255,255,0.0)));        
+        
+        -moz-box-shadow: 0 1px 1px #000;
+        -webkit-box-shadow: 0 1px 1px #000;
+        box-shadow: 0 1px 1px #000;         
+        
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;     
+        margin-bottom: 4px;   
+    }
+    
+    #iPhone .screen .apps li {
+        float: left;
+        text-align: center;
+        margin: 7px;
+    }
+
+    #iPhone .screen .ft .apps li {
+        margin-bottom: 0;
+    }
+
+    
+    #iPhone .screen .apps a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #iPhone .screen .ft .apps a .icon {
+        margin-bottom: 7px;        
+    }
+
+
+    #iPhone .screen .ft {
+        position: absolute;
+        bottom: 0;
+        background-color: #595a5e;
+        background-image: -moz-linear-gradient(bottom, #595a5e, #b2b3b5 20%, #46454a);
+        background-image: -webkit-gradient(linear, center bottom, center top, from(#595a5e), to(#46454a), color-stop(20%, #b2b3b5));
+    }
+    
+    .clearfix {
+        zoom: 1;
+    }
+        
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }     
+    
+    #intro {
+        position: absolute;
+        bottom: 0;
+        padding: 0.5em;
+    }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <p>This iPhone is created without the use of images.</p>
+        <p>It's really obvious if you view this page in Internet Explorer &lt; 9.</p>
+        <p>Back to <a href="{{site.url}}/">NCZOnline</a>.</p>
+    </div>
+    <div id="iPhone" class="corners">
+        <div class="inner corners">
+            <div class="more-inner corners">
+                <div class="screen">                
+                    <div class="hd">9:42 PM</div>
+                    <div class="bd">
+                        <ol class="apps clearfix">
+                            <li><a href="#"><span class="icon" style="background-color: blue"></span>Text</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #800"></span>Calendar</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #080"></span>Photos</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #008"></span>Camera</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #0C0"></span>YouTube</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: green"></span>Stocks</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #ddf"></span>Maps</a></li>                        
+                        </ol>                    
+                    </div>
+                    <div class="ft">
+                        <ol class="apps clearfix">
+                            <li><a href="#"><span class="icon" style="background-color: #07c203"></span>Phone</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #166BE0"></span>Mail</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #4ADDFF"></span>Web</a></li>
+                            <li><a href="#"><span class="icon" style="background-color: #ff8e02"></span>iPod</a></li>                     
+                        </ol>                    
+                    </div>
+                </div>
+                <div class="footer">
+                    <a href="#"><span class="inner"><span class="text">Home</span></span></a>
+                </div>            
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

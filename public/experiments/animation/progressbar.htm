@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div style="width: 200px; border: 1px solid black"><div id="status" style="width:0%;height:20px;background:blue"></div></div>
+    <script>
+(function(){
+        
+    function updateProgress(){
+        var div = document.getElementById("status");
+        div.style.width = (parseInt(div.style.width, 10) + 5) + "%";
+        if (div.style.width != "100%"){                    
+            setTimeout(updateProgress, 100);
+        }
+
+    }
+    
+    setTimeout(updateProgress, 100);
+    
+})();
+    </script>
+</body>
+</html>
