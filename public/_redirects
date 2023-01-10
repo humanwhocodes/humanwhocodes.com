@@ -5,8 +5,8 @@ http://www.nczonline.net/* http://humanwhocodes.com/:splat 301!
 https://www.nczonline.net/* https://humanwhocodes.com/:splat 301!
 
 # Optional: Redirect default Netlify subdomain to primary domain
-http://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
-https://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
+# http://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
+# https://humanwhocodes.netlify.com/* https://humanwhocodes.com/:splat 301!
 
 # Homepage
 /               /blog/  302!
