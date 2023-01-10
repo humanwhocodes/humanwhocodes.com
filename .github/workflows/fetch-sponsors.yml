@@ -1,0 +1,31 @@
+name: Fetch Sponsors
+
+on:
+  schedule:
+  - cron: "0 15 * * 2,4"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+
+    - name: Install npm packages
+      run: npm install
+
+    - name: Fetch sponsors
+      run: npm run fetch:sponsors
+
+    - name: Setup Git
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<bot@humanwhocodes.com>"
+    
+    - name: Save updated files
+      run: |
+        chmod +x ./tools/commit-data.sh
+        ./tools/commit-data.sh
