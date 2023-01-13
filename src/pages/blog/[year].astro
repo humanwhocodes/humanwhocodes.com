@@ -9,7 +9,7 @@ export async function getStaticPaths({ paginate }) {
 
     const postYears = new Map();
     posts.forEach(post => {
-        const year = post.urlParts.year;
+        const year = post.frontmatter.date.getFullYear();
 
         if (!postYears.get(year)) {
             postYears.set(year, []);

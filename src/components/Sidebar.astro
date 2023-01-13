@@ -10,7 +10,7 @@ const sponsors = allSponsors.filter(sponsor => sponsor.amount >= 500);
 const years = new Set();
 
 posts.forEach(post => {
-    const year = post.urlParts.year;
+    const year = post.frontmatter.date.getFullYear();
     years.add(year);
 });
 ---

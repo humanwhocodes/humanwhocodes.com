@@ -9,7 +9,7 @@ export async function getStaticPaths({ paginate }) {
 
     const postYears = new Map();
     posts.forEach(post => {
-        const year = post.urlParts.year;
+        const year = post.frontmatter.date.getFullYear();
 
         if (!postYears.get(year)) {
             postYears.set(year, []);
@@ -31,9 +31,9 @@ const { year } = Astro.params;
 
 ---
 <Layout
-	title={`Posts in ${year}`}
+	title={`Snippets in ${year}`}
 >	
-	<h2 class="no-margin">Posts in {year}</h2>
+	<h2 class="no-margin">Snippets in {year}</h2>
 
 	{posts.map((post) => (
 		<PostBlurb

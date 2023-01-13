@@ -1,6 +1,8 @@
 ---
-import Post from "../../../../layouts/Post.astro";
-import { loadSnippets } from "../../../../lib/util.js";
+import path from "node:path";
+import { fileURLToPath } from 'url'
+import Post from "../../layouts/Post.astro";
+import { loadSnippets } from "../../lib/util.js";
 
 export async function getStaticPaths() {
 
@@ -9,13 +11,14 @@ export async function getStaticPaths() {
     const stuff = posts.map(post => {
 
         return {
-            params: post.urlParts,
+            params: { path: post.urlPath },
             props: {
                 post
             }
 
         }
     });
+
     return stuff;
 };
 

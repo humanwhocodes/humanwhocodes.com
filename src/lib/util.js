@@ -47,7 +47,6 @@ function formatJekyllPosts(posts, type) {
             url: { value: url }
         });
 
-        newPost.urlParts = urlParts;
         newPost.urlPath = urlPath;
         newPost.frontmatter.date = new Date(filename.slice(0, 10));
         newPost.frontmatter.pubDate = newPost.frontmatter.date;
