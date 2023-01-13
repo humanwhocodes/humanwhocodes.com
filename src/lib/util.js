@@ -16,14 +16,39 @@ import commentThreads from "../data/comments.json";
 // Helpers
 //-----------------------------------------------------------------------------
 
+function getDateParts(text) {
+    const dateMatches = /^(\d{4})\-(\d{2})\-(\d{2})/.exec(text);
+    if (dateMatches) {
+        return {
+            year: dateMatches[1],
+            month: dateMatches[2],
+            day: dateMatches[3],
+            toString() {
+                return `${this.year}-${this.month}-${this.day}`
+            }
+        };
+    }
+
+    return undefined;
+
+}
+
 function formatJekyllPosts(posts, type) {
     return posts.map(post => {
         const filename = path.basename(post.file, ".md");
-        const urlParts = {
-            year: filename.slice(0, 4),
-            month: filename.slice(5, 7),
-            slug: filename.slice(11)
-        };
+        let slug = filename;
+        let dateParts;
+
+        // is there a date in the filename?
+        dateParts = getDateParts(filename);
+        if (dateParts) {
+            slug = filename.slice(11);
+        }
+
+        // date in the frontmatter overrides the filename
+        if (post.frontmatter.date) {
+            dateParts = getDateParts(post.frontmatter.date.toISOString());
+        }
 
         let url;
         let urlPath;
@@ -39,8 +64,8 @@ function formatJekyllPosts(posts, type) {
             pathParts.pop();    // remove last empty space
             urlPath = pathParts.join("/");
         } else {
-            url = `/${type}/${urlParts.year}/${urlParts.month}/${urlParts.slug}/`;
-            urlPath = `${urlParts.year}/${urlParts.month}/${urlParts.slug}`;
+            url = `/${type}/${dateParts.year}/${dateParts.month}/${slug}/`;
+            urlPath = `${dateParts.year}/${dateParts.month}/${slug}`;
         }
 
         const newPost = Object.create(post, {
@@ -48,8 +73,14 @@ function formatJekyllPosts(posts, type) {
         });
 
         newPost.urlPath = urlPath;
-        newPost.frontmatter.date = new Date(filename.slice(0, 10));
-        newPost.frontmatter.pubDate = newPost.frontmatter.date;
+
+        if (!newPost.frontmatter.date) {
+            newPost.frontmatter.date = new Date(dateParts);
+        }
+        
+        if (!newPost.frontmatter.pubDate) {
+            newPost.frontmatter.pubDate = newPost.frontmatter.date;
+        }
 
         if (newPost.frontmatter.updated) {
             newPost.frontmatter.updated = new Date(newPost.frontmatter.updated);
