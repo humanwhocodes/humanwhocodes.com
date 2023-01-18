@@ -10,7 +10,8 @@ const baseUrl = post.url.split("/")[1];
 <Layout
     title={post.frontmatter.title}
     description={post.frontmatter.teaser}
-    originalUrl={post.frontmatter.original?.url}>
+    originalUrl={post.frontmatter.original?.url}
+    canonicalUrl={post.frontmatter.canonical_url}>
 <article itemtype="http://schema.org/Article">
     <header>
         <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.frontmatter.title }</h1>

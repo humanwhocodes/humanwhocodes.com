@@ -6,6 +6,7 @@ export interface Props {
 	title: string;
 	description: string;
 	originalUrl?: string;
+	canonicalUrl?: string;
 	image?: string;
 }
 
@@ -13,8 +14,23 @@ const {
 	title,
 	description = site.description,
 	originalUrl,
+	canonicalUrl,
 	image = '/favicon.png'
 } = Astro.props;
+
+
+function getCanonicalUrl() {
+	if (canonicalUrl) {
+		return new URL(canonicalUrl, Astro.url).href;
+	}
+
+	if (originalUrl) {
+		return new URL(originalUrl, Astro.url).href;
+	}
+
+	return Astro.url;
+}
+
 
 const pageTitle = title ? `${title} - ${site.name}` : site.name;
 const blogTitle = `${site.name} - Blog`;
@@ -37,7 +53,7 @@ const allTitle = `${site.name} - All`;
 <meta name="description" content={description} />
 
 <!-- Canonical URLs -->
-<link rel="canonical" href={originalUrl ? originalUrl : Astro.url}>
+<link rel="canonical" href={getCanonicalUrl()}>
 
 <!-- Feeds -->
 <link rel="alternate" type="application/rss+xml" title={blogTitle} href={new URL(site.feed_source, site.url).href}>

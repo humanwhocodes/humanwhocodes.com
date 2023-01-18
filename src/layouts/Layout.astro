@@ -8,13 +8,18 @@ import "../styles/index.css";
 const {
 	title,
 	description,
-	originalUrl
+	originalUrl,
+	canonicalUrl
 } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} originalUrl={originalUrl} />
+		<BaseHead
+			title={title}
+			description={description}
+			originalUrl={originalUrl},
+			canonicalUrl{canonicalUrl} />
 	</head>
 
 	<body itemscope itemtype="http://schema.org/WebPage">
