@@ -47,6 +47,9 @@ function formatJekyllPosts(posts, type) {
 
         // date in the frontmatter overrides the filename
         if (post.frontmatter.date) {
+            if (typeof post.frontmatter.date === "string") {
+                post.frontmatter.date = new Date(post.frontmatter.date);
+            }
             dateParts = getDateParts(post.frontmatter.date.toISOString());
         }
 
