@@ -10,6 +10,10 @@ I remember the first time my manager told me what it took to get promoted to pri
 
 Not everyone is as lucky as me, to have had a manager who could articulate what it takes to succeed in the upper levels of the independent contributor track. As your coach, I look to fulfill that role for you. My job is to help you work through the leadership, organization, and communication challenges of your work; to help you discover what you're passionate about; to achieve that next-level promotion; or to strategize about implementing your vision.
 
+> Nicholas guided me through an incredible period of growth in my career, as I took Astro from a small open source repo into a widely-used project with 500+ contributors and over 25,000 GitHub stars. I could not have made this transition so successfully -- from individual contributor to technical lead and eventually manager & CEO -- without his help. Nicholas' insight and experience was invaluable, and helped me become a more effective technical leader to my team.
+>
+> -- Fred K. Schott, Astro Co-Creator, CEO of The Astro Technology Company
+
 ## About me
 
 Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I've worked at all kinds of companies from a tiny, bootstrapped startup to a multinational corporation. I've worked at companies in Massachusetts and California. I've worked on small teams and led distributed teams in multiple countries. I've worked as a consultant with multiple companies both on-site and remotely. I've been at a company that shut down completely and survived multiple rounds of layoffs at two other companies. I've been through two IPOs (one in Massachusetts, one in Silicon Valley). I've been an architect at two companies in Silicon Valley. I've published several well-reviewed programming [books](/books) and [spoken](/speaking) at software conferences around the world. I've started an [open source project](https://eslint.org) that has millions of daily downloads. I bring this wide range of experience with me into our conversations to not just explain how I approach things but to help find the approach that works best for you.
