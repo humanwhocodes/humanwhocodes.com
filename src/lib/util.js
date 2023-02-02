@@ -109,7 +109,7 @@ export async function loadBlogPosts() {
         return meta;
     }));
 
-    return formatJekyllPosts(posts, "blog");
+    return formatJekyllPosts(posts, "blog").filter(post => !post.frontmatter.draft);
 }
 
 export async function loadSnippets() {

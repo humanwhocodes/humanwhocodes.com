@@ -2,6 +2,7 @@
 title: "Returning data structures from Rust to JavaScript via WebAssembly"
 teaser: "Passing structured data between Rust and JavaScript can be done via WebAssembly, but it takes a bit of work."
 author: Nicholas C. Zakas
+draft: true
 categories:
   - Programming
 tags:
