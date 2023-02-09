@@ -5,9 +5,18 @@ import { loadBlogPosts } from "../../lib/util.js";
 import site from "../../data/config.yml";
 import Pagination from '../../components/Pagination.astro';
 
-export async function getStaticPaths({ paginate }) {
+import { getCollection } from 'astro:content';
+import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
 
-    const posts = await loadBlogPosts();
+export async function getStaticPaths({ paginate }) {
+    
+	const posts = (await getCollection('blog'))
+		.map(formatJekyllPost())
+		.reverse()
+		.filter(post => !post.data.draft && (post.data.date - new Date()))
+        // .sort(
+	    // 	(a, b) => b.data.pubDate - a.data.pubDate
+    	// );
 
     return paginate(posts, { pageSize: 10 });
 
@@ -22,12 +31,7 @@ const { page } = Astro.props;
 	<h2 class="no-margin">Recent Posts</h2>
 
 	{page.data.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 	<Pagination next={page.url.next} prev={page.url.prev} />

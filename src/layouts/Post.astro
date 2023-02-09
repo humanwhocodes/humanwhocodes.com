@@ -5,33 +5,33 @@ import PostTags from "../components/PostTags.astro";
 import Comments from "../components/Comments.astro";
 
 const { post } = Astro.props;
-const baseUrl = post.url.split("/")[1];
+const baseUrl = post.collection;
 ---
 <Layout
-    title={post.frontmatter.title}
-    description={post.frontmatter.teaser}
-    originalUrl={post.frontmatter.original?.url}
-    canonicalUrl={post.frontmatter.canonical_url}>
+    title={post.data.title}
+    description={post.data.teaser}
+    originalUrl={post.data.original?.url}
+    canonicalUrl={post.data.canonical_url}>
 <article itemtype="http://schema.org/Article">
     <header>
-        <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.frontmatter.title }</h1>
-        <p itemprop="description" class="no-margin-top">{ post.frontmatter.teaser }</p>
+        <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.data.title }</h1>
+        <p itemprop="description" class="no-margin-top">{ post.data.teaser }</p>
         <div class="post-meta gutter-top smaller-font dark-dotted-border-top dark-dotted-border-bottom">
-            <p class="no-margin byline">Posted at <time datetime={ post.frontmatter.date.toUTCString() } itemprop="datePublished">{
-                    post.frontmatter.date.toLocaleDateString('en-us', {
+            <p class="no-margin byline">Posted at <time datetime={ post.data.date.toUTCString() } itemprop="datePublished">{
+                    post.data.date.toLocaleDateString('en-us', {
                         year: "numeric",
                         month:"long",
                         day: "numeric"
                     }) }</time> by <span itemprop="author" itemtype="https://schema.org/Person">Nicholas
                     C. Zakas</span></p>
-            <PostTags tags={post.frontmatter.tags} baseUrl={baseUrl}/>
+            <PostTags post={post}/>
         </div>
     </header>
     <section id="post-body" class="content-font">
-        {post.frontmatter.original &&
+        {post.data.original &&
             <aside class="margin-top">
-                <p>This post originally appeared on <a href={post.frontmatter.original.blog.url}>{post.frontmatter.original.blog.title}</a> on
-                    <a href={post.frontmatter.original.url}>{ new Date(post.frontmatter.original.date).toLocaleDateString("en-US", {
+                <p>This post originally appeared on <a href={post.data.original.blog.url}>{post.data.original.blog.title}</a> on
+                    <a href={post.data.original.url}>{ new Date(post.data.original.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month:"long",
                         day: "numeric"

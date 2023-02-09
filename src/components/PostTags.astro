@@ -2,14 +2,17 @@
 import slugify from "slugify";
 
 const {
-    tags,
-    baseUrl
+    post
 } = Astro.props;
+
+const {
+    tags,
+} = post.data;
 ---
 <p class="no-margin-top tags">{tags && "Tags:"}
 {tags &&
     tags.map((tag, index) => 
-        <a href={`/${baseUrl}/tag/${slugify(tag.toLowerCase())}`} rel="tag">{ tag }</a>
+        <a href={`/${post.collection}/tag/${slugify(tag.toLowerCase())}`} rel="tag">{ tag }</a>
         <span>{ index < tags.length - 1 ? ", " : ""}</span>
     )
 }

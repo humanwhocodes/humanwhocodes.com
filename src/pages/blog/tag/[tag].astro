@@ -1,17 +1,23 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import PostBlurb from '../../../components/PostBlurb.astro';
-import { loadBlogPosts } from "../../../lib/util.js";
 import slugify from "slugify";
+import { getCollection } from 'astro:content';
+import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
 
 export async function getStaticPaths() {
     
-    const posts = await loadBlogPosts();
+	const posts = (await getCollection('blog'))
+		.map(formatJekyllPost())
+        .sort(
+	    	(a, b) => a.data.pubDate - b.data.pubDate
+    	);
+
     const postTags = new Map();
     posts.forEach(post => {
 
-        if (post.frontmatter.tags) {
-            for (const tag of post.frontmatter.tags) {
+        if (post.data.tags) {
+            for (const tag of post.data.tags) {
         
                 if (!postTags.get(tag)) {
                     postTags.set(tag, []);
