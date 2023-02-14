@@ -1,7 +1,5 @@
 import site from "../../data/config.yml";
 import { loadSnippets, generateJsonFeed } from "../../lib/util";
-import xmlEscape from "xml-escape";
-import { stripHtml } from "string-strip-html";
 
 export async function get() {
 	
