@@ -8,11 +8,12 @@
 // Imports
 //-----------------------------------------------------------------------------
 
-import path from "path";
 import site from "../data/config.yml";
 import commentThreads from "../data/comments.json";
 import { getCollection } from 'astro:content';
 import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
+import xmlEscape from "xml-escape";
+import { stripHtml } from "string-strip-html";
 
 
 //-----------------------------------------------------------------------------
@@ -50,5 +51,43 @@ export async function loadAllContent() {
         loadSnippets()
     ]);
 
-    return all.flat().sort((a, b) => b.frontmatter.date - a.frontmatter.date);
+    return all.flat().sort((a, b) => b.data.date - a.data.date);
+}
+
+
+export async function generateJsonFeed({ site, feedUrl, description=site.description, posts}) {
+
+    const rendered = await Promise.all(posts.map(post => post.render()));
+console.log(rendered[0])
+    return JSON.stringify({
+        version: "https://jsonfeed.org/version/1",
+        title: xmlEscape(site.name),
+        home_page_url: site.url,
+        feed_url: new URL(feedUrl, site.url).href,
+        description,
+        expired: false,
+        author: {
+            name: site.author
+        },
+        items: posts.map((post, index) => {
+            
+            const url = new URL(`/${post.collection}/${post.slug}/`, site.url).href;
+            const data = post.data;
+
+            return {
+                id: url,
+                url,
+                title: data.title,
+                author: {
+                    name: site.author
+                },
+                summary: data.teaser,
+                // content_text: stripHtml(compiledContent()).result,
+                // content_html: xmlEscape(compiledContent()),
+                tags: data.tags,
+                date_published: data.date.toISOString(),
+                date_updated: data.updated ? data.updated.toISOString() : data.date.toISOString()
+            };
+        })
+    });
 }

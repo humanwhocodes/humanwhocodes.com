@@ -5,21 +5,9 @@ import { loadBlogPosts } from "../../lib/util.js";
 import site from "../../data/config.yml";
 import Pagination from '../../components/Pagination.astro';
 
-import { getCollection } from 'astro:content';
-import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
-
 export async function getStaticPaths({ paginate }) {
-    
-	const posts = (await getCollection('blog'))
-		.map(formatJekyllPost())
-		.reverse()
-		.filter(post => !post.data.draft && (post.data.date - new Date()))
-        // .sort(
-	    // 	(a, b) => b.data.pubDate - a.data.pubDate
-    	// );
-
+	const posts = await loadBlogPosts();
     return paginate(posts, { pageSize: 10 });
-
 };
 
 const { page } = Astro.props;

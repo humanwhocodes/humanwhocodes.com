@@ -3,13 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import PostBlurb from '../../components/PostBlurb.astro';
 import { loadSnippets } from "../../lib/util.js";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths() {
 
     const posts = await loadSnippets();
 
     const postYears = new Map();
     posts.forEach(post => {
-        const year = post.frontmatter.date.getFullYear();
+        const year = post.data.date.getFullYear();
 
         if (!postYears.get(year)) {
             postYears.set(year, []);
@@ -36,12 +36,7 @@ const { year } = Astro.params;
 	<h2 class="no-margin">Snippets in {year}</h2>
 
 	{posts.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 

@@ -2,15 +2,13 @@
 import Layout from '../../../layouts/Layout.astro';
 import PostBlurb from '../../../components/PostBlurb.astro';
 import slugify from "slugify";
-import { getCollection } from 'astro:content';
-import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
+import { loadBlogPosts } from '../../../lib/util';
 
 export async function getStaticPaths() {
     
-	const posts = (await getCollection('blog'))
-		.map(formatJekyllPost())
+	const posts = (await loadBlogPosts())
         .sort(
-	    	(a, b) => a.data.pubDate - b.data.pubDate
+	    	(a, b) => b.data.pubDate - a.data.pubDate
     	);
 
     const postTags = new Map();
@@ -44,12 +42,7 @@ const { posts, tag } = Astro.props;
 	<h2 class="no-margin">Posts tagged with "{tag}"</h2>
 
 	{posts.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 

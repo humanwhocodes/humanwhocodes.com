@@ -19,19 +19,19 @@ export async function get() {
             author: {
                 name: site.author
             },
-            items: posts.map(({url, frontmatter, compiledContent}) => ({
-                id: new URL(url, site.url).href,
-                url: new URL(url, site.url).href,
-                title: frontmatter.title,
+            items: posts.map(({collection, slug, data, compiledContent}) => ({
+                id: new URL(collection, site.url).href,
+                url: new URL(collection, site.url).href,
+                title: data.title,
                 author: {
                     name: site.author
                 },
-                summary: frontmatter.teaser,
+                summary: data.teaser,
                 content_text: stripHtml(compiledContent()).result,
                 content_html: xmlEscape(compiledContent()),
-                tags: frontmatter.tags,
-                date_published: frontmatter.date.toISOString(),
-                date_updated: frontmatter.updated ? frontmatter.updated.toISOString() : frontmatter.date.toISOString()
+                tags: data.tags,
+                date_published: data.date.toISOString(),
+                date_updated: data.updated ? data.updated.toISOString() : data.date.toISOString()
              }))
         })
 	};

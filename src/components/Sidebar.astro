@@ -36,7 +36,7 @@ posts.forEach(post => {
     <h2 class="smaller-font">Recent Snippets</h2>
     <ul>
         {snippets.map(snippet => (
-            <li><a href={snippet.url}>{ snippet.data.title }</a></li>
+            <li><a href={`/snippets/${snippet.slug}/`}>{ snippet.data.title }</a></li>
         ))}
     </ul>
     <h2 class="smaller-font">Archives ({years.size} Years)</h2>

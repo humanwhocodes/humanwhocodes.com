@@ -1,13 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import PostBlurb from '../../components/PostBlurb.astro';
-import { getCollection } from 'astro:content';
-import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
+import { loadBlogPosts } from "../../lib/util.js";
 
 export async function getStaticPaths() {
 
-	const posts = (await getCollection('blog'))
-		.map(formatJekyllPost())
+	const posts = (await loadBlogPosts('blog'))
         .sort(
 	    	(a, b) => a.data.pubDate - b.data.pubDate
     	);
