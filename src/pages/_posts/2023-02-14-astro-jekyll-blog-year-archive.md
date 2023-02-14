@@ -2,7 +2,6 @@
 title: "Creating a Jekyll-style blog post year archive in Astro"
 teaser: "While not included in their default blog template, it is straightforward to create a year-based archive for your posts in Astro."
 author: Nicholas C. Zakas
-draft: true
 categories:
   - Programming
 tags:
