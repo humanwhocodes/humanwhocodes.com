@@ -2,7 +2,7 @@ import site from "../../data/config.yml";
 import xmlEscape from "xml-escape";
 import { loadAllContent } from "../../lib/util";
 import { stripHtml } from "string-strip-html";
-
+import { generateJsonFeed } from "../../lib/util";
 
 export async function get() {
 	

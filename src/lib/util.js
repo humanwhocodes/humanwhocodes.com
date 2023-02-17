@@ -13,7 +13,7 @@ import commentThreads from "../data/comments.json";
 import { getCollection } from 'astro:content';
 import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
 import xmlEscape from "xml-escape";
-import { stripHtml } from "string-strip-html";
+import { renderMarkdown } from "@astrojs/markdown-remark";
 
 
 //-----------------------------------------------------------------------------
@@ -57,8 +57,10 @@ export async function loadAllContent() {
 
 export async function generateJsonFeed({ site, feedUrl, description=site.description, posts}) {
 
-    const rendered = await Promise.all(posts.map(post => post.render()));
-console.log(rendered[0])
+    const rendered = await Promise.all(
+        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir:"."}))
+    );
+
     return JSON.stringify({
         version: "https://jsonfeed.org/version/1",
         title: xmlEscape(site.name),
@@ -82,12 +84,61 @@ console.log(rendered[0])
                     name: site.author
                 },
                 summary: data.teaser,
-                // content_text: stripHtml(compiledContent()).result,
-                // content_html: xmlEscape(compiledContent()),
+                content_text: post.body,
+                content_html: xmlEscape(rendered[index].metadata.html),
                 tags: data.tags,
                 date_published: data.date.toISOString(),
                 date_updated: data.updated ? data.updated.toISOString() : data.date.toISOString()
             };
         })
     });
+}
+
+export async function generateRssFeed({ site, feedUrl, description = site.description, posts }) {
+
+    const rendered = await Promise.all(
+        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir: "." }))
+    );
+
+    return `
+		<?xml version="1.0" encoding="utf-8"?>
+		<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+		xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+		>
+		<channel>
+			<title xml:lang="en">${site.name}</title>
+			<atom:link href="${new URL(feedUrl, site.url).href}" rel="self" type="application/rss+xml"/>
+			<link>${site.url}</link>
+			<pubDate>${(new Date()).toUTCString()}</pubDate>
+			<lastBuildDate>${(new Date()).toUTCString()}</lastBuildDate>
+			<language>en-US</language>
+			<generator>Astro</generator>
+			<description>${description}</description>
+
+			${posts.map((post, index) => {
+                
+                const url = new URL(`/${post.collection}/${post.slug}/`, site.url).href;
+                const data = post.data;
+                
+                return `
+					<item>
+						<title>${data.title}</title>
+						<link>${new URL(url, site.url).href}</link>
+						<pubDate>${data.date.toUTCString()}</pubDate>
+						<dc:creator>Nicholas C. Zakas</dc:creator>
+						${data.tags.map(tag => `<category>${tag}</category>`).join("")}
+						<guid isPermaLink="true">${new URL(url, site.url).href}</guid>
+						<description>${data.teaser}</description>
+						<content:encoded>${xmlEscape(rendered[index].metadata.html)}</content:encoded>
+					</item>
+				`.trim();
+            }).join("")
+        }
+		</channel>
+    </rss>`.trim();
 }
