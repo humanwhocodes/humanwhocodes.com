@@ -10,7 +10,7 @@ const sponsors = allSponsors.filter(sponsor => sponsor.amount >= 500);
 const years = new Set();
 
 posts.forEach(post => {
-    const year = post.frontmatter.date.getFullYear();
+    const year = post.data.date.getFullYear();
     years.add(year);
 });
 ---
@@ -36,7 +36,7 @@ posts.forEach(post => {
     <h2 class="smaller-font">Recent Snippets</h2>
     <ul>
         {snippets.map(snippet => (
-            <li><a href={snippet.url}>{ snippet.frontmatter.title }</a></li>
+            <li><a href={`/snippets/${snippet.slug}/`}>{ snippet.data.title }</a></li>
         ))}
     </ul>
     <h2 class="smaller-font">Archives ({years.size} Years)</h2>

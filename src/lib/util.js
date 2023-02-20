@@ -8,119 +8,40 @@
 // Imports
 //-----------------------------------------------------------------------------
 
-import path from "path";
 import site from "../data/config.yml";
 import commentThreads from "../data/comments.json";
+import { getCollection } from 'astro:content';
+import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
+import xmlEscape from "xml-escape";
+import { renderMarkdown } from "@astrojs/markdown-remark";
 
-//-----------------------------------------------------------------------------
-// Helpers
-//-----------------------------------------------------------------------------
-
-function getDateParts(text) {
-    const dateMatches = /^(\d{4})\-(\d{2})\-(\d{2})/.exec(text);
-    if (dateMatches) {
-        return {
-            year: dateMatches[1],
-            month: dateMatches[2],
-            day: dateMatches[3],
-            toString() {
-                return `${this.year}-${this.month}-${this.day}`
-            }
-        };
-    }
-
-    return undefined;
-
-}
-
-function formatJekyllPosts(posts, type) {
-    return posts.map(post => {
-        const filename = path.basename(post.file, ".md");
-        let slug = filename;
-        let dateParts;
-
-        // is there a date in the filename?
-        dateParts = getDateParts(filename);
-        if (dateParts) {
-            slug = filename.slice(11);
-        }
-
-        // date in the frontmatter overrides the filename
-        if (post.frontmatter.date) {
-            if (typeof post.frontmatter.date === "string") {
-                post.frontmatter.date = new Date(post.frontmatter.date);
-            }
-            dateParts = getDateParts(post.frontmatter.date.toISOString());
-        }
-
-        let url;
-        let urlPath;
-
-        if (post.frontmatter.permalink) {
-
-            url = post.frontmatter.permalink;
-            
-            // format: [ '', 'blog', '2009', '05', '05', 'http-cookies-explained', '' ]
-            const pathParts = post.frontmatter.permalink.split("/");
-            pathParts.shift();  // remove first empty space
-            pathParts.shift();  // remove "blog"
-            pathParts.pop();    // remove last empty space
-            urlPath = pathParts.join("/");
-        } else {
-            url = `/${type}/${dateParts.year}/${dateParts.month}/${slug}/`;
-            urlPath = `${dateParts.year}/${dateParts.month}/${slug}`;
-        }
-
-        const newPost = Object.create(post, {
-            url: { value: url }
-        });
-
-        newPost.urlPath = urlPath;
-
-        if (!newPost.frontmatter.date) {
-            newPost.frontmatter.date = new Date(dateParts);
-        }
-        
-        if (!newPost.frontmatter.pubDate) {
-            newPost.frontmatter.pubDate = newPost.frontmatter.date;
-        }
-
-        if (newPost.frontmatter.updated) {
-            newPost.frontmatter.updated = new Date(newPost.frontmatter.updated);
-        }
-
-        // check for comments
-        const commentThread = commentThreads[new URL(url, site.url).href]
-        newPost.comments = commentThread ? commentThread.comments : null;
-
-        return newPost;
-    }).reverse();
-}
 
 //-----------------------------------------------------------------------------
 // Exports
 //-----------------------------------------------------------------------------
 
 export async function loadBlogPosts() {
+    const posts = (await getCollection('blog'))
+        .map(formatJekyllPost())
+        .reverse()
+        .filter(post => !post.data.draft && (post.data.date - new Date()));
 
-    const postFiles = await import.meta.glob("../pages/_posts/**/*.md");
-    const posts = await Promise.all(Object.values(postFiles).map(async (getInfo) => {
-        const meta = await getInfo();
-        return meta;
-    }));
+    // check for comments
+    posts.forEach(post => {
+        const url = `/${post.collection}/${post.slug})`;
+        const commentThread = commentThreads[new URL(url, site.url).href]
+        post.comments = commentThread ? commentThread.comments : null;
+    });
 
-    return formatJekyllPosts(posts, "blog").filter(post => !post.frontmatter.draft);
+    return posts;
 }
 
 export async function loadSnippets() {
 
-    const postFiles = await import.meta.glob("../pages/_snippets/**/*.md");
-    const posts = await Promise.all(Object.values(postFiles).map(async (getInfo) => {
-        const meta = await getInfo();
-        return meta;
-    }));
-
-    return formatJekyllPosts(posts, "snippets");
+    return (await getCollection('snippets'))
+        .map(formatJekyllPost())
+        .reverse()
+        .filter(post => !post.data.draft && (post.data.date - new Date()))
 }
 
 export async function loadAllContent() {
@@ -130,5 +51,94 @@ export async function loadAllContent() {
         loadSnippets()
     ]);
 
-    return all.flat().sort((a, b) => b.frontmatter.date - a.frontmatter.date);
+    return all.flat().sort((a, b) => b.data.date - a.data.date);
+}
+
+
+export async function generateJsonFeed({ site, feedUrl, description=site.description, posts}) {
+
+    const rendered = await Promise.all(
+        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir:"."}))
+    );
+
+    return JSON.stringify({
+        version: "https://jsonfeed.org/version/1",
+        title: xmlEscape(site.name),
+        home_page_url: site.url,
+        feed_url: new URL(feedUrl, site.url).href,
+        description,
+        expired: false,
+        author: {
+            name: site.author
+        },
+        items: posts.map((post, index) => {
+            
+            const url = new URL(`/${post.collection}/${post.slug}/`, site.url).href;
+            const data = post.data;
+
+            return {
+                id: url,
+                url,
+                title: data.title,
+                author: {
+                    name: site.author
+                },
+                summary: data.teaser,
+                content_text: post.body,
+                content_html: xmlEscape(rendered[index].metadata.html),
+                tags: data.tags,
+                date_published: data.date.toISOString(),
+                date_updated: data.updated ? data.updated.toISOString() : data.date.toISOString()
+            };
+        })
+    });
+}
+
+export async function generateRssFeed({ site, feedUrl, description = site.description, posts }) {
+
+    const rendered = await Promise.all(
+        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir: "." }))
+    );
+
+    return `
+		<?xml version="1.0" encoding="utf-8"?>
+		<rss version="2.0"
+		xmlns:content="http://purl.org/rss/1.0/modules/content/"
+		xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:atom="http://www.w3.org/2005/Atom"
+		xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+		xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+		>
+		<channel>
+			<title xml:lang="en">${site.name}</title>
+			<atom:link href="${new URL(feedUrl, site.url).href}" rel="self" type="application/rss+xml"/>
+			<link>${site.url}</link>
+			<pubDate>${(new Date()).toUTCString()}</pubDate>
+			<lastBuildDate>${(new Date()).toUTCString()}</lastBuildDate>
+			<language>en-US</language>
+			<generator>Astro</generator>
+			<description>${description}</description>
+
+			${posts.map((post, index) => {
+                
+                const url = new URL(`/${post.collection}/${post.slug}/`, site.url).href;
+                const data = post.data;
+                
+                return `
+					<item>
+						<title>${data.title}</title>
+						<link>${new URL(url, site.url).href}</link>
+						<pubDate>${data.date.toUTCString()}</pubDate>
+						<dc:creator>Nicholas C. Zakas</dc:creator>
+						${data.tags.map(tag => `<category>${tag}</category>`).join("")}
+						<guid isPermaLink="true">${new URL(url, site.url).href}</guid>
+						<description>${data.teaser}</description>
+						<content:encoded>${xmlEscape(rendered[index].metadata.html)}</content:encoded>
+					</item>
+				`.trim();
+            }).join("")
+        }
+		</channel>
+    </rss>`.trim();
 }

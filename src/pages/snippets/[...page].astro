@@ -22,12 +22,7 @@ const { page } = Astro.props;
 	<h2 class="no-margin">Recent Snippets</h2>
 
 	{page.data.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 	<Pagination next={page.url.next} prev={page.url.prev} />

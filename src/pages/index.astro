@@ -14,12 +14,7 @@ const posts = await loadBlogPosts();
 	<h2 class="no-margin">Recent Posts</h2>
 
 	{posts.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 

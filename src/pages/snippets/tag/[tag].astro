@@ -10,8 +10,8 @@ export async function getStaticPaths() {
     const postTags = new Map();
     posts.forEach(post => {
 
-        if (post.frontmatter.tags) {
-            for (const tag of post.frontmatter.tags) {
+        if (post.data.tags) {
+            for (const tag of post.data.tags) {
         
                 if (!postTags.get(tag)) {
                     postTags.set(tag, []);
@@ -38,12 +38,7 @@ const { posts, tag } = Astro.props;
 	<h2 class="no-margin">Posts tagged with "{tag}"</h2>
 
 	{posts.map((post) => (
-		<PostBlurb
-			title={post.frontmatter.title}
-			teaser={post.frontmatter.teaser}
-			date={post.frontmatter.date}
-			url={post.url}
-		/>
+		<PostBlurb post={post}/>
 	))}
 
 

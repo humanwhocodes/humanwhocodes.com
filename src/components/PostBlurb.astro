@@ -1,14 +1,17 @@
 ---
 const {
-    title,
-    url,
-    date,
-    teaser
+    post
 } = Astro.props;
+
+const {
+    date,
+    teaser,
+    title
+} = post.data;
 ---
 <div class="post-blurb margin-bottom">
     <div class="post-head">
-        <h3 class="no-margin-bottom"><a href={url}>{title}</a></h3>
+        <h3 class="no-margin-bottom"><a href={`/${post.collection}/${post.slug}`}>{title}</a></h3>
         <p class="byline"><i>{date.toLocaleDateString('en-us', {
             year: "numeric",
             month:"long",
