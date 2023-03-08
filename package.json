@@ -5,8 +5,8 @@
   "private": true,
   "license": "Apache-2.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "cross-env CONTEXT=dev astro dev",
+    "start": "cross-env CONTEXT=dev astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
@@ -21,6 +21,7 @@
     "@octokit/graphql": "^5.0.4",
     "@rollup/plugin-yaml": "^4.0.1",
     "astro": "^2.0.9",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
     "slugify": "^1.6.5",
     "string-strip-html": "^11.6.20",

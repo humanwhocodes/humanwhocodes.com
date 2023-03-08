@@ -15,33 +15,63 @@ import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
 import xmlEscape from "xml-escape";
 import { renderMarkdown } from "@astrojs/markdown-remark";
 
+//-----------------------------------------------------------------------------
+// Helpers
+//-----------------------------------------------------------------------------
+
+const CONTEXT = process.env.CONTEXT;
+const previewContexts = new Set(["deploy-preview", "dev"]);
+
+/**
+ * Determines if a post should be displayed on the site or not. If it's a draft
+ * or occurs in the future then the post is hidden unless we're in a dev 
+ * environment or deploy preview on Netlify.
+ * @param {Object} post The post to check. 
+ * @returns {boolean} True to show a post, false to hide.
+ */
+function shouldDisplay(post) {
+
+    if (previewContexts.has(CONTEXT)) {
+        return true;
+    }
+
+    if (post.data.draft) {
+        return false;
+    }
+
+    if (Date.now() - post.data.date < 0) {
+        return false;
+    }
+
+    return true;
+}
+
+async function loadJekyllCollection(name) {
+    return (await getCollection(name))
+        .map(formatJekyllPost())
+        .reverse()
+        .filter(shouldDisplay);
+}
 
 //-----------------------------------------------------------------------------
 // Exports
 //-----------------------------------------------------------------------------
 
 export async function loadBlogPosts() {
-    const posts = (await getCollection('blog'))
-        .map(formatJekyllPost())
-        .reverse()
-        .filter(post => !post.data.draft && (post.data.date - new Date()));
+    const posts = await loadJekyllCollection('blog')
 
     // check for comments
     posts.forEach(post => {
         const url = `/${post.collection}/${post.slug})`;
-        const commentThread = commentThreads[new URL(url, site.url).href]
+        const commentThread = commentThreads[new URL(url, site.url).href];
         post.comments = commentThread ? commentThread.comments : null;
     });
 
     return posts;
 }
 
-export async function loadSnippets() {
-
-    return (await getCollection('snippets'))
-        .map(formatJekyllPost())
-        .reverse()
-        .filter(post => !post.data.draft && (post.data.date - new Date()))
+export function loadSnippets() {
+    return loadJekyllCollection('snippets')
 }
 
 export async function loadAllContent() {
