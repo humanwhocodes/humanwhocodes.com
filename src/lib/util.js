@@ -31,19 +31,30 @@ const previewContexts = new Set(["deploy-preview", "dev"]);
  */
 function shouldDisplay(post) {
 
+    /*
+     * Always show all posts when in a preview context, which could be locally
+     * when CONTEXT is "dev" or on Netlify when context is "deploy-preview".
+     * In both of these contexts we want to see everything to verify it's
+     * rendering okay.
+     */
     if (previewContexts.has(CONTEXT)) {
         return true;
     }
 
+    /*
+     * If a post is a draft, and we aren't in a preview context, we definitely
+     * don't want to show it on the site.
+     */
     if (post.data.draft) {
         return false;
     }
 
-    if (Date.now() - post.data.date < 0) {
-        return false;
-    }
-
-    return true;
+    /*
+     * Otherwise, the post date is what determines whether or not the post is
+     * displayed. If the post date is either today or in the future, then we
+     * definitely want to show it.
+     */
+    return Date.now() - post.data.date >= 0;
 }
 
 async function loadJekyllCollection(name) {
