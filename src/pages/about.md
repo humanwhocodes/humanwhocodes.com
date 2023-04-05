@@ -6,9 +6,7 @@ layout: ../layouts/Page.astro
 
 ## About the Human
 
-Hi, I'm Nicholas C. Zakas, an independent software developer living in Mountain View, California. I've been a software architect at companies like Yahoo and Box, as well as an author and speaker. I created the [ESLint](https://eslint.org) open source project and wrote several [books](/writing). At the moment, I'm recovering from [Lyme disease](/blog/2014/04/02/i-have-lyme-disease/) and haven't been able to leave my home much in the past six years.
-
-I started working on web applications in 2000 and instantly fell in love. Since that time, I've focused on front-end technology such as HTML, CSS, and JavaScript, digging in and learning all of the skills and tricks necessary to make performant, beautiful, and maintainable front-ends.
+Hi, I'm Nicholas Zakas. I'm an independent software developer, author, and coach living in Peabody, Massachusetts. I've been a architect at [Box](https://box.com) and [Yahoo](https://yahoo.com), created the [ESLint](https://eslint.org) open source project, and wrote several [books](/writing) about JavaScript and web development. I started working on web applications in 2000 and instantly fell in love. Since that time, I've focused on front-end technology such as HTML, CSS, and JavaScript, digging in and learning all of the skills and tricks necessary to make performant, beautiful, and maintainable front-ends.
 
 ### Career
 
