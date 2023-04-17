@@ -60,7 +60,7 @@ Out of the box, you won't be able to debug Rust code in Visual Studio Code. You'
 
 While this extension isn't strictly necessary, the [`crates`](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates) extension helps ensure that you are using the most up-to-date versions of your dependencies. It does this by placing a small green checkmark to the right of each dependency in your `Cargo.toml` file. 
 
-![The crates extension showing up-to-date green checkmarks in Cargo.toml](https://humanwhocodes.com/images/posts/2022/rust-crates-extension.png)
+![The crates extension showing up-to-date green checkmarks in Cargo.toml](https://humanwhocodes.com/public/images/posts/2022/rust-crates-extension.png)
 
 ## Conclusion
 
