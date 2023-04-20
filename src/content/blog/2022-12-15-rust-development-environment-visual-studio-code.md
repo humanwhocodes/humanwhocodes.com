@@ -60,8 +60,6 @@ Out of the box, you won't be able to debug Rust code in Visual Studio Code. You'
 
 While this extension isn't strictly necessary, the [`crates`](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates) extension helps ensure that you are using the most up-to-date versions of your dependencies. It does this by placing a small green checkmark to the right of each dependency in your `Cargo.toml` file. 
 
-![The crates extension showing up-to-date green checkmarks in Cargo.toml](https://humanwhocodes.com/public/images/posts/2022/rust-crates-extension.png)
-
 ## Conclusion
 
 It took me several days to get Visual Studio Code set up for Rust development by finding all of the various tools and extensions that needed to be installed to work properly. Once set up, though, Visual Studio Code is just as suitable a development environment as any other editor or IDE could be for Rust. The `rust-analyzer` extension, in particular, gives you almost everything you need to develop Rust as rapidly as JavaScript in Visual Studio Code. Adding in the other extensions really pushes Visual Studio Code into the "great" category for Rust development.

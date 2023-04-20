@@ -37,11 +37,11 @@ Click "Set up" under "User authentication" and you'll be brought to another page
 
 * Under "App Permissions" select "Read and write"
 
-![Twitter App Permissions form](/public/images/posts/2023/twitter-app-permissions.png)
+![Twitter App Permissions form](/images/posts/2023/twitter-app-permissions.png)
 
 * Under "Type of App" select "Web App, Automated App, or Bot"
 
-![Twitter App Type form](/public/images/posts/2023/twitter-app-type.png)
+![Twitter App Type form](/images/posts/2023/twitter-app-type.png)
 
 * Under "App Info" provide a Callback URI and Website URL (it doesn't matter what you set for these as long as you aren't using Twitter logins on your app)
 * Click "Save"
@@ -54,11 +54,11 @@ By default, your app can only access the Twitter API as an app, which has a very
 
 At the top of your app page, click "Keys and Tokens" and scroll down to the "Authentication Tokens" section. Next to "Access Token and Secret", click "Generate". You'll be presented with your access token and secret. (You may also be presented with the same API Key, API Key Secret and Bearer token that you received when you first created the app. This appears to happen just the first time you generate an access token.)
 
-![Twitter App Auth Setup section](/public/images/posts/2023/twitter-app-user-auth-setup.png)
+![Twitter App Auth Setup section](/images/posts/2023/twitter-app-user-auth-setup.png)
 
 Double-check back on your "Keys and Tokens" page that the access token was created with read and write permissions.
 
-![Twitter App Acess Tokens status](/public/images/posts/2023/twitter-app-access-token-rw.png)
+![Twitter App Acess Tokens status](/images/posts/2023/twitter-app-access-token-rw.png)
 
 ## Tweet our your message
 
