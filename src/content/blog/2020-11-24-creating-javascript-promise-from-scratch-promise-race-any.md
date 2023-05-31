@@ -143,7 +143,7 @@ for (const nextValue of values) {
 }
 ```
 
-The `for-of` loop operates on the iterator creates for the `values` array. Here's a similar loop using the iterator functions defined previously:
+The `for-of` loop operates on the iterator created for the `values` array. Here's a similar loop using the iterator functions defined previously:
 
 ```js
 const values = [1, 2, 3];
