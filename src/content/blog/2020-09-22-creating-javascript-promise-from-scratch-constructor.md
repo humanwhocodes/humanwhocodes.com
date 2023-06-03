@@ -34,7 +34,7 @@ const pledge = new Pledge((resolve, reject) => {
 });
 
 pledge.then(value => {
-    console.log(then);
+    console.log(value);
 }).catch(reason => {
     console.error(reason);
 }).finally(() => {
