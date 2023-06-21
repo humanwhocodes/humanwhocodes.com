@@ -57,11 +57,27 @@ function shouldDisplay(post) {
     return Date.now() - post.data.date >= 0;
 }
 
+const collectionCache = new Map();
+
 async function loadJekyllCollection(name) {
-    return (await getCollection(name))
+
+    if (collectionCache.has(name)) {
+        return collectionCache.get(name);
+    }
+
+    /*
+     * Note: getCollection() appears to cache the results of each call,
+     * so we only ever want to call getCollection() and format the results
+     * one time, otherwise we'll get strange behavior.
+     */
+    const collection = (await getCollection(name))
         .map(formatJekyllPost())
         .reverse()
         .filter(shouldDisplay);
+
+    collectionCache.set(name, collection);
+    
+    return collection;
 }
 
 //-----------------------------------------------------------------------------
