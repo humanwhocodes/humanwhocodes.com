@@ -72,7 +72,7 @@ async function loadJekyllCollection(name) {
      */
     const collection = (await getCollection(name))
         .map(formatJekyllPost())
-        .reverse()
+        .sort((a, b) => b.data.date - a.data.date)
         .filter(shouldDisplay);
 
     collectionCache.set(name, collection);
