@@ -9,6 +9,7 @@ function getDateValue(value) {
 }
 
 const blog = defineCollection({
+    type: "content",
     // Type-check frontmatter using a schema
     schema: z.object({
         title: z.string(),
@@ -39,6 +40,7 @@ const blog = defineCollection({
 });
 
 const snippets = defineCollection({
+    type: "content",
     // Type-check frontmatter using a schema
     schema: z.object({
         title: z.string(),
