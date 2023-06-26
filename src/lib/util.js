@@ -62,7 +62,7 @@ const collectionCache = new Map();
 async function loadJekyllCollection(name) {
 
     if (collectionCache.has(name)) {
-        return collectionCache.get(name);
+        return collectionCache.get(name).concat();
     }
 
     /*
@@ -72,8 +72,8 @@ async function loadJekyllCollection(name) {
      */
     const collection = (await getCollection(name))
         .map(formatJekyllPost())
-        .sort((a, b) => b.data.date - a.data.date)
-        .filter(shouldDisplay);
+        .filter(shouldDisplay)
+        .reverse();
 
     collectionCache.set(name, collection);
     
