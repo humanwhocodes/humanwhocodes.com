@@ -46,7 +46,7 @@ query{
 
     const { user: { sponsorsListing: { tiers: { nodes: tiers }} } } = await graphql(query, {
         headers: {
-            authorization: `token ${ process.env.GITHUB_TOKEN }`
+          authorization: `token ${process.env.FETCH_SPONSORS_TOKEN}`
         },
         cursor
     });
