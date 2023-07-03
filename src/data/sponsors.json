@@ -2,34 +2,10 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "Jakob Heuser",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/1795?u=bd51c836d2999c1104f61712c3958668f02bf78a&v=4",
-        "login": "jakobo",
-        "url": "https://github.com/jakobo"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "H11",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/106069?u=257f04d83f2fe77632bab7773a9a70ae97453090&v=4",
-        "login": "dhcmrlchtdj",
-        "url": "https://github.com/dhcmrlchtdj"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "Benjie",
         "avatarUrl": "https://avatars.githubusercontent.com/u/129910?u=8b4d82819873f90c0aed87b9dcd96f83f779f8f9&v=4",
         "login": "benjie",
         "url": "https://github.com/benjie"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "Katherine Senzee",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/139256?v=4",
-        "login": "ksenzee",
-        "url": "https://github.com/ksenzee"
     },
     {
         "amount": 7,
@@ -50,14 +26,6 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "TooBug",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/1243593?u=daf01510ee6200670043421d4a4482d6d546a03f&v=4",
-        "login": "TooBug",
-        "url": "https://github.com/TooBug"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "GU Yiling",
         "avatarUrl": "https://avatars.githubusercontent.com/u/1726061?u=3490c34534d2a2a12e2e2221ffa2f476e1bbd77d&v=4",
         "login": "Justineo",
@@ -66,32 +34,8 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "Peanut",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/2198189?u=eb29439ef3e90c434e2ba832610e04b901a5d69a&v=4",
-        "login": "huashengwang1989",
-        "url": "https://github.com/huashengwang1989"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "Evgeniy Kazakov",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/2683752?v=4",
-        "login": "ekazakov",
-        "url": "https://github.com/ekazakov"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "Bios Sun",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/2755933?v=4",
-        "login": "BiosSun",
-        "url": "https://github.com/BiosSun"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "Guillaume Chau",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/2798204?u=5e124c46566b10bfd4766f79308e772b11de2b0c&v=4",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/2798204?u=d45556d7e920c0f57552d1dc1250a7cdb807eddb&v=4",
         "login": "Akryum",
         "url": "https://github.com/Akryum"
     },
@@ -99,7 +43,7 @@
         "amount": 7,
         "source": "github",
         "name": "Haoqun Jiang",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/3277634?v=4",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/3277634?u=a530f156e5bb174497f01b8b7d7af547736dd860&v=4",
         "login": "sodatea",
         "url": "https://github.com/sodatea"
     },
@@ -114,26 +58,10 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "Geeku",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/3984824?v=4",
-        "login": "gongpeione",
-        "url": "https://github.com/gongpeione"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "Michael",
         "avatarUrl": "https://avatars.githubusercontent.com/u/4714502?u=78a4b54bac2efc5ca2b319ab71f96013e1c205b2&v=4",
         "login": "mmasouras",
         "url": "https://github.com/mmasouras"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "cpen5",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/5081556?u=a7dedb68ebcb74199ac3ff5ee8c21b9ad54ff141&v=4",
-        "login": "cpen5",
-        "url": "https://github.com/cpen5"
     },
     {
         "amount": 7,
@@ -154,34 +82,10 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "Daniel Morrison",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/6394846?u=cabe2488159c9f3d07d406451e9cb984c51a3c7a&v=4",
-        "login": "danm",
-        "url": "https://github.com/danm"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "李小斐",
         "avatarUrl": "https://avatars.githubusercontent.com/u/6511785?u=fabb0780a39a96bbfd3691a299aa885e04f31275&v=4",
         "login": "lainlee",
         "url": "https://github.com/lainlee"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "MuRay",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/7438269?u=c8b5e5c2b3d940e0d7e2e6a52620ec1990968962&v=4",
-        "login": "Bravechen",
-        "url": "https://github.com/Bravechen"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "kdot",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/8576839?u=b5684230278b0ad18c3f5d492049edeb5857a92e&v=4",
-        "login": "focus7eleven",
-        "url": "https://github.com/focus7eleven"
     },
     {
         "amount": 7,
@@ -202,24 +106,8 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "Maqbool Patel",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/14060740?v=4",
-        "login": "maqboolp",
-        "url": "https://github.com/maqboolp"
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "Jucong He",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/16215117?u=430bd390866e120a344a6df662a8c4b6e0169733&v=4",
-        "login": "juconghe",
-        "url": "https://github.com/juconghe"
-    },
-    {
-        "amount": 7,
-        "source": "github",
         "name": "Hassan Hashmi",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/16563703?u=d19d407e9890b3d5e661e8a80038baa42bb5efca&v=4",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/16563703?u=0a262adb3fff36fe2e30c0d02f3077a0feba4a3a&v=4",
         "login": "hassanhashmy",
         "url": "https://github.com/hassanhashmy"
     },
@@ -234,18 +122,10 @@
     {
         "amount": 7,
         "source": "github",
-        "name": "(private donor)",
-        "avatarUrl": "https://avatars1.githubusercontent.com/u/38546?s=120&v=4",
-        "login": "aesqe",
-        "url": ""
-    },
-    {
-        "amount": 7,
-        "source": "github",
-        "name": "(private donor)",
-        "avatarUrl": "https://avatars1.githubusercontent.com/u/38546?s=120&v=4",
-        "login": "mikaelgramont",
-        "url": ""
+        "name": "Mert Ciflikli",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/45823795?u=635d3fd0d2209b25821bf1d82cfe4487b313f92e&v=4",
+        "login": "frankie303",
+        "url": "https://github.com/frankie303"
     },
     {
         "amount": 7,
@@ -264,28 +144,12 @@
         "url": ""
     },
     {
-        "amount": 7,
-        "source": "github",
-        "name": "(private donor)",
-        "avatarUrl": "https://avatars1.githubusercontent.com/u/38546?s=120&v=4",
-        "login": "SealedThndR",
-        "url": ""
-    },
-    {
         "amount": 15,
         "source": "github",
-        "name": "Luke",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/332003?u=3ecd67209a0bea003375278f0bdfc4ce97667111&v=4",
-        "login": "KamiQuasi",
-        "url": "https://github.com/KamiQuasi"
-    },
-    {
-        "amount": 15,
-        "source": "github",
-        "name": "sunnylost",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/693496?v=4",
-        "login": "sunnylost",
-        "url": "https://github.com/sunnylost"
+        "name": "Wes Todd",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/1027776?v=4",
+        "login": "wesleytodd",
+        "url": "https://github.com/wesleytodd"
     },
     {
         "amount": 15,
@@ -298,42 +162,18 @@
     {
         "amount": 15,
         "source": "github",
-        "name": "Huang Shaoyan",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/1252429?u=208a9ce20b6d9fa396bc87aab48de6295fc6d001&v=4",
-        "login": "HuangShaoyan",
-        "url": "https://github.com/HuangShaoyan"
+        "name": "Kyle Holmberg",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/9523719?u=764bd873bd1166dbe9177ad7a4bc59a419bb6acc&v=4",
+        "login": "kylemh",
+        "url": "https://github.com/kylemh"
     },
     {
         "amount": 15,
         "source": "github",
-        "name": "xzer",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/1311634?v=4",
-        "login": "xzer",
-        "url": "https://github.com/xzer"
-    },
-    {
-        "amount": 15,
-        "source": "github",
-        "name": "Aparna Rao",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/2077831?u=c6a2a54a1f5ab64760becd1b8fba0188ee5fa54a&v=4",
-        "login": "curlyblueeagle",
-        "url": "https://github.com/curlyblueeagle"
-    },
-    {
-        "amount": 15,
-        "source": "github",
-        "name": "ggxxsol",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/5414421?v=4",
-        "login": "ggxxsol",
-        "url": "https://github.com/ggxxsol"
-    },
-    {
-        "amount": 15,
-        "source": "github",
-        "name": "NgeKaworu",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/24790024?u=8b9750e82615f9deac6e8bcbed87199cfa84b956&v=4",
-        "login": "NgeKaworu",
-        "url": "https://github.com/NgeKaworu"
+        "name": "Zain Wania",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/11842502?u=0e81a7467aa88e9660402b0ee1fd07e16e0faab7&v=4",
+        "login": "ZainW",
+        "url": "https://github.com/ZainW"
     },
     {
         "amount": 15,
@@ -346,25 +186,5 @@
     {
         "amount": 15,
         "source": "github"
-    },
-    {
-        "amount": 27,
-        "source": "github",
-        "name": "vilicvane",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/970430?u=9fa7da35fa0822648aa0019bf0c96341789bf751&v=4",
-        "login": "vilic",
-        "url": "https://github.com/vilic"
-    },
-    {
-        "amount": 50,
-        "source": "github"
-    },
-    {
-        "amount": 500,
-        "source": "github",
-        "name": "Scout APM Sponsorships",
-        "avatarUrl": "https://avatars.githubusercontent.com/u/71095532?u=9f5a794ddc3b67ba057ee65e7ce166ad205a76c2&v=4",
-        "login": "scoutapm-sponsorships",
-        "url": "https://github.com/scoutapm-sponsorships"
     }
 ]
