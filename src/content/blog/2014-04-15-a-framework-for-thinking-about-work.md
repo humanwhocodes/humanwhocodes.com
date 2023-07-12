@@ -43,7 +43,7 @@ Over the years, I've come to think about work as falling on a two-dimensional ma
 
 The really interesting part is looking at where the value and effort for a particular piece of work overlap.
 
-![Graph of value vs. effort]({{ site.url }}/images/posts/2014/04/sucks.png)
+![Graph of value vs. effort](/images/posts/2014/04/sucks.png)
 
 I split the graph into quadrants:
 
