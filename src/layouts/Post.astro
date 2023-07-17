@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import MailingListForm from "../components/MailingListForm.astro";
 import PostTags from "../components/PostTags.astro";
 import Comments from "../components/Comments.astro";
+import InterruptRateMailingListForm from "../components/InterruptRateMailingListForm.astro";
 
 const { post } = Astro.props;
-const baseUrl = post.collection;
 ---
 <Layout
     title={post.data.title}
@@ -38,10 +38,11 @@ const baseUrl = post.collection;
                     })}</a>.</p>
             </aside>
         }
-
 		<slot />
         <Comments comments={post.comments}/>
     </section>
 </article>
-<MailingListForm />
+{  post.data.promo === "interrupt-rate"
+    ? <InterruptRateMailingListForm />
+    : <MailingListForm /> }
 </Layout>

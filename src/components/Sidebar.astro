@@ -17,15 +17,14 @@ posts.forEach(post => {
 <div id="sidebar" class="sidebar-width sidebar-background gutters hide-on-small-screens">
     <h1 class="hide-offscreen">Additional Information</h1>
     <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIEK3Y&amp;placement=humanwhocodescom" id="_carbonads_js"></script>
-    {sponsors.length && (
+    {sponsors.length ? (
         <h2 class="smaller-font">Top Sponsors</h2>
         <ul class="inline-list inline-image-list">
             {sponsors.map(sponsor => (
                 <li><a href={sponsor.url}><img src={sponsor.avatarUrl} alt={sponsor.name} width="100"></a></li>
             ))}
         </ul>
-
-    )}
+    ): "" }
     
     <h2 class="smaller-font">My Books</h2>
     <ul class="inline-list inline-image-list">

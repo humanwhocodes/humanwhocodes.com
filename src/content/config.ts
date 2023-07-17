@@ -24,6 +24,7 @@ const blog = defineCollection({
         permalink: z.string().optional(),
         published: z.boolean().optional(),
         draft: z.boolean().optional(),
+        promo: z.string().optional(),
         // Common Astro schemas
         pubDate: z
             .string()
