@@ -15,7 +15,7 @@ tags:
 
 If you're like most people, your work calendar is primarily used to show others your free time. People schedule meetings in a free block on your calendar when they want to talk with you. As more meetings get scheduled, the amount of free time becomes smaller, leaving fewer options for others to schedule with you. Before you were a tech lead, the number of meetings you had still left a lot of free time for you to code. After all, your primary job was still to produce code, and your colleagues (hopefully) tried to minimize interruptions. But as a tech lead those free slots are claimed a lot faster. You never know when a meeting request is going to pop onto your calendar, and that makes it difficult to get started on any task requiring concentration. Fortunately, there is another way.
 
-(By the way, this is part 2 of a 3-part series. If you haven't yet read [part 1](/blog/2023/07/managing-interrupt-rate-tech-lead-reward-interruptions/), I'd suggest doing that first and then returning here.)
+(By the way, this is the secod part of a three-part series. If you haven't yet read [part 1](/blog/2023/07/managing-interrupt-rate-tech-lead-reward-interruptions/), I'd suggest doing that first and then returning here.)
 
 ## Invert your calendar with time blocking
 
