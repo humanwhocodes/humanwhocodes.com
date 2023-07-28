@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import MailingListForm from "../components/MailingListForm.astro";
 import PostTags from "../components/PostTags.astro";
 import Comments from "../components/Comments.astro";
-import InterruptRateMailingListForm from "../components/InterruptRateMailingListForm.astro";
+import InterruptRateEbookForm from "../components/InterruptRateEbookForm.astro";
+import PromisesEbookForm from "../components/PromisesEbookForm.astro";
 
 const { post } = Astro.props;
 ---
@@ -42,7 +42,7 @@ const { post } = Astro.props;
         <Comments comments={post.comments}/>
     </section>
 </article>
-{  post.data.promo === "interrupt-rate"
-    ? <InterruptRateMailingListForm />
-    : <MailingListForm /> }
+{  !post.data.tags || post.data.tags.includes("JavaScript")
+    ? <PromisesEbookForm />
+    : <InterruptRateEbookForm /> }
 </Layout>
