@@ -4,7 +4,7 @@ teaser: "Many of the interruptions that fill up your day aren't necessary. Here'
 promo: interrupt-rate
 author: Nicholas C. Zakas
 categories:
-  - Leadership
+  - Productivity
 tags:
   - Tech Leads
   - Leadership
@@ -73,7 +73,7 @@ The good news is that you are 99% in control of the interruptions you receive. Y
 
 Your teammates are capable adults who were hired to do a particular job, and while they might function better by constantly interrupting you, they will function just fine without interrupting you, too. You can encourage them to try to solve some problems on their own and get back to you if they truly get stuck, or let them know you aren't available right now but will be available in a few hours and see what happens. 
 
-In part 2, I'll discuss how to manage your calendar so as to minimize unwanted interruptions to your day.
+In [part 2](/blog/2023/07/managing-interrupt-rate-tech-lead-time-blocking), I'll discuss how to manage your calendar so as to minimize unwanted interruptions to your day.
 
 [^1]: [The real cost of an interruption and context switching](https://contextkeeper.io/blog/the-real-cost-of-an-interruption-and-context-switching/)
 [^2]: [Designing for Productive Failure](https://www.tandfonline.com/doi/abs/10.1080/10508406.2011.591717)

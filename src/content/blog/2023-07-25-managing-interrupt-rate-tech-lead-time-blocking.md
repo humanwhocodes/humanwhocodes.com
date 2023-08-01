@@ -4,7 +4,7 @@ teaser: "Your calendar is a place where you should be in control and not be at t
 promo: interrupt-rate
 author: Nicholas C. Zakas
 categories:
-  - Leadership
+  - Productivity
 tags:
   - Tech Leads
   - Leadership
@@ -97,7 +97,7 @@ Signaling that you're busy during that time isn't enough. You need to eliminate 
 
 You'll also need to protect your blocked-off time when you receive meeting requests that overlap with your blocked-off time. How you respond to such requests will determine whether or not others will respect your calendar. If you always accept meetings during blocked-off time, you'll continue to receive these requests. Protect your calendar by rejecting most requests and suggesting a better time. Yes, there will be emergencies that you'll need to make time for, but those should be the exception and not the rule.
 
-You might be thinking, this sounds great, but does that mean I'm ignoring my colleagues all day? When do I get to communicate with them? The answer is during office hours, and that's what I'll be discussing in part 3 of this series.
+You might be thinking, this sounds great, but does that mean I'm ignoring my colleagues all day? When do I get to communicate with them? The answer is during office hours, and that's what I'll be discussing in [part 3](/blog/2023/08/managing-interrupt-rate-tech-lead-office-hours-appointment-blocks) of this series.
 
 [^1]: [The Complete Guide to Time Blocking](https://todoist.com/productivity-methods/time-blocking)
 [^2]: [Momentum Browser Extension](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca)

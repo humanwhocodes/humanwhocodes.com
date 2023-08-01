@@ -4,7 +4,7 @@ teaser: "You can more easily eliminate interruptions when you create a specific 
 promo: interrupt-rate
 author: Nicholas C. Zakas
 categories:
-  - Leadership
+  - Productivity
 tags:
   - Tech Leads
   - Leadership
