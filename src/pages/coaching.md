@@ -53,5 +53,5 @@ It's possible that I may not be the right coach for you, which is why I also wor
 
 <div class="center-text">
     <h2>Ready to get started?</h2>
-    <a href="https://forms.gle/eGQ2ofCNRjjrc6mUA" class="link-btn cta-btn">Apply Now</a>
+    <a href="/coaching/apply/" class="link-btn cta-btn">Apply Now</a>
 </div>
