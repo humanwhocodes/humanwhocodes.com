@@ -1,6 +1,7 @@
 ---
 title: Coaching for Software Engineers
 author: Nicholas C. Zakas
+description: Coach Nicholas C. Zakas works with software engineers to improve their productivity, leadership skills, and career trajectory. Known for his many books, popular talks, and creating the ESLint open source project, Nicholas has the experience to help regardless of your goals.
 layout: ../layouts/Page.astro
 ---
 
@@ -20,7 +21,7 @@ Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I'v
 
 > I hired Nicholas to coach two of our most senior engineers. His insight, feedback, and guidance helped both of them produce higher-quality work, raise their impact across the org, and attain promotions.
 >
-> –- Benjamin Van Evry, Director of Engineering
+> –- Benjamin Van Every, Director of Engineering
 
 ## How I work
 
@@ -33,6 +34,15 @@ I prefer to work directly with your employer, which makes it easier to talk abou
 > Nicholas' coaching program completely changed my perspective on how I develop software and advance in my career. I came to his program with over 10 years of software development experience yet stagnant in my career. Nicholas pointed me in the right direction and gave me tips on how to have better focus, excel at tasks, and advance at my company. I look forward to working with him more and encourage others to do the same.
 >
 > -– David B., Staff Software Engineer
+
+## Coaching tracks
+
+Depending on your goals, you may want to choose one of my coaching tracks. These tracks cover common problems that face more experienced software engineers.
+
+* **Productivity and time management.** If you feel like you never have enough time to do everything that is expected of you, then this is the track for you. We'll look at how you spend your time and come up with strategies for optimizing your approach. Our goal is get you accomplishing everything you need to do within 40 hours each week, allowing you time to pursue hobbies and spend time with your loved ones.
+* **Leadership and influence.** Leadership is a big part of higher-level individual contributor roles, but how do you lead without any actual authority? On this track, you'll learn how to exert influence over your peers and manager to get things done in a respectful, conscious way. We'll discuss different approaches to leadership and how to get buy in from your colleagues. 
+* **Open source kickstart.** Launching an open source project can do wonders for your personal or company brand, but doing it badly can also hurt. If you need help planning an open source launch and have questions about licenses, managing contributors, and growing a community, then this is the track for you. We'll review your project and talk through what it takes for an open source project to sustain itself.
+* **Choose your own adventure.** If you none of the previous tracks align with the help you need, we can design a track just for you. During our free intake conversation, we'll discuss your goals and challenges, and come up with a plan to address them.
 
 ## What happens during a call
 
