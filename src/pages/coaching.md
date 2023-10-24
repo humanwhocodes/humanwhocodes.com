@@ -40,7 +40,8 @@ I prefer to work directly with your employer, which makes it easier to talk abou
 Depending on your goals, you may want to choose one of my coaching tracks. These tracks cover common problems that face more experienced software engineers.
 
 * **Productivity and time management.** If you feel like you never have enough time to do everything that is expected of you, then this is the track for you. We'll look at how you spend your time and come up with strategies for optimizing your approach. Our goal is get you accomplishing everything you need to do within 40 hours each week, allowing you time to pursue hobbies and spend time with your loved ones.
-* **Leadership and influence.** Leadership is a big part of higher-level individual contributor roles, but how do you lead without any actual authority? On this track, you'll learn how to exert influence over your peers and manager to get things done in a respectful, conscious way. We'll discuss different approaches to leadership and how to get buy in from your colleagues. 
+* **Leadership and influence.** Leadership is a big part of higher-level individual contributor roles, but how do you lead without any actual authority? On this track, you'll learn how to exert influence over your peers and manager to get things done in a respectful, conscious way. We'll discuss different approaches to leadership and how to get buy in from your colleagues.
+* **Getting promoted.** Choose this track if your primary goal is promotion to the next level of your company's individual contributor track. We will work with your company's career ladder to turn the listed expectations into actionable advice. You'll learn how to demonstrate that you're ready to take that next step and ensure that you get the credit for that work. While I can't promise a promotion (all companies are different), I can promise to put you in the best possible position to get promoted.
 * **Open source kickstart.** Launching an open source project can do wonders for your personal or company brand, but doing it badly can also hurt. If you need help planning an open source launch and have questions about licenses, managing contributors, and growing a community, then this is the track for you. We'll review your project and talk through what it takes for an open source project to sustain itself.
 * **Choose your own adventure.** If you none of the previous tracks align with the help you need, we can design a track just for you. During our free intake conversation, we'll discuss your goals and challenges, and come up with a plan to address them.
 
@@ -56,6 +57,10 @@ As your coach, I don't have any agenda other than to help you achieve your goals
 * Give you perspective on what I and others have experienced in similar situations.
 * Celebrate your successes and help you recover from disappointments.
 * Suggest exercises, books, and thought experiments to help you grow and gain additional perspectives on your own.
+
+> As a staff engineer at a startup, I juggle numerous responsibilities and am often pulled in many different directions. Nicholas played a crucial role in helping me navigate these challenges, drawing on his extensive experience and coaching background to give me unbiased feedback and guidance. He also assisted me in identifying and pursuing the aspects of my work that I enjoy the most, while still being a valuable and effective contributor to my company. I highly recommend him to fellow senior engineers and look forward to working with him again soon!
+>
+> -- Samantha Paras, Staff Software Engineer
 
 ## A network of coaches
 
