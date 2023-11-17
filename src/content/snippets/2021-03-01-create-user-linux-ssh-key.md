@@ -21,7 +21,19 @@ Next, set the user's password:
 passwd username
 ```
 
-Then, copy the contents of the user's public key into `/home/username/.ssh/authorized_keys`. This is a plain text file where you can paste one public key per line.
+**Note:** Even if you don't want the user to have a password, you should set the password to an empty string.
+
+Then, create the user's `.ssh` directory:
+
+```bash
+mkdir /home/username/.ssh
+```
+
+And copy the user's public key into the `authorized_keys` file. This is a plain text file where you can paste one public key per line. Here's an example of downloading the public key from their GitHub profile:
+
+```bash
+curl https://github.com/<username>.keys > /home/username/.ssh/authorized_keys
+```
 
 After that, set up the correct permissions for both the `.ssh` directory and the `authorized_keys` file:
 
