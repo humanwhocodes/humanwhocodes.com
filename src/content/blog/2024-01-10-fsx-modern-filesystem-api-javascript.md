@@ -1,5 +1,5 @@
 ---
-title: "Introductng fsx: A modern filesystem API for JavaScript"
+title: "Introducing fsx: A modern filesystem API for JavaScript"
 teaser: "Filesystem APIs in JavaScript runtimes haven't been great for a long time. This is my attempt to make a better one."
 author: Nicholas C. Zakas
 categories:
