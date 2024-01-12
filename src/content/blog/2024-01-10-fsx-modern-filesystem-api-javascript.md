@@ -103,7 +103,7 @@ await fsx.write("/path/to/file.txt", "Hello world!");
 const bytes = new TextEncoder().encode("Hello world!").buffer;
 
 // write a buffer
-await fsx.write("/path/to/file.txt", buffer);
+await fsx.write("/path/to/file.txt", bytes);
 ```
 
 As an added bonus, `fsx.write()` will automatically create any directories that don't already exist. This is another problem I've run into constantly that I think should "just work" in a modern filesystem API.
