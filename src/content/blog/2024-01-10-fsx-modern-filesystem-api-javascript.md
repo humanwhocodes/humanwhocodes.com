@@ -48,7 +48,7 @@ To start, the fsx API is available in three runtime packages. These packages all
 So to get started, you'll use the runtime package that best fits your use case. For the purposes of this post, I'll be focusing on `fsx-node`, but the same APIs exist on all runtime packages. All runtime packages export an `fsx` singleton that you can use in a manner that is similar to `fs`.
 
 ```js
-import { fsx } from "node-fsx";
+import { fsx } from "fsx-node";
 ```
 
 ### Reading files with fsx
@@ -193,7 +193,7 @@ The design of fsx is such that there is abstract, core functionality contained i
 
 1. The `fsx` singleton
 1. A constructor that lets you create another instance of `fsx` (such as `NodeFsx` in `fsx-node`)
-1. A constructor that lets you create an impl instance for the runtime package (such as `NodeFsxImpl` in `node-fsx`)
+1. A constructor that lets you create an impl instance for the runtime package (such as `NodeFsxImpl` in `fsx-node`)
 
 This lets you use just the functionality you want.
 
@@ -220,7 +220,7 @@ In this example, the base impl is swapped out for a custom one that throws an er
 
 ### Swapping impls for testing
 
-Suppose you have a function called `readConfigFile()` that makes use of the `fsx` singleton from `node-fsx` to read a file called `config.json`. When it comes time to test that function, you'd really rather not have it actually hit the filesystem. You can swap out the impl of `fsx` and replace it with an in-memory filesystem implementation provided by `fsx-memory`, like this:
+Suppose you have a function called `readConfigFile()` that makes use of the `fsx` singleton from `fsx-node` to read a file called `config.json`. When it comes time to test that function, you'd really rather not have it actually hit the filesystem. You can swap out the impl of `fsx` and replace it with an in-memory filesystem implementation provided by `fsx-memory`, like this:
 
 ```js
 import { fsx } from "fsx-node";
