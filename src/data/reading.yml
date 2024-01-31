@@ -85,6 +85,11 @@
     url: https://geni.us/road-less-stupid
     image: road-less-stupid.jpg
 
+  - title: Quit
+    author: Annie Duke
+    url: https://geni.us/quit-book
+    image: quit-book.jpg
+
 "DevOps":
 
   - title: Accelerate
@@ -176,9 +181,14 @@
     image: webassembly.jpg
 
   - title: "Programming Rust"
-    author: by Jim Blandy, Jason Orendorff, Leonora Tindall
+    author: Jim Blandy, Jason Orendorff, Leonora Tindall
     url: https://geni.us/prog-rust
     image: programming-rust.jpg
+
+  - title: "Tidy First?"
+    author: Kent Beck
+    url: https://geni.us/tidy-first
+    image: tidy-first.jpg
 
 "Productivity":
 
