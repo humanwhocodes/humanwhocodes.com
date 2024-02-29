@@ -30,7 +30,7 @@ const { post } = Astro.props;
     <section id="post-body" class="content-font">
         {post.data.original &&
             <aside class="margin-top">
-                <p>This post originally appeared on <a href={post.data.original.blog.url}>{post.data.original.blog.title}</a> on
+                <p>This post originally appeared on <a href={post.data.original.site.url}>{post.data.original.site.name}</a> on
                     <a href={post.data.original.url}>{ new Date(post.data.original.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month:"long",

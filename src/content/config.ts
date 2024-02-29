@@ -37,6 +37,15 @@ const blog = defineCollection({
             .optional()
             .transform(getDateValue),
         heroImage: z.string().optional(),
+        original: z.object({
+            date: z.date(),
+            title: z.string().optional(),
+            url: z.string(),
+            site: z.object({
+                name: z.string(),
+                url: z.string(),
+            }),
+        }).optional(),
     }),
 });
 
