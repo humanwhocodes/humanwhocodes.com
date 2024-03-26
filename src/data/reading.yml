@@ -272,9 +272,14 @@
 "Speaking":
 
   - title: "TED Talks: The Official TED Guide to Public Speaking"
-    author:  Chris Anderson
+    author: Chris Anderson
     url: https://geni.us/ted-talks-hwc
     image: ted-talks.jpg
+
+  - title: "Speak Like Churchill, Stand Like Lincoln"
+    author: James C. Humes
+    url: https://geni.us/stand-like-lincoln
+    image: stand-like-lincoln.jpg
 
 "Technology":
 
