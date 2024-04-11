@@ -46,6 +46,10 @@ Depending on your goals, you may want to choose one of my coaching tracks. These
 * **Open source kickstart.** Launching an open source project can do wonders for your personal or company brand, but doing it badly can also hurt. If you need help planning an open source launch and have questions about licenses, managing contributors, and growing a community, then this is the track for you. We'll review your project and talk through what it takes for an open source project to sustain itself.
 * **Choose your own adventure.** If you none of the previous tracks align with the help you need, we can design a track just for you. During our free intake conversation, we'll discuss your goals and challenges, and come up with a plan to address them.
 
+> Nicholas has significantly accelerated my growth and happiness as a software engineer by helping me set and achieve goals that take me in the direction I want to go. His experience has also been invaluable when facing new and challenging situations in the upper echelons of the IC engineer track such as leadership skills, giving feedback, working with executives, finding high leverage work, and making the best use of limited time. Coaching with Nicholas isn't just about following a playbook and hoping for the best. He provides specifically tailored practical guidance combined with feedback and accountability. Nicholas is the real deal!
+> 
+> -- Louis Zuckerman, Senior Staff Software Engineer
+
 ## What happens during a call
 
 I'll ask you to come into each call with one to three topics to discuss. These topics need not be very specific, so there's no need to stress about perfect wording or the depth of the topic. Whatever is foremost on your mind is a great jumping-off point for discussion. You may find that a seemingly small, mundane topic can expand into a worthwhile conversation once we discuss it.
