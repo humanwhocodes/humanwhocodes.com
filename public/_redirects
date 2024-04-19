@@ -15,7 +15,7 @@ https://www.nczonline.net/* https://humanwhocodes.com/:splat 301!
 /schedule/*     https://humanwhocodes.as.me/:splat 302!
 
 # Newsletter
-/newsletter/*     https://mailinglist.humanwhocodes.com 302!
+/newsletter/*     https://newsletter.humanwhocodes.com 302!
 
 # Coaching
 /coaching/apply/*   https://form.jotform.com/232354053616148 302!

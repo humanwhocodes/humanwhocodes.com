@@ -447,7 +447,7 @@ tbody tr:nth-child(odd) {
     /* noop */
 }
 
-@media only screen and (min-width:414px) {
+@media only screen and (min-width:650px) {
     .center-text-on-small-screens {
         text-align: center;
         justify-content: center;
@@ -661,7 +661,7 @@ tbody tr:nth-child(odd) {
     display: block;
 }
 
-@media only screen and (min-width:660px) {
+@media only screen and (min-width:820px) {
 
     .collapsible-corners {
         display: flex;
