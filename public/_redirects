@@ -12,7 +12,9 @@ https://www.nczonline.net/* https://humanwhocodes.com/:splat 301!
 /               /blog/  302!
 
 # Scheduling
+/schedule/coaching/nzakas/* https://humanwhocodes.as.me/schedule/5c280dee/appointment/13049617/calendar/3475710?categories%5B%5D=Coaching+Calls 302!
 /schedule/*     https://humanwhocodes.as.me/:splat 302!
+
 
 # Newsletter
 /newsletter/*     https://newsletter.humanwhocodes.com 302!
