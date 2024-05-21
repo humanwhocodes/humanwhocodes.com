@@ -13,13 +13,13 @@ tags:
 
 It all began with an email from Google Analytics. I tend to ignore most emails but the subject line drew my attention: “New owner for http://feeds.nczonline.net/”. I found this strange as my old domain, nczonline.net, just redirects to humanwhocodes.com. I opened the email to find the following:
 
-![Email with subject "New owner for http://feeds.nczonline.net"](/public/images/posts/2024/ga-email.png)
+![Email with subject "New owner for http://feeds.nczonline.net"](/images/posts/2024/ga-email.png)
 
 I clicked on “Manage Users” and didn’t see this other email address listed. I clicked on “Don’t know this person” and was brought to a wonderfully useless documentation page. I tried posting a question in the forum but it was never answered. So, I decided this must not be anything to worry about and promptly forgot about it.
 
 A week later, I started getting Google Analytics email warnings about the content of feeds.nczonline.net. That was the first time I actually typed feeds.nczonline.net into my browser and was met with the following:
 
-![Page with "Slotgacor" as a heading and a cartoon panda with a "Register Now" button](/public/images/posts/2024/takeover-site.png)
+![Page with "Slotgacor" as a heading and a cartoon panda with a "Register Now" button](/images/posts/2024/takeover-site.png)
 
 That’s when it hit me: someone had taken over my subdomain. 
 
