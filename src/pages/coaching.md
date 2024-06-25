@@ -17,7 +17,7 @@ Not everyone is as lucky as me, to have had a mentor who could articulate what i
 
 ## About me
 
-Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I've worked at all kinds of companies from a tiny, bootstrapped startup to a multinational corporation. I've worked at companies in Massachusetts and California. I've worked on small teams and led distributed teams in multiple countries. I've worked as a consultant with multiple companies both on-site and remotely. I've been at a company that shut down completely and survived multiple rounds of layoffs at two other companies. I've been through two IPOs (one in Massachusetts, one in Silicon Valley). I've been an architect at two companies in Silicon Valley. I've published several well-reviewed programming [books](/books) and [spoken](/speaking) at software conferences around the world. I've started an [open source project](https://eslint.org) that has millions of daily downloads. I bring this wide range of experience with me into our conversations to not just explain how I approach things but to help find the approach that works best for you.
+Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I've worked at all kinds of companies from a tiny, bootstrapped startup to a multinational corporation. I've worked at companies in Massachusetts and California. I've worked on small teams and led distributed teams in multiple countries. I've worked as a consultant with multiple companies both on-site and remotely. I've been at a company that shut down completely and survived multiple rounds of layoffs at two other companies. I've been through two IPOs (one in Massachusetts, one in Silicon Valley). I've been an architect at two companies in Silicon Valley. I've published several well-reviewed programming [books](/books) and [spoken](/speaking) at software conferences around the world. I've started an [open source project](https://eslint.org) that has millions of daily downloads. I write regularly for online pubications like [LeadDev](https://leaddev.com/community/nicholas-c-zakas). I bring this wide range of experience with me into our conversations to not just explain how I approach things but to help find the approach that works best for you.
 
 > I hired Nicholas to coach two of our most senior engineers. His insight, feedback, and guidance helped both of them produce higher-quality work, raise their impact across the org, and attain promotions.
 >
@@ -66,10 +66,6 @@ As your coach, I don't have any agenda other than to help you achieve your goals
 > As a staff engineer at a startup, I juggle numerous responsibilities and am often pulled in many different directions. Nicholas played a crucial role in helping me navigate these challenges, drawing on his extensive experience and coaching background to give me unbiased feedback and guidance. He also assisted me in identifying and pursuing the aspects of my work that I enjoy the most, while still being a valuable and effective contributor to my company. I highly recommend him to fellow senior engineers and look forward to working with him again soon!
 >
 > -- Samantha Paras, Staff Software Engineer
-
-## A network of coaches
-
-It's possible that I may not be the right coach for you, which is why I also work with a network of experienced coaches from a variety of backgrounds. These coaches, both male and female, all have at least 10 years of professional experience in software engineering. Some have experience on the managerial track, others have extensive startup experience, and still others have a rich combination of experiences that make them ideal coaches. All of these coaches have been personally interviewed and trained by me, so I can vouch for the experience you'll have working with them. My goal is to ensure that you are getting advice from the person with the most relevant experience. 
 
 <div class="center-text">
     <h2>Ready to get started?</h2>
