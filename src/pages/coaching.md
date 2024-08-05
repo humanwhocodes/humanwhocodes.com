@@ -25,7 +25,7 @@ Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I'v
 
 ## How I work
 
-I work with current and aspiring tech leads, staff+ engineers, architects, and CTOs to become more effective and productive technical leaders. We will meet remotely for 50 minutes every other week for at least 12 weeks and discover the best way to work with each other. In between these calls, you'll have access to a private Slack channel for any questions that come up. 
+I work with current and aspiring tech leads, staff+ engineers, architects, and CTOs to become more effective and productive technical leaders. We will meet remotely for 50 minutes either every week or every other week for at least 12 weeks and discover the best way to work with each other. In between these calls, you'll have access to a private Slack channel for any questions that come up. 
 
 The coaching program is guided by you. I'll ask you to come into each call prepared with what you'd like to discuss. If you have specific goals, we'll work on identifying and navigating next steps; if you don't have specific goals, we'll work on defining them. We will discuss tactics and strategies, both in service of achieving your goals and sometimes to help deal with situations in real time. It's not unusual for clients to need ongoing support for an in-progress project before revisiting their goals.
 
