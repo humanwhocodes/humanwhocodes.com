@@ -23,6 +23,10 @@ Hi, I'm Nicholas Zakas. I've been a software engineer for over 16 years, and I'v
 >
 > –- Benjamin Van Every, Director of Engineering
 
+> I was looking to improve my leadership skills and from the moment I met Nicholas I felt confident that he could help me to achieve this. Throughout all 6 sessions I felt at ease and in the lead as to what to discuss. As a result, I was able to better deal with difficult conversations at work, while still staying true to myself. Seldom I’ve met people that leave such a big impact on my life, thank you Nicholas!
+>
+> -- Riccardo Corradin, Tech Lead
+
 ## How I work
 
 I work with current and aspiring tech leads, staff+ engineers, architects, and CTOs to become more effective and productive technical leaders. We will meet remotely for 50 minutes either every week or every other week for at least 12 weeks and discover the best way to work with each other. In between these calls, you'll have access to a private Slack channel for any questions that come up. 
