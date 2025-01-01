@@ -83,6 +83,11 @@
     author: Michael Bungay Stanier
     url: https://geni.us/coaching-habit-hwc
     image: coaching-habit.jpg
+    
+  - title: An Introduction to Coaching Skills
+    author: Christian van Nieuwerburgh
+    url: https://geni.us/intro-coaching-skill
+    image: intro-coaching-skills.png
 
 "Decision Making":
 
@@ -164,7 +169,12 @@
     author:  Ken Blanchard, Spencer Johnson
     url: https://geni.us/1min-manager
     image: 1min-manager.jpg
-
+    
+  - title: Leading Effective Engineering Teams
+    author: Addy Osmani
+    url: https://geni.us/leading-effective-engs
+    image: leading-effective-engs.png
+    
 "Marketing":
 
   - title: One Million Followers
