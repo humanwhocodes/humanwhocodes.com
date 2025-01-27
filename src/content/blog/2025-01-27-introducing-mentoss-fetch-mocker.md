@@ -96,7 +96,7 @@ describe("My API", () => {
 });
 ```
 
-So far, this looks a lot like the other options that you have for mocking `fetch()`, and that's by design so that the API will feel and familiar. However, there are some features that I think set Mentoss apart from the others.
+So far, this looks a lot like the other options that you have for mocking `fetch()`, and that's by design so that the API will feel familiar. However, there are some features that I think set Mentoss apart from the others.
 
 **Note:** You can also create routes with [extended request patterns](https://mentoss.dev/mock-servers/extended-request-patterns/) and respond with [extended response patterns](https://mentoss.dev/mock-servers/extended-response-patterns/).
 
