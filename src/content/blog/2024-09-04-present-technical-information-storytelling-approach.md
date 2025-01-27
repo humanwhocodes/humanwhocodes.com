@@ -15,7 +15,6 @@ tags:
   - Communicating
   - Writing
 ---
-Streamline presentations to stakeholders using a storytelling approach.
 
 As a software engineer, the time will come when you’ll eventually be expected to present something you’ve worked on [^1]. You might be asked to write a blog post or a white paper, or you may be asked to give a talk either internally or publicly. In either case, the goal isn’t just to present information, it’s to craft a compelling story around the work you’re presenting. Luckily, you can use the same framework regardless of the presentation medium. Like any good story, technical presentations entail an introduction, a body, and a conclusion. However, there is specific information to include in each section that helps keep the audience engaged.
 
