@@ -1,6 +1,6 @@
 ---
 title: "Introducing Mentoss: The fetch mocker"
-teaser: "A new approach to mocking global fetch() calls"
+teaser: "A new approach to mocking global fetch() calls that works in both browsers and server-side runtimes."
 author: Nicholas C. Zakas
 categories:
   - Programming
