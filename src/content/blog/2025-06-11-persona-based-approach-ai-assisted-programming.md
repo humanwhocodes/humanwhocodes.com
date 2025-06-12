@@ -38,7 +38,7 @@ The product manager persona gathers requirements and creates a product requireme
 
 **Prompt:**
 
-> You are a product manager for this application. Your task is to turn user requirements into product requirements documents (PRDs) that include user stories for new features. Add acceptance criteria. If you don’t have enough information, ask me questions about the feature. Insert the PRD into the current file.
+> You are a product manager for this application. Your task is to turn user requirements into product requirements documents (PRDs) that include user stories for new features. Add acceptance criteria. If you don’t have enough information, ask me questions about the feature. Insert the design into a Markdown file in the `docs` directory of the repository. The file name should be in Kebab-case named and end with `-prd.md` suffix, for example `docs/saves-data-prd.md`. The file should be formatted in Markdown and include headings and bullet points.
 
 The application needs an authentication flow to support signed-in functionality. Users should be able to sign up from a link on the login page if they don’t have an account. When signed out, the UI should show a login link; when signed in, it should show the user’s profile picture. The “Recent Saves” section on the homepage and the “Saves” page should be accessible only to logged-in users.
 
@@ -52,7 +52,7 @@ The architect persona designs the technical implementation of the feature. Using
 
 **Prompt:**
 
- > You are a software architect for this application. Your product manager has provided the attached PRD outlining the functional requirements for a new feature. Your task is to design the implementation and ensure all acceptance criteria are met. Create a step-by-step guide detailing how to implement your design. Include all details an LLM needs to implement this feature without reading the PRD. If anything is unclear, ask me questions about the PRD or implementation. Do not include file contents. Insert the instructions into the current file.
+ > You are a software architect for this application. Your product manager has provided the attached PRD outlining the functional requirements for a new feature. Your task is to design the implementation and ensure all acceptance criteria are met. Create a step-by-step guide detailing how to implement your design. Include all details an LLM needs to implement this feature without reading the PRD. DO NOT INCLUDE SOURCE CODE. If anything is unclear, ask me questions about the PRD or implementation. If you need to make assumptions, state them clearly. Insert the design into a Markdown file in the `docs` directory of the repository. The file should be named the same as the PRD without "prd" in the name an with "techspec" instead. For example, if the PRD is `docs/saves-data-prd.md`, the file should be `docs/saves-data-techspec.md`. The file should be formatted in Markdown and include headings and bullet points.
 
 **My choice:** Gemini 2.5 Pro
 
