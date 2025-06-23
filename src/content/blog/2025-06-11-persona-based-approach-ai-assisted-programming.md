@@ -44,7 +44,7 @@ The application needs an authentication flow to support signed-in functionality.
 
 **My choice:** GPT-4.1 
 
-**Rationale:** GPT-4.1 is focused and less likely to go off track. It lacks the deep technical knowledge of Claude or Gemini but does not need it for this role. It’s usually available in standard AI editors, which helps keep costs reasonable.
+**Rationale:** GPT-4.1 is focused and less likely to go off track. It lacks the deep technical knowledge of Claude or Gemini but does not need it for this role. It’s usually available in standard AI editors, which helps keep costs reasonable. GPT 4.1 isn't considered a premium model so you pay less to use it in most IDEs.
 
 ## The architect
 
@@ -56,7 +56,7 @@ The architect persona designs the technical implementation of the feature. Using
 
 **My choice:** Gemini 2.5 Pro
 
-**Rationale:** Gemini has deep technical knowledge and excels at designing implementations. It is one of the more powerful programming models and is available in all AI editors. You can swap it out for a thinking model like o3 if your editor supports it or you have your own token.
+**Rationale:** Gemini has deep technical knowledge and excels at designing implementations. It is one of the more powerful programming models and is available in all AI editors. You can swap it out for a thinking model like o3 if your editor supports it or you have your own token. This is an area where using a premium model is worth the extra cost.
 
 ## The implementer
 
@@ -68,7 +68,7 @@ The implementer persona carries out the design based on the architect’s techni
 
 **My choice:** GPT-4.1
 
-**Rationale:** Once again, I trust GPT-4.1 to stay focused while working. It follows precise instructions well but sometimes skips steps. Asking the model to review its work helps ensure nothing is missed.
+**Rationale:** Once again, I trust GPT-4.1 to stay focused while working. It follows precise instructions well but sometimes skips steps. Asking the model to review its work helps ensure nothing is missed. Plus, GPT 4.1 has one of the fastest response times among the models available at the time of my writing.
 
 ## The problem solver
 
