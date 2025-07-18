@@ -9,6 +9,7 @@ tags:
   - NAS
   - Synology
   - Backups
+updated: 2025-07-18
 ---
 Sometime during 2023, I began getting extra paranoid about my data. I’ve never been great about backing up my computers, primarily because so much of what I did was stored in the cloud. My open source work is pushed to GitHub, my writing is in Google Docs and GitHub, important documents are in Google Drive, photos are in Google Photos, and so on. After all, companies like GitHub parent Microsoft and Google stake their reputations on keeping your data safe. My computer, in effect, is just an empty shell until I start pulling down data from these various cloud repositories.
 
@@ -71,9 +72,19 @@ Keep in mind that Cloud Sync is not a backup solution per se. It just synchroniz
 
 And with that, all of my cloud data is copied locally to my NAS.
 
+## Gitea
+
+Perhaps most of my daily work happens on GitHub, whether that be maintaining ESLint or hacking on side projects. If I was all of sudden kicked off GitHub, I'd lose access to code in both public and private repositories. What I wanted was a way to private store git repositories on my NAS. While Synology has a Git Server application, it's bare bones and requires you to enable SSH and set up git repositories manually. What I wanted was a nice web UI that I could manage like GitHub.
+
+There are no such Synology applications, but there are a number of Docker-based solutions. To get started, I installed Container Manager[^7], the Synology application for running Docker. The Registry section of container manager allows you to search for available Docker images. My first attempt was to install GitLab[^8], but it required too much memory for my NAS to handle. That's when I went to social media and asked for advice. The same name kept coming up: Gitea.
+
+Gitea[^9] is another GitHub-like application. It uses a lot less memory than GitLab and runs like a dream on my NAS. I followed instructions I found online[^10] and had it set up in no time. The interface is similar to enough to GitHub that it's fast and easy to create and manage repos.
+
+Now, I can set up my Gitea server as a remote on any repo and push to it whenever I feel like I need to store something for safekeeping.
+
 ## Snapshot Replication
 
-Not all of the applications I’ve mentioned so far are backup solutions. A proper backup solution keeps records of changes to the data over time so you can restore a particular version. Cloud Sync, Synology Drive, and Synology Photos do no such backing up of data. Thankfully, Synology provides the Snapshot Replication[^7] application that is capable of creating snapshots for any shared folder on the NAS.
+Not all of the applications I’ve mentioned so far are backup solutions. A proper backup solution keeps records of changes to the data over time so you can restore a particular version. Cloud Sync, Synology Drive, and Synology Photos do no such backing up of data. Thankfully, Synology provides the Snapshot Replication[^11] application that is capable of creating snapshots for any shared folder on the NAS.
 
 Snapshot Replication also allows you to create immutable snapshots, meaning the snapshots cannot be changed or deleted for the specified time period. Immutable snapshots are the ultimate protection against ransomware attacks, which often seek to delete or encrypt parts of your system. With immutable snapshots, that becomes impossible.
 
@@ -81,15 +92,15 @@ I set up Snapshot Replication to run every evening at midnight, so I’m guarant
 
 ## Hyper Backup
 
-Hyper Backup[^8] allows you to back up the NAS itself. You have complete control over what you back up, how frequently, and where the backup is stored. You can, for instance, schedule a backup to run on an attached USB drive or a cloud storage solution. You can run multiple tasks at different times depending on your own needs. 
+Hyper Backup[^12] allows you to back up the NAS itself. You have complete control over what you back up, how frequently, and where the backup is stored. You can, for instance, schedule a backup to run on an attached USB drive or a cloud storage solution. You can run multiple tasks at different times depending on your own needs. 
 
-I’ve scheduled the NAS backup to run after Snapshot Replication each night, storing the backup on the Backblaze B2[^9] service. B2 is an S3-compatible cloud storage solution that is much cheaper and provides automatic encryption of your data. Because I’m backing up the entire NAS, all of my local snapshots are also backed up and stored on B2, meaning all of my data and snapshots get backed up offsite each night. I’ve currently configured this task for 9 months of data retention before old backups are deleted to allow for new ones.
+I’ve scheduled the NAS backup to run after Snapshot Replication each night, storing the backup on the Backblaze B2[^13] service. B2 is an S3-compatible cloud storage solution that is much cheaper and provides automatic encryption of your data. Because I’m backing up the entire NAS, all of my local snapshots are also backed up and stored on B2, meaning all of my data and snapshots get backed up offsite each night. I’ve currently configured this task for 9 months of data retention before old backups are deleted to allow for new ones.
 
 ## Battery backup with a UPS
 
 Shortly after I got everything set up on my NAS, we had a brief (10 seconds) power outage. I didn’t think too much about it but when I went to access something off my NAS it was, naturally, powered down. I started it back up again, and thankfully it came back online without any issues, but this worried me. What if I had been traveling and needed access to some files? Worse, what if the sudden loss of power damaged the system, making it unusable? I realized that to protect my investment my NAS needed to be plugged into an uninterruptible power supply (UPS).
 
-After some research, I decided on the CyberPower CP1500PFCLCD.[^10] This UPS has 12 outlets, six of which are battery powered, and provides 1500VA with automatic voltage regulation (AVR) and true sine wave AC signal. Plus, it provides a heartbeat to the NAS via USB indicating the status of the UPS. This allows the NAS to both safely shut down when the battery is running low and to start back up again when power has been restored. 
+After some research, I decided on the CyberPower CP1500PFCLCD.[^14] This UPS has 12 outlets, six of which are battery powered, and provides 1500VA with automatic voltage regulation (AVR) and true sine wave AC signal. Plus, it provides a heartbeat to the NAS via USB indicating the status of the UPS. This allows the NAS to both safely shut down when the battery is running low and to start back up again when power has been restored. 
 
 I wasn’t sure what to expect for battery time, so I charged up the UPS and then unplugged it to let the NAS run. To my surprise, the NAS stayed running for 90 minutes before I ended my test. This test gave me confidence that I wouldn’t be cut off from my NAS while traveling. I also did a test with a low battery to ensure that the NAS would safely shut down (which it did) and then start up again when power was restored (which it also did).
 
@@ -99,13 +110,19 @@ The UPS turned out to be a good investment as there were several power outages d
 
 With that, my backup solution is complete. In general, I’ve achieved 3-2-1 through the use of the Synology DS920+ and all of its associated applications. This strategy ensures that all of my important data is backed up locally to the NAS and remotely to Backblaze B2 automatically. The overall cost was reasonable, coming in at under $1,000 USD, mostly because I bought a refurbished NAS. However, I’m so happy with the result that I would have had no problem paying double that for the extra peace of mind this setup gives me.
 
+**Update(2025-07-18):** Added section on Gitea.
+
 [^1]: [Google Deleting Gmail, Photos Content Soon: Here's How to Protect Your Data Before the Purge](https://www.techtimes.com/articles/299122/20231127/google-deleting-gmail-photos-content-soon-heres-protect-data-purge.htm)
 [^2]: [What is a 3-2-1 Backup Strategy?](https://www.seagate.com/blog/what-is-a-3-2-1-backup-strategy/)
 [^3]: [Synology Photos](https://www.synology.com/en-global/dsm/feature/photos)
 [^4]: [Synology Drive](https://www.synology.com/en-global/dsm/feature/drive)
 [^5]: [Active Backup Suite](https://www.synology.com/en-global/dsm/feature/active_backup_suite)
-[^6]: [Cloud Sync](https://www.synology.com/en-global/dsm/feature/cloud_sync)
-[^7]: [Snapshot Replication](https://www.synology.com/en-global/dsm/feature/snapshot_replication)
-[^8]: [Hyper Backup](https://www.synology.com/en-global/dsm/feature/hyper_backup)
-[^9]: [Backblaze B2](https://www.backblaze.com/cloud-storage)
-[^10]: [CyberPower CP1500PFCLCD](https://geni.us/cp1500pfc) (affiliate link)
+[^6]: [Cloud Sync](https://www.synology.com/en-global/dsm/packages/CloudSync)
+[^7]: [Container Manager](https://www.synology.com/en-global/dsm/packages/ContainerManager)
+[^8]: [GitLab](https://about.gitlab.com/)
+[^9]: [Gitea](https://gitea.io/)
+[^10]: [How to install Gitea on Synology using Docker](https://yarboroughtechnologies.com/how-to-install-gitea-on-synology-using-docker/)
+[^11]: [Snapshot Replication](https://www.synology.com/en-global/dsm/feature/snapshot_replication)
+[^12]: [Hyper Backup](https://www.synology.com/en-global/dsm/feature/hyper_backup)
+[^13]: [Backblaze B2](https://www.backblaze.com/cloud-storage)
+[^14]: [CyberPower CP1500PFCLCD](https://geni.us/cp1500pfc) (affiliate link)
