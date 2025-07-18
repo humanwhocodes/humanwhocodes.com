@@ -1,30 +1,258 @@
-<div class="grid-columns round-borders content-item-border highlight-background">
-    <div class="gutters">
-        
-        <!-- <h2 class="no-margin-top">Free E-book!</h2> -->
-        <p><a href="https://ebooks.humanwhocodes.com/promises" target="_blank"><img src="/images/books/promises_community.png" alt="Understanding JavaScript Promises E-book Cover" height="250"></a></p>
-        <p>Demystify JavaScript promises with the e-book that explains not just concepts, but also real-world uses of promises.</p>
+<div class="promises-ebook-form round-borders content-item-border">
+    <div class="ebook-header">
+        <h2 class="ebook-title">Master JavaScript Promises</h2>
+        <p class="ebook-subtitle">Free E-book - Understanding JavaScript Promises</p>
     </div>
-    <div class="gutters">
-        <h2 class="no-margin-top">Download the Free E-book!</h2>
-        <p>The community edition of <i>Understanding JavaScript Promises</i> is a free download that arrives in minutes.</p>
-        <form method="post" name="sideemailform" action="https://mailinglist.humanwhocodes.com/api/subscribe">
-            <div id="mc_embed_signup_scroll">
-                <div style="margin-bottom: 0.5em">
-                    <label>First name:
-                        <input type="text" value="" style="width:100%" name="firstName">
-                    </label>
-                </div>
-                <div>
-                    <label>Email address:
-                        <input type="email" value="" style="width:100%" name="email" required="">
-                    </label>
-                </div>
-                <input type="hidden" name="formId" value="1580135">
-                <div class="center-text gutters">
-                    <input type="submit" value="Send my E-book">
-                </div>
+    
+    <div class="ebook-content">
+        <div class="ebook-preview">
+            <div class="book-cover">
+                <a href="https://ebooks.humanwhocodes.com/promises" target="_blank">
+                    <img src="/images/books/promises_community.png" alt="Understanding JavaScript Promises E-book Cover" height="200">
+                </a>
             </div>
-        </form>
+            <div class="book-description">
+                <h3>What You'll Learn</h3>
+                <ul class="feature-list">
+                    <li>Promise fundamentals and concepts</li>
+                    <li>Real-world promise implementations</li>
+                    <li>Best practices and patterns</li>
+                    <li>Error handling techniques</li>
+                </ul>
+                <p>Demystify JavaScript promises with practical examples and expert insights.</p>
+            </div>
+        </div>
+        
+        <div class="ebook-form-cta">
+            <div class="cta-content">
+                <h3>Download Your Free Copy</h3>
+                <p>The community edition arrives in your inbox within minutes.</p>
+                <form method="post" name="sideemailform" action="https://mailinglist.humanwhocodes.com/api/subscribe" class="ebook-form">
+                    <div class="form-fields">
+                        <div class="field-group">
+                            <label for="promises-firstName">First name:</label>
+                            <input type="text" id="promises-firstName" name="firstName" required>
+                        </div>
+                        <div class="field-group">
+                            <label for="promises-email">Email address:</label>
+                            <input type="email" id="promises-email" name="email" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="formId" value="1580135">
+                    <button type="submit" class="ebook-cta-btn">
+                        <span>Send My E-book</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+
+<style>
+.promises-ebook-form {
+    background: linear-gradient(135deg, hsla(27, 91%, 54%, 0.1) 0%, hsla(27, 91%, 54%, 0.2) 100%);
+    color: var(--dark-gray);
+    padding: 0;
+    margin: 2rem 0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid hsla(27, 91%, 54%, 0.3);
+}
+
+.promises-ebook-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,122,0,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,122,0,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,122,0,0.05)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,122,0,0.05)"/><circle cx="90" cy="30" r="0.5" fill="rgba(255,122,0,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.ebook-header {
+    text-align: center;
+    padding: 2rem 2rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ebook-icon {
+    margin-bottom: 1rem;
+}
+
+.ebook-title {
+    font-size: 1.8rem;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark-gray);
+}
+
+.ebook-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin: 0;
+    color: var(--dark-gray);
+}
+
+.ebook-content {
+    padding: 1rem 2rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ebook-preview {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid hsla(27, 91%, 54%, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-cover {
+    text-align: center;
+}
+
+.book-cover img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-description h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark-gray);
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+}
+
+.feature-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid hsla(27, 91%, 54%, 0.1);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: hsl(207deg, 91%, 54%);
+    font-weight: bold;
+}
+
+.ebook-form-cta {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid hsla(27, 91%, 54%, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-content h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark-gray);
+}
+
+.cta-content p {
+    margin: 0 0 1.5rem;
+    opacity: 0.8;
+    color: var(--dark-gray);
+}
+
+.ebook-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-fields {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.field-group {
+    text-align: left;
+}
+
+.field-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.field-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid hsla(27, 91%, 54%, 0.3);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.field-group input:focus {
+    outline: none;
+    border-color: hsl(209deg, 100%, 45%);
+    box-shadow: 0 0 0 2px hsla(209, 100%, 45%, 0.2);
+}
+
+.ebook-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, hsl(209deg, 100%, 55%), hsl(209deg, 100%, 45%));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(15, 117, 202, 0.3);
+    border: 1px solid hsl(209deg, 100%, 45%);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.ebook-cta-btn:hover {
+    background: linear-gradient(135deg, hsl(209deg, 100%, 60%), hsl(209deg, 100%, 50%));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 117, 202, 0.4);
+}
+
+.ebook-cta-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.ebook-cta-btn:hover svg {
+    transform: translateX(3px);
+}
+
+@media (min-width: 768px) {
+    .ebook-preview {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+    }
+    
+    .book-cover {
+        text-align: left;
+    }
+}
+</style>

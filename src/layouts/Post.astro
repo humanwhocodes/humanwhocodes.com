@@ -11,10 +11,10 @@ const { post } = Astro.props;
 let FormComponent;
 if (!post.data.tags || post.data.tags.includes("JavaScript")) {
     FormComponent = PromisesEbookForm;
-} else if (post.data.tags.includes("Productivity")) {
-    FormComponent = InterruptRateEbookForm;
-} else {
+} else if (post.data.tags.includes("AI")) {
     FormComponent = AIConsultForm;
+} else {
+    FormComponent = InterruptRateEbookForm;
 }
 ---
 <Layout
