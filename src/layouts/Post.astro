@@ -4,8 +4,18 @@ import PostTags from "../components/PostTags.astro";
 import Comments from "../components/Comments.astro";
 import InterruptRateEbookForm from "../components/InterruptRateEbookForm.astro";
 import PromisesEbookForm from "../components/PromisesEbookForm.astro";
+import AIConsultForm from "../components/AIConsultForm.astro";
 
 const { post } = Astro.props;
+
+let FormComponent;
+if (!post.data.tags || post.data.tags.includes("JavaScript")) {
+    FormComponent = PromisesEbookForm;
+} else if (post.data.tags.includes("Productivity")) {
+    FormComponent = InterruptRateEbookForm;
+} else {
+    FormComponent = AIConsultForm;
+}
 ---
 <Layout
     title={post.data.title}
@@ -42,7 +52,5 @@ const { post } = Astro.props;
         <Comments comments={post.comments}/>
     </section>
 </article>
-{  !post.data.tags || post.data.tags.includes("JavaScript")
-    ? <PromisesEbookForm />
-    : <InterruptRateEbookForm /> }
+<FormComponent />
 </Layout>
