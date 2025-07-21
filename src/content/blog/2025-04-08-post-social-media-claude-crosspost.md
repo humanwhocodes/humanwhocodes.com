@@ -33,20 +33,14 @@ Usage: crosspost [options] ["Message to post."]
 --help, -h      Show this message.
 ```
 
-First, install Crosspost using npm:
-
-```shell
-npm install @humanwhocodes/crosspost
-```
-
-Then you can use the `crosspost` CLI via `npx`. Here are some examples:
+You can use the CLI via `npx`. Here are some examples:
 
 ```shell
 # Post a message to multiple services
-npx crosspost -t -m -b "Check out this beach!"
+npx @humanwhocodes/crosspost -t -m -b "Check out this beach!"
 
 # Post a message with an image to multiple services
-npx crosspost -t -m -b --image ./photo.jpg --image-alt "A beautiful sunset" "Check out this beach!"
+npx @humanwhocodes/crosspost -t -m -b --image ./photo.jpg --image-alt "A beautiful sunset" "Check out this beach!"
 ```
 
 These examples post the message `"Check out this beach!"` to Twitter, Mastodon, and Bluesky with an attached image. You can choose to post to any combination by specifying the appropriate command line options.
@@ -59,14 +53,6 @@ Initially, Crosspost was designed for use in continuous integration systems to h
 
 You can start the Crosspost MCP server by using the `--mcp` command. Most of the command line arguments work in the MCP server, aside from `--file`, `--image`, and `--image-alt`. 
 
-To use Crosspost with Claude Desktop[^2], you should install it globally:
-
-```shell
-npm install -g @humanwhocodes/crosspost
-```
-
-Installing globally ensures that Claude Desktop can easily find the executable and also allows for easy Crosspost upgrades in the future.
-
 To set up Claude Desktop to use Crosspost:
 
 1. Click on File -> Settings.
@@ -77,15 +63,15 @@ This will create a `claude_desktop_config.json` file. Open it and add the follow
 
 ```json
 {
-	"mcpServers": {
-		"crosspost": {
-			"command": "crosspost",
-			"args": ["-m", "-l", "--mcp"],
-			"env": {
-				"CROSSPOST_DOTENV": "/path/to/.env"
-			}
-		}
-	}
+  "mcpServers": {
+    "crosspost": {
+      "command": "npx",
+      "args": ["@humanwhocodes/crosspost", "-m", "-l", "--mcp"],
+      "env": {
+        "CROSSPOST_DOTENV": "/path/to/.env"
+      }
+    }
+  }
 }
 ```
 
