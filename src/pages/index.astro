@@ -11,11 +11,13 @@ const posts = await loadBlogPosts();
 	title={site.name}
 	description={site.description}
 >	
-	<h2 class="no-margin">Recent Posts</h2>
+	<h1 class="hide-offscreen">Recent Posts</h1>
 
-	{posts.map((post) => (
-		<PostBlurb post={post}/>
-	))}
+	<div class="blog-posts-container">
+		{posts.map((post) => (
+			<PostBlurb post={post}/>
+		))}
+	</div>
 
 
 </Layout>

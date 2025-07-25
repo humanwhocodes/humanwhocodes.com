@@ -16,11 +16,13 @@ const { page } = Astro.props;
 	title={site.name}
 	description={site.description}
 >	
-	<h2 class="no-margin">Recent Posts</h2>
+	<h1 class="hide-offscreen">All Posts</h1>
 
-	{page.data.map((post) => (
-		<PostBlurb post={post}/>
-	))}
+	<div class="blog-posts-container">
+		{page.data.map((post) => (
+			<PostBlurb post={post}/>
+		))}
+	</div>
 
 	<Pagination next={page.url.next} prev={page.url.prev} />
 

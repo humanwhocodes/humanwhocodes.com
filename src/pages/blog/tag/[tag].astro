@@ -39,11 +39,13 @@ const { posts, tag } = Astro.props;
 <Layout
 	title={`Posts tagged with "${tag}"`}
 >	
-	<h2 class="no-margin">Posts tagged with "{tag}"</h2>
+	<h1 class="hide-offscreen">Posts tagged with "{tag}"</h1>
 
-	{posts.map((post) => (
-		<PostBlurb post={post}/>
-	))}
+	<div class="blog-posts-container">
+		{posts.map((post) => (
+			<PostBlurb post={post}/>
+		))}
+	</div>
 
 
 </Layout>

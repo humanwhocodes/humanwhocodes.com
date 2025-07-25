@@ -35,11 +35,13 @@ const { year } = Astro.params;
 <Layout
 	title={`Posts in ${year}`}
 >	
-	<h2 class="no-margin">Posts in {year}</h2>
+	<h1 class="hide-offscreen">Posts in {year}</h1>
 
-	{posts.map((post) => (
-		<PostBlurb post={post}/>
-	))}
+	<div class="blog-posts-container">
+		{posts.map((post) => (
+			<PostBlurb post={post}/>
+		))}
+	</div>
 
 
 </Layout>
