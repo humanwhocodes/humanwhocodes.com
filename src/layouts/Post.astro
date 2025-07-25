@@ -88,10 +88,10 @@ const readingTime = Math.ceil(wordCount / 200);
         }
         
 		<slot />
-		
-		<ShareButtons post={post} />
-        <Comments comments={post.comments}/>
     </section>
+    
+    <ShareButtons post={post} />
+    <Comments comments={post.comments}/>
     
     <!-- Back to Top Button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
