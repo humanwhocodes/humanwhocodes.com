@@ -5,6 +5,8 @@ import Comments from "../components/Comments.astro";
 import InterruptRateEbookForm from "../components/InterruptRateEbookForm.astro";
 import PromisesEbookForm from "../components/PromisesEbookForm.astro";
 import AIConsultForm from "../components/AIConsultForm.astro";
+import ShareButtons from "../components/ShareButtons.astro";
+import authorImage from "../images/me/me-150x150.jpg";
 
 const { post } = Astro.props;
 
@@ -16,41 +18,143 @@ if (!post.data.tags || post.data.tags.includes("JavaScript")) {
 } else {
     FormComponent = InterruptRateEbookForm;
 }
+
+// Calculate reading time (average 200 words per minute)
+const content = post.body || "";
+const wordCount = content.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
 ---
 <Layout
     title={post.data.title}
     description={post.data.teaser}
     originalUrl={post.data.original?.url}
     canonicalUrl={post.data.canonical_url}>
-<article itemscope itemtype="http://schema.org/Article">
-    <header>
-        <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.data.title }</h1>
-        <p itemprop="description" class="no-margin-top">{ post.data.teaser }</p>
-        <div class="post-meta gutter-top smaller-font dark-dotted-border-top dark-dotted-border-bottom">
-            <p class="no-margin byline">Posted at <time datetime={ post.data.date.toUTCString() } itemprop="datePublished">{
-                    post.data.date.toLocaleDateString('en-us', {
-                        year: "numeric",
-                        month:"long",
-                        day: "numeric"
-                    }) }</time> by <span itemprop="author" itemtype="https://schema.org/Person">Nicholas
-                    C. Zakas</span></p>
-            <PostTags post={post}/>
+
+<!-- Reading Progress Bar -->
+<div class="reading-progress">
+    <div class="reading-progress-bar" id="reading-progress-bar"></div>
+</div>
+
+<article itemscope itemtype="http://schema.org/Article" class="post-article">
+    <header class="post-header">
+        <div class="post-header-content">
+            <h1 itemprop="headline" class="post-title">{ post.data.title }</h1>
+            <p itemprop="description" class="post-teaser">{ post.data.teaser }</p>
+            
+            <div class="post-meta">
+                <div class="post-meta-primary">
+                    <div class="author-info">
+                        <img src={authorImage} alt="Nicholas C. Zakas" class="author-avatar" />
+                        <div class="author-details">
+                            <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="author-name">
+                                <span itemprop="name">Nicholas C. Zakas</span>
+                            </span>
+                            <div class="post-date-info">
+                                <time datetime={ post.data.date.toUTCString() } itemprop="datePublished" class="post-date">
+                                    {post.data.date.toLocaleDateString('en-us', {
+                                        year: "numeric",
+                                        month:"long",
+                                        day: "numeric"
+                                    })}
+                                </time>
+                                <span class="reading-time">• {readingTime} min read</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-meta-secondary">
+                    <PostTags post={post}/>
+                </div>
+            </div>
         </div>
     </header>
-    <section id="post-body" class="content-font">
+    
+    <section id="post-body" class="post-content content-font">
         {post.data.original &&
-            <aside class="margin-top">
-                <p>This post originally appeared on <a href={post.data.original.site.url}>{post.data.original.site.name}</a> on
+            <aside class="original-publication-notice">
+                <svg class="original-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="original-text">
+                    <strong>Originally published:</strong> This post originally appeared on 
+                    <a href={post.data.original.site.url}>{post.data.original.site.name}</a> on
                     <a href={post.data.original.url}>{ new Date(post.data.original.date).toLocaleDateString("en-US", {
                         year: "numeric",
                         month:"long",
                         day: "numeric"
-                    })}</a>.</p>
+                    })}</a>.
+                </div>
             </aside>
         }
+        
 		<slot />
+		
+		<ShareButtons post={post} />
         <Comments comments={post.comments}/>
     </section>
+    
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 15l-6-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    
+    <script>
+        // Back to top functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        const progressBar = document.getElementById('reading-progress-bar');
+        const progressContainer = document.querySelector('.reading-progress');
+        
+        if (backToTopButton) {
+            // Show/hide button based on scroll position
+            const toggleBackToTop = () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            };
+            
+            // Show/hide progress bar and update reading progress
+            const updateReadingProgress = () => {
+                if (progressBar && progressContainer) {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    
+                    // Show progress bar when user starts scrolling
+                    if (winScroll > 50) {
+                        progressContainer.classList.add('visible');
+                    } else {
+                        progressContainer.classList.remove('visible');
+                    }
+                    
+                    progressBar.style.width = scrolled + '%';
+                }
+            };
+            
+            // Combined scroll handler
+            const handleScroll = () => {
+                toggleBackToTop();
+                updateReadingProgress();
+            };
+            
+            // Initial check
+            handleScroll();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            
+            // Handle click
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
 </article>
 <FormComponent />
 </Layout>
