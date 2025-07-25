@@ -22,7 +22,7 @@ if (!post.data.tags || post.data.tags.includes("JavaScript")) {
     description={post.data.teaser}
     originalUrl={post.data.original?.url}
     canonicalUrl={post.data.canonical_url}>
-<article itemtype="http://schema.org/Article">
+<article itemscope itemtype="http://schema.org/Article">
     <header>
         <h1 itemprop="headline" class="no-margin gutter-bottom headline-text">{ post.data.title }</h1>
         <p itemprop="description" class="no-margin-top">{ post.data.teaser }</p>
