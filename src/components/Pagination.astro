@@ -4,17 +4,134 @@ const {
     prev,
 } = Astro.props;
 ---
-<div class="pagination">
-    <div class="older-entries">{next && <a href={next}>« Older Entries</a>}</div>
-    <div class="newer-entries">{prev && <a href={prev}>Newer Entries »</a>}</div>
-</div>
+<nav class="pagination" aria-label="Blog pagination">
+    <div class="pagination-button newer-entries">
+        {prev && 
+            <a href={prev} class="pagination-link" aria-label="Go to newer entries">
+                <svg class="pagination-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Newer Entries</span>
+            </a>
+        }
+    </div>
+    <div class="pagination-button older-entries">
+        {next && 
+            <a href={next} class="pagination-link" aria-label="Go to older entries">
+                <span>Older Entries</span>
+                <svg class="pagination-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        }
+    </div>
+</nav>
 
 <style>
-	.pagination {
-		display: flex;
-	}
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin: 3rem 0 2rem 0;
+        padding: 0;
+    }
 
-	.pagination > .older-entries {
-		flex: 1;
-	}
+    .pagination-button {
+        flex: 1;
+        display: flex;
+    }
+
+    .pagination-button.newer-entries {
+        justify-content: flex-start;
+    }
+
+    .pagination-button.older-entries {
+        justify-content: flex-end;
+    }
+
+    .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.5rem;
+        background: linear-gradient(135deg, var(--highlight-color), var(--light-gray));
+        border: 1px solid var(--content-border-color);
+        border-radius: 12px;
+        color: var(--dark-gray);
+        text-decoration: none;
+        font-family: var(--sans-serif);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        min-width: 140px;
+    }
+
+    .pagination-link:hover {
+        background: linear-gradient(135deg, var(--light-blue), var(--medium-blue));
+        color: var(--highlight-color);
+        border-color: var(--medium-blue);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+    }
+
+    .pagination-link:focus {
+        outline: 2px solid var(--medium-blue);
+        outline-offset: 2px;
+    }
+
+    .pagination-link:active {
+        transform: translateY(0);
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15);
+    }
+
+    .pagination-icon {
+        flex-shrink: 0;
+        transition: transform 0.2s ease;
+    }
+
+    .pagination-link:hover .pagination-icon {
+        transform: translateX(2px);
+    }
+
+    .newer-entries .pagination-link:hover .pagination-icon {
+        transform: translateX(-2px);
+    }
+
+    /* Responsive design */
+    @media (max-width: 640px) {
+        .pagination {
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .pagination-button {
+            width: 100%;
+        }
+
+        .pagination-button.older-entries,
+        .pagination-button.newer-entries {
+            justify-content: center;
+        }
+
+        .pagination-link {
+            width: 100%;
+            justify-content: center;
+            min-width: unset;
+            padding: 1rem 1.5rem;
+        }
+    }
+
+    /* CSS custom properties for consistency with the rest of the site */
+    .pagination-link {
+        --highlight-color: #fff;
+        --light-gray: #efefef;
+        --content-border-color: #ddd;
+        --dark-gray: #373736;
+        --sans-serif: Arial, Helvetica, sans-serif;
+        --light-blue: hsl(209deg, 100%, 55%);
+        --medium-blue: hsl(209deg, 100%, 45%);
+    }
 </style>
