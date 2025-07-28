@@ -16,32 +16,260 @@ posts.forEach(post => {
 ---
 <div id="sidebar" class="sidebar-width sidebar-background gutters hide-on-small-screens">
     <h1 class="hide-offscreen">Additional Information</h1>
-    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIEK3Y&amp;placement=humanwhocodescom" id="_carbonads_js"></script>
+    
+    <!-- Carbon Ads -->
+    <div class="sidebar-section ad-section">
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYIEK3Y&amp;placement=humanwhocodescom" id="_carbonads_js"></script>
+    </div>
+    
+    <!-- Top Sponsors -->
     {sponsors.length ? (
-        <h2 class="smaller-font">Top Sponsors</h2>
-        <ul class="inline-list inline-image-list">
-            {sponsors.map(sponsor => (
-                <li><a href={sponsor.url}><img src={sponsor.avatarUrl} alt={sponsor.name} width="100"></a></li>
-            ))}
-        </ul>
+        <div class="sidebar-section">
+            <h2 class="sidebar-heading">
+                <svg class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 1l2.09 4.26L14 6l-3 2.96L11.82 13 8 10.27 4.18 13 5 8.96 2 6l3.91-.74L8 1z" fill="currentColor"/>
+                </svg>
+                Top Sponsors
+            </h2>
+            <div class="sponsor-grid">
+                {sponsors.map(sponsor => (
+                    <a href={sponsor.url} class="sponsor-link" title={sponsor.name}>
+                        <img src={sponsor.avatarUrl} alt={sponsor.name} width="60" height="60">
+                    </a>
+                ))}
+            </div>
+        </div>
     ): "" }
     
-    <h2 class="smaller-font">My Books</h2>
-    <ul class="inline-list inline-image-list">
-        {books.slice(0,4).map(book => (
-            <li><a href={book.url}><img src={`/images/books/${book.image}`} alt={book.title} width="100"></a></li>
-        ))}
-    </ul>
-    <h2 class="smaller-font">Recent Snippets</h2>
-    <ul>
-        {snippets.map(snippet => (
-            <li><a href={`/snippets/${snippet.slug}/`}>{ snippet.data.title }</a></li>
-        ))}
-    </ul>
-    <h2 class="smaller-font">Archives ({years.size} Years)</h2>
-    <ul>
-        {[...years].map(year => (
-            <li><a href={`/blog/${year}/`}>{ year }</a></li>
-        ))}
-    </ul>
+    <!-- My Books -->
+    <div class="sidebar-section">
+        <h2 class="sidebar-heading">
+            <svg class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 3C1 2.44772 1.44772 2 2 2H14C14.5523 2 15 2.44772 15 3V13C15 13.5523 14.5523 14 14 14H2C1.44772 14 1 13.5523 1 13V3Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="M5 6H11M5 9H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            My Books
+        </h2>
+        <div class="books-grid">
+            {books.slice(0,4).map(book => (
+                <a href={book.url} class="book-link" title={book.title}>
+                    <img src={`/images/books/${book.image}`} alt={book.title} width="80" height="100">
+                </a>
+            ))}
+        </div>
+    </div>
+    
+    <!-- Recent Snippets -->
+    <div class="sidebar-section">
+        <h2 class="sidebar-heading">
+            <svg class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.5 2L14 6.5V14C14 14.5523 13.5523 15 13 15H3C2.44772 15 2 14.5523 2 14V2C2 1.44772 2.44772 1 3 1H8.5L9.5 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M9 1V5C9 5.55228 9.44772 6 10 6H14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M5 9H11M5 11H8" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            </svg>
+            Recent Snippets
+        </h2>
+        <ul class="sidebar-list">
+            {snippets.map(snippet => (
+                <li><a href={`/snippets/${snippet.slug}/`} class="sidebar-link">{ snippet.data.title }</a></li>
+            ))}
+        </ul>
+    </div>
+    
+    <!-- Archives -->
+    <div class="sidebar-section">
+        <h2 class="sidebar-heading">
+            <svg class="sidebar-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 3C2 2.44772 2.44772 2 3 2H13C13.5523 2 14 2.44772 14 3V4H2V3Z" fill="currentColor"/>
+                <path d="M2 5H14V12C14 13.1046 13.1046 14 12 14H4C2.89543 14 2 13.1046 2 12V5Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                <path d="M6 8H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            Archives <span class="archive-count">({years.size} Years)</span>
+        </h2>
+        <ul class="sidebar-list archive-list">
+            {[...years].sort((a, b) => b - a).map(year => (
+                <li><a href={`/blog/${year}/`} class="sidebar-link archive-link">{ year }</a></li>
+            ))}
+        </ul>
+    </div>
 </div>
+
+<style>
+    #sidebar {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 12px;
+        padding: 1.5rem !important;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-top: 2.6rem;
+        margin-bottom: 2.6rem;
+    }
+
+    .sidebar-section {
+        padding: 1.5rem 0;
+        margin-bottom: 0.9rem;
+    }
+
+    .sidebar-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .ad-section {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .sidebar-heading {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-gray);
+        margin: 0 0 1rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--sans-serif);
+        border-bottom: 2px solid;
+        border-image: linear-gradient(90deg, var(--light-orange), var(--dark-orange)) 1;
+        padding-bottom: 0.5rem;
+    }
+
+    .sidebar-icon {
+        color: var(--light-orange);
+        flex-shrink: 0;
+    }
+
+    .archive-count {
+        font-weight: 400;
+        color: #6b7280;
+        font-size: 0.9rem;
+    }
+
+    /* Sponsor Grid */
+    .sponsor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .sponsor-link {
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.2s ease;
+        border: 2px solid transparent;
+    }
+
+    .sponsor-link:hover {
+        transform: scale(1.05);
+        border-color: var(--light-orange);
+    }
+
+    .sponsor-link img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+    }
+
+    /* Books Grid */
+    .books-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .book-link {
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.2s ease;
+        border: 2px solid transparent;
+        background: #f8f9fa;
+    }
+
+    .book-link:hover {
+        transform: translateY(-2px);
+        border-color: var(--light-orange);
+        box-shadow: 0 4px 8px rgba(247, 147, 26, 0.2);
+    }
+
+    .book-link img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 6px;
+    }
+
+    /* Sidebar Lists */
+    .sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar-list li {
+        margin-bottom: 0.5rem;
+    }
+
+    .sidebar-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .sidebar-link {
+        display: block;
+        color: var(--dark-gray);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .sidebar-link:hover {
+        background: linear-gradient(135deg, var(--lightest-orange), rgba(247, 147, 26, 0.1));
+        border-left-color: var(--light-orange);
+        color: var(--dark-gray);
+        transform: translateX(2px);
+    }
+
+    /* Archive List Specific Styles */
+    .archive-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+    }
+
+    .archive-link {
+        text-align: center;
+        font-weight: 500;
+        font-family: var(--sans-serif);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .books-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .sponsor-grid {
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            gap: 0.5rem;
+        }
+        
+        .archive-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* Carbon Ads Styling */
+    #carbonads {
+        border: 1px solid var(--content-border-color) !important;
+        border-radius: 8px !important;
+        background: white !important;
+        padding: 1rem !important;
+    }
+</style>

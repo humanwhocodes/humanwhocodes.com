@@ -494,7 +494,7 @@ tbody tr:nth-child(odd) {
  *=============================================================================*/
 
 .round-borders {
-    border-radius: 5px;
+    border-radius: 12px;
 }
 
 /* Add borders to top */
