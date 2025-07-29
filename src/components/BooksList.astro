@@ -19,18 +19,305 @@ const bookCategories = {
         books: books.filter(book => book.type === "book" && book.rel === "contributor")
     }
 };
-
-
 ---
-{Object.keys(bookCategories).map(key => <>
-    <h2>{bookCategories[key].title} ({bookCategories[key].books.length})</h2>
-    <ul class="hide-bullets grid-columns">
-        {bookCategories[key].books.map(book =>
-            <li class="center-text">
-                <p><a href={book.url}><img src={"/images/books/" + book.image } alt={book.title + " Cover"} loading="lazy" height="150"></a><br>
-                <a href={book.url}>{book.title}</a><br>
-                {book.publisher} {book.date}</p>
-            </li>            
-        )}
-    </ul>
-</>)}
+
+<div class="books-container">
+    {Object.keys(bookCategories).map(key => {
+        const category = bookCategories[key];
+        return category.books.length > 0 && (
+            <section class="book-category">
+                <header class="category-header">
+                    <h2 class="category-title">
+                        {category.title}
+                        <span class="book-count">({category.books.length})</span>
+                    </h2>
+                </header>
+                
+                <div class="books-grid">
+                    {category.books.map(book => (
+                        <article class="book-card">
+                            <div class="book-cover-container">
+                                <a href={book.url} class="book-cover-link" title={book.title}>
+                                    <img 
+                                        src={`/images/books/${book.image}`} 
+                                        alt={`${book.title} Cover`} 
+                                        loading="lazy" 
+                                        class="book-cover"
+                                        width="160"
+                                        height="200"
+                                    />
+                                </a>
+                            </div>
+                            <div class="book-details">
+                                <h3 class="book-title">
+                                    <a href={book.url} class="book-title-link">{book.title}</a>
+                                </h3>
+                                <div class="book-meta">
+                                    <span class="book-publisher">{book.publisher}</span>
+                                    <span class="book-date">{book.date}</span>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+        );
+    })}
+</div>
+
+<style>
+    .books-container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .book-category {
+        margin-bottom: 4rem;
+    }
+
+    .book-category:last-child {
+        margin-bottom: 2rem;
+    }
+
+    /* Category Header */
+    .category-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .category-title {
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-family: var(--sans-serif);
+        border-bottom: 2px solid var(--content-border-color);
+        padding-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .category-icon {
+        color: var(--light-orange);
+        flex-shrink: 0;
+    }
+
+    .book-count {
+        font-weight: 400;
+        color: #6b7280;
+        font-size: 0.85em;
+        margin-left: auto;
+    }
+
+    /* Books Grid */
+    .books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* Book Card */
+    .book-card {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .book-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--light-orange), var(--dark-orange));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .book-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.12),
+            0 8px 16px rgba(247, 147, 26, 0.15);
+        border-color: rgba(247, 147, 26, 0.2);
+    }
+
+    .book-card:hover::before {
+        opacity: 1;
+    }
+
+    /* Book Cover */
+    .book-cover-container {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .book-cover-link {
+        display: block;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .book-cover {
+        width: 160px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s ease;
+    }
+
+    .book-card:hover .book-cover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Book Details */
+    .book-details {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .book-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem 0;
+        line-height: 1.4;
+        font-family: var(--sans-serif);
+    }
+
+    .book-title-link {
+        color: var(--dark-gray);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .book-title-link:hover {
+        color: var(--light-orange);
+    }
+
+    .book-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+        font-size: 0.9rem;
+        color: #6b7280;
+        font-family: var(--sans-serif);
+        margin-top: 0;
+    }
+
+    .book-publisher {
+        font-weight: 500;
+        color: #6b7280;
+    }
+
+    .book-date {
+        font-weight: 400;
+        opacity: 0.8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .books-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .book-card {
+            padding: 1.25rem;
+        }
+
+        .category-title {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .book-count {
+            margin-left: 0;
+            align-self: flex-end;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .books-grid {
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+        }
+
+        .book-card {
+            flex-direction: row;
+            text-align: left;
+            padding: 1.25rem;
+        }
+
+        .book-cover-container {
+            margin-bottom: 0;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .book-cover {
+            width: 100px;
+            height: 125px;
+        }
+
+        .book-details {
+            align-items: flex-start;
+        }
+
+        .book-title {
+            text-align: left;
+        }
+    }
+
+    /* Focus states for accessibility */
+    .book-cover-link:focus,
+    .book-title-link:focus {
+        outline: 2px solid var(--light-orange);
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+
+    /* Smooth loading animation */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .book-card {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .book-card:nth-child(1) { animation-delay: 0.1s; }
+    .book-card:nth-child(2) { animation-delay: 0.2s; }
+    .book-card:nth-child(3) { animation-delay: 0.3s; }
+    .book-card:nth-child(4) { animation-delay: 0.4s; }
+    .book-card:nth-child(5) { animation-delay: 0.5s; }
+    .book-card:nth-child(6) { animation-delay: 0.6s; }
+</style>
