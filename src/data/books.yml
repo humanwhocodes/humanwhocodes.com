@@ -12,7 +12,7 @@
   url: https://geni.us/hwc-es6-book
   type: book
   rel: author
-  image: understandinges6ns.png
+  image: understandinges6ns.jpg
 
 - title: Understanding ECMAScript 6
   pubdate: January 2016
@@ -20,7 +20,7 @@
   url: https://leanpub.com/understandinges6
   type: ebook
   rel: author
-  image: understandinges6.png
+  image: understandinges6.jpg
 
 - title: Beautiful JavaScript
   pubdate: August 2015
@@ -28,7 +28,7 @@
   url: https://amzn.to/2JBiK5n
   type: book
   rel: contributor
-  image: beautiful.png
+  image: beautiful.jpg
 
 - title: The Principles of Object-Oriented JavaScript
   pubdate: February 2014
@@ -36,7 +36,7 @@
   url: https://geni.us/hwc-oopjs-book
   type: book
   rel: author
-  image: oopinjsns.png
+  image: oopinjsns.jpg
 
 - title: The Principles of Object-Oriented Programming in JavaScript
   pubdate: January 2013
@@ -52,7 +52,7 @@
   url: https://amzn.to/2SLSGc7
   type: book
   rel: contributor
-  image: smashing.png
+  image: smashing.jpg
 
 - title: The Problem with Native JavaScript APIs
   pubdate: August 2012
@@ -60,7 +60,7 @@
   url: https://amzn.to/2qpqEGd
   type: ebook
   rel: author
-  image: problem.png
+  image: problem.jpg
 
 - title: Web Performance Daybook Volume 2
   pubdate: June 2012
@@ -68,7 +68,7 @@
   url: https://amzn.to/2Rw822J
   type: book
   rel: contributor
-  image: daybook.png
+  image: daybook.jpg
 
 - title: Maintainable JavaScript
   pubdate: May 2012
@@ -76,7 +76,7 @@
   url: https://geni.us/hwc-mjs-book
   type: book
   rel: author
-  image: maintainablejs.png
+  image: maintainablejs.jpg
 
 - title: Professional JavaScript for Web Developers, 3rd Edition
   pubdate: January 2012
@@ -84,7 +84,7 @@
   url: https://amzn.to/2JBDt96
   type: book
   rel: author
-  image: pro_js_3e.png
+  image: pro_js_3e.webp
 
 - title: High Performance JavaScript
   pubdate: April 2010
@@ -92,7 +92,7 @@
   url: https://geni.us/hwc-hpjs-book
   type: book
   rel: coauthor
-  image: hpjs.png
+  image: hpjs.jpg
 
 - title: Even Faster Websites
   pubdate: June 2009
@@ -100,7 +100,7 @@
   url: https://amzn.to/2SJeQeI
   type: book
   rel: contributor
-  image: even_faster.png
+  image: even_faster.jpg
 
 - title: Professional JavaScript for Web Developers, 2nd Edition
   pubdate: January 2009
@@ -108,7 +108,7 @@
   url: https://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X
   type: book
   rel: author
-  image: pro_js_2e.png
+  image: pro_js_2e.webp
 
 - title: Professional Ajax, 2nd Edition
   pubdate: March 2007
@@ -116,7 +116,7 @@
   url: https://amzn.to/2SJiQfd
   type: book
   rel: coauthor
-  image: pro_ajax_2e.png
+  image: pro_ajax_2e.webp
 
 - title: Professional Ajax
   pubdate: February 2006
@@ -124,7 +124,7 @@
   url: https://amzn.to/2SJ5wI3
   type: book
   rel: coauthor
-  image: pro_ajax.png
+  image: pro_ajax.webp
   
 - title: Professional JavaScript for Web Developers
   pubdate: April 2005
@@ -132,4 +132,4 @@
   url: https://www.amazon.com/Professional-JavaScript-Developers-Wrox-Guides/dp/0764579088/ref=sr_1_8?tag=nczonline-20
   type: book
   rel: author
-  image: pro_js.png
+  image: pro_js.webp
