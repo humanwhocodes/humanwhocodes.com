@@ -1,0 +1,315 @@
+---
+import Page from "../layouts/Page.astro";
+import authorImage from "../images/me/me-150x150.jpg";
+
+const frontmatter = {
+    title: "About Nicholas C. Zakas",
+    description: "Learn about Nicholas C. Zakas, independent software developer, author, and coach. Creator of ESLint, architect at Box and Yahoo, and author of several JavaScript books."
+};
+---
+<Page frontmatter={frontmatter}>
+    <article class="about-page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title">About Nicholas C. Zakas</h1>
+                
+                <div class="page-intro">
+                    <div class="intro-content">
+                        <div class="author-intro">
+                            <img src={authorImage} alt="Nicholas C. Zakas" class="author-photo" />
+                            <div class="intro-text">
+                                <p>Hi, I'm Nicholas Zakas. I'm an independent software developer, author, and coach living in Peabody, Massachusetts.</p>
+                                <p>I've been an architect at <a href="https://box.com">Box</a> and <a href="https://yahoo.com">Yahoo</a>, created the <a href="https://eslint.org">ESLint</a> open source project, and wrote several <a href="/books">books</a> about JavaScript and web development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="about-content">
+            <section class="about-section">
+                <h2>The Human Behind the Code</h2>
+                <p>I started working on web applications in 2000 and instantly fell in love. Since that time, I've focused on front-end technology such as HTML, CSS, and JavaScript, digging in and learning all of the skills and tricks necessary to make performant, beautiful, and maintainable front-ends.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Career Journey</h2>
+                <p>While I've worked at many companies, many know me from my nearly five years at Yahoo, where I was the front-end tech lead for the Yahoo homepage. At that time, the Yahoo homepage was the third-most visited web page in the world, and a lot of my approach to web development arose from my experience during that time.</p>
+                
+                <p>At one point I was responsible for keeping 22 developers in four countries productive and aligned while we pushed out a total rewrite of a very high-traffic page. During that time, I also worked on My Yahoo and contributed to the Yahoo User Interface (YUI) library, a now-defunct JavaScript library that was quite popular during its reign.</p>
+                
+                <p>Later, I joined Box to help the company scale its aging front-end architecture. Developers were having a lot of trouble writing maintainable code and were scared to touch old code for fear of breaking something unrelated. As part of the cleanup effort, I led a team that created <a href="https://t3js.org">T3</a>, a small JavaScript application framework aimed to enforce better coding structures and loose coupling in the code base.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Writing & Publishing</h2>
+                <p>I'm the author of <a href="https://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680?tag=nczonline-20">Maintainable JavaScript</a>, <a href="https://www.amazon.com/gp/product/047022780X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=047022780X">Professional JavaScript for Web Developers</a> and <a href="https://www.amazon.com/gp/product/059680279X?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=059680279X">High Performance JavaScript</a>, a co-author on <a href="https://www.amazon.com/gp/product/0470109491?ie=UTF8&tag=nczonline-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0470109491">Professional Ajax</a>, and a contributor to <a href="https://www.amazon.com/gp/product/0596522304?ie=UTF8&tag=nczonline-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0596522304">Even Faster Web Sites</a>.</p>
+                
+                <p>I have also written several online articles for <a href="https://alistapart.com">A List Apart</a>, <a href="https://www.webreference.com/">WebReference</a>, <a href="https://www.sitepoint.com/">Sitepoint</a>, and the <a href="https://www.yuiblog.com/">YUI Blog</a>.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Speaking & Conferences</h2>
+                <p>I regularly give talks about web development, JavaScript, and best practices. I've given talks at companies such as <a href="https://www.yahoo.com/">Yahoo!</a>, <a href="https://www.linkedin.com/">LinkedIn</a>, <a href="https://www.google.com/">Google</a>, <a href="https://www.netflix.com">Netflix</a>, <a href="https://www.nasa.gov/">NASA</a>, and <a href="https://paypal.com">PayPal</a>, and conferences such as the <a href="https://www.ajaxexperience.com/">Ajax Experience</a>, the <a href="https://www.therichwebexperience.com/">Rich Web Experience</a>, and <a href="https://conferences.oreilly.com/velocity">Velocity</a>.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Standards & Web Evolution</h2>
+                <p>I have been vocal with standards bodies about what I believe. I'm listed in the acknowledgments section of HTML5 for my work on defining the behavior of empty string URLs in HTML (<a href="https://html5.org/tools/web-apps-tracker?from=4833&to=4834">set of changes to HTML5</a>) that were made in response to the problems outlined in my post, <a href="https://humanwhocodes.com/blog/2009/11/30/empty-image-src-can-destroy-your-site/">Empty image src can destroy your site</a>.</p>
+                
+                <p>I am listed in the acknowledgments section of <a href="https://dev.w3.org/csswg/css4-mediaqueries/">CSS Media Queries Level 4</a> for the inclusion of my <a href="https://humanwhocodes.com/blog/2012/01/04/proposal-scripting-detection-using-css-media-queries/">proposal</a> for a way to detect if a browser has JavaScript enabled using media queries.</p>
+                
+                <p>I was also invited to participate in a roundtable discussion hosted at Google around the ECMAScript Internationalization effort. I was invited based on feedback provided to individual group members, and argued (unsuccessfully) for a more sane API design.</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Technical Interests</h2>
+                <ul class="interests-list">
+                    <li>JavaScript</li>
+                    <li>Web Application Performance</li>
+                    <li>Web Accessibility</li>
+                    <li>Software Architecture</li>
+                    <li>Test-Driven Development</li>
+                    <li>Development Best Practices</li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h2>What Others Say</h2>
+                <blockquote>
+                    <p>"...there are a lot of people who are really awesome JavaScript developers but few, in my opinion, who have the experience in a large-scale environment. Nicholas has that, as the principal front-end engineer for Yahoo! and that's knowledge worth nabbing. And if you've watched his presentations, you know he can teach."</p>
+                    <cite>— <a href="https://blog.reybango.com/2010/08/12/choose-3-developers-youd-spend-a-day-with/">Rey Bango</a></cite>
+                </blockquote>
+                
+                <blockquote>
+                    <p>"[I imagined] that I was at university and that Douglas Crockford was the insanely popular genius professor that showed up late for lectures, and then either spoke too fast or else mumbled a lot, and then locked himself in his office refusing to answer the door during office hours while he worked on his Next Big Thing that would make everyone oooh and aaah and validate his brilliance. Meanwhile, in that same imaginary university, Nicholas Zakas was the graduate student that served as the TA to that class—and he happened to be equally brilliant and super-accessible and willing to take the time out to explain it all in a way that was thorough and comprehensible."</p>
+                    <cite>— <a href="https://blog.founddrama.net/2010/02/my-new-javascript-vade-mecum/">Rob Friesel Jr.</a></cite>
+                </blockquote>
+            </section>
+
+            <section class="about-section">
+                <h2>Employment</h2>
+                <p>I generally don't respond to correspondence from recruiters, especially if they're also asking me if I know anyone else to fill a particular role. If your company is interested in me, I expect to hear from someone other than a recruiter: the hiring manager, the director of engineering, the CTO, or the CEO. Even then, please be sure you know who I am and what I do before contacting me. There's a lot of information on this site, use it wisely!</p>
+            </section>
+
+            <section class="about-section">
+                <h2>Connect With Me</h2>
+                <div class="social-links">
+                    <a href="https://www.twitter.com/slicknet">Twitter</a>
+                    <a href="https://www.linkedin.com/in/nzakas/">LinkedIn</a>
+                    <a href="https://www.github.com/nzakas/">GitHub</a>
+                </div>
+            </section>
+        </main>
+    </article>
+</Page>
+
+<style>
+    .about-page {
+        background: transparent;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: transparent;
+        padding: 2.5rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .page-header-content {
+        max-width: 100%;
+    }
+
+    .page-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 2rem 0;
+        color: var(--dark-gray);
+        font-family: var(--sans-serif);
+        text-align: center;
+    }
+
+    /* Page Introduction */
+    .page-intro {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 700px;
+    }
+
+    .intro-content {
+        flex: 1;
+        text-align: center;
+    }
+
+    .author-intro {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .author-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .intro-text p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #4b5563;
+        margin: 0 0 1rem 0;
+        font-family: var(--content-font);
+    }
+
+    .intro-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* About Content */
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about-section {
+        margin-bottom: 4rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin: 0 0 1.5rem 0;
+        font-family: var(--sans-serif);
+        border-bottom: 2px solid var(--light-orange);
+        padding-bottom: 0.5rem;
+    }
+
+    .about-section p {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #374151;
+        margin: 0 0 1rem 0;
+        font-family: var(--content-font);
+    }
+
+    .about-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Interests List */
+    .interests-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0 0 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem;
+    }
+
+    .interests-list li {
+        padding: 0.5rem 0;
+        color: var(--dark-gray);
+        font-family: var(--sans-serif);
+        position: relative;
+    }
+
+    .interests-list li:before {
+        content: "•";
+        color: var(--light-orange);
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+
+    /* Blockquotes */
+    blockquote {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-left: 4px solid var(--medium-blue);
+        border-radius: 0 8px 8px 0;
+    }
+
+    blockquote p {
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    blockquote cite {
+        font-style: normal;
+        font-weight: 500;
+        color: var(--medium-blue);
+    }
+
+    /* Social Links */
+    .social-links {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .social-links a {
+        color: var(--medium-blue);
+        text-decoration: none;
+        font-weight: 500;
+        font-family: var(--sans-serif);
+        transition: color 0.2s ease;
+    }
+
+    .social-links a:hover {
+        color: var(--light-orange);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .author-intro {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.5rem;
+        }
+
+        .author-photo {
+            width: 100px;
+            height: 100px;
+        }
+
+        .intro-text p {
+            font-size: 1rem;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .interests-list {
+            grid-template-columns: 1fr;
+        }
+
+        .social-links {
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-section {
+            margin-bottom: 2.5rem;
+        }
+    }
+</style>

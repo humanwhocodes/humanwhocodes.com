@@ -5,134 +5,342 @@ import Page from "../layouts/Page.astro";
 const Content = page.Content;
 ---
 <Page frontmatter={page.frontmatter}>
-    <h1>{page.frontmatter.title}</h1>
-    <Content />
-    <form method="post" name="contact" action="thanks/" data-netlify="true" data-netlify-recaptcha="true">
-        <div class="vflex">
-            <label>
-                <span>Your Name:</span>
-                <input type="text" name="name" value="" required>
-            </label>
-            <label>
-                <span>Your Email:</span>
-                <input type="email" name="email" value="" required>
-            </label>
-            <label>
-                <span>Subject:</span>
-                <select name="subject" id="subject">
-                    <option disabled selected>Select a subject</option>
-                    <optgroup label="Blog">
-                        <option data-tag="submission">I have a question about a blog post you wrote</option>
-                        <option data-tag="blog-guest">I'd like to write a blog post on your site</option>
-                        <option data-tag="blog-ads">I'd like to advertise on your site</option>
-                    </optgroup>
-                    <optgroup label="Books">
-                        <option data-tag="book-question">I have a question about a book you wrote</option>
-                        <option data-tag="book-write">I'd like you to write a book for me</option>
-                        <option data-tag="submission">I'd like you to review a book for me</option>
-                    </optgroup>
-                    <optgroup label="Health">
-                        <option data-tag="health">I'd like to know how you're feeling</option>
-                    </optgroup>
-                    <optgroup label="Hire Me">
-                        <option data-tag="submission">I'd like to hire you as a coach</option>
-                        <option data-tag="submission">I'd like to hire you as a consultant</option>
-                        <option data-tag="submission">I'd like to hire you to write an article</option>
-                        <option data-tag="hire-employee">I'd like to hire you as a part-time employee</option>
-                        <option data-tag="hire-employee">I'd like to hire you as a full-time employee</option>
-                    </optgroup>
-                    <optgroup label="Media Requests">
-                        <option data-tag="submission">I'd like to interview for a story I'm writing </option>
-                        <option data-tag="submission">I'd like interview you on my podcast</option>
-                        <option data-tag="speaking-request">I'd like you to speak at my conference/meetup/etc.</option>
-                    </optgroup>
-                    <optgroup label="Open Source">
-                        <option data-tag="oss-eslint">I have an ESLint-related question or request</option>
-                        <option data-tag="submission">I have a question about a different open source project</option>
-                        <option data-tag="submission">I have a question related to open source</option>
-                    </optgroup>
-                </select>
-            </label>
-        </div>
-        <div id="bodies">
-            <div hidden id="body-blog-guest">
-                <p>I'm sorry, I don't have guest blog posts on this site.</p>
+    <article class="contact-page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title">{page.frontmatter.title}</h1>
+                
+                <div class="page-intro">
+                    <div class="intro-content">
+                        <Content />
+                    </div>
+                </div>
             </div>
-            <div hidden id="body-blog-ads">
-                <p>Advertising is available exclusively through <a href="https://carbonads.net">Carbon Ads</a>. I am not interested
-                    in having other ads on this site.</p>
-            </div>
-            <div hidden id="body-book-write">
-                <p>Thanks for thinking of me. At this time, I'm not able to take on any book writing projects.
-            </div>
-            <div hidden id="body-oss-eslint">
-                <p>For questions about ESLint, please visit the <a href="https://eslint.org/chat">chat</a> or create a
-                    <a href="https://github.com/eslint/eslint/discussions">GitHub discussion</a>.
-                </p>
-            </div>
-            <div hidden id="body-book-question">
-                <p>For questions about my books, please send a message to the <a
-                        href="https://groups.google.com/group/zakasbooks">mailing list</a>.</p>
-            </div>
-            <div hidden id="body-hire-employee">
-                <p>Thanks for thinking of me. At this time, I'm focusing on being an entrepreneur and am not interested in part-time
-                    or full-time opportunities with companies.</p>
-            </div>
-            <div hidden id="body-speaking-request">
-                <p>Thanks for thinking of me. At this time, I'm not booking any speaking engagements.</p>
-            </div>
-            <div hidden id="body-health">
-                <p>Thanks for your concern. There hasn't been any significant changes in my health recently. I'm still fighting to
-                    get back to a normal life and I'm trying to focus less on the symptoms I'm experiencing and more on creating the
-                    life that I want going forward.</p>
-            </div>
+        </header>
+        
+        <main class="contact-content">
+            <section class="contact-section">
+                <h2>Send Me a Message</h2>
+                <p class="form-intro">Please note that while my team reads every message sent through this form, you'll only receive a reply if I'm interested in following up with you. Please do not send multiple messages about the same topic.</p>
+                
+                <form method="post" name="contact" action="thanks/" data-netlify="true" data-netlify-recaptcha="true" class="contact-form">
+                    <div class="form-group">
+                        <label>
+                            <span>Your Name:</span>
+                            <input type="text" name="name" value="" required class="form-input">
+                        </label>
+                        <label>
+                            <span>Your Email:</span>
+                            <input type="email" name="email" value="" required class="form-input">
+                        </label>
+                        <label>
+                            <span>Subject:</span>
+                            <select name="subject" id="subject" class="form-input">
+                                <option disabled selected>Select a subject</option>
+                                <optgroup label="Blog">
+                                    <option data-tag="submission">I have a question about a blog post you wrote</option>
+                                    <option data-tag="blog-guest">I'd like to write a blog post on your site</option>
+                                    <option data-tag="blog-ads">I'd like to advertise on your site</option>
+                                </optgroup>
+                                <optgroup label="Books">
+                                    <option data-tag="book-question">I have a question about a book you wrote</option>
+                                    <option data-tag="book-write">I'd like you to write a book for me</option>
+                                    <option data-tag="submission">I'd like you to review a book for me</option>
+                                </optgroup>
+                                <optgroup label="Health">
+                                    <option data-tag="health">I'd like to know how you're feeling</option>
+                                </optgroup>
+                                <optgroup label="Hire Me">
+                                    <option data-tag="submission">I'd like to hire you as a coach</option>
+                                    <option data-tag="submission">I'd like to hire you as a consultant</option>
+                                    <option data-tag="submission">I'd like to hire you to write an article</option>
+                                    <option data-tag="hire-employee">I'd like to hire you as a part-time employee</option>
+                                    <option data-tag="hire-employee">I'd like to hire you as a full-time employee</option>
+                                </optgroup>
+                                <optgroup label="Media Requests">
+                                    <option data-tag="submission">I'd like to interview for a story I'm writing </option>
+                                    <option data-tag="submission">I'd like interview you on my podcast</option>
+                                    <option data-tag="speaking-request">I'd like you to speak at my conference/meetup/etc.</option>
+                                </optgroup>
+                                <optgroup label="Open Source">
+                                    <option data-tag="oss-eslint">I have an ESLint-related question or request</option>
+                                    <option data-tag="submission">I have a question about a different open source project</option>
+                                    <option data-tag="submission">I have a question related to open source</option>
+                                </optgroup>
+                            </select>
+                        </label>
+                    </div>
+                    <div id="bodies">
+                        <div hidden id="body-blog-guest" class="response-section">
+                            <p>I'm sorry, I don't have guest blog posts on this site.</p>
+                        </div>
+                        <div hidden id="body-blog-ads" class="response-section">
+                            <p>Advertising is available exclusively through <a href="https://carbonads.net">Carbon Ads</a>. I am not interested
+                                in having other ads on this site.</p>
+                        </div>
+                        <div hidden id="body-book-write" class="response-section">
+                            <p>Thanks for thinking of me. At this time, I'm not able to take on any book writing projects.</p>
+                        </div>
+                        <div hidden id="body-oss-eslint" class="response-section">
+                            <p>For questions about ESLint, please visit the <a href="https://eslint.org/chat">chat</a> or create a
+                                <a href="https://github.com/eslint/eslint/discussions">GitHub discussion</a>.
+                            </p>
+                        </div>
+                        <div hidden id="body-book-question" class="response-section">
+                            <p>For questions about my books, please send a message to the <a
+                                    href="https://groups.google.com/group/zakasbooks">mailing list</a>.</p>
+                        </div>
+                        <div hidden id="body-hire-employee" class="response-section">
+                            <p>Thanks for thinking of me. At this time, I'm focusing on being an entrepreneur and am not interested in part-time
+                                or full-time opportunities with companies.</p>
+                        </div>
+                        <div hidden id="body-speaking-request" class="response-section">
+                            <p>Thanks for thinking of me. At this time, I'm not booking any speaking engagements.</p>
+                        </div>
+                        <div hidden id="body-health" class="response-section">
+                            <p>Thanks for your concern. There hasn't been any significant changes in my health recently. I'm still fighting to
+                                get back to a normal life and I'm trying to focus less on the symptoms I'm experiencing and more on creating the
+                                life that I want going forward.</p>
+                        </div>
 
-            <div hidden id="body-submission">
-                <label>
-                    <span>Your Message:</span>
-                    <textarea name="message"></textarea>
-                </label>
-                <div data-netlify-recaptcha="true"></div>
-                <div class="center-text"><input type="submit" name="message-submit" value="Submit"></div>
+                        <div hidden id="body-submission" class="response-section">
+                            <label>
+                                <span>Your Message:</span>
+                                <textarea name="message" class="form-input"></textarea>
+                            </label>
+                            <div data-netlify-recaptcha="true"></div>
+                            <div class="submit-container"><input type="submit" name="message-submit" value="Submit" class="submit-btn"></div>
             </div>
-        </div>
-    </form>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </article>
 </Page>
 
 <style>
-.vflex {
-    display: flex;
-    flex-direction: column;
-}
+    .contact-page {
+        background: transparent;
+    }
 
-label {
-    display: flex;
-    margin-bottom: 1em;
-}
+    /* Page Header */
+    .page-header {
+        background: transparent;
+        padding: 2.5rem 0;
+        margin-bottom: 3rem;
+    }
 
-label > span {
-    width: 120px;
-}
+    .page-header-content {
+        max-width: 100%;
+    }
 
-input[type=text], input[type=email], select, textarea {
-    width: 400px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-}
+    .page-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 2rem 0;
+        color: var(--dark-gray);
+        font-family: var(--sans-serif);
+        text-align: center;
+    }
 
-textarea {
-    height: 200px;
-}
+    /* Page Introduction */
+    .page-intro {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    .intro-content {
+        flex: 1;
+        text-align: center;
+    }
+
+    .intro-content :global(p) {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #4b5563;
+        margin: 0;
+        font-family: var(--content-font);
+    }
+
+    /* Contact Content */
+    .contact-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .contact-section {
+        margin-bottom: 3rem;
+    }
+
+    .contact-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--dark-gray);
+        margin: 0 0 1.5rem 0;
+        font-family: var(--sans-serif);
+        text-align: center;
+        border-bottom: 2px solid var(--light-orange);
+        padding-bottom: 0.5rem;
+    }
+
+    .form-intro {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #4b5563;
+        margin: 0 0 2rem 0;
+        font-family: var(--content-font);
+        text-align: center;
+    }
+
+    /* Form Styling */
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label > span {
+        font-weight: 500;
+        color: var(--dark-gray);
+        font-family: var(--sans-serif);
+        font-size: 0.95rem;
+    }
+
+    .form-input {
+        padding: 0.75rem;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        font-family: var(--content-font);
+        font-size: 1rem;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        background: white;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--light-orange);
+        box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.1);
+    }
+
+    input[type=text].form-input, 
+    input[type=email].form-input, 
+    select.form-input {
+        width: 100%;
+    }
+
+    select.form-input {
+        cursor: pointer;
+    }
+
+    textarea.form-input {
+        width: 100%;
+        height: 150px;
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    /* Response sections styling */
+    .response-section {
+        padding: 1rem;
+        margin: 1rem 0;
+        background: #f0f9ff;
+        border-left: 4px solid var(--medium-blue);
+        border-radius: 0 8px 8px 0;
+    }
+
+    .response-section p {
+        margin: 0;
+        color: #374151;
+        font-family: var(--content-font);
+    }
+
+    .response-section a {
+        color: var(--medium-blue);
+        text-decoration: none;
+    }
+
+    .response-section a:hover {
+        text-decoration: underline;
+    }
+
+    /* Submit button */
+    .submit-container {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .submit-btn {
+        background: var(--light-orange);
+        color: white;
+        padding: 0.875rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: var(--sans-serif);
+    }
+
+    .submit-btn:hover {
+        background: var(--dark-orange);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 15px rgba(255, 159, 67, 0.3);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .intro-content :global(p) {
+            font-size: 1rem;
+        }
+
+        .contact-section {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .submit-btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+        }
+    }
 </style>
 <script>
 function showBody(selectbox) {
     const tag = selectbox.options[selectbox.selectedIndex].dataset.tag;
     const bodies = document.getElementById("bodies").children;
     for (const body of bodies) {
-        body.hidden = (body.id !== "body-" + tag);
+        (body as HTMLElement).hidden = (body.id !== "body-" + tag);
     }
 }
 
-const subjectBox = document.getElementById("subject");
-subjectBox.onchange = () => showBody(subjectBox); 
+const subjectBox = document.getElementById("subject") as HTMLSelectElement;
+if (subjectBox) {
+    subjectBox.onchange = () => showBody(subjectBox); 
+}
 </script>

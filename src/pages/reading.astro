@@ -6,7 +6,96 @@ import Page from "../layouts/Page.astro";
 const Content = page.Content;
 ---
 <Page frontmatter={page.frontmatter}>
-    <h1>{page.frontmatter.title}</h1>
-    <Content />
-    <ReadingList />
+    <article class="reading-page">
+        <header class="page-header">
+            <div class="page-header-content">
+                <h1 class="page-title">{page.frontmatter.title}</h1>
+                
+                <div class="page-intro">
+                    <div class="intro-content">
+                        <Content />
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="reading-content">
+            <ReadingList />
+        </main>
+    </article>
 </Page>
+
+<style>
+    .reading-page {
+        background: transparent;
+    }
+
+    /* Page Header */
+    .page-header {
+        background: transparent;
+        padding: 2.5rem 0;
+        margin-bottom: 3rem;
+    }
+
+    .page-header-content {
+        max-width: 100%;
+    }
+
+    .page-title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 2rem 0;
+        color: var(--dark-gray);
+        font-family: var(--sans-serif);
+        text-align: center;
+    }
+
+    /* Page Introduction */
+    .page-intro {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 700px;
+    }
+
+    .intro-content {
+        flex: 1;
+        text-align: center;
+    }
+
+    .intro-content :global(p) {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #4b5563;
+        margin: 0 0 1rem 0;
+        font-family: var(--content-font);
+    }
+
+    .intro-content :global(p:last-child) {
+        margin-bottom: 0;
+    }
+
+    /* Reading Content */
+    .reading-content {
+        margin-top: 1rem;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .page-header {
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .intro-content :global(p) {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .page-title {
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>
