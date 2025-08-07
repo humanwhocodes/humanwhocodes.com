@@ -28,7 +28,9 @@ const readingTime = Math.ceil(wordCount / 200);
     title={post.data.title}
     description={post.data.teaser}
     originalUrl={post.data.original?.url}
-    canonicalUrl={post.data.canonical_url}>
+    canonicalUrl={post.data.canonical_url}
+    ogType="article"
+>
 
 <!-- Reading Progress Bar -->
 <div class="reading-progress">

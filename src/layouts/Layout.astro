@@ -9,7 +9,8 @@ const {
 	title,
 	description,
 	originalUrl,
-	canonicalUrl
+	canonicalUrl,
+	ogType,
 } = Astro.props;
 ---
 <!doctype html>
@@ -19,7 +20,8 @@ const {
 			title={title}
 			description={description}
 			originalUrl={originalUrl},
-			canonicalUrl{canonicalUrl} />
+			canonicalUrl{canonicalUrl}
+			ogType={ogType} />
 	</head>
 
 	<body itemscope itemtype="http://schema.org/WebPage">

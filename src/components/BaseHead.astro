@@ -8,6 +8,7 @@ export interface Props {
 	originalUrl?: string;
 	canonicalUrl?: string;
 	image?: string;
+	ogType?: string;
 }
 
 const {
@@ -15,7 +16,8 @@ const {
 	description = site.description,
 	originalUrl,
 	canonicalUrl,
-	image = '/favicon.png'
+	image = '/favicon.png',
+	ogType = 'website'
 } = Astro.props;
 
 
@@ -64,11 +66,10 @@ const allTitle = `${site.name} - All`;
 <link rel="alternate" type="application/json" title={allTitle} href={new URL(site.all_json_feed_source, site.url).href}>
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:site_name" content={site.name} />
 
 <!-- Twitter -->
