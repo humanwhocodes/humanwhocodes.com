@@ -26,7 +26,8 @@ const blog = defineCollection({
         updated: z
             .string()
             .or(z.date())
-            .optional(),
+            .optional()
+            .transform(getDateValue),
         draft: z.boolean().optional(),
         promo: z.string().optional(),
         // Common Astro schemas
