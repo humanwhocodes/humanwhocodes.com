@@ -59,6 +59,15 @@ const readingTime = Math.ceil(wordCount / 200);
                                         day: "numeric"
                                     })}
                                 </time>
+                                {post.data.updated && (
+                                    <time datetime={ post.data.updated.toUTCString() } itemprop="dateModified" class="post-date">
+                                        (Last Updated {post.data.updated.toLocaleDateString('en-us', {
+                                            year: "numeric",
+                                            month:"long",
+                                            day: "numeric"
+                                        })})
+                                    </time>
+                                )}
                                 <span class="reading-time">• {readingTime} min read</span>
                             </div>
                         </div>
