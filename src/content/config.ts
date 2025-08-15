@@ -23,6 +23,10 @@ const blog = defineCollection({
         categories: z.array(z.string()).optional(),
         permalink: z.string().optional(),
         published: z.boolean().optional(),
+        updated: z
+            .string()
+            .or(z.date())
+            .optional(),
         draft: z.boolean().optional(),
         promo: z.string().optional(),
         // Common Astro schemas
