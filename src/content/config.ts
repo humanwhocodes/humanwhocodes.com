@@ -5,7 +5,7 @@ function getDateValue(value) {
         return undefined;
     }
 
-    return typeof value === "string" ? new Date(value + " 00:00:00") : undefined;
+    return typeof value === "string" ? new Date(value + " 00:00:00") : value;
 }
 
 const blog = defineCollection({
