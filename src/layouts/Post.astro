@@ -23,6 +23,7 @@ if (!post.data.tags || post.data.tags.includes("JavaScript")) {
 const content = post.body || "";
 const wordCount = content.split(/\s+/).length;
 const readingTime = Math.ceil(wordCount / 200);
+
 ---
 <Layout
     title={post.data.title}
@@ -59,6 +60,15 @@ const readingTime = Math.ceil(wordCount / 200);
                                         day: "numeric"
                                     })}
                                 </time>
+                                {post.data.updated && (
+                                    <span>• Updated</span> <time datetime={ post.data.updated.toUTCString() } itemprop="dateModified" class="post-date">
+                                        {post.data.updated.toLocaleDateString('en-us', {
+                                            year: "numeric",
+                                            month:"long",
+                                            day: "numeric"
+                                        })}
+                                    </time>
+                                )}
                                 <span class="reading-time">• {readingTime} min read</span>
                             </div>
                         </div>

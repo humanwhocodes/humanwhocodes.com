@@ -5,7 +5,7 @@ function getDateValue(value) {
         return undefined;
     }
 
-    return typeof value === "string" ? new Date(value + " 00:00:00") : undefined;
+    return typeof value === "string" ? new Date(value + " 00:00:00") : value;
 }
 
 const blog = defineCollection({
@@ -23,6 +23,11 @@ const blog = defineCollection({
         categories: z.array(z.string()).optional(),
         permalink: z.string().optional(),
         published: z.boolean().optional(),
+        updated: z
+            .string()
+            .or(z.date())
+            .optional()
+            .transform(getDateValue),
         draft: z.boolean().optional(),
         promo: z.string().optional(),
         // Common Astro schemas
