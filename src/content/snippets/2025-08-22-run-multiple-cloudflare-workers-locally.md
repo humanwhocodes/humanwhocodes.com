@@ -32,20 +32,20 @@ You can create a simple worker, that I name `http`, to handle this for you. The 
 
 ```jsonc
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "http",
-	"main": "src/index.ts",
-	"compatibility_date": "2025-08-22",
-	"services": [
-		{
-			"binding": "worker1",
-			"service": "worker1"
-		},
-		{
-			"binding": "worker2",
-			"service": "worker2"
-		}
-	]
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "http",
+    "main": "src/index.ts",
+    "compatibility_date": "2025-08-22",
+    "services": [
+        {
+            "binding": "worker1",
+            "service": "worker1"
+        },
+        {
+            "binding": "worker2",
+            "service": "worker2"
+        }
+    ]
 }
 ```
 
@@ -54,12 +54,25 @@ Next, you'll use [Hono](https://hono.dev) to route requests based on the request
 ```js
 import { Hono } from "hono";
 
+interface Env {
+    [binding: string]: {
+        fetch(request: Request): Promise<Response>;
+    } | undefined;
+}
+
 const app = new Hono();
 
 app.post("/:worker{.+}", (c) => {
-	const worker = c.req.param("worker");
-	return c.env[worker].fetch(c.req.raw);
-});
+    const worker = c.req.param("worker");
+    const env = c.env as unknown as Env;
+    const binding = env[worker];
+
+    if (!binding || typeof binding.fetch !== "function") {
+        return c.text(`Worker binding '${worker}' not found`, 404);
+    }
+
+    return binding.fetch(c.req.raw);
+);
 
 export default app;
 ```
