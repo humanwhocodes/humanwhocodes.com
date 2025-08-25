@@ -1,21 +1,87 @@
 ---
 import me from "../images/me/me-150x150.jpg";
 import site from "../data/config.yml";
+import twitterIcon from "../images/social/twitter.svg";
+import githubIcon from "../images/social/github-32x32.png";
 
 const today = new Date();
+
+// Social media links with icons
+const socialLinks = [
+    { 
+        name: "Mastodon", 
+        url: "https://fosstodon.org/@nzakas", 
+        rel: "me",
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M21.327 8.566c0-4.339-2.843-5.61-2.843-5.61-1.433-.658-3.894-.935-6.451-.956h-.063c-2.557.021-5.016.298-6.45.956 0 0-2.843 1.272-2.843 5.61 0 .993-.019 2.181.012 3.441.103 4.243.778 8.425 4.701 9.463 1.809.479 3.362.579 4.612.510 2.268-.126 3.541-.809 3.541-.809l-.075-1.646s-1.621.512-3.441.449c-1.804-.062-3.707-.194-3.999-2.409a4.523 4.523 0 0 1-.04-.621s1.77.433 4.014.536c1.372.063 2.658-.08 3.965-.236 2.506-.299 4.688-1.843 4.962-3.254.434-2.223.398-5.424.398-5.424zm-3.353 5.59h-2.081V9.057c0-1.075-.452-1.62-1.357-1.62-1 0-1.501.647-1.501 1.927v2.791h-2.069V9.364c0-1.28-.501-1.927-1.502-1.927-.905 0-1.357.546-1.357 1.62v5.099H6.026V8.903c0-1.074.273-1.927.823-2.558.566-.631 1.307-.955 2.228-.955 1.065 0 1.872.409 2.405 1.228l.518.869.519-.869c.533-.819 1.34-1.228 2.405-1.228.92 0 1.662.324 2.228.955.549.631.822 1.484.822 2.558v5.253z"/></svg>`,
+    },
+    { 
+        name: "Twitter", 
+        url: "https://www.twitter.com/slicknet/", 
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`,
+    },
+    { 
+        name: "GitHub", 
+        url: "https://www.github.com/nzakas/", 
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`,
+    },
+    { 
+        name: "Instagram", 
+        url: "https://www.instagram.com/humanwhocodes", 
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>`,
+    },
+    { 
+        name: "YouTube", 
+        url: "https://www.youtube.com/channel/UC95Pwj8oPPZN2mJCEtMqOsg", 
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`,
+    },
+    { 
+        name: "LinkedIn", 
+        url: "https://www.linkedin.com/in/nzakas", 
+        icon: `<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`,
+    },
+    { 
+        name: "Slideshare", 
+        url: "https://www.slideshare.net/nzakas/presentations/", 
+        icon: `<svg viewBox="0 0 256 256" fill="currentColor" width="20" height="20">
+            <path d="M236.8,122.3c-0.9,0.7-1.9,1.3-2.8,1.9V31.1c0-12.9-9.7-23.4-21.7-23.4H43.8c-12,0-21.7,10.5-21.7,23.4v93.2c-1-0.7-1.9-1.3-2.9-2c-7.2-5-11.9,1.8-7.5,8.3c8.6,10.5,24.9,23.6,49.9,33.8c-26.4,90.1,64.5,104.4,63.1,58.2c0,0.9,0-26.2,0.1-45.4c2.4,0.6,4.5,1.1,6.4,1.6c0,19.1,0.1,44.6,0.1,43.8c-1.4,46.2,89.7,31.9,63.1-58.2c25-10.3,41.3-23.3,49.9-33.8C248.7,124.1,244,117.2,236.8,122.3z M147,145.2c-11.1-0.6-15.2,4.2-15.8,11.6c-2.7-1.9-5.4-4.2-8.2-6.8c-0.5-0.4-0.9-0.8-1.3-1.2c-2.4-2.6-6.5-4-12.7-3.6c-14.9,0.5-42.2,3.4-74-13.2V41.7c0-16.4,4.2-21.5,19.1-21.5h149.2c14.2,0,19.2,6.1,19.2,21.5v89.5C190.1,148.7,162.2,145.7,147,145.2z"/>
+            <path d="M163.4,79.9c-16,0-29,12.1-29,27.1c0,15,13,27.1,29,27.1s29-12.1,29-27.1C192.3,92.1,179.3,79.9,163.4,79.9z"/>
+            <path d="M95.9,79.9c16,0,29,12.1,29,27.1c0,15-13,27.1-29,27.1s-29-12.2-29-27.1C66.9,92.1,79.9,79.9,95.9,79.9z"/>
+        </svg>`,
+    },
+    { 
+        name: "Amazon", 
+        url: "https://amazon.com/author/nzakas/", 
+        icon: `<svg viewBox="280 280 500 420" fill="currentColor" width="20" height="20">
+<g>
+	<g>
+		<path id="path8_1_" class="st0" d="M678.3,613.2c-48.3,35.6-118.4,54.7-178.7,54.7c-84.6,0-160.7-31.3-218.4-83.3
+			c-4.5-4.1-0.5-9.7,4.9-6.5c62.2,36.2,139,57.9,218.4,57.9c53.6,0,112.5-11.1,166.7-34C679.4,598.4,686.3,607.3,678.3,613.2"/>
+		<path id="path10_1_" class="st0" d="M698.4,590.2c-6.1-7.9-40.9-3.8-56.4-1.9c-4.7,0.6-5.4-3.5-1.2-6.5
+			c27.7-19.4,72.9-13.8,78.2-7.3c5.3,6.6-1.4,51.9-27.3,73.7c-4,3.3-7.8,1.5-6-2.8C691.5,630.7,704.5,598.1,698.4,590.2"/>
+	</g>
+	<path id="path30_1_" class="st0" d="M532.8,439.3c0,23,0.5,42.3-11.1,62.8c-9.5,16.5-24.4,26.8-40.9,26.8c-22.8,0-36-17.3-36-42.8
+		c0-50.4,45.2-59.6,88-59.6L532.8,439.3 M592.7,583.4c-3.8,3.5-9.5,3.8-14.1,1.4c-19.8-16.3-23-23.8-33.9-39.6
+		c-32.5,33-55.5,43.1-97.5,43.1c-49.8,0-88.6-30.6-88.6-92.4c0-47.9,26-80.7,63.1-96.7c32.2-14.1,76.9-16.5,111.3-20.6V371
+		c0-14.1,1.1-30.6-7-42.8c-7.3-10.8-21.1-15.4-33.3-15.4c-22.5,0-42.8,11.6-47.7,35.5c-1.1,5.4-4.9,10.6-10.3,10.8l-57.4-6.2
+		c-4.9-1.1-10.3-4.9-8.9-12.5c13.3-69.6,76.1-90.5,132.5-90.5c28.7,0,66.4,7.6,89.1,29.5c28.7,26.8,26,62.8,26,101.9v92.4
+		c0,27.6,11.4,39.8,22.2,55c3.8,5.4,4.6,11.6-0.3,15.7C626,554.4,604.6,573.1,592.7,583.4L592.7,583.4"/>
+</g>
+</svg>`,
+    }
+];
 ---
 <hr>
-<footer class="inverted-colors">
-    <div class="page-width center">
-        <div class="page-grid orange-border-bottom">
-            <div class="margin-top content-width gutters">
-                <div class="collapsible-media-box">
-                    <div class="media-box-media center-text">
-                        <img src={me} alt="Photo of Nicholas C. Zakas" width="150" class="circle-image">
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-main">
+            <div class="footer-about">
+                <div class="about-content">
+                    <div class="profile-section">
+                        <img src={me} alt="Photo of Nicholas C. Zakas" width="120" class="profile-image">
                     </div>
-                    <div>
-                        <h2 class="no-margin-top center-text-on-mobile">About the Human</h2>
-                        <p>Hi, I'm Nicholas C. Zakas, an independent software developer, author, and coach living outside of Boston, Massachusetts. 
+                    <div class="bio-section">
+                        <h2 class="about-title">About the Human</h2>
+                        <p class="bio-text">Hi, I'm Nicholas C. Zakas, an independent software developer, author, and coach living outside of Boston, Massachusetts. 
                             I've been a principal engineer at companies like Yahoo and Box. 
                             I created the <a href="https://eslint.org">ESLint</a> open source project and wrote several 
                             <a href="https://humanwhocodes.com/books">books</a>. Chronic illness forced me to leave the corporate world,
@@ -23,21 +89,37 @@ const today = new Date();
                     </div>
                 </div>
             </div>
-            <div class="margin-top sidebar-width hide-on-small-screens">
-                <h2 class="no-margin-top">On the Web</h2>
-                <ul>
-                    <li><a href="https://fosstodon.org/@nzakas" rel="me">Mastodon</a></li>
-                    <li><a href="https://www.twitter.com/slicknet/">Twitter</a></li>
-                    <li><a href="https://www.github.com/nzakas/">GitHub</a></li>
-                    <li><a href="https://www.instagram.com/humanwhocodes">Instagram</a></li>
-                    <li><a href="https://www.youtube.com/channel/UC95Pwj8oPPZN2mJCEtMqOsg">YouTube</a></li>
-                    <li><a href="https://www.linkedin.com/in/nzakas">LinkedIn</a></li>
-                    <li><a href="https://www.slideshare.net/nzakas/presentations/">Slideshare</a></li>
-                    <li><a href="https://amazon.com/author/nzakas/">Amazon</a></li>
-                </ul>
+            
+            <div class="footer-social">
+                <h3 class="social-title">Connect with me</h3>
+                <div class="social-grid">
+                    {socialLinks.map((social) => (
+                        <a href={social.url} 
+                           rel={social.rel || undefined} 
+                           class="social-link" 
+                           title={social.name}
+                           aria-label={social.name}>
+                            <Fragment set:html={social.icon} />
+                            <span class="social-name">{social.name}</span>
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
-        <p class="center-text"><a href="/policies/privacy">Privacy Policy</a> | <a href="/policies/terms">Terms of Service</a></p>
-        <p class="center-text">Copyright &copy; 2020-{ today.getFullYear() } Human Who Codes LLC. Content licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="nofollow noopener">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.<br>Some links may be affiliate links. We may get paid if you buy something or take an action after clicking one of these. As an Amazon Associate we earn from qualifying purchases. <a href={ site.feed_source }>Blog Feed</a></p>
+        
+        <div class="footer-bottom">
+            <div class="footer-links">
+                <a href="/policies/privacy">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="/policies/terms">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href={site.feed_source}>Blog Feed</a>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; 2020-{today.getFullYear()} Human Who Codes LLC.</p>
+                <p>Content licensed under a <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="nofollow noopener">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.</p>
+                <p class="affiliate-notice">Some links may be affiliate links. We may get paid if you buy something or take an action after clicking one of these. As an Amazon Associate we earn from qualifying purchases.</p>
+            </div>
+        </div>
     </div>
 </footer>
