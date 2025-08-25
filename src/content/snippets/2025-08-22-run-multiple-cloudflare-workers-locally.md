@@ -8,6 +8,7 @@ tags:
   - JavaScript
   - Cloudflare
   - Edge Workers
+updated: 2025-08-25
 ---
 
 When you're testing an application locally, you ideally want an environment that mimics production as much as possible. Especially when you're using multiple [Cloudflare workers](https://workers.cloudflare.com/), you'll want to make sure you can run them together for end-to-end testing during development. Without this ability, you either need to run everything in the cloud (problematic when your internet connection is down or slow) and test each worker individually.
@@ -51,28 +52,25 @@ You can create a simple worker, that I name `http`, to handle this for you. The 
 
 Next, you'll use [Hono](https://hono.dev) to route requests based on the request path. To make things easy, the path will be the worker binding name, which means you'll only need to update the `wrangler.jsonc` file when you want to add or remove workers. Here's the code:
 
-```js
+```typescript
 import { Hono } from "hono";
 
-interface Env {
-    [binding: string]: {
-        fetch(request: Request): Promise<Response>;
-    } | undefined;
+interface Bindings {
+	[binding: string]: Fetcher;
 }
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
-app.post("/:worker{.+}", (c) => {
+app.post("/:worker", (c) => {
     const worker = c.req.param("worker");
-    const env = c.env as unknown as Env;
-    const binding = env[worker];
+    const binding = c.env[worker];
 
     if (!binding || typeof binding.fetch !== "function") {
         return c.text(`Worker binding '${worker}' not found`, 404);
     }
 
     return binding.fetch(c.req.raw);
-);
+});
 
 export default app;
 ```
@@ -100,3 +98,5 @@ curl -i -X POST http://localhost:8787/worker2 \
 ```
 
 Enjoy your local multi-worker development environment!
+
+**Updated (2025-08-25):** Cleaned up TypeScript code to match best practices for Hono.
