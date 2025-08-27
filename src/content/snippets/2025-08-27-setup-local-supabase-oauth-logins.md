@@ -13,7 +13,7 @@ tags:
 
 One of the benefits of [Supabase](https://supabase.com) is its integrated login system that supports many OAuth providers, including Google and GitHub. While there is plenty of documentation explaining how to set up OAuth providers in hosted Supabase, the [instructions for local Supabase](https://supabase.com/docs/guides/local-development/overview#use-auth-locally) are fairly terse and are missing several steps. 
 
-First, create a callback endpoint in your application, for example, `/auth/callback`. This is the callback that will receive the OAuth information from Supabase. Specifically, you should receive either a `code` query string parameter that will allow the user to login or an `error` parameter indicating there was an error logging in. Here's an example written using [Astro](https://astro.build):
+First, create a callback endpoint in your application, for example, `/auth/callback`. This is the callback that will receive the OAuth information from Supabase. Specifically, you should receive either a `code` query string parameter that will allow the user to login or an `error` parameter indicating there was an error logging in. Note that for server-side authentication you must use [`@supabase/ssr`](https://npmjs.com/package/@supabase/ssr). Here's an example written using [Astro](https://astro.build).
 
 ```ts
 // Astro example
@@ -49,10 +49,7 @@ export const GET: APIRoute = async ({ url, request, cookies, redirect }) => {
         return redirect("/login?error=unauthorized");
     }
 
-    // get and store tokens
-    const { access_token, refresh_token } = data.session;
-
-    // store tokens as necessary
+    return redirect("/");
 }
 ```
 
