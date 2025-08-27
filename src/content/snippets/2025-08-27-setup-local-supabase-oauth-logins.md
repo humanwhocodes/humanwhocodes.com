@@ -17,12 +17,12 @@ First, create a callback endpoint in your application, for example, `/auth/callb
 
 ```ts
 // Astro example
-import { createClient as createSupabaseClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createServerClient, parseCookieHeader } from "@supabase/ssr";
 
 const supabaseUrl = import.meta.env.SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
 
-export const GET: APIRoute = async ({ url, cookies, redirect }) => {
+export const GET: APIRoute = async ({ url, request, cookies, redirect }) => {
 
     // if there's no code then redirect to login
     const code = url.searchParams.get("code");
@@ -31,8 +31,17 @@ export const GET: APIRoute = async ({ url, cookies, redirect }) => {
     }
     
     // there is a code, try to log in
-    const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
-        auth: { flowType: "pkce" }
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+        cookies: {
+            getAll() {
+                return parseCookieHeader(request.headers.get("cookie") || "");
+            },
+            setAll(cookiesToSet) {
+                cookiesToSet.forEach(({ name, value, options }) =>
+                    cookies.set(name, value, options)
+                );
+            },
+        },
     });
     
     const { data, error } = await supabase.auth.exchangeCodeForSession(code);
@@ -89,30 +98,50 @@ npx supabase start
 Next, you need to generate the OAuth URL to use in your application. Here's an example generating a URL to login with GitHub:
 
 ```ts
-import { createClient as createSupabaseClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createServerClient, parseCookieHeader } from "@supabase/ssr";
 
 const supabaseUrl = import.meta.env.SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
 
-const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
-    auth: { flowType: "pkce" }
-});
+const supabaseUrl = import.meta.env.SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.SUPABASE_ANON_KEY;
 
-const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "github",
-    options: {
-        // must be listed as additional_redirect_urls
-        redirectTo: `http://localhost:4321/auth/callback`
+export const GET: APIRoute = async ({ url, request, cookies, redirect }) => {
+
+    // if there's no code then redirect to login
+    const code = url.searchParams.get("code");
+    if (!code) {
+        redirect("/login?error=no-code");
     }
-});
+    
+    // there is a code, try to log in
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
+        cookies: {
+            getAll() {
+                return parseCookieHeader(request.headers.get("cookie") || "");
+            },
+            setAll(cookiesToSet) {
+                cookiesToSet.forEach(({ name, value, options }) =>
+                    cookies.set(name, value, options)
+                );
+            },
+        },
+    });
+        
+    const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "github",
+        options: {
+            // must be listed as additional_redirect_urls
+            redirectTo: `http://localhost:4321/auth/callback`
+        }
+    });
 
-if (error || !data?.url) {
-    // handle error
+    if (error || !data?.url) {
+        // handle error
+    }
+
+    redirect(data.url);
 }
-
-const urlToUse = data.url;
-
-// use the URL
 ```
 
-You can use the `urlToUse` as your login URL for that provider and everything is now wired up for the correct end-to-end flow.
+Everything is now wired up for the correct end-to-end flow.
