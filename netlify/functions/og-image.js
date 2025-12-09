@@ -40,16 +40,16 @@ export async function handler(event, context) {
             formattedDate = 'January 1, 2024';
         }
 
-        // Colors from the CSS (converted to hex/rgba for SVG)
+        // Colors from the CSS (matching site's CSS variables exactly)
         const colors = {
             white: '#ffffff',
-            darkGray: '#373736',
-            lightOrange: 'hsl(27, 91%, 54%)', // #f27935
-            mediumBlue: 'hsl(209, 100%, 45%)', // #0066e6
-            lightBlue: 'hsl(209, 100%, 55%)',
-            lightestBlue: 'hsl(209, 100%, 92%)',
-            borderColor: '#e5e7eb',
-            textGray: '#6b7280',
+            darkGray: '#373736', // --dark-gray
+            lightOrange: 'hsl(27, 91%, 54%)', // --light-orange
+            mediumBlue: 'hsl(209, 100%, 45%)', // --medium-blue (note: CSS uses 'deg' but SVG accepts both)
+            lightBlue: 'hsl(209, 100%, 55%)', // --light-blue
+            lightestBlue: 'hsl(209, 100%, 92%)', // --lightest-blue
+            borderColor: '#ddd', // --content-border-color
+            textGray: '#6b7280', // used in post-blurb-teaser
         };
 
         // SVG dimensions (matching typical OG image size)
@@ -200,7 +200,8 @@ export async function handler(event, context) {
             statusCode: 200,
             headers: {
                 'Content-Type': 'image/svg+xml',
-                'Cache-Control': 'public, max-age=31536000, immutable',
+                // Cache for 1 day - allows updates while maintaining good performance
+                'Cache-Control': 'public, max-age=86400',
             },
             body: svg,
         };
