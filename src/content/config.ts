@@ -51,6 +51,7 @@ const blog = defineCollection({
                 url: z.string(),
             }),
         }).optional(),
+        image: z.string().optional(),
     }),
 });
 

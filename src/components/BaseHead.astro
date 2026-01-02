@@ -70,6 +70,7 @@ const allTitle = `${site.name} - All`;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={pageTitle} />
 <meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
 <meta property="og:site_name" content={site.name} />
 
 <!-- Twitter -->
