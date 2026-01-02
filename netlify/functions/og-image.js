@@ -98,6 +98,11 @@ export async function handler(event, context) {
         const teaserHeight = teaserLines.length * 38;
         const metaY = teaserY + teaserHeight + 40;
 
+        // Calculate tag widths for right alignment
+        const tagWidths = tags.map(tag => tag.length * 14 + 30);
+        const totalTagWidth = tagWidths.reduce((sum, w) => sum + w, 0) + (tags.length - 1) * 10; // 10px gap between tags
+        const tagsStartX = width - padding - totalTagWidth;
+
         // Generate SVG
         const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -106,6 +111,9 @@ export async function handler(event, context) {
             <stop offset="0%" style="stop-color:${colors.lightestBlue};stop-opacity:1" />
             <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
         </linearGradient>
+        <clipPath id="avatarClip">
+            <circle cx="${padding + 30}" cy="${metaY + 30}" r="30"/>
+        </clipPath>
     </defs>
     
     <!-- Background -->
@@ -142,17 +150,14 @@ export async function handler(event, context) {
     </text>
     ` : ''}
     
-    <!-- Author Avatar Circle -->
+    <!-- Author Avatar -->
     <circle cx="${padding + 30}" cy="${metaY + 30}" r="30" 
             fill="${colors.lightOrange}" 
             stroke="${colors.lightOrange}" 
             stroke-width="3"/>
-    <text x="${padding + 30}" y="${metaY + 40}" 
-          font-family="system-ui, -apple-system, sans-serif" 
-          font-size="28" 
-          font-weight="700" 
-          fill="${colors.white}" 
-          text-anchor="middle">NZ</text>
+    <image x="${padding}" y="${metaY}" width="60" height="60" 
+           href="https://humanwhocodes.com/_astro/me-150x150.0969500a.jpg"
+           clip-path="url(#avatarClip)"/>
     
     <!-- Author Name -->
     <text x="${padding + 80}" y="${metaY + 20}" 
@@ -171,11 +176,11 @@ export async function handler(event, context) {
     </text>
     
     ${tags.length > 0 ? `
-    <!-- Tags -->
-    <g transform="translate(${padding}, ${metaY + 90})">
+    <!-- Tags (right-aligned on same row as byline) -->
+    <g transform="translate(${tagsStartX}, ${metaY + 10})">
         ${tags.map((tag, i) => {
-            const tagX = i * 180;
-            const tagWidth = tag.length * 14 + 30;
+            const tagWidth = tagWidths[i];
+            const tagX = i === 0 ? 0 : tagWidths.slice(0, i).reduce((sum, w) => sum + w, 0) + (i * 10);
             return `
         <g transform="translate(${tagX}, 0)">
             <rect width="${tagWidth}" height="40" 
