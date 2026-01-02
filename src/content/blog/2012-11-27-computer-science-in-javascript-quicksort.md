@@ -33,7 +33,7 @@ There are two basic operations in the algorithm, swapping items in place and par
     While the value at the right pointer in the array is greater than the pivot value, move the right pointer to the left (subtract 1). Continue until the value at the right pointer is less than or equal to the pivot value.
   </li>
   <li>
-    If the left pointer is less than or equal to the right pointer, then swap the values at these locations in the array.
+    If the left pointer position is less than or equal to the right pointer position, then swap the values at these locations in the array.
   </li>
   <li>
     Move the left pointer to the right by one and the right pointer to the left by one.
@@ -47,9 +47,9 @@ As with many algorithms, it's easier to understand partitioning by looking at an
 
     var items = [4, 2, 6, 5, 3, 9];
 
-There are many approaches to calculating the pivot value. Some algorithms select the first item as a pivot. That's not the best selection because it gives worst-case performance on already sorted arrays. It's better to select a pivot in the middle of the array, so consider 5 to be the pivot value (length of array divided by 2). Next, start the left pointer at position 0 in the right pointer at position 5 (last item in the array). Since 4 is less than 5, move the left pointer to position 1. Since 2 is less than 5, move the left pointer to position 2. Now 6 is not less than 5, so the left pointer stops moving and the right pointer value is compared to the pivot. Since 9 is greater than 5, the right pointer is moved to position 4. The value 3 is not greater than 5, so the right pointer stops. Since the left pointer is at position 2 and the right pointer is at position 4, the two haven't met and the values 6 and 3 should be swapped.
+There are many approaches to calculating the pivot value. Some algorithms select the first item as a pivot. That's not the best selection because it gives worst-case performance on already sorted arrays. It's better to select a pivot in the middle of the array, so consider 5 to be the pivot value (length of array divided by 2). Next, start the left pointer at position 0 and the right pointer at position 5 (last item in the array). Since 4 is less than 5, move the left pointer to position 1. Since 2 is less than 5, move the left pointer to position 2. Now 6 is not less than 5, so the left pointer stops moving and the right pointer value is compared to the pivot. Since 9 is greater than 5, the right pointer is moved to position 4. The value 3 is not greater than 5, so the right pointer stops. Since the left pointer is at position 2 and the right pointer is at position 4, the two haven't met and the values 6 and 3 should be swapped.
 
-Next, the left pointer is increased by one in the right pointer is decreased by one. This results in both pointers at the pivot value (5). That signals that the operation is complete. Now all items in the array to the left of the pivot are less than the pivot and all items to the right of the pivot are greater than the pivot. Keep in mind that this doesn't mean the array is sorted right now, only that there are two sections of the array: the section where all values are less than the pivot and the section were all values are greater than the pivot. See the figure below.
+Next, the left pointer is increased by one and the right pointer is decreased by one. This results in both pointers at the pivot value (5). That signals that the operation is complete. Now all items in the array to the left of the pivot are less than the pivot and all items to the right of the pivot are greater than the pivot. Keep in mind that this doesn't mean the array is sorted right now, only that there are two sections of the array: the section where all values are less than the pivot and the section were all values are greater than the pivot. See the figure below.
 
 [<img src="/images/posts/2012/11/quicksort_partition1.png" alt="Quicksort step-by-step" title="" width="600" height="944" class="alignnone size-full wp-image-3270" />][1]
 
