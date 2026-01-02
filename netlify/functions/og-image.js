@@ -98,10 +98,19 @@ export async function handler(event, context) {
         const teaserHeight = teaserLines.length * 38;
         const metaY = teaserY + teaserHeight + 40;
 
-        // Calculate tag widths for right alignment
+        // Calculate tag widths and positions for right alignment
         const tagWidths = tags.map(tag => tag.length * 14 + 30);
-        const totalTagWidth = tagWidths.reduce((sum, w) => sum + w, 0) + (tags.length - 1) * 10; // 10px gap between tags
-        const tagsStartX = width - padding - totalTagWidth;
+        const totalTagWidth = tagWidths.length > 0 
+            ? tagWidths.reduce((sum, w) => sum + w, 0) + Math.max(0, tags.length - 1) * 10 
+            : 0; // 10px gap between tags
+        const tagsStartX = Math.max(padding, width - padding - totalTagWidth);
+        
+        // Pre-compute tag positions for efficiency
+        const tagPositions = tagWidths.reduce((positions, width, i) => {
+            const prevPosition = i === 0 ? 0 : positions[i - 1] + tagWidths[i - 1] + 10;
+            positions.push(prevPosition);
+            return positions;
+        }, []);
 
         // Generate SVG
         const svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -180,7 +189,7 @@ export async function handler(event, context) {
     <g transform="translate(${tagsStartX}, ${metaY + 10})">
         ${tags.map((tag, i) => {
             const tagWidth = tagWidths[i];
-            const tagX = i === 0 ? 0 : tagWidths.slice(0, i).reduce((sum, w) => sum + w, 0) + (i * 10);
+            const tagX = tagPositions[i];
             return `
         <g transform="translate(${tagX}, 0)">
             <rect width="${tagWidth}" height="40" 
