@@ -84,7 +84,7 @@ const readingTime = Math.ceil(wordCount / 200);
     
     {post.data.image && (
         <div class="post-featured-image">
-            <img src={post.data.image} alt={post.data.title} />
+            <img src={post.data.image} alt={`Featured image for ${post.data.title}`} />
         </div>
     )}
     
