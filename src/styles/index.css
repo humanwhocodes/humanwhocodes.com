@@ -921,6 +921,23 @@ tbody tr:nth-child(odd) {
     box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
 }
 
+/* Post Featured Image */
+.post-featured-image {
+    margin: 0 0 2rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.post-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: none;
+    margin: 0;
+}
+
 /* Post Content */
 .post-content {
     padding: 0;
