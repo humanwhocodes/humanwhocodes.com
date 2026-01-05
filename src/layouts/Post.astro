@@ -82,6 +82,12 @@ const readingTime = Math.ceil(wordCount / 200);
         </div>
     </header>
     
+    {post.data.image && (
+        <div class="post-featured-image">
+            <img src={post.data.image} alt={post.data.title} />
+        </div>
+    )}
+    
     <section id="post-body" class="post-content content-font">
         {post.data.original &&
             <aside class="original-publication-notice">
