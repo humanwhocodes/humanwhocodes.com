@@ -220,8 +220,8 @@ export async function handler(event, context) {
             statusCode: 200,
             headers: {
                 'Content-Type': 'image/svg+xml',
-                // Cache for 1 day - allows updates while maintaining good performance
-                'Cache-Control': 'public, max-age=86400',
+                // Cache for 30 days - these images don't change often
+                'Cache-Control': 'public, max-age=2592000',
             },
             body: svg,
         };
