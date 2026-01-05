@@ -2,6 +2,7 @@
 title: "How GitHub could secure npm"
 teaser: "Why doesn't npm detect compromised packages the way credit card companies detect fraud?"
 author: Nicholas C. Zakas
+image: /images/posts/2026/github-npm.png
 categories:
   - Programming
 tags:
