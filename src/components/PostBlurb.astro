@@ -9,7 +9,8 @@ const {
     date,
     teaser,
     title,
-    tags
+    tags,
+    image
 } = post.data;
 
 // Calculate reading time (average 200 words per minute)
@@ -19,6 +20,14 @@ const readingTime = Math.ceil(wordCount / 200);
 ---
 <article class="post-blurb">
     <div class="post-blurb-content">
+        {image && (
+            <a href={`/${post.collection}/${post.slug}`} class="post-blurb-image-link">
+                <div class="post-blurb-image">
+                    <img src={image} alt="" loading="lazy" decoding="async" />
+                </div>
+            </a>
+        )}
+        
         <h3 class="post-blurb-title">
             <a href={`/${post.collection}/${post.slug}`}>{title}</a>
         </h3>

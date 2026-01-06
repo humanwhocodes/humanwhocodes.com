@@ -1450,6 +1450,24 @@ tbody tr:nth-child(odd) {
     color: var(--medium-blue);
 }
 
+.post-blurb-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+}
+
+.post-blurb-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.post-blurb:hover .post-blurb-image img {
+    transform: scale(1.02);
+}
+
 .post-blurb-teaser {
     margin: 0;
     font-size: 1.05rem;
