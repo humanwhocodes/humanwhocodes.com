@@ -58,6 +58,12 @@ if (!ogImage) {
             <h1 itemprop="headline" class="post-title">{ post.data.title }</h1>
             <p itemprop="description" class="post-teaser">{ post.data.teaser }</p>
             
+            {post.data.image && (
+                <div class="post-featured-image">
+                    <img src={post.data.image} alt="" />
+                </div>
+            )}
+            
             <div class="post-meta">
                 <div class="post-meta-primary">
                     <div class="author-info">
@@ -94,12 +100,6 @@ if (!ogImage) {
             </div>
         </div>
     </header>
-    
-    {post.data.image && (
-        <div class="post-featured-image">
-            <img src={post.data.image} alt={`Featured image for ${post.data.title}`} />
-        </div>
-    )}
     
     <section id="post-body" class="post-content content-font">
         {post.data.original &&
