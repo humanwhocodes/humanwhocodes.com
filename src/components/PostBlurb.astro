@@ -1,6 +1,4 @@
 ---
-import authorImage from "../images/me/me-150x150.jpg";
-
 const {
     post
 } = Astro.props;
@@ -35,21 +33,15 @@ const readingTime = Math.ceil(wordCount / 200);
         {teaser && <p class="post-blurb-teaser">{teaser}</p>}
         
         <div class="post-blurb-meta">
-            <div class="post-blurb-author">
-                <img src={authorImage} alt="Nicholas C. Zakas" class="author-avatar-small" />
-                <div class="post-blurb-details">
-                    <span class="author-name-small">Nicholas C. Zakas</span>
-                    <div class="post-blurb-date-info">
-                        <time datetime={date.toUTCString()} class="post-blurb-date">
-                            {date.toLocaleDateString('en-us', {
-                                year: "numeric",
-                                month:"long",
-                                day: "numeric"
-                            })}
-                        </time>
-                        <span class="reading-time-small">• {readingTime} min read</span>
-                    </div>
-                </div>
+            <div class="post-blurb-date-info">
+                <time datetime={date.toUTCString()} class="post-blurb-date">
+                    {date.toLocaleDateString('en-us', {
+                        year: "numeric",
+                        month:"long",
+                        day: "numeric"
+                    })}
+                </time>
+                <span class="reading-time-small">• {readingTime} min read</span>
             </div>
             
             {tags && tags.length > 0 && (
