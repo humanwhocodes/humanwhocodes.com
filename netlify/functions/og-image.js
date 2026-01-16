@@ -5,11 +5,10 @@
  * - title (required): The title of the blog post
  * - teaser (optional): The teaser/description of the blog post
  * - date (optional): The publication date (format: YYYY-MM-DD or timestamp)
- * - tags (optional): Comma-separated list of tags
  * - readingTime (optional): Reading time in minutes (defaults to calculated or "5")
  * 
  * Example Usage:
- * /.netlify/functions/og-image?title=My Blog Post&teaser=This is a teaser&date=2024-01-15&tags=JavaScript,Programming&readingTime=8
+ * /.netlify/functions/og-image?title=My Blog Post&teaser=This is a teaser&date=2024-01-15&readingTime=8
  * 
  * The generated SVG matches the visual style of the blog post cards (PostBlurb component).
  */
@@ -21,11 +20,7 @@ export async function handler(event, context) {
         const title = params.title || 'Blog Post Title';
         const teaser = params.teaser || '';
         const dateParam = params.date || new Date().toISOString();
-        const tagsParam = params.tags || '';
         const readingTime = params.readingTime || '5';
-
-        // Parse tags
-        const tags = tagsParam ? tagsParam.split(',').map(t => t.trim()).slice(0, 3) : [];
 
         // Format date
         let formattedDate;
