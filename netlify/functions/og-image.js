@@ -94,61 +94,38 @@ export async function handler(event, context) {
         const titleLines = wrapText(title, 50);
         const teaserLines = teaser ? wrapText(teaser, 80).slice(0, 3) : [];
 
-        // Calculate positions - bottom-align byline and tags
-        const metaHeight = 60; // Height for byline area
+        // Calculate positions - bottom-align byline
+        const metaHeight = 120; // Height for byline area (2x bigger)
         const bottomMargin = 40; // Margin from bottom
         const metaY = height - padding - metaHeight - bottomMargin;
         
         // Title and teaser positioned from top
         let currentY = padding + 80;
-        const titleHeight = titleLines.length * 58;
+        const titleHeight = titleLines.length * 116; // 2x line height for 2x font size
         const teaserY = currentY + titleHeight + 30;
 
-        // Calculate tag widths and positions for right alignment
-        const tagWidths = tags.map(tag => tag.length * 14 + 30);
-        const totalTagWidth = tagWidths.length > 0 
-            ? tagWidths.reduce((sum, w) => sum + w, 0) + Math.max(0, tags.length - 1) * 10 
-            : 0; // 10px gap between tags
-        const tagsStartX = Math.max(padding, width - padding - totalTagWidth);
-        
-        // Pre-compute tag positions for efficiency
-        const tagPositions = tagWidths.reduce((positions, width, i) => {
-            const prevPosition = i === 0 ? 0 : positions[i - 1] + tagWidths[i - 1] + 10;
-            positions.push(prevPosition);
-            return positions;
-        }, []);
+
 
         // Generate SVG
         const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
-        <linearGradient id="tagGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:${colors.lightestBlue};stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
-        </linearGradient>
         <clipPath id="avatarClip">
-            <circle cx="${padding + 30}" cy="${metaY + 30}" r="30"/>
+            <circle cx="${padding + 60}" cy="${metaY + 60}" r="60"/>
         </clipPath>
     </defs>
     
     <!-- Background -->
     <rect width="${width}" height="${height}" fill="${colors.white}"/>
     
-    <!-- Card Container -->
-    <rect x="30" y="30" width="${width - 60}" height="${height - 60}" 
-          fill="${colors.white}" 
-          stroke="${colors.borderColor}" 
-          stroke-width="2" 
-          rx="12"/>
-    
     <!-- Title -->
     <text x="${padding}" y="${currentY}" 
           font-family="system-ui, -apple-system, sans-serif" 
-          font-size="52" 
+          font-size="104" 
           font-weight="700" 
           fill="${colors.darkGray}">
         ${titleLines.map((line, i) => 
-            `<tspan x="${padding}" dy="${i === 0 ? 0 : 58}">${escapeXml(line)}</tspan>`
+            `<tspan x="${padding}" dy="${i === 0 ? 0 : 116}">${escapeXml(line)}</tspan>`
         ).join('\n        ')}
     </text>
     
@@ -166,53 +143,29 @@ export async function handler(event, context) {
     ` : ''}
     
     <!-- Author Avatar -->
-    <circle cx="${padding + 30}" cy="${metaY + 30}" r="30" 
+    <circle cx="${padding + 60}" cy="${metaY + 60}" r="60" 
             fill="${colors.lightOrange}" 
             stroke="${colors.lightOrange}" 
-            stroke-width="3"/>
-    <image x="${padding}" y="${metaY}" width="60" height="60" 
+            stroke-width="6"/>
+    <image x="${padding}" y="${metaY}" width="120" height="120" 
            href="${avatarImage}"
            clip-path="url(#avatarClip)"/>
     
     <!-- Author Name -->
-    <text x="${padding + 80}" y="${metaY + 20}" 
+    <text x="${padding + 160}" y="${metaY + 40}" 
           font-family="system-ui, -apple-system, sans-serif" 
-          font-size="28" 
+          font-size="56" 
           font-weight="600" 
           fill="${colors.darkGray}">Nicholas C. Zakas</text>
     
     <!-- Date and Reading Time -->
-    <text x="${padding + 80}" y="${metaY + 52}" 
+    <text x="${padding + 160}" y="${metaY + 104}" 
           font-family="system-ui, -apple-system, sans-serif" 
-          font-size="24" 
+          font-size="48" 
           font-weight="400" 
           fill="${colors.textGray}">
         ${escapeXml(formattedDate)} • ${escapeXml(readingTime)} min read
     </text>
-    
-    ${tags.length > 0 ? `
-    <!-- Tags (right-aligned on same row as byline, bottom-aligned) -->
-    <g transform="translate(${tagsStartX}, ${metaY + 20})">
-        ${tags.map((tag, i) => {
-            const tagWidth = tagWidths[i];
-            const tagX = tagPositions[i];
-            return `
-        <g transform="translate(${tagX}, 0)">
-            <rect width="${tagWidth}" height="40" 
-                  fill="url(#tagGradient)" 
-                  stroke="rgba(59, 130, 246, 0.2)" 
-                  stroke-width="1" 
-                  rx="20"/>
-            <text x="${tagWidth / 2}" y="27" 
-                  font-family="system-ui, -apple-system, sans-serif" 
-                  font-size="22" 
-                  font-weight="500" 
-                  fill="${colors.mediumBlue}" 
-                  text-anchor="middle">${escapeXml(tag)}</text>
-        </g>`;
-        }).join('\n        ')}
-    </g>
-    ` : ''}
 </svg>`;
 
         // Return SVG with proper headers
