@@ -1,6 +1,6 @@
 ---
 title: "The importance of artifacts in AI-assisted programming"
-teaser: ""
+teaser: "Your AI pair programmer has no memory, which is why proper documentation matters more than ever in AI-assisted development."
 author: Nicholas C. Zakas
 image: /images/posts/2026/ai-artifacts.png
 categories:
