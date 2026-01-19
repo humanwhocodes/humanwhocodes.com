@@ -11,7 +11,6 @@ tags:
   - Orchestrator
   - Automation
 ---
-# From Coder to Orchestrator: The future of software engineering with AI
 
 The software engineering industry is undergoing a major AI-driven transition in how we work. The days when humans needed to write every line of code are already behind us as LLMs become more capable and reliable. The improvement in code output during 2025 alone has been astounding. I've personally watched LLMs struggle with certain problems, then a few months later, solve them completely and efficiently. Progress will likely accelerate even further in 2026\.
 
