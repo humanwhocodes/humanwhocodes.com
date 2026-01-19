@@ -1,6 +1,6 @@
 ---
 title: "The importance of artifacts in AI-assisted programming"
-teaser: "Your AI pair programmer has no memory, which is why proper documentation matters more than ever in AI-assisted development."
+teaser: ""
 author: Nicholas C. Zakas
 image: /images/posts/2026/ai-artifacts.png
 categories:
@@ -203,8 +203,6 @@ AI-assisted programming offers tremendous potential to accelerate software devel
 By creating and maintaining proper artifacts (such as PRDs, ADRs, TDDs, and task lists), you build a knowledge foundation that compensates for AI's lack of memory. These artifacts serve dual purposes: they guide AI toward better implementations during development and provide the investigative trail you need when problems occur. When your server goes down at 3 a.m., these artifacts let you quickly trace the issue back to its source, whether that's an ambiguous requirement, a flawed technical decision, or a gap in the implementation. They transform AI from an unpredictable code generator into a reliable development partner.
 
 The investment in documentation may seem like it slows down initial development, but it pays dividends when you need to debug problems, onboard new team members, or understand decisions made months or years ago. In a world where AI is increasingly involved in writing code, the artifacts you create become even more valuable than the code itself. You'll likely find that the process not only improves your AI-generated code but also clarifies your own thinking about the problem you're solving. Start with your next feature and experience the difference proper artifacts make.
-
-## Footnotes
 
 [^1]: [Product requirements](https://www.atlassian.com/agile/product-management/requirements)
 [^2]: [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions)
