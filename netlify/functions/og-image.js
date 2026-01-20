@@ -85,19 +85,16 @@ export async function handler(event, context) {
             return lines;
         };
 
-        // Wrap title and teaser
-        const titleLines = wrapText(title, 50);
-        const teaserLines = teaser ? wrapText(teaser, 80).slice(0, 3) : [];
+        // Wrap title - calculate maxChars based on available width and font size
+        // With font-size 104 and contentWidth 1080, approximately 10-11 characters per line
+        const titleLines = wrapText(title, 11);
 
-        // Calculate positions - bottom-align byline
-        const metaHeight = 120; // Height for byline area (2x bigger)
-        const bottomMargin = 40; // Margin from bottom
-        const metaY = height - padding - metaHeight - bottomMargin;
+        // Calculate positions - center avatar
+        const avatarSize = 120;
+        const avatarY = height - padding - avatarSize - 40; // 40px margin from bottom
         
-        // Title and teaser positioned from top
+        // Title positioned from top
         let currentY = padding + 80;
-        const titleHeight = titleLines.length * 116; // 2x line height for 2x font size
-        const teaserY = currentY + titleHeight + 30;
 
 
 
@@ -106,7 +103,7 @@ export async function handler(event, context) {
 <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <clipPath id="avatarClip">
-            <circle cx="${padding + 60}" cy="${metaY + 60}" r="60"/>
+            <circle cx="${padding + 60}" cy="${avatarY + 60}" r="60"/>
         </clipPath>
     </defs>
     
@@ -124,43 +121,14 @@ export async function handler(event, context) {
         ).join('\n        ')}
     </text>
     
-    ${teaser ? `
-    <!-- Teaser -->
-    <text x="${padding}" y="${teaserY}" 
-          font-family="system-ui, -apple-system, sans-serif" 
-          font-size="32" 
-          font-weight="400" 
-          fill="${colors.textGray}">
-        ${teaserLines.map((line, i) => 
-            `<tspan x="${padding}" dy="${i === 0 ? 0 : 38}">${escapeXml(line)}</tspan>`
-        ).join('\n        ')}
-    </text>
-    ` : ''}
-    
     <!-- Author Avatar -->
-    <circle cx="${padding + 60}" cy="${metaY + 60}" r="60" 
+    <circle cx="${padding + 60}" cy="${avatarY + 60}" r="60" 
             fill="${colors.lightOrange}" 
             stroke="${colors.lightOrange}" 
             stroke-width="6"/>
-    <image x="${padding}" y="${metaY}" width="120" height="120" 
+    <image x="${padding}" y="${avatarY}" width="120" height="120" 
            href="${avatarImage}"
            clip-path="url(#avatarClip)"/>
-    
-    <!-- Author Name -->
-    <text x="${padding + 160}" y="${metaY + 40}" 
-          font-family="system-ui, -apple-system, sans-serif" 
-          font-size="56" 
-          font-weight="600" 
-          fill="${colors.darkGray}">Nicholas C. Zakas</text>
-    
-    <!-- Date and Reading Time -->
-    <text x="${padding + 160}" y="${metaY + 104}" 
-          font-family="system-ui, -apple-system, sans-serif" 
-          font-size="48" 
-          font-weight="400" 
-          fill="${colors.textGray}">
-        ${escapeXml(formattedDate)} • ${escapeXml(readingTime)} min read
-    </text>
 </svg>`;
 
         // Return SVG with proper headers
