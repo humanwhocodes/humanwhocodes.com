@@ -3,14 +3,11 @@
  * 
  * Query Parameters:
  * - title (required): The title of the blog post
- * - teaser (optional): The teaser/description of the blog post
- * - date (optional): The publication date (format: YYYY-MM-DD or timestamp)
- * - readingTime (optional): Reading time in minutes (defaults to calculated or "5")
  * 
  * Example Usage:
- * /.netlify/functions/og-image?title=My Blog Post&teaser=This is a teaser&date=2024-01-15&readingTime=8
+ * /.netlify/functions/og-image?title=My Blog Post
  * 
- * The generated SVG matches the visual style of the blog post cards (PostBlurb component).
+ * The generated SVG displays a large headline with the author's avatar.
  */
 
 export async function handler(event, context) {
@@ -18,22 +15,6 @@ export async function handler(event, context) {
         // Parse query parameters
         const params = event.queryStringParameters || {};
         const title = params.title || 'Blog Post Title';
-        const teaser = params.teaser || '';
-        const dateParam = params.date || new Date().toISOString();
-        const readingTime = params.readingTime || '5';
-
-        // Format date
-        let formattedDate;
-        try {
-            const date = new Date(dateParam);
-            formattedDate = date.toLocaleDateString('en-us', {
-                year: "numeric",
-                month: "long",
-                day: "numeric"
-            });
-        } catch (e) {
-            formattedDate = 'January 1, 2024';
-        }
 
         // Colors from the CSS (matching site's CSS variables exactly)
         const colors = {
