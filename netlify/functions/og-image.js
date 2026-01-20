@@ -36,6 +36,10 @@ export async function handler(event, context) {
         const height = 630;
         const padding = 60;
         const contentWidth = width - (padding * 2);
+        
+        // Typography settings
+        const TITLE_FONT_SIZE = 104;
+        const TITLE_LINE_HEIGHT = 116; // Slightly larger than font size for readability
 
         // Helper function to escape XML special characters
         const escapeXml = (str) => {
@@ -67,7 +71,7 @@ export async function handler(event, context) {
         };
 
         // Wrap title - calculate maxChars based on available width and font size
-        // With font-size 104 and contentWidth 1080, approximately 10-11 characters per line
+        // With TITLE_FONT_SIZE and contentWidth, approximately 10-11 characters per line
         const titleLines = wrapText(title, 11);
 
         // Calculate positions - center avatar
@@ -94,11 +98,11 @@ export async function handler(event, context) {
     <!-- Title -->
     <text x="${padding}" y="${currentY}" 
           font-family="system-ui, -apple-system, sans-serif" 
-          font-size="104" 
+          font-size="${TITLE_FONT_SIZE}" 
           font-weight="700" 
           fill="${colors.darkGray}">
         ${titleLines.map((line, i) => 
-            `<tspan x="${padding}" dy="${i === 0 ? 0 : 116}">${escapeXml(line)}</tspan>`
+            `<tspan x="${padding}" dy="${i === 0 ? 0 : TITLE_LINE_HEIGHT}">${escapeXml(line)}</tspan>`
         ).join('\n        ')}
     </text>
     
