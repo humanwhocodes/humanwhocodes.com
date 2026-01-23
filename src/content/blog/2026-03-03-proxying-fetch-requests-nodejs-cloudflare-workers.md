@@ -14,30 +14,9 @@ tags:
 
 If you retrieve content from the internet, you'll eventually need to proxy requests. Proxying is useful for logging traffic, modifying headers, altering content, improving performance through caching, or hiding an originating IP address. Most server-side JavaScript runtimes allow you to proxy requests using `fetch()`.
 
-## Proxying with environment variables
-
-Node.js, Deno, and Bun support proxying `fetch()` requests through standard environment variables:
-
-- `HTTP_PROXY`: A URL to use as a proxy for all HTTP requests.
-- `HTTPS_PROXY`: A URL to use as a proxy for all HTTPS requests.
-- `NO_PROXY`: A comma-separated list of hostnames or IP addresses that should not be proxied.
-
-For example:
-
-```bash
-HTTP_PROXY=http://username:password@proxy-server.com:8080
-NO_PROXY=localhost,internal.myapp.com
-```
-
-This configuration directs all HTTP `fetch()` requests through `http://username:password@proxy-server.com:8080`, excluding `localhost` and `internal.myapp.com`.
-
-If you can set environment variables for your application, this is a lightweight way to proxy requests without modifying your code.
-
-## Programmatic proxying
-
 The Fetch standard[^1] doesn't specify request proxying because it's a browser-focused API. Consequently, server-side runtimes implement proxying differently.
 
-### Node.js
+## Node.js
 
 While Node.js doesn't natively support proxying, its built-in `fetch()` implementation uses the `undici` package[^2], which does. Since Node.js doesn't expose the `ProxyAgent` class[^3] directly, you'll first need to install `undici`:
 
@@ -59,7 +38,7 @@ const response = await fetch('https://api.example.com', {
 const body = await response.json();
 ```
 
-### Deno
+## Deno
 
 Deno's `fetch()` uses the `client` property in the options object to specify a proxy client:
 
@@ -87,7 +66,7 @@ const data = await response.json();
 client.close(); // Remember to close the client when done
 ```
 
-### Bun
+## Bun
 
 Bun provides native support for `fetch()` proxying via the `proxy` property:
 
@@ -99,7 +78,7 @@ const response = await fetch("https://api.example.com", {
 const body = await response.json();
 ```
 
-### Cloudflare Workers
+## Cloudflare Workers
 
 The Cloudflare Workers runtime does not natively support proxying `fetch()` requests through environment variables or programmatic options. However, you can work around this by using a Node.js Docker container to handle the requests.
 
@@ -175,7 +154,7 @@ const container = env.PROXY_FETCH_CONTAINER.getByName("proxy-fetch-server");
 await container.startAndWaitForPorts({
     startOptions: {
         envVars: {
-            HTTPS_PROXY: "http://username:password@proxy-server.com:8080"
+            https_proxy: "http://username:password@proxy-server.com:8080"
         }
     }
 });
