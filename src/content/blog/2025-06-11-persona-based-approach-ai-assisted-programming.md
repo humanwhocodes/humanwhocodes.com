@@ -2,13 +2,14 @@
 title: "A persona-based approach to AI-assisted software development"
 teaser: "Discover how breaking AI assistance into specialized personas can help you tackle complex software development tasks more efficiently and with less frustration."
 author: Nicholas C. Zakas
+image: /images/posts/2025/ai-personas.png
 categories:
   - Programming
 tags:
   - AI
   - Claude
   - GPT
-updated: 2025-08-14
+updated: 2026-01-28
 ---
 
 I’ve spent most of 2025 experimenting with AI-assisted programming, with mixed results. I tried different models, prompt styles, and editors to understand where AI adds value and where it becomes a distraction. Eventually, I developed a process for using AI to make non-trivial changes.
@@ -60,7 +61,7 @@ The architect persona designs the technical implementation of the feature. Using
 
  > You are a software architect for this application. Your product manager has provided the attached PRD outlining the functional requirements for a new feature. Your task is to design the implementation and ensure all acceptance criteria are met. Scan the current codebase to find integration points. Create a step-by-step guide detailing how to implement your design. Include all details an LLM needs to implement this feature without reading the PRD. DO NOT INCLUDE SOURCE CODE. If anything is unclear, ask me questions about the PRD or implementation. If you need to make assumptions, state them clearly. Insert the design into a Markdown file in the `docs` directory of the repository. The file should be named the same as the PRD without "prd" in the name an with "techspec" instead. For example, if the PRD is `docs/saves-data-prd.md`, the file should be `docs/saves-data-techspec.md`. The file should be formatted in Markdown and include headings and bullet points.
 
-**My choice:** GPT-5, Gemini 2.5 Pro (fallback)
+**My choice:** Gemini 3 Pro, GPT 5.2 (fallback)
 
 **Rationale:** I previously used Gemini 2.5 Pro as the architect but I've switched to GPT-5. I've found GPT-5 to be just as technically knowledgeable and outputs technical specifications with much more depth and specificity. The result is a concrete plan that any LLM can easily follow. GPT-5 is a premium model in VS Code, and it's well worth the extra cost. If you're using an editor where GPT-5 is not available, then Gemini 2.5 Pro is a good second choice.
 
@@ -72,9 +73,9 @@ The implementer persona carries out the design based on the architect’s techni
 
 > You are a software engineer tasked with implementing the feature described in the attached file. If anything is unclear, ask me questions before starting. You must complete all steps in the document. After finishing, verify that all steps are complete; if not, return and implement the missing steps. Repeat this process until all steps are done.
 
-**My choice:** GPT-4.1
+**My choice:** Claude Haiku 4.5, Gemini 3 Flash (fallback)
 
-**Rationale:** Once again, I trust GPT-4.1 to stay focused while working. It follows precise instructions well but sometimes skips steps. Asking the model to review its work helps ensure nothing is missed. Plus, GPT 4.1 has one of the fastest response times among the models available at the time of my writing. With a good tech spec as a prompt, GPT 4.1 gets the job done faster than any other model.
+**Rationale:** Haiku is a great little model that is fast and effective. It stays on track better than earlier Sonnet models and doesn't get lost when all details aren't provided. On VS Code, it has a 0.33x multiplier, so you can use it without worrying about running out of premium requests. The only downside is it frequently skips reading `AGENTS.md`, but you can make up for that by just asking it do so explicitly first. Gemini 3 Flash, also a 0.33x multiplier, is my next favorite as it's also fast and effective. It seems like its context window gets filled up faster than Haiku, though, which can be a problem for longer implementation plans.
 
 ## The problem solver
 
@@ -84,9 +85,9 @@ Ideally, the feature is now implemented. More often, though, something still doe
 
 > The homepage isn’t being updated when I log in. It should show the profile photo in the header and log out button. Fix it.
 
-**My choice:** GPT-5, Claude 3.5 Sonnet (fallback)
+**My choice:** Gemini 3 Pro
 
-**Rationale:** GPT-5 has surpassed Claude for this purpose. Claude models are strong problem solvers with creative thinking. I've found GPT-5 to be better at staying on task and solving the problem, especially when it involves cross-file interactions. If GPT-5 is not available in our editor, then Claude 3.5 Sonnet is my choice. The 3.5 Sonnet model is the most focused and less likely to stray compared to 3.7 and 4\. If you are truly stuck, switching to 3.7 or 4 might solve the problem but could also lead to distractions. 
+**Rationale:** I've found Gemini 3 Pro to work the best for problems where I have no idea what is going on. It tends to find targeted solutions rather quickly when compared to models like Claude Sonnet 4.5 and GPT 5.2, both of which tend to spend more time and end up with larger edits to address problems. Gemini 3 Pro always just seems to know what to do and what not to do, and overall saves me a lot of time.
 
 ## The tech spec reviewer
 
@@ -96,9 +97,9 @@ The tech spec reviewer persona is quality assurance for the technical specificat
 
 > You are a software architect. Critique this specification, paying particular attention to scalability and performance issues. Identify edge cases that are not adequately addressed and possible race conditions. Compare the specification against the PRD to ensure that acceptance criteria is met. 
 
-**My choice:** Gemini 2.5 Pro
+**My choice:** Gemini 3 Pro
 
-**Rationale:** Gemini really shines in this type of role. Its deep technical knowledge is coupled with an ability to describe exact situations where a technical design will fail or introduce problems. Gemini debates approaches using scenarios and explains its thinking well, so you can identify any logic errors or misalignment. Iterating on a specification with Gemini has been a lot of fun for me, personally, as it almost always seems to be correct (provided I gave it the correct requirements).
+**Rationale:** Gemini really shines in this type of role. Its deep technical knowledge is coupled with an ability to describe exact situations where a technical design will fail or introduce problems. Gemini debates approaches using scenarios and explains its thinking well, so you can identify any logic errors or misalignment. Iterating on a specification with Gemini has been a lot of fun for me, personally, as it almost always seems to be correct (provided I gave it the correct requirements). Plus, it is the least sycophantic model I've used, standing its ground on points it knows to be correct.
 
 ## The implementation reviewer
 
@@ -108,7 +109,7 @@ The implementation reviewer persona is quality assurance for the code generated 
 
 > You are a software architect. Review the attached specification and then scan the codebase to validate that the specification has been implemented correctly. If there are any problems, list them out in descending order of severity with a proposed fix. Do not implement the fixes, just describe them.
 
-**My choice:** Gemini 2.5 Pro
+**My choice:** Gemini 3 Pro
 
 **Rationale:** Once again, Gemini is perfect for this role. It's capable of deeply understanding the technical specification and matching it against the existing code. In a recent complex feature, I was surprised at how many problems Gemini found in the implementation even after I had reviewed it. 
 
@@ -117,3 +118,5 @@ The implementation reviewer persona is quality assurance for the code generated 
 Over the past months, I’ve found that treating AI not as a single assistant but as a team of specialized personas dramatically improves my productivity when handling complex changes. By clearly defining roles such as product manager, architect, implementer, problem solver, tech spec reviewer, and implementation reviewer, and choosing the right model for each, I can guide the process efficiently from requirements to debugging. This approach minimizes distractions and leverages each model’s strengths, making AI-assisted programming a practical and powerful part of my workflow. If you’re experimenting with AI in development, I encourage you to try this persona-driven process and see how it transforms your projects.
 
 **Update (2025-08-14):** Switched architect and problem solver personas to use GPT-5. Added the tech spec reviewer and implementation reviewer personas.
+
+**Update (2026-01-28):** Switched architect role, problem solver, tech spec reviewer, and implementation reviewer to Gemini 3 Pro. Switched implementer role to Claude 4.5 Haiku.
