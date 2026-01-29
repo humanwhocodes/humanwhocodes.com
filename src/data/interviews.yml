@@ -1,3 +1,12 @@
+- title: Securing npm is table stakes
+  url: https://changelog.com/podcast/674
+  src: https://op3.dev/e/https://cdn.changelog.com/uploads/podcast/674/the-changelog-674.mp3
+  date: 2026-01-29
+  podcast:
+    name: The Changelog
+    url: https://changelog.com/
+
+
 - title: Creating ESLint with Nicholas Zakas
   url: https://softwareengineeringdaily.com/2024/09/18/creating-eslint-with-nicholas-zakas/
   date: 2024-09-18
