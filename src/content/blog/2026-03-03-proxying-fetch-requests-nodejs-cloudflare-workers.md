@@ -85,22 +85,14 @@ The Cloudflare Workers runtime does not natively support proxying `fetch()` requ
 The `@humanwhocodes/proxy-fetch-server`[^4] package is a small utility I created to simplify this. Here’s how to run it in a container:
 
 ```dockerfile
-# Use Node.js 22 as the base image
-FROM node:22-alpine
+FROM node:22-slim
 
-# Set working directory
 WORKDIR /app
-
-# Install @humanwhocodes/proxy-fetch-server globally
 RUN npm install -g @humanwhocodes/proxy-fetch-server@2
 
-# Expose the port the server listens on
 EXPOSE 8080
-
-# Set environment variables
 ENV PORT=8080
 
-# Run the proxy fetch server
 CMD ["npx", "@humanwhocodes/proxy-fetch-server"]
 ```
 
@@ -154,7 +146,7 @@ const container = env.PROXY_FETCH_CONTAINER.getByName("proxy-fetch-server");
 await container.startAndWaitForPorts({
     startOptions: {
         envVars: {
-            https_proxy: "http://username:password@proxy-server.com:8080"
+            FETCH_PROXY: "http://username:password@proxy-server.com:8080"
         }
     }
 });
