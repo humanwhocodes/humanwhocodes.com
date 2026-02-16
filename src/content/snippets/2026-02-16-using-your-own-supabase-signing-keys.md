@@ -22,6 +22,8 @@ npx supabase gen signing-key --algorithm ES256
 
 This will output a new signing key in JSON format to the terminal.
 
+**Note:** If you already have a `supabase/signing_key.json` file, the CLI will ask if you want to overwrite it. If you want to keep the existing signing key, you can choose "No" and the CLI will not output a new signing key.
+
 ## Local Development
 
 For local development, save the signing key in your `supabase` directory, such as `supabase/signing_key.json`. Supabase requires the local signing key to be contained in an array, so you need to wrap the output in square brackets. For example, if your output looks like this:
