@@ -3,6 +3,7 @@ title: "Proxying fetch requests in server-side JavaScript"
 teaser: "Learn how to proxy fetch() requests in Node.js, Deno, Bun, and Cloudflare Workers to better monitor and control your server-side traffic."
 author: Nicholas C. Zakas
 image: /images/posts/2026/proxy-request.png
+updated: 2026-03-04
 categories:
   - Programming
 tags:
@@ -18,7 +19,23 @@ The Fetch standard[^1] doesn't specify request proxying because it's a browser-f
 
 ## Node.js
 
-While Node.js doesn't natively support proxying, its built-in `fetch()` implementation uses the `undici` package[^2], which does. Since Node.js doesn't expose the `ProxyAgent` class[^3] directly, you'll first need to install `undici`:
+Node.js natively supports proxying `fetch()` requests through environment variables as of Node.js v22.21.0 and v24.5.0[^2]. You can set the `HTTP_PROXY` and `HTTPS_PROXY` environment variables to specify the proxy server for HTTP and HTTPS requests, respectively:
+
+```shell
+# Enable Node.js to use environment variables for proxying
+export NODE_USE_ENV_PROXY=1
+
+export HTTP_PROXY=http://username:password@proxy-server.com:8080
+export HTTPS_PROXY=https://username:password@proxy-server.com:8080
+```
+
+The `NODE_USE_ENV_PROXY` variable is required to enable this behavior, as it is disabled by default to avoid unintended proxying. You can also use the `--use-env-proxy` flag when running your Node.js application to enable this feature without setting the environment variable:
+
+```shell
+node --use-env-proxy your-app.js
+```
+
+You can also proxy specific requests programmatically. While the Node.js `fetch()` API doesn't natively support proxying, it's built on top of the `undici` package[^3], which does. Since Node.js doesn't expose the `ProxyAgent` class[^4] directly, you'll first need to install `undici`:
 
 ```shell
 npm i undici
@@ -82,7 +99,7 @@ const body = await response.json();
 
 The Cloudflare Workers runtime does not natively support proxying `fetch()` requests through environment variables or programmatic options. However, you can work around this by using a Node.js Docker container to handle the requests.
 
-The `@humanwhocodes/proxy-fetch-server`[^4] package is a small utility I created to simplify this. Here’s how to run it in a container:
+The `@humanwhocodes/proxy-fetch-server`[^5] package is a small utility I created to simplify this. Here’s how to run it in a container:
 
 ```dockerfile
 FROM node:22-slim
@@ -169,7 +186,10 @@ While this requires more setup than other runtimes, it's a reliable solution for
 
 Proxying `fetch()` requests is a common requirement in server-side development, whether for security, monitoring, or performance. While runtimes like Deno and Bun offer straightforward programmatic APIs, others like Node.js and Cloudflare Workers require a bit more legwork. Regardless of your choice, understanding these patterns ensures your applications can communicate reliably with the outside world. Give these methods a try in your next project; you'll find that handling proxies is just another essential tool in your server-side JavaScript toolkit.
 
+**Update(2026-03-04):** Added information about Node.js support for proxy-related environment variables.
+
 [^1]: [Fetch Standard](https://fetch.spec.whatwg.org/)
-[^2]: [Undici](https://undici.nodejs.org)
-[^3]: [Issue #43187: Expose Undici ProxyAgent](https://github.com/nodejs/node/issues/43187)
-[^4]: [`@humanwhocodes/proxy-fetch-server`](https://npmjs.com/package/@humanwhocodes/proxy-fetch-server)
+[^2]: [Node.js Enterprise Network Configuration](https://nodejs.org/en/learn/http/enterprise-network-configuration)
+[^3]: [Undici](https://undici.nodejs.org)
+[^4]: [Issue #43187: Expose Undici ProxyAgent](https://github.com/nodejs/node/issues/43187)
+[^5]: [`@humanwhocodes/proxy-fetch-server`](https://npmjs.com/package/@humanwhocodes/proxy-fetch-server)

@@ -18,11 +18,13 @@ The intended audience for these technical articles includes software developers,
 
 ### Technical Requirements
 *   **Heading Levels:** Ensure headings increment logically (e.g., an `##` H2 should be followed by another `##` H2 or an `###` H3, never an `####` H4).
-*   **Code in Prose:** Enclose all code-related terms in backticks when they appear in sentences. This includes:
+*   **Code in Prose:** Enclose all terms related to code in backticks when they appear in sentences. This includes:
     *   Variable and function names.
     *   File names and paths.
     *   API endpoints.
     *   Keywords and operators.
     *   npm package names.
-*   **Preserve Code Blocks:** Do not modify any content inside triple-backtick (```) code blocks.
+    This excludes:
+    * Code-related generic terms like AI, test-driven development, find-and-replace.
+*   **Preserve Code Blocks:** Do not modify any content inside triple-backtick code blocks.
 *   **Formatting:** Maintain the existing Markdown structure and metadata (like Frontmatter) unless specifically instructed otherwise.
