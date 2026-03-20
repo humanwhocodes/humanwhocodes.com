@@ -1,15 +1,15 @@
 ---
 title: "Improving developer velocity with GitHub merge queue"
-teaser: ""
+teaser: "GitHub merge queue reduces the manual churn of keeping pull requests current by automatically retesting them in order before merge."
 author: Nicholas C. Zakas
 image: /images/posts/2026/github-merge-queue.png
-draft: true
 categories:
   - Programming
 tags:
   - GitHub
   - Git
   - Merge Queue
+  - CI
 ---
 
 Imagine this: you're working at a company that uses GitHub as its source control platform. Each repository follows established best practices, such as requiring continuous integration (CI) tests to pass before a pull request can be merged. Branch protection rules maintain a linear commit history and require pull requests to be approved before merging. Developers may merge their own pull requests once CI passes and they have the required approvals.
@@ -46,7 +46,7 @@ Each step is important for the overall operation of the merge queue.
 
 ### Ensure your CI tests run in the merge queue
 
-The first step in setting up a GitHub merge queue is configuring CI for the queue. You can do that by adding the [`merge_group` trigger](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#merge_group) to the same GitHub workflow file that runs CI for pull requests:
+The first step in setting up a GitHub merge queue is configuring CI for the queue. You can do that by adding the `merge_group` trigger[^merge-group-trigger] to the same GitHub workflow file that runs CI for pull requests:
 
 ```yaml
 on:
@@ -61,7 +61,7 @@ This ensures you're running the same checks when a pull request is opened or upd
 
 ### Enable squash merges for the repository
 
-Because a merge queue takes all commits from the temporary branch and merges them into `HEAD`, it's important to [squash pull requests](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests?versionId=free-pro-team%40latest&productId=actions&restPage=reference%2Cworkflows-and-actions%2Cevents-that-trigger-workflows) before they are merged. That ensures each pull request adds a single commit to `HEAD`, which makes individual pull requests much easier to revert if necessary. To do that:
+Because a merge queue takes all commits from the temporary branch and merges them into `HEAD`, it's important to squash pull requests[^squash-pull-requests] before they are merged. That ensures each pull request adds a single commit to `HEAD`, which makes individual pull requests much easier to revert if necessary. To do that:
 
 1. Go to the repository settings page
 2. Scroll down to the Pull Requests section
@@ -121,3 +121,6 @@ The remaining pull requests are then added to the temporary branch one by one so
 ## Conclusion
 
 The GitHub merge queue is one of those features that sounds like a small quality-of-life improvement until you start using it and realize how much time you were spending babysitting pull requests. By automating the "update and wait" cycle, it frees developers to focus on writing code instead of monitoring CI dashboards. The setup is straightforward: add the `merge_group` trigger to your CI workflow, enable squash merges, and turn on the merge queue through a ruleset. From there, the defaults work well for most teams, and the configurable settings give you room to tune behavior as your repository's velocity grows. If your team spends meaningful time managing pull request ordering or waiting for CI to clear, the merge queue is worth enabling.
+
+[^merge-group-trigger]: [Events that trigger workflows](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#merge_group)
+[^squash-pull-requests]: [Configuring commit squashing for pull requests](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests?versionId=free-pro-team%40latest&productId=actions&restPage=reference%2Cworkflows-and-actions%2Cevents-that-trigger-workflows)
