@@ -59,6 +59,30 @@ on:
 
 This ensures you're running the same checks when a pull request is opened or updated and when a merge queue group is tested. As of this writing, `checks_requested` is the only available `merge_group` type.
 
+You should also review the jobs in your CI workflow to make sure they all make sense to run on the merge queue branch. The merge queue CI process won't have access to pull request-specific information, such as the pull request title or pull request branch name. You can scope jobs to not run for the merge queue using an `if` condition, like this:
+
+```yaml
+jobs:
+  lint:
+    if: github.event_name != 'merge_group'
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "linting..."
+```
+
+Alternately, you can check the current branch name to see if it's a merge queue branch, which exists under `refs/head/gh-readonly-queue/`:
+
+```yaml
+jobs:
+  lint:
+    if: ${{ !startsWith(github.ref, 'refs/heads/gh-readonly-queue/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "linting..."
+```
+
+**Important:** Double-check your ruleset's required status checks. You cannot specify different required status checks for a merge queue so you need to ensure they work in both cases. A skipped job (such as when the `if` condition is not met) is considered a successful check for this purpose.
+
 ### Enable squash merges for the repository
 
 Because a merge queue takes all commits from the temporary branch and merges them into `HEAD`, it's important to squash pull requests[^squash-pull-requests] before they are merged. That ensures each pull request adds a single commit to `HEAD`, which makes individual pull requests much easier to revert if necessary. To do that:
