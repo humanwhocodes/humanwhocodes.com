@@ -2,6 +2,7 @@
 title: "Backing up my life with a Synology NAS"
 teaser: "Data in a public cloud is out of your control, that's why I decided to create my own private cloud in my office."
 author: Nicholas C. Zakas
+image: /images/posts/2024/synology-backup.png
 categories:
   - Computers
 tags:
