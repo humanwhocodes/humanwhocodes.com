@@ -82,6 +82,7 @@ const snippets = defineCollection({
             .optional()
             .transform(getDateValue),
         heroImage: z.string().optional(),
+        image: z.string().optional(),
     }),
 });
 
