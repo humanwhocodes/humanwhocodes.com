@@ -27,14 +27,7 @@ const readingTime = Math.ceil(wordCount / 200);
 // Generate OG image URL if no image is provided
 let ogImage = post.data.image;
 if (!ogImage) {
-    const ogImageParams = new URLSearchParams({
-        title: post.data.title,
-        ...(post.data.teaser && { teaser: post.data.teaser }),
-        ...(post.data.date && { date: post.data.date.toISOString().split('T')[0] }),
-        ...(post.data.tags && post.data.tags.length > 0 && { tags: post.data.tags.join(',') }),
-        ...(readingTime && { readingTime: readingTime.toString() })
-    });
-    ogImage = `/og-image?${ogImageParams}`;
+    ogImage = "/images/default-og-image.png";
 }
 
 ---
