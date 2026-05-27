@@ -1,39 +1,67 @@
----
-agent: agent
----
+Create a clean, modern flat-vector editorial illustration in a bold tech-blog style. The image should feel like a polished developer tutorial or SaaS engineering blog header.
 
-Create a flat modern vector illustration in a bold abstract corporate-tech style with a landscape 1200x630 composition and approximately 10% negative space around the outer edges. Use a triadic palette dominated by saturated royal blue, vivid orange, and golden yellow, balanced with warm off-white accents. The background should consist of large flowing wave-like shapes that sweep diagonally across the canvas in layered ribbons, creating a sense of motion, rhythm, and energy. Shapes should feel smooth, organic, and asymmetrical while still maintaining visual balance.
+Canvas:
+- 1200×630 landscape orientation
+- Symmetrical horizontal composition
+- Optimized for website/social sharing headers
 
-The illustration should use only solid color fills with absolutely no gradients, shadows, textures, noise, bevels, or lighting effects. Edges should be crisp and clean with a polished vector appearance.
+Overall visual style:
+- Flat vector illustration
+- Minimal editorial design
+- Very clean and uncluttered
+- Large simple geometric forms
+- Smooth organic curves
+- Consistent thick dark navy outlines
+- Minimal shading
+- Almost no gradients except extremely soft background blending
+- No glow effects
+- No realistic textures
+- No photorealism
+- No tiny decorative details
+- Strong negative space
+- Crisp scalable iconography
 
-Center the composition around 2–4 primary circular or geometric focal elements aligned horizontally across the canvas. Each focal element should sit inside a clean off-white circular container or badge with generous padding. Maintain strong visual symmetry and consistent spacing between elements. Connect the focal elements using dotted or dashed connector lines that curve gently through the layout to imply relationships, workflow, or movement.
+Color palette:
+Use ONLY these dominant background colors:
+- Deep teal blue (#0D7EA8 to #157FA3 range)
+- Bright golden yellow (#F6C21A range)
+- Vibrant orange (#F57C00 to #FF8500 range)
 
-Use small geometric accent motifs sparingly throughout the composition:
+Background design:
+- Use large flowing abstract wave/swirl shapes
+- Organic cutout-style layered forms
+- Smooth edge transitions
+- Flat color regions with very subtle soft blending only
+- NO random floating shapes, dots, sparkles, or decorative UI elements
+- NO heavy gradients
+- NO glossy effects
+- Create unique asymmetrical swirl patterns instead of generic blob shapes
+- Background should resemble flowing layered paper cutouts
+- Teal regions should appear in opposite corners for balance
+- Orange and yellow regions should interlock in smooth flowing curves
 
-- floating X shapes
-- dots
-- short dashes
-- tiny circles
-- minimal abstract indicators
+Foreground composition:
+- Centered horizontally
+- Thick dark navy outlines around objects
+- No depth, no shadows
+- Logos should feel clean and iconographic rather than glossy
 
-These accents should echo the primary color palette and help reinforce motion without cluttering the design.
 
-Typography should be used sparingly and, if present, should be bold uppercase sans-serif with high legibility, geometric proportions, and strong spacing. Text placement should be minimal and secondary to the visual composition.
+Mood and tone:
+- Modern
+- Technical
+- Optimistic
+- Developer-focused
+- Educational
+- Startup/SaaS aesthetic
+- Friendly and approachable
+- Flat and polished rather than flashy
 
-The overall aesthetic should blend:
-
-- modern SaaS branding
-- friendly infographic design
-- abstract tech illustration
-- startup landing page graphics
-- clean editorial vector art
-
-Maintain:
-
-- uniform line weights
-- simplified geometric iconography
-- balanced negative space
-- smooth visual flow from left to right
-- strong hierarchy through scale and color blocking
-
-The final image should feel approachable, modern, energetic, and highly polished while remaining minimal and easy to scan at small sizes like social previews or open graph images.
+Important constraints:
+- Keep everything simple and flat
+- Avoid visual clutter
+- Avoid complex lighting
+- Avoid random decorations
+- Avoid skeuomorphic rendering
+- Preserve strong readability at small sizes
+- Maintain high contrast between foreground and background

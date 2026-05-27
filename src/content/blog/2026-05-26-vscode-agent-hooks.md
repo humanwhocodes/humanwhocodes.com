@@ -2,7 +2,7 @@
 title: "Creating a VS Code agent hook to respond to file changes"
 teaser: "Learn how to use a VS Code agent hook to detect edits to a specific file and trigger deterministic follow-up automation."
 author: Nicholas C. Zakas
-image: /images/posts/2026/vscode-agent-hooks.png
+image: /images/posts/2026/vscode-agent-hooks-2.png
 categories:
   - Programming
 tags:
