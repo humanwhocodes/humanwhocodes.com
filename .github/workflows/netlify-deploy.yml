@@ -2,7 +2,7 @@ name: Netlify Deploy
 
 on:
   schedule:
-  - cron: "0 15 * * 2,4"
+  - cron: "0 10 * * 2,4"
 
 jobs:
   build:
