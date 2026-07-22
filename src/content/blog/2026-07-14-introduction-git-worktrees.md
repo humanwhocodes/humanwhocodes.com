@@ -35,10 +35,11 @@ If instead you want to create a worktree with that branch name, you can do so wi
 git worktree add ../projects/my-project.worktrees/feature-name -b feature/name main
 ```
 
-This creates the directory `project.worktrees/feature-name` and creates a branch off of `main` called `feature/name`. All of your files from `main` now exist in this separate directory, and you can `cd` into that directory to continue work as usual, with a couple of caveats:
+This creates the directory `project.worktrees/feature-name` and creates a branch off of `main` called `feature/name`. All of your files from `main` now exist in this separate directory, and you can `cd` into that directory to continue work as usual, with some caveats:
 
 1. **Dependencies are not shared.** If you are working on a Node.js project, you'll need to run `npm install` again inside the worktree directory. This directory doesn't have access to the main worktree's `node_modules` directory, so it needs its own copy. This is true for any projects requiring installation of dependencies to work.
 2. **The worktree owns the branch.** Back in your main worktree, you'll get an error if you try `git checkout feature/name` because every branch can only be checked out to one directory. The worktree directory currently has that branch checked out so no other directory can do so.
+3. **Ignored files aren't copied.** Any file that matches a `.gitignore` pattern will not be copied into the worktree. If you need files like `.env`, then you need to copy those manually.
 
 Otherwise, you can treat a worktree directory like any other directory with a clone of your repository.
 
