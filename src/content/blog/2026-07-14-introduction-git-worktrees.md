@@ -3,6 +3,7 @@ title: "A gentle introduction to Git worktrees"
 teaser: "Git worktrees let you check out multiple branches into separate directories simultaneously, making parallel local development straightforward whether you're working solo or alongside AI coding agents."
 author: Nicholas C. Zakas
 image: /images/posts/2026/git-worktrees.png
+updated: 2026-07-27
 categories:
   - Programming
 tags:
@@ -24,24 +25,40 @@ You can think of a worktree as a branch that exists in a different location from
 Without worktrees, you'd create a branch like this:
 
 ```shell
-git checkout -b feature/name main
+git checkout -b feature-name
 ```
 
-This creates a new branch off of `main` called `feature/name` in your project root. For example, if your project exists in `~/projects/my-project`, that's also where the branch is created. (The project root is also called the *main worktree*.)
+This creates a new branch off the current branch called `feature-name` in your project root. For example, if your project exists in `~/projects/my-project`, that's also where the branch is created. (The project root is also called the *main worktree*.)
 
 If instead you want to create a worktree with that branch name, you can do so with this command:
 
 ```shell
-git worktree add ../projects/my-project.worktrees/feature-name -b feature/name main
+git worktree add ../my-project.worktrees/feature-name
 ```
 
-This creates the directory `project.worktrees/feature-name` and creates a branch off of `main` called `feature/name`. All of your files from `main` now exist in this separate directory, and you can `cd` into that directory to continue work as usual, with some caveats:
+This creates the directory `project.worktrees/feature-name` and creates a branch off of the current branch called `feature-name` (matching the terminal directory in the path). All of your files from the current branch now exist in this separate directory, and you can `cd` into that directory to continue work as usual, with a couple of caveats:
 
 1. **Dependencies are not shared.** If you are working on a Node.js project, you'll need to run `npm install` again inside the worktree directory. This directory doesn't have access to the main worktree's `node_modules` directory, so it needs its own copy. This is true for any projects requiring installation of dependencies to work.
-2. **The worktree owns the branch.** Back in your main worktree, you'll get an error if you try `git checkout feature/name` because every branch can only be checked out to one directory. The worktree directory currently has that branch checked out so no other directory can do so.
+2. **The worktree owns the branch.** Back in your main worktree, you'll get an error if you try `git checkout feature-name` because every branch can only be checked out to one directory. The worktree directory currently has that branch checked out so no other directory can do so.
 3. **Ignored files aren't copied.** Any file that matches a `.gitignore` pattern will not be copied into the worktree. If you need files like `.env`, then you need to copy those manually.
 
 Otherwise, you can treat a worktree directory like any other directory with a clone of your repository.
+
+## Additional options
+
+There are a couple of additional options you can pass to `git worktree add` to further configure the new worktree. Similar to `git checkout`, you can specify the branch name using `-b` and the last argument is the source branch to build the new branch off of. For example, if you want to create a branch called `branch-name` off of `main`,  you might do this:
+
+```shell
+git checkout -b branch-name main
+```
+
+You can effectively to do the same thing with worktrees:
+
+```shell
+git worktree add ../my-project.worktrees/feature-name -b branch-name main
+```
+
+The new branch in the worktree isnow called `branch-name` instead of `feature-name`, and it's based off of the `main` branch.
 
 ## Directory conventions
 
@@ -73,7 +90,7 @@ git rebase main
 cd ../my-project
 
 # Merge in your changes
-git merge feature/name
+git merge feature-name
 ```
 
 At this point, you can decide whether you want to keep the branch and worktree around.
@@ -93,7 +110,7 @@ When you're sure you no longer need the branch, you can delete it as usual:
 
 ```shell
 # Delete the branch
-git branch -d feature/name
+git branch -d feature-name
 ```
 
 ## Other tips
@@ -119,9 +136,9 @@ If you'd like to type fewer characters, you can set up an alias for `worktree`:
 git config --global alias.wt worktree
 
 # Much shorter commands
-git wt add ../myproject.worktrees/ -b feature/name main
+git wt add ../myproject.worktrees/feature-name
 git wt list
-git wt remove ../myproject.worktrees/
+git wt remove ../myproject.worktrees/feature-name
 ```
 
 ## Conclusion
@@ -129,3 +146,5 @@ git wt remove ../myproject.worktrees/
 Git worktrees are a powerful, underappreciated feature that fit naturally into modern development workflows, especially as AI coding agents become a bigger part of the picture. Once you understand that a worktree is really just a branch checked out to a different directory, the mental model clicks quickly. You get all the benefits of parallel development without shipping your code to a remote service to make it happen.
 
 The workflow is straightforward: create a worktree for each task, do your work, merge or open a pull request when done, and clean up. Commands like `git worktree list` give you visibility into what's checked out where, and a simple alias like `wt` keeps the overhead low. Give worktrees a try next time you need to juggle multiple tasks in the same repository.
+
+**Update(2026-07-17)**: Updated the description to first show the simplified worktree creation command and then a new section to explain the additional options.
