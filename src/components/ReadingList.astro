@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import { getReadingImage } from "../lib/images.js";
 import reading from "../data/reading.yml";
 ---
 {Object.keys(reading).sort().map(key => <>
@@ -6,7 +8,7 @@ import reading from "../data/reading.yml";
     <ul class="hide-bullets grid-columns">
         {reading[key].sort().map(book =>
             <li class="center-text">
-                <p><a href={book.url}><img src={"/images/reading/" + book.image } alt={book.title + " Cover"} loading="lazy" height="150"></a><br>
+                <p><a href={book.url}><Image src={getReadingImage(book.image)} alt={book.title + " Cover"} loading="lazy" height={150} /></a><br>
                 <a href={book.url}>{book.title}</a><br>
                 {book.author}</p>
             </li>            

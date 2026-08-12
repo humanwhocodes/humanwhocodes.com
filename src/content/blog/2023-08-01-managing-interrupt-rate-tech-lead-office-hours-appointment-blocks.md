@@ -44,11 +44,11 @@ Of course, there will be times when people will need to schedule outside of your
 
 Previously, I showed you an example of what your calendar might have looked like before time blocking, and it was as follows:
 
-![Before Calendar: Daily standup from 9:30-9:45am; Team lunch on Wednesday at noon; 1-on-1s and other meetings sprinkled throughout the week](/images/posts/2023/interrupt-rate-regular-calendar.png)
+![Before Calendar: Daily standup from 9:30-9:45am; Team lunch on Wednesday at noon; 1-on-1s and other meetings sprinkled throughout the week](../../images/posts/2023/interrupt-rate-regular-calendar.png)
 
 Next, you learned to use time blocking to put tasks on your calendar and come up with an initial view of your week. Now when you add in appointment blocks, you'll get an even better view of where you'll have specific types of meetings:
 
-![Time-Blocked Calendar: Each day has specific tasks assigned at specific times with office hours and 1-on-1s assigned to specific blocks of time throughout the week](/images/posts/2023/interrupt-rate-office-hours-calendar.png)
+![Time-Blocked Calendar: Each day has specific tasks assigned at specific times with office hours and 1-on-1s assigned to specific blocks of time throughout the week](../../images/posts/2023/interrupt-rate-office-hours-calendar.png)
 
 This is a fully time-blocked calendar with appointment blocks for office hours and 1-on-1s, the two most common types of recurring meetings requested of tech leads. The office hours are fairly regular, occurring after lunch for either 30 or 60 minutes while the 1-on-1 blocks occur Tuesday through Thursday at different times, depending on availability. Keep in mind that even though these times are blocked off, you may not have any appointments during those times. The goal is to schedule them into your calendar so that you know when they will happen if needed.
 

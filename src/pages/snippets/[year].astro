@@ -20,7 +20,7 @@ export async function getStaticPaths() {
 
 
     return [...postYears.entries()].map(([year, posts]) => ({
-        params: { year },
+        params: { year: String(year) },
         props: { posts }
     }));
 

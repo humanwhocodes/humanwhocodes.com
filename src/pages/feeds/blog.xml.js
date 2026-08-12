@@ -1,17 +1,19 @@
 import site from "../../data/config.yml";
 import { loadBlogPosts, generateRssFeed } from "../../lib/util";
 
+export async function GET() {
 
-export async function get() {
-	
 	const posts = (await loadBlogPosts()).slice(0, 10);
-	
-	return {
-		body: await generateRssFeed({
+
+	return new Response(
+		await generateRssFeed({
 			site,
 			feedUrl: site.feed_source,
 			description: site.description,
 			posts
-		})
-	};
+		}),
+		{
+			headers: { "Content-Type": "application/rss+xml; charset=utf-8" }
+		}
+	);
 }

@@ -2,7 +2,7 @@
 title: "Wiring auxiliary Cloudflare workers into an Astro 6 application"
 teaser: "Astro 6's Cloudflare integration lets your run additional workers alongside your application, but there are some gotchas."
 author: Nicholas C. Zakas
-image: /images/posts/2026/astro-6-cloudflare.png
+image: astro-6-cloudflare.png
 categories:
   - Programming
 tags:

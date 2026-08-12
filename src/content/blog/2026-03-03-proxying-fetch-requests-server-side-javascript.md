@@ -2,7 +2,7 @@
 title: "Proxying fetch requests in server-side JavaScript"
 teaser: "Learn how to proxy fetch() requests in Node.js, Deno, Bun, and Cloudflare Workers to better monitor and control your server-side traffic."
 author: Nicholas C. Zakas
-image: /images/posts/2026/proxy-request.png
+image: proxy-request.png
 updated: 2026-03-04
 categories:
   - Programming

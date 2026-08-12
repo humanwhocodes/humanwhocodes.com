@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Page from "../layouts/Page.astro";
 import authorImage from "../images/me/me-150x150.jpg";
 
@@ -16,7 +17,7 @@ const frontmatter = {
                 <div class="page-intro">
                     <div class="intro-content">
                         <div class="author-intro">
-                            <img src={authorImage} alt="Nicholas C. Zakas" class="author-photo" />
+                            <Image src={authorImage} alt="Nicholas C. Zakas" class="author-photo" loading="eager" />
                             <div class="intro-text">
                                 <p>Hi, I'm Nicholas Zakas. I'm an independent software developer, author, and coach living in Peabody, Massachusetts.</p>
                                 <p>I've been an architect at <a href="https://box.com">Box</a> and <a href="https://yahoo.com">Yahoo</a>, created the <a href="https://eslint.org">ESLint</a> open source project, and wrote several <a href="/books">books</a> about JavaScript and web development.</p>

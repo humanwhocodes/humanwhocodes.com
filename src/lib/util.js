@@ -11,9 +11,9 @@
 import site from "../data/config.yml";
 import commentThreads from "../data/comments.json";
 import { getCollection } from 'astro:content';
-import { formatJekyllPost } from "@humanwhocodes/astro-jekyll";
+import { formatJekyllPost } from "./jekyll.js";
 import xmlEscape from "xml-escape";
-import { renderMarkdown } from "@astrojs/markdown-remark";
+import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 
 //-----------------------------------------------------------------------------
 // Helpers
@@ -73,11 +73,27 @@ async function loadJekyllCollection(name) {
     const collection = (await getCollection(name))
         .map(formatJekyllPost())
         .filter(shouldDisplay)
+        .sort((a, b) => a.id.localeCompare(b.id))
         .reverse();
 
     collectionCache.set(name, collection);
-    
+
     return collection;
+}
+
+/*
+ * Markdown rendering for the feeds. `renderMarkdown()` was removed from
+ * @astrojs/markdown-remark, so a processor is created once and reused.
+ */
+let markdownProcessor;
+
+async function renderPostBodies(posts) {
+
+    markdownProcessor ??= await createMarkdownProcessor({});
+
+    return Promise.all(
+        posts.map(post => markdownProcessor.render(post.body ?? ""))
+    );
 }
 
 //-----------------------------------------------------------------------------
@@ -89,7 +105,7 @@ export async function loadBlogPosts() {
 
     // check for comments
     posts.forEach(post => {
-        const url = `/${post.collection}/${post.slug})`;
+        const url = `/${post.collection}/${post.slug}/`;
         const commentThread = commentThreads[new URL(url, site.url).href];
         post.comments = commentThread ? commentThread.comments : null;
     });
@@ -114,9 +130,7 @@ export async function loadAllContent() {
 
 export async function generateJsonFeed({ site, feedUrl, description=site.description, posts}) {
 
-    const rendered = await Promise.all(
-        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir:"."}))
-    );
+    const rendered = await renderPostBodies(posts);
 
     return JSON.stringify({
         version: "https://jsonfeed.org/version/1",
@@ -142,7 +156,7 @@ export async function generateJsonFeed({ site, feedUrl, description=site.descrip
                 },
                 summary: data.teaser,
                 content_text: post.body,
-                content_html: xmlEscape(rendered[index].metadata.html),
+                content_html: xmlEscape(rendered[index].code),
                 tags: data.tags,
                 date_published: data.date.toISOString(),
                 date_updated: data.updated ? data.updated.toISOString() : data.date.toISOString()
@@ -153,9 +167,7 @@ export async function generateJsonFeed({ site, feedUrl, description=site.descrip
 
 export async function generateRssFeed({ site, feedUrl, description = site.description, posts }) {
 
-    const rendered = await Promise.all(
-        posts.map(post => renderMarkdown(post.body, { fileURL: "foo.md", contentDir: "." }))
-    );
+    const rendered = await renderPostBodies(posts);
 
     return `
 		<?xml version="1.0" encoding="utf-8"?>
@@ -191,7 +203,7 @@ export async function generateRssFeed({ site, feedUrl, description = site.descri
 						${data.tags.map(tag => `<category>${tag}</category>`).join("")}
 						<guid isPermaLink="true">${new URL(url, site.url).href}</guid>
 						<description>${data.teaser}</description>
-						<content:encoded>${xmlEscape(rendered[index].metadata.html)}</content:encoded>
+						<content:encoded>${xmlEscape(rendered[index].code)}</content:encoded>
 					</item>
 				`.trim();
             }).join("")

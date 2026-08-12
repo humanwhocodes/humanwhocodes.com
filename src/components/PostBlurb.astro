@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import { getHeroImage } from "../lib/images.js";
+
 const {
     post
 } = Astro.props;
@@ -11,6 +14,8 @@ const {
     image
 } = post.data;
 
+const heroImage = image ? getHeroImage(image) : null;
+
 // Calculate reading time (average 200 words per minute)
 const content = post.body || "";
 const wordCount = content.split(/\s+/).length;
@@ -18,10 +23,17 @@ const readingTime = Math.ceil(wordCount / 200);
 ---
 <article class="post-blurb">
     <div class="post-blurb-content">
-        {image && (
+        {heroImage && (
             <a href={`/${post.collection}/${post.slug}`} class="post-blurb-image-link">
                 <div class="post-blurb-image">
-                    <img src={image} alt="" loading="lazy" decoding="async" />
+                    <Image
+                        src={heroImage}
+                        alt=""
+                        widths={[650, 1300]}
+                        sizes="(max-width: 650px) 100vw, 650px"
+                        loading="lazy"
+                        decoding="async"
+                    />
                 </div>
             </a>
         )}

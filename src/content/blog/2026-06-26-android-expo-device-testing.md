@@ -2,7 +2,7 @@
 title: "Testing Android apps with Expo on physical devices"
 teaser: "Learn how to connect your Android device via USB to your local Expo development server for reliable, production-like testing of your React Native apps."
 author: Nicholas C. Zakas
-image: /images/posts/2026/android-expo-device.png
+image: android-expo-device.png
 categories:
   - Programming
 tags:

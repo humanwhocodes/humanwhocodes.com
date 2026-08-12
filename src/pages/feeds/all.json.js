@@ -1,19 +1,18 @@
 import site from "../../data/config.yml";
-import xmlEscape from "xml-escape";
-import { loadAllContent } from "../../lib/util";
-import { stripHtml } from "string-strip-html";
-import { generateJsonFeed } from "../../lib/util";
+import { loadAllContent, generateJsonFeed } from "../../lib/util";
 
-export async function get() {
-	
+export async function GET() {
+
 	const posts = (await loadAllContent()).slice(0, 10);
-	
 
-    return {
-        body: await generateJsonFeed({
-            site,
-            feedUrl: site.all_json_feed_source,
-            posts
-        })
-    };
+	return new Response(
+		await generateJsonFeed({
+			site,
+			feedUrl: site.all_json_feed_source,
+			posts
+		}),
+		{
+			headers: { "Content-Type": "application/feed+json; charset=utf-8" }
+		}
+	);
 }

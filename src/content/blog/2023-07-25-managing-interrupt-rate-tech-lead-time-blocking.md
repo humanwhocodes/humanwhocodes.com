@@ -65,13 +65,13 @@ The overall goal here is that when you say you're going to review a specificatio
 
 To give you an idea of how time blocking might look in practice, it's helpful to take a look at what your calendar might look like before and after implementing time blocking. If you're a tech lead who hasn't set up your calendar for time blocking, you might have a calendar that looks like this:
 
-![Before Calendar: Daily standup from 9:30-9:45am; Team lunch on Wednesday at noon; 1-on-1s and other meetings sprinkled throughout the week](/images/posts/2023/interrupt-rate-regular-calendar.png)
+![Before Calendar: Daily standup from 9:30-9:45am; Team lunch on Wednesday at noon; 1-on-1s and other meetings sprinkled throughout the week](../../images/posts/2023/interrupt-rate-regular-calendar.png)
 
 The purple appointments are those set by your team, and the blue appointments are where you're interacting with others in real time. When you look at this calendar, aside from the daily standup meeting at 9:30am every day and the weekly team lunch on Wednesday at 1pm, the calendar is mostly empty space with a few one-off meetings here and there. Otherwise, the calendar looks mostly empty. Of course, it's not actually empty – you need that empty time to do all of the work you've been assigned and all of the work that is expected but not typically accounted for. Whenever someone wants to schedule something with you, any open spot on your calendar is fair game, and on this calendar, there are a lot of open slots.
 
 Once you transition to time blocking, your calendar looks more like this:
 
-![Time-Blocked Calendar: Each day has specific tasks assigned at specific times with other meetings in between](/images/posts/2023/interrupt-rate-time-blocked-calendar.png)
+![Time-Blocked Calendar: Each day has specific tasks assigned at specific times with other meetings in between](../../images/posts/2023/interrupt-rate-time-blocked-calendar.png)
 
 When you look at a time-blocked calendar, it's easy to see that all of that open space on your original calendar isn't actually free. It's time you need to complete the tasks you have. The daily standup, team lunch, and all of the other meetings from the first calendar are still present, but now you can see what you are trying to accomplish in between those meetings. I've color-coded tasks that involve specific software as red, tasks that you work on alone as yellow, and tasks that are breaks as green. There are still empty slots on your calendar but there are a lot fewer than before.
 

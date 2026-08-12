@@ -9,7 +9,7 @@ tags:
   - AWS
   - Elastic Beanstalk
   - Linux
-  - nginx
+  - Nginx
   - Tomcat
 ---
 WellFurnished has been using Amazon's Elastic Beanstalk<sup>[1]</sup> service for some time now with one of the default configurations. For those who are unaware, Elastic Beanstalk is Amazon's answer to services like Heroku and Google App Engine. You set up an application and one or more environments made up of a load balancer and any number of EC2 instances. There are several default instance types you can select from such as Apache with Tomcat 6 or 7, Apache with PHP, and Apache with Python (all are available in either 32-bit or 64-bit configurations).

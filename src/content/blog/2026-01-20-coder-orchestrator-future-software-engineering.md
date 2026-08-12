@@ -2,7 +2,7 @@
 title: "From Coder to Orchestrator: The future of software engineering with AI"
 teaser: "The software engineering job of the future won't involve writing code; it will involve orchestrating AI agents to write code for you."
 author: Nicholas C. Zakas
-image: /images/posts/2026/coder-to-orchestrator.png
+image: coder-to-orchestrator.png
 categories:
   - Programming
 tags:

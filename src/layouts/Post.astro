@@ -6,7 +6,10 @@ import InterruptRateEbookForm from "../components/InterruptRateEbookForm.astro";
 import PromisesEbookForm from "../components/PromisesEbookForm.astro";
 import AIConsultForm from "../components/AIConsultForm.astro";
 import ShareButtons from "../components/ShareButtons.astro";
+import { Image, getImage } from "astro:assets";
+import { getHeroImage } from "../lib/images.js";
 import authorImage from "../images/me/me-150x150.jpg";
+import defaultOgImage from "../images/default-og-image.png";
 
 const { post } = Astro.props;
 
@@ -24,11 +27,19 @@ const content = post.body || "";
 const wordCount = content.split(/\s+/).length;
 const readingTime = Math.ceil(wordCount / 200);
 
-// Generate OG image URL if no image is provided
-let ogImage = post.data.image;
-if (!ogImage) {
-    ogImage = "/images/default-og-image.png";
-}
+/*
+ * The post image doubles as the Open Graph image. Social crawlers are less
+ * consistent about WebP than browsers are, so the OG version is emitted
+ * separately as a JPEG at the 1200px size those platforms expect, while the
+ * on-page hero below gets the smaller responsive WebP treatment.
+ */
+const heroImage = post.data.image ? getHeroImage(post.data.image) : null;
+
+const ogImage = await getImage({
+    src: heroImage ?? defaultOgImage,
+    format: "jpeg",
+    width: 1200,
+});
 
 ---
 <Layout
@@ -37,7 +48,7 @@ if (!ogImage) {
     originalUrl={post.data.original?.url}
     canonicalUrl={post.data.canonical_url}
     ogType="article"
-    image={ogImage}
+    image={ogImage.src}
 >
 
 <!-- Reading Progress Bar -->
@@ -51,16 +62,22 @@ if (!ogImage) {
             <h1 itemprop="headline" class="post-title">{ post.data.title }</h1>
             <p itemprop="description" class="post-teaser">{ post.data.teaser }</p>
             
-            {post.data.image && (
+            {heroImage && (
                 <div class="post-featured-image">
-                    <img src={post.data.image} alt="" />
+                    <Image
+                        src={heroImage}
+                        alt=""
+                        widths={[650, 1300]}
+                        sizes="(max-width: 650px) 100vw, 650px"
+                        loading="eager"
+                    />
                 </div>
             )}
             
             <div class="post-meta">
                 <div class="post-meta-primary">
                     <div class="author-info">
-                        <img src={authorImage} alt="Nicholas C. Zakas" class="author-avatar" />
+                        <Image src={authorImage} alt="Nicholas C. Zakas" class="author-avatar" />
                         <div class="author-details">
                             <span itemprop="author" itemscope itemtype="https://schema.org/Person" class="author-name">
                                 <span itemprop="name">Nicholas C. Zakas</span>

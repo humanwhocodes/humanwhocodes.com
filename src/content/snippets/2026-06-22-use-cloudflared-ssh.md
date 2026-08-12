@@ -2,7 +2,7 @@
 title: "Use cloudflared for SSH and close port 20"
 teaser: "Cloudflare tunnels can be used for SSH, meaning you don't need any open incoming ports on your VPS."
 author: Nicholas C. Zakas
-image: /images/posts/2026/cloudflare-tunnel-ssh.png
+image: cloudflare-tunnel-ssh.png
 categories:
   - Networking
 tags:

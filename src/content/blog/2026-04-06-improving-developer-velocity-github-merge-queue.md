@@ -2,7 +2,7 @@
 title: "Improving developer velocity with GitHub merge queue"
 teaser: "GitHub merge queue reduces the manual churn of keeping pull requests current by automatically retesting them in order before merge."
 author: Nicholas C. Zakas
-image: /images/posts/2026/github-merge-queue.png
+image: github-merge-queue.png
 categories:
   - Programming
 tags:

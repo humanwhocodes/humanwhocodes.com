@@ -2,7 +2,7 @@
 title: "A gentle introduction to Git worktrees"
 teaser: "Git worktrees let you check out multiple branches into separate directories simultaneously, making parallel local development straightforward whether you're working solo or alongside AI coding agents."
 author: Nicholas C. Zakas
-image: /images/posts/2026/git-worktrees.png
+image: git-worktrees.png
 updated: 2026-07-27
 categories:
   - Programming

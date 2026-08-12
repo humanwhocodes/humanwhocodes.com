@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { loadBlogPosts, loadSnippets } from "../lib/util.js";
+import { getBookImage } from "../lib/images.js";
 import allBooks from "../data/books.yml";
 import allSponsors from "../data/sponsors.json";
 
@@ -53,7 +55,7 @@ posts.forEach(post => {
         <div class="books-grid">
             {books.slice(0,4).map(book => (
                 <a href={book.url} class="book-link" title={book.title}>
-                    <img src={`/images/books/${book.image}`} alt={book.title} width="80" height="100">
+                    <Image src={getBookImage(book.image)} alt={book.title} width={80} height={100} loading="lazy" />
                 </a>
             ))}
         </div>

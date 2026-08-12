@@ -2,7 +2,7 @@
 title: "GitHub Copilot's pricing gamble"
 teaser: "GitHub's switch to usage-based Copilot pricing is a calculated bet that competitors will follow suit before too many users defect."
 author: Nicholas C. Zakas
-image: /images/posts/2026/copilot-gamble.png
+image: copilot-gamble.png
 categories:
   - Programming
 tags:

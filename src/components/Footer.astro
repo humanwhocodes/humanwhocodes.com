@@ -1,8 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import me from "../images/me/me-150x150.jpg";
 import site from "../data/config.yml";
-import twitterIcon from "../images/social/twitter.svg";
-import githubIcon from "../images/social/github-32x32.png";
 
 const today = new Date();
 
@@ -77,7 +76,7 @@ const socialLinks = [
             <div class="footer-about">
                 <div class="about-content">
                     <div class="profile-section">
-                        <img src={me} alt="Photo of Nicholas C. Zakas" width="120" class="profile-image">
+                        <Image src={me} alt="Photo of Nicholas C. Zakas" width={120} class="profile-image" />
                     </div>
                     <div class="bio-section">
                         <h2 class="about-title">About the Human</h2>

@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import { getBookImage } from "../lib/images.js";
 import books from "../data/books.yml";
 
 const bookCategories = {
@@ -38,13 +40,13 @@ const bookCategories = {
                         <article class="book-card">
                             <div class="book-cover-container">
                                 <a href={book.url} class="book-cover-link" title={book.title}>
-                                    <img 
-                                        src={`/images/books/${book.image}`} 
-                                        alt={`${book.title} Cover`} 
-                                        loading="lazy" 
+                                    <Image
+                                        src={getBookImage(book.image)}
+                                        alt={`${book.title} Cover`}
+                                        loading="lazy"
                                         class="book-cover"
-                                        width="160"
-                                        height="200"
+                                        width={160}
+                                        height={200}
                                     />
                                 </a>
                             </div>

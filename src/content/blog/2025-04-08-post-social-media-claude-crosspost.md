@@ -81,11 +81,11 @@ Once the `claude_desktop_config.json` file is updated, you need to restart Claud
 
 At this point, you should see a hammer icon with a number next to it, indicating how many tools are available through installed MCP servers. 
 
-![The Claude Desktop toolbar under message entry showing a hammer icon with the number 5 next to it](/images/posts/2025/claude-tools-button.png)
+![The Claude Desktop toolbar under message entry showing a hammer icon with the number 5 next to it](../../images/posts/2025/claude-tools-button.png)
 
 If you click on the hammer, you'll see a list of all available tools.
 
-![The Claude Desktop dialog listing all of the available Crosspost tools for posting to social media](/images/posts/2025/claude-available-tools.png)
+![The Claude Desktop dialog listing all of the available Crosspost tools for posting to social media](../../images/posts/2025/claude-available-tools.png)
 
 Once you've confirmed the Crosspost tools are available, you can ask Claude to post a message for you such as:
 
@@ -95,11 +95,11 @@ Once you've confirmed the Crosspost tools are available, you can ask Claude to p
 
 When Claude decides it will use one of the Crosspost tools, it will ask for your permission to do so. You can either allow once or for the lifetime of the chat.
 
-![The Claude Desktop dialog asking you to approve the use of the Crosspost tool either once or for the lifetime of the chat.](/images/posts/2025/claude-allow-tool.png)
+![The Claude Desktop dialog asking you to approve the use of the Crosspost tool either once or for the lifetime of the chat.](../../images/posts/2025/claude-allow-tool.png)
 
 Once you allow use of Crosspost, Claude will post on your behalf and let you know when complete.
 
-![The Claude Desktop chat window showing confirmation that a message has been posted across multiple social media platforms.](/images/posts/2025/claude-crosspost-success.png)
+![The Claude Desktop chat window showing confirmation that a message has been posted across multiple social media platforms.](../../images/posts/2025/claude-crosspost-success.png)
 
 I've found this so convenient that Claude Desktop is now the primary way I post to social media. It's fast and I don't get distracted by reading other content in my feed.
 

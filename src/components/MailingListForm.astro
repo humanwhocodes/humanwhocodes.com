@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import site from "../data/config.yml";
+import promisesCover from "../images/books/promises_community.png";
 ---
 <div class="grid-columns round-borders content-item-border highlight-background">
     <div class="gutters">
         
         <!-- <h2 class="no-margin-top">Free E-book!</h2> -->
-        <p><a href="https://ebooks.humanwhocodes.com/promises" target="_blank"><img src="/images/books/promises_community.png" alt="Understanding JavaScript Promises E-book Cover" height="250"></a></p>
+        <p><a href="https://ebooks.humanwhocodes.com/promises" target="_blank"><Image src={promisesCover} alt="Understanding JavaScript Promises E-book Cover" height={250} loading="lazy" /></a></p>
         <p>Demystify JavaScript promises with the e-book that explains not just concepts, but also real-world uses of promises.</p>
     </div>
     <div class="gutters">

@@ -2,7 +2,7 @@
 title: "A persona-based approach to AI-assisted software development"
 teaser: "Discover how breaking AI assistance into specialized personas can help you tackle complex software development tasks more efficiently and with less frustration."
 author: Nicholas C. Zakas
-image: /images/posts/2025/ai-personas.png
+image: ai-personas.png
 categories:
   - Programming
 tags:

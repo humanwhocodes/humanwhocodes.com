@@ -1,3 +1,7 @@
+---
+import { Image } from "astro:assets";
+import promisesCover from "../images/books/promises_community.png";
+---
 <div class="promises-ebook-form round-borders content-item-border">
     <div class="ebook-header">
         <h2 class="ebook-title">Master JavaScript Promises</h2>
@@ -8,7 +12,7 @@
         <div class="ebook-preview">
             <div class="book-cover">
                 <a href="https://ebooks.humanwhocodes.com/promises" target="_blank">
-                    <img src="/images/books/promises_community.png" alt="Understanding JavaScript Promises E-book Cover" height="200">
+                    <Image src={promisesCover} alt="Understanding JavaScript Promises E-book Cover" height={200} loading="lazy" />
                 </a>
             </div>
             <div class="book-description">
@@ -69,7 +73,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,122,0,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,122,0,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,122,0,0.05)"/><circle cx="10" cy="50" r="0.5" fill="rgba(255,122,0,0.05)"/><circle cx="90" cy="30" r="0.5" fill="rgba(255,122,0,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JhaW4iIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48Y2lyY2xlIGN4PSIyNSIgY3k9IjI1IiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwxMjIsMCwwLjEpIi8+PGNpcmNsZSBjeD0iNzUiIGN5PSI3NSIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMTIyLDAsMC4xKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjAuNSIgZmlsbD0icmdiYSgyNTUsMTIyLDAsMC4wNSkiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjUwIiByPSIwLjUiIGZpbGw9InJnYmEoMjU1LDEyMiwwLDAuMDUpIi8+PGNpcmNsZSBjeD0iOTAiIGN5PSIzMCIgcj0iMC41IiBmaWxsPSJyZ2JhKDI1NSwxMjIsMCwwLjA1KSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9InVybCgjZ3JhaW4pIi8+PC9zdmc+');
     opacity: 0.3;
 }
 
