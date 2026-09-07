@@ -1,5 +1,5 @@
 ---
-title: "Five Roles for Working with AI"
+title: "Five software engineering roles for working with AI"
 teaser: "Software engineers can work with AI in different ways, from observing every change to managing an entire software factory."
 author: Nicholas C. Zakas
 image: ai-roles.png
