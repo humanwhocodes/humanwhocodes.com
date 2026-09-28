@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+import promoImage from "../images/promos/bredbox-promo.png";
+---
+<div class="round-borders content-item-border bredbox-promo">
+    <a href="https://bredbox.app?utm_source=humanwhocodes&utm_campaign=blogpromo" target="_blank">
+        <Image src={promoImage} alt="Bredbox: A trusted home for the content you care about" loading="lazy" />
+    </a>
+</div>
+
+<style>
+.bredbox-promo {
+    overflow: hidden;
+}
+
+.bredbox-promo a {
+    display: block;
+    line-height: 0;
+}
+
+.bredbox-promo :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+</style>

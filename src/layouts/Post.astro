@@ -4,22 +4,22 @@ import PostTags from "../components/PostTags.astro";
 import Comments from "../components/Comments.astro";
 import InterruptRateEbookForm from "../components/InterruptRateEbookForm.astro";
 import PromisesEbookForm from "../components/PromisesEbookForm.astro";
-import AIConsultForm from "../components/AIConsultForm.astro";
 import ShareButtons from "../components/ShareButtons.astro";
 import { Image, getImage } from "astro:assets";
 import { getHeroImage } from "../lib/images.js";
 import authorImage from "../images/me/me-150x150.jpg";
 import defaultOgImage from "../images/default-og-image.png";
+import BredboxPromo from "../components/BredboxPromo.astro";
 
 const { post } = Astro.props;
 
 let FormComponent;
 if (!post.data.tags || post.data.tags.includes("JavaScript")) {
     FormComponent = PromisesEbookForm;
-} else if (post.data.tags.includes("AI")) {
-    FormComponent = AIConsultForm;
-} else {
+} else if (post.data.tags.includes("Career")) {
     FormComponent = InterruptRateEbookForm;
+} else {
+    FormComponent = BredboxPromo;
 }
 
 // Calculate reading time (average 200 words per minute)
