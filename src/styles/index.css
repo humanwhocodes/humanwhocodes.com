@@ -153,6 +153,7 @@ p > a > img {
     background: white;
     border: var(--content-item-border);
     max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
