@@ -62,5 +62,5 @@ You can also view and use a live demo[^2].
 
 I still want GitHub to implement proper threading for top-level comments in pull requests, and also to implement an interface like PR Comment Inbox in the long term. In the short-term, I hope that PR Comment Inbox helps everyone who deals with high-traffic PRs. I made it part of my regular routine in the last week and I was happy with how much more productive I was at properly responding to every comment on some busy PRs. If you've ever had to work through a comment-heavy PR, I hope it makes that experience a little less exhausting.
 
-[^1]: [PR Comment Inbox](https://github.com/humanwhocodes.com/pr-comment-inbox)
+[^1]: [PR Comment Inbox](https://github.com/humanwhocodes/pr-comment-inbox)
 [^2]: [PR Comment Inbox Live Demo](https://pr-comment-inbox.humanwhocodes.com)
