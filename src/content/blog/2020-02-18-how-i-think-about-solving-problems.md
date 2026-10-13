@@ -2,6 +2,7 @@
 title: "How I think about solving problems"
 teaser: "The five questions I used to help me decide, prioritize, and solve problems."
 date: 2020-02-18
+image: solving-problems.png
 categories:
 - Career
 tags:
